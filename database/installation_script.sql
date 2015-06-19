@@ -39,11 +39,11 @@ CREATE TABLE IF NOT EXISTS `publishers`(
   `modified_date` DATETIME NOT NULL
 );
 
-INSERT INTO publishers (name, url, created_date, modified_date) VALUES ("Tribune Nigeria", "http://tribuneonlineng.com", now(), now()), ("Punch Nigeria", "http://www.punchng.com", now(), now()),
-  ("Leadership", "http://leadership.ng", now(), now()), ("KokoFeed", "http://kokofeed.com", now(), now()), ("Nigerian Monitor", "http://www.nigerianmonitor.com", now(), now()),
-  ("Vanguard Nigeria", "http://www.vanguardngr.com", now(), now()), ("The Cable", "http://www.thecable.ng", now(), now()), ("Nigeria Guardian", "http://www.ngrguardiannews.com", now(), now()),
-  ("Channels Television", "http://www.channelstv.com", now(), now()), ("Star Gist", "http://stargist.com", now(), now()), ("BellaNaija", "http://www.bellanaija.com", now(), now()),
-  ("Linda Ikeji", "http://lindaikeji.blogspot.com", now(), now()), ("Goal.com", "http://goal.com", now(), now()), ("Futaa", "http://www.futaa.com", now(), now()), ("Complete Sport", "http://completesportsnigeria.com", now(), now()),
+INSERT INTO publishers (name, pub_id, url, created_date, modified_date) VALUES ("Tribune Nigeria", 1, "http://tribuneonlineng.com", now(), now()), ("Punch Nigeria", 2, "http://www.punchng.com", now(), now()),
+  ("Leadership", 3, "http://leadership.ng", now(), now()), ("KokoFeed", 4, "http://kokofeed.com", now(), now()), ("Nigerian Monitor", 5, "http://www.nigerianmonitor.com", now(), now()),
+  ("Vanguard Nigeria", 6, "http://www.vanguardngr.com", now(), now()), ("The Cable", "http://www.thecable.ng", now(), now()), ("Nigeria Guardian", "http://www.ngrguardiannews.com", now(), now()),
+  ("Channels Television", 9, "http://www.channelstv.com", now(), now()), ("Star Gist", "http://stargist.com", now(), now()), ("BellaNaija", "http://www.bellanaija.com", now(), now()),
+  ("Linda Ikeji", 12, "http://lindaikeji.blogspot.com", now(), now()), ("Goal.com", "http://goal.com", now(), now()), ("Futaa", "http://www.futaa.com", now(), now()), ("Complete Sport", "http://completesportsnigeria.com", now(), now()),
   ("Stargist Entertainment", 10, "http://stargist.com/feed/", now(), 15, 1, 3, now(), now()),
   ("Bella Naija Entertainment", 11, "http://www.bellanaija.com/feed/", now(), 15, 1, 3, now(), now()),
   ("Linda Ikeji Entertainment News", 12, "http://lindaikejimagazine.com/feed", now(), 15, 1, 3, now(), now()),
