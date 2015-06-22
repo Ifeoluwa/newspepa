@@ -11,11 +11,9 @@ namespace App\Http\Controllers;
 //Handles all actions to be performed on feeds
 
 use App\Feed;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
+use App\RawStory;
 use Nathanmac\Utilities\Parser\Parser;
-//use DB;
+
 
 class FeedController extends Controller {
 
@@ -42,9 +40,27 @@ class FeedController extends Controller {
                     if(!$content) {
                         continue;
                     }
-                    $parsed = $parser->xml($content);
+                    $stories = $parser->xml($content);
 
-                    print_r($parsed);
+                    foreach ($stories['channel']['item'] as $str){
+                        $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
+
+                        $raw_story = array();
+                        if(count($matches) > 0){
+                            $raw_story['image_url'] = $matches[0];
+                        }
+                        $raw_story['title'] = "".$str['title']."";
+                        $raw_story['pub_id'] = $feed['pub_id'];
+                        $raw_story['feed_id'] = $feed['id'];
+                        $raw_story['description'] = "".FeedController::clean(strip_tags($str['description']))."";
+                        $raw_story['content'] = "".FeedController::clean(strip_tags($str['description']))."";
+                        $raw_story['url'] = "".$str['link']."";
+                        $raw_story['pub_date'] = strtotime($str['pubDate']);
+                        $raw_story['insert_date'] = time();
+
+
+                        RawStory::insertIgnore($raw_story);
+                    }
                 }
 
             }
@@ -56,6 +72,8 @@ class FeedController extends Controller {
     private function updateFeed(){
 
     }
+
+
 
     // Handles the vaidation of the file; checks if it is an xml file
     private function isFeedValid($feed_url){
@@ -81,6 +99,11 @@ class FeedController extends Controller {
         $response = curl_exec($init_curl);
         curl_close($init_curl);
         return $response;
+    }
+
+
+    private function clean($string){
+        return preg_replace('/[^A-Za-z0-9\-]/', ' ', $string);
     }
 
 

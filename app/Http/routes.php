@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// handles the fetch feeds request
+Route::get('feeds', 'FeedController@fetchFeeds');
