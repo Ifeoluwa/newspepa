@@ -18,15 +18,12 @@ class RawStory extends Model {
         $a = new static();
         if($a->timestamps){
             $now = \Carbon\Carbon::now();
-            $array['created_at'] = $now;
-            $array['modified_at'] = $now;
+            $array['created_date'] = $now;
+            $array['modified_date'] = $now;
         }
 
-        print_r('INSERT IGNORE INTO '.$a->table.' ('.implode(',',array_keys($array)).
-            ') values ('.implode(',', array_values($array)));
-
-//        DB::insert('INSERT IGNORE INTO '.$a->table.' ('.implode(',',array_keys($array)).
-//            ') values ('.implode(',',array_values($array)));
+        DB::insert('INSERT IGNORE INTO raw_stories ('.implode(',',array_keys($array)).
+            ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
 
     }
 

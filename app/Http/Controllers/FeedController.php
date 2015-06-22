@@ -46,16 +46,15 @@ class FeedController extends Controller {
                         $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
 
                         $raw_story = array();
-                        $raw_story['id'] = ' ';
                         if(count($matches) > 0){
                             $raw_story['image_url'] = $matches[0];
                         }
                         $raw_story['title'] = "".$str['title']."";
                         $raw_story['pub_id'] = $feed['pub_id'];
                         $raw_story['feed_id'] = $feed['id'];
-                        $raw_story['description'] = FeedController::clean(strip_tags($str['description']));
-                        $raw_story['content'] = FeedController::clean(strip_tags($str['description']));
-                        $raw_story['url'] = $str['link'];
+                        $raw_story['description'] = "".FeedController::clean(strip_tags($str['description']))."";
+                        $raw_story['content'] = "".FeedController::clean(strip_tags($str['description']))."";
+                        $raw_story['url'] = "".$str['link']."";
                         $raw_story['pub_date'] = strtotime($str['pubDate']);
                         $raw_story['insert_date'] = time();
 
@@ -104,7 +103,7 @@ class FeedController extends Controller {
 
 
     private function clean($string){
-        return preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+        return preg_replace('/[^A-Za-z0-9\-]/', ' ', $string);
     }
 
 
