@@ -22,20 +22,20 @@
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#">NEWSPEPA</a></h1>
+          <h1><a href="index">NEWSPEPA</a></h1>
         </li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Categories</span></a></li>
+        <li class="toggle-topbar menu-icon"><a href="index"><span>Categories</span></a></li>
       </ul>
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
           <li class="active"><a href="#">Top stories</a></li>
-          <li><a href="categories">Entertainment</a></li>
-          <li><a href="categories">Politics</a></li>
-          <li><a href="categories">Sports</a></li>
-          <li><a href="categories">Nigeria</a></li>
-          <li><a href="categories">Metro</a></li>
+          <li><a href="#">Entertainment</a></li>
+          <li><a href="#">Politics</a></li>
+          <li><a href="#">Sports</a></li>
+          <li><a href="#">Nigeria</a></li>
+          <li><a href="#">Metro</a></li>
 
           <li class="has-form">
             <div class="row collapse">
@@ -107,10 +107,10 @@
               {{--<div class="large-2 columns small-3"><img src="http://placehold.it/100x100&text=[img]"/></div>--}}
               <div class="large-12 columns small-12">
                   <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-                  <ul class="inline-list">
-                      <li><a href="">Reply</a></li>
-                      <li><a href="">Share</a></li>
-                  </ul>
+                  {{--<ul class="inline-list">--}}
+                      {{--<li><a href="">Reply</a></li>--}}
+                      {{--<li><a href="">Share</a></li>--}}
+                  {{--</ul>--}}
               </div>
           </div>
 
@@ -130,16 +130,6 @@
               <div class="large-5 columns">
                   <p>© NewsPepa.</p>
               </div>
-              {{--<div class="large-7 columns">--}}
-                  {{--<ul class="inline-list right">--}}
-                      {{--<li><a href="#">Section 1</a></li>--}}
-                      {{--<li><a href="#">Section 2</a></li>--}}
-                      {{--<li><a href="#">Section 3</a></li>--}}
-                      {{--<li><a href="#">Section 4</a></li>--}}
-                      {{--<li><a href="#">Section 5</a></li>--}}
-                      {{--<li><a href="#">Section 6</a></li>--}}
-                  {{--</ul>--}}
-              {{--</div>--}}
           </div>
       </div>
   </footer>
