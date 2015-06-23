@@ -21,4 +21,4 @@ Route::get('/categories', function()
 // handles the fetch feeds request
 Route::get('feeds', 'FeedController@fetchFeeds');
 
-Route::get('test', 'FeedController@storeImage()');
+Route::get('test', 'FeedController@test');

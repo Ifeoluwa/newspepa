@@ -14,6 +14,7 @@ use App\Feed;
 use App\Http\Requests\Request;
 use App\RawStory;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use Nathanmac\Utilities\Parser\Parser;
 use PhpSpec\Exception\Example\ErrorException;
 
@@ -29,6 +30,7 @@ class FeedController extends Controller {
 
     // handles the actual fetching of feeds from the feed sources
     public function fetchFeeds(){
+        set_time_limit(0);
         $feeds = FeedController::getFeedSources();
         $parser = new Parser();
 
@@ -39,7 +41,7 @@ class FeedController extends Controller {
                 $int_interval = $date->getTimestamp() + ($feed['refresh_period'] * 60);
                 //check if feed should be fetched based on last fetched time
                 if ($int_interval < time()){
-                    $content = FeedController::checkFeedSource($feed['url']);
+                    $content = $this->checkFeedSource($feed['url']);
                     if(!$content) {
                         continue;
                     }
@@ -51,19 +53,23 @@ class FeedController extends Controller {
 
                         $raw_story = array();
                         if(count($matches) > 0){
-                            $raw_story['image_url'] = FeedController::getImageUrl($image_match);
+                            FeedController::storeImage($this->getImageUrl($matches[0]));
+                            $raw_story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
                         }
                         $raw_story['title'] = "".$str['title']."";
                         $raw_story['pub_id'] = $feed['pub_id'];
                         $raw_story['feed_id'] = $feed['id'];
-                        $raw_story['description'] = "".FeedController::clean(strip_tags($str['description']))."";
-                        $raw_story['content'] = "".FeedController::clean(strip_tags($str['description']))."";
+                        $raw_story['category_id'] = $feed['category_id'];
+                        $raw_story['description'] = "".$this->clean(strip_tags($str['description']))."";
+                        $raw_story['content'] = "".$this->clean(strip_tags($str['description']))."";
                         $raw_story['url'] = "".$str['link']."";
                         $raw_story['pub_date'] = strtotime($str['pubDate']);
                         $raw_story['insert_date'] = time();
 
-
+                        // Inserts the raw story into the database
                         RawStory::insertIgnore($raw_story);
+                        //Updates the last time the feed was accessed
+                        Feed::updateFeed($feed['id'], time());
                     }
                 }
 
@@ -71,9 +77,7 @@ class FeedController extends Controller {
 
         }
 
-    }
-
-    private function updateFeed(){
+        set_time_limit(120);
 
     }
 
@@ -113,30 +117,38 @@ class FeedController extends Controller {
 
 
 //    Gets the image URL from the html img tag
-    private function getImageUrl($html){
+    public function getImageUrl($html){
         $doc = new \DOMDocument();
-        $doc->loadHTML($html);
+        $doc->loadHTML("".$html);
         $tag = $doc->getElementsByTagName("img");
+
         $image_url = $tag->item(0)->getAttribute("src");
         return $image_url;
     }
 
     // Stores story images on local server
-    private function storeImage(){
+    public function storeImage($image_url){
         try {
-            $image_content = file_get_contents("http://leadership.ng/wp-content/uploads/2014/01/nasir_el-rufai-300x225.jpg");
-            $fp = fopen("story_images/image.jpg", "w");
+            $image_content = file_get_contents($image_url);
+            $fp = fopen("story_images/".$this->getImageName($image_url), "w");
             fwrite($fp, $image_content);
             fclose($fp);
-            echo "echo";
         }catch(ErrorException $ex){
             echo "error";
         }
 
     }
 
+    // Gets image name from the url
+    public  function getImageName($image_url){
+        $a = explode("/", $image_url);
+        $image_name = $a[count($a) - 1];
+        return $image_name;
+    }
+
     public function test(){
-        FeedController::storeImage();
+        $this->fetchFeeds();
+        echo "done";
     }
 
 
