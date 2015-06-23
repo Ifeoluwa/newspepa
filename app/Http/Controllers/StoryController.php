@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Support\Facades\DB;
+
 class StoryController extends Controller {
 
 
@@ -16,5 +18,13 @@ class StoryController extends Controller {
     public function addStory(){
 
     }
+
+    public function getTimelineStories(){
+
+    }
+
+
+
+
 
 } 
