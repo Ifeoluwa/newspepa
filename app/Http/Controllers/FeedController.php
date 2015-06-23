@@ -11,8 +11,11 @@ namespace App\Http\Controllers;
 //Handles all actions to be performed on feeds
 
 use App\Feed;
+use App\Http\Requests\Request;
 use App\RawStory;
+use Illuminate\Http\Response;
 use Nathanmac\Utilities\Parser\Parser;
+use PhpSpec\Exception\Example\ErrorException;
 
 
 class FeedController extends Controller {
@@ -43,11 +46,12 @@ class FeedController extends Controller {
                     $stories = $parser->xml($content);
 
                     foreach ($stories['channel']['item'] as $str){
+
                         $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
 
                         $raw_story = array();
                         if(count($matches) > 0){
-                            $raw_story['image_url'] = $matches[0];
+                            $raw_story['image_url'] = FeedController::getImageUrl($image_match);
                         }
                         $raw_story['title'] = "".$str['title']."";
                         $raw_story['pub_id'] = $feed['pub_id'];
@@ -102,9 +106,40 @@ class FeedController extends Controller {
     }
 
 
+    // removes some unwanted characters
     private function clean($string){
         return preg_replace('/[^A-Za-z0-9\-]/', ' ', $string);
     }
+
+
+//    Gets the image URL from the html img tag
+    private function getImageUrl($html){
+        $doc = new \DOMDocument();
+        $doc->loadHTML($html);
+        $tag = $doc->getElementsByTagName("img");
+        $image_url = $tag->item(0)->getAttribute("src");
+        return $image_url;
+    }
+
+    // Stores story images on local server
+    private function storeImage(){
+        try {
+            $image_content = file_get_contents("http://leadership.ng/wp-content/uploads/2014/01/nasir_el-rufai-300x225.jpg");
+            $fp = fopen("story_images/image.jpg", "w");
+            fwrite($fp, $image_content);
+            fclose($fp);
+            echo "echo";
+        }catch(ErrorException $ex){
+            echo "error";
+        }
+
+    }
+
+    public function test(){
+        FeedController::storeImage();
+    }
+
+
 
 
 
