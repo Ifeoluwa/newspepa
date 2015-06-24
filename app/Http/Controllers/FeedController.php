@@ -133,7 +133,7 @@ class FeedController extends Controller {
             $fp = fopen("story_images/".$this->getImageName($image_url), "w");
             fwrite($fp, $image_content);
             fclose($fp);
-        }catch(ErrorException $ex){
+        }catch(\ErrorException $ex){
             echo "error";
         }
 
