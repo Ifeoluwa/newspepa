@@ -11,4 +11,10 @@ namespace App\Http\Controllers;
 
 class CategoryController extends Controller {
 
+
+    //get stories by category
+    public function getStoriesByCategory($category_id){
+
+    }
+
 } 
