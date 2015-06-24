@@ -35,7 +35,10 @@ Route::get('/fullStory2', function()
 {
     return view('fullStory2');
 });
+
 // handles the fetch feeds request
 Route::get('feeds', 'FeedController@fetchFeeds');
-
+//Handles the various unit test
 Route::get('test', 'FeedController@test');
+
+
