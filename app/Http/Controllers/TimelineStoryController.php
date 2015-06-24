@@ -6,17 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class TimelineStoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the timeline stories.
      *
      * @return Response
      */
     public function index()
     {
         //
+        $timeline_stories = DB::table('_stories')->limit(10)->orderBy('pub_date', 'desc')->get();
+        return view('index')->with('stories', $timeline_stories);
+
     }
 
     /**
