@@ -3,7 +3,6 @@
 @section('title', 'NewsPepa|Welcome')
 @show
 
-
 @section('header_content')
 @endsection
 

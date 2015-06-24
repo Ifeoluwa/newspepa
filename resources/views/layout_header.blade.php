@@ -34,17 +34,17 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="active"><a href="index.php">Top stories</a></li>
-          <li><a href="category">Entertainment</a></li>
-          <li><a href="category.php">Politics</a></li>
-          <li><a href="category.php">Sports</a></li>
-          <li><a href="category.php">Nigeria</a></li>
-          <li><a href="category.php">Metro</a></li>
+          <li class="active"><a href="{{url('/')}}">Top stories</a></li>
+          <li><a href="{{url('entertainment')}}">Entertainment</a></li>
+          <li><a href="{{url('politics')}}">Politics</a></li>
+          <li><a href="{{url('sports')}}">Sports</a></li>
+          <li><a href="{{url('nigeria')}}">Nigeria</a></li>
+          <li><a href="{{url('metro')}}">Metro</a></li>
 
           <li class="has-form">
             <div class="row collapse">
               <div class="large-8 small-9 columns">
-                <input type="text" placeholder="Find Stuff">
+                <input type="text" placeholder="What's happening?">
               </div>
               <div class="large-4 small-3 columns">
                 <a href="#" class="alert button expand">Search</a>
