@@ -1,11 +1,7 @@
-@extends('layout_header')
+@extends('vendor.header_footer')
 
 @section('title', 'NewsPepa|Welcome')
 @show
-
-@section('header_content')
-@endsection
-
 
   <div class="row news-item" >
     @yield('news_content')

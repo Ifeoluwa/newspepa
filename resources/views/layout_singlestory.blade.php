@@ -1,4 +1,4 @@
-@extends('layout_header')
+@extends('vendor.header_footer')
 
 @section('title', 'NewsPepa|FullStory')
 @section('header_content')

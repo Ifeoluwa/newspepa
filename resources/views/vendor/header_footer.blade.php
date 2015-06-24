@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NewsPepa |App Name - @yield('title')</title>
+    <title> @yield('title')</title>
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/app.css" />
 
@@ -22,7 +22,7 @@
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#">NEWSPEPA</a></h1>
+          <h1><a href="index">NEWSPEPA</a></h1>
         </li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Categories</span></a></li>
@@ -31,11 +31,11 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <li class="active"><a href="#">Top stories</a></li>
-          <li><a href="categories">Entertainment</a></li>
-          <li><a href="categories">Politics</a></li>
-          <li><a href="categories">Sports</a></li>
-          <li><a href="categories">Nigeria</a></li>
-          <li><a href="categories">Metro</a></li>
+          <li><a href="category">Entertainment</a></li>
+          <li><a href="category">Politics</a></li>
+          <li><a href="category">Sports</a></li>
+          <li><a href="category">Nigeria</a></li>
+          <li><a href="category">Metro</a></li>
 
           <li class="has-form">
             <div class="row collapse">
@@ -68,6 +68,7 @@
 
 
  <footer class="row">
+ @section('footer_content')
       <div class="large-12 columns">
           <hr/>
           <div class="row">
@@ -87,3 +88,10 @@
           </div>
       </div>
   </footer>
+
+  <script src="ui_newspaper/js/vendor/jquery.js"></script>
+    <script src="ui_newspaper/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+      </script>
+</body></html>
