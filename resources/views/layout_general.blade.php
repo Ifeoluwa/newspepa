@@ -8,22 +8,23 @@
 @endsection
 
 
-  <div class="row news-item">
+  <div class="row news-item" >
     @yield('news_content')
       <div class="large-12 small-12 columns">
           <div class="row panel radius">
-              <div class="large-6 small-12 columns"><a href="fullStory"><img width="300" height="169" src="http://www.techsuplex.com/wp-content/uploads/2015/04/Lenovo-Launch-2-300x169.jpg"/></a></div>
-              <div class="large-6 small-12 columns">
-                  <p><a href="fullStory"><strong>Lenovo launches three smartphones: the P70, S90 and S60 in Nigeria</strong></a></p>
+          @yield('mostImportant')
+              <div class="large-12 small-12 columns">@yield('image_url')</div>
+              <div class="large-12 small-12 columns">@yield('story_title')
               </div>
               {{--img src="http://placehold.it/300x300&text=[img]"--}}
-
+             <span class="label">@yield('time_release')</span>
           </div>
           <br>
+
           <div class="row panel radius">
-              <div class="large-3 small-4 columns"><a href="fullStory2"><img width="300" height="194" src="http://www.techsuplex.com/wp-content/uploads/2015/04/g4-fb-300x194.jpg"/></a></div>
-              <div class="large-9 small-8 columns">
-                   <p><a href="fullStory2"><strong>LG unveils the LG G4</strong></a></p>
+          @yield('lessImportant')
+              <div class="large-5 small-6 columns">@yield('small_image_url')</div>
+              <div class="large-7 small-6 columns">@yield('story_title_here')
                   {{--<ul class="inline-list">--}}
                       {{--<li><a href="">Reply</a></li>--}}
                       {{--<li><a href="">Share</a></li>--}}
@@ -40,6 +41,7 @@
                       {{--<div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>--}}
                   {{--</div>--}}
               </div>
+              <span class="label">@yield('time_release')</span>
           </div>
           <br/>
 

@@ -13,6 +13,26 @@
 .top-bar .toggle-topbar a{
     text-transform: none;
 }
+.timecount{
+    float: right;
+    margin-right: -4px;
+    border-color:#2ca02c;
+    padding-right: 0.9375rem;
+}
+.storyelements{
+    margin-bottom: -16px;
+    padding: 8px 0 16px;
+    bottom: 0;
+    clear: left;
+}
+.label{
+    margin-bottom: -12px
+    float:right;
+    font-size:0.8rem;
+}
+strong{
+    font-size: 1.5rem;
+}
 
 /*#search {*/
     /*position: relative;*/
