@@ -12,5 +12,30 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get('/category', function()
+{
+    return view('category');
+});
+Route::get('blade', function () {
+    return view('category');
+});
+Route::get('/fullStory', function()
+{
+    return view('fullStory');
+});
+
+Route::get('/index', function()
+{
+    return view('index');
+});
+
+Route::get('/fullStory2', function()
+{
+    return view('fullStory2');
+});
+// handles the fetch feeds request
+Route::get('feeds', 'FeedController@fetchFeeds');
+
+Route::get('test', 'FeedController@test');
