@@ -21,3 +21,11 @@
 @section('time_release')
 5hrs ago
 @endsection
+
+@section('noImage')
+@section('story_title')
+<p><a href="fullStory3"><strong>Choosing Between A Chromebook And A Large Android Tablet</strong></a></p>
+@endsection
+@section('time_release')
+7hrs ago
+@endsection

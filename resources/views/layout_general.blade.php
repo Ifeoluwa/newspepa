@@ -50,14 +50,15 @@
 
 
           <div class="row panel radius">
+          @yield('noImage')
               {{--<div class="large-2 columns small-3"><img src="http://placehold.it/100x100&text=[img]"/></div>--}}
-              <div class="large-12 columns small-12">
-                  <p><a href="fullStory">Some Person said:Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</a></p>
+              <div class="large-12 columns small-12">@yield('story_title')
                   {{--<ul class="inline-list">--}}
                       {{--<li><a href="">Reply</a></li>--}}
                       {{--<li><a href="">Share</a></li>--}}
                   {{--</ul>--}}
               </div>
+              <span class="label">@yield('time_release')</span>
           </div>
 
 
