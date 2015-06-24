@@ -1,6 +1,6 @@
- <!doctype html>
- <html class="no-js" lang="en">
- <body>
+ {{--<!doctype html>--}}
+ {{--<html class="no-js" lang="en">--}}
+ {{--<body>--}}
  <footer class="row">
     @yield ('footer_content')
       <div class="large-12 columns">
@@ -22,10 +22,8 @@
           </div>
       </div>
   </footer>
-  <script src="ui_newspaper/js/vendor/jquery.js"></script>
-  <script src="ui_newspaper/js/foundation.min.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
+  {{--<script src="ui_newspaper/js/vendor/jquery.js"></script>--}}
+  {{--<script src="ui_newspaper/js/foundation.min.js"></script>--}}
+
     </body>
   </html>

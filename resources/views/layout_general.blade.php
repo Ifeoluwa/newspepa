@@ -12,17 +12,18 @@
     @yield('news_content')
       <div class="large-12 small-12 columns">
           <div class="row panel radius">
-              <div class="large-6 small-12 columns"><a href="fullStory"><img src="http://placehold.it/300x300&text=[img]"/></a></div>
+              <div class="large-6 small-12 columns"><a href="fullStory"><img width="300" height="169" src="http://www.techsuplex.com/wp-content/uploads/2015/04/Lenovo-Launch-2-300x169.jpg"/></a></div>
               <div class="large-6 small-12 columns">
-                  <p><a href="fullStory"><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation.</a></p>
+                  <p><a href="fullStory"><strong>Lenovo launches three smartphones: the P70, S90 and S60 in Nigeria</strong></a></p>
               </div>
+              {{--img src="http://placehold.it/300x300&text=[img]"--}}
 
           </div>
           <br>
           <div class="row panel radius">
-              <div class="large-3 small-4 columns"><a href="fullStory"><img src="http://placehold.it/100x100&text=[img]"/></a></div>
+              <div class="large-3 small-4 columns"><a href="fullStory2"><img width="300" height="194" src="http://www.techsuplex.com/wp-content/uploads/2015/04/g4-fb-300x194.jpg"/></a></div>
               <div class="large-9 small-8 columns">
-                   <p><a href="fullStory"><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation.</a></p>
+                   <p><a href="fullStory2"><strong>LG unveils the LG G4</strong></a></p>
                   {{--<ul class="inline-list">--}}
                       {{--<li><a href="">Reply</a></li>--}}
                       {{--<li><a href="">Share</a></li>--}}

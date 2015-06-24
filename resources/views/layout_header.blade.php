@@ -1,11 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en">
+@yield ('header_content')
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> @yield('title')</title>
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/app.css" />
+    <script src="ui_newspaper/js/vendor/jquery.js"></script>
+      <script src="ui_newspaper/js/foundation.min.js"></script>
 
   </head>
   <body>
@@ -19,7 +22,7 @@
       {{--</div>--}}
     {{--</div>--}}
     <div class="fixed">
-    @yield ('header_content')
+
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
       <ul class="title-area">
         <li class="name">
@@ -31,12 +34,12 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="active"><a href="index">Top stories</a></li>
+          <li class="active"><a href="index.php">Top stories</a></li>
           <li><a href="category">Entertainment</a></li>
-          <li><a href="category">Politics</a></li>
-          <li><a href="category">Sports</a></li>
-          <li><a href="category">Nigeria</a></li>
-          <li><a href="category">Metro</a></li>
+          <li><a href="category.php">Politics</a></li>
+          <li><a href="category.php">Sports</a></li>
+          <li><a href="category.php">Nigeria</a></li>
+          <li><a href="category.php">Metro</a></li>
 
           <li class="has-form">
             <div class="row collapse">
@@ -67,5 +70,8 @@
     </nav>
     </div>
 
+  <script>
+    $(document).foundation();
+  </script>
  </body>
  </html>
