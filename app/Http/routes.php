@@ -11,13 +11,37 @@
 |
 */
 
+//handles the home page request which displays the top stories
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/category', function()
+
+//Handles the various category request
+Route::get('entertainment', function()
 {
     return view('category');
 });
+Route::get('nigeria', function()
+{
+    return view('category');
+});
+
+Route::get('metro', function()
+{
+    return view('category');
+});
+
+Route::get('politics', function()
+{
+    return view('category');
+});
+
+Route::get('sports', function()
+{
+    return view('category');
+});
+
+
 Route::get('blade', function () {
     return view('category');
 });

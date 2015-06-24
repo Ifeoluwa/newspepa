@@ -1,4 +1,4 @@
-@extends('layout_general')
+@extends('layout')
 @section ('title')
 @parent
 @endsection

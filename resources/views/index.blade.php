@@ -1,4 +1,6 @@
-@extends('layout_general')
+@extends('layout')
+@section('title', 'Top Stories')
+@stop
 @section('news_content')
 @section('moreImportant')
 @section('image_url')
