@@ -30,16 +30,16 @@
           <li><a href="{{url('nigeria')}}">Nigeria</a></li>
           <li><a href="{{url('metro')}}">Metro</a></li>
 
-          <li class="has-form">
-            <div class="row collapse">
-              <div class="large-8 small-9 columns">
-                <input type="text" placeholder="What's happening?">
-              </div>
-              <div class="large-4 small-3 columns">
-                <a href="#" class="alert button expand">Search</a>
-              </div>
-            </div>
-          </li>
+          {{--<li class="has-form">--}}
+            {{--<div class="row collapse">--}}
+              {{--<div class="large-8 small-9 columns">--}}
+                {{--<input type="text" placeholder="What's happening?">--}}
+              {{--</div>--}}
+              {{--<div class="large-4 small-3 columns">--}}
+                {{--<a href="#" class="alert button expand">Search</a>--}}
+              {{--</div>--}}
+            {{--</div>--}}
+          {{--</li>--}}
         </ul>
       </section>
     </nav>
