@@ -58,10 +58,9 @@
 
 
     <div class="row news-item" >
-        @yield('news_content')
+        {{--@yield('news_content')--}}
           <div class="large-12 small-12 columns">
               <div class="row panel radius">
-              @yield('mostImportant')
                   <div class="large-12 small-12 columns">@yield('image_url')</div>
                   <div class="large-12 small-12 columns">@yield('story_title')
                   </div>
@@ -71,9 +70,8 @@
               <br>
 
               <div class="row panel radius">
-              @yield('lessImportant')
-                  <div class="large-5 small-6 columns">@yield('small_image_url')</div>
-                  <div class="large-7 small-6 columns">@yield('story_title_here')
+                  <div class="large-6 small-6 columns">@yield('small_image_url')</div>
+                  <div class="large-6 small-6 columns">@yield('story_title_here')
                       {{--<ul class="inline-list">--}}
                           {{--<li><a href="">Reply</a></li>--}}
                           {{--<li><a href="">Share</a></li>--}}
@@ -99,15 +97,15 @@
 
 
               <div class="row panel radius">
-              @yield('noImage')
+
                   {{--<div class="large-2 columns small-3"><img src="http://placehold.it/100x100&text=[img]"/></div>--}}
-                  <div class="large-12 columns small-12">@yield('story_title')
+                  <div class="large-12 columns small-12">@yield('noImage_storyTitle')
                       {{--<ul class="inline-list">--}}
                           {{--<li><a href="">Reply</a></li>--}}
                           {{--<li><a href="">Share</a></li>--}}
                       {{--</ul>--}}
                   </div>
-                  <span class="label">@yield('time_release')</span>
+                  <span class="label">@yield('noImage_releaseTime')</span>
               </div>
 
 
