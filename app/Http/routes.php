@@ -11,10 +11,8 @@
 |
 */
 
-//handles the home page request which displays the top stories
-Route::get('/', function () {
-    return view('index');
-});
+//handles the home page request which displays the top stories/Timeline stories
+Route::get('/', 'TimelineController@index');
 
 //Handles the various category request
 Route::get('entertainment', function()
@@ -66,4 +64,4 @@ Route::get('/fullStory3', function()
 // handles the fetch feeds request
 Route::get('feeds', 'FeedController@fetchFeeds');
 
-Route::get('test', 'FeedController@test');
+Route::get('test', 'TimelineStoryController@test');

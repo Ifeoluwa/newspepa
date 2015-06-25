@@ -23,7 +23,7 @@
       </div>
   </footer>
   {{--<script src="ui_newspaper/js/vendor/jquery.js"></script>--}}
-  {{--<script src="ui_newspaper/js/foundation.min.js"></script>--}}
+           {{--<script src="ui_newspaper/js/foundation.min.js"></script>--}}
 
-    </body>
-  </html>
+             </body>
+           </html>

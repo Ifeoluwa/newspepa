@@ -1,8 +1,6 @@
-@extends('vendor.header_footer')
+@extends('layout')
 
-@section('title', 'NewsPepa|FullStory')
-@section('header_content')
-@endsection
+@section('title', 'NewsPepa | FullStory')
 
 <div class="row news-item">
     @yield('story_container')
@@ -17,6 +15,3 @@
        </div>
        </div>
 </div>
-@extends('layout_footer')
-@section('footer_content')
-@endsection
