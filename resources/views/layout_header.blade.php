@@ -6,6 +6,8 @@
     <title> @yield('title')</title>
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/app.css" />
+    <script src="ui_newspaper/js/vendor/jquery.js"></script>
+      <script src="ui_newspaper/js/foundation.min.js"></script>
 
   </head>
   <body>
@@ -18,7 +20,8 @@
         {{--</div>--}}
       {{--</div>--}}
     {{--</div>--}}
-    <div class="fixed sticky">
+    <div class="fixed">
+
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
       <ul class="title-area">
         <li class="name">
@@ -30,17 +33,17 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li class="active"><a href="#">Top stories</a></li>
-          <li><a href="category">Entertainment</a></li>
-          <li><a href="category">Politics</a></li>
-          <li><a href="category">Sports</a></li>
-          <li><a href="category">Nigeria</a></li>
-          <li><a href="category">Metro</a></li>
+          <li class="active"><a href="{{url('/')}}">Top stories</a></li>
+          <li><a href="{{url('entertainment')}}">Entertainment</a></li>
+          <li><a href="{{url('politics')}}">Politics</a></li>
+          <li><a href="{{url('sports')}}">Sports</a></li>
+          <li><a href="{{url('nigeria')}}">Nigeria</a></li>
+          <li><a href="{{url('metro')}}">Metro</a></li>
 
           <li class="has-form">
             <div class="row collapse">
               <div class="large-8 small-9 columns">
-                <input type="text" placeholder="Find Stuff">
+                <input type="text" placeholder="What's happening?">
               </div>
               <div class="large-4 small-3 columns">
                 <a href="#" class="alert button expand">Search</a>
@@ -66,32 +69,8 @@
     </nav>
     </div>
 
-
- <footer class="row">
- @section('footer_content')
-      <div class="large-12 columns">
-          <hr/>
-          <div class="row">
-              <div class="large-5 columns">
-                  <p>© NewsPepa.</p>
-              </div>
-              {{--<div class="large-7 columns">--}}
-                  {{--<ul class="inline-list right">--}}
-                      {{--<li><a href="#">Section 1</a></li>--}}
-                      {{--<li><a href="#">Section 2</a></li>--}}
-                      {{--<li><a href="#">Section 3</a></li>--}}
-                      {{--<li><a href="#">Section 4</a></li>--}}
-                      {{--<li><a href="#">Section 5</a></li>--}}
-                      {{--<li><a href="#">Section 6</a></li>--}}
-                  {{--</ul>--}}
-              {{--</div>--}}
-          </div>
-      </div>
-  </footer>
-
-  <script src="ui_newspaper/js/vendor/jquery.js"></script>
-    <script src="ui_newspaper/js/foundation.min.js"></script>
-    <script>
-        $(document).foundation();
-      </script>
-</body></html>
+  <script>
+    $(document).foundation();
+  </script>
+ </body>
+ </html>
