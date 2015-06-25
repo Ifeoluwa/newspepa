@@ -12,7 +12,7 @@
 */
 
 //handles the home page request which displays the top stories/Timeline stories
-Route::get('/', 'TimelineController@index');
+Route::get('/', 'TimelineStoryController@index');
 
 //Handles the various category request
 Route::get('entertainment', function()

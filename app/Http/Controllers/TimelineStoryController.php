@@ -24,8 +24,8 @@ class TimelineStoryController extends Controller
         //
         $timeline_stories = array();
         $timeline_stories['important'] = $this->getImportantStory();
-        $timeline_stories['others'] = DB::table('timeline_stories')->limit(10)->orderBy('pub_date', 'desc')->orderBy('no_of reads', 'desc')->get();
-        return view('index', array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
+        $timeline_stories['others'] = DB::table('timeline_stories')->limit(10)->orderBy('pub_date', 'desc')->orderBy('no_of_reads', 'desc')->get();
+        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
 
     }
 
