@@ -41,10 +41,22 @@
             </div>
           </li>
         </ul>
-
       </section>
     </nav>
-    </div>
+
+
+     <div class="large-12 small-12 columns">
+     <div class="large-10 small-8 columns"><input type="search" results="7" placeholder="What's happening?" name="searchbox">
+     </div>
+     <div class="large-2 small-4 columns"><a href="#" class="alert button expand">Search</a></div>
+     </div>
+
+     </div>
+
+     {{--<div class="large-4 small-4 columns"><input type="submit" value="find"></div>--}}
+
+
+
     <div class="row news-item" >
         @yield('news_content')
           <div class="large-12 small-12 columns">
