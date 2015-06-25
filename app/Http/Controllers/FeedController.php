@@ -118,12 +118,17 @@ class FeedController extends Controller {
 
 //    Gets the image URL from the html img tag
     public function getImageUrl($html){
-        $doc = new \DOMDocument();
-        $doc->loadHTML("".$html);
-        $tag = $doc->getElementsByTagName("img");
+        try{
+            $doc = new \DOMDocument();
+            $doc->loadHTML("".$html);
+            $tag = $doc->getElementsByTagName("img");
 
-        $image_url = $tag->item(0)->getAttribute("src");
-        return $image_url;
+            $image_url = $tag->item(0)->getAttribute("src");
+            return $image_url;
+        }catch (\ErrorException $ex){
+
+        }
+
     }
 
     // Stores story images on local server

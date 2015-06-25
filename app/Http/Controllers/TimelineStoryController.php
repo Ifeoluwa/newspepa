@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Publisher;
+use App\TimelineStory;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,11 +17,15 @@ class TimelineStoryController extends Controller
      *
      * @return Response
      */
+
+
     public function index()
     {
         //
-        $timeline_stories = DB::table('_stories')->limit(10)->orderBy('pub_date', 'desc')->get();
-        return view('index')->with('stories', $timeline_stories);
+        $timeline_stories = array();
+        $timeline_stories['important'] = $this->getImportantStory();
+        $timeline_stories['others'] = DB::table('timeline_stories')->limit(10)->orderBy('pub_date', 'desc')->orderBy('no_of reads', 'desc')->get();
+        return view('index', array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
 
     }
 
@@ -28,62 +34,15 @@ class TimelineStoryController extends Controller
      *
      * @return Response
      */
-    public function create()
-    {
-        //
+
+    public function getImportantStory(){
+        return DB::table('timeline_stories')->select(DB::raw('id, title, description, content, url, image_url, max(no_of_reads) as no_of_reads'))
+            ->orderBy('pub_date', 'desc')->where('status_id', 1)->get();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store()
-    {
-        //
+
+    public function test(){
+        print_r(json_encode($this->index()));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

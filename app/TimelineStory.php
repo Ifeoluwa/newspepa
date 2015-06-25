@@ -16,4 +16,9 @@ class TimelineStory extends Model
     public function scopeActive($query){
         return $query->where('status_id', 1);
     }
+
+    //Gets the most important story based on the number of reads and link-outs
+    public function scopeImportant($query){
+        return $query->max('reads');
+    }
 }
