@@ -62,6 +62,6 @@ Route::get('/fullStory3', function()
     return view('fullStory3');
 });
 // handles the fetch feeds request
-Route::get('feeds', 'FeedController@fetchFeeds');
+Route::get('feeds', 'FeedController@test');
 
-Route::get('test', 'TimelineStoryController@test');
+Route::get('test', 'FeedController@test');
