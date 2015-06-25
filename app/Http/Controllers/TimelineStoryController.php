@@ -36,7 +36,7 @@ class TimelineStoryController extends Controller
      */
 
     public function getImportantStory(){
-        return DB::table('timeline_stories')->select(DB::raw('id, title, description, content, url, image_url, max(no_of_reads) as no_of_reads'))
+        return DB::table('timeline_stories')->select(DB::raw('id, title, description, category_id, pub_id content, url, image_url, max(no_of_reads) as no_of_reads'))
             ->orderBy('pub_date', 'desc')->where('status_id', 1)->get();
     }
 
