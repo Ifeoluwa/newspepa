@@ -23,4 +23,19 @@ class Story extends Model
 
         return $matches;
     }
+
+
+    public static function insertIgnore($array){
+        $a = new static();
+        if($a->timestamps){
+            $now = \Carbon\Carbon::now();
+            $array['created_date'] = $now;
+            $array['modified_date'] = $now;
+        }
+
+        DB::insert('INSERT IGNORE INTO stories ('.implode(',',array_keys($array)).
+            ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
+
+    }
+
 }

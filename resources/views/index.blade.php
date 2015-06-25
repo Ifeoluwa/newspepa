@@ -10,7 +10,11 @@
                   </div>
                   <div class="large-12 small-12 columns">{{$important_story['title']}}
                   </div>
-                  <span class="label">{{$important_story['pub_date']}}</span>
+                  <?php $date1 = new DateTime(strtotime($important_story['pub_date']));
+                        $date2 = new DateTime();
+                        $diff = $date1->diff($date2);
+                   ?>
+                  <span class="label">{{$diff->format('%a Day and %h hours')}}</span>
               </div>
               <br>
     @endforeach
@@ -35,18 +39,18 @@
 @stop
 
 
-@section('stories_with_no_images')
-    @foreach($data['timeline_stories']['no_image'] as $no_image_story)
-              <div class="row panel radius">
-                  <div class="large-12 small-12 columns">
-                    <a href="fullStory2"><img width="300" height="194" src="{{$no_image_story['image_url']}}"/></a>
-                  </div>
-                  <div class="large-12 small-12 columns">
-                  <p><a href="fullStory2"><strong>{{$no_image_story['title']}}</strong></a></p>
+{{--@section('stories_with_no_images')--}}
+    {{--@foreach($data['timeline_stories']['no_image'] as $no_image_story)--}}
+              {{--<div class="row panel radius">--}}
+                  {{--<div class="large-12 small-12 columns">--}}
+                    {{--<a href="fullStory2"><img width="300" height="194" src="{{$no_image_story['image_url']}}"/></a>--}}
+                  {{--</div>--}}
+                  {{--<div class="large-12 small-12 columns">--}}
+                  {{--<p><a href="fullStory2"><strong>{{$no_image_story['title']}}</strong></a></p>--}}
 
-                  </div>
-                  <span class="label">{{$no_image_story['pub_date']}}</span>
-              </div>
-              <br>
-    @endforeach
-@stop
+                  {{--</div>--}}
+                  {{--<span class="label">{{$no_image_story['pub_date']}}</span>--}}
+              {{--</div>--}}
+              {{--<br>--}}
+    {{--@endforeach--}}
+{{--@stop--}}
