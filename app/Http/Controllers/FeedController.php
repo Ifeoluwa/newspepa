@@ -12,7 +12,7 @@ namespace App\Http\Controllers;
 
 use App\Feed;
 use App\Http\Requests\Request;
-use App\RawStory;
+use App\Story;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Nathanmac\Utilities\Parser\Parser;
@@ -64,7 +64,7 @@ class FeedController extends Controller {
                         $story['content'] = "".$this->clean(strip_tags($str['description']))."";
                         $story['url'] = "".$str['link']."";
                         $story['pub_date'] = strtotime($str['pubDate']);
-                        $story['insert_date'] = time();
+
 
                         // Inserts the raw story into the database
                         Story::insertIgnore($story);
