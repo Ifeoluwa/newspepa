@@ -5,6 +5,7 @@
 
 .panel{
     background: #FFFFFF;
+
 }
 .panel h1{
     margin-left: 3rem;
@@ -26,12 +27,33 @@
     clear: left;
 }
 .label{
-    margin-bottom: -12px
+    margin-bottom: -3rem;
     float:right;
-    font-size:0.8rem;
+    font-size:0.4rem;
+    background:none;
+    color:#4C9ED9;
+    float:right;
+    position:relative;
 }
 strong{
-    font-size: 1.0rem;
+    font-size: 0.9rem;
+    font-weight:normal;
+    line-height: normal;
+    /*margin-left:-3rem;*/
+
+}
+a {
+    color:#000
+}
+
+p{
+    line-height:normal;
+}
+img{
+    margin-right: -35px;
+    /*padding-left: 0.9375rem;*/
+    /*padding-right:0.9375rem*/
+    /*margin-left: 10px;*/
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
