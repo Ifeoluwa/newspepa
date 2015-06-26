@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Publisher;
 use App\TimelineStory;
 use Illuminate\Http\Request;
@@ -9,45 +10,60 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class TimelineStoryController extends Controller
 {
-    /**
-     * Display a listing of the timeline stories.
-     *
-     * @return Response
-     */
 
 
+    public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
+
+
+/**
+* Display a listing of the timeline stories.
+*
+* @return Response
+*/
     public function index()
     {
         //
         $timeline_stories = array();
-        $timeline_stories['important'] = $this->getImportantStory();
-        $timeline_stories['less_important'] = $this->getLessImportantStories();
-        $timeline_stories['no_image'] = $this->getNoImageStories();
+        $timeline_stories['important'] = TimelineStory::importantStories();
+        $timeline_stories['less_important'] = TimelineStory::lessImportantStories();
+        $timeline_stories['no_image'] = TimelineStory::noImageStories();
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
 
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Returns the view for the category requested
      *
      * @return Response
      */
+    public function getStoriesByCat($category_name){
+        $category_stories = array();
+        $category_id = Category::$news_category[$category_name];
+        $category_stories['category_name'] = $this->category_names[$category_id];
+        $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
 
-    public function getImportantStory(){
-        return DB::table('timeline_stories')->select(DB::raw('id, title, description, category_id, pub_id, pub_date, content, url, image_url, max(no_of_reads) as no_of_reads'))
-            ->orderBy('pub_date', 'desc')->where('status_id', 1)->get();
+        return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
     }
 
-    public function getNoImageStories(){
-        return DB::table('timeline_stories')->where('image_url', '')->orderBy('pub_date', 'desc')->limit(10)->get();
+
+    public function getFullStory($story_id){
+        echo($story_id);
     }
 
-    public function getLessImportantStories(){
-        return DB::table('timeline_stories')->limit(10)->orderBy('pub_date', 'desc')->orderBy('no_of_reads', 'desc')->get();
+    public function handleRequest($request_name){
+        $request_array = explode('-', $request_name);
+        if(count($request_array) > 1){
+            $this->getFullStory($request_array[count($request_array) - 1]);
+        }else{
+            $this->getStoriesByCat($request_name);
+        }
     }
+
+
 
 
 }

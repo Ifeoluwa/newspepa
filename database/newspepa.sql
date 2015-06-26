@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `clusters` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
   `cluster_pivot` int(11) NOT NULL,
-  `match_id` int(255) NOT NULL,
+  `cluster_match` int(255) NOT NULL,
   `status_id` int(11) NOT NULL,
   `created_date` datetime NOT NULL,
   `modified_date` datetime NOT NULL,
@@ -610,7 +610,8 @@ CREATE TABLE IF NOT EXISTS `status` (
 
 INSERT INTO `status` (`id`, `status_name`, `active_fg`, `created_date`, `modified_date`) VALUES
   (1, 'ACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
-  (2, 'INACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23');
+  (2, 'INACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
+  (3, 'MATCHED', 1, now(), now());
 
 -- --------------------------------------------------------
 
@@ -752,9 +753,9 @@ CREATE TABLE IF NOT EXISTS `user_types` (
 -- Constraints for table `clusters`
 --
 ALTER TABLE `clusters`
-ADD CONSTRAINT `fk_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
 ADD CONSTRAINT `fk_cluster_status` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`),
-ADD CONSTRAINT `fk_story_pivot` FOREIGN KEY (`cluster_pivot`) REFERENCES `stories` (`id`);
+ADD CONSTRAINT `fk_story_pivot` FOREIGN KEY (`cluster_pivot`) REFERENCES `stories` (`id`),
+ADD CONSTRAINT `fk_story_match` FOREIGN KEY (`cluster_match`) REFERENCES `stories` (`id`);
 
 --
 -- Constraints for table `feeds`
