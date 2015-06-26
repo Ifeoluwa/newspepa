@@ -2,9 +2,16 @@
     padding-left: 0.7rem;
     padding-right: 0.7rem;
 }
-
+.row .row{
+    margin-bottom:0.5rem;
+}
 .panel{
     background: #FFFFFF;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0.1rem;
+    padding-top: 0.1rem;
+
 
 }
 .panel h1{
@@ -27,9 +34,9 @@
     clear: left;
 }
 .label{
-    margin-bottom: -3rem;
+    margin-bottom: auto;
     float:right;
-    font-size:0.4rem;
+    font-size:0.6rem;
     background:none;
     color:#4C9ED9;
     float:right;
@@ -37,8 +44,9 @@
 }
 strong{
     font-size: 0.9rem;
-    font-weight:normal;
+    font-weight:200
     line-height: normal;
+
     /*margin-left:-3rem;*/
 
 }
@@ -59,6 +67,7 @@ img{
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
     border-color: #4C9ED9;
 }
+
 /*#search {*/
     /*position: relative;*/
     /*float: left;*/

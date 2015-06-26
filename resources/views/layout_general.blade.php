@@ -42,7 +42,7 @@
               </div>
               <span class="label">@yield('time_release')</span>
           </div>
-          <br/>
+
 
 
           {{--<hr/>--}}
