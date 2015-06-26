@@ -1,6 +1,7 @@
 @extends('layout')
 
-@section('title', 'NewsPepa | FullStory')
+@section('title', 'NewsPepa|Top stories')
+@endsection
 
 <div class="row news-item">
     @yield('story_container')

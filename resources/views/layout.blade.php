@@ -43,26 +43,17 @@
         </ul>
       </section>
     </nav>
+    <input type="search" results="7" placeholder="What's happening?" name="searchbox">
     </div>
 
-
-     {{--<div class="large-12 small-12 columns">--}}
-     {{--<div class="large-10 small-8 columns"><input type="search" results="7" placeholder="What's happening?" name="searchbox">--}}
-     {{--</div>--}}
-     {{--<div class="large-2 small-4 columns"><a href="#" class="alert button expand">Search</a></div>--}}
-     {{--</div>--}}
-
-     {{--</div>--}}
 
 
     <div class="row news-item" >
 
           <div class="large-12 small-12 columns">
              @yield('important_stories')
-              <br>
 
               @yield('less_important_stories')
-              <br/>
 
 
               {{--Stories with no images--}}
