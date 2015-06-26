@@ -57,9 +57,9 @@ class TimelineStoryController extends Controller
     public function handleRequest($request_name){
         $request_array = explode('-', $request_name);
         if(count($request_array) > 1){
-            $this->getFullStory($request_array[count($request_array) - 1]);
+            return $this->getFullStory($request_array[count($request_array) - 1]);
         }else{
-            $this->getStoriesByCat($request_name);
+            return $this->getStoriesByCat($request_name);
         }
     }
 

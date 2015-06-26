@@ -21,7 +21,3 @@ Route::get('test', 'FeedController@test');
 //Handles the various category request
 Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 
-//// handles the fetch feeds request
-
-//
-
