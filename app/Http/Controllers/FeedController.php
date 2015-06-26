@@ -12,7 +12,7 @@ namespace App\Http\Controllers;
 
 use App\Feed;
 use App\Http\Requests\Request;
-use App\RawStory;
+use App\Story;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Nathanmac\Utilities\Parser\Parser;
@@ -51,23 +51,23 @@ class FeedController extends Controller {
 
                         $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
 
-                        $raw_story = array();
+                        $story = array();
                         if(count($matches) > 0){
                             FeedController::storeImage($this->getImageUrl($matches[0]));
-                            $raw_story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                            $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
                         }
-                        $raw_story['title'] = "".$str['title']."";
-                        $raw_story['pub_id'] = $feed['pub_id'];
-                        $raw_story['feed_id'] = $feed['id'];
-                        $raw_story['category_id'] = $feed['category_id'];
-                        $raw_story['description'] = "".$this->clean(strip_tags($str['description']))."";
-                        $raw_story['content'] = "".$this->clean(strip_tags($str['description']))."";
-                        $raw_story['url'] = "".$str['link']."";
-                        $raw_story['pub_date'] = strtotime($str['pubDate']);
-                        $raw_story['insert_date'] = time();
+                        $story['title'] = "".$str['title']."";
+                        $story['pub_id'] = $feed['pub_id'];
+                        $story['feed_id'] = $feed['id'];
+                        $story['category_id'] = $feed['category_id'];
+                        $story['description'] = "".$this->clean(strip_tags($str['description']))."";
+                        $story['content'] = "".$this->clean(strip_tags($str['description']))."";
+                        $story['url'] = "".$str['link']."";
+                        $story['pub_date'] = strtotime($str['pubDate']);
+
 
                         // Inserts the raw story into the database
-                        RawStory::insertIgnore($raw_story);
+                        Story::insertIgnore($story);
                         //Updates the last time the feed was accessed
                         Feed::updateFeed($feed['id'], time());
                     }
