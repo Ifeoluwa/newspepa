@@ -42,15 +42,15 @@
 @stop
 
 
-{{--@section('stories_with_no_images')--}}
-    {{--@foreach($data['timeline_stories']['others'] as $less_important_story)--}}
-    {{--@foreach($data['timeline_stories']['no_image_story'] as $no_image_story)--}}
-              {{--<div class="row panel radius">--}}
-                  {{--<div class="large-12 small-12 columns">--}}
-                    {{--<a href="fullStory2"><img width="300" height="194" src="{{$no_image_story['image_url']}}"/></a>--}}
-                  {{--</div>--}}
-                  {{--<div class="large-12 small-12 columns">--}}
-                  {{--<p><a href="fullStory2"><strong>{{$no_image_story['title']}}</strong></a></p>--}}
+@section('stories_with_no_images')
+    @foreach($data['timeline_stories']['others'] as $less_important_story)
+    @foreach($data['timeline_stories']['no_image_story'] as $no_image_story)
+              <div class="row panel radius">
+                  <div class="large-12 small-12 columns">
+                    <a href="fullStory2"><img width="300" height="194" src="{{$no_image_story['image_url']}}"/></a>
+                  </div>
+                  <div class="large-12 small-12 columns">
+                  <p><a href="fullStory2"><strong>{{$no_image_story['title']}}</strong></a></p>
 
                   </div>
                   <span class="label">{{$no_image_story['pub_date']}}</span>
