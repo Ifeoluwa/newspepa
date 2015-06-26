@@ -7,10 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     //
-    public  $news_category = array('nigeria', 'politics', 'entertainment', 'sports', 'metro');
-
-
-//    public function storyCon
-
+    public static $news_category = array('nigeria' => 1, 'politics' => 2, 'entertainment' => 3,
+        'sports' => 4, 'metro' => 5);
 
 }
