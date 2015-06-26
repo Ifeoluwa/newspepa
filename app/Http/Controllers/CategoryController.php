@@ -15,7 +15,7 @@ class CategoryController extends Controller {
     //get stories by category
     public function getStoriesByCategory($category_name){
 
-//        $category_stories = DB::
+
     }
 
 } 

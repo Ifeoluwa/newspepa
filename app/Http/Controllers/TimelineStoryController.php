@@ -25,7 +25,7 @@ class TimelineStoryController extends Controller
         $timeline_stories = array();
         $timeline_stories['important'] = $this->getImportantStory();
         $timeline_stories['less_important'] = $this->getLessImportantStories();
-        $timeline_stories['no_images'] = $this->getNoImageStories();
+        $timeline_stories['no_image'] = $this->getNoImageStories();
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
 
     }
