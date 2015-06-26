@@ -4,7 +4,6 @@
 @stop
 
 @section('important_stories')
-
     @foreach($data['timeline_stories']['important'] as $important_story)
               <div class="row panel radius">
                   <div class="large-12 small-12 columns">
@@ -43,8 +42,7 @@
 
 
 @section('stories_with_no_images')
-    @foreach($data['timeline_stories']['others'] as $less_important_story)
-    @foreach($data['timeline_stories']['no_image_story'] as $no_image_story)
+    @foreach($data['timeline_stories']['no_image'] as $no_image_story)
               <div class="row panel radius">
                   <div class="large-12 small-12 columns">
                     <a href="fullStory2"><img width="300" height="194" src="{{$no_image_story['image_url']}}"/></a>

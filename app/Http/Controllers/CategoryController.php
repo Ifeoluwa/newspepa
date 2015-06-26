@@ -13,7 +13,8 @@ class CategoryController extends Controller {
 
 
     //get stories by category
-    public function getStoriesByCategory($category_id){
+    public function getStoriesByCategory($category_name){
+
 
     }
 

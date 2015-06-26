@@ -24,7 +24,8 @@ class TimelineStoryController extends Controller
         //
         $timeline_stories = array();
         $timeline_stories['important'] = $this->getImportantStory();
-        $timeline_stories['others'] = DB::table('timeline_stories')->limit(10)->orderBy('pub_date', 'desc')->orderBy('no_of_reads', 'desc')->get();
+        $timeline_stories['less_important'] = $this->getLessImportantStories();
+        $timeline_stories['no_image'] = $this->getNoImageStories();
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
 
     }
@@ -40,9 +41,13 @@ class TimelineStoryController extends Controller
             ->orderBy('pub_date', 'desc')->where('status_id', 1)->get();
     }
 
-
-    public function test(){
-        print_r(json_encode($this->index()));
+    public function getNoImageStories(){
+        return DB::table('timeline_stories')->where('image_url', '')->orderBy('pub_date', 'desc')->limit(10)->get();
     }
+
+    public function getLessImportantStories(){
+        return DB::table('timeline_stories')->limit(10)->orderBy('pub_date', 'desc')->orderBy('no_of_reads', 'desc')->get();
+    }
+
 
 }
