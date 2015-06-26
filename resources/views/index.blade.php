@@ -8,25 +8,26 @@
                   <div class="large-12 small-12 columns">
                   <a href="fullStory2"><img width="300" height="194" src="{{$important_story['image_url']}}"/></a>
                   </div>
-                  <div class="large-12 small-12 columns">{{$important_story['title']}}
+                  <div class="large-12 small-12 columns"><p><p><a href="fullStory.blade.php"><strong>{{$important_story['title']}}</strong></a></p></p>
                   </div>
                   <?php $date1 = new DateTime(strtotime($important_story['pub_date']));
                         $date2 = new DateTime();
                         $diff = $date1->diff($date2);
                    ?>
                   <span class="label">{{$diff->format('%a Day and %h hours')}}</span>
+                  {{--<span class="label">{{$important_story['pub_date']}}</span>--}}
               </div>
-              <br>
+              {{--<br>--}}
     @endforeach
 @stop
 
 @section('less_important_stories')
     @foreach($data['timeline_stories']['less_important'] as $less_important_story)
               <div class="row panel radius">
-                  <div class="large-6 small-6 columns">
-                    <a href="fullStory2"><img width="300" height="194" src="{{$less_important_story['image_url']}}"/></a>
+                  <div class="large-5 small-5 columns">
+                    <a href="fullStory2"><img class="large-12 small-12" width="300" height="194" src="{{$less_important_story['image_url']}}"/></a>
                   </div>
-                  <div class="large-6 small-6 columns">
+                  <div class="large-7 small-7 columns">
                   <p><a href="fullStory2"><strong>{{$less_important_story['title']}}</strong></a></p>
 
                   </div>
