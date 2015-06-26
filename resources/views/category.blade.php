@@ -1,8 +1,7 @@
-{{json_encode($data)}}
+@extends('layout')
 
-{{--@extends('layout')--}}
-{{--@section ('title')--}}
-{{--@parent--}}
-{{--@endsection--}}
-{{--@section('news_content')--}}
-{{--@endsection--}}
+@section ('title')
+@parent
+@endsection
+@section('news_content')
+@endsection
