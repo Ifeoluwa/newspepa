@@ -70,6 +70,7 @@ img{
     width:100%;
     font-size: 0.9rem;
     border-radius:1px;
+    margin-top:-1.5rem;
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {

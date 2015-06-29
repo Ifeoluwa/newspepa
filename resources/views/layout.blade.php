@@ -65,6 +65,8 @@
               {{--Stories with no images--}}
               @yield('stories_with_no_images')
 
+              @yield('full_story')
+
               {{--other relevant content--}}
               <br/>
               @yield('related_content')

@@ -1,13 +1,22 @@
-@extends('layout_singlestory')
-@section('story_container')
-@section('storyheadline')
-Lenovo launches three smartphones: the P70, S90 and S60 in Nigeria
+{{json_encode($data)}}
+@extends('layout')
+
+@section('title', 'Top stories')
 @endsection
-@section('image_url')
-<img width="300" height="169" src="http://www.techsuplex.com/wp-content/uploads/2015/04/Lenovo-Launch-2-300x169.jpg"/>
+@foreach($data as $full_story)
+@section('full_story')
+  <div class="row panel radius">
+      <div class="large-12 medium-12 small-12 columns">
+          <b>{{$full_story['title']}}.</b>
+      </div>
+      <div class="large-12 medium-12 small-12 columns"><img src="{{$full_story['image_url']}}"/></div>
+      <div class="large-12 medium-12 small-12 columns"><p><p style="line-height: 1.5;text-align:justify;text-justify:inter-word">{{$full_story['description']}}...<a href="{{$full_story['url']}}" style="color: #4C9ED9">Continue to read</a></p></p>
+      </div>
+  </div>
 @endsection
-@section('story_content')
-<p><p></p></p>
-<p><a href="http://www.techsuplex.com/2015/04/30/lenovo-launches-three-smartphones-the-p70-s90-and-s60-in-nigeria">Read more... </a></p>
+@section('related_content')
+  <div class="row panel radius"><b>Other Sources</b></div>
+  <div class="row panel radius"><b>Related Stories</b></div>
+  <div class="row panel radius"><b>Latest in Category</b></div>
 @endsection
-<hr/>
+@endforeach

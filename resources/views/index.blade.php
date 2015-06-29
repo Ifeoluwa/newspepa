@@ -29,7 +29,7 @@
                     <a href="<?php echo ''?>"><img class="large-12 small-12" width="300" height="194" src="{{$less_important_story['image_url']}}"/></a>
                   </div>
                   <div class="large-7 small-7 columns">
-                  <p><a href="fullStory2"><strong>{{$less_important_story['title']}}</strong></a></p>
+                  {{--<p><a href="fullStory2"><strong>{{$less_important_story['title']}}</strong></a></p>--}}
 
                   <p><a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}"><strong>{{$less_important_story['title']}}</strong></a></p>
 
