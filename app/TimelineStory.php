@@ -44,6 +44,10 @@ class TimelineStory extends Model
         return $query->orderBy('created_date', 'desc')->limit(5);
     }
 
+    public function timelineStoriesByCat(){
+
+    }
+
 
 
 
