@@ -3,7 +3,7 @@
    <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NewsPepa @yield('title')</title>
+    <title>NewsPepa| @yield('title')</title>
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link rel="stylesheet" href="ui_newspaper/css/app.css" />
@@ -44,11 +44,20 @@
       </section>
     </nav>
     <input type="search" results="7" placeholder="What's happening?" name="searchbox">
+    <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+          <li><a href="#">This is a link</a></li>
+    </ul>
+    <div class="large-12 medium-12 small-12">
+    <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Dropdown Button</button></div>
+    <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+      <li><a href="#">This is a link</a></li>
+      <li><a href="#">This is another</a></li>
+      <li><a href="#">Yet another</a></li>
+    </ul>
     </div>
 
 
 
-    <div class="row news-item" >
 
           <div class="large-12 small-12 columns">
              @yield('important_stories')
@@ -59,9 +68,14 @@
               {{--Stories with no images--}}
               @yield('stories_with_no_images')
 
+              {{--other relevant content--}}
+              <br/>
+              @yield('related_content')
+
 
               </div>
-    </div>
+
+    <div class="row news-item" ></div>
 
 
 

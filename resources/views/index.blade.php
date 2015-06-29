@@ -5,6 +5,7 @@
 @stop
 
 @section('important_stories')
+
     @foreach($data['timeline_stories']['important'] as $important_story)
          <div class="row panel radius">
                   <div class="large-12 small-12 columns">
@@ -20,6 +21,7 @@
 @stop
 
 @section('less_important_stories')
+{{--{{$data['timeline_stories']['publishers_name'][$less_important_story['pub_id']]}}--}}
     @foreach($data['timeline_stories']['less_important'] as $less_important_story)
     {{--@foreach($data['timeline_stories']['publishers_name'][$less_important_story['pub_id']] as $publisher_name)--}}
               <div class="row panel radius">
