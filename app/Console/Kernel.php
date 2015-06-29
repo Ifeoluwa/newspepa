@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Http\Controllers\FeedController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -28,7 +29,14 @@ class Kernel extends ConsoleKernel
                  ->hourly();
 
         $schedule->call(function(){
+            $fc = new FeedController();
+            $fc->fetchFeeds();
+        })->everyTenMinutes()->then(function(){
 
         });
+
+        $schedule->call(function(){
+
+        })->everyFiveMinutes();
     }
 }

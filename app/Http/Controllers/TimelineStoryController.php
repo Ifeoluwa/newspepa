@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redis;
 
 class TimelineStoryController extends Controller
 {
@@ -34,7 +32,11 @@ class TimelineStoryController extends Controller
         //
         $timeline_stories = array();
         $timeline_stories['important'] = TimelineStory::importantStories();
-        $timeline_stories['less_important'] = TimelineStory::lessImportantStories();
+        $timeline_stories['less_important'] = array();
+        for($i = 1; $i <= count($this->category_names); $i++){
+            $timeline_stories['less_important'] = array_merge($timeline_stories['less_important'], TimelineStory::timelineStoriesByCat($i));
+        }
+
         $timeline_stories['no_image'] = TimelineStory::noImageStories();
 
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
@@ -57,6 +59,7 @@ class TimelineStoryController extends Controller
 
 
     public function getFullStory($story_id){
+        DB::table('timeline_stories')->increment('no_of_reads');
         $full_story = DB::table('timeline_stories')->where('story_id', $story_id)->get();
         return view('fullStory')->with('data', $full_story);
     }
