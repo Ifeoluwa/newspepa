@@ -18,7 +18,7 @@ class TimelineStoryController extends Controller
 
     // Constructor
     public function __construct(){
-        view()->share('makeStoryUrl');
+//        view()->share('makeStoryUrl');
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
@@ -37,7 +37,6 @@ class TimelineStoryController extends Controller
         $timeline_stories['less_important'] = TimelineStory::lessImportantStories();
         $timeline_stories['no_image'] = TimelineStory::noImageStories();
 
-//        Redis::get();
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
 
     }
@@ -62,6 +61,7 @@ class TimelineStoryController extends Controller
         return view('fullStory')->with('data', $full_story);
     }
 
+    //Handles timeline request
     public function handleRequest($request_name){
         $request_array = explode('-', $request_name);
         if(count($request_array) > 1){
@@ -71,6 +71,7 @@ class TimelineStoryController extends Controller
         }
     }
 
+//    Creates the full story url
     public function makeStoryUrl($title, $id){
         $url = strtolower($title) ;
 
@@ -82,11 +83,21 @@ class TimelineStoryController extends Controller
         return $url.'-'.($id);
     }
 
+    // Gets the time difference between the time a story is created and the current time
     public function getTimeDifference($start_date){
-        $date1 = new \DateTime(strtotime($start_date));
+        date_default_timezone_set('Africa/Lagos');
+        $date1 = new \DateTime($start_date);
         $date2 = new \DateTime();
         $diff = $date1->diff($date2);
-        return $diff->format('%a Day and %h hours');
+        if ($diff->d){
+           return $diff->format('%d days');
+        }else if($diff->h){
+            return $diff->format('%h hours');
+        }else if($diff->m){
+            return $diff->format('%m min');
+        }else {
+            return $diff->format('%s seconds');
+        }
     }
 
 

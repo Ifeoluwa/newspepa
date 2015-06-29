@@ -14,7 +14,7 @@
                   <div class="large-12 small-12 columns"><p><p><a href="{{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}"><strong>{{$important_story['title']}}</strong></a></p></p>
                   </div>
                   <span class="label">{{""}}</span>
-                  {{--<span class="label">{{$important_story['pub_date']}}</span>--}}
+                  <span class="label">{{$tc->getTimeDifference($important_story['created_date'])}}</span>
               </div>
             @endforeach
 @stop
@@ -31,7 +31,7 @@
                   <p><a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}"><strong>{{$less_important_story['title']}}</strong></a></p>
 
                   </div>
-                  <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{""}}</span>
+                  <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>
 
                </div>
     @endforeach
@@ -48,7 +48,7 @@
                   <p><a href="{{url($tc->makeStoryUrl($no_image_story['title'], $no_image_story['story_id']))}}"><strong>{{$no_image_story['title']}}</strong></a></p>
 
                   </div>
-                  <span class="label">{{$no_image_story['pub_date']}}</span>
+                  <span class="label">{{$tc->getTimeDifference($no_image_story['created_date'])}}</span>
               </div>
     @endforeach
 @stop
