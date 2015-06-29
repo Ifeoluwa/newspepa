@@ -81,6 +81,7 @@ class TimelineStoryController extends Controller
         //Convert whitespaces and underscore to dash
         $url = preg_replace("/[\s_]/", "-", $url);
         return $url.'-'.($id);
+//        return $this->getFullStory($id);
     }
 
     // Gets the time difference between the time a story is created and the current time
