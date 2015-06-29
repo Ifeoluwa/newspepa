@@ -24,7 +24,7 @@
 @stop
 
 @section('less_important_stories')
-{{--{{$data['timeline_stories']['publishers_name'][$less_important_story['pub_id']]}}--}}
+
     @foreach($data['timeline_stories']['less_important'] as $less_important_story)
     {{--@foreach($data['timeline_stories']['publishers_name'][$less_important_story['pub_id']] as $publisher_name)--}}
               <div class="row panel radius">
@@ -41,7 +41,8 @@
                                             $diff = $date1->diff($date2);
                     ?>
                      <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{$diff->format('%a Day and %h hours')}}</span>
-
+                     <span class="label"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+                     {{--[$less_important_story['pub_id']]}}</span>--}}
                </div>
     @endforeach
 @stop

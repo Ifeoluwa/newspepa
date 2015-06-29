@@ -18,7 +18,7 @@
           <h1><a href="index">NEWSPEPA</a></h1>
         </li>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Categories</span></a></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
       <section class="top-bar-section">
         <!-- Right Nav Section -->
@@ -43,22 +43,19 @@
         </ul>
       </section>
     </nav>
-    <input type="search" results="7" placeholder="What's happening?" name="searchbox">
-    <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
-          <li><a href="#">This is a link</a></li>
-    </ul>
-    <div class="large-12 medium-12 small-12">
-    <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Dropdown Button</button></div>
-    <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
-      <li><a href="#">This is a link</a></li>
-      <li><a href="#">This is another</a></li>
-      <li><a href="#">Yet another</a></li>
+    <input type="search" results="7" placeholder="Search News?" name="searchbox">
     </ul>
     </div>
-
-
-
-
+    <div class="large-12 medium-12 small-12">
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Categories</button></div>
+        <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+          <li><a href="{{url('/')}}">Top stories</a></li>
+          <li><a href="{{url('entertainment')}}">Entertainment</a></li>
+          <li><a href="{{url('politics')}}">Politics</a></li>
+          <li><a href="{{url('sports')}}">Sports</a></li>
+          <li><a href="{{url('nigeria')}}">Nigeria</a></li>
+          <li><a href="{{url('metro')}}">Metro</a></li>
+        </ul>
           <div class="large-12 small-12 columns">
              @yield('important_stories')
 
