@@ -8,15 +8,12 @@
     @foreach($data['timeline_stories']['important'] as $important_story)
          <div class="row panel radius">
                   <div class="large-12 small-12 columns">
-                  <a href="fullStory2"><img width="300" height="194" src="{{$important_story['image_url']}}"/></a>
+                  <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
+                  <a href="{{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}"><img width="300" height="194" src="{{$important_story['image_url']}}"/></a>
                   </div>
-                  <div class="large-12 small-12 columns"><p><p><a href="fullStory.blade.php"><strong>{{$important_story['title']}}</strong></a></p></p>
+                  <div class="large-12 small-12 columns"><p><p><a href="{{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}"><strong>{{$important_story['title']}}</strong></a></p></p>
                   </div>
-                  <?php $date1 = new DateTime(strtotime($important_story['pub_date']));
-                        $date2 = new DateTime();
-                        $diff = $date1->diff($date2);
-                   ?>
-                  <span class="label">{{$diff->format('%a Day and %h hours')}}</span>
+                  <span class="label">{{""}}</span>
                   {{--<span class="label">{{$important_story['pub_date']}}</span>--}}
               </div>
             @endforeach
@@ -27,18 +24,14 @@
     {{--@foreach($data['timeline_stories']['publishers_name'][$less_important_story['pub_id']] as $publisher_name)--}}
               <div class="row panel radius">
                   <div class="large-5 small-5 columns">
-                    <a href="fullStory2"><img class="large-12 small-12" width="300" height="194" src="{{$less_important_story['image_url']}}"/></a>
+                    <a href="<?php echo ''?>"><img class="large-12 small-12" width="300" height="194" src="{{$less_important_story['image_url']}}"/></a>
                   </div>
                   <div class="large-7 small-7 columns">
-                  <p><a href="fullStory2"><strong>{{$less_important_story['title']}}</strong></a></p>
+
+                  <p><a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}"><strong>{{$less_important_story['title']}}</strong></a></p>
 
                   </div>
-
-                    <?php $date1 = new DateTime(strtotime($less_important_story['pub_date']));
-                                            $date2 = new DateTime();
-                                            $diff = $date1->diff($date2);
-                    ?>
-                     <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{$diff->format('%a Day and %h hours')}}</span>
+                  <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{""}}</span>
 
                </div>
     @endforeach
@@ -52,7 +45,7 @@
                     {{--<a href="fullStory2"><img width="300" height="194" src="{{$no_image_story['image_url']}}"/></a>--}}
                   {{--</div>--}}
                   <div class="large-12 small-12 columns">
-                  <p><a href="fullStory2"><strong>{{$no_image_story['title']}}</strong></a></p>
+                  <p><a href="{{url($tc->makeStoryUrl($no_image_story['title'], $no_image_story['story_id']))}}"><strong>{{$no_image_story['title']}}</strong></a></p>
 
                   </div>
                   <span class="label">{{$no_image_story['pub_date']}}</span>
