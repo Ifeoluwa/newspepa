@@ -28,8 +28,8 @@ class TimelineStory extends Model
     }
 
     public static function importantStories(){
-        return DB::table('timeline_stories')->select(DB::raw('id, title, description, category_id, pub_id, pub_date, content, url, image_url, max(no_of_reads) as no_of_reads'))
-            ->orderBy('pub_date', 'desc')->where('status_id', 1)->get();
+        return DB::table('timeline_stories')->select(DB::raw('id, story_id, title, description, category_id, pub_id, pub_date, content, url, image_url, max(no_of_reads) as no_of_reads, created_date'))
+            ->orderBy('created_date', 'desc')->where('status_id', 1)->get();
     }
 
     public static function noImageStories(){
