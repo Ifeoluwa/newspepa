@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Story;
 use Illuminate\Support\Facades\DB;
 
 class StoryController extends Controller {
@@ -19,9 +20,13 @@ class StoryController extends Controller {
 
     }
 
-    public function getTimelineStories(){
+    public function createTimelineStory(){
+
+        $pivots = Story::pivots();
 
     }
+
+//    protected function getPivots()
 
 
 
