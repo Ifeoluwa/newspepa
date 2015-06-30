@@ -44,7 +44,7 @@
       </section>
     </nav>
         {{--<div class="panel">--}}
-            {{--<input type="text" results="7" placeholder="Search News..." name="searchbox" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search">--}}
+            {{--<div class="large-8 small-9 columns"><input type="text" results="7" placeholder="Search News..." name="searchbox" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>--}}
             {{--<button type="submit" style="width:100%"><span style="background:url("../img/search-icon-gray-small.png")></button>--}}
         {{--</div>--}}
     </div>
