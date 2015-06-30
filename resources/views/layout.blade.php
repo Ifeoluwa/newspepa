@@ -43,9 +43,13 @@
         </ul>
       </section>
     </nav>
-    <input type="search" results="7" placeholder="Search News?" name="searchbox">
-    </ul>
+        {{--<div class="panel">--}}
+            {{--<input type="text" results="7" placeholder="Search News..." name="searchbox" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search">--}}
+            {{--<button type="submit" style="width:100%"><span style="background:url("../img/search-icon-gray-small.png")></button>--}}
+        {{--</div>--}}
     </div>
+
+    {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
     <div class="large-12 medium-12 small-12">
         <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Categories</button></div>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
