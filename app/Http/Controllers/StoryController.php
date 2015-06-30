@@ -19,9 +19,11 @@ class StoryController extends Controller {
 
     }
 
-    public function getTimelineStories(){
+    public function createTimelineStory(){
 
     }
+
+//    protected function getPivots()
 
 
 
