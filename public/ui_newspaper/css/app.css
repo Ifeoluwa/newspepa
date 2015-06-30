@@ -77,6 +77,12 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
     border-color: #4C9ED9;
 }
 
+.searchbar{
+  background:url("../img/search-icon-gray-small.png") transparent;
+    padding-top:0;
+    padding-bottom:0;
+}
+
 
 
 
