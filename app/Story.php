@@ -9,9 +9,9 @@ class Story extends Model
 {
 
     // Gets all the pivot stories
-    public static function getPivots(){
+    public static function pivots(){
 
-        $pivots = DB::table('stories')->where('has_cluster', 1)->get();
+        $pivots = DB::table('cluster')->where('has_cluster', 1)->get();
 
         return $pivots;
 

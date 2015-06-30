@@ -39,9 +39,7 @@
                                             $date2 = new DateTime();
                                             $diff = $date1->diff($date2);
                     ?>
-                     <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{$diff->format('%a Day and %h hours')}}</span>
-
-                     [$less_important_story['pub_id']]}}</span>
+                     <span class="label">{{$less_important_story['no_of_reads']}}reads | {{$less_important_story['pub_id']}}|{{$diff->format('%a Day and %h hours')}}</span>
                </div>
     @endforeach
 @stop
