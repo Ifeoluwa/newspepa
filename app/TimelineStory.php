@@ -52,7 +52,7 @@ class TimelineStory extends Model
     //Selects the timeline stories based on the number of
     public static function timelineStoriesByCat($category_id){
         return DB::table('timeline_stories')->select(DB::raw('id, story_id, title, description, category_id, pub_id, pub_date, content, url, image_url, no_of_reads, created_date'))
-            ->orderBy('created_date', 'desc')->where('status_id', 1)->where('category_id', $category_id)->whereNotIn('no_of_reads', null)->limit(5)->get();
+            ->orderBy('created_date', 'desc')->where('status_id', 1)->where('category_id', $category_id)->limit(5)->get();
     }
 
 

@@ -38,7 +38,6 @@ class TimelineStoryController extends Controller
         }
 
         $timeline_stories['no_image'] = TimelineStory::noImageStories();
-
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
 
     }
@@ -53,7 +52,6 @@ class TimelineStoryController extends Controller
         $category_id = Category::$news_category[$category_name];
         $category_stories['category_name'] = $this->category_names[$category_id];
         $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
-
         return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
     }
 
