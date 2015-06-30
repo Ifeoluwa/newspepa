@@ -20,8 +20,11 @@ class Story extends Model
     }
 
     // Gets all the stories that match the pivot story
-    public static function matches($pivot_id){
-        $matches = DB::table("clusters")->join('stories', 'stories.id', '=', 'match_id')->where('clusters.pivot_id', $pivot_id)
+    public static function matches($cluster_pivot){
+        $matches = DB::table("clusters")->join('stories', 'stories.id', '=', 'match_id')
+            ->select('stories.id as story_id, stories.title as title, stories.image_url, stories.video_url, stories.description as description, stories.content as content,
+        stories.url as url, stories.pub_id as pub_id, stories.feed_id as feed_id, stories.category_id as category_id,
+        stories.status_id as status_id, stories.pub_date as pub_date, stories.has_cluster as has_cluster')->where('clusters.cluster_pivot', $cluster_pivot)
             ->get();
 
         return $matches;
