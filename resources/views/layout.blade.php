@@ -43,11 +43,13 @@
         </ul>
       </section>
     </nav>
-        {{--<div class="panel">--}}
-            {{--<div class="large-8 small-9 columns"><input type="text" results="7" placeholder="Search News..." name="searchbox" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>--}}
-            {{--<button type="submit" style="width:100%"><span style="background:url("../img/search-icon-gray-small.png")></button>--}}
-        {{--</div>--}}
+
+            <div class="large-8 small-10 columns"style="padding-right:0;padding-left:0"><input type="text" results="7" placeholder="Search News..." name="searchbox" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
+            <div class="large-4 small-2 columns" style="padding-right:0;padding-left:0"><a href="#" class="alert button expand"></a></div>
+
     </div>
+
+    {{--<button type="submit" style="height:100%"></button>--}}
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
     <div class="large-12 medium-12 small-12">
