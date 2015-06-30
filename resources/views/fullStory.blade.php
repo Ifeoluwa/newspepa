@@ -9,7 +9,7 @@
       <div class="large-12 medium-12 small-12 columns">
           <b>{{$full_story['title']}}.</b>
       </div>
-      <div class="large-12 medium-12 small-12 columns"><img src="{{$full_story['image_url']}}"/></div>
+      <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%"/></div>
       <div class="large-12 medium-12 small-12 columns"><p><p style="line-height: 1.5;text-align:justify;text-justify:inter-word">{{$full_story['description']}}...<a href="{{$full_story['url']}}" style="color: #4C9ED9">Continue to read</a></p></p>
       </div>
   </div>

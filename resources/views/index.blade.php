@@ -10,12 +10,13 @@
          <div class="row panel radius">
                   <div class="large-12 small-12 columns">
                   <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
-                  <a href="{{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}"><img width="300" height="194" src="{{$important_story['image_url']}}"/></a>
+                  <a href="{{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}"><img width="300" height="195" src="{{$important_story['image_url']}}"/></a>
                   </div>
                   <div class="large-12 small-12 columns"><p><p><a href="{{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}"><strong>{{$important_story['title']}}</strong></a></p></p>
                   </div>
                   <span class="label">{{""}}</span>
-                  <span class="label">{{$tc->getTimeDifference($important_story['created_date'])}}</span>
+                  <span class="label">{{$important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($important_story['created_date'])}}</span>
+                  <span class="label"><b>{{$data['publishers_name'][$important_story['pub_id']]}}</b></span>
               </div>
             @endforeach
 @stop
@@ -34,14 +35,14 @@
                   <p><a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}"><strong>{{$less_important_story['title']}}</strong></a></p>
 
                   </div>
-                  <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>
-
-                    <?php $date1 = new DateTime(strtotime($less_important_story['pub_date']));
+                  <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>
+                  <span class="label"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+                   {{-- <?php $date1 = new DateTime(strtotime($less_important_story['pub_date']));
                                             $date2 = new DateTime();
                                             $diff = $date1->diff($date2);
                     ?>
-                     <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{$diff->format('%a Day and %h hours')}}</span>
-                     <span class="label"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+                     <span class="label">{{$less_important_story['no_of_reads']}}reads|{{$less_important_story['pub_id']}}|{{$diff->format('%a Day and %h hours')}}</span>--}}
+
                      {{--[$less_important_story['pub_id']]}}</span>--}}
                </div>
     @endforeach

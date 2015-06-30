@@ -8,9 +8,10 @@
  @foreach($data['category_stories']['all'] as $category_story)
          <div class="row panel radius">
                   <div class="large-12 small-12 columns">
-                  <a href="fullStory2"><img width="300" height="194" src="{{$category_story['image_url']}}"/></a>
+                   <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
+                  <a href="{{url($tc->makeStoryUrl($category_story['title'], $important_story['story_id']))}}"><img width="300" height="194" src="{{$category_story['image_url']}}"/></a>
                   </div>
-                  <div class="large-12 small-12 columns"><p><p><a href="fullStory.blade.php"><strong>{{$category_story['title']}}</strong></a></p></p>
+                  <div class="large-12 small-12 columns"><p><p><a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}"><strong>{{$category_story['title']}}</strong></a></p></p>
                   </div>
                   <?php $date1 = new DateTime(strtotime($category_story['pub_date']));
                         $date2 = new DateTime();
