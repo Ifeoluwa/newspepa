@@ -23,6 +23,11 @@ class StoryController extends Controller {
     public function createTimelineStory(){
 
         $pivots = Story::pivots();
+        foreach($pivots as $pivot){
+
+        }
+
+//        Story::insertIgnore($pivots);
 
     }
 
