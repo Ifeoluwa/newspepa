@@ -1,9 +1,9 @@
-{{json_encode($data)}}
+{{--{{json_encode($data)}}--}}
 @extends('layout')
 
 @section('title', 'Top stories')
 @endsection
-@foreach($data['full_story'] as $full_story)
+@foreach($data as $full_story)
 @section('full_story')
   <div class="row panel radius">
       <div class="large-12 medium-12 small-12 columns">
