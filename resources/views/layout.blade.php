@@ -40,17 +40,18 @@
     {{--<button type="submit" style="height:100%"></button>--}}
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
-    <div class="large-12 medium-12 small-12">
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Categories</button></div>
-        <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
-          <li><a href="{{url('/')}}">Top stories</a></li>
-          <li><a href="{{url('entertainment')}}">Entertainment</a></li>
-          <li><a href="{{url('politics')}}">Politics</a></li>
-          <li><a href="{{url('sports')}}">Sports</a></li>
-          <li><a href="{{url('nigeria')}}">Nigeria</a></li>
-          <li><a href="{{url('metro')}}">Metro</a></li>
-        </ul>
+    {{--<div class="large-12 medium-12 small-12">--}}
+        {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Categories</button></div>--}}
+        {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
+          {{--<li><a href="{{url('/')}}">Top stories</a></li>--}}
+          {{--<li><a href="{{url('entertainment')}}">Entertainment</a></li>--}}
+          {{--<li><a href="{{url('politics')}}">Politics</a></li>--}}
+          {{--<li><a href="{{url('sports')}}">Sports</a></li>--}}
+          {{--<li><a href="{{url('nigeria')}}">Nigeria</a></li>--}}
+          {{--<li><a href="{{url('metro')}}">Metro</a></li>--}}
+        {{--</ul>--}}
 
+{{--the stories containers starts from here--}}
 
           <div class="large-12 small-12 columns">
              @yield('important_stories')
