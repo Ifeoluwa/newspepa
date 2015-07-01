@@ -71,6 +71,7 @@ class TimelineStoryController extends Controller
             return $this->getFullStory($request_array[count($request_array) - 1]) ;
         }else{
             return $this->getStoriesByCat($request_name);
+
         }
     }
 
