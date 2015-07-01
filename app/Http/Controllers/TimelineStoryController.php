@@ -103,7 +103,6 @@ class TimelineStoryController extends Controller
             return $diff->format('%s seconds');
         }
 
-
     }
 
 
