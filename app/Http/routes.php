@@ -18,7 +18,7 @@ Route::get('/', 'TimelineStoryController@index');
 
 Route::get('test', 'FeedController@test');
 
-Route::get('pivot', 'StoryController@createTimelineStory');
+Route::get('timeline', 'StoryController@createTimelineStory');
 
 //Handles the various category request
 Route::get('{request_name}', 'TimelineStoryController@handleRequest');

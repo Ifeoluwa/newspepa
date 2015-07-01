@@ -15,24 +15,20 @@ use Illuminate\Support\Facades\DB;
 class StoryController extends Controller {
 
 
-    //handles the addition of story to the database
-    public function addStory(){
-
-    }
-
     public function createTimelineStory(){
 
         $pivots = Story::pivots();
+        var_dump($pivots);
 
-        foreach($pivots as $pivot){
-            $matches = Story::matches($pivot['cluster_pivot']);
-            $pivot['story_url'] = $this->makeStoryUrl($pivot['title'], $pivot['story_id']);
-            Story::insertIgnore($pivot);
-            foreach($matches as $match){
-                $match['story_url'] = $this->makeStoryUrl($match['title'], $match['story_id']);
-                Story::insertIgnore($match);
-            }
-        }
+//        foreach($pivots as $pivot){
+//            $matches = Story::matches($pivot['cluster_pivot']);
+//            $pivot['story_url'] = $this->makeStoryUrl($pivot['title'], $pivot['story_id']);
+//            Story::insertIgnore($pivot);
+//            foreach($matches as $match){
+//                $match['story_url'] = $this->makeStoryUrl($match['title'], $match['story_id']);
+//                Story::insertIgnore($match);
+//            }
+//        }
 
     }
 

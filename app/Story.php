@@ -11,9 +11,7 @@ class Story extends Model
     // Gets all the pivot stories
     public static function pivots(){
 
-        $pivots = DB::table('clusters')->join('stories', 'clusters.cluster_pivot', '=', 'stories.id')->select('stories.id as story_id, stories.title as title, stories.image_url, stories.video_url, stories.description as description, stories.content as content,
-        stories.url as url, stories.pub_id as pub_id, stories.feed_id as feed_id, stories.category_id as category_id,
-        stories.status_id as status_id, stories.pub_date as pub_date, stories.has_cluster as has_cluster')->where('cluster_pivot', 'cluster_match')->get();
+        $pivots = DB::table('clusters')->join('stories', 'clusters.cluster_pivot', '=', 'stories.id')->select('stories.*', 'clusters.*')->get();
 
         return $pivots;
 
