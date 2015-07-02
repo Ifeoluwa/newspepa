@@ -16,19 +16,19 @@
       <ul class="title-area">
         <a href="{{url('/')}}"><li class="name"></li></a>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+        {{--<li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>--}}
       </ul>
-      <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-          <li class="active"><a href="{{url('/')}}">Top stories</a></li>
-          <li><a href="{{url('entertainment')}}">Entertainment</a></li>
-          <li><a href="{{url('politics')}}">Politics</a></li>
-          <li><a href="{{url('sports')}}">Sports</a></li>
-          <li><a href="{{url('nigeria')}}">Nigeria</a></li>
-          <li><a href="{{url('metro')}}">Metro</a></li>
-        </ul>
-      </section>
+      {{--<section class="top-bar-section">--}}
+        {{--<!-- Right Nav Section -->--}}
+        {{--<ul class="right">--}}
+          {{--<li class="active"><a href="{{url('/')}}">Top stories</a></li>--}}
+          {{--<li><a href="{{url('entertainment')}}">Entertainment</a></li>--}}
+          {{--<li><a href="{{url('politics')}}">Politics</a></li>--}}
+          {{--<li><a href="{{url('sports')}}">Sports</a></li>--}}
+          {{--<li><a href="{{url('nigeria')}}">Nigeria</a></li>--}}
+          {{--<li><a href="{{url('metro')}}">Metro</a></li>--}}
+        {{--</ul>--}}
+      {{--</section>--}}
     </nav>
 
     {{--the search bar--}}
@@ -41,7 +41,7 @@
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
     <div class="large-12 medium-12 small-12">
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Categories</button></div>
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Top stories</button></div>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
           <li><a href="{{url('/')}}">Top stories</a></li>
           <li><a href="{{url('entertainment')}}">Entertainment</a></li>
@@ -71,7 +71,7 @@
 
               </div>
 
-    <div class="row news-item" ></div>
+
 
 
 

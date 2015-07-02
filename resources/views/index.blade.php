@@ -37,6 +37,9 @@
 
                   <div class="sharebox"><a class="_15kq" href="https://twitter.com/share?url={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}&text={{$important_story['title']}}&via=newspepa" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a></div>
                   <div class="sharebox"><a class="_15kr" data-store="{&quot;share_id&quot;:896223087101322,&quot;feedback_source&quot;:1,&quot;behavior&quot;:&quot;custom&quot;}" href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}" data-sigil="share-popup">Share</a></div></div></div></footer>
+
+
+
                   </div>
 
                   <span class="label">{{""}}</span>
@@ -53,7 +56,7 @@
                   <div class="large-5 small-4 columns">
                     <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
                         <img width="200" height="180" src="{{$less_important_story['image_url']}}"/>
-                    </a>   <span class="publisher-name" style="float:left"><b>Published by {{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+                    </a>   <span class="publisher-name" style="float:left"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
                            {{--<span class="label" style="float:right; align-items: right">{{$less_important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>--}}
 
                   </div>
