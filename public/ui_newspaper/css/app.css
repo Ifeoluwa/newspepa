@@ -72,7 +72,7 @@
 .publisher-name{
     float:left;
     font-size:0.75rem;
-    color: #c9c9c9;
+    color: #898989;
     font-weight:300;
 }
 
@@ -167,8 +167,8 @@ img{
     font-size: 1.3rem;
     border-radius:1px;
     margin-top:-1.5rem;
-    height: 30px;
-    padding-top:4px;
+    height: 40px;
+    padding-top:6px;
 
 }
 
