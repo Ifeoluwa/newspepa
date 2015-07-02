@@ -53,8 +53,8 @@
                   <div class="large-5 small-4 columns">
                     <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
                         <img width="200" height="180" src="{{$less_important_story['image_url']}}"/>
-                    </a>   <span class="label" style="float:left"><b>Published by {{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
-                           <span class="label" style="float:right; align-items: right">{{$less_important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>
+                    </a>   <span class="publisher-name" style="float:left"><b>Published by {{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+                           {{--<span class="label" style="float:right; align-items: right">{{$less_important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>--}}
 
                   </div>
                   <div class="large-7 small-8 columns">

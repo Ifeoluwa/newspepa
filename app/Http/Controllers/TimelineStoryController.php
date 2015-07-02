@@ -56,9 +56,11 @@ class TimelineStoryController extends Controller
     }
 
 
+    //Gets all the details of the full story and the related stories
     public function getFullStory($story_id){
-        DB::table('timeline_stories')->increment('no_of_reads');
-        $full_story = DB::table('timeline_stories')->where('story_id', $story_id)->get();
+        DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_reads');
+        $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
+        $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
         return view('fullStory')->with('data', $full_story);
     }
 
@@ -69,6 +71,7 @@ class TimelineStoryController extends Controller
             return $this->getFullStory($request_array[count($request_array) - 1]) ;
         }else{
             return $this->getStoriesByCat($request_name);
+
         }
     }
 
@@ -101,11 +104,7 @@ class TimelineStoryController extends Controller
             return $diff->format('%s seconds');
         }
 
-
     }
-
-
-
 
 
 }
