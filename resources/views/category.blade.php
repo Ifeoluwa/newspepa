@@ -1,5 +1,9 @@
 @extends('layout')
+<script>
 
+            $(document).foundation('button dropdown', 'reflow');
+
+      </script>
 @section ('title',$data['category_stories']['category_name'] )
 @endsection
 
@@ -31,4 +35,6 @@
   <div class="row panel radius"><b>Other Sources</b></div>
   <div class="row panel radius"><b>Related Stories</b></div>
   <div class="row panel radius"><b>Latest in Category</b></div>
+
+
 @endsection
