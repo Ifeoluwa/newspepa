@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//handles the home page request which displays the top stories/Timeline stories
 
-// handles the fetch feeds request
-Route::get('feeds', 'FeedController@fetchFeeds');
 
-// handles the fetch feeds request
-Route::get('test', 'RawStoryController@matchStory');
+Route::get('/', 'TimelineStoryController@index');
+
+Route::get('test', 'FeedController@test');
+
+//Handles the various category request
+Route::get('{request_name}', 'TimelineStoryController@handleRequest');
+

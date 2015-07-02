@@ -1,0 +1,246 @@
+.news-item{
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+}
+/*.title-area{*/
+    /*background:url('../img/logo-medium4.png') no-repeat;*/
+
+/*}*/
+.name{
+    background:url('../img/logo-medium5.png') no-repeat;
+}
+.row {
+    margin-bottom:0.4rem;
+    max-width: 100%;
+}
+.top-bar{
+    width:100%;
+    background-color:white;
+    padding-top:7px;
+    margin-bottom: 3px;
+}
+.top-bar .toggle-topbar.menu-icon a {
+    background-color:#333366;
+    margin-top:-8px;
+    color:#333366;
+}
+.menu-icon{
+    color:#333366;
+}
+.panel {
+    background: #FFFFFF;
+    padding:0.3rem 0px;
+    border-style: none;
+
+}
+
+.text-details{
+    text-align:left;
+    display:block;
+    position:relative;
+    padding:8px;
+    border-top:1.5px solid #E8E8E8;
+}
+
+.title-holder{
+    max-height: 50px;
+    overflow:hidden;
+    position:relative;
+    display:block;
+    word-wrap:break-word;
+    margin-left:0;
+}
+.title{
+    webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    max-height: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: normal;
+    margin-left: 0 !important;
+}
+.publisher-name{
+    float:left;
+    text-transform: uppercase;
+    font-size:0.75rem;
+    color:#333366;
+    font-weight:300;
+}
+
+.image_container{
+    border:1px solid #E0E0E0;
+    border-radius: 9px;
+    display:block;
+    cursor:pointer;
+    position:relative;
+    z-index: 1;
+    overflow:hidden;
+    padding:1px;
+    -webkit-box-sizing: border-box;
+    content:'';
+    height:100%;
+    left:0;
+    top:0;
+    width:100%;
+    -webkit-box-shadow:0 1px 4px rgba(0,0,0,.1);
+    box-shadow:0 1px 4px rgba(0,0,0,.1);
+
+}
+
+.panel h1{
+    margin-left: 3rem;
+}
+
+
+.top-bar .toggle-topbar a{
+    text-transform: none;
+}
+.timecount{
+    float: right;
+    margin-right: -4px;
+    border-color:#2ca02c;
+    padding-right: 0.9375rem;
+}
+.storyelements{
+    margin-bottom: -16px;
+    padding: 8px 0 16px;
+    bottom: 0;
+    clear: left;
+}
+.label{
+    margin-bottom: auto;
+    float:right;
+    font-size:0.7rem;
+    background:none;
+    color:#333366;
+    float:right;
+    position:relative;
+}
+strong{
+    font-size: 0.9rem;
+    font-weight:200
+    line-height: normal;
+
+    /*margin-left:-3rem;*/
+
+}
+a {
+    color:#333366
+}
+
+p{
+    line-height:normal;
+}
+img{
+    margin-right: -35px;
+    /*padding-left: 0.9375rem;*/
+    /*padding-right:0.9375rem*/
+    /*margin-left: 10px;*/
+}
+
+.image{
+    height:0;
+    border:0;
+    width:100%;
+    display:inline-block;
+    vertical-align: top;
+}
+
+.columns{
+    padding-left: 0.1rem;
+    padding-right:0.1rem;
+}
+.dropdown.button, button.dropdown{
+    /*padding-right:12.98rem;*/
+    background:#333366 repeat scroll;
+    width:100%;
+    font-size: 0.9rem;
+    border-radius:1px;
+    margin-top:-1.5rem;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+    border-color: #FFFFFF;
+}
+
+.searchbutton{
+   width:100%;
+   height:100%;
+   padding-bottom:1.22rem;
+   padding-top:1.1rem;
+  background:url("../img/searchIcon.png") no-repeat center #333366;
+}
+
+.image-container{
+    display:block;
+    overflow: hidden;
+    position: relative;
+}
+body{
+    background-color:#E8E8E8;
+
+}.footer{
+     display: block;
+     list-style: none;
+     cursor: pointer;
+
+ }
+
+
+.likecounter{
+    position: relative;
+    color: #9197a3;
+    font-weight: normal;
+    margin: 10px;
+
+}
+
+.likespan{
+    display: inline;
+    white-space: nowrap;
+}
+
+
+.shareboxdiv{
+    -webkit-border-radius: 0;
+    display: -webkit-box;
+    -webkit-border-radius: 0 0 4px 4px;
+
+    position: relative;
+    font-weight: bold;
+    background: #f3f3f3;
+    color: #5e5e5e;
+    font-size: 12px;
+    line-height: 36px;
+}
+
+
+.sharebox {
+    -webkit-box-flex: 1;
+    width: 0;
+    padding: 0 8px;
+    text-align: center;
+    position: relative;
+    display: block;
+    font-weight: bold;
+    background: #f3f3f3;
+    color: #5e5e5e;
+    font-size: 12px;
+    line-height: 36px;
+}
+
+.sharebox::before {
+    border-left: 1px solid #d6d8db;
+    bottom: 7px;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 7px;
+}
+
+/*#label.active label {*/
+    /*background: url("../img/search-icon-gray-small.png") -50px 0;*/
+/*}*/
