@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 // handles the fetch feeds request
 Route::get('feeds', 'FeedController@fetchFeeds');
+
+// handles the fetch feeds request
+Route::get('test', 'RawStoryController@matchStory');
