@@ -59,7 +59,7 @@
                     <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
                       <div class="smallimage_container">
                         <div class="smallimage">
-                        <img width="200" height="180" src="{{$less_important_story['image_url']}}"/>
+                        <img width="120" height="100" src="{{$less_important_story['image_url']}}"/>
                     </a>
                            {{--<span class="label" style="float:right; align-items: right">{{$less_important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>--}}
 
