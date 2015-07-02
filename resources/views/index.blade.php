@@ -27,16 +27,16 @@
 
                     </div>
                   </a>
-                  <footer class="footer">
-                  <div class="_2ip_" id="feedback_inline_896223087101322" data-sigil="mufi-inline">
-                  <div class="likecounter" id="counts_feedback">
-                  <a href="http://www.facebook.com/plugins/like.php?href={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;">
-                  <span class="likespan" id="u_6_i"><span>1 Like</span></span></a></div>
-                  <div class="shareboxdiv"><div class="sharebox">
-                  <a class="_15ko touchable _2q8z" href="http://www.facebook.com/plugins/like.php?href={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=1681272065426030" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;" id="u_6_c" data-sigil="touchable unlike" data-autoid="autoid_63">Like</a></div>
+                  {{--<footer class="footer">--}}
+                  {{--<div class="_2ip_" id="feedback_inline_896223087101322" data-sigil="mufi-inline">--}}
+                  {{--<div class="likecounter" id="counts_feedback">--}}
+                  {{--<a href="http://www.facebook.com/plugins/like.php?href={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;">--}}
+                  {{--<span class="likespan" id="u_6_i"><span>1 Like</span></span></a></div>--}}
+                  {{--<div class="shareboxdiv"><div class="sharebox">--}}
+                  {{--<a class="_15ko touchable _2q8z" href="http://www.facebook.com/plugins/like.php?href={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=1681272065426030" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;" id="u_6_c" data-sigil="touchable unlike" data-autoid="autoid_63">Like</a></div>--}}
 
-                  <div class="sharebox"><a class="_15kq" href="https://twitter.com/share?url={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}&text={{$important_story['title']}}&via=newspepa" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a></div>
-                  <div class="sharebox"><a class="_15kr" data-store="{&quot;share_id&quot;:896223087101322,&quot;feedback_source&quot;:1,&quot;behavior&quot;:&quot;custom&quot;}" href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}" data-sigil="share-popup">Share</a></div></div></div></footer>
+                  {{--<div class="sharebox"><a class="_15kq" href="https://twitter.com/share?url={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}&text={{$important_story['title']}}&via=newspepa" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a></div>--}}
+                  {{--<div class="sharebox"><a class="_15kr" data-store="{&quot;share_id&quot;:896223087101322,&quot;feedback_source&quot;:1,&quot;behavior&quot;:&quot;custom&quot;}" href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}" data-sigil="share-popup">Share</a></div></div></div></footer>--}}
 
 
 
@@ -53,17 +53,24 @@
 
     @foreach($data['timeline_stories']['less_important'] as $less_important_story)
               <div class="row panel radius">
-                  <div class="large-5 small-4 columns">
+                  <div class="large-5 small-4 columns" style="width: 100%;">
+
+
                     <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
-                        <img width="200" height="180" src="{{$less_important_story['image_url']}}"/>
-                    </a>   <span class="publisher-name" style="float:left"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+                      <div class="smallimage_container">
+                        <div class="smallimage">
+                        <img width="120" height="100" src="{{$less_important_story['image_url']}}"/>
+                    </a>
                            {{--<span class="label" style="float:right; align-items: right">{{$less_important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>--}}
 
-                  </div>
-                  <div class="large-7 small-8 columns">
-                  <p><a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}"><strong>{{$less_important_story['title']}}</strong></a></p>
 
-                  </div>
+                  <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
+                  </a>
+</div>
+     <h1 class="title">{{$less_important_story['title']}} </h1>
+     <span class="publisher-name" style="float:left"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+</div>
+</div>
 
 
                </div>
