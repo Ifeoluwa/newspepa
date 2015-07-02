@@ -1,7 +1,4 @@
-.news-item{
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
-}
+
 /*.title-area{*/
     /*background:url('../img/logo-medium4.png') no-repeat;*/
 
@@ -159,8 +156,9 @@ img{
 }
 
 .columns{
-    padding-left: 0.1rem;
-    padding-right:0.1rem;
+    padding-left: 0;
+    padding-right:0;
+    overflow-x: hidden;
 }
 .dropdown.button, button.dropdown{
     /*padding-right:12.98rem;*/
@@ -247,6 +245,11 @@ body{
     position: absolute;
     top: 7px;
 }
+
+.medium-6 {
+    width: 100%;
+}
+
 
 /*#label.active label {*/
     /*background: url("../img/search-icon-gray-small.png") -50px 0;*/
