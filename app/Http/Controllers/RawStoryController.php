@@ -8,8 +8,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
 
 class RawStoryController extends Controller {
 
 
-} 
+}
