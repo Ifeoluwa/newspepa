@@ -42,7 +42,7 @@
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
     <div class="large-12 medium-12 small-12">
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">{{$data['category_stories']['category_name']}}</button></div>
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown"></button></div>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
           <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
           <li id="2" class="active"><a href="{{url('entertainment')}}">Entertainment</a></li>
