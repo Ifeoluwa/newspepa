@@ -53,17 +53,24 @@
 
     @foreach($data['timeline_stories']['less_important'] as $less_important_story)
               <div class="row panel radius">
-                  <div class="large-5 small-4 columns">
+                  <div class="large-5 small-4 columns" style="width: 100%;">
+
+
                     <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
+                      <div class="smallimage_container">
+                        <div class="smallimage">
                         <img width="200" height="180" src="{{$less_important_story['image_url']}}"/>
-                    </a>   <span class="publisher-name" style="float:left"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+                    </a>
                            {{--<span class="label" style="float:right; align-items: right">{{$less_important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>--}}
 
-                  </div>
-                  <div class="large-7 small-8 columns">
-                  <p><a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}"><strong>{{$less_important_story['title']}}</strong></a></p>
 
-                  </div>
+                  <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
+                  </a>
+</div>
+     <h1 class="title">{{$less_important_story['title']}} </h1>
+     <span class="publisher-name" style="float:left"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+</div>
+</div>
 
 
                </div>
