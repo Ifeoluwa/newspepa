@@ -9,7 +9,7 @@
          <div class="row panel radius">
                   <div class="large-12 small-12 columns">
                    <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
-                  <a href="{{url($tc->makeStoryUrl($category_story['title'], $important_story['story_id']))}}"><img width="300" height="194" src="{{$category_story['image_url']}}"/></a>
+                  <a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}"><img width="300" height="194" src="{{$category_story['image_url']}}"/></a>
                   </div>
                   <div class="large-12 small-12 columns"><p><p><a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}"><strong>{{$category_story['title']}}</strong></a></p></p>
                   </div>

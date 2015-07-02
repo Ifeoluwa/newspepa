@@ -14,9 +14,7 @@
 
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
       <ul class="title-area">
-        <li class="name">
-          <h1><a href="{{url('/')}}">NEWSPEPA</a></h1>
-        </li>
+        <a href="{{url('/')}}"><li class="name"></li></a>
          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
@@ -29,26 +27,16 @@
           <li><a href="{{url('sports')}}">Sports</a></li>
           <li><a href="{{url('nigeria')}}">Nigeria</a></li>
           <li><a href="{{url('metro')}}">Metro</a></li>
-
-          {{--<li class="has-form">--}}
-            {{--<div class="row collapse">--}}
-              {{--<div class="large-8 small-9 columns">--}}
-                {{--<input type="text" placeholder="What's happening?">--}}
-              {{--</div>--}}
-              {{--<div class="large-4 small-3 columns">--}}
-                {{--<a href="#" class="alert button expand">Search</a>--}}
-              {{--</div>--}}
-            {{--</div>--}}
-          {{--</li>--}}
         </ul>
       </section>
     </nav>
 
-            <div class="large-8 small-10 columns"style="padding-right:0;padding-left:0"><input type="text" results="7" placeholder="Search News..." name="searchbox" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
-            <div class="large-4 small-2 columns" style="padding-right:0;padding-left:0"><a href="#" class="alert button expand"></a></div>
-
-    </div>
-
+    {{--the search bar--}}
+    <div class="row" style="width:100%">
+            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input type="text" results="7" placeholder="Search News..." name="searchbox" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
+            <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit"class="searchbutton"></button></div>
+              </div>
+              </div>
     {{--<button type="submit" style="height:100%"></button>--}}
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
@@ -62,6 +50,9 @@
           <li><a href="{{url('nigeria')}}">Nigeria</a></li>
           <li><a href="{{url('metro')}}">Metro</a></li>
         </ul>
+
+{{--the stories containers starts from here--}}
+
           <div class="large-12 small-12 columns">
              @yield('important_stories')
 
@@ -97,6 +88,7 @@
     </footer>
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
     <script src="ui_newspaper/js/foundation.min.js"></script>
+    <script src="ui_newspaper/get_social_counts/site.js"></script>
     <script>
         $(document).foundation();
     </script>
