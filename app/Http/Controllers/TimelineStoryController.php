@@ -58,6 +58,7 @@ class TimelineStoryController extends Controller
 
     //Gets all the details of the full story and the related stories
     public function getFullStory($story_id){
+        $full_story = array();
         DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_reads');
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
         $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
