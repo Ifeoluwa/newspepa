@@ -31,12 +31,9 @@ class Kernel extends ConsoleKernel
         $schedule->call(function(){
             $fc = new FeedController();
             $fc->fetchFeeds();
-        })->everyTenMinutes()->then(function(){
+        })->everyTenMinutes();
 
-        });
+        $schedule->call('FeedController@fetchFeeds')->everyTenMinutes();
 
-        $schedule->call(function(){
-
-        })->everyFiveMinutes();
     }
 }
