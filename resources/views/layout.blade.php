@@ -11,6 +11,14 @@
 
   </head>
   <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=273688806111611";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
     <div class="fixed">
 
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
@@ -41,8 +49,9 @@
     {{--<button type="submit" style="height:100%"></button>--}}
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
+
     <div class="large-12 medium-12 small-12">
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Top stories</button></div>
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Filter By</button></div>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
           <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
           <li id="2" class="active"><a href="{{url('entertainment')}}">Entertainment</a></li>
@@ -51,6 +60,8 @@
           <li id="5"><a href="{{url('nigeria')}}">Nigeria</a></li>
           <li id="6"><a href="{{url('metro')}}">Metro</a></li>
         </ul>
+
+
 
 {{--the stories containers starts from here--}}
 
@@ -81,7 +92,9 @@
             <hr/>
             <div class="row">
                 <div class="large-5 columns">
-                    <p>© NewsPepa.</p>
+                    <p style="text-align: center;  ">
+
+                        <i class="newspepaicon"> </i>  © 2015 ICONWAY</p>
                 </div>
 
             </div>
@@ -92,22 +105,27 @@
     <script src="ui_newspaper/js/foundation.min.js"></script>
     <script src="ui_newspaper/get_social_counts/site.js"></script>
     <script src="js/foundation/foundation.dropdown.js"></script>
+
     <script>
         $(document).foundation();
 
+
+        if (location.pathname == "/newspepa/public/") {
+              $(".dropdown").text("Top Stories");
+         } else if (location.pathname == "/newspepa/public/politics") {
+            $(".dropdown").text("Politics");
+         } else if (location.pathname == "/newspepa/public/entertainment") {
+               $(".dropdown").text("Entertainment");
+         } else if (location.pathname == "/newspepa/public/sports") { // to add aditional pages, replace CAPS
+         $(".dropdown").text("Sports");
+         }else if (location.pathname == "/newspepa/public/metro") { // to add aditional pages, replace CAPS
+                       $(".dropdown").text("Metro");
+          }else if (location.pathname == "/newspepa/public/nigeria") { // to add aditional pages, replace CAPS
+                         $(".dropdown").text("Nigeria");
+                    }
+
+
     </script>
-
-     <script>
-      $('document').ready(function(){
-          jQuery(document).ready(function(){
-              var url = window.location.href;
-
-               $('.drop1 a[href="'+url+'"]').appendTo('.button dropdown');
-
-          })
-      });
-
-        </script>
 
     </body>
 </html>
