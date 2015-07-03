@@ -3,6 +3,8 @@
 namespace App\Console;
 
 use App\Http\Controllers\FeedController;
+use App\Http\Controllers\StoryController;
+use App\Http\Controllers\TimelineStoryController;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -34,6 +36,11 @@ class Kernel extends ConsoleKernel
         })->everyTenMinutes();
 
         $schedule->call('FeedController@fetchFeeds')->everyTenMinutes();
+
+        $schedule->call(function(){
+            $sc = new StoryController();
+            $sc->createTimelineStory();
+        })->everyFiveMinutes();
 
         $schedule->call('StoryController@createTimelineStory')->everyTenMinutes();
 
