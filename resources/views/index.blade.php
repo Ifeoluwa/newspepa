@@ -20,7 +20,7 @@
                         <h1 class="title">{{$important_story['title']}}</h1>
                         </header>
                         </a>
-                         <span class="publisher-name"><b>{{$data['publishers_name'][$important_story['pub_id']]}}</b></span>
+                         <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$important_story['pub_id']]}}</b></span>
                          {{--<span class="label">{{$important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($important_story['created_date'])}} ago</span>--}}
 
                         </div>
