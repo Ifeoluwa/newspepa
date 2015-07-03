@@ -29,23 +29,27 @@
 @endforeach
 @stop
 
+@section('noImageStory')
+@foreach()
+@stop
 @section('related_content')
 <div class="row panel radius"><b>RECENT STORIES</b></div>
 
 
 <div class="large-12 small-12 medium-12 columns">
 @foreach($data['recent_stories'] as $recent_stories)
+ <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
+ <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
     <div class="row panel radius"style="padding-right: 0.4rem">
     <div class="large-3 small-3 medium-3 columns"style="padding:0.3rem"><img src="{{$recent_stories['image_url']}}" width="100px" height="100px"/></div>
     <span class="recent-stories-text">{{$recent_stories['title']}}.</span>
-    </div>
-    {{--<div class="large-4 small-4 medium-4"></div>--}}
-    {{--<div class="large-4 small-4 medium-4"></div>--}}
+    </div></a>
+
  @endforeach
 </div>
+
+@stop
+
   {{--<span><b>{{$recent_stories['title']}}.</b></span>--}}
   {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
     {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
-
-
-@stop

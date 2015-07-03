@@ -41,7 +41,7 @@
              <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
                 <div class="smallimage_container">
                    <div class="smallimage"><img width="120" height="100" src="{{$less_important_story['image_url']}}"/></div>
-                    </a>
+
                   <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
                    <h1 class="title">{{$less_important_story['title']}} </h1>
                    </a>
@@ -50,6 +50,7 @@
                <span class="label" style="margin-top:6px;margin-bottom:12px"><i class="reads"></i>{{$less_important_story['no_of_reads']}}reads</span>
                 <span class="label" style="margin-top:6px; margin-bottom:12px"><i class="time-icon"></i>{{$tc->getTimeDifference($less_important_story['created_date'])}}</span>
                 </div>
+                </a>
 </div>
 
 </div>
@@ -61,10 +62,9 @@
 @section('stories_with_no_images')
     @foreach($data['timeline_stories']['no_image'] as $no_image_story)
               <div class="row panel radius">
-                  <div class="large-12 small-12 columns">
-                  <p><a href="{{url($tc->makeStoryUrl($no_image_story['title'], $no_image_story['story_id']))}}"><strong>{{$no_image_story['title']}}</strong></a></p>
-
-                  </div>
+                  <a href="{{url($tc->makeStoryUrl($no_image_story['title'], $no_image_story['story_id']))}}"><div class="large-12 small-12 columns">
+                  <p><strong>{{$no_image_story['title']}}</strong></p>
+                  </div></a>
                   <span class="label">{{$tc->getTimeDifference($no_image_story['created_date'])}}</span>
               </div>
     @endforeach
