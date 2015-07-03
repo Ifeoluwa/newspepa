@@ -448,6 +448,16 @@ body{
     /*overflow:hidden;*/
 }
 
+.justtopull{
+    width:100%;
+    font:13px arial;
+    text-justify:inter-word;
+    text-align: center;
+    padding:0.3rem;
+    /*overflow:hidden;*/
+}
+
+
 /*#label.active label {*/
     /*background: url("../img/search-icon-gray-small.png") -50px 0;*/
 /*}*/
