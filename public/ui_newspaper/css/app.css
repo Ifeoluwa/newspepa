@@ -25,6 +25,15 @@
     width:100%;
 }
 
+.time-count{
+    background: url('../img/clock_time.png')no-repeat;
+    background-position:left;
+    background-size:15px 15px;
+    width:15px;
+    height:15px;
+    display:inline-block;
+    background-color:none
+}
 .top-bar .toggle-topbar.menu-icon a {
     background-color:#333366;
     margin-top:-8px;
@@ -275,7 +284,21 @@ body{
 .medium-6 {
     width: 100%;
 }
-
+.full-story-text{
+    line-height: 1.5;
+    text-align:justify;
+    text-justify:inter-word;
+    /*font:16px arial;*/
+    /*padding:0.2rem;*/
+}
+.recent-stories-text{
+    width:100%;
+    font:13px arial;
+    text-justify:inter-word;
+    text-align: center;
+    padding:0.3rem;
+    /*overflow:hidden;*/
+}
 
 /*#label.active label {*/
     /*background: url("../img/search-icon-gray-small.png") -50px 0;*/
