@@ -35,5 +35,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->call('FeedController@fetchFeeds')->everyTenMinutes();
 
+        $schedule->call('StoryController@createTimelineStory')->everyTenMinutes();
+
     }
 }
