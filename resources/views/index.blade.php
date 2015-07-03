@@ -20,6 +20,8 @@
                         <h1 class="title">{{$important_story['title']}}</h1>
                         </header>
                         </a>
+                         <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$important_story['pub_id']]}}</b></span>
+                         {{--<span class="label">{{$important_story['no_of_reads']}}reads|{{$tc->getTimeDifference($important_story['created_date'])}} ago</span>--}}
                          <span class="publisher-name"><b>{{$data['publishers_name'][$important_story['pub_id']]}}</b></span>
                          <span class="label">{{$important_story['no_of_reads']}}reads</span>
                          <span class="label"><i class="time-count"></i>{{$tc->getTimeDifference($important_story['created_date'])}}</span>
@@ -48,6 +50,8 @@
                 </div>
                  <span class="publisher-name" style="float:left"><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
 </div>
+     <h1 class="title">{{$less_important_story['title']}} </h1>
+     <span class="publisher-name" style="float:left"><i class="newspapericon"></i><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
 </div>
 
 @endforeach
