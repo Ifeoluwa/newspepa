@@ -11,15 +11,15 @@ class Story extends Model
     // Gets all the pivot stories
     public static function pivots(){
 
-        $pivots = DB::table('clusters')->join('stories')->where('cluster_pivot', 'cluster_match')->get();
+        $pivots = DB::table('clusters')->join('stories','clusters.cluster_pivot', '=', 'stories.id')->whereRaw('clusters.cluster_pivot = clusters.cluster_match')->get();
 
         return $pivots;
 
     }
 
     // Gets all the stories that match the pivot story
-    public static function getMatches($pivot_id){
-        $matches = DB::table("clusters")->join('stories', 'stories.id', '=', 'match_id')->where('clusters.pivot_id', $pivot_id)
+    public static function matches($cluster_pivot){
+        $matches = DB::table("clusters")->join('stories', 'clusters.cluster_match',  '=',  'stories.id')->where('clusters.cluster_pivot', $cluster_pivot)
             ->get();
 
         return $matches;
@@ -34,7 +34,7 @@ class Story extends Model
             $array['modified_date'] = $now;
         }
 
-        DB::insert('INSERT IGNORE INTO stories ('.implode(',',array_keys($array)).
+        DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
             ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
 
     }

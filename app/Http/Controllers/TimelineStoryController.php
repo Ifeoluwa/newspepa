@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Publisher;
+use App\Story;
 use App\TimelineStory;
 use Illuminate\Http\Request;
 
@@ -62,6 +63,7 @@ class TimelineStoryController extends Controller
         DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_reads');
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
         $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
+        $full_story['other_sources'] = Story::matches($story_id);
         return view('fullStory')->with('data', $full_story);
     }
 
@@ -86,7 +88,6 @@ class TimelineStoryController extends Controller
         //Convert whitespaces and underscore to dash
         $url = preg_replace("/[\s_]/", "-", $url);
         return $url.'-'.($id);
-//        return $this->getFullStory($id);
     }
 
     // Gets the time difference between the time a story is created and the current time
