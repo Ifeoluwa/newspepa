@@ -48,14 +48,19 @@ class FeedController extends Controller {
                     $stories = $parser->xml($content);
 
                     foreach ($stories['channel']['item'] as $str){
-
-                        $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
-
                         $story = array();
-                        if(count($matches) > 0){
-                            FeedController::storeImage($this->getImageUrl($matches[0]));
-                            $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                        if($feed['id'] == 13){
+                            FeedController::storeImage($this->getImageUrl($str['enclosure']));
+                            $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($str['enclosure']));
+
+                        }else{
+                            $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
+                            if(count($matches) > 0){
+                                FeedController::storeImage($this->getImageUrl($matches[0]));
+                                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                            }
                         }
+
                         $story['title'] = "".$str['title']."";
                         $story['pub_id'] = $feed['pub_id'];
                         $story['feed_id'] = $feed['id'];
