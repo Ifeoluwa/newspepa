@@ -448,14 +448,9 @@ body{
     /*overflow:hidden;*/
 }
 
-.justtopull{
-    width:100%;
-    font:13px arial;
-    text-justify:inter-word;
-    text-align: center;
-    padding:0.3rem;
-    /*overflow:hidden;*/
-}
+
+
+
 
 
 /*#label.active label {*/
