@@ -27,22 +27,28 @@
 </div>
 
       <div class="sharebox"><i class="twittericon"></i><a class="_15kq" href="https://twitter.com/share?url={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&text={{$full_story['title']}}&via=newspepa" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a></div>
-      <div class="sharebox"><i class="fbicon"></i><a class="_15kr"  href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&redirect_uri={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" >Share</a></div></div></div></footer>
-@endforeach
 
 
       <div class="sharebox"><i class="fbicon"></i><a class="_15kr"  href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&redirect_uri={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" >Share</a></div></div></div></footer>
 @endforeach
 @stop
 
-@section('noImageStory')
-@foreach()
-@stop
 @section('related_content')
 <div class="row panel radius"><b>RECENT STORIES</b></div>
 
+@foreach($data['recent_stories'] as $recent_stories)
+    <div class="row panel radius">
+          <div class="large-5 small-4 columns" style="width: 100%;">
+             <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
+                <div class="smallimage_container">
+                   <div class="smallimage"><img width="120" height="100" src="{{$recent_stories['image_url']}}"/></div>
 
+                           {{--<span class="label time-count" style="float:right; align-items: right">{{$tc->getTimeDifference($less_important_story['created_date'])}}|{{$less_important_story['no_of_reads']}}reads</span>--}}
+                  <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
+                   <h1 class="title">{{$recent_stories['title']}} </h1>
+                   </a>
                 </div>
+                 </a>
 
 </div>
 
@@ -65,3 +71,6 @@
   {{--<span><b>{{$recent_stories['title']}}.</b></span>--}}
   {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
     {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
+
+
+@stop
