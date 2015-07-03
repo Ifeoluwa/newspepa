@@ -20,7 +20,7 @@
       <div class="_2ip_" id="feedback_inline_896223087101322" data-sigil="mufi-inline">
       <div class="likecounter" id="counts_feedback">
       <a href="http://www.facebook.com/plugins/like.php?href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;">
-      <span class="likespan" id="u_6_i"><span>1 Like</span></span></a></div>
+      <span class="likespan" id="u_6_i"><span></span></span></a></div>
       <div class="shareboxdiv"><div class="sharebox">
 <div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
 
