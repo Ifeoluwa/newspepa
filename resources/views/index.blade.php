@@ -50,6 +50,7 @@
                      <span class="publisher-name" style="float:left"><i class="newspapericon"></i><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
 
 
+
 </div>
 
 </div>
