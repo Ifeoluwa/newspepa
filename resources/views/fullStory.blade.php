@@ -22,13 +22,17 @@
       <a href="http://www.facebook.com/plugins/like.php?href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;">
       <span class="likespan" id="u_6_i"><span>1 Like</span></span></a></div>
       <div class="shareboxdiv"><div class="sharebox">
-      <a class="_15ko touchable _2q8z" href="http://www.facebook.com/plugins/like.php?href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=1681272065426030" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;" id="u_6_c" data-sigil="touchable unlike" data-autoid="autoid_63">Like</a></div>
+<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
 
-      <div class="sharebox"><a class="_15kq" href="https://twitter.com/share?url={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&text={{$full_story['title']}}&via=newspepa" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a></div>
-      <div class="sharebox"><a class="_15kr" data-store="{&quot;share_id&quot;:896223087101322,&quot;feedback_source&quot;:1,&quot;behavior&quot;:&quot;custom&quot;}" href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-sigil="share-popup">Share</a></div></div></div></footer>
+</div>
+
+      <div class="sharebox"><i class="twittericon"></i><a class="_15kq" href="https://twitter.com/share?url={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&text={{$full_story['title']}}&via=newspepa" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a></div>
+      <div class="sharebox"><i class="fbicon"></i><a class="_15kr"  href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&redirect_uri={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" >Share</a></div></div></div></footer>
 @endforeach
 
 
+      <div class="sharebox"><i class="fbicon"></i><a class="_15kr"  href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&redirect_uri={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" >Share</a></div></div></div></footer>
+@endforeach
 @stop
 
 @section('noImageStory')
@@ -38,20 +42,26 @@
 <div class="row panel radius"><b>RECENT STORIES</b></div>
 
 
+                </div>
+
+</div>
+
+</div>
+
+ @endforeach
+
+ @stop
+
 <div class="large-12 small-12 medium-12 columns">
 @foreach($data['recent_stories'] as $recent_stories)
- <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
- <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
     <div class="row panel radius"style="padding-right: 0.4rem">
     <div class="large-3 small-3 medium-3 columns"style="padding:0.3rem"><img src="{{$recent_stories['image_url']}}" width="100px" height="100px"/></div>
     <span class="recent-stories-text">{{$recent_stories['title']}}.</span>
-    </div></a>
-
+    </div>
+    {{--<div class="large-4 small-4 medium-4"></div>--}}
+    {{--<div class="large-4 small-4 medium-4"></div>--}}
  @endforeach
 </div>
-
-@stop
-
   {{--<span><b>{{$recent_stories['title']}}.</b></span>--}}
   {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
     {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
