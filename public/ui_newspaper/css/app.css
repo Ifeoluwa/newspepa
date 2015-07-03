@@ -11,6 +11,42 @@
     margin-bottom:0.4rem;
     max-width: 100%;
 }
+.searchbar-row{
+    align-content: center;
+    padding-top: 12px;
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+    background-color: white;
+    width:100%;
+}
+.searchbar-input-text{
+    border-bottom: 3px solid #333366 !important;
+    border-left: 3px solid #333366 !important;
+    border-right: medium none !important;
+    border-bottom-right-radius: 0 !important;
+    border-top: 3px solid #333366!important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 4px !important;
+    border-top-left-radius: 4px !important;
+    height:2.5rem !important;
+}
+
+.searchbutton{
+    width:45px;
+    height:33px;
+    padding-bottom:1.22rem;
+    padding-top:1.2rem;
+    background:url("../img/box-icon-search.png") no-repeat center #333366;
+}
+button{
+    padding:0 0 0 0;
+}
+
+.searchbar-button{
+    border-bottom-right-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+    border-bottom:solid 3px #333366;
+}
 .top-bar{
     width:100%;
     padding-top:7px;
@@ -25,15 +61,6 @@
     width:100%;
 }
 
-.time-count{
-    background: url('../img/clock_time.png')no-repeat;
-    background-position:left;
-    background-size:15px 15px;
-    width:15px;
-    height:15px;
-    display:inline-block;
-    background-color:none
-}
 .top-bar .toggle-topbar.menu-icon a {
     background-color:#333366;
     margin-top:-8px;
@@ -77,12 +104,15 @@
     text-overflow: ellipsis;
     white-space: normal;
     margin-left: 0 !important;
+
 }
 .publisher-name{
     font-size:0.75rem;
     color: #898989;
     font-weight:300;
-    margin-top: 39px;
+    margin-top: 6px;
+    position: relative;
+    display:inline-block;
 }
 
 .image_container{
@@ -113,12 +143,7 @@
 .top-bar .toggle-topbar a{
     text-transform: none;
 }
-.timecount{
-    float: right;
-    margin-right: -4px;
-    border-color:#2ca02c;
-    padding-right: 0.9375rem;
-}
+
 .storyelements{
     margin-bottom: -16px;
     padding: 8px 0 16px;
@@ -131,8 +156,9 @@
     font-size:0.7rem;
     background:none;
     color:#333366;
-    float:right;
     position:relative;
+    display:inline-block;
+    width:100px;
 }
 strong{
     font-size: 0.9rem;
@@ -207,17 +233,11 @@ p{
 
 }
 
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
-    border-color: #FFFFFF;
-}
+/*input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {*/
+    /*border-color: #FFFFFF;*/
+/*}*/
 
-.searchbutton{
-   width:100%;
-   height:100%;
-   padding-bottom:1.22rem;
-   padding-top:1.1rem;
-  background:url("../img/box-icon-search.png") no-repeat center #333366;
-}
+
 
 body{
     background-color:#E8E8E8;
@@ -297,13 +317,24 @@ body{
     margin-bottom: -2px;
 
 }
-
-
-.reads {
-    background-image: url("../img/eyeicon.png");
+.time-icon{
+    background: url('../img/clock_time.png')no-repeat;
     position: relative;
     background-repeat: no-repeat;
     background-size: 18px 15px;
+    width: 18px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 2px;
+    margin-bottom: -2px;
+}
+
+
+.reads {
+    background-image: url("../img/eye-icon.png");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
     width: 18px;
     height: 15px;
     display: inline-block;
