@@ -68,6 +68,7 @@ class FeedController extends Controller {
                         $story['description'] = "".$this->clean(strip_tags($str['description']))."";
                         $story['content'] = "".$this->clean(strip_tags($str['description']))."";
                         $story['url'] = "".$str['link']."";
+                        $story['story_url'] =
                         $story['pub_date'] = strtotime($str['pubDate']);
 
 

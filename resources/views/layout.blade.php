@@ -33,16 +33,17 @@
     </nav>
 
     {{--the search bar--}}
-    <div class="row" style="width:100%">
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input type="text" results="7" placeholder="Search News..." name="searchbox" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
-            <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit"class="searchbutton"></button></div>
+    <div class="row searchbar-row" style="width:100%">
+            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="searchbox" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
+            <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
               </div>
               </div>
     {{--<button type="submit" style="height:100%"></button>--}}
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
+
     <div class="large-12 medium-12 small-12">
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Top stories</button></div>
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Filter By</button></div>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
           <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
           <li id="2" class="active"><a href="{{url('entertainment')}}">Entertainment</a></li>
@@ -81,7 +82,9 @@
             <hr/>
             <div class="row">
                 <div class="large-5 columns">
-                    <p>© NewsPepa.</p>
+                    <p style="text-align: center;  ">
+
+                        <i class="newspepaicon"> </i>  © 2015 ICONWAY</p>
                 </div>
 
             </div>
@@ -92,22 +95,27 @@
     <script src="ui_newspaper/js/foundation.min.js"></script>
     <script src="ui_newspaper/get_social_counts/site.js"></script>
     <script src="js/foundation/foundation.dropdown.js"></script>
+
     <script>
         $(document).foundation();
 
+
+        if (location.pathname == "/") {
+              $(".dropdown").text("Top Stories");
+         } else if (location.pathname == "/politics") {
+            $(".dropdown").text("Politics");
+         } else if (location.pathname == "//entertainment") {
+               $(".dropdown").text("Entertainment");
+         } else if (location.pathname == "/sports") { // to add aditional pages, replace CAPS
+         $(".dropdown").text("Sports");
+         }else if (location.pathname == "/metro") { // to add aditional pages, replace CAPS
+                       $(".dropdown").text("Metro");
+          }else if (location.pathname == "/nigeria") { // to add aditional pages, replace CAPS
+                         $(".dropdown").text("Nigeria");
+                    }
+
+
     </script>
-
-     <script>
-      $('document').ready(function(){
-          jQuery(document).ready(function(){
-              var url = window.location.href;
-
-               $('.drop1 a[href="'+url+'"]').appendTo('.button dropdown');
-
-          })
-      });
-
-        </script>
 
     </body>
 </html>
