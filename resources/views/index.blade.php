@@ -5,12 +5,12 @@
 @stop
 
 @section('important_stories')
-
+    <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
     @foreach($data['timeline_stories']['important'] as $important_story)
          <div class="row panel radius">
                   <div class="large-12 medium-6 small-12 columns">
 
-                  <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
+
                   <a href="{{url($tc->makeStoryUrl($important_story['title'], $important_story['story_id']))}}">
 
                        <div class="image" style="background-image: url('{{$important_story['image_url']}}'); background-repeat: no-repeat;padding-bottom: 52%;-webkit-background-size: cover;background-size: cover; "></div>

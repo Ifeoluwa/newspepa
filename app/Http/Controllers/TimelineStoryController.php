@@ -32,12 +32,16 @@ class TimelineStoryController extends Controller
         //
         $timeline_stories = array();
         $timeline_stories['important'] = TimelineStory::importantStories();
+        shuffle($timeline_stories['important']);
         $timeline_stories['less_important'] = array();
+
         for($i = 1; $i <= count($this->category_names); $i++){
             $timeline_stories['less_important'] = array_merge($timeline_stories['less_important'], TimelineStory::timelineStoriesByCat($i));
         }
+        shuffle($timeline_stories['less_important']);
 
         $timeline_stories['no_image'] = TimelineStory::noImageStories();
+        shuffle($timeline_stories['no_image']);
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
 
     }
@@ -52,6 +56,7 @@ class TimelineStoryController extends Controller
         $category_id = Category::$news_category[$category_name];
         $category_stories['category_name'] = $this->category_names[$category_id];
         $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
+        shuffle($category_stories['all']);
         return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
     }
 
@@ -62,6 +67,7 @@ class TimelineStoryController extends Controller
         DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_reads');
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
         $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
+        shuffle($full_story['recent_stories']);
         return view('fullStory')->with('data', $full_story);
     }
 

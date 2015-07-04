@@ -32,6 +32,7 @@ class FeedController extends Controller {
     public function fetchFeeds(){
         set_time_limit(0);
         $feeds = FeedController::getFeedSources();
+        shuffle($feeds);
         $parser = new Parser();
 
         foreach($feeds as $feed){
