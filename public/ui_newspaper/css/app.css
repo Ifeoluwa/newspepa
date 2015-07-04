@@ -187,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
     float:right;
     font-size:0.7rem;
     background:none;
-    color:#333366;
+    color:#898989;
     float:right;
     position:relative;
     display:inline-block;
@@ -451,8 +451,11 @@ body{
     padding:0.3rem;
     /*overflow:hidden;*/
 }
-
-
+.story-extras{
+    text-align: center;
+    width:100%;
+    border:#ff6666 solid;
+}
 
 
 
