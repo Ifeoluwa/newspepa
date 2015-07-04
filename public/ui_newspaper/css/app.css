@@ -83,7 +83,6 @@ button{
     padding: 1px;
     -webkit-box-sizing: border-box;
     content: '';
-    height: 100%;
     left: 0;
     top: 0;
     width: 100%;
@@ -95,6 +94,16 @@ button{
     border-radius: 9px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: #222222;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+    text-rendering: optimizeLegibility;
+}
 
 .text-details{
     text-align:left;
@@ -216,9 +225,6 @@ p{
     float: left;
     padding-right: 20px;
 }
-
-
-
 
 
 .columns{

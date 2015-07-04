@@ -100,17 +100,17 @@
         $(document).foundation();
 
 
-        if (location.pathname == "/newspepa/public/") {
+        if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");
-         } else if (location.pathname == "/newspepa/public/politics") {
+         } else if (location.pathname == "/politics") {
             $(".dropdown").text("Politics");
-         } else if (location.pathname == "/newspepa/public/entertainment") {
+         } else if (location.pathname == "//entertainment") {
                $(".dropdown").text("Entertainment");
-         } else if (location.pathname == "/newspepa/public/sports") { // to add aditional pages, replace CAPS
+         } else if (location.pathname == "/sports") { // to add aditional pages, replace CAPS
          $(".dropdown").text("Sports");
-         }else if (location.pathname == "/newspepa/public/metro") { // to add aditional pages, replace CAPS
+         }else if (location.pathname == "/metro") { // to add aditional pages, replace CAPS
                        $(".dropdown").text("Metro");
-          }else if (location.pathname == "/newspepa/public/nigeria") { // to add aditional pages, replace CAPS
+          }else if (location.pathname == "/nigeria") { // to add aditional pages, replace CAPS
                          $(".dropdown").text("Nigeria");
                     }
 
