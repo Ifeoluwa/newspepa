@@ -35,14 +35,15 @@ class StoryController extends Controller {
             $pivot['is_pivot'] = 1;
 
             Story::insertIgnore($pivot);
-            $matches = Story::matches($pivot['cluster_pivot']);
+            $matches = Story::matches($pivot['story_id']);
 
             foreach($matches as $match){
 
                 $match['story_url'] = $this->makeStoryUrl($match['title'], $match['cluster_match']);
+                $match['story_id'] = $match['cluster_match'];
                 array_pull($match, 'cluster_pivot');
                 array_pull($match, 'cluster_match');
-                $match['story_id'] = $match['cluster_match'];
+
                 Story::insertIgnore($match);
             }
 
