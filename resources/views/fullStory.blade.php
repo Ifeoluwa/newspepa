@@ -42,13 +42,13 @@
              <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
                 <div class="smallimage_container">
                    <div class="smallimage"><img width="120" height="100" src="{{$recent_stories['image_url']}}"/></div>
-                    </a>
+
                            {{--<span class="label time-count" style="float:right; align-items: right">{{$tc->getTimeDifference($less_important_story['created_date'])}}|{{$less_important_story['no_of_reads']}}reads</span>--}}
                   <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
                    <h1 class="title">{{$recent_stories['title']}} </h1>
                    </a>
-
                 </div>
+                 </a>
 
 </div>
 

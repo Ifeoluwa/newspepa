@@ -31,10 +31,10 @@
       </div>
   @endforeach
 @stop
-@section('related_content')
-  <div class="row panel radius"><b>Other Sources</b></div>
-  <div class="row panel radius"><b>Related Stories</b></div>
-  <div class="row panel radius"><b>Latest in Category</b></div>
+{{--@section('related_content')--}}
+  {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
+  {{--<div class="row panel radius"><b>Related Stories</b></div>--}}
+  {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
 
 
-@endsection
+{{--@endsection--}}

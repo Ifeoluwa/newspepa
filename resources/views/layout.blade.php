@@ -11,14 +11,6 @@
 
   </head>
   <body>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=273688806111611";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
     <div class="fixed">
 
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
@@ -41,9 +33,9 @@
     </nav>
 
     {{--the search bar--}}
-    <div class="row" style="width:100%">
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input type="text" results="7" placeholder="Search News..." name="searchbox" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
-            <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit"class="searchbutton"></button></div>
+    <div class="row searchbar-row" style="width:100%">
+            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="searchbox" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
+            <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
               </div>
               </div>
     {{--<button type="submit" style="height:100%"></button>--}}
@@ -60,8 +52,6 @@
           <li id="5"><a href="{{url('nigeria')}}">Nigeria</a></li>
           <li id="6"><a href="{{url('metro')}}">Metro</a></li>
         </ul>
-
-
 
 {{--the stories containers starts from here--}}
 
@@ -110,20 +100,19 @@
         $(document).foundation();
 
 
-        if (location.pathname == "/newspepa/public/") {
+        if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");
-         } else if (location.pathname == "/newspepa/public/politics") {
+         } else if (location.pathname == "/politics") {
             $(".dropdown").text("Politics");
-         } else if (location.pathname == "/newspepa/public/entertainment") {
+         } else if (location.pathname == "//entertainment") {
                $(".dropdown").text("Entertainment");
-         } else if (location.pathname == "/newspepa/public/sports") { // to add aditional pages, replace CAPS
+         } else if (location.pathname == "/sports") { // to add aditional pages, replace CAPS
          $(".dropdown").text("Sports");
-         }else if (location.pathname == "/newspepa/public/metro") { // to add aditional pages, replace CAPS
+         }else if (location.pathname == "/metro") { // to add aditional pages, replace CAPS
                        $(".dropdown").text("Metro");
-          }else if (location.pathname == "/newspepa/public/nigeria") { // to add aditional pages, replace CAPS
+          }else if (location.pathname == "/nigeria") { // to add aditional pages, replace CAPS
                          $(".dropdown").text("Nigeria");
                     }
-
 
 
     </script>
