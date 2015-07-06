@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class TimelineStoryController extends Controller
 {
@@ -77,13 +78,20 @@ class TimelineStoryController extends Controller
 
     //Handles timeline request
     public function handleRequest($request_name){
-        $request_array = explode('-', $request_name);
-        if(count($request_array) > 1){
-            return $this->getFullStory($request_array[count($request_array) - 1]) ;
-        }else{
-            return $this->getStoriesByCat($request_name);
+        try{
+            $request_array = explode('-', $request_name);
+            if(count($request_array) > 1){
+                return $this->getFullStory($request_array[count($request_array) - 1]) ;
+            }else{
+                return $this->getStoriesByCat($request_name);
 
+            }
+        }catch (\ErrorException $ex){
+           return view('error.404', [], 404);
+        } catch (NotFoundHttpException $nfe){
+            return view('error.404', [], 404);
         }
+
     }
 
 //    Creates the full story url
