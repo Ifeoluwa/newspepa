@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link rel="stylesheet" href="ui_newspaper/css/app.css" />
-    <script src="/js/vendor/modernizr.js"></script>
+    <script src="ui_newspaper/js/vendor/modernizr.js"></script>
 
   </head>
   <body>
@@ -43,16 +43,16 @@
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
-    {{--<div class="large-12 medium-12 small-12">--}}
-        {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Filter By</button></div>--}}
-        {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
-          {{--<li id="1" ><a href="{{url('/')}}">Top stories</a></li>--}}
-          {{--<li id="2" class="active"><a href="{{url('entertainment')}}">Entertainment</a></li>--}}
-          {{--<li id="3"><a href="{{url('politics')}}">Politics</a></li>--}}
-          {{--<li id="4"><a href="{{url('sports')}}">Sports</a></li>--}}
-          {{--<li id="5"><a href="{{url('nigeria')}}">Nigeria</a></li>--}}
-          {{--<li id="6"><a href="{{url('metro')}}">Metro</a></li>--}}
-        {{--</ul>--}}
+    <div class="large-12 medium-12 small-12">
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Filter By</button></div>
+        <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+          <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
+          <li id="2" class="active"><a href="{{url('entertainment')}}">Entertainment</a></li>
+          <li id="3"><a href="{{url('politics')}}">Politics</a></li>
+          <li id="4"><a href="{{url('sports')}}">Sports</a></li>
+          <li id="5"><a href="{{url('nigeria')}}">Nigeria</a></li>
+          <li id="6"><a href="{{url('metro')}}">Metro</a></li>
+        </ul>
 
 {{--the stories containers starts from here--}}
 
@@ -92,10 +92,10 @@
         </div>
     </footer>
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
-    <script src="/js/vendor/fastclick.js"></script>
+    <script src="ui_newspaper/js/vendor/fastclick.js"></script>
     <script src="ui_newspaper/js/foundation.min.js"></script>
     <script src="ui_newspaper/get_social_counts/site.js"></script>
-    <script src="js/foundation/foundation.dropdown.js"></script>
+    <script src="ui_newspaper/js/foundation/foundation.dropdown.js"></script>
 
     <script>
         $(document).foundation();
@@ -105,7 +105,7 @@
               $(".dropdown").text("Top Stories");
          } else if (location.pathname == "/politics") {
             $(".dropdown").text("Politics");
-         } else if (location.pathname == "//entertainment") {
+         } else if (location.pathname == "/entertainment") {
                $(".dropdown").text("Entertainment");
          } else if (location.pathname == "/sports") { // to add aditional pages, replace CAPS
          $(".dropdown").text("Sports");

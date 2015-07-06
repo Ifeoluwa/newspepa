@@ -63,6 +63,8 @@ button{
     border-bottom-right-radius: 4px !important;
     border-top-right-radius: 4px !important;
     border-bottom:solid 3px #333366;
+    height:100%;
+    width:100%;
 }
 .top-bar{
     width:100%;
@@ -167,7 +169,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 6px;
     position: relative;
     display:inline-block;
-    margin-left: 50px;
+    margin-right: 50px;
+
 }
 
 .timecount-name{
@@ -273,6 +276,7 @@ p{
     padding-right:0;
     overflow-x: hidden;
 }
+
 .dropdown.button, button.dropdown{
     /*padding-right:12.98rem;*/
     background:#333366 repeat scroll;

@@ -61,12 +61,12 @@
               <div class="row panel radius">
                   <a href="{{url($tc->makeStoryUrl($no_image_story['title'], $no_image_story['story_id']))}}"><div class="large-12 small-12 columns">
                   <p><strong>{{$no_image_story['title']}}</strong></p>
-                  </div></a>
-
-                  <span class="publisher-name" style="float:left; margin-right: 170px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$no_image_story['pub_id']]}}</b></span>
-
+                   <span class="publisher-name" style="float:left; margin-right: 170px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$no_image_story['pub_id']]}}</b></span>
                    <span class="category-name"><i class="categoryicon"></i><b>category</b></span>
-                  <span class="label">{{$tc->getTimeDifference($no_image_story['created_date'])}} ago</span>
+                   <span class="label">{{$tc->getTimeDifference($no_image_story['created_date'])}} ago</span>
+
+                  </div>
+                  </a>
               </div>
     @endforeach
 @stop

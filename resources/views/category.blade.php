@@ -15,7 +15,9 @@
             <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
                  <a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
                     <div class="image_container">
+                    @if($category_story['image_url'] != "")
                        <div class="image" style="background-image: url('{{$category_story['image_url']}}'); background-repeat: no-repeat;padding-bottom: 52%;-webkit-background-size: cover;background-size: cover; "></div>
+                    @endif
                         <div class="text-details"><a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
                          <header class="title-holder">
                             <h1 class="title">{{$category_story['title']}}</h1>

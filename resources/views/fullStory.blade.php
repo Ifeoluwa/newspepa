@@ -9,9 +9,12 @@
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
   <div class="row panel radius" style="padding:0.95rem">
       <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
-          <span style="font: 24px Roboto; text-align: justify;font-weight:bolder">{{$full_story['title']}}.</span>
+          <span style="font: 24px Roboto; text-align: justify;font-weight:bolder">{{$full_story['title']}}.</span><br/>
+          <span class="publisher-name">Publisher-name|Category-name</span>
       </div><br/><br/>
+      @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
+      @endif
       <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a href="{{$full_story['url']}}" style="color: #333366">Continue to read</a></p></p>
       </div>
   </div>
@@ -33,6 +36,10 @@
 @endforeach
 @stop
 
+{{--@section('other_sources')--}}
+{{--<div class="row panel radius"><b>RECENT STORIES</b></div>--}}
+{{--@stop--}}
+
 @section('related_content')
 <div class="row panel radius"><b>RECENT STORIES</b></div>
 
@@ -41,11 +48,14 @@
           <div class="large-5 small-4 columns" style="width: 100%;">
              <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
                 <div class="smallimage_container">
-                   <div class="smallimage"><img width="120" height="100" src="{{$recent_stories['image_url']}}"/></div>
+                @if($recent_stories['image_url'] != "")
+                   <div class="smallimage"><img width="120" height="100" src="{{$recent_stories['image_url']}}"/>
+                   </div>
+                   @endif
 
                            {{--<span class="label time-count" style="float:right; align-items: right">{{$tc->getTimeDifference($less_important_story['created_date'])}}|{{$less_important_story['no_of_reads']}}reads</span>--}}
                   <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
-                   <h1 class="title">{{$recent_stories['title']}} </h1>
+                   <h1 class="title" style="font-weight: normal">{{$recent_stories['title']}} </h1>
                    </a>
                 </div>
                  </a>
@@ -54,6 +64,7 @@
 
 </div>
 
+
  @endforeach
 
  @stop
@@ -61,16 +72,15 @@
 <div class="large-12 small-12 medium-12 columns">
 @foreach($data['recent_stories'] as $recent_stories)
     <div class="row panel radius"style="padding-right: 0.4rem">
-    <div class="large-3 small-3 medium-3 columns"style="padding:0.3rem"><img src="{{$recent_stories['image_url']}}" width="100px" height="100px"/></div>
+    <div class="large-3 small-3 medium-3 columns"style="padding:0.3rem;empty-cells: hide "><img src="{{$recent_stories['image_url']}}" width="100px" height="100px"/></div>
     <span class="recent-stories-text">{{$recent_stories['title']}}.</span>
     </div>
     {{--<div class="large-4 small-4 medium-4"></div>--}}
     {{--<div class="large-4 small-4 medium-4"></div>--}}
+
  @endforeach
 </div>
   {{--<span><b>{{$recent_stories['title']}}.</b></span>--}}
   {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
     {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
-
-
 @stop
