@@ -36,7 +36,7 @@ class TimelineStory extends Model
     // important stories metrics not stable yet
     public static function importantStories(){
         return DB::table('timeline_stories')->select(DB::raw('id, story_id, title, description, category_id, pub_id, pub_date, content, url, image_url, no_of_reads, created_date'))
-            ->orderBy('created_date', 'desc')->orderBy('no_of_reads', 'desc')->where('image_url', '<>', '')->where('is_top', 1)->limit(5)->get();
+            ->orderBy('created_date', 'desc')->orderBy('no_of_reads', 'desc')->where('image_url', '<>', '')->limit(10)->get();
     }
 
 //    Selects stories that have no images
@@ -58,6 +58,20 @@ class TimelineStory extends Model
     public static function timelineStoriesByCat($category_id){
         return DB::table('timeline_stories')->select(DB::raw('id, story_id, title, description, category_id, pub_id, pub_date, content, url, image_url, no_of_reads, created_date'))
             ->orderBy('created_date', 'desc')->where('status_id', 1)->where('category_id', $category_id)->limit(5)->get();
+    }
+
+    // Inserts into the timeline story table
+    public static function insertIgnore($array){
+        $a = new static();
+        if($a->timestamps){
+            $now = \Carbon\Carbon::now();
+            $array['created_date'] = $now;
+            $array['modified_date'] = $now;
+        }
+
+        DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
+            ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
+
     }
 
 

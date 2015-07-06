@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Story;
+use App\TimelineStory;
 use Illuminate\Support\Facades\DB;
 
 class StoryController extends Controller {
@@ -34,7 +35,7 @@ class StoryController extends Controller {
 
             $pivot['is_pivot'] = 1;
 
-            Story::insertIgnore($pivot);
+            TimelineStory::insertIgnore($pivot);
             $matches = Story::matches($pivot['story_id']);
 
             foreach($matches as $match){
@@ -44,7 +45,7 @@ class StoryController extends Controller {
                 array_pull($match, 'cluster_pivot');
                 array_pull($match, 'cluster_match');
 
-                Story::insertIgnore($match);
+                TimelineStory::insertIgnore($match);
             }
 
         }
