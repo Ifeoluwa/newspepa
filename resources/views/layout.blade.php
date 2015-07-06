@@ -43,7 +43,7 @@
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
-    <div class="large-12 medium-12 small-12">
+    <div class="large-12 medium-12 small-12 columns">
         <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Filter By</button></div>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
           <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
