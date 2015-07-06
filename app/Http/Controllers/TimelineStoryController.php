@@ -33,16 +33,17 @@ class TimelineStoryController extends Controller
     {
         //
         $timeline_stories = array();
-        $timeline_stories['important'] = TimelineStory::importantStories();
-
-        $timeline_stories['less_important'] = array();
-
-        for($i = 1; $i <= count($this->category_names); $i++){
-            $timeline_stories['less_important'] = array_merge($timeline_stories['less_important'], TimelineStory::timelineStoriesByCat($i));
-        }
-
-
-        $timeline_stories['no_image'] = TimelineStory::noImageStories();
+        $timeline_stories['top_stories'] = TimelineStory::topStories();
+//        $timeline_stories['important'] = TimelineStory::importantStories();
+//
+//        $timeline_stories['less_important'] = array();
+//
+//        for($i = 1; $i <= count($this->category_names); $i++){
+//            $timeline_stories['less_important'] = array_merge($timeline_stories['less_important'], TimelineStory::timelineStoriesByCat($i));
+//        }
+//
+//
+//        $timeline_stories['no_image'] = TimelineStory::noImageStories();
 
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 
@@ -87,9 +88,9 @@ class TimelineStoryController extends Controller
 
             }
         }catch (\ErrorException $ex){
-           return view('error.404', [], 404);
+           return view('errors.404', [], 404);
         } catch (NotFoundHttpException $nfe){
-            return view('error.404', [], 404);
+            return view('errors.404', [], 404);
         }
 
     }

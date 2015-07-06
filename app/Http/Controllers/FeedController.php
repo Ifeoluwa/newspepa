@@ -32,9 +32,9 @@ class FeedController extends Controller {
     public function fetchFeeds(){
         set_time_limit(0);
         $feeds = FeedController::getFeedSources();
-        shuffle($feeds);
         $parser = new Parser();
-
+        $all_stories = array();
+        $counter = 0;
         foreach($feeds as $feed){
 //            Check if the feed is a valid xml
             if(FeedController::isFeedValid($feed['url'])){
@@ -51,8 +51,10 @@ class FeedController extends Controller {
                     foreach ($stories['channel']['item'] as $str){
                         $story = array();
                         if($feed['pub_id'] == 13){
-                            FeedController::storeImage($this->getImageUrl($str['enclosure']));
-                            $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($str['enclosure']));
+                            $img_url = $str['enclosure']['@attributes']['url'];
+                            FeedController::storeImage($img_url);
+
+                            $story['image_url'] = "story_images/".$this->getImageName($img_url);
 
                         }else if($feed['pub_id'] == 1){
 
@@ -71,18 +73,25 @@ class FeedController extends Controller {
                         $story['description'] = "".$this->clean(strip_tags($str['description']))."";
                         $story['content'] = "".$this->clean(strip_tags($str['description']))."";
                         $story['url'] = "".$str['link']."";
-                        $story['pub_date'] = date('Y-m-d hh:mm:ss', strtotime($str['pubDate']));
+                        $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
 
+                         // Inserts the story into an array
+                        $all_stories[$counter] = $story;
+                        $counter += 1;
 
-                        // Inserts the raw story into the database
-                        Story::insertIgnore($story);
-                        //Updates the last time the feed was accessed
-                        Feed::updateFeed($feed['id'], time());
                     }
                 }
 
             }
+            //Updates the last time the feed was accessed
+            Feed::updateFeed($feed['id'], time());
 
+        }
+
+        // Shuffle the array of stories
+        shuffle($all_stories);
+        foreach($all_stories as $story){
+            Story::insertIgnore($story);
         }
 
         set_time_limit(120);
@@ -110,10 +119,11 @@ class FeedController extends Controller {
 
     // Checks feed source for contents
     private function checkFeedSource ($url){
-        $init_curl = curl_init($url);
-        curl_setopt($init_curl, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($init_curl);
-        curl_close($init_curl);
+        $response = file_get_contents($url);
+//        $init_curl = curl_init($url);
+//        curl_setopt($init_curl, CURLOPT_RETURNTRANSFER, true);
+//        $response = curl_exec($init_curl);
+//        curl_close($init_curl);
         return $response;
     }
 
@@ -134,7 +144,7 @@ class FeedController extends Controller {
             $image_url = $tag->item(0)->getAttribute("src");
             return $image_url;
         }catch (\ErrorException $ex){
-
+            echo "error::GetImageUrlError"."<br>";
         }
 
     }
@@ -147,7 +157,7 @@ class FeedController extends Controller {
             fwrite($fp, $image_content);
             fclose($fp);
         }catch(\ErrorException $ex){
-            echo "error";
+            echo "error::StoreImageError"."<br>";
         }
 
     }
@@ -161,7 +171,7 @@ class FeedController extends Controller {
 
     public function test(){
         $this->fetchFeeds();
-        echo "done";
+        echo "<br> done";
     }
 
 
