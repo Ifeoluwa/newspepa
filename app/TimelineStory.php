@@ -36,7 +36,7 @@ class TimelineStory extends Model
     // important stories metrics not stable yet
     public static function importantStories(){
         return DB::table('timeline_stories')->select(DB::raw('id, story_id, title, description, category_id, pub_id, pub_date, content, url, image_url, no_of_reads, created_date'))
-            ->orderBy('created_date', 'desc')->orderBy('no_of_reads', 'desc')->where('status_id', 1)->limit(5)->get();
+            ->orderBy('created_date', 'desc')->orderBy('no_of_reads', 'desc')->where('image_url', '<>', '')->where('is_top', 1)->limit(5)->get();
     }
 
 //    Selects stories that have no images
@@ -46,7 +46,7 @@ class TimelineStory extends Model
 
     // Metrics not stable yet
     public static function lessImportantStories(){
-        return DB::table('timeline_stories')->limit(10)->orderBy('pub_date', 'desc')->orderBy('no_of_reads', 'desc')->get();
+        return DB::table('timeline_stories')->orderBy('created_date', 'desc')->orderBy('no_of_reads', 'desc')->where('image_url', '<>', '')->where('is_top', 0)->limit(10)->get();
     }
 
     //Scope for the recent stories alone from all categories
