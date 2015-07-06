@@ -50,9 +50,11 @@ class FeedController extends Controller {
 
                     foreach ($stories['channel']['item'] as $str){
                         $story = array();
-                        if($feed['id'] == 13){
+                        if($feed['pub_id'] == 13){
                             FeedController::storeImage($this->getImageUrl($str['enclosure']));
                             $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($str['enclosure']));
+
+                        }else if($feed['pub_id'] == 1){
 
                         }else{
                             $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
