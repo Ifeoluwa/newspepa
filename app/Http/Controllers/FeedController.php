@@ -69,9 +69,7 @@ class FeedController extends Controller {
                         $story['description'] = "".$this->clean(strip_tags($str['description']))."";
                         $story['content'] = "".$this->clean(strip_tags($str['description']))."";
                         $story['url'] = "".$str['link']."";
-                        $story['pub_date'] = strtotime($str['pubDate']);
-                        var_dump($str['pubDate'] ."=========".$story['pub_date']);
-                        die();
+                        $story['pub_date'] = date('Y-m-d hh:mm:ss', strtotime($str['pubDate']));
 
 
                         // Inserts the raw story into the database
