@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Publisher;
+use App\Story;
 use App\TimelineStory;
 use Illuminate\Http\Request;
 
@@ -42,7 +43,7 @@ class TimelineStoryController extends Controller
 
         $timeline_stories['no_image'] = TimelineStory::noImageStories();
         shuffle($timeline_stories['no_image']);
-        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers));
+        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 
     }
 
@@ -66,8 +67,11 @@ class TimelineStoryController extends Controller
         $full_story = array();
         DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_reads');
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
+        $full_story['other_sources'] = Story::matches($story_id);
         $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
         shuffle($full_story['recent_stories']);
+        $full_story['category_names'] = $this->category_names;
+        $full_story['publisher_names'] = Publisher::$publishers;
         return view('fullStory')->with('data', $full_story);
     }
 
