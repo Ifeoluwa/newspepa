@@ -42,6 +42,23 @@ button{
     padding:0 0 0 0;
 }
 
+::-webkit-input-placeholder {
+    color: #020501; }
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #020501; }
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #020501; }
+
+:-ms-input-placeholder {
+    color: #020501; }
+/*#placeholder{*/
+    /*color:   #53e828*/
+/*}*/
+
 .searchbar-button{
     border-bottom-right-radius: 4px !important;
     border-top-right-radius: 4px !important;
@@ -150,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 6px;
     position: relative;
     display:inline-block;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 .timecount-name{
@@ -211,7 +228,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size:0.7rem;
     background:none;
     color:#898989;
-    color:#333366;
     font-family: roboto;
     float:right;
     position:relative;

@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
    <head>
+   <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width; initial-scale = 1; maximum-scale=1; user-scalable=no" />
     <title>NewsPepa| @yield('title')</title>

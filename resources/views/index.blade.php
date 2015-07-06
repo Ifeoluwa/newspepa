@@ -37,15 +37,14 @@
        <div class="row panel radius">
          <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
           <div class="large-5 small-4 columns" style="width: 100%;">
-
-
-                   <div class="smallimage"><img width="120" height="100" src="{{$less_important_story['image_url']}}"/></div>
+             <div class="smallimage"><img width="120" height="100" src="{{$less_important_story['image_url']}}"/></div>
 
                   <a href="{{url($tc->makeStoryUrl($less_important_story['title'], $less_important_story['story_id']))}}">
                    <h1 class="title">{{$less_important_story['title']}} </h1>
                    </a>
 
                 <span class="publisher-name" style="float:left; margin-right: 170px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>
+                <span class="category-name"><i class="categoryicon"></i><b>category</b></span>
                 <span class="label" style="margin-top:6px; margin-bottom:12px"><i class="time-icon"></i>{{$tc->getTimeDifference($less_important_story['created_date'])}} ago</span>
                 </div>
                 </a>
@@ -65,7 +64,8 @@
                   </div></a>
 
                   <span class="publisher-name" style="float:left; margin-right: 170px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$no_image_story['pub_id']]}}</b></span>
-                  <span class="label">{{$tc->getTimeDifference($no_image_story['created_date'])}}</span>
+
+                   <span class="category-name"><i class="categoryicon"></i><b>category</b></span>
                   <span class="label">{{$tc->getTimeDifference($no_image_story['created_date'])}} ago</span>
               </div>
     @endforeach
