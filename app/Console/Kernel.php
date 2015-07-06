@@ -40,7 +40,7 @@ class Kernel extends ConsoleKernel
         $schedule->call(function(){
             $sc = new StoryController();
             $sc->createTimelineStory();
-        })->everyFiveMinutes();
+        })->everyTenMinutes();
 
         $schedule->call('StoryController@createTimelineStory')->everyTenMinutes();
 
