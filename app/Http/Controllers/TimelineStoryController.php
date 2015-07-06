@@ -114,9 +114,9 @@ class TimelineStoryController extends Controller
         $date2 = new \DateTime();
         $diff = $date1->diff($date2);
         if ($diff->d){
-           return $diff->format('%d days');
+           return $diff->format('%d day(s)');
         }else if($diff->h){
-            return $diff->format('%h hours');
+            return $diff->format('%h hour(s)');
         }else if($diff->m){
             return $diff->format('%m min');
         }else {
