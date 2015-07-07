@@ -55,12 +55,16 @@ class TimelineStoryController extends Controller
      * @return Response
      */
     public function getStoriesByCat($category_name){
-        $category_stories = array();
-        $category_id = Category::$news_category[$category_name];
-        $category_stories['category_name'] = $this->category_names[$category_id];
-        $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
+        try{
+            $category_stories = array();
+            $category_id = Category::$news_category[$category_name];
+            $category_stories['category_name'] = $this->category_names[$category_id];
+            $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
 
-        return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
+            return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
+        }catch(\ErrorException $ex){
+            return view('errors.404', [], 404);
+        }
     }
 
 
@@ -115,13 +119,29 @@ class TimelineStoryController extends Controller
         $date2 = new \DateTime();
         $diff = $date1->diff($date2);
         if ($diff->d){
-           return $diff->format('%d day(s)');
+            if($diff->d == 1){
+                return $diff->format('%d day');
+            }else{
+                return $diff->format('%d days');
+            }
         }else if($diff->h){
-            return $diff->format('%h hour(s)');
+            if($diff->h == 1){
+                return $diff->format('%h hour');
+            }else{
+                return $diff->format('%h hours');
+            }
         }else if($diff->m){
-            return $diff->format('%m min(s)');
+            if($diff->m == 1){
+                return $diff->format('%m min');
+            }else{
+                return $diff->format('%m mins');
+            }
         }else {
-            return $diff->format('%s second(s)');
+            if($diff->s == 1){
+                return $diff->format('%s second');
+            }else{
+                return $diff->format('%s seconds');
+            }
         }
 
     }
