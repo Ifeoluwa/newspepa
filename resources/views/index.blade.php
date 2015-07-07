@@ -44,6 +44,8 @@
               @endif
               </div>
             @endforeach
+
+            {!! $data['timeline_stories']['top_stories']->render() !!}
 @stop
 
 
