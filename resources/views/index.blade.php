@@ -4,6 +4,9 @@
 @section('title', 'Top Stories')
 @stop
 
+@section('dropdown','Top Stories')
+@stop
+
 @section('important_stories')
     <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
     @foreach($data['timeline_stories']['top_stories'] as $top_story)

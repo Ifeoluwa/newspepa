@@ -12,6 +12,15 @@
 
   </head>
   <body>
+  {{--this is for showing the facebook like button. Delete this and fire & brimstone rains--}}
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=222521117951114";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
     <div class="fixed">
 
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
@@ -44,8 +53,8 @@
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
     <div class="large-12 medium-12 small-12 columns">
-    @section('dropdown')
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">Filter By</button></div>@show
+
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button></div>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
           <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
           <li id="2" class="active"><a href="{{url('entertainment')}}">Entertainment</a></li>
@@ -96,13 +105,33 @@
 
     <script>
         $(document).foundation();
+        {{--var isPreviousEventComplete= true;--}}
+        {{--var isDataAvailable= true;--}}
+{{--$(window).scroll(function () { //When user clicks--}}
+	{{--if ($(document).height() <= $(window).scrollTop() + $(window).height()) {--}}
+	{{--alert("End Of The Page");--}}
+	{{--if(isDataAvailable){--}}
+{{--////	isPreviousEventComplete=false;--}}
+{{--////	//$(".LoaderImage").show();--}}
+    {{--$.ajax({--}}
+{{--//          type: "GET",--}}
+{{--//          url: 'index.phpstartIndex'--}}
+{{--//--}}
+           {{--success: function (result) {--}}
+                  {{--@section('important_stories').append(result);--}}
+                  {{--isPreviousEventComplete = true;--}}
+                  {{--},--}}
+                {{--error: function (error) {--}}
+                    {{--alert(error);--}}
+                {{--}--}}
+
+              {{--});--}}
+	{{--}--}}
 
 
-$(window).scroll(function () {
-    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
-        alert("End Of The Page");
-    }
-});
+	{{--}--}}
+	{{--});--}}
+{{--@endsection--}}
 
         if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");

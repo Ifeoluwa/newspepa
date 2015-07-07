@@ -416,15 +416,15 @@ body{
 
 }
 .twittericon {
-    background-image: url("../img/twlikeicon.png");
+    background-image: url("../img/icon-twitter.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 18px 15px;
-    width: 18px;
-    height: 15px;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
     display: inline-block;
     margin-right: 2px;
-    margin-bottom: -2px;
+    margin-bottom: -5px;
 
 }
 
@@ -442,16 +442,26 @@ body{
 }
 
 .fbicon {
-    background-image: url("../img/fblikeicon.png");
+    background-image: url("../img/index.png");
     position: relative;
     background-repeat: no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: -5px;
+
+}
+
+.loaderImage{
+    background-image:url("../img/index.gif")
+    position:relative;
+    background-repeat: no-repeat;
+    display:inline-block;
     background-size: 18px 15px;
     width: 18px;
     height: 15px;
-    display: inline-block;
-    margin-right: 2px;
-    margin-bottom: -2px;
-
 }
 .full-story-text{
     line-height: 1.5;
