@@ -21,7 +21,9 @@
                         <div class="text-details"><a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
                          <header class="title-holder">
                             <h1 class="title">{{$category_story['title']}}</h1>
-                         </header></a><span class="publisher-name"><b>{{$data['publishers_name'][$category_story['pub_id']]}}</b></span>
+                         </header></a>
+                         <span class="publisher-name"><b>{{$data['publishers_name'][$category_story['pub_id']]}}</b></span>
+                         <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($category_story['created_date'])}} ago</b></span>
 
 
                        </div>
