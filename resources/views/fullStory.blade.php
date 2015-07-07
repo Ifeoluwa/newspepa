@@ -69,9 +69,10 @@
                    @endif
 
                   <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
-                   <h1 class="title" style="font-weight: normal">{{$recent_stories['title']}} </h1>
+                   <h1 class="title">{{$recent_stories['title']}} </h1>
                    </a>
                    <span class="publisher-name">{{$data['publisher_names'][$recent_stories['pub_id']]}}</span>
+                  <span class="label" style="margin-top:6px"><i class="time-icon"></i>{{$tc->getTimeDifference($recent_stories['created_date'])}} ago</span>
                 </div>
                  </a>
 

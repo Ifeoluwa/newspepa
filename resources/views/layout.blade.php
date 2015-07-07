@@ -104,34 +104,36 @@
     <script src="ui_newspaper/js/foundation/foundation.dropdown.js"></script>
 
     <script>
-        $(document).foundation();
-        {{--var isPreviousEventComplete= true;--}}
-        {{--var isDataAvailable= true;--}}
-{{--$(window).scroll(function () { //When user clicks--}}
-	{{--if ($(document).height() <= $(window).scrollTop() + $(window).height()) {--}}
-	{{--alert("End Of The Page");--}}
-	{{--if(isDataAvailable){--}}
-{{--////	isPreviousEventComplete=false;--}}
-{{--////	//$(".LoaderImage").show();--}}
-    {{--$.ajax({--}}
-{{--//          type: "GET",--}}
-{{--//          url: 'index.phpstartIndex'--}}
-{{--//--}}
-           {{--success: function (result) {--}}
-                  {{--@section('important_stories').append(result);--}}
-                  {{--isPreviousEventComplete = true;--}}
-                  {{--},--}}
-                {{--error: function (error) {--}}
-                    {{--alert(error);--}}
-                {{--}--}}
+//        $(document).foundation();
+//        var isPreviousEventComplete= true;
+//        var story_url = 'http:localhost:8000/stories_json/?page=2'
+//        var isDataAvailable= true;
+//        $(window).scroll(function () { //When user clicks
+//	    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
+//
+//	        if(isDataAvailable){
+//////	isPreviousEventComplete=false;
+//////	//$(".LoaderImage").show();
+//    $.ajax({
+//          type: "GET",
+//          url: story_url,
+//          dataType: 'json',
+//
+//           success: function (result) {
+//           console.log(result);
+//
+////                  $(".container").append(result);
+////                  isPreviousEventComplete = true;
+//                  },
+//                error: function (error) {
+//                    alert(error);
+//                }
+//
+//              });
+//	}
+//	}
+//	});
 
-              {{--});--}}
-	{{--}--}}
-
-
-	{{--}--}}
-	{{--});--}}
-{{--@endsection--}}
 
         if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");
