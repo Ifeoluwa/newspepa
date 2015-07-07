@@ -27,7 +27,6 @@
             </div>
             </a>
 
-
           @else
               <div class="large-12 medium-6 small-12 columns">
                                 <a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">
