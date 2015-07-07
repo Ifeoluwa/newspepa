@@ -155,6 +155,10 @@ class TimelineStoryController extends Controller
 
     }
 
+    public function searchStory(){
+
+    }
+
 
 
 }
