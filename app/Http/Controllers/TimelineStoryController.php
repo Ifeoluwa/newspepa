@@ -34,19 +34,15 @@ class TimelineStoryController extends Controller
         //
         $timeline_stories = array();
         $timeline_stories['top_stories'] = TimelineStory::topStories()->simplePaginate(20);
-//        $timeline_stories['important'] = TimelineStory::importantStories();
-//
-//        $timeline_stories['less_important'] = array();
-//
-//        for($i = 1; $i <= count($this->category_names); $i++){
-//            $timeline_stories['less_important'] = array_merge($timeline_stories['less_important'], TimelineStory::timelineStoriesByCat($i));
-//        }
-//
-//
-//        $timeline_stories['no_image'] = TimelineStory::noImageStories();
 
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 
+    }
+
+    //returns paginated stories in json format
+    public function getStoriesJson(){
+
+        return TimelineStory::topStories()->paginate();
     }
 
     /**
@@ -159,6 +155,16 @@ class TimelineStoryController extends Controller
 
     }
 
+    public function createImage()
+    {
+        ob_start();
+        imagecreatefromjpeg("story_images/277026_thumb.jpg");
+        $fp = fopen("story_images/new_image", "w");
+        $image_content = ob_get_contents();
+        fwrite($fp, $image_content);
+        fclose($fp);
+
+    }
 
 
 }
