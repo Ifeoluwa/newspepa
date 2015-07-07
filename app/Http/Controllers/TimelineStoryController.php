@@ -126,5 +126,15 @@ class TimelineStoryController extends Controller
 
     }
 
+    //Checks if the story is an old story
+    public function isOldStory($created_date){
+        $date = new \DateTime($created_date);
+        $date_in_seconds = $date->getTimestamp();
+        $diff = time() - $date_in_seconds;
+        return ($diff > 43200);
+
+    }
+
+
 
 }
