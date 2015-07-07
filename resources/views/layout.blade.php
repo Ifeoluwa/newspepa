@@ -102,6 +102,12 @@
         $(document).foundation();
 
 
+// $(window).scroll(function () {
+//    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
+//        alert("End Of The Page");
+//    }
+// });
+
         if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");
          } else if (location.pathname == "/politics") {
@@ -115,6 +121,7 @@
           }else if (location.pathname == "/nigeria") { // to add aditional pages, replace CAPS
                          $(".dropdown").text("Nigeria");
                     }
+
 
 
     </script>
