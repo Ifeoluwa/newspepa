@@ -76,7 +76,7 @@ class TimelineStory extends Model
 
     public static function topStories(){
         return DB::table('timeline_stories')->orderBy('created_date')->orderBy('no_of_reads')->limit(50)
-            ->get();
+            ;
     }
 
 

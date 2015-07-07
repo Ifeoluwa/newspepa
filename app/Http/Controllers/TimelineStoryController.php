@@ -33,7 +33,7 @@ class TimelineStoryController extends Controller
     {
         //
         $timeline_stories = array();
-        $timeline_stories['top_stories'] = TimelineStory::topStories();
+        $timeline_stories['top_stories'] = TimelineStory::topStories()->simpelPaginate(20);
 //        $timeline_stories['important'] = TimelineStory::importantStories();
 //
 //        $timeline_stories['less_important'] = array();
@@ -152,6 +152,10 @@ class TimelineStoryController extends Controller
         $date_in_seconds = $date->getTimestamp();
         $diff = time() - $date_in_seconds;
         return ($diff > 43200);
+
+    }
+
+    public function searchStory(){
 
     }
 
