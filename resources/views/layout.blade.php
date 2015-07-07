@@ -75,10 +75,6 @@
 
               </div>
 
-
-
-
-
     <footer class="row">
         <div class="large-12 columns">
             <hr/>
@@ -102,11 +98,11 @@
         $(document).foundation();
 
 
-// $(window).scroll(function () {
-//    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
-//        alert("End Of The Page");
-//    }
-// });
+$(window).scroll(function () {
+    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
+        alert("End Of The Page");
+    }
+});
 
         if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");
