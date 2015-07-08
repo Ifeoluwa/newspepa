@@ -22,7 +22,7 @@ class StoryController extends Controller {
     }
 
     public function createTimelineStory(){
-
+        set_time_limit(0);
         $pivots = Story::pivots();
 
         foreach($pivots as $pivot){
@@ -49,6 +49,8 @@ class StoryController extends Controller {
             }
 
         }
+
+        set_time_limit(120);
 
     }
 

@@ -48,38 +48,44 @@ class FeedController extends Controller {
                     }
                     $stories = $parser->xml($content);
 
-                    foreach ($stories['channel']['item'] as $str){
-                        $story = array();
-                        if($feed['pub_id'] == 13){
-                            $img_url = $str['enclosure']['@attributes']['url'];
-                            FeedController::storeImage($img_url);
+                    try{
+                        foreach ($stories['channel']['item'] as $str){
+                            $story = array();
+                            if($feed['pub_id'] == 13){
+                                $img_url = $str['enclosure']['@attributes']['url'];
+                                FeedController::storeImage($img_url);
 
-                            $story['image_url'] = "story_images/".$this->getImageName($img_url);
+                                $story['image_url'] = "story_images/".$this->getImageName($img_url);
 
-                        }else if($feed['pub_id'] == 1){
+                            }else if($feed['pub_id'] == 1){
 
-                        }else{
-                            $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
-                            if(count($matches) > 0){
-                                FeedController::storeImage($this->getImageUrl($matches[0]));
-                                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                            }else{
+                                $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
+                                if(count($matches) > 0){
+                                    FeedController::storeImage($this->getImageUrl($matches[0]));
+                                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                                }
                             }
+
+                            $story['title'] = "".$str['title']."";
+                            $story['pub_id'] = $feed['pub_id'];
+                            $story['feed_id'] = $feed['id'];
+                            $story['category_id'] = $feed['category_id'];
+                            $story['description'] = "".$this->clean(strip_tags($str['description']))."";
+                            $story['content'] = "".$this->clean(strip_tags($str['description']))."";
+                            $story['url'] = "".$str['link']."";
+                            $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
+
+                            // Inserts the story into an array
+                            $all_stories[$counter] = $story;
+                            $counter += 1;
+
                         }
-
-                        $story['title'] = "".$str['title']."";
-                        $story['pub_id'] = $feed['pub_id'];
-                        $story['feed_id'] = $feed['id'];
-                        $story['category_id'] = $feed['category_id'];
-                        $story['description'] = "".$this->clean(strip_tags($str['description']))."";
-                        $story['content'] = "".$this->clean(strip_tags($str['description']))."";
-                        $story['url'] = "".$str['link']."";
-                        $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
-
-                         // Inserts the story into an array
-                        $all_stories[$counter] = $story;
-                        $counter += 1;
+                    }catch (\ErrorException $ex){
 
                     }
+
+
                 }
 
             }
