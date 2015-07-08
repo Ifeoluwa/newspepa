@@ -104,7 +104,7 @@
     <script src="ui_newspaper/js/foundation/foundation.dropdown.js"></script>
 
     <script>
-//        $(document).foundation();
+        $(document).foundation();
 //        var isPreviousEventComplete= true;
 //        var story_url = 'http:localhost:8000/stories_json/?page=2'
 //        var isDataAvailable= true;
