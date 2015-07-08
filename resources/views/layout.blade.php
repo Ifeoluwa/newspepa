@@ -7,7 +7,7 @@
     <title>NewsPepa| @yield('title')</title>
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-    <link rel="stylesheet" href="ui_newspaper/css/app.css" />
+    <link rel="stylesheet" href="ui_newspaper/css/app4.css" />
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
 
   </head>
@@ -139,13 +139,13 @@
               $(".dropdown").text("Top Stories");
          } else if (location.pathname == "/politics") {
             $(".dropdown").text("Politics");
-         } else if (location.pathname == "/entertainment") {s
+         } else if (location.pathname == "/entertainment") {
                $(".dropdown").text("Entertainment");
-         } else if (location.pathname == "/sports") { // to add aditional pages, replace CAPS
+         } else if (location.pathname == "/sports") {
          $(".dropdown").text("Sports");
-         }else if (location.pathname == "/metro") { // to add aditional pages, replace CAPS
+         }else if (location.pathname == "/metro") {
                        $(".dropdown").text("Metro");
-          }else if (location.pathname == "/nigeria") { // to add aditional pages, replace CAPS
+          }else if (location.pathname == "/nigeria") {
                          $(".dropdown").text("Nigeria");
                     }
 

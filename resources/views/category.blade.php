@@ -8,7 +8,7 @@
 @endsection
 
 @section('important_stories')
-<span style="font-size:x-large;text-align: center; font-family: Roboto ;float:center" ><b>In {{$data['category_stories']['category_name']}}</b></span><br/>
+{{--<span style="font-size:x-large;text-align: center; font-family: Roboto ;float:center" ><b>In {{$data['category_stories']['category_name']}}</b></span><br/>--}}
  @foreach($data['category_stories']['all'] as $category_story)
       <div class="row panel radius">
          <div class="large-12 medium-6 small-12 columns">
