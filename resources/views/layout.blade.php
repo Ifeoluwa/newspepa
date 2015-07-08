@@ -7,7 +7,7 @@
     <title>NewsPepa| @yield('title')</title>
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-    <link rel="stylesheet" href="ui_newspaper/css/app4.css" />
+    <link rel="stylesheet" href="ui_newspaper/css/app.css" />
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
 
   </head>
