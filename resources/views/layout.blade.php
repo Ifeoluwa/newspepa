@@ -139,7 +139,7 @@
               $(".dropdown").text("Top Stories");
          } else if (location.pathname == "/politics") {
             $(".dropdown").text("Politics");
-         } else if (location.pathname == "/entertainment") {
+         } else if (location.pathname == "/entertainment") {s
                $(".dropdown").text("Entertainment");
          } else if (location.pathname == "/sports") { // to add aditional pages, replace CAPS
          $(".dropdown").text("Sports");
