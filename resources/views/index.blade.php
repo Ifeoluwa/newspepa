@@ -18,8 +18,8 @@
                 <div class="smallimage"><img width="120" height="100" src="{{$top_story['image_url']}}"/>
                 </div>@endif
                     <a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">
-                        <h1 class="title">{{$top_story['title']}} </h1>
-                        <div class="storyExtras"style="position:relative;display:inline-block;margin-bottom:6px; padding-bottom: 0; width:100%">
+                        <h1 class="title">{!!$top_story['title']!!} </h1>
+                        <div class="storyExtras" style="position:relative;display:inline-block;margin-bottom:6px; padding-bottom: 0; width:100%">
                          <span class="publisher-name" style="float:left; margin-bottom: 1px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$top_story['pub_id']]}}</b></span>
                          <span class="label" style="margin-top:6px; margin-bottom:1px"><i class="time-icon"></i>{{$tc->getTimeDifference($top_story['created_date'])}} ago</span>
                         </div>
