@@ -59,6 +59,11 @@ class FeedController extends Controller {
 
                             }else if($feed['pub_id'] == 1){
 
+                            }else if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10){
+                                $image_match = preg_match('/(<img[^>]+>)/i', $str['encoded'], $matches);
+                                if(count($image_match) > 0){
+                                    $this->storeImage($this->getImageUrl($matches[0]));
+                                }
                             }else{
                                 $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
                                 if(count($matches) > 0){
@@ -176,8 +181,26 @@ class FeedController extends Controller {
     }
 
     public function test(){
-        $this->fetchFeeds();
-        echo "<br> done";
+        $url = 'http://stargist.com/feed';
+
+        $rss = new \DOMDocument();
+        $rss->load($url);
+        $feed = array();
+        foreach ($rss->getElementsByTagName('item') as $node) {
+            $item = array (
+                'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+                'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+                'pubDate' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
+                'description' => $node->getElementsByTagName('description')->item(0)->nodeValue,
+                'content' => $node->getElementsByTagName('encoded')->item(0)->nodeValue
+
+            );
+            array_push($feed, $item);
+        }
+//        $this->fetchFeeds();
+//        echo "<br> done";
+
+        var_dump($feed[0]['content']->getElementByTagName('img')->item(0)->nodeValue);
     }
 
 
