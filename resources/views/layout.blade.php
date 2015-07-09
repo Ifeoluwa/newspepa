@@ -1,13 +1,14 @@
 <!doctype html>
 <html class="no-js" lang="en">
    <head>
-   <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
     <title>NewsPepa| @yield('title')</title>
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-    <link rel="stylesheet" href="ui_newspaper/css/app.css" />
+    <link rel="stylesheet" href="ui_newspaper/css/app6.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
 
   </head>
@@ -43,12 +44,15 @@
     </nav>
 
     {{--the search bar--}}
+    <form id="searchbar" method="get" action = "search">
     <div class="row searchbar-row" style="width:100%">
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="searchbox" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
+            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
             <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
               </div>
+    </form>
               </div>
-    {{--<button type="submit" style="height:100%"></button>--}}
+
+
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
@@ -84,6 +88,10 @@
 
               </div>
 
+              <a href="#" class="back-to-top" style="display: inline;"></a>
+
+
+
     <footer class="row">
         <div class="large-12 columns">
             <hr/>
@@ -91,7 +99,7 @@
                 <div class="large-5 columns">
                     <p style="text-align: center;  ">
 
-                        <i class="newspepaicon"> </i>  © 2015 ICONWAY</p>
+                        <i class="newspepaicon"> </i>  © 2015 Iconway</p>
                 </div>
 
             </div>
@@ -105,34 +113,34 @@
 
     <script>
         $(document).foundation();
-//        var isPreviousEventComplete= true;
-//        var story_url = 'http:localhost:8000/stories_json/?page=2'
-//        var isDataAvailable= true;
-//        $(window).scroll(function () { //When user clicks
-//	    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
-//
-//	        if(isDataAvailable){
+        var isPreviousEventComplete= true;
+        var story_url = 'http:localhost:8000/stories_json/?page=2'
+        var isDataAvailable= true;
+        $(window).scroll(function () { //When user clicks
+	    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
+
+
 //////	isPreviousEventComplete=false;
 //////	//$(".LoaderImage").show();
-//    $.ajax({
-//          type: "GET",
-//          url: story_url,
-//          dataType: 'json',
-//
-//           success: function (result) {
-//           console.log(result);
-//
-////                  $(".container").append(result);
-////                  isPreviousEventComplete = true;
-//                  },
+    $.ajax({
+          type: "GET",
+          url: story_url,
+          dataType: 'json',
+
+           success: function (result) {
+           alert(result);
+
+//                  $(".container").append(result);
+//                  isPreviousEventComplete = true;
+                  }
 //                error: function (error) {
 //                    alert(error);
 //                }
-//
-//              });
-//	}
-//	}
-//	});
+
+              });
+
+	}
+	});
 
 
         if (location.pathname == "/") {
@@ -149,6 +157,24 @@
                          $(".dropdown").text("Nigeria");
                     }
 
+
+
+
+    var offset = 1000;
+    var duration = 500;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
 
 
     </script>

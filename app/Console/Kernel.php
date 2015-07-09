@@ -27,22 +27,19 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
 
         $schedule->call(function(){
+            echo "Level 1 begins";
             $fc = new FeedController();
             $fc->fetchFeeds();
-        })->everyTenMinutes();
-
-        $schedule->call('FeedController@fetchFeeds')->everyTenMinutes();
-
-        $schedule->call(function(){
+            echo "\nFetch feeds successful";
+        })->then(function(){
+            echo "Level 3 begins";
             $sc = new StoryController();
             $sc->createTimelineStory();
-        })->everyTenMinutes();
+            echo "\nCreate timeline story completed!";
+        })->everyFiveMinutes();
 
-        $schedule->call('StoryController@createTimelineStory')->everyTenMinutes();
 
     }
 }
