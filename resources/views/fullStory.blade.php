@@ -16,8 +16,10 @@
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
   <div class="row panel radius" style="padding:0.95rem">
       <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
-          <span style="font: 24px Roboto; text-align: justify;font-weight:bolder">{{$full_story['title']}}.</span><br/>
-          <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}|{{$data['category_names'][$full_story['category_id']]}}</span>
+          <span class="full-story-title">{{$full_story['title']}}</span><br/>
+          <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
+          <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} ago</span>
+
       </div><br/><br/>
       @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
@@ -42,12 +44,9 @@
 @endsection
 
 
-@endsection
-
-
 @section('other_sources')
 @if($full_story['is_pivot']==1)
-<div class="row panel radius"><b>OTHER SOURCES</b></div>
+<div class="row panel radius related-content"><b>other sources</b></div>
 @foreach($data['other_sources'] as $other_sources)
     <div class="row panel radius">
     <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span>
@@ -57,7 +56,7 @@
 @stop
 
 @section('related_content')
-<div class="row panel radius"><b>RECENT STORIES</b></div>
+<div class="row panel radius related-content"><b>latest stories in {{$data['category_names'][$full_story['category_id']]}} </b></div>
 @foreach($data['recent_stories'] as $recent_stories)
     <div class="row panel radius">
           <div class="large-5 small-4 columns" style="width: 100%;">
@@ -72,7 +71,7 @@
                    <h1 class="title">{{$recent_stories['title']}} </h1>
                    </a>
                    <span class="publisher-name">{{$data['publisher_names'][$recent_stories['pub_id']]}}</span>
-                  <span class="label" style="margin-top:6px"><i class="time-icon"></i>{{$tc->getTimeDifference($recent_stories['created_date'])}} ago</span>
+                  <span class="label" style="margin-top:6px">{{$tc->getTimeDifference($recent_stories['created_date'])}} ago</span>
                 </div>
                  </a>
 
