@@ -24,7 +24,7 @@ class FeedController extends Controller {
     // gets all the feed sources from the database
     private function getFeedSources(){
 
-        $feeds = Feed::all()->toArray();
+        $feeds = DB::table('feeds')->where('status_id', 1)->get();
         return $feeds;
     }
 
@@ -34,7 +34,6 @@ class FeedController extends Controller {
         $feeds = FeedController::getFeedSources();
         $parser = new Parser();
         $all_stories = array();
-        $counter = 0;
         foreach($feeds as $feed){
 //            Check if the feed is a valid xml
             if(FeedController::isFeedValid($feed['url'])){
@@ -42,49 +41,50 @@ class FeedController extends Controller {
                     if(!$content) {
                         continue;
                     }
-                    $stories = $parser->xml($content);
+                    if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10){
+                        $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
+                    }else{
+                        $stories = $parser->xml($content);
 
-                    try{
-                        foreach ($stories['channel']['item'] as $str){
-                            $story = array();
-                            if($feed['pub_id'] == 13){
-                                $img_url = $str['enclosure']['@attributes']['url'];
-                                if($this->storeImage($img_url)){
-                                    $story['image_url'] = "story_images/".$this->getImageName($img_url);
+                        try{
+                            foreach ($stories['channel']['item'] as $str){
+                                $story = array();
+                                if($feed['pub_id'] == 13){
+                                    $img_url = $str['enclosure']['@attributes']['url'];
+                                    if($this->storeImage($img_url)){
+                                        $story['image_url'] = "story_images/".$this->getImageName($img_url);
+                                    }
+
+                                }else if($feed['pub_id'] == 1){
+
+
+                                }else{
+                                    preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
+                                    if(count($matches) > 0){
+                                        FeedController::storeImage($this->getImageUrl($matches[0]));
+                                        $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                                    }
                                 }
 
-                            }else if($feed['pub_id'] == 1){
+                                $story['title'] = "".$str['title']."";
+                                $story['pub_id'] = $feed['pub_id'];
+                                $story['feed_id'] = $feed['id'];
+                                $story['category_id'] = $feed['category_id'];
+                                $story['description'] = "".$this->clean(strip_tags($str['description']))."";
+                                $story['content'] = "".$this->clean(strip_tags($str['description']))."";
+                                $story['url'] = "".$str['link']."";
+                                $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
 
-                            }else if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10){
-                                $image_match = preg_match('/(<img[^>]+>)/i', $str['encoded'], $matches);
-                                if(count($image_match) > 0){
-                                    $this->storeImage($this->getImageUrl($matches[0]));
-                                }
-                            }else{
-                                $image_match = preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
-                                if(count($matches) > 0){
-                                    FeedController::storeImage($this->getImageUrl($matches[0]));
-                                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
-                                }
+                                // Inserts the story into an array
+                                array_push($all_stories, $story);
+
                             }
-
-                            $story['title'] = "".$str['title']."";
-                            $story['pub_id'] = $feed['pub_id'];
-                            $story['feed_id'] = $feed['id'];
-                            $story['category_id'] = $feed['category_id'];
-                            $story['description'] = "".$this->clean(strip_tags($str['description']))."";
-                            $story['content'] = "".$this->clean(strip_tags($str['description']))."";
-                            $story['url'] = "".$str['link']."";
-                            $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
-
-                            // Inserts the story into an array
-                            $all_stories[$counter] = $story;
-                            $counter += 1;
+                        }catch (\ErrorException $ex){
 
                         }
-                    }catch (\ErrorException $ex){
-
                     }
+
+
 
 
             }
@@ -100,6 +100,35 @@ class FeedController extends Controller {
         }
 
         set_time_limit(120);
+
+    }
+
+    // This method get feeds from feeds with different organisation of content such as Nigerian Monitor, Stargist, and Koko Feed
+    public function getFeedContent($feed){
+        $rss = new \DOMDocument();
+        $rss->load($feed['url']);
+        $stories = array();
+        foreach ($rss->getElementsByTagName('item') as $node) {
+            $story = array (
+                'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+                'url' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+                'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('pubDate')->item(0)->nodeValue)),
+                'description' => $this->clean(strip_tags($node->getElementsByTagName('description')->item(0)->nodeValue))."",
+                'content' => $node->getElementsByTagName('encoded')->item(0)->nodeValue,
+
+            );
+            preg_match('/(<img[^>]+>)/i', $stories[0]['content'], $matches);
+            if(count($matches) > 0){
+                $this->storeImage($this->getImageUrl($matches[0]));
+                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+            }
+
+            $story['feed_id'] = $feed['id'];
+            $story['pub_id'] = $feed['pub_id'];
+            $story['category_id'] = $feed['category_id'];
+            array_push($stories, $story);
+        }
+        return $stories;
 
     }
 
@@ -149,7 +178,7 @@ class FeedController extends Controller {
             $image_url = $tag->item(0)->getAttribute("src");
             return $image_url;
         }catch (\ErrorException $ex){
-            echo "error::GetImageUrlError"."<br>";
+            return "error::GetImageUrlError"."<br>";
         }
 
     }
@@ -176,29 +205,9 @@ class FeedController extends Controller {
     }
 
     public function test(){
-        $url = 'http://stargist.com/feed';
+        $this->fetchFeeds();
+        echo "<br> done";
 
-        $rss = new \DOMDocument();
-        $rss->load($url);
-        $feed = array();
-        foreach ($rss->getElementsByTagName('item') as $node) {
-            $item = array (
-                'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-                'link' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-                'pubDate' => $node->getElementsByTagName('pubDate')->item(0)->nodeValue,
-                'description' => $node->getElementsByTagName('description')->item(0)->nodeValue,
-                'content' => $node->getElementsByTagName('encoded')->item(0)->nodeValue
-
-            );
-            array_push($feed, $item);
-        }
-//        $this->fetchFeeds();
-//        echo "<br> done";
-        $rss_content = new \DOMDocument();
-        $rss_content->load($feed[0]['content']);
-
-
-        var_dump($feed[0]['content']);
     }
 
 

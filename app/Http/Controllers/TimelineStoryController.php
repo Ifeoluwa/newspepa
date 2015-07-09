@@ -113,32 +113,30 @@ class TimelineStoryController extends Controller
         date_default_timezone_set('Africa/Lagos');
         $date1 = new \DateTime($start_date);
         $date2 = new \DateTime();
-        $diff = $date1->diff($date2);
-        if ($diff->d){
-            if($diff->d == 1){
-                return $diff->format('%d day');
+        $diff_in_sec = $date2->getTimestamp() - $date1->getTimestamp();
+
+        if ($diff_in_sec <= 60){
+            return "Just now";
+        }elseif($diff_in_sec > 60 && $diff_in_sec < 3600){
+            if(intval($diff_in_sec/60) == 1){
+                return "1 min";
             }else{
-                return $diff->format('%d days');
+                return intval($diff_in_sec/60) ." mins";
             }
-        }else if($diff->h){
-            if($diff->h == 1){
-                return $diff->format('%h hour');
+        }elseif($diff_in_sec > 3600 && $diff_in_sec < 86400){
+            if(intval($diff_in_sec/3600) == 1){
+                return "1 hr";
             }else{
-                return $diff->format('%h hours');
+                return intval($diff_in_sec/3600) ." hrs";
             }
-        }else if($diff->m){
-            if($diff->m == 1){
-                return $diff->format('%m min');
+        }elseif($diff_in_sec > 86400 && $diff_in_sec < 604800){
+            if(intval($diff_in_sec/86400) == 1){
+                return "1 day";
             }else{
-                return $diff->format('%m mins');
-            }
-        }else {
-            if($diff->s == 1){
-                return $diff->format('%s second');
-            }else{
-                return $diff->format('%s seconds');
+                return intval($diff_in_sec/86400) ." days";
             }
         }
+
 
     }
 
