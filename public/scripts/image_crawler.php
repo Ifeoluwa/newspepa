@@ -56,3 +56,7 @@ $image_urls = executeQuery("SELECT post_content FROM wp_posts WHERE post_content
 /*
  * fetch out the the image tag for each content
  */
+foreach($image_urls as $content){
+    $image_match = preg_match('/(<img[^>]+>)/i', $content, $matches);
+    $image_url = $matches[0];
+}

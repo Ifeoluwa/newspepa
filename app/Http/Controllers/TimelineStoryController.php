@@ -23,13 +23,13 @@ class TimelineStoryController extends Controller
     protected $client;
     // Constructor
     public function __construct(){
-        $config = array(
-            'host'      => '192.190.86.123',
-            'port'      => 8080,
-            'path'      => '/solr',
-        );
+//        $config = array(
+//            'host'      => '192.190.86.123',
+//            'port'      => 8080,
+//            'path'      => '/solr',
+//        );
 
-        $this->client = new \Solarium\Client($config);
+        $this->client = new \Solarium\Client;
 //        view()->share('makeStoryUrl');
     }
 
@@ -162,10 +162,93 @@ class TimelineStoryController extends Controller
     }
 
     public function searchStory(){
+
+        //the php code for insert for jide to put in the cron
+//        $stories_array = array();
+//        //adding document to solr
+//        $updateQuery = $this->client->createUpdate();
+//
+//        $story1 = $updateQuery->createDocument();
+//        $story1->id = ''; //return the id of the insert from PDO query and attach it here
+//        $story1->title_en = '';
+//        $story1->description_en = '';
+//        $story1->image_url_t = '';
+//        $story1->video_url_t = '';
+//        $story1->url = '';
+//        $story1->pub_id_i = '';
+//        $story1->has_cluster_i = '';
+//        //do this for all stories and keep adding them to the stories array
+//        //when done continue to the nest line
+//
+//        array_push($stories_array, $story1);
+//
+//        $updateQuery->addDocuments($stories_array);
+//        $updateQuery->addCommit();
+//
+//        $result = $this->client->update($updateQuery);
+        /*
+         * end of add
+         */
+
+        /*
+         * search
+         */
         $search_query = \Illuminate\Support\Facades\Input::get('search_query');
-        $search_results = $search_query; // This variable gets the result of the search
-        return view('search_results')->with('data', $search_results);
+
+        $query = $this->client->createSelect();
+        $query->setQuery($search_query);
+        $dismax = $query->getDisMax();
+        $dismax->setQueryFields('title_en^3 description_en^3');
+        $query->addSort('score',$query::SORT_DESC);
+        $resultSet = $this->client->select($query);
+
+        $search_result = array();
+        foreach($resultSet as $doc)
+        {
+            $arr = array();
+            $arr['id'] = $doc->id;
+            $arr['title'] = $doc->title_en;
+            $arr['description'] = $doc->description_en;
+            $arr['image_url'] = $doc->image_url_t;
+            $arr['video_url'] = $doc->video_url_t;
+            $arr['url'] = $doc->url;
+            $arr['pub_id'] = $doc->pub_id_i;
+            $arr['has_cluster'] = $doc->has_cluster_i;
+
+            array_push($search_result, $arr);
+        }
+
+        $found = $resultSet->getNumFound();
+
+        $return = array(
+            'search_result' => $search_result,
+            'found' => $found
+        );
+        var_dump($return);
+        die();
+        return $return;
     }
 
+    /*
+     * auto suggest function
+     */
+    public function suggest($search_query){
+        $suggestqry = $this->client->createSuggester();
+        $suggestqry->setHandler('suggest');
+        $suggestqry->setDictionary('suggest');
 
+        $suggestqry->setQuery($search_query);
+        $suggestqry->setCount(10);
+        $suggestqry->setCollate(true);
+        $suggestqry->setOnlyMorePopular(true);
+
+        $resultset = $this->client->suggester($suggestqry);
+        $suggested = array();
+        foreach ($resultset as $term => $termResult) {
+            foreach($termResult as $result){
+                array_push($suggested, $result);
+            }
+        }
+        return $suggested;
+    }
 }
