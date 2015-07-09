@@ -10,9 +10,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
-use Solarium\Autoloader;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Solarium\Core\Client\Adapter;
+use Solarium\Core\Client;
 
 class TimelineStoryController extends Controller
 {
@@ -20,7 +22,13 @@ class TimelineStoryController extends Controller
     protected $client;
     // Constructor
     public function __construct(){
-//        $this->client = new \Solarium\Client(Config::get('solr'));
+        $config = array(
+            'host'      => '192.190.86.123',
+            'port'      => 8080,
+            'path'      => '/solr',
+        );
+
+        $this->client = new \Solarium\Client($config);
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
