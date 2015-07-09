@@ -1,9 +1,5 @@
 @extends('layout')
-<script>
 
-            $(document).foundation('button dropdown', 'reflow');
-
-      </script>
 @section ('title',$data['category_stories']['category_name'] )
 @endsection
 
@@ -20,9 +16,12 @@
                     @endif
                         <div class="text-details"><a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
                          <header class="title-holder">
-                            <h1 class="title">{{$category_story['title']}}</h1>
+                         @if($category_story['image_url'] == "")
+                         <h1 class="title">{{$category_story['title']}}</h1>
+                         @else
+                            <h1 class="title title-important">{{$category_story['title']}}</h1>@endif
                          </header></a>
-                         <span class="publisher-name"><b>{{$data['publishers_name'][$category_story['pub_id']]}}</b></span>
+                         <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$category_story['pub_id']]}}</b></span>
                          <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($category_story['created_date'])}} ago</b></span>
 
 
