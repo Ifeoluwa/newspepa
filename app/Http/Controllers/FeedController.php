@@ -38,10 +38,6 @@ class FeedController extends Controller {
         foreach($feeds as $feed){
 //            Check if the feed is a valid xml
             if(FeedController::isFeedValid($feed['url'])){
-                $date = new \DateTime($feed['last_access']);
-                $int_interval = $date->getTimestamp() + ($feed['refresh_period'] * 60);
-                //check if feed should be fetched based on last fetched time
-                if ($int_interval < time()){
                     $content = $this->checkFeedSource($feed['url']);
                     if(!$content) {
                         continue;
@@ -53,9 +49,9 @@ class FeedController extends Controller {
                             $story = array();
                             if($feed['pub_id'] == 13){
                                 $img_url = $str['enclosure']['@attributes']['url'];
-                                FeedController::storeImage($img_url);
-
-                                $story['image_url'] = "story_images/".$this->getImageName($img_url);
+                                if($this->storeImage($img_url)){
+                                    $story['image_url'] = "story_images/".$this->getImageName($img_url);
+                                }
 
                             }else if($feed['pub_id'] == 1){
 
@@ -90,8 +86,6 @@ class FeedController extends Controller {
 
                     }
 
-
-                }
 
             }
             //Updates the last time the feed was accessed
@@ -167,8 +161,9 @@ class FeedController extends Controller {
             $fp = fopen("story_images/".$this->getImageName($image_url), "w");
             fwrite($fp, $image_content);
             fclose($fp);
+            return true;
         }catch(\ErrorException $ex){
-            echo "error::StoreImageError"."<br>";
+            return false;
         }
 
     }
@@ -199,8 +194,11 @@ class FeedController extends Controller {
         }
 //        $this->fetchFeeds();
 //        echo "<br> done";
+        $rss_content = new \DOMDocument();
+        $rss_content->load($feed[0]['content']);
 
-        var_dump($feed[0]['content']->getElementByTagName('img')->item(0)->nodeValue);
+
+        var_dump($feed[0]['content']);
     }
 
 
