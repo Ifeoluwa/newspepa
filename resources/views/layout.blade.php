@@ -44,7 +44,8 @@
     </nav>
 
     {{--the search bar--}}
-    <form id="searchbar" method="get" action = "{{action('TimelineController@search')}}">
+    <form id="searchbar" method="get" action = "searchStory">
+    {{--{{action('TimelineController@search')}}--}}
     <div class="row searchbar-row" style="width:100%">
             <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
             <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
@@ -114,7 +115,7 @@
     <script>
         $(document).foundation();
         var isPreviousEventComplete= true;
-        var story_url = 'http:localhost:8000/stories_json/?page=2'
+        var story_url = 'http://localhost:8000/stories_json'
         var isDataAvailable= true;
         $(window).scroll(function () { //When user clicks
 	    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
@@ -129,6 +130,7 @@
 
            success: function (result) {
            alert(result);
+           console.log(result);
 
 //                  $(".container").append(result);
 //                  isPreviousEventComplete = true;

@@ -35,7 +35,7 @@
                                  @endif
                                       <div class="text-details"><a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">
                                       <header class="title-holder">
-                                     @if($category_story['image_url'] == "")
+                                     @if($top_story['image_url'] == "")
                                        <h1 class="title">{{$top_story['title']}}</h1>
                                        @else
                                           <h1 class="title title-important">{{$top_story['title']}}</h1>
@@ -50,6 +50,8 @@
               @endif
               </div>
             @endforeach
+
+
 
             {!! $data['timeline_stories']['top_stories']->render() !!}
 @stop

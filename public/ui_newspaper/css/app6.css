@@ -10,6 +10,7 @@
 .row {
     margin-bottom:0.4rem;
     max-width: 100%;
+    overflow: hidden;
 }
 .searchbar-row{
     align-content: center;
@@ -214,6 +215,10 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.pager{
+    font-size: 50px;
+}
+
 .image_container{
     border-radius: 9px;
     display:block;
@@ -306,6 +311,7 @@ p{
     padding-left: 0;
     padding-right:0;
     overflow-x: hidden;
+    overflow-y:hidden;
 }
 
 .dropdown.button, button.dropdown{

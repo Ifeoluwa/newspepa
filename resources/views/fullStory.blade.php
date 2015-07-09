@@ -59,7 +59,7 @@
 <div class="row panel radius related-content"><b>latest stories in {{$data['category_names'][$full_story['category_id']]}} </b></div>
 @foreach($data['recent_stories'] as $recent_stories)
     <div class="row panel radius">
-          <div class="large-5 small-4 columns" style="width: 100%;">
+          <div class="large-5 small-4 columns" style="width: 100%;height:auto">
              <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
                 <div class="smallimage_container">
                 @if($recent_stories['image_url'] != "")
