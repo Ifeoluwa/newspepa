@@ -34,7 +34,7 @@ class TimelineStoryController extends Controller
     {
         //
         $timeline_stories = array();
-        $timeline_stories['top_stories'] = TimelineStory::topStories()->simplePaginate(20);
+        $timeline_stories['top_stories'] = TimelineStory::topStories()->simplePaginate(50);
 
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 
