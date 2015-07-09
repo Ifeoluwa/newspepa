@@ -23,6 +23,8 @@ Route::get('test', 'FeedController@test');
 
 Route::get('timeline', 'StoryController@createTimelineStory');
 
+Route::get('search', 'TimelineStoryController@searchStory');
+
 //Handles the various category request
 Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 

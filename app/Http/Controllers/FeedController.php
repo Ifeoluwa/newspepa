@@ -117,7 +117,7 @@ class FeedController extends Controller {
                 'content' => $node->getElementsByTagName('encoded')->item(0)->nodeValue,
 
             );
-            preg_match('/(<img[^>]+>)/i', $stories[0]['content'], $matches);
+            preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
             if(count($matches) > 0){
                 $this->storeImage($this->getImageUrl($matches[0]));
                 $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));

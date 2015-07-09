@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class TimelineStoryController extends Controller
@@ -150,18 +151,9 @@ class TimelineStoryController extends Controller
     }
 
     public function searchStory(){
-
-    }
-
-    public function createImage()
-    {
-        ob_start();
-        imagecreatefromjpeg("story_images/277026_thumb.jpg");
-        $fp = fopen("story_images/new_image", "w");
-        $image_content = ob_get_contents();
-        fwrite($fp, $image_content);
-        fclose($fp);
-
+        $search_query = \Illuminate\Support\Facades\Input::get('search_query');
+        $search_results = $search_query; // This variable gets the result of the search
+        return view('search_results')->with('data', $search_results);
     }
 
 
