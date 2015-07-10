@@ -23,14 +23,8 @@ class TimelineStoryController extends Controller
     protected $client;
     // Constructor
     public function __construct(){
-//        $config = array(
-//            'host'      => '192.190.86.123',
-//            'port'      => 8080,
-//            'path'      => '/solr',
-//        );
 
         $this->client = new \Solarium\Client;
-//        view()->share('makeStoryUrl');
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
@@ -206,7 +200,7 @@ class TimelineStoryController extends Controller
         foreach($resultSet as $doc)
         {
             $arr = array();
-            $arr['id'] = $doc->id;
+            $arr['story_id'] = $doc->id;
             $arr['title'] = $doc->title_en;
             $arr['description'] = $doc->description_en;
             $arr['image_url'] = $doc->image_url_t;
@@ -221,13 +215,14 @@ class TimelineStoryController extends Controller
         $found = $resultSet->getNumFound();
 
         $return = array(
+            'search_query' => $search_query,
             'search_result' => $search_result,
             'found' => $found
         );
+
+        var_dump($return);
+        die();
         return view('search_results')->with('data', $return);
-//        var_dump($return);
-//        die();
-//        return $return;
     }
 
     /*

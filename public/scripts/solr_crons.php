@@ -52,6 +52,7 @@ $all_stories = executeQuery("SELECT id, title, description, image_url, video_url
 //instantiate the xml document
 $xml_doc = new DOMDocument();
 $xml_doc->formatOutput = true;
+$xml_doc->encoding = 'UTF-8';
 
 $add = $xml_doc->createElement("add");
 $xml_doc->appendChild($add);
