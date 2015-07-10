@@ -8,10 +8,22 @@
 /*
  * this connection params will change for the various databases
  */
-const USER_NAME = "newspep_news";
-const PASSWORD = "news1234";
-const DSN = "mysql:host=localhost;dbname=newspep_newspepadb";
-const ACTIVE = 1;
+
+//kokofeeds
+const USER_NAME = "kokofeed_kf";
+const PASSWORD = "Omobas1";
+const DSN = "mysql:host=localhost;dbname=kokofeed_db";
+
+//stargist
+//const USER_NAME = "stargist_odt";
+//const PASSWORD = "Omobas1";
+//const DSN = "mysql:host=;dbname=stargist_numberone";
+
+//nigerianmonitors
+//const USER_NAME = "nigerian_monitor";
+//const PASSWORD = "nigerianmonitor";
+//const DSN = "mysql:host=localhost;dbname=nigerian_monitor";
+
 
 
 function executeQuery($statement, $params, $return_row = false){
@@ -56,7 +68,24 @@ $image_urls = executeQuery("SELECT post_content FROM wp_posts WHERE post_content
 /*
  * fetch out the the image tag for each content
  */
+$xml_doc = new DOMDocument();
+$xml_doc->formatOutput = true;
+
+$url_arrays = $xml_doc->createElement("add");
+$xml_doc->appendChild($url_arrays);
 foreach($image_urls as $content){
+    echo $content;
+    die();
+    $url = $xml_doc->createElement("url");
+
+    $path = $xml_doc->createElement("path");
     $image_match = preg_match('/(<img[^>]+>)/i', $content, $matches);
-    $image_url = $matches[0];
+    $path->appendChild($xml_doc->createTextNode($matches[0]));
+
+    $url->appendChild($path);
 }
+
+$xml_doc->saveXML();
+$xml_doc->save("crawl_data.xml");
+
+echo 'file done';
