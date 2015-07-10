@@ -70,7 +70,7 @@
 
 {{--the stories containers starts from here--}}
 
-          <div class="large-12 small-12 columns">
+          <div class="large-12 small-12 columns" id="stories_container">
              @yield('important_stories')
 
               @yield('less_important_stories')
@@ -113,35 +113,58 @@
 
     <script>
         $(document).foundation();
-        var isPreviousEventComplete= true;
+        var last_page, current_page, next_page_url;
+        $(document).ready(function(){
         var story_url = 'http://localhost:8000/stories_json'
+
+        var prev_page_url;
+
+            $.ajax({
+                      type: "GET",
+                      url: story_url,
+                      dataType: 'json',
+
+                       success: function (result) {
+                      next_page_url= result.next_page_url;
+                      last_page=result.last_page;
+                      current_page=result.current_page;
+              }
+
+                          });
+        });
+
+
+        var isPreviousEventComplete= true;
         var isDataAvailable= true;
         $(window).scroll(function () { //When user clicks
 	    if ($(document).height() <= $(window).scrollTop() + $(window).height()) {
+	         alert("last");
 
-
+            if(current_page!=last_page){
 //////	isPreviousEventComplete=false;
 //////	//$(".LoaderImage").show();
-    $.ajax({
-          type: "GET",
-          url: story_url,
-          dataType: 'json',
+            stories = "";
+            $.ajax({
+                  type: "GET",
+                  url: next_page_url,
+                  dataType: 'json',
 
-           success: function (result) {
-           alert(result);
-           console.log(result);
-
-//                  $(".container").append(result);
-//                  isPreviousEventComplete = true;
-                  }
-//                error: function (error) {
-//                    alert(error);
-//                }
-
+                       success: function (result) {
+                              for(var i=0; i<result.data.length; i++){
+                                stories += "<?php echo 'something' ?>"
+                              }
+                              $("#stories_container").append(stories);
+                              isPreviousEventComplete = true;
+                              },
+                                error: function (error) {
+                                    alert(error);
+                                }
               });
 
 	}
+	}
 	});
+
 
 
         if (location.pathname == "/") {
