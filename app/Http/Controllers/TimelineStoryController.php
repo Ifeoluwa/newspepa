@@ -224,9 +224,10 @@ class TimelineStoryController extends Controller
             'search_result' => $search_result,
             'found' => $found
         );
-        var_dump($return);
-        die();
-        return $return;
+        return view('search_results')->with('data', $return);
+//        var_dump($return);
+//        die();
+//        return $return;
     }
 
     /*
