@@ -25,6 +25,10 @@ class Story extends Model
         return $matches;
     }
 
+    public static function getStories(){
+
+    }
+
 
     public static function insertIgnore($array){
         $a = new static();

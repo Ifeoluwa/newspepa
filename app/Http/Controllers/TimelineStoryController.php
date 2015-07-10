@@ -10,9 +10,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
-use Solarium\Autoloader;
+use Symfony\Component\Console\Input\Input;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Solarium\Core\Client\Adapter;
+use Solarium\Core\Client;
 
 class TimelineStoryController extends Controller
 {
@@ -20,7 +23,14 @@ class TimelineStoryController extends Controller
     protected $client;
     // Constructor
     public function __construct(){
-//        $this->client = new \Solarium\Client(Config::get('solr'));
+//        $config = array(
+//            'host'      => '192.190.86.123',
+//            'port'      => 8080,
+//            'path'      => '/solr',
+//        );
+
+        $this->client = new \Solarium\Client;
+//        view()->share('makeStoryUrl');
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
@@ -35,7 +45,7 @@ class TimelineStoryController extends Controller
     {
         //
         $timeline_stories = array();
-        $timeline_stories['top_stories'] = TimelineStory::topStories()->simplePaginate(20);
+        $timeline_stories['top_stories'] = TimelineStory::topStories()->simplePaginate(50);
 
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 
@@ -115,32 +125,30 @@ class TimelineStoryController extends Controller
         date_default_timezone_set('Africa/Lagos');
         $date1 = new \DateTime($start_date);
         $date2 = new \DateTime();
-        $diff = $date1->diff($date2);
-        if ($diff->d){
-            if($diff->d == 1){
-                return $diff->format('%d day');
+        $diff_in_sec = $date2->getTimestamp() - $date1->getTimestamp();
+
+        if ($diff_in_sec <= 60){
+            return "Just now";
+        }elseif($diff_in_sec > 60 && $diff_in_sec < 3600){
+            if(intval($diff_in_sec/60) == 1){
+                return "1 min";
             }else{
-                return $diff->format('%d days');
+                return intval($diff_in_sec/60) ." mins";
             }
-        }else if($diff->h){
-            if($diff->h == 1){
-                return $diff->format('%h hour');
+        }elseif($diff_in_sec > 3600 && $diff_in_sec < 86400){
+            if(intval($diff_in_sec/3600) == 1){
+                return "1 hr";
             }else{
-                return $diff->format('%h hours');
+                return intval($diff_in_sec/3600) ." hrs";
             }
-        }else if($diff->m){
-            if($diff->m == 1){
-                return $diff->format('%m min');
+        }elseif($diff_in_sec > 86400 && $diff_in_sec < 604800){
+            if(intval($diff_in_sec/86400) == 1){
+                return "1 day";
             }else{
-                return $diff->format('%m mins');
-            }
-        }else {
-            if($diff->s == 1){
-                return $diff->format('%s second');
-            }else{
-                return $diff->format('%s seconds');
+                return intval($diff_in_sec/86400) ." days";
             }
         }
+
 
     }
 
@@ -153,31 +161,31 @@ class TimelineStoryController extends Controller
 
     }
 
-    public function searchStory($search_query){
+    public function searchStory(){
 
         //the php code for insert for jide to put in the cron
-        $stories_array = array();
-        //adding document to solr
-        $updateQuery = $this->client->createUpdate();
-
-        $story1 = $updateQuery->createDocument();
-        $story1->id = ''; //return the id of the insert from PDO query and attach it here
-        $story1->title_en = '';
-        $story1->description_en = '';
-        $story1->image_url_t = '';
-        $story1->video_url_t = '';
-        $story1->url = '';
-        $story1->pub_id_i = '';
-        $story1->has_cluster_i = '';
-        //do this for all stories and keep adding them to the stories array
-        //when done continue to the nest line
-
-        array_push($stories_array, $story1);
-
-        $updateQuery->addDocuments($stories_array);
-        $updateQuery->addCommit();
-
-        $result = $this->client->update($updateQuery);
+//        $stories_array = array();
+//        //adding document to solr
+//        $updateQuery = $this->client->createUpdate();
+//
+//        $story1 = $updateQuery->createDocument();
+//        $story1->id = ''; //return the id of the insert from PDO query and attach it here
+//        $story1->title_en = '';
+//        $story1->description_en = '';
+//        $story1->image_url_t = '';
+//        $story1->video_url_t = '';
+//        $story1->url = '';
+//        $story1->pub_id_i = '';
+//        $story1->has_cluster_i = '';
+//        //do this for all stories and keep adding them to the stories array
+//        //when done continue to the nest line
+//
+//        array_push($stories_array, $story1);
+//
+//        $updateQuery->addDocuments($stories_array);
+//        $updateQuery->addCommit();
+//
+//        $result = $this->client->update($updateQuery);
         /*
          * end of add
          */
@@ -185,6 +193,7 @@ class TimelineStoryController extends Controller
         /*
          * search
          */
+        $search_query = \Illuminate\Support\Facades\Input::get('search_query');
 
         $query = $this->client->createSelect();
         $query->setQuery($search_query);
@@ -215,6 +224,8 @@ class TimelineStoryController extends Controller
             'search_result' => $search_result,
             'found' => $found
         );
+        var_dump($return);
+        die();
         return $return;
     }
 
@@ -240,17 +251,4 @@ class TimelineStoryController extends Controller
         }
         return $suggested;
     }
-
-    public function createImage()
-    {
-        ob_start();
-        imagecreatefromjpeg("story_images/277026_thumb.jpg");
-        $fp = fopen("story_images/new_image", "w");
-        $image_content = ob_get_contents();
-        fwrite($fp, $image_content);
-        fclose($fp);
-
-    }
-
-
 }
