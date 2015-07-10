@@ -61,6 +61,7 @@
         <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button></div>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
           <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
+          <li id="1" ><a href="{{url('/')}}">Latest stories</a></li>
           <li id="2" class="active"><a href="{{url('entertainment')}}">Entertainment</a></li>
           <li id="3"><a href="{{url('politics')}}">Politics</a></li>
           <li id="4"><a href="{{url('sports')}}">Sports</a></li>
