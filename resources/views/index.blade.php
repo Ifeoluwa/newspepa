@@ -15,13 +15,13 @@
          <a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">
             <div class="large-5 small-4 columns" style="width: 100%;">
               @if($top_story['image_url']!="")
-                <div class="smallimage"><img width="120" height="100" src="{{$top_story['image_url']}}"/>
+                <div class="smallimage"><img src="{{$top_story['image_url']}}" width="100px" height="80px" />
                 </div>@endif
                     <a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">
                         <h1 class="title">{!!$top_story['title']!!} </h1>
                         <div class="storyExtras">
                          <span class="publisher-name" style="float:left; margin-bottom: 1px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$top_story['pub_id']]}}</b></span>
-                         <span class="label" style="margin-top:6px; margin-bottom:1px"><i class="time-icon"></i>{{$tc->getTimeDifference($top_story['created_date'])}}</span>
+                         <span class="label" style="margin-top:6px; margin-bottom:1px"><i class="time-icon"></i>{{$tc->getTimeDifference($top_story['created_date'])}} ago</span>
                         </div>
                     </a>
             </div>
@@ -42,8 +42,8 @@
                                       @endif
                                       </header></a>
                                        <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$top_story['pub_id']]}}</b></span>
-
-                                       <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($top_story['created_date'])}}</b></span>
+                                      {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>--}}
+                                       <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($top_story['created_date'])}} ago</b></span>
                                   </div>
                                 </a>
                                 </div>
@@ -51,6 +51,8 @@
               </div>
             @endforeach
 
-            {{--{!! $data['timeline_stories']['top_stories']->render() !!}--}}
+
+
+            {!! $data['timeline_stories']['top_stories']->render() !!}
 @stop
 

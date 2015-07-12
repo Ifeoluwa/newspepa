@@ -1,6 +1,6 @@
 
 /*.title-area{*/
-    /*background:url('../img/logo-medium4.png') no-repeat;*/
+/*background:url('../img/logo-medium4.png') no-repeat;*/
 
 /*}*/
 .name{
@@ -10,6 +10,7 @@
 .row {
     margin-bottom:0.4rem;
     max-width: 100%;
+    overflow: hidden;
 }
 .searchbar-row{
     align-content: center;
@@ -62,7 +63,7 @@ button:focus, .button:hover, .button:focus {
 :-ms-input-placeholder {
     color: #020501; }
 /*#placeholder{*/
-    /*color:   #53e828*/
+/*color:   #53e828*/
 /*}*/
 
 .searchbar-button{
@@ -94,6 +95,23 @@ button:focus, .button:hover, .button:focus {
 }
 .menu-icon{
     color:#336;
+}
+.tolu{
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    font-family: roboto;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding-top: 9px;
+    padding-right: 6px;
+    padding-bottom: 0px !important;
+    padding-left: 7px;
+    -webkit-box-sizing: border-box;
+    width: 100%;
+    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
 }
 .panel {
     background: #FFFFFF;
@@ -156,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
     webkit-box-orient: vertical;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    max-height: 50px;
+    max-height: 100px;
     font-size: 15px;
     font-weight: bold;
     position: relative;
@@ -209,9 +227,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 6px;
     position: relative;
     display:inline-block;
-   float: right;
+    float: right;
 
 
+}
+
+.pager{
+    font-size: 50px;
 }
 
 .image_container{
@@ -269,7 +291,7 @@ h1, h2, h3, h4, h5, h6 {
 strong{
     font-size: 0.9rem;
     font-weight:200
-    line-height: normal;
+line-height: normal;
 
     /*margin-left:-3rem;*/
 
@@ -295,17 +317,28 @@ p{
 .smallimage{
     border:0;
     display:block;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     float: left;
     padding-right: 20px;
     padding-top: 3px;
+    /*width:100px !important;*/
+    /*height:100px !important;*/
+    box-sizing: border-box;
+    cursor: pointer;
+    overflow:hidden;
 }
 
+.thumbnail{
+    position: absolute;
+    clip: rect 0 100px 100px 0;
+    height:200px;
+}
 
 .columns{
     padding-left: 0;
     padding-right:0;
     overflow-x: hidden;
+    overflow-y:hidden;
 }
 
 .dropdown.button, button.dropdown{
@@ -329,11 +362,11 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 }
 
 .searchbutton{
-   width:100%;
-   height:100%;
-   padding-bottom:1.22rem;
-   padding-top:1.1rem;
-  background:url("../img/box-icon-search.png") no-repeat center #336 ;
+    width:100%;
+    height:100%;
+    padding-bottom:1.22rem;
+    padding-top:1.1rem;
+    background:url("../img/box-icon-search.png") no-repeat center #336 ;
 }
 
 body{
@@ -405,7 +438,7 @@ body{
 }
 
 .newspapericon {
-   background-image: url("../img/feed-ic.jpg");
+    background-image: url("../img/feed-ic.jpg");
     position: relative;
     background-repeat: no-repeat;
     background-size: 18px 15px;
@@ -488,7 +521,7 @@ body{
     background-repeat: no-repeat;
 }
 .back-to-top {
-    background-image: url("../img/to_top_icon-blue.png");
+    background-image: url("../img/to_top_icon.png");
     margin: 0;
     position: fixed;
     bottom: 0;
@@ -508,7 +541,7 @@ body{
 
 .loaderImage{
     background-image:url("../img/index.gif")
-    position:relative;
+position:relative;
     background-repeat: no-repeat;
     display:inline-block;
     background-size: 18px 15px;
@@ -536,6 +569,5 @@ body{
     display:inline-block;
     margin-bottom:6px;
     padding-bottom: 0;
-
 }
 

@@ -10,17 +10,22 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Symfony\Component\Console\Input\Input;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Solarium\Core\Client\Adapter;
+use Solarium\Core\Client;
 
 class TimelineStoryController extends Controller
 {
 
+    protected $client;
     // Constructor
     public function __construct(){
-//        view()->share('makeStoryUrl');
+
+        $this->client = new \Solarium\Client;
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
@@ -157,9 +162,91 @@ class TimelineStoryController extends Controller
     }
 
     public function searchStory(){
+
+        //the php code for insert for jide to put in the cron
+//        $stories_array = array();
+//        //adding document to solr
+//        $updateQuery = $this->client->createUpdate();
+//
+//        $story1 = $updateQuery->createDocument();
+//        $story1->id = ''; //return the id of the insert from PDO query and attach it here
+//        $story1->title_en = '';
+//        $story1->description_en = '';
+//        $story1->image_url_t = '';
+//        $story1->video_url_t = '';
+//        $story1->url = '';
+//        $story1->pub_id_i = '';
+//        $story1->has_cluster_i = '';
+//        //do this for all stories and keep adding them to the stories array
+//        //when done continue to the nest line
+//
+//        array_push($stories_array, $story1);
+//
+//        $updateQuery->addDocuments($stories_array);
+//        $updateQuery->addCommit();
+//
+//        $result = $this->client->update($updateQuery);
+        /*
+         * end of add
+         */
+
+        /*
+         * search
+         */
         $search_query = \Illuminate\Support\Facades\Input::get('search_query');
-        $search_results = $search_query; // This variable gets the result of the search
-        return view('search_results')->with('data', $search_results);
+
+        $query = $this->client->createSelect();
+        $query->setQuery($search_query);
+        $dismax = $query->getDisMax();
+        $dismax->setQueryFields('title_en^3 description_en^3');
+        $query->addSort('score',$query::SORT_DESC);
+        $resultSet = $this->client->select($query);
+
+        $search_result = array();
+        $z = 0;
+        $search_query_array = explode(' ', $search_query);
+        foreach($resultSet as $doc)
+        {
+//            $title1 = mb_convert_encoding($doc->title_en[0], "UTF-8", "Windows-1252");
+//            $title1 = html_entity_decode($title, ENT_QUOTES, "UTF-8");
+            $j = 0;
+            for($i = 0; $i < count($search_query_array); ++$i) {
+                if (strpos(strtolower($doc->title_en[0]), strtolower($search_query_array[$i])) !== false) {
+                    $j = $j + 1;
+                }
+            }
+            if ($j >= (count($search_query_array) - 1)){
+
+                $arr = array();
+                $arr['story_id'] = $doc->id;
+                $arr['title'] = $doc->title_en[0];
+                $arr['description'] = $doc->description_en;
+                $arr['image_url'] = $doc->image_url_t;
+                $arr['video_url'] = $doc->video_url_t;
+                $arr['url'] = $doc->url;
+                $arr['pub_id'] = $doc->pub_id_i;
+                $arr['has_cluster'] = $doc->has_cluster_i;
+
+                array_push($search_result, $arr);
+                $z = $z + 1;
+            }
+        }
+
+//        $found = $resultSet->getNumFound();
+        $found = $z;
+        $return = array(
+            'search_query' => $search_query,
+            'search_result' => $search_result,
+            'found' => $found
+        );
+        var_dump($return);
+        die();
+        return view('search_results')->with('data', $return);
+
+        /*
+         * search via mysql
+         */
+
     }
 
     public function testRedis(){
@@ -176,5 +263,64 @@ class TimelineStoryController extends Controller
 
 
 
+    /*
+     * auto suggest function
+     */
+    public function suggest($search_query){
+        $suggestqry = $this->client->createSuggester();
+        $suggestqry->setHandler('suggest');
+        $suggestqry->setDictionary('suggest');
 
+        $suggestqry->setQuery($search_query);
+        $suggestqry->setCount(10);
+        $suggestqry->setCollate(true);
+        $suggestqry->setOnlyMorePopular(true);
+
+        $resultset = $this->client->suggester($suggestqry);
+        $suggested = array();
+        foreach ($resultset as $term => $termResult) {
+            foreach($termResult as $result){
+                array_push($suggested, $result);
+            }
+        }
+        return $suggested;
+    }
+
+    public function getStoryImage($story_title){
+        $query = $this->client->createSelect();
+        $query->setQuery($story_title);
+        $dismax = $query->getDisMax();
+        $dismax->setQueryFields('name^3');
+        $query->addSort('score',$query::SORT_DESC);
+        $resultSet = $this->client->select($query);
+
+        $search_result = array();
+        foreach($resultSet as $doc)
+        {
+            $j = 0;
+            $image_name_array = explode("-", $doc->name);
+            for($i = 0; $i < count($image_name_array); ++$i) {
+                if (strpos(strtolower($story_title), strtolower($image_name_array[$i])) !== false) {
+                    $j = $j + 1;
+                }
+            }
+            if ($j >= (count($image_name_array) - 1)) {
+                $arr = array();
+                $arr['id'] = $doc->id;
+                $arr['name'] = $doc->name;
+                $arr['url'] = $doc->url;
+
+                array_push($search_result, $arr);
+                break;
+            }
+        }
+
+        $found = $resultSet->getNumFound();
+
+        $return = array(
+            'search_result' => $search_result,
+            'found' => $found
+        );
+        return $return;
+    }
 }
