@@ -8,6 +8,6 @@ class Publisher extends Model
 {
     //
 
-    public static $publishers = ['1' => 'Tribune', '2' => 'Punch', '3' => 'Leadership', '4' =>  'KokoFeed', '5' => 'Nigerian Monitor', '6' => 'Vanguard', '7' => 'The Cable', '8' => 'Nigeria Guardian',
-        '9' => 'Channels Television', '10' => 'Star Gist', '11' => 'BellaNaija', '12' => 'Linda Ikeji', '13' => 'Goal.com', '14' => 'Futaa', '15' => 'Complete Sport'];
+    public static $publishers = ['1' => 'NIGERIAN TRIBUNE', '2' => 'PUNCH', '3' => 'LEADERSHIP', '4' =>  'KOKOFEED', '5' => 'NIGERIAN MONITOR', '6' => 'VANGUARD', '7' => 'THE CABLE', '8' => 'THE GUARDIAN',
+        '9' => 'CHANNELS TV', '10' => 'STARGIST', '11' => 'BELLANAIJA', '12' => 'LINDA IKEJI', '13' => 'GOAL.COM', '14' => 'FUTAA', '15' => 'COMPLETE SPORTS'];
 }

@@ -21,7 +21,7 @@
                         <h1 class="title">{!!$top_story['title']!!} </h1>
                         <div class="storyExtras">
                          <span class="publisher-name" style="float:left; margin-bottom: 1px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$top_story['pub_id']]}}</b></span>
-                         <span class="label" style="margin-top:6px; margin-bottom:1px"><i class="time-icon"></i>{{$tc->getTimeDifference($top_story['created_date'])}} ago</span>
+                         <span class="label" style="margin-top:6px; margin-bottom:1px"><i class="time-icon"></i>{{$tc->getTimeDifference($top_story['created_date'])}}</span>
                         </div>
                     </a>
             </div>
@@ -42,8 +42,8 @@
                                       @endif
                                       </header></a>
                                        <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$top_story['pub_id']]}}</b></span>
-                                      <span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>
-                                       <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($top_story['created_date'])}} ago</b></span>
+
+                                       <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($top_story['created_date'])}}</b></span>
                                   </div>
                                 </a>
                                 </div>
@@ -51,6 +51,6 @@
               </div>
             @endforeach
 
-            {!! $data['timeline_stories']['top_stories']->render() !!}
+            {{--{!! $data['timeline_stories']['top_stories']->render() !!}--}}
 @stop
 

@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 use Symfony\Component\Console\Input\Input;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -32,10 +33,9 @@ class TimelineStoryController extends Controller
 */
     public function index()
     {
-        //
-        $timeline_stories = array();
-        $timeline_stories['top_stories'] = TimelineStory::topStories()->simplePaginate(50);
 
+        $timeline_stories = array();
+        $timeline_stories['top_stories'] = TimelineStory::topStories();
         return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 
     }
@@ -60,21 +60,26 @@ class TimelineStoryController extends Controller
 
             return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
         }catch(\ErrorException $ex){
-            return view('errors.404', [], 404);
+            return view('errors.404');
         }
     }
 
 
     //Gets all the details of the full story and the related stories
     public function getFullStory($story_id){
-        $full_story = array();
-        DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_reads');
-        $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
-        $full_story['other_sources'] = Story::matches($story_id);
-        $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
 
+        $full_story = array();
+        $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
+
+        $full_story['other_sources'] = Story::matches($story_id);
+
+        $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
         $full_story['category_names'] = $this->category_names;
         $full_story['publisher_names'] = Publisher::$publishers;
+        $timezone = new \DateTimeZone('Africa/Lagos');
+
+        $now = new \DateTime('now', $timezone);
+        TimelineStory::updateStoryViews($story_id, $now);
         return view('fullStory')->with('data', $full_story);
     }
 
@@ -82,6 +87,7 @@ class TimelineStoryController extends Controller
     public function handleRequest($request_name){
         try{
             $request_array = explode('-', $request_name);
+
             if(count($request_array) > 1){
                 return $this->getFullStory($request_array[count($request_array) - 1]) ;
             }else{
@@ -89,9 +95,9 @@ class TimelineStoryController extends Controller
 
             }
         }catch (\ErrorException $ex){
-           return view('errors.404', [], 404);
+           return view('errors.404');
         } catch (NotFoundHttpException $nfe){
-            return view('errors.404', [], 404);
+            return view('errors.404');
         }
 
     }
@@ -120,21 +126,21 @@ class TimelineStoryController extends Controller
             return "Just now";
         }elseif($diff_in_sec > 60 && $diff_in_sec < 3600){
             if(intval($diff_in_sec/60) == 1){
-                return "1 min";
+                return "1 min ago";
             }else{
-                return intval($diff_in_sec/60) ." mins";
+                return intval($diff_in_sec/60) ." mins ago";
             }
         }elseif($diff_in_sec > 3600 && $diff_in_sec < 86400){
             if(intval($diff_in_sec/3600) == 1){
                 return "1 hr";
             }else{
-                return intval($diff_in_sec/3600) ." hrs";
+                return intval($diff_in_sec/3600) ." hrs ago";
             }
         }elseif($diff_in_sec > 86400 && $diff_in_sec < 604800){
             if(intval($diff_in_sec/86400) == 1){
                 return "1 day";
             }else{
-                return intval($diff_in_sec/86400) ." days";
+                return intval($diff_in_sec/86400) ." days ago";
             }
         }
 
@@ -155,6 +161,20 @@ class TimelineStoryController extends Controller
         $search_results = $search_query; // This variable gets the result of the search
         return view('search_results')->with('data', $search_results);
     }
+
+    public function testRedis(){
+        Redis::set('name', 'Jide');
+        return Redis::get('name');
+    }
+
+
+    public function testFunction(){
+        return TimelineStory::topStories();
+
+    }
+
+
+
 
 
 }
