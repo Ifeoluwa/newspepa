@@ -197,32 +197,50 @@ class TimelineStoryController extends Controller
         $resultSet = $this->client->select($query);
 
         $search_result = array();
+        $z = 0;
+        $search_query_array = explode(' ', $search_query);
         foreach($resultSet as $doc)
         {
-            $arr = array();
-            $arr['story_id'] = $doc->id;
-            $arr['title'] = $doc->title_en;
-            $arr['description'] = $doc->description_en;
-            $arr['image_url'] = $doc->image_url_t;
-            $arr['video_url'] = $doc->video_url_t;
-            $arr['url'] = $doc->url;
-            $arr['pub_id'] = $doc->pub_id_i;
-            $arr['has_cluster'] = $doc->has_cluster_i;
+//            $title1 = mb_convert_encoding($doc->title_en[0], "UTF-8", "Windows-1252");
+//            $title1 = html_entity_decode($title, ENT_QUOTES, "UTF-8");
+            $j = 0;
+            for($i = 0; $i < count($search_query_array); ++$i) {
+                if (strpos(strtolower($doc->title_en[0]), strtolower($search_query_array[$i])) !== false) {
+                    $j = $j + 1;
+                }
+            }
+            if ($j >= (count($search_query_array) - 1)){
 
-            array_push($search_result, $arr);
+                $arr = array();
+                $arr['story_id'] = $doc->id;
+                $arr['title'] = $doc->title_en[0];
+                $arr['description'] = $doc->description_en;
+                $arr['image_url'] = $doc->image_url_t;
+                $arr['video_url'] = $doc->video_url_t;
+                $arr['url'] = $doc->url;
+                $arr['pub_id'] = $doc->pub_id_i;
+                $arr['has_cluster'] = $doc->has_cluster_i;
+
+                array_push($search_result, $arr);
+                $z = $z + 1;
+            }
         }
 
-        $found = $resultSet->getNumFound();
-
+//        $found = $resultSet->getNumFound();
+        $found = $z;
         $return = array(
             'search_query' => $search_query,
             'search_result' => $search_result,
             'found' => $found
         );
-
         var_dump($return);
         die();
         return view('search_results')->with('data', $return);
+
+        /*
+         * search via mysql
+         */
+
     }
 
     /*
@@ -246,5 +264,43 @@ class TimelineStoryController extends Controller
             }
         }
         return $suggested;
+    }
+
+    public function getStoryImage($story_title){
+        $query = $this->client->createSelect();
+        $query->setQuery($story_title);
+        $dismax = $query->getDisMax();
+        $dismax->setQueryFields('name^3');
+        $query->addSort('score',$query::SORT_DESC);
+        $resultSet = $this->client->select($query);
+
+        $search_result = array();
+        foreach($resultSet as $doc)
+        {
+            $j = 0;
+            $image_name_array = explode("-", $doc->name);
+            for($i = 0; $i < count($image_name_array); ++$i) {
+                if (strpos(strtolower($story_title), strtolower($image_name_array[$i])) !== false) {
+                    $j = $j + 1;
+                }
+            }
+            if ($j >= (count($image_name_array) - 1)) {
+                $arr = array();
+                $arr['id'] = $doc->id;
+                $arr['name'] = $doc->name;
+                $arr['url'] = $doc->url;
+
+                array_push($search_result, $arr);
+                break;
+            }
+        }
+
+        $found = $resultSet->getNumFound();
+
+        $return = array(
+            'search_result' => $search_result,
+            'found' => $found
+        );
+        return $return;
     }
 }
