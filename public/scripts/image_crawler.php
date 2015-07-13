@@ -74,16 +74,16 @@ $xml_doc->formatOutput = true;
 $url_arrays = $xml_doc->createElement("add");
 $xml_doc->appendChild($url_arrays);
 
-$id = 1;
+$id = 250445;
 for($j = 12; $j <= 15; ++$j){
     for($i = 1; $i <= 12; ++$i){
         if($i < 10){
-            $log_directory = '/home/stargist/public_html/wp-content/uploads/20'.$j.'/0'.$i;
-            $http = 'http://www.stargist.com/wp-content/uploads/20'.$j.'/0'.$i.'/';
+        $log_directory = '/home/kokofeed/public_html/wp-content/uploads/2015/0'.$i;
+        $http = 'http://kokofeed.com/wp-content/uploads/20'.$j.'/0'.$i.'/';
         }
         else{
-            $log_directory = '/home/stargist/public_html/wp-content/uploads/20'.$j.'/'.$i;
-            $http = 'http://www.stargist.com/wp-content/uploads/20'.$j.'/'.$i.'/';
+        $log_directory = '/home/kokofeed/public_html/wp-content/uploads/2015/'.$i;
+            $http = 'http://kokofeed.com/wp-content/uploads/20'.$j.'/'.$i.'/';
         }
 
         foreach(glob($log_directory.'/*.*') as $content){
