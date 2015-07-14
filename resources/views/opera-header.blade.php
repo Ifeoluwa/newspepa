@@ -1,14 +1,5 @@
  <!doctype html>
  <html class="no-js" lang="en">
-    <head>
-     <meta charset="utf-8" />
-     <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
-      <title>NewsPepa | @yield('title')</title>
-         <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
-         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
-         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
-    </head>
      <body>
     <div id="fb-root"></div>
       <script>(function(d, s, id) {

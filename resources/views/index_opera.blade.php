@@ -1,5 +1,5 @@
-
-@extends('layout')
+@extends ('opera_body')
+@extends ('opera_head')
 @section('title', 'Breaking Nigerian News From Top Sites')
 @stop
 {{--@section('dropdown','Top Stories')--}}
@@ -9,7 +9,6 @@
     @foreach($data['timeline_stories']['top_stories'] as $top_story)
     <?php $tc = new \App\Http\Controllers\TimelineStoryController();
     ?>
-        {{--@if($top_story['browserType']=='operamini')--}}
             <div class="row opera-panel radius">
               <div class="large-12 medium-6 small-12 columns">
                                 <a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">

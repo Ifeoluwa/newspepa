@@ -1,14 +1,5 @@
 {{--{{json_encode($data)}}--}}
-{{--@extends('layout')--}}
-@if($data['is_opera'] == false)
 @extends('layout')
-
-@else
-@extends('opera-body')
-@extends ('opera-header')
-
-@endif
-
 @foreach($data['full_story'] as $full_story2)
 @section('title', $full_story2['title'])
 @endsection
@@ -24,11 +15,7 @@
 @foreach($data['full_story'] as $full_story)
 
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
-    {{--@if($top_story['browserType']=='operamini')--}}
-        <div class="row opera-panel radius">
-    {{--@else--}}
-        {{--<div class="row panel radius" style="padding:0.95rem">--}}
-    {{--@endif--}}
+        <div class="row panel radius">
       <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
           <span class="full-story-title">{{$full_story['title']}}</span><br/>
           <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
@@ -71,13 +58,10 @@
 {{--@stop--}}
 
 @section('related_content')
-{{--<div class="row panel radius related-content"><b>latest stories in {{$data['category_names'][$full_story['category_id']]}} </b></div>--}}
+<div class="row panel radius related-content"><b>latest stories in {{$data['category_names'][$full_story['category_id']]}} </b></div>
 @foreach($data['recent_stories'] as $recent_stories)
-    {{--@if($top_story['browserType']=='operamini')--}}
-        <div class="row opera-panel radius">
-    {{--@else--}}
-         {{--<div class="row panel radius">--}}
-    {{--@endif--}}
+        <div class="row panel radius">
+
      <div class="large-12 medium-6 small-12 columns">
     <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
      @if($recent_stories['image_url']!="")
@@ -92,7 +76,6 @@
           @endif
           </header></a>
            <span class="publisher-name"><b>{{$data['publisher_names'][$recent_stories['pub_id']]}}</b></span>
-          {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$recent_stories['category_id']]}}</b></span>--}}
            <span class="timecount-name"><b>{{$tc->getTimeDifference($recent_stories['created_date'])}} ago</b></span>
       </div>
     </a>
