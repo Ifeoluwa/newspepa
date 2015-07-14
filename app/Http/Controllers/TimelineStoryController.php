@@ -664,9 +664,9 @@ zero";
         $latest_stories = array_merge($nigeria, $politics, $entertainment, $sports, $metro);
 
         if($this->isOpera()){
-            return view('latestStory_opera')->with('latest_stories', $latest_stories);
+            return view('latestStory_opera')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
         }else{
-            return view('latestStory')->with('latest_stories', $latest_stories);
+            return view('latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
         }
 
     }
@@ -771,7 +771,6 @@ zero";
     }
 
     public function searchStory(){
-        $isOpera = $this->isOpera();
 
         set_time_limit(0);
         //the php code for insert for jide to put in the cron
@@ -861,19 +860,11 @@ zero";
         }else{
             return view('search_results')->with('data', $return);
         }
-      /*
+
         set_time_limit(120);
 //        var_dump($return);
 //        die();
 
-        return view('search_results')->with('data', $return)->with('is_opera', $isOpera);
-
-        /*
-         * search via mysql
-         */
-
-//        var_dump($return);
-//        die();
     }
     //Updates the linkout time and the number of linkouts when the user clicks on the continue to read option for each story
     public function readStory($story_id){
