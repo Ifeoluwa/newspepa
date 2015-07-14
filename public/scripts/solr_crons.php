@@ -47,6 +47,7 @@ function fetchOneAll($pds){
 $params = array(
     'status_id' => 3
 );
+
 $all_stories = executeQuery("SELECT id, title, description, image_url, video_url, url, pub_id, created_date, has_cluster FROM timeline_stories WHERE status_id = :status_id", $params);
 
 //instantiate the xml document
