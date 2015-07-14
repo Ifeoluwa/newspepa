@@ -157,6 +157,7 @@ class TimelineStoryController extends Controller
 
     public function searchStory(){
 
+        set_time_limit(0);
         //the php code for insert for jide to put in the cron
 //        $stories_array = array();
 //        //adding document to solr
@@ -231,10 +232,13 @@ class TimelineStoryController extends Controller
         $return = array(
             'search_query' => $search_query,
             'search_result' => $search_result,
-            'found' => $found
+            'found' => $found,
+            'publisher_names' => Publisher::$publishers
         );
-        var_dump($return);
-        die();
+
+        set_time_limit(120);
+//        var_dump($return);
+//        die();
         return view('search_results')->with('data', $return);
 
         /*

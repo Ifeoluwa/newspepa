@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
     <title>NewsPepa | @yield('title')</title>
+    <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link rel="stylesheet" href="ui_newspaper/css/app11.css" />
@@ -20,36 +21,38 @@
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=222521117951114";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
-    <div class="fixed">
-    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
-      <ul class="title-area">
-        <a href="{{url('/')}}"><li class="name"></li></a>
-      </ul>
-    </nav>
 
+{{--<div class="fixed">--}}
+    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
+        <ul class="title-area">
+            <a href="{{url('/')}}"><li class="name"></li></a>
+        </ul>
+    </nav>
     {{--the search bar--}}
     <form id="searchbar" method="get" action = "search">
-    <div class="row searchbar-row" style="width:100%">
+        <div class="row searchbar-row" style="width:100%">
             <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
             <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
-              </div>
+        </div>
     </form>
-              </div>
+{{--</div>--}}
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
-    <div class="large-12 medium-12 small-12 columns">
+    {{--<div class="large-12 medium-12 small-12 columns">--}}
 
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button></div>
-        <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
-          <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
-          <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
-          <li id="3" class="active"><a href="{{url('entertainment')}}">Nigeria</a></li>
-          <li id="4"><a href="{{url('politics')}}">Entertainment</a></li>
-          <li id="5"><a href="{{url('sports')}}">Sports</a></li>
-          <li id="6"><a href="{{url('nigeria')}}">Politics</a></li>
-          <li id="7"><a href="{{url('metro')}}">Metro</a></li>
-        </ul>
+    {{--</div>--}}
+        {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown1">@yield('dropdown')</button></div>--}}
+        {{--<ul id="drop1" data-dropdown-content class="f-dropdown1" aria-hidden="true">--}}
+          {{----}}
+          {{--<li id="1" ><a href="{{url('/')}}">Top stories</a></li>--}}
+          {{--<li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>--}}
+          {{--<li id="3" class="active"><a href="{{url('entertainment')}}">Nigeria</a></li>--}}
+          {{--<li id="4"><a href="{{url('politics')}}">Entertainment</a></li>--}}
+          {{--<li id="5"><a href="{{url('sports')}}">Sports</a></li>--}}
+          {{--<li id="6"><a href="{{url('nigeria')}}">Politics</a></li>--}}
+          {{--<li id="7"><a href="{{url('metro')}}">Metro</a></li>--}}
+        {{--</ul>--}}
 
 {{--the stories containers starts from here--}}
 
@@ -88,9 +91,11 @@
             <hr/>
             <div class="row">
                 <div class="large-5 columns">
-                    <p style="text-align: center;">
-                        <i class="newspepaicon"> </i>  © 2015 Iconway</p>
-                    {{--<a href="{{url('/')}}"><button id="home">Home</button></a>--}}
+                    <p style="text-align: center">
+                        <i class="newspepaicon"> </i>  © 2015 Iconway
+                        <a href="{{url('/')}}"><button class="home-button" id="home">Home</button></a>
+                    </p>
+
                 </div>
 
             </div>
@@ -106,9 +111,11 @@
 
         //var next_page_url, prev_page_url, new_url;
         $(document).ready(function(){
-
-         $("a[rel='prev']").append("Previous");
-         $("a[rel='next']").append("Next")
+        alert("opera mini")
+// var root = document.documentElement;
+//            root.className += " opera-mini";
+         $("a[rel='prev']").append("<span>Previous</span>");
+         $("a[rel='next']").append("<span>Next</span>")
         });
 //            $.ajax({
 //                type:"GET",
@@ -128,17 +135,6 @@
 //        });
 
 //        function rto detect if opera browser is being used
-//        var isOpera= {
-//        Opera: function() {
-//                return navigator.userAgent.match(/Opera Mini/i)
-//                }
-//            };
-//        if(isOpera) {
-//           alert("This is opera");
-//        }
-//        else{
-//        alert("no, it's not")
-//        }
 
 //ajax call for getting number of linkouts of specific a tags
             $('[name= "linkOuts"]').click(function(event) {
