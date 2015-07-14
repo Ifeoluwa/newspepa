@@ -19,7 +19,7 @@ Route::get('/', 'TimelineStoryController@index');
 Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
 
-Route::get('test', 'FeedController@test');
+Route::get('test', 'TimelineStoryController@test');
 
 Route::get('timeline', 'StoryController@createTimelineStory');
 

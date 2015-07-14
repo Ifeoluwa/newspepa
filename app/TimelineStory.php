@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\DB;
 
 class TimelineStory extends Model
 {
+
+    private $timezone;
+
+    public function __construct(){
+        $this->timezone = new \DateTimeZone('Africa/Lagos');
+    }
+
     public $top_stories = array();
     //Returns stories that are popular
     public function scopePopular($query){
@@ -79,18 +86,17 @@ class TimelineStory extends Model
         $top_stories_1 = array_merge($top_stories_1, TimelineStory::mostRecent()->betweenXYHours('created_date', 3, 0)->get()->toArray());
         $top_stories_1 = array_merge($top_stories_1, TimelineStory::mostViewed()->betweenXYHours('last_view_time', 3, 0)->get()->toArray());
 
+        $top_stories_2 = TimelineStory::mostRead()->betweenXYHours('last_linkout_time', 6, 4)->get()->toArray();
+        $top_stories_2 = array_merge($top_stories_2, TimelineStory::mostViewed()->betweenXYHours('last_view_time', 6, 4)->get()->toArray());
+        $top_stories_2 = array_merge($top_stories_2, TimelineStory::mostRecent()->betweenXYHours('created_date', 6, 4)->get()->toArray());
 
-        $top_stories_2 = TimelineStory::mostRead()->betweenXYHours('last_linkout_time', 6, 3)->get()->toArray();
-        $top_stories_2 = array_merge($top_stories_2, TimelineStory::mostViewed()->betweenXYHours('last_view_time', 6, 3)->get()->toArray());
-        $top_stories_2 = array_merge($top_stories_2, TimelineStory::mostRecent()->betweenXYHours('created_date', 6, 3)->get()->toArray());
+        $top_stories_3 = TimelineStory::mostRead()->betweenXYHours('last_linkout_time', 9, 7)->get()->toArray();
+        $top_stories_3 = array_merge($top_stories_3, TimelineStory::mostViewed()->betweenXYHours('last_view_time', 9, 7)->get()->toArray());
+        $top_stories_3 = array_merge($top_stories_3, TimelineStory::mostRecent()->betweenXYHours('created_date', 9, 7)->get()->toArray());
 
-        $top_stories_3 = TimelineStory::mostRead()->betweenXYHours('last_linkout_time', 9, 6)->get()->toArray();
-        $top_stories_3 = array_merge($top_stories_3, TimelineStory::mostViewed()->betweenXYHours('last_view_time', 9, 6)->get()->toArray());
-        $top_stories_3 = array_merge($top_stories_3, TimelineStory::mostRecent()->betweenXYHours('created_date', 9, 6)->get()->toArray());
-
-        $top_stories_4 = TimelineStory::mostRead()->betweenXYHours('last_linkout_time', 12, 9)->get()->toArray();
-        $top_stories_4 = array_merge($top_stories_4, TimelineStory::mostViewed()->betweenXYHours('last_view_time', 12, 9)->get()->toArray());
-        $top_stories_4 = array_merge($top_stories_4, TimelineStory::mostRecent()->betweenXYHours('created_date', 12, 9)->get()->toArray());
+        $top_stories_4 = TimelineStory::mostRead()->betweenXYHours('last_linkout_time', 12, 10)->get()->toArray();
+        $top_stories_4 = array_merge($top_stories_4, TimelineStory::mostViewed()->betweenXYHours('last_view_time', 12, 10)->get()->toArray());
+        $top_stories_4 = array_merge($top_stories_4, TimelineStory::mostRecent()->betweenXYHours('created_date', 12, 10)->get()->toArray());
 
         $top_stories = array_merge($top_stories_1, $top_stories_2, $top_stories_3, $top_stories_4);
 
@@ -139,7 +145,7 @@ class TimelineStory extends Model
         $last_x_hours = new \DateTime('-'.$x.' hours');
         $last_y_hours = new \DateTime('-'.$y.' hours');
 
-        return $query->whereBetween($param, [$last_x_hours, $last_y_hours])->limit(20);
+        return $query->whereBetween($param, [$last_x_hours, $last_y_hours]);
     }
 
     //Most read stories
@@ -155,7 +161,58 @@ class TimelineStory extends Model
 
     //Most viewed stories
     public function scopeMostViewed($query){
-        return $query->orderBy('created_date', 'desc')->orderBy('no_of_views', 'desc');
+        return $query->orderBy('no_of_views', 'desc');
+    }
+
+    // Fresh stories
+    public function scopeFreshStories($query){
+        $timezone = new \DateTimeZone('Africa/Lagos');
+
+        $now = new \DateTime('now');
+        $thirty_minutes_ago = new \DateTime('-30minutes');
+        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now]);
+    }
+
+    //Rankable stories
+    public function scopeRankable($query){
+        $timezone = new \DateTimeZone('Africa/Lagos');
+
+        $a = new \DateTime('-12hours');
+        $b = new \DateTime('-31minutes');
+        return $query->whereBetween('created_date', [$a, $b]);
+    }
+
+    //Stories that are displayed on the timeline
+    public static function timeLineStories(){
+        $timeline_stories = array();
+        $ranked_stories = array();
+        $fresh_stories = TimelineStory::freshStories()->get()->toArray();
+        $rankable_stories = TimelineStory::rankable()->get()->toArray();
+
+        $timezone = new \DateTimeZone('Africa/Lagos');
+        $now = new \DateTime('now', $timezone);
+        $now_timestamp = $now->getTimestamp();
+
+
+        foreach($rankable_stories as $story){
+            $created_date = new \DateTime($story['created_date']);
+            $story_age = $now_timestamp - $created_date->getTimestamp();
+            $story['rank_score'] =  86400.0/$story_age * $story['no_of_views']/$story_age;
+            array_push($ranked_stories, $story);
+        }
+        $timeline_stories = array_values(array_sort($ranked_stories, function ($value) {
+            return $value['rank_score'];
+        }));
+
+        $returning_stories = array_merge($fresh_stories, $timeline_stories);
+
+
+        return array_reverse($returning_stories);
+
+    }
+
+    public function sortByRank($a, $b){
+        return $a['rank_score'] - $b['rank_score'];
     }
 
 

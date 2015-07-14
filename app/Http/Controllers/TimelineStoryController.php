@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
@@ -40,8 +41,10 @@ class TimelineStoryController extends Controller
     {
 
         $timeline_stories = array();
-        $timeline_stories['top_stories'] = TimelineStory::topStories();
-        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
+        $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
+        $paginator = new Paginator($timeline_stories['top_stories'], 50);
+        $paginator->setPath('/');
+        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator);
 
     }
 
@@ -322,5 +325,13 @@ class TimelineStoryController extends Controller
             'found' => $found
         );
         return $return;
+    }
+
+    public function test(){
+
+        print_r(TimelineStory::timeLineStories());
+
+//        return $this->getStoryImage("Woman Tortured For Stealing Writes Police Commissioner");
+
     }
 }
