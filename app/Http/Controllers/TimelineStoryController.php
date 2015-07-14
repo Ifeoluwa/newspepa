@@ -23,11 +23,14 @@ class TimelineStoryController extends Controller
 {
 
     protected $client;
+    protected $stop_word_array = array();
     public $opera_checker;
     // Constructor
     public function __construct(){
 
         $this->client = new \Solarium\Client;
+        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+        $this->stop_word_array = explode(PHP_EOL, $stop_words);
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
@@ -100,7 +103,6 @@ class TimelineStoryController extends Controller
         $isOpera = $this->isOpera();
         try{
             $request_array = explode('-', $request_name);
-
             if(count($request_array) > 1){
                 return $this->getFullStory($request_array[count($request_array) - 1]) ;
             }else{
@@ -204,6 +206,11 @@ class TimelineStoryController extends Controller
          */
         $search_query = \Illuminate\Support\Facades\Input::get('search_query');
 
+        $search_query_array = explode(' ', $search_query);
+        $search_query_array = array_diff($search_query_array, $this->stop_word_array);
+
+        $search_query = implode(" ", $search_query_array);
+
         $query = $this->client->createSelect();
         $query->setQuery($search_query);
         $dismax = $query->getDisMax();
@@ -213,7 +220,6 @@ class TimelineStoryController extends Controller
 
         $search_result = array();
         $z = 0;
-        $search_query_array = explode(' ', $search_query);
         foreach($resultSet as $doc)
         {
 //            $title1 = mb_convert_encoding($doc->title_en[0], "UTF-8", "Windows-1252");
@@ -246,7 +252,8 @@ class TimelineStoryController extends Controller
         $return = array(
             'search_query' => $search_query,
             'search_result' => $search_result,
-            'found' => $found
+            'found' => $found,
+            'publisher_names' => Publisher::$publishers
         );
 
         return view('search_results')->with('data', $return)->with('is_opera', $isOpera);
@@ -255,6 +262,9 @@ class TimelineStoryController extends Controller
          * search via mysql
          */
 
+//        var_dump($return);
+//        die();
+        return view('search_results')->with('data', $return);
     }
 
     public function testRedis(){
@@ -286,6 +296,11 @@ class TimelineStoryController extends Controller
     }
 
     public function getStoryImage($story_title){
+
+        $story_title_array = explode(' ', $story_title);
+        $story_title_array = array_diff($story_title_array, $this->stop_word_array);
+
+        $story_title = implode(" ", $story_title_array);
         $query = $this->client->createSelect();
         $query->setQuery($story_title);
         $dismax = $query->getDisMax();

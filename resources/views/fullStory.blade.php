@@ -24,7 +24,7 @@
       @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a href="{{$full_story['url']}}" style="color: #333366">Continue to read</a></p></p>
+      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}" name="linkOuts" href="{{$full_story['url']}}" style="color: #333366">Continue to read</a></p></p>
       </div>
   </div>
 
@@ -44,16 +44,16 @@
 @endsection
 
 
-@section('other_sources')
-@if($full_story['is_pivot']==1)
-<div class="row panel radius related-content"><b>other sources</b></div>
-@foreach($data['other_sources'] as $other_sources)
-    <div class="row panel radius">
-    <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span>
-    </div>
-@endforeach
-@endif
-@stop
+{{--@section('other_sources')--}}
+{{--@if($full_story['is_pivot']==1)--}}
+{{--<div class="row panel radius related-content"><b>other sources</b></div>--}}
+{{--@foreach($data['other_sources'] as $other_sources)--}}
+    {{--<div class="row panel radius">--}}
+   {{--<a name= linkOuts id="{{$other_sources['story_id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span></a>--}}
+    {{--</div>--}}
+{{--@endforeach--}}
+{{--@endif--}}
+{{--@stop--}}
 
 @section('related_content')
 <div class="row panel radius related-content"><b>latest stories in {{$data['category_names'][$full_story['category_id']]}} </b></div>

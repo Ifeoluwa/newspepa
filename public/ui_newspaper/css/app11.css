@@ -96,7 +96,7 @@ button:focus, .button:hover, .button:focus {
 .menu-icon{
     color:#336;
 }
-.tolu{
+.opera-panel{
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
     font-family: roboto;
@@ -233,7 +233,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pager{
-    font-size: 50px;
+    font-size: 20px;
+    color:#336;
 }
 
 .image_container{
@@ -252,7 +253,6 @@ h1, h2, h3, h4, h5, h6 {
     width:100%;
     -webkit-box-shadow:0 1px 4px rgba(0,0,0,.1);
     box-shadow:0 1px 4px rgba(0,0,0,.1);
-
 }
 
 .panel h1{
@@ -300,6 +300,10 @@ a {
     color:#336 ;
 }
 
+a:focus, a:hover{
+    color: #4c4e9e;
+}
+
 
 p{
     line-height:normal;
@@ -321,8 +325,8 @@ p{
     float: left;
     padding-right: 20px;
     padding-top: 3px;
-    /*width:100px !important;*/
-    /*height:100px !important;*/
+    width:120px !important;
+    height:120px !important;
     box-sizing: border-box;
     cursor: pointer;
     overflow:hidden;
@@ -374,7 +378,8 @@ body{
     overflow-x: hidden;
     padding: 4px;
     font-family: roboto;
-}.footer{
+}
+.footer{
      display: block;
      list-style: none;
      cursor: pointer;

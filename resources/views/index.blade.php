@@ -1,7 +1,7 @@
 {{--{{json_encode($data}}--}}
 
 @extends('layout')
-@section('title', 'Top Stories')
+@section('title', 'Breaking Nigerian News From Top Sites')
 @stop
 
 @section('dropdown','Top Stories')
@@ -15,7 +15,7 @@
          <a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">
             <div class="large-5 small-4 columns" style="width: 100%;">
               @if($top_story['image_url']!="")
-                <div class="smallimage"><img src="{{$top_story['image_url']}}" width="100px" height="80px" />
+                <div class="smallimage"><img src="{{$top_story['image_url']}}" />
                 </div>@endif
                     <a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">
                         <h1 class="title">{!!$top_story['title']!!} </h1>
