@@ -170,7 +170,7 @@ class TimelineStory extends Model
 
         $now = new \DateTime('now');
         $thirty_minutes_ago = new \DateTime('-30minutes');
-        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now]);
+        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now])->orderBy('created_date', 'desc');
     }
 
     //Rankable stories

@@ -200,10 +200,15 @@ class FeedController extends Controller {
     public function storeImage($image_url){
         try {
             $image_content = file_get_contents($image_url);
-            $fp = fopen("/home/newspep/newspepa/public/story_images/".$this->getImageName($image_url), "w");
-            fwrite($fp, $image_content);
-            fclose($fp);
-            return true;
+            if($this->getImageName($image_url) == "App-logo.png"){
+                return false;
+            }else{
+                $fp = fopen("/home/newspep/newspepa/public/story_images/".$this->getImageName($image_url), "w");
+                fwrite($fp, $image_content);
+                fclose($fp);
+                return true;
+            }
+
         }catch(\ErrorException $ex){
             return false;
         }
