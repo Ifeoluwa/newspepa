@@ -22,7 +22,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-{{--<div class="fixed">--}}
+<div class="fixed">
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
         <ul class="title-area">
             <a href="{{url('/')}}"><li class="name"></li></a>
@@ -35,24 +35,23 @@
             <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
         </div>
     </form>
-{{--</div>--}}
+</div>
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
-    {{--<div class="large-12 medium-12 small-12 columns">--}}
+    <div class="large-12 medium-12 small-12 columns">
 
-    {{--</div>--}}
-        {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown1">@yield('dropdown')</button></div>--}}
-        {{--<ul id="drop1" data-dropdown-content class="f-dropdown1" aria-hidden="true">--}}
-          {{----}}
-          {{--<li id="1" ><a href="{{url('/')}}">Top stories</a></li>--}}
-          {{--<li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>--}}
-          {{--<li id="3" class="active"><a href="{{url('entertainment')}}">Nigeria</a></li>--}}
-          {{--<li id="4"><a href="{{url('politics')}}">Entertainment</a></li>--}}
-          {{--<li id="5"><a href="{{url('sports')}}">Sports</a></li>--}}
-          {{--<li id="6"><a href="{{url('nigeria')}}">Politics</a></li>--}}
-          {{--<li id="7"><a href="{{url('metro')}}">Metro</a></li>--}}
-        {{--</ul>--}}
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button></div>
+        <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+
+          <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
+          <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+          <li id="3" class="active"><a href="{{url('nigeria')}}">Nigeria</a></li>
+          <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
+          <li id="5"><a href="{{url('sports')}}">Sports</a></li>
+          <li id="6"><a href="{{url('politics')}}">Politics</a></li>
+          <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+        </ul>
 
 {{--the stories containers starts from here--}}
 
@@ -111,7 +110,6 @@
 
         //var next_page_url, prev_page_url, new_url;
         $(document).ready(function(){
-        alert("opera mini")
 // var root = document.documentElement;
 //            root.className += " opera-mini";
          $("a[rel='prev']").append("<span>Previous</span>");
@@ -143,7 +141,6 @@
                     type: "POST",
                     url:'http://newspepa.com/linkout/'+storyID,
                     success: function(msg){
-                    console.log(storyID);
                         }
                 })
 

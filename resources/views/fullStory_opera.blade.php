@@ -1,15 +1,16 @@
 {{--{{json_encode($data)}}--}}
-@extends ('opera_body')
-@extends ('opera_head')
+@extends ('opera-body')
 @foreach($data['full_story'] as $full_story2)
 @section('title', $full_story2['title'])
-@endsection
 @endforeach
+@extends ('opera-header')
+@endsection
 
-@foreach($data['full_story'] as $full_story1)
-@section('dropdown',$data['category_names'][$full_story1['category_id']])
-@endsection
-@endforeach
+
+{{--@foreach($data['full_story'] as $full_story1)--}}
+{{--@section('dropdown',$data['category_names'][$full_story1['category_id']])--}}
+{{--@endsection--}}
+{{--@endforeach--}}
 
 
 @section('full_story')
@@ -76,7 +77,7 @@
                             @endif
                          </header></a>
                                 <span class="publisher-name"><b>{{$data['publisher_names'][$recent_stories['pub_id']]}}</b></span>
-                                <span class="timecount-name"><b>{{$tc->getTimeDifference($recent_stories['created_date'])}} ago</b></span>
+                                <span class="timecount-name"><b>{{$tc->getTimeDifference($recent_stories['created_date'])}}</b></span>
                       </div>
                    </a>
          </div>
