@@ -8,12 +8,12 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "Nathanmac/Parser": "3.*",
-        "intervention/image": "2.2.*",
         "predis/predis": "~1.0",
         "doctrine/inflector": "~1.0",
         "solarium/solarium": "dev-master",
         "illuminate/contracts": "^5.2@dev",
-        "illuminate/support": "^5.2@dev"
+        "illuminate/support": "^5.2@dev",
+        "hisorange/browser-detect": "2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

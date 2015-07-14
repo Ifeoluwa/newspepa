@@ -36,58 +36,60 @@ class FeedController extends Controller {
         $all_stories = array();
         foreach($feeds as $feed){
 //            Check if the feed is a valid xml
-            if(FeedController::isFeedValid($feed['url'])){
-                    $content = $this->checkFeedSource($feed['url']);
-                    if(!$content) {
-                        continue;
-                    }
-                    if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10){
-                        $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
-                    }else{
-                        $stories = $parser->xml($content);
+            //if(FeedController::isFeedValid($feed['url'])){
+            $content = $this->checkFeedSource($feed['url']);
+            if(!$content) {
+                continue;
+            }
+            if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19){
+                $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
+            }else{
+                $stories = $parser->xml($content);
 
-                        try{
-                            foreach ($stories['channel']['item'] as $str){
-                                $story = array();
-                                if($feed['pub_id'] == 13){
-                                    $img_url = $str['enclosure']['@attributes']['url'];
-                                    if($this->storeImage($img_url)){
-                                        $story['image_url'] = "story_images/".$this->getImageName($img_url);
-                                    }
+                try{
+                    foreach ($stories['channel']['item'] as $str){
+                        $story = array();
+                        if($feed['pub_id'] == 13){
+                            $img_url = $str['enclosure']['@attributes']['url'];
+                            if($this->storeImage($img_url)){
+                                $story['image_url'] = "story_images/".$this->getImageName($img_url);
+                            }
 
-                                }else if($feed['pub_id'] == 1){
+                        }else if($feed['pub_id'] == 1){
 
 
-                                }else{
-                                    preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
-                                    if(count($matches) > 0){
-                                        FeedController::storeImage($this->getImageUrl($matches[0]));
-                                        $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
-                                    }
-                                }
-
-                                $story['title'] = "".$str['title']."";
-                                $story['pub_id'] = $feed['pub_id'];
-                                $story['feed_id'] = $feed['id'];
-                                $story['category_id'] = $feed['category_id'];
-                                $story['description'] = "".$this->clean(strip_tags($str['description']))."";
-                                $story['content'] = "".$this->clean(strip_tags($str['description']))."";
-                                $story['url'] = "".$str['link']."";
-                                $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
-
-                                // Inserts the story into an array
-                                array_push($all_stories, $story);
+                        }else{
+                            preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
+                            if(count($matches) > 0){
+                                FeedController::storeImage($this->getImageUrl($matches[0]));
+                                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                            }else{
+                                $tc = new TimelineStoryController();
+                                $result = $tc->getStoryImage($str['title']);
+                                $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
 
                             }
-                        }catch (\ErrorException $ex){
-
                         }
+
+                        $story['title'] = "".$str['title']."";
+                        $story['pub_id'] = $feed['pub_id'];
+                        $story['feed_id'] = $feed['id'];
+                        $story['category_id'] = $feed['category_id'];
+                        $story['description'] = "".strip_tags($str['description'])."";
+                        $story['content'] = "".strip_tags($str['description'])."";
+                        $story['url'] = "".$str['link']."";
+                        $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
+
+                        // Inserts the story into an array
+                        array_push($all_stories, $story);
+
                     }
+                }catch (\ErrorException $ex){
 
-
-
-
+                }
             }
+
+           // }
             //Updates the last time the feed was accessed
             Feed::updateFeed($feed['id'], time());
 
@@ -113,7 +115,7 @@ class FeedController extends Controller {
                 'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
                 'url' => $node->getElementsByTagName('link')->item(0)->nodeValue,
                 'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('pubDate')->item(0)->nodeValue)),
-                'description' => $this->clean(strip_tags($node->getElementsByTagName('description')->item(0)->nodeValue))."",
+                'description' => strip_tags($node->getElementsByTagName('description')->item(0)->nodeValue)."",
                 'content' => $node->getElementsByTagName('encoded')->item(0)->nodeValue,
 
             );
@@ -152,13 +154,24 @@ class FeedController extends Controller {
 
 
     // Checks feed source for contents
-    private function checkFeedSource ($url){
-        $response = file_get_contents($url);
+    private function checkFeedSource ($feed_url){
+
+        try{
+            $response = file_get_contents($feed_url);
+            // Checks if the content of the file begins the xml tag
+            if (substr($response, 0, 5) === "<?xml"){
+                return $response;
+            }
+        }catch (\ErrorException $ex){
+
+            return false;
+
+        }
+        return false;
 //        $init_curl = curl_init($url);
 //        curl_setopt($init_curl, CURLOPT_RETURNTRANSFER, true);
 //        $response = curl_exec($init_curl);
 //        curl_close($init_curl);
-        return $response;
     }
 
 

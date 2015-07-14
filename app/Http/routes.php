@@ -25,6 +25,10 @@ Route::get('timeline', 'StoryController@createTimelineStory');
 
 Route::get('search', 'TimelineStoryController@searchStory');
 
+Route::get('latest', 'TimelineStoryController@latest');
+
+Route::get('redis', 'TimelineStoryController@testRedis');
+
 //Handles the various category request
 Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 

@@ -10,8 +10,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redis;
 use Symfony\Component\Console\Input\Input;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Solarium\Core\Client\Adapter;
@@ -21,10 +23,14 @@ class TimelineStoryController extends Controller
 {
 
     protected $client;
+    protected $stop_word_array = array();
+    public $opera_checker;
     // Constructor
     public function __construct(){
 
         $this->client = new \Solarium\Client;
+        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+        $this->stop_word_array = explode(PHP_EOL, $stop_words);
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
@@ -37,11 +43,14 @@ class TimelineStoryController extends Controller
 */
     public function index()
     {
-        //
-        $timeline_stories = array();
-        $timeline_stories['top_stories'] = TimelineStory::topStories()->simplePaginate(50);
 
-        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
+        $timeline_stories = array();
+        $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
+        $paginator = new Paginator($timeline_stories['top_stories'], 50);
+        $paginator->setPath('/');
+
+        $isOpera = $this->isOpera();
+        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator)->with('is_opera', $isOpera);
 
     }
 
@@ -57,34 +66,41 @@ class TimelineStoryController extends Controller
      * @return Response
      */
     public function getStoriesByCat($category_name){
+        $isOpera = $this->isOpera();
         try{
             $category_stories = array();
             $category_id = Category::$news_category[$category_name];
             $category_stories['category_name'] = $this->category_names[$category_id];
             $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
 
-            return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
+            return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers))->with('is_opera', $isOpera);
         }catch(\ErrorException $ex){
-            return view('errors.404', [], 404);
+            return view('errors.404');
         }
     }
 
 
     //Gets all the details of the full story and the related stories
     public function getFullStory($story_id){
+        $isOpera = $this->isOpera();
         $full_story = array();
-        DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_reads');
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
-        $full_story['other_sources'] = Story::matches($story_id);
-        $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
 
+        $full_story['other_sources'] = Story::matches($story_id);
+
+        $full_story['recent_stories'] = TimelineStory::recentStoriesByCatX($full_story['full_story'][0]['category_id'], $story_id);
         $full_story['category_names'] = $this->category_names;
         $full_story['publisher_names'] = Publisher::$publishers;
-        return view('fullStory')->with('data', $full_story);
+        $timezone = new \DateTimeZone('Africa/Lagos');
+
+        $now = new \DateTime('now', $timezone);
+        TimelineStory::updateStoryViews($story_id, $now);
+        return view('fullStory')->with('data', $full_story)->with('is_opera', $isOpera);
     }
 
     //Handles timeline request
     public function handleRequest($request_name){
+        $isOpera = $this->isOpera();
         try{
             $request_array = explode('-', $request_name);
             if(count($request_array) > 1){
@@ -94,9 +110,9 @@ class TimelineStoryController extends Controller
 
             }
         }catch (\ErrorException $ex){
-           return view('errors.404', [], 404);
+           return view('errors.404')->with('is_opera', $isOpera);
         } catch (NotFoundHttpException $nfe){
-            return view('errors.404', [], 404);
+            return view('errors.404')->with('is_opera', $isOpera);
         }
 
     }
@@ -125,21 +141,21 @@ class TimelineStoryController extends Controller
             return "Just now";
         }elseif($diff_in_sec > 60 && $diff_in_sec < 3600){
             if(intval($diff_in_sec/60) == 1){
-                return "1 min";
+                return "1 min ago";
             }else{
-                return intval($diff_in_sec/60) ." mins";
+                return intval($diff_in_sec/60) ." mins ago";
             }
         }elseif($diff_in_sec > 3600 && $diff_in_sec < 86400){
             if(intval($diff_in_sec/3600) == 1){
                 return "1 hr";
             }else{
-                return intval($diff_in_sec/3600) ." hrs";
+                return intval($diff_in_sec/3600) ." hrs ago";
             }
         }elseif($diff_in_sec > 86400 && $diff_in_sec < 604800){
             if(intval($diff_in_sec/86400) == 1){
                 return "1 day";
             }else{
-                return intval($diff_in_sec/86400) ." days";
+                return intval($diff_in_sec/86400) ." days ago";
             }
         }
 
@@ -156,6 +172,7 @@ class TimelineStoryController extends Controller
     }
 
     public function searchStory(){
+        $isOpera = $this->isOpera();
 
         set_time_limit(0);
         //the php code for insert for jide to put in the cron
@@ -190,6 +207,11 @@ class TimelineStoryController extends Controller
          */
         $search_query = \Illuminate\Support\Facades\Input::get('search_query');
 
+        $search_query_array = explode(' ', $search_query);
+        $search_query_array = array_diff($search_query_array, $this->stop_word_array);
+
+        $search_query = implode(" ", $search_query_array);
+
         $query = $this->client->createSelect();
         $query->setQuery($search_query);
         $dismax = $query->getDisMax();
@@ -199,7 +221,6 @@ class TimelineStoryController extends Controller
 
         $search_result = array();
         $z = 0;
-        $search_query_array = explode(' ', $search_query);
         foreach($resultSet as $doc)
         {
 //            $title1 = mb_convert_encoding($doc->title_en[0], "UTF-8", "Windows-1252");
@@ -241,10 +262,19 @@ class TimelineStoryController extends Controller
 //        die();
         return view('search_results')->with('data', $return);
 
+        return view('search_results')->with('data', $return)->with('is_opera', $isOpera);
+
         /*
          * search via mysql
          */
 
+//        var_dump($return);
+//        die();
+    }
+
+    public function testRedis(){
+        Redis::set('name', 'Jide');
+        return Redis::get('name');
     }
 
     /*
@@ -271,6 +301,11 @@ class TimelineStoryController extends Controller
     }
 
     public function getStoryImage($story_title){
+
+        $story_title_array = explode(' ', $story_title);
+        $story_title_array = array_diff($story_title_array, $this->stop_word_array);
+
+        $story_title = implode(" ", $story_title_array);
         $query = $this->client->createSelect();
         $query->setQuery($story_title);
         $dismax = $query->getDisMax();
@@ -306,5 +341,16 @@ class TimelineStoryController extends Controller
             'found' => $found
         );
         return $return;
+    }
+
+    public function test(){
+        return $this->getStoryImage("Woman Tortured For Stealing Writes Police Commissioner");
+
+    }
+
+    private function isOpera(){
+        $this->opera_checker = $_SERVER['HTTP_USER_AGENT'];
+
+        return strpos(strtolower($this->opera_checker), "opera mini") !== false || strpos(strtolower($this->opera_checker), "opera mobi") !== false;
     }
 }
