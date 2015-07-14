@@ -1,5 +1,6 @@
- @extends('layout')
- @section('title', 'Breaking Nigerian News From Top Sites')
+@extends ('opera-body')
+@extends ('opera-header')
+@section('title', 'Breaking Nigerian News From Top Sites')
  @stop
 
  @section('dropdown','Latest Stories')

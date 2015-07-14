@@ -1,11 +1,9 @@
-
-@extends ('opera_body')
-@extends ('opera_head')
+@extends ('opera-body')
 @section('title', 'results')
+@extends ('opera-header')
+
 @stop
 
-@section('dropdown','Search Results')
- @stop
 {{--the search results page also carries the same layout as the index page. Probably will be fetching from the timeline table. so carries
 the important section, lessImportant and noImage stories--}}
 {{--@if($search_result['found']!=0)--}}
