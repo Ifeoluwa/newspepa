@@ -1,5 +1,3 @@
-{{--{{json_encode($data}}--}}
-
 @extends('layout')
 @section('title', 'Breaking Nigerian News From Top Sites')
 @stop
@@ -42,7 +40,7 @@
                                       @endif
                                       </header></a>
                                        <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$top_story['pub_id']]}}</b></span>
-                                      {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>--}}
+                                      <span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>
                                        <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($top_story['created_date'])}} ago</b></span>
                                   </div>
                                 </a>

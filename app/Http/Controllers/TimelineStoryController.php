@@ -48,9 +48,13 @@ class TimelineStoryController extends Controller
         $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
         $paginator = new Paginator($timeline_stories['top_stories'], 50);
         $paginator->setPath('/');
+        if($this->isOpera()){
+            return view('index_opera')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator);
 
-        $isOpera = $this->isOpera();
-        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator)->with('is_opera', $isOpera);
+        }else{
+            return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator);
+
+        }
 
     }
 
@@ -79,10 +83,28 @@ class TimelineStoryController extends Controller
         }
     }
 
+    //Latest Stories
+    public function getLatestStories(){
+        $nigeria = TimelineStory::recentStoriesByCat(1);
+        $politics = TimelineStory::recentStoriesByCat(2);
+        $entertainment = TimelineStory::recentStoriesByCat(3);
+        $sports = TimelineStory::recentStoriesByCat(4);
+        $metro = TimelineStory::recentStoriesByCat(5);
+
+        $latest_stories = array_merge($nigeria, $politics, $entertainment, $sports, $metro);
+
+        if($this->isOpera()){
+            return view('latestStory_opera')->with('latest_stories', $latest_stories);
+        }else{
+            return view('latestStory')->with('latest_stories', $latest_stories);
+        }
+
+    }
+
 
     //Gets all the details of the full story and the related stories
     public function getFullStory($story_id){
-        $isOpera = $this->isOpera();
+
         $full_story = array();
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
 
@@ -95,7 +117,14 @@ class TimelineStoryController extends Controller
 
         $now = new \DateTime('now', $timezone);
         TimelineStory::updateStoryViews($story_id, $now);
-        return view('fullStory')->with('data', $full_story)->with('is_opera', $isOpera);
+        if($this->isOpera()){
+            return view('fullStory_opera')->with('data', $full_story);
+
+        }else{
+            return view('fullStory')->with('data', $full_story);
+
+        }
+
     }
 
     //Handles timeline request
@@ -110,9 +139,9 @@ class TimelineStoryController extends Controller
 
             }
         }catch (\ErrorException $ex){
-           return view('errors.404')->with('is_opera', $isOpera);
+           return view('errors.404');
         } catch (NotFoundHttpException $nfe){
-            return view('errors.404')->with('is_opera', $isOpera);
+            return view('errors.404');
         }
 
     }
@@ -172,8 +201,6 @@ class TimelineStoryController extends Controller
     }
 
     public function searchStory(){
-        $isOpera = $this->isOpera();
-
         //the php code for insert for jide to put in the cron
 //        $stories_array = array();
 //        //adding document to solr
@@ -256,15 +283,21 @@ class TimelineStoryController extends Controller
             'publisher_names' => Publisher::$publishers
         );
 
-        return view('search_results')->with('data', $return)->with('is_opera', $isOpera);
-
-        /*
+        if($this->isOpera()){
+            return view('search_results_opera')->with('data', $return);
+        }else{
+            return view('search_results')->with('data', $return);
+        }
+      /*
          * search via mysql
          */
 
 //        var_dump($return);
 //        die();
-        return view('search_results')->with('data', $return);
+    }
+    //Updates the linkout time and the number of linkouts when the user clicks on the continue to read option for each story
+    public function readStory($story_id){
+        TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
     }
 
     public function testRedis(){

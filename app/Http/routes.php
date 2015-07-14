@@ -25,9 +25,16 @@ Route::get('timeline', 'StoryController@createTimelineStory');
 
 Route::get('search', 'TimelineStoryController@searchStory');
 
-Route::get('latest', 'TimelineStoryController@latest');
+Route::get('latest', 'TimelineStoryController@getLatestStories');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
+
+Route::get('opera', function(){
+
+    return view('test')->with('is_opera', true);
+});
+
+Route::post('linkout/{story_id}', 'TimelineStoryController@readStory');
 
 //Handles the various category request
 Route::get('{request_name}', 'TimelineStoryController@handleRequest');
