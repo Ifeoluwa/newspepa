@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-    <link rel="stylesheet" href="ui_newspaper/css/app11.css" />
+    <link rel="stylesheet" href="ui_newspaper/css/app12.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
   </head>
