@@ -29,7 +29,7 @@ the important section, lessImportant and noImage stories--}}
                      </header></a>
                         <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publisher_names'][$searchResult['pub_id']]}}</b></span>
                         {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>--}}
-           {{--<span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($searchResult['created_date'])}} ago</b></span>--}}
+           {{--<span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($searchResult['created_date'])}} </b></span>--}}
                 </div>
          </a>
     </div>

@@ -20,7 +20,7 @@
       <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
           <span class="full-story-title">{{$full_story['title']}}</span><br/>
           <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
-          <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} ago</span>
+          <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
 
       </div><br/><br/>
       @if($full_story['image_url'] != "")
@@ -76,7 +76,7 @@
                             @endif
                          </header></a>
                                 <span class="publisher-name"><b>{{$data['publisher_names'][$recent_stories['pub_id']]}}</b></span>
-                                <span class="timecount-name"><b>{{$tc->getTimeDifference($recent_stories['created_date'])}} ago</b></span>
+                                <span class="timecount-name"><b>{{$tc->getTimeDifference($recent_stories['created_date'])}} </b></span>
                       </div>
                    </a>
          </div>
@@ -94,7 +94,7 @@
                                          {{--<h1 class="title">{!!$recent_stories['title']!!} </h1>--}}
                                          {{--<div class="storyExtras">--}}
                                           {{--<span class="publisher-name">{{$data['publisher_names'][$recent_stories['pub_id']]}}</span>--}}
-                                           {{--<span class="label" style="margin-top:6px">{{$tc->getTimeDifference($recent_stories['created_date'])}} ago</span>--}}
+                                           {{--<span class="label" style="margin-top:6px">{{$tc->getTimeDifference($recent_stories['created_date'])}} </span>--}}
                                          {{--</div>--}}
                                      {{--</a>--}}
                              {{--</div>--}}

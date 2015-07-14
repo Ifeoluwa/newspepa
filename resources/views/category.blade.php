@@ -21,7 +21,7 @@
                             <h1 class="title title-important">{{$category_story['title']}}</h1>@endif
                          </header></a>
                          <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$category_story['pub_id']]}}</b></span>
-                         <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($category_story['created_date'])}} ago</b></span>
+                         <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($category_story['created_date'])}} </b></span>
 
 
                        </div>
