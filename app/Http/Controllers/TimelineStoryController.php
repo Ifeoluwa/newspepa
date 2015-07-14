@@ -640,14 +640,19 @@ zero";
      * @return Response
      */
     public function getStoriesByCat($category_name){
-        $isOpera = $this->isOpera();
+
         try{
             $category_stories = array();
             $category_id = Category::$news_category[$category_name];
             $category_stories['category_name'] = $this->category_names[$category_id];
             $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
 
-            return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers))->with('is_opera', $isOpera);
+            if($this->isOpera()){
+                return view('category_opera')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
+
+            }else{
+                return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
+            }
         }catch(\ErrorException $ex){
             return view('errors.404');
         }
