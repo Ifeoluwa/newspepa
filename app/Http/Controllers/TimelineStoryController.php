@@ -23,6 +23,7 @@ class TimelineStoryController extends Controller
 {
 
     protected $client;
+    public $opera_checker;
     // Constructor
     public function __construct(){
 
@@ -44,7 +45,9 @@ class TimelineStoryController extends Controller
         $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
         $paginator = new Paginator($timeline_stories['top_stories'], 50);
         $paginator->setPath('/');
-        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator);
+
+        $isOpera = $this->isOpera();
+        return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator)->with('is_opera', $isOpera);
 
     }
 
@@ -60,13 +63,14 @@ class TimelineStoryController extends Controller
      * @return Response
      */
     public function getStoriesByCat($category_name){
+        $isOpera = $this->isOpera();
         try{
             $category_stories = array();
             $category_id = Category::$news_category[$category_name];
             $category_stories['category_name'] = $this->category_names[$category_id];
             $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
 
-            return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
+            return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers))->with('is_opera', $isOpera);
         }catch(\ErrorException $ex){
             return view('errors.404');
         }
@@ -75,7 +79,7 @@ class TimelineStoryController extends Controller
 
     //Gets all the details of the full story and the related stories
     public function getFullStory($story_id){
-
+        $isOpera = $this->isOpera();
         $full_story = array();
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
 
@@ -88,11 +92,12 @@ class TimelineStoryController extends Controller
 
         $now = new \DateTime('now', $timezone);
         TimelineStory::updateStoryViews($story_id, $now);
-        return view('fullStory')->with('data', $full_story);
+        return view('fullStory')->with('data', $full_story)->with('is_opera', $isOpera);
     }
 
     //Handles timeline request
     public function handleRequest($request_name){
+        $isOpera = $this->isOpera();
         try{
             $request_array = explode('-', $request_name);
 
@@ -103,9 +108,9 @@ class TimelineStoryController extends Controller
 
             }
         }catch (\ErrorException $ex){
-           return view('errors.404');
+           return view('errors.404')->with('is_opera', $isOpera);
         } catch (NotFoundHttpException $nfe){
-            return view('errors.404');
+            return view('errors.404')->with('is_opera', $isOpera);
         }
 
     }
@@ -165,6 +170,7 @@ class TimelineStoryController extends Controller
     }
 
     public function searchStory(){
+        $isOpera = $this->isOpera();
 
         //the php code for insert for jide to put in the cron
 //        $stories_array = array();
@@ -242,9 +248,8 @@ class TimelineStoryController extends Controller
             'search_result' => $search_result,
             'found' => $found
         );
-        var_dump($return);
-        die();
-        return view('search_results')->with('data', $return);
+
+        return view('search_results')->with('data', $return)->with('is_opera', $isOpera);
 
         /*
          * search via mysql
@@ -321,5 +326,11 @@ class TimelineStoryController extends Controller
     public function test(){
         return $this->getStoryImage("Woman Tortured For Stealing Writes Police Commissioner");
 
+    }
+
+    private function isOpera(){
+        $this->opera_checker = $_SERVER['HTTP_USER_AGENT'];
+
+        return strpos(strtolower($this->opera_checker), "opera mini") !== false || strpos(strtolower($this->opera_checker), "opera mobi") !== false;
     }
 }
