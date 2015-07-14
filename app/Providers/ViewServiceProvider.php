@@ -1,11 +1,19 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Babajide Owosakin
+ * Date: 7/14/2015
+ * Time: 3:23 PM
+ */
 
 namespace App\Providers;
 
+
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
-{
+class ViewServiceProvider extends ServiceProvider {
+
+
     /**
      * Bootstrap any application services.
      *
@@ -14,10 +22,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        $opera_checker = $_SERVER['HTTP_USER_AGENT'];
-        $is_opera = strpos(strtolower($opera_checker), "opera mini") !== false || strpos(strtolower($opera_checker), "opera mobi") !== false;
 
-        view()->share('is_opera', $is_opera);
+
     }
 
     /**
@@ -29,4 +35,5 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-}
+
+} 
