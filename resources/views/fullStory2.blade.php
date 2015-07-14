@@ -21,7 +21,7 @@
                         <h1 class="title">{!!$top_story['title']!!} </h1>
                         <div class="storyExtras" style="position:relative;display:inline-block;margin-bottom:6px; padding-bottom: 0; width:100%">
                          <span class="publisher-name" style="float:left; margin-bottom: 1px"><i class="newspapericon"></i><b>{!!$data['publishers_name'][$top_story['pub_id']]!!}</b></span>
-                         <span class="label" style="margin-top:6px; margin-bottom:1px"><i class="time-icon"></i>{!!$tc->getTimeDifference($top_story['created_date'])!!} ago</span>
+                         <span class="label" style="margin-top:6px; margin-bottom:1px"><i class="time-icon"></i>{!!$tc->getTimeDifference($top_story['created_date'])!!} </span>
                         </div>
                     </a>
             </div>
@@ -39,7 +39,7 @@
                                       </header></a>
                                        <span class="publisher-name"><i class="newspapericon"></i><b>{!!$data['publishers_name'][$top_story['pub_id']]!!}</b></span>
                                       <span class="category-name"><i class="categoryicon"></i><b>{!!$data['category_name'][$top_story['category_id']]!!}</b></span>
-                                       <span class="timecount-name"><i class="time-icon"></i><b>{!!$tc->getTimeDifference($top_story['created_date'])!!} ago</b></span>
+                                       <span class="timecount-name"><i class="time-icon"></i><b>{!!$tc->getTimeDifference($top_story['created_date'])!!} </b></span>
                                   </div>
                                 </a>
                                 </div>
@@ -64,7 +64,7 @@
 
                 {{--<span class="publisher-name" style="float:left; margin-right: 170px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$less_important_story['pub_id']]}}</b></span>--}}
                 {{--<span class="category-name"><i class="categoryicon"></i><b>category</b></span>--}}
-                {{--<span class="label" style="margin-top:6px; margin-bottom:12px"><i class="time-icon"></i>{{$tc->getTimeDifference($less_important_story['created_date'])}} ago</span>--}}
+                {{--<span class="label" style="margin-top:6px; margin-bottom:12px"><i class="time-icon"></i>{{$tc->getTimeDifference($less_important_story['created_date'])}} </span>--}}
                 {{--</div>--}}
                 {{--</a>--}}
 {{--</div>--}}
@@ -82,7 +82,7 @@
                   {{--<p><strong>{{$no_image_story['title']}}</strong></p>--}}
                    {{--<span class="publisher-name" style="float:left; margin-right: 170px"><i class="newspapericon"></i><b>{{$data['publishers_name'][$no_image_story['pub_id']]}}</b></span>--}}
                    {{--<span class="category-name"><i class="categoryicon"></i><b>category</b></span>--}}
-                   {{--<span class="label">{{$tc->getTimeDifference($no_image_story['created_date'])}} ago</span>--}}
+                   {{--<span class="label">{{$tc->getTimeDifference($no_image_story['created_date'])}} </span>--}}
 
                   {{--</div>--}}
                   {{--</a>--}}

@@ -7,12 +7,6 @@
 @endsection
 
 
-{{--@foreach($data['full_story'] as $full_story1)--}}
-{{--@section('dropdown',$data['category_names'][$full_story1['category_id']])--}}
-{{--@endsection--}}
-{{--@endforeach--}}
-
-
 @section('full_story')
 @foreach($data['full_story'] as $full_story)
 
@@ -21,7 +15,7 @@
       <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
           <span class="full-story-title">{{$full_story['title']}}</span><br/>
           <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
-          <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} ago</span>
+          <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
 
       </div><br/><br/>
       @if($full_story['image_url'] != "")
