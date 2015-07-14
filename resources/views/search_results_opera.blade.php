@@ -1,5 +1,6 @@
 
-@extends ('layout')
+@extends ('opera_body')
+@extends ('opera_head')
 @section('title', 'results')
 @stop
 
@@ -12,7 +13,7 @@ the important section, lessImportant and noImage stories--}}
 {{--<span class="title"><b>{{$search_result['found']}}Results found for '{{$search_result['search_query']}}'</b></span>--}}
 @foreach($data['search_result'] as $searchResult)
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
-        <div class="row panel radius">
+        <div class="row opera-panel radius">
     <div class="large-12 medium-6 small-12 columns">
          <a href="{{url($tc->makeStoryUrl($searchResult['title'], $searchResult['story_id']))}}">
                 @if($searchResult['image_url']!="")

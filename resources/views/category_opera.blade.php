@@ -1,11 +1,11 @@
-@extends('layout')
-
+@extends ('opera_body')
+@extends ('opera_head')
 @section ('title',$data['category_stories']['category_name'] )
 @endsection
 
 @section('important_stories')
  @foreach($data['category_stories']['all'] as $category_story)
-        <div class="row panel radius">
+        <div class="row opera-panel radius">
          <div class="large-12 medium-6 small-12 columns">
             <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
                  <a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
@@ -27,17 +27,9 @@
                        </div>
 
                     </div>
-                           </a>
+                 </a>
 
          </div>
       </div>
-      {{--</div>--}}
   @endforeach
 @stop
-{{--@section('related_content')--}}
-  {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
-  {{--<div class="row panel radius"><b>Related Stories</b></div>--}}
-  {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
-
-
-{{--@endsection--}}
