@@ -328,10 +328,7 @@ class TimelineStoryController extends Controller
     }
 
     public function test(){
-
-        print_r(TimelineStory::timeLineStories());
-
-//        return $this->getStoryImage("Woman Tortured For Stealing Writes Police Commissioner");
+        return $this->getStoryImage("Woman Tortured For Stealing Writes Police Commissioner");
 
     }
 }

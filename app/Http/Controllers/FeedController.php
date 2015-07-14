@@ -66,7 +66,7 @@ class FeedController extends Controller {
                             }else{
                                 $tc = new TimelineStoryController();
                                 $result = $tc->getStoryImage($str['title']);
-                                $story['image_url'] = $result['search_result'];
+                                $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
 
                             }
                         }
