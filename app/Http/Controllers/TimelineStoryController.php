@@ -257,15 +257,6 @@ class TimelineStoryController extends Controller
         return Redis::get('name');
     }
 
-
-    public function testFunction(){
-        return TimelineStory::topStories();
-
-    }
-
-
-
-
     /*
      * auto suggest function
      */

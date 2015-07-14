@@ -204,15 +204,11 @@ class TimelineStory extends Model
             return $value['rank_score'];
         }));
 
-        $returning_stories = array_merge($fresh_stories, $timeline_stories);
+        $returning_stories = array_merge($fresh_stories, array_reverse($timeline_stories));
 
 
-        return array_reverse($returning_stories);
+        return $returning_stories;
 
-    }
-
-    public function sortByRank($a, $b){
-        return $a['rank_score'] - $b['rank_score'];
     }
 
 
