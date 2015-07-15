@@ -12,14 +12,14 @@
         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
     </head>
      <body>
-    <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=222521117951114";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
+    {{--<div id="fb-root"></div>--}}
+      {{--<script>(function(d, s, id) {--}}
+        {{--var js, fjs = d.getElementsByTagName(s)[0];--}}
+        {{--if (d.getElementById(id)) return;--}}
+        {{--js = d.createElement(s); js.id = id;--}}
+        {{--js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=222521117951114";--}}
+        {{--fjs.parentNode.insertBefore(js, fjs);--}}
+      {{--}(document, 'script', 'facebook-jssdk'));</script>--}}
 
         <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
             <ul class="title-area">
@@ -34,16 +34,28 @@
             </div>
         </form>
 
+ <div class="row opera-panel radius" style="background-color: #336;">
+   <a href="{{url('/index')}}"> <span style="color:#ffffff"><b>Top Stories| </b></span></a>
+    <a href="{{url('/latest')}}"><span style="color:#ffffff"><b>Latest Stories| </b></span></a>
+    <a href="{{url('/nigeria')}}"><span style="color:#ffffff"><b>Nigeria </b></span></a>
+    <br/>
+        <a href="{{url('/entertainment')}}"><span style="color:#ffffff"><b>Entertainment| </b></span></a>
+        <a href="{{url('/sports')}}"><span style="color:#ffffff"><b>Sports| </b></span></a>
+        <a href="{{url('/politics')}}"><span style="color:#ffffff"><b>Politics| </b></span></a>
+       <a href="{{url('/metro')}}"><span style="color:#ffffff"><b>Metro </b></span></a>
+    </div>
+
+    @yield('category_name')
     {{--<form id="page-changer" action="" method="post">--}}
-        <select id= "catDropdown" onchange= "window.location.replace(this.options[this.selectedIndex].value)">
-            <option value="{{url('/index')}}">Top Stories</option>
-            <option value="{{url('/latest')}}"> Latest Stories</option>
-            <option value="{{url('/nigeria')}}">Nigeria</option>
-            <option value="{{url('/entertainment')}}">Entertainment</option>
-            <option value="{{url('/sports')}}">Sports</option>
-            <option value="{{url('/politics')}}">Politics</option>
-            <option value="{{url('/metro')}}">Metro</option>
-        </select>
+        {{--<select id= "catDropdown" onchange= "window.location.replace(this.options[this.selectedIndex].value)">--}}
+            {{--<option value="{{url('/index')}}">Top Stories</option>--}}
+            {{--<option value="{{url('/latest')}}"> Latest Stories</option>--}}
+            {{--<option value="{{url('/nigeria')}}">Nigeria</option>--}}
+            {{--<option value="{{url('/entertainment')}}">Entertainment</option>--}}
+            {{--<option value="{{url('/sports')}}">Sports</option>--}}
+            {{--<option value="{{url('/politics')}}">Politics</option>--}}
+            {{--<option value="{{url('/metro')}}">Metro</option>--}}
+        {{--</select>--}}
         {{--<input type="submit" value="Go" id="submit" />--}}
     {{--</form>--}}
 
@@ -102,6 +114,17 @@
                                $("#catDropdown").val("Nigeria");
                           }
           });
+
+
+//          this is used for google analytics
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-49109646-1', 'auto');
+     ga('send', 'pageview');
+
       </script>
     </body>
     </html>
