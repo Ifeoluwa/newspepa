@@ -616,13 +616,13 @@ zero";
 
         $timeline_stories = array();
         $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
-        $paginator = new Paginator($timeline_stories['top_stories'], 50);
-        $paginator->setPath('/');
+        $timeline_stories['top_stories'] = new Paginator(TimelineStory::timeLineStories(), 50);
+        $timeline_stories['top_stories']->setPath('/');
         if($this->isOpera()){
-            return view('index_opera')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator);
+            return view('index_opera')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 
         }else{
-            return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names))->with('paginator', $paginator);
+            return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 
         }
 
