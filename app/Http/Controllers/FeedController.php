@@ -59,7 +59,7 @@ class FeedController extends Controller {
                             $tc = new TimelineStoryController();
                             $result = $tc->getStoryImage($str['title']);
                             if(count($result['search_result']) > 0){
-                                $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result']['name'];
                             }
 
                         }else{
@@ -73,7 +73,7 @@ class FeedController extends Controller {
                                 $tc = new TimelineStoryController();
                                 $result = $tc->getStoryImage($str['title']);
                                 if(count($result['search_result']) > 0){
-                                    $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result']['name'];
                                 }
 
                             }
@@ -105,11 +105,23 @@ class FeedController extends Controller {
 
         // Shuffle the array of stories
         shuffle($all_stories);
+        $fetched_stories = count($all_stories);
+        $k = 0;
         foreach($all_stories as $story){
             if(!$this->isSimilarToPrevious($story)){
-                Story::insertIgnore($story);
+                $result = Story::insertIgnore($story);
+                if($result){
+                    $k += 1;
+                }
             }
         }
+
+        $stored_stories = $k;
+        $now  = new \DateTime('now');
+        $fp = fopen("/home/newspep/newspepa/public/story_images/log.txt", "w");
+        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories);
+        fclose($fp);
+
 
         set_time_limit(120);
 
@@ -235,10 +247,10 @@ class FeedController extends Controller {
 
     public function test(){
 
-        return $this->compareStrings("the boy is good", "the boy is goodies");
+//        return $this->compareStrings("the boy is good", "the boy is goodies");
 
-//        $this->fetchFeeds();
-//        echo "<br> done";
+        $this->fetchFeeds();
+        echo "<br> done";
 
     }
 

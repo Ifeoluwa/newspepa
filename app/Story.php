@@ -38,9 +38,10 @@ class Story extends Model
             $array['modified_date'] = $now;
         }
 
-        DB::insert('INSERT IGNORE INTO stories ('.implode(',',array_keys($array)).
+        $result = DB::insert('INSERT IGNORE INTO stories ('.implode(',',array_keys($array)).
             ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
 
+        return $result;
     }
 
 }
