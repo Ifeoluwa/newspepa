@@ -28,9 +28,9 @@ class TimelineStoryController extends Controller
     // Constructor
     public function __construct(){
 
-        $this->client = new \Solarium\Client;
-        $stop_words = file_get_contents('/home/newspep/newspepa/public/scripts/stop_words.txt');
-        $this->stop_word_array = explode(PHP_EOL, $stop_words);
+//        $this->client = new \Solarium\Client;
+//        $stop_words = file_get_contents('/home/newspep/newspepa/public/scripts/stop_words.txt');
+//        $this->stop_word_array = explode(PHP_EOL, $stop_words);
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
@@ -46,8 +46,8 @@ class TimelineStoryController extends Controller
 
         $timeline_stories = array();
         $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
-        $timeline_stories['top_stories'] = new Paginator(TimelineStory::timeLineStories(), 50);
-        $timeline_stories['top_stories']->setPath('/');
+        $timeline_stories['top_stories'] = new Paginator(TimelineStory::timeLineStories(), 10);
+
         if($this->isOpera()){
             return view('index_opera')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 

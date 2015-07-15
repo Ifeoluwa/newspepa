@@ -59,7 +59,7 @@ class FeedController extends Controller {
                             $tc = new TimelineStoryController();
                             $result = $tc->getStoryImage($str['title']);
                             if(count($result['search_result']) > 0){
-                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result']['name'];
+                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
                             }
 
                         }else{
@@ -73,7 +73,7 @@ class FeedController extends Controller {
                                 $tc = new TimelineStoryController();
                                 $result = $tc->getStoryImage($str['title']);
                                 if(count($result['search_result']) > 0){
-                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result']['name'];
+                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
                                 }
 
                             }
@@ -112,13 +112,22 @@ class FeedController extends Controller {
                 $result = Story::insertIgnore($story);
                 if($result){
                     $k += 1;
+                    $now  = date('Y-m-d h:i:s');
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a");
+                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result.PHP_EOL);
+                    fclose($fp);
+                }else{
+                    $now  = date('Y-m-d h:i:s');
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a");
+                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result.PHP_EOL);
+                    fclose($fp);
                 }
             }
         }
 
         $stored_stories = $k;
-        $now  = new \DateTime('now');
-        $fp = fopen("/home/newspep/newspepa/public/story_images/log.txt", "w");
+        $now  = date('Y-m-d h:i:s');
+        $fp = fopen("/home/newspep/newspepa/public/log.txt", "w");
         fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories);
         fclose($fp);
 
