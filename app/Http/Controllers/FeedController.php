@@ -106,9 +106,7 @@ class FeedController extends Controller {
         // Shuffle the array of stories
         shuffle($all_stories);
         foreach($all_stories as $story){
-            if(!$this->isSimilarToPrevious($story)){
-                Story::insertIgnore($story);
-            }
+            Story::insertIgnore($story);
         }
 
         set_time_limit(120);
@@ -235,72 +233,15 @@ class FeedController extends Controller {
 
     public function test(){
 
-        return $this->compareStrings("the boy is good", "the boy is goodies");
+//        $feed_content = file_get_contents('http://www.channelstv.com/category/politics/feed');
+//
+//        $parser = new Parser();
+//        $parsed = $parser->xml($feed_content);
+//        var_dump($parsed);
+//        die();
+        $this->fetchFeeds();
+        echo "<br> done";
 
-//        $this->fetchFeeds();
-//        echo "<br> done";
-
-    }
-
-    // Function to compare the degree of similarity between two strings
-    public function compareStrings($str_a, $str_b){
-        $length = strlen($str_a);
-        $length_b = strlen($str_b);
-
-        $i = 0;
-        $segmentcount = 0;
-        $segmentsinfo = array();
-        $segment = '';
-        while ($i < $length)
-        {
-            $char = substr($str_a, $i, 1);
-            if (strpos($str_b, $char) !== FALSE)
-            {
-                $segment = $segment.$char;
-                if (strpos($str_b, $segment) !== FALSE)
-                {
-                    $segmentpos_a = $i - strlen($segment) + 1;
-                    $segmentpos_b = strpos($str_b, $segment);
-                    $positiondiff = abs($segmentpos_a - $segmentpos_b);
-                    $posfactor = ($length - $positiondiff) / $length_b; // <-- ?
-                    $lengthfactor = strlen($segment)/$length;
-                    $segmentsinfo[$segmentcount] = array( 'segment' => $segment, 'score' => ($posfactor * $lengthfactor));
-                }
-                else
-                {
-                    $segment = '';
-                    $i--;
-                    $segmentcount++;
-                }
-            }
-            else
-            {
-                $segment = '';
-                $segmentcount++;
-            }
-            $i++;
-        }
-
-        // PHP 5.3 lambda in array_map
-        $totalscore = array_sum(array_map(function($v) { return $v['score'];  }, $segmentsinfo));
-        return $totalscore * 100;
-    }
-
-    //Checks if there's a similar existing story in the database
-    public function isSimilarToPrevious($story){
-        $isSimilar = false;
-        $timezone = new \DateTimeZone('Africa/Lagos');
-        $prev_stories = DB::table('stories')->where('feed_id', $story['feed_id'])
-            ->whereBetween('created_date', [new \DateTime('-1hour'), new \DateTime('now')])->get();
-        foreach($prev_stories as $prev_story){
-            if($this->compareStrings($story['title'], $prev_story['title']) > 70){
-                $isSimilar = $isSimilar || true;
-            }else{
-                $isSimilar = $isSimilar || false;
-            }
-        }
-
-        return $isSimilar;
     }
 
 

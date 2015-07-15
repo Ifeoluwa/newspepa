@@ -2,6 +2,7 @@
 @section ('title',$data['category_stories']['category_name'] )
 @endsection
 
+
 @section('important_stories')
  <?php $tc = new \App\Http\Controllers\TimelineStoryController();?>
 @foreach($data['category_stories']['all'] as $category_story)
