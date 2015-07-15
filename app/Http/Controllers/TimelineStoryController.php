@@ -751,13 +751,13 @@ zero";
             }
         }elseif($diff_in_sec > 3600 && $diff_in_sec < 86400){
             if(intval($diff_in_sec/3600) == 1){
-                return "1 hr";
+                return "1 hr ago";
             }else{
                 return intval($diff_in_sec/3600) ." hrs ago";
             }
         }elseif($diff_in_sec > 86400 && $diff_in_sec < 604800){
             if(intval($diff_in_sec/86400) == 1){
-                return "1 day";
+                return "1 day ago";
             }else{
                 return intval($diff_in_sec/86400) ." days ago";
             }

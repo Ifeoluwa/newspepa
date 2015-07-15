@@ -56,17 +56,25 @@ class FeedController extends Controller {
                             }
 
                         }else if($feed['pub_id'] == 1){
-
+                            $tc = new TimelineStoryController();
+                            $result = $tc->getStoryImage($str['title']);
+                            if(count($result['search_result']) > 0){
+                                $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                            }
 
                         }else{
                             preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
                             if(count($matches) > 0){
-                                FeedController::storeImage($this->getImageUrl($matches[0]));
-                                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                                if($this->storeImage($this->getImageUrl($matches[0]))){
+                                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                                }
+
                             }else{
                                 $tc = new TimelineStoryController();
                                 $result = $tc->getStoryImage($str['title']);
-                                $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                                if(count($result['search_result']) > 0){
+                                    $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                                }
 
                             }
                         }
@@ -85,7 +93,7 @@ class FeedController extends Controller {
 
                     }
                 }catch (\ErrorException $ex){
-
+                    continue;
                 }
             }
 
@@ -200,10 +208,16 @@ class FeedController extends Controller {
     public function storeImage($image_url){
         try {
             $image_content = file_get_contents($image_url);
-            $fp = fopen("/home/newspep/newspepa/public/story_images/".$this->getImageName($image_url), "w");
-            fwrite($fp, $image_content);
-            fclose($fp);
-            return true;
+            $image_name = $this->getImageName($image_url);
+            if($image_name == "App-logo.png" || $image_name == "METRO1-11.png"){
+                return false;
+            }else{
+                $fp = fopen("/home/newspep/newspepa/public/story_images/".$this->getImageName($image_url), "w");
+                fwrite($fp, $image_content);
+                fclose($fp);
+                return true;
+            }
+
         }catch(\ErrorException $ex){
             return false;
         }
@@ -218,6 +232,13 @@ class FeedController extends Controller {
     }
 
     public function test(){
+
+//        $feed_content = file_get_contents('http://www.channelstv.com/category/politics/feed');
+//
+//        $parser = new Parser();
+//        $parsed = $parser->xml($feed_content);
+//        var_dump($parsed);
+//        die();
         $this->fetchFeeds();
         echo "<br> done";
 
