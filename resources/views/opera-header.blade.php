@@ -43,25 +43,25 @@
         <option value="{{url('/politics')}}" id="6">Politics</option>
         <option value="{{url('/metro')}}" id="7">Metro</option>
     </select>
-    <script>
-//    $(document).ready(function() {
-//      if ($("#catDropdown").val == url('/index')) {
-//                 $(this).prop("selected",true);
-//            }else if ($("#catDropdown").val == url('/latest')) {
-//                  $(this).prop("selected",true);
-//             } else if (location.pathname == "/politics") {
-//                $("#catDropdown").text("Politics");
-//             } else if (location.pathname == "/entertainment") {
-//                   $("#catDropdown").text("Entertainment");
-//             } else if (location.pathname == "/sports") {
-//             $("#catDropdown").text("Sports");
-//             }else if (location.pathname == "/metro") {
-//                           $("#catDropdown").text("Metro");
-//              }else if (location.pathname == "/nigeria") {
-//                             $("#catDropdown").text("Nigeria");
-//                        }
-//        });
-    </script>
+    {{--<script>--}}
+    {{--$(document).ready(function() {--}}
+      {{--if ($("#catDropdown").val == "url('/index')") {--}}
+                 {{--$(this).prop("selected",true);--}}
+            {{--}else if ($("#catDropdown").val == "url('/latest')") {--}}
+                  {{--$(this).prop("selected",true);--}}
+             {{--} else if (location.pathname == "/politics") {--}}
+                {{--$("#catDropdown").text("Politics");--}}
+             {{--} else if (location.pathname == "/entertainment") {--}}
+                   {{--$("#catDropdown").text("Entertainment");--}}
+             {{--} else if (location.pathname == "/sports") {--}}
+             {{--$("#catDropdown").text("Sports");--}}
+             {{--}else if (location.pathname == "/metro") {--}}
+                           {{--$("#catDropdown").text("Metro");--}}
+              {{--}else if (location.pathname == "/nigeria") {--}}
+                             {{--$("#catDropdown").text("Nigeria");--}}
+                        {{--}--}}
+        {{--});--}}
+    {{--</script>--}}
 
     <div class="large-12 small-12 columns" id="stories_container">
                  @yield('important_stories')
