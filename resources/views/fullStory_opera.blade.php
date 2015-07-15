@@ -89,7 +89,7 @@
                                          {{--<h1 class="title">{!!$recent_stories['title']!!} </h1>--}}
                                          {{--<div class="storyExtras">--}}
                                           {{--<span class="publisher-name">{{$data['publisher_names'][$recent_stories['pub_id']]}}</span>--}}
-                                           {{--<span class="label" style="margin-top:6px">{{$tc->getTimeDifference($recent_stories['created_date'])}} ago</span>--}}
+                                           {{--<span class="label" style="margin-top:6px">{{$tc->getTimeDifference($recent_stories['created_date'])}} </span>--}}
                                          {{--</div>--}}
                                      {{--</a>--}}
                              {{--</div>--}}

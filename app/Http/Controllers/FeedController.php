@@ -56,17 +56,25 @@ class FeedController extends Controller {
                             }
 
                         }else if($feed['pub_id'] == 1){
-
+                            $tc = new TimelineStoryController();
+                            $result = $tc->getStoryImage($str['title']);
+                            if(count($result['search_result']) > 0){
+                                $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                            }
 
                         }else{
                             preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
                             if(count($matches) > 0){
-                                FeedController::storeImage($this->getImageUrl($matches[0]));
-                                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                                if($this->storeImage($this->getImageUrl($matches[0]))){
+                                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                                }
+
                             }else{
                                 $tc = new TimelineStoryController();
                                 $result = $tc->getStoryImage($str['title']);
-                                $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                                if(count($result['search_result']) > 0){
+                                    $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                                }
 
                             }
                         }
