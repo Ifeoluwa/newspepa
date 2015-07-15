@@ -119,29 +119,6 @@ button:hover, button:focus, .button:hover, .button:focus{
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.1);
     box-shadow: 0 1px 4px rgba(0,0,0,.1);
 }
-.panel {
-    background: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    font-family: roboto;
-    border-radius: 9px;
-    display: block;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    padding-top: 9px;
-    padding-right: 6px;
-    padding-bottom: 0px !important;
-    padding-left: 7px;
-    -webkit-box-sizing: border-box;
-    content: '';
-    left: 0;
-    top: 0;
-    width: 100%;
-    -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.1);
-    box-shadow: 0 1px 4px rgba(0,0,0,.1);
-}
-
 .panel.radius {
     border-radius: 9px;
 }
@@ -391,11 +368,11 @@ body{
     font-family: roboto;
 }
 .footer{
-     display: block;
-     list-style: none;
-     cursor: pointer;
+    display: block;
+    list-style: none;
+    cursor: pointer;
 
- }
+}
 
 
 .likecounter{

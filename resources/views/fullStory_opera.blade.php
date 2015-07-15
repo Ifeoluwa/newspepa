@@ -14,7 +14,7 @@
         <div class="row opera-panel radius">
       <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
           <span class="full-story-title">{{$full_story['title']}}</span><br/>
-          <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
+          <span class="publisher-name"><b>{{$data['publisher_names'][$full_story['pub_id']]}}</b></span>
           <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
 
       </div><br/><br/>

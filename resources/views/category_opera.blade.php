@@ -1,13 +1,12 @@
-@extends ('opera-body')
 @extends ('opera-header')
 @section ('title',$data['category_stories']['category_name'] )
 @endsection
 
 @section('important_stories')
+ <?php $tc = new \App\Http\Controllers\TimelineStoryController();?>
  @foreach($data['category_stories']['all'] as $category_story)
         <div class="row opera-panel radius">
          <div class="large-12 medium-6 small-12 columns">
-            <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
                  <a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
                     <div class="image_container">
                     @if($category_story['image_url'] != "")

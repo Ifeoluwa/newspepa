@@ -3,9 +3,12 @@
     <head>
      <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
+        <title>NewsPepa | @yield('title')</title>
         <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
+        <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="ui_newspaper/css/opera-app12.css" />
         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
     </head>
      <body>
@@ -30,14 +33,67 @@
                 <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
             </div>
         </form>
-    <select>
-        <option value="nigeria" id="1"><a href="{{url('/')}}"> Top Stories </a></option>
-        <option value="latest" id="2"><a href="{{url('/latest')}}"> Latest Stories</a></option>
-        <option value="nigeria" id="3"><a href="{{url('/nigeria')}}"> Nigeria</a></option>
-        <option value="entertainment" id="4"><a href="{{url('/entertainment')}}"> Entertainment</a></option>
-        <option value="sports" id="5"><a href="{{url('/sports')}}"> Sports</a></option>
-        <option value="politics" id="6"><a href="{{url('/politics')}}"> Politics</a></option>
-        <option value="metro" id="7"><a href="{{url('/metro')}}"> Metro</a></option>
+
+    <select id= "catDropdown" onchange="window.open(this.options[this.selectedIndex].value)">
+        <option value="{{url('/index')}}" id="1">Top Stories</option>
+        <option value="{{url('/latest')}}" id="2"> Latest Stories</option>
+        <option value="{{url('/nigeria')}}" id="3">Nigeria</option>
+        <option value="{{url('/entertainment')}}" id="4">Entertainment</option>
+        <option value="{{url('/sports')}}" id="5">Sports</option>
+        <option value="{{url('/politics')}}" id="6">Politics</option>
+        <option value="{{url('/metro')}}" id="7">Metro</option>
     </select>
+    <script>
+      if (location.pathname == "/") {
+                 $("#catDropdown").selected()
+            }else if (location.pathname == "/latest") {
+                  $("#catDropdown").text("Latest Stories");
+             } else if (location.pathname == "/politics") {
+                $("#catDropdown").text("Politics");
+             } else if (location.pathname == "/entertainment") {
+                   $("#catDropdown").text("Entertainment");
+             } else if (location.pathname == "/sports") {
+             $("#catDropdown").text("Sports");
+             }else if (location.pathname == "/metro") {
+                           $("#catDropdown").text("Metro");
+              }else if (location.pathname == "/nigeria") {
+                             $("#catDropdown").text("Nigeria");
+                        }
+    </script>
+
+    <div class="large-12 small-12 columns" id="stories_container">
+                 @yield('important_stories')
+
+                  @yield('less_important_stories')
+                  {{--Stories with no images--}}
+                  @yield('stories_with_no_images')
+
+                  @yield('full_story')
+
+                  {{--other relevant content--}}
+                  <br/>
+                  @yield('related_content')
+                  </div>
+
+        <footer class="row">
+            <div class="large-12 columns">
+                <hr/>
+                <div class="row">
+                    <div class="large-5 columns">
+                        <p style="text-align: center">
+                            <i class="newspepaicon"> </i> 2015 Iconway
+                            <a href="{{url('/')}}"><button class="home-button" id="home">Home</button></a>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <script src="ui_newspaper/js/vendor/jquery.js"></script>
+        <script src="ui_newspaper/js/vendor/fastclick.js"></script>
+        {{--<script src="ui_newspaper/js/foundation.min.js"></script>--}}
+        <script src="ui_newspaper/get_social_counts/site.js"></script>
+
     </body>
     </html>
