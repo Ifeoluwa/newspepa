@@ -93,7 +93,7 @@ class FeedController extends Controller {
 
                     }
                 }catch (\ErrorException $ex){
-
+                    continue;
                 }
             }
 
@@ -208,7 +208,8 @@ class FeedController extends Controller {
     public function storeImage($image_url){
         try {
             $image_content = file_get_contents($image_url);
-            if($this->getImageName($image_url) == "App-logo.png"){
+            $image_name = $this->getImageName($image_url);
+            if($image_name == "App-logo.png" || $image_name == "METRO1-11.png"){
                 return false;
             }else{
                 $fp = fopen("/home/newspep/newspepa/public/story_images/".$this->getImageName($image_url), "w");
@@ -231,6 +232,13 @@ class FeedController extends Controller {
     }
 
     public function test(){
+
+//        $feed_content = file_get_contents('http://www.channelstv.com/category/politics/feed');
+//
+//        $parser = new Parser();
+//        $parsed = $parser->xml($feed_content);
+//        var_dump($parsed);
+//        die();
         $this->fetchFeeds();
         echo "<br> done";
 

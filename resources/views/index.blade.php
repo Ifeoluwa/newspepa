@@ -35,7 +35,7 @@
 
 
 
-            {{--{!! $paginator->render() !!}--}}
+            {!! $paginator->render() !!}
 @stop
 
 {{--@else--}}
