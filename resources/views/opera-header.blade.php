@@ -34,34 +34,19 @@
             </div>
         </form>
 
-    <select id= "catDropdown" onchange="window.open(this.options[this.selectedIndex].val)">
-        <option value="{{url('/index')}}" id="1">Top Stories</option>
-        <option value="{{url('/latest')}}" id="2"> Latest Stories</option>
-        <option value="{{url('/nigeria')}}" id="3">Nigeria</option>
-        <option value="{{url('/entertainment')}}" id="4">Entertainment</option>
-        <option value="{{url('/sports')}}" id="5">Sports</option>
-        <option value="{{url('/politics')}}" id="6">Politics</option>
-        <option value="{{url('/metro')}}" id="7">Metro</option>
-    </select>
-    {{--<script>--}}
-    {{--$(document).ready(function() {--}}
-      {{--if ($("#catDropdown").val == "url('/index')") {--}}
-                 {{--$(this).prop("selected",true);--}}
-            {{--}else if ($("#catDropdown").val == "url('/latest')") {--}}
-                  {{--$(this).prop("selected",true);--}}
-             {{--} else if (location.pathname == "/politics") {--}}
-                {{--$("#catDropdown").text("Politics");--}}
-             {{--} else if (location.pathname == "/entertainment") {--}}
-                   {{--$("#catDropdown").text("Entertainment");--}}
-             {{--} else if (location.pathname == "/sports") {--}}
-             {{--$("#catDropdown").text("Sports");--}}
-             {{--}else if (location.pathname == "/metro") {--}}
-                           {{--$("#catDropdown").text("Metro");--}}
-              {{--}else if (location.pathname == "/nigeria") {--}}
-                             {{--$("#catDropdown").text("Nigeria");--}}
-                        {{--}--}}
-        {{--});--}}
-    {{--</script>--}}
+    {{--<form id="page-changer" action="" method="post">--}}
+        <select id= "catDropdown" onchange= "window.location.replace(this.options[this.selectedIndex].value)">
+            <option value="{{url('/index')}}">Top Stories</option>
+            <option value="{{url('/latest')}}"> Latest Stories</option>
+            <option value="{{url('/nigeria')}}">Nigeria</option>
+            <option value="{{url('/entertainment')}}">Entertainment</option>
+            <option value="{{url('/sports')}}">Sports</option>
+            <option value="{{url('/politics')}}">Politics</option>
+            <option value="{{url('/metro')}}">Metro</option>
+        </select>
+        {{--<input type="submit" value="Go" id="submit" />--}}
+    {{--</form>--}}
+
 
     <div class="large-12 small-12 columns" id="stories_container">
                  @yield('important_stories')
@@ -97,5 +82,26 @@
         {{--<script src="ui_newspaper/js/foundation.min.js"></script>--}}
         <script src="ui_newspaper/get_social_counts/site.js"></script>
 
+   <script>
+   $(document).foundation();
+
+      $(document).ready(function() {
+        if (location.pathname == "/") {
+                   $("#catDropdown").val("Top Stories");
+              }else if (location.pathname == "/latest") {
+                   $("#catDropdown").val("Latest Stories");
+               } else if (location.pathname == "/politics") {
+                  $("#catDropdown").val("Politics");
+               } else if (location.pathname == "/entertainment") {
+                     $("#catDropdown").val("Entertainment");
+               } else if (location.pathname == "/sports") {
+               $("#catDropdown").val("Sports");
+               }else if (location.pathname == "/metro") {
+                             $("#catDropdown").val("Metro");
+                }else if (location.pathname == "/nigeria") {
+                               $("#catDropdown").val("Nigeria");
+                          }
+          });
+      </script>
     </body>
     </html>
