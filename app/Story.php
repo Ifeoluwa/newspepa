@@ -38,8 +38,13 @@ class Story extends Model
             $array['modified_date'] = $now;
         }
 
-        DB::insert('INSERT IGNORE INTO stories ('.implode(',',array_keys($array)).
+        $id = DB::insert('INSERT IGNORE INTO stories ('.implode(',',array_keys($array)).
             ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
+
+        if($id == true){
+            $id = DB::getPdo()->lastInsertId();
+        }
+        return $id;
 
     }
 
