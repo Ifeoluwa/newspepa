@@ -34,7 +34,7 @@
             </div>
         </form>
 
-    <select id= "catDropdown" onchange="window.open(this.options[this.selectedIndex].value)">
+    <select id= "catDropdown" onchange="window.open(this.options[this.selectedIndex].val)">
         <option value="{{url('/index')}}" id="1">Top Stories</option>
         <option value="{{url('/latest')}}" id="2"> Latest Stories</option>
         <option value="{{url('/nigeria')}}" id="3">Nigeria</option>
@@ -44,21 +44,23 @@
         <option value="{{url('/metro')}}" id="7">Metro</option>
     </select>
     <script>
-      if (location.pathname == "/") {
-                 $("#catDropdown").selected()
-            }else if (location.pathname == "/latest") {
-                  $("#catDropdown").text("Latest Stories");
-             } else if (location.pathname == "/politics") {
-                $("#catDropdown").text("Politics");
-             } else if (location.pathname == "/entertainment") {
-                   $("#catDropdown").text("Entertainment");
-             } else if (location.pathname == "/sports") {
-             $("#catDropdown").text("Sports");
-             }else if (location.pathname == "/metro") {
-                           $("#catDropdown").text("Metro");
-              }else if (location.pathname == "/nigeria") {
-                             $("#catDropdown").text("Nigeria");
-                        }
+//    $(document).ready(function() {
+//      if ($("#catDropdown").val == url('/index')) {
+//                 $(this).prop("selected",true);
+//            }else if ($("#catDropdown").val == url('/latest')) {
+//                  $(this).prop("selected",true);
+//             } else if (location.pathname == "/politics") {
+//                $("#catDropdown").text("Politics");
+//             } else if (location.pathname == "/entertainment") {
+//                   $("#catDropdown").text("Entertainment");
+//             } else if (location.pathname == "/sports") {
+//             $("#catDropdown").text("Sports");
+//             }else if (location.pathname == "/metro") {
+//                           $("#catDropdown").text("Metro");
+//              }else if (location.pathname == "/nigeria") {
+//                             $("#catDropdown").text("Nigeria");
+//                        }
+//        });
     </script>
 
     <div class="large-12 small-12 columns" id="stories_container">
