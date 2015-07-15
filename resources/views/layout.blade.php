@@ -6,8 +6,8 @@
     <title>NewsPepa | @yield('title')</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app13.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-    <link rel="stylesheet" href="ui_newspaper/css/app12.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
   </head>
@@ -171,22 +171,23 @@
 
   ga('create', 'UA-49109646-1', 'auto');
   ga('send', 'pageview');
-//this is used for the back-to-top button
-//    var offset = 1000;
-//    var duration = 500;
-//    $(window).scroll(function() {
-//        if ($(this).scrollTop() > offset) {
-//            $('.back-to-top').fadeIn(duration);
-//        } else {
-//            $('.back-to-top').fadeOut(duration);
-//        }
-//    });
 
-//    $('.back-to-top').click(function(event) {
-//        event.preventDefault();
-//        jQuery('html, body').animate({scrollTop: 0}, duration);
-//        return false;
-//    })
+//this is used for the back-to-top button
+    var offset = 1200;
+    var duration = 700;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(duration);
+        } else {
+            $('.back-to-top').fadeOut(duration);
+        }
+    });
+
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
 
 //    $('#home').click(function(event){
 //    $('html,body').scrollTop(0);

@@ -66,7 +66,7 @@ class FeedController extends Controller {
                             $tc = new TimelineStoryController();
                             $result = $tc->getStoryImage($str['title']);
                             if(count($result['search_result']) > 0){
-                                $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result']['name'];
                             }
 
                         }else{
@@ -80,7 +80,7 @@ class FeedController extends Controller {
                                 $tc = new TimelineStoryController();
                                 $result = $tc->getStoryImage($str['title']);
                                 if(count($result['search_result']) > 0){
-                                    $story['image_url'] = $result['search_result']['url'].$result['search_result']['name'];
+                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result']['name'];
                                 }
 
                             }
@@ -113,6 +113,8 @@ class FeedController extends Controller {
         // Shuffle the array of stories
         shuffle($all_stories);
         $stories_array = array();
+        $fetched_stories = count($all_stories);
+        $k = 0;
         foreach($all_stories as $story){
             $result = Story::insertIgnore($story);
 
@@ -135,11 +137,24 @@ class FeedController extends Controller {
                 array_push($stories_array, $story1);
             }
 
+            if(!$this->isSimilarToPrevious($story)){
+                $result = Story::insertIgnore($story);
+                if($result){
+                    $k += 1;
+                }
+            }
         }
         $updateQuery->addDocuments($stories_array);
         $updateQuery->addCommit();
 
         $result = $this->client->update($updateQuery);
+
+        $stored_stories = $k;
+        $now  = new \DateTime('now');
+        $fp = fopen("/home/newspep/newspepa/public/story_images/log.txt", "w");
+        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories);
+        fclose($fp);
+
 
         set_time_limit(120);
 
@@ -265,15 +280,72 @@ class FeedController extends Controller {
 
     public function test(){
 
-//        $feed_content = file_get_contents('http://www.channelstv.com/category/politics/feed');
-//
-//        $parser = new Parser();
-//        $parsed = $parser->xml($feed_content);
-//        var_dump($parsed);
-//        die();
+//        return $this->compareStrings("the boy is good", "the boy is goodies");
+
         $this->fetchFeeds();
         echo "<br> done";
 
+    }
+
+    // Function to compare the degree of similarity between two strings
+    public function compareStrings($str_a, $str_b){
+        $length = strlen($str_a);
+        $length_b = strlen($str_b);
+
+        $i = 0;
+        $segmentcount = 0;
+        $segmentsinfo = array();
+        $segment = '';
+        while ($i < $length)
+        {
+            $char = substr($str_a, $i, 1);
+            if (strpos($str_b, $char) !== FALSE)
+            {
+                $segment = $segment.$char;
+                if (strpos($str_b, $segment) !== FALSE)
+                {
+                    $segmentpos_a = $i - strlen($segment) + 1;
+                    $segmentpos_b = strpos($str_b, $segment);
+                    $positiondiff = abs($segmentpos_a - $segmentpos_b);
+                    $posfactor = ($length - $positiondiff) / $length_b; // <-- ?
+                    $lengthfactor = strlen($segment)/$length;
+                    $segmentsinfo[$segmentcount] = array( 'segment' => $segment, 'score' => ($posfactor * $lengthfactor));
+                }
+                else
+                {
+                    $segment = '';
+                    $i--;
+                    $segmentcount++;
+                }
+            }
+            else
+            {
+                $segment = '';
+                $segmentcount++;
+            }
+            $i++;
+        }
+
+        // PHP 5.3 lambda in array_map
+        $totalscore = array_sum(array_map(function($v) { return $v['score'];  }, $segmentsinfo));
+        return $totalscore * 100;
+    }
+
+    //Checks if there's a similar existing story in the database
+    public function isSimilarToPrevious($story){
+        $isSimilar = false;
+        $timezone = new \DateTimeZone('Africa/Lagos');
+        $prev_stories = DB::table('stories')->where('feed_id', $story['feed_id'])
+            ->whereBetween('created_date', [new \DateTime('-1hour'), new \DateTime('now')])->get();
+        foreach($prev_stories as $prev_story){
+            if($this->compareStrings($story['title'], $prev_story['title']) > 70){
+                $isSimilar = $isSimilar || true;
+            }else{
+                $isSimilar = $isSimilar || false;
+            }
+        }
+
+        return $isSimilar;
     }
 
 

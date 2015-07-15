@@ -1,4 +1,3 @@
-@extends ('opera-body')
 @section('title', 'results')
 @extends ('opera-header')
 
