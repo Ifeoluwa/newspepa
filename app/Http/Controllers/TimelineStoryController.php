@@ -24,13 +24,16 @@ class TimelineStoryController extends Controller
 
     protected $client;
     protected $stop_word_array = array();
+    protected $key_word_array = array();
     public $opera_checker;
     // Constructor
     public function __construct(){
 
         $this->client = new \Solarium\Client;
         $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
+        $this->key_word_array = explode(PHP_EOL, $key_words);
     }
 
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
@@ -313,8 +316,14 @@ class TimelineStoryController extends Controller
         $story_title = str_replace("-", ' ', $story_title);
         $story_title_array = explode(' ', $story_title);
         $story_title_array = array_diff($story_title_array, $this->stop_word_array);
+        $title_key_words = array_intersect($story_title_array, $this->key_word_array);
 
-        $story_title = implode(" ", $story_title_array);
+        if(empty($title_key_words)){
+            $story_title = implode(" ", $story_title_array);
+        }
+        else{
+            $story_title = implode(" ", $title_key_words);
+        }
         $query = $this->client->createSelect();
         $query->setQuery($story_title);
         $dismax = $query->getDisMax();
