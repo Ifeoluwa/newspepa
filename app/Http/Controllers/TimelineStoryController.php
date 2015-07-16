@@ -46,8 +46,8 @@ class TimelineStoryController extends Controller
 
         $timeline_stories = array();
         $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
-        $timeline_stories['top_stories'] = new Paginator(TimelineStory::timeLineStories(), 50);
-        $timeline_stories['top_stories']->setPath('/');
+//        $timeline_stories['top_stories'] = new Paginator(TimelineStory::timeLineStories(), 100);
+//        $timeline_stories['top_stories']->setPath('/');
         if($this->isOpera()){
             return view('index_opera')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 

@@ -15,8 +15,10 @@ class SourceMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!$this->isMobile()){
-            return view('errors.desktopView');
+
+        if($this->isMobile() == 0){
+            echo "I'm  here";
+            return view('errors.404');
         }
         return $next($request);
     }
