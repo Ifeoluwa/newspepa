@@ -29,7 +29,7 @@ class TimelineStoryController extends Controller
     public function __construct(){
 
         $this->client = new \Solarium\Client;
-        $stop_words = file_get_contents('/home/newspep/newspepa/public/scripts/stop_words.txt');
+        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
     }
 
@@ -208,33 +208,6 @@ class TimelineStoryController extends Controller
     public function searchStory(){
 
         set_time_limit(0);
-        //the php code for insert for jide to put in the cron
-//        $stories_array = array();
-//        //adding document to solr
-//        $updateQuery = $this->client->createUpdate();
-//
-//        $story1 = $updateQuery->createDocument();
-//        $story1->id = ''; //return the id of the insert from PDO query and attach it here
-//        $story1->title_en = '';
-//        $story1->description_en = '';
-//        $story1->image_url_t = '';
-//        $story1->video_url_t = '';
-//        $story1->url = '';
-//        $story1->pub_id_i = '';
-//        $story1->has_cluster_i = '';
-//        //do this for all stories and keep adding them to the stories array
-//        //when done continue to the nest line
-//
-//        array_push($stories_array, $story1);
-//
-//        $updateQuery->addDocuments($stories_array);
-//        $updateQuery->addCommit();
-//
-//        $result = $this->client->update($updateQuery);
-        /*
-         * end of add
-         */
-
         /*
          * search
          */
@@ -336,6 +309,8 @@ class TimelineStoryController extends Controller
 
     public function getStoryImage($story_title){
 
+        $story_title = str_replace("'s", '', $story_title);
+        $story_title = str_replace("-", ' ', $story_title);
         $story_title_array = explode(' ', $story_title);
         $story_title_array = array_diff($story_title_array, $this->stop_word_array);
 

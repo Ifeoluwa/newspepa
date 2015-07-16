@@ -17,10 +17,13 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Nathanmac\Utilities\Parser\Parser;
 use PhpSpec\Exception\Example\ErrorException;
+use Solarium\Core\Client\Adapter;
+use Solarium\Core\Client;
 
 
 class FeedController extends Controller {
 
+    protected $client;
     // gets all the feed sources from the database
     private function getFeedSources(){
 
@@ -31,6 +34,10 @@ class FeedController extends Controller {
     // handles the actual fetching of feeds from the feed sources
     public function fetchFeeds(){
         set_time_limit(0);
+
+        //solr
+        $this->client = new \Solarium\Client;
+
         $feeds = FeedController::getFeedSources();
         $parser = new Parser();
         $all_stories = array();
@@ -105,9 +112,31 @@ class FeedController extends Controller {
 
         // Shuffle the array of stories
         shuffle($all_stories);
+        $stories_array = array();
         $fetched_stories = count($all_stories);
         $k = 0;
         foreach($all_stories as $story){
+            $result = Story::insertIgnore($story);
+
+            if($result !== false){
+                //solr insert
+                //adding document to solr
+                $updateQuery = $this->client->createUpdate();
+
+                $story1 = $updateQuery->createDocument();
+                $story1->id = $result['id']; //return the id of the insert from PDO query and attach it here
+                $story1->title_en = $story['title'];
+                $story1->description_en = $story['description'];
+                $story1->image_url_t = $story['image_url'];
+                $story1->video_url_t = $story['video_url'];
+                $story1->url = $story['url'];
+                $story1->pub_id_i = $story['pub_id'];
+                $story1->has_cluster_i = '';
+                //do this for all stories and keep adding them to the stories array
+                //when done continue to the nest line
+                array_push($stories_array, $story1);
+            }
+
             if(!$this->isSimilarToPrevious($story)){
                 $result = Story::insertIgnore($story);
                 if($result){
@@ -124,6 +153,10 @@ class FeedController extends Controller {
                 }
             }
         }
+        $updateQuery->addDocuments($stories_array);
+        $updateQuery->addCommit();
+
+        $result = $this->client->update($updateQuery);
 
         $stored_stories = $k;
         $now  = date('Y-m-d h:i:s');
