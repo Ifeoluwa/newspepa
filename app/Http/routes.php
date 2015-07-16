@@ -34,9 +34,9 @@ Route::get('opera', function(){
     return view('test')->with('is_opera', true);
 });
 
-Route::get('desktop', function(){
-    $user_agent = $_SERVER['HTTP_USER_AGENT'];
-    return $user_agent;
+Route::get('refer', function(){
+//    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    return view('errors.404');
 });
 
 Route::post('linkout/{story_id}', 'TimelineStoryController@readStory');

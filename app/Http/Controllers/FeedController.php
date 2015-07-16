@@ -63,11 +63,11 @@ class FeedController extends Controller {
                             }
 
                         }else if($feed['pub_id'] == 1){
-                            $tc = new TimelineStoryController();
-                            $result = $tc->getStoryImage($str['title']);
-                            if(count($result['search_result']) > 0){
-                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
-                            }
+//                            $tc = new TimelineStoryController();
+//                            $result = $tc->getStoryImage($str['title']);
+//                            if(count($result['search_result']) > 0){
+//                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+//                            }
 
                         }else{
                             preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
@@ -77,11 +77,11 @@ class FeedController extends Controller {
                                 }
 
                             }else{
-                                $tc = new TimelineStoryController();
-                                $result = $tc->getStoryImage($str['title']);
-                                if(count($result['search_result']) > 0){
-                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
-                                }
+//                                $tc = new TimelineStoryController();
+//                                $result = $tc->getStoryImage($str['title']);
+//                                if(count($result['search_result']) > 0){
+//                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+//                                }
 
                             }
                         }
@@ -113,6 +113,7 @@ class FeedController extends Controller {
         // Shuffle the array of stories
         shuffle($all_stories);
         $stories_array = array();
+        $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
         foreach($all_stories as $story){
@@ -121,7 +122,6 @@ class FeedController extends Controller {
             if($result !== false){
                 //solr insert
                 //adding document to solr
-                $updateQuery = $this->client->createUpdate();
 
                 $story1 = $updateQuery->createDocument();
                 $story1->id = $result; //return the id of the insert from PDO query and attach it here

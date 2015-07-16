@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\View;
 
 class SourceMiddleware
 {
@@ -17,8 +18,7 @@ class SourceMiddleware
     {
 
         if($this->isMobile() == 0){
-            echo "I'm  here";
-            return view('errors.404');
+            return redirect('refer');
         }
         return $next($request);
     }
