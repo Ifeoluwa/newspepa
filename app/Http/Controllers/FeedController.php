@@ -63,11 +63,11 @@ class FeedController extends Controller {
                             }
 
                         }else if($feed['pub_id'] == 1){
-//                            $tc = new TimelineStoryController();
-//                            $result = $tc->getStoryImage($str['title']);
-//                            if(count($result['search_result']) > 0){
-//                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
-//                            }
+                            $tc = new TimelineStoryController();
+                            $result = $tc->getStoryImage($str['link']);
+                            if($result !== null){
+                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                            }
 
                         }else{
                             preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
@@ -77,11 +77,11 @@ class FeedController extends Controller {
                                 }
 
                             }else{
-//                                $tc = new TimelineStoryController();
-//                                $result = $tc->getStoryImage($str['title']);
-//                                if(count($result['search_result']) > 0){
-//                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
-//                                }
+                                $tc = new TimelineStoryController();
+                                $result = $tc->getStoryImage($str['link']);
+                                if($result !== null){
+                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                                }
 
                             }
                         }
@@ -322,14 +322,19 @@ class FeedController extends Controller {
 
     public function test(){
 
-//        $content = file_get_contents('http://feeds.feedburner.com/blogspot/OqshX');
+        $content = file_get_contents('http://feeds.feedburner.com/blogspot/OqshX');
+
+        $parser = new Parser();
+        $parsed = $parser->xml($content);
+        echo json_encode($parsed);
+        die();
         $rss = new \DOMDocument();
         $rss->load('http://feeds.feedburner.com/blogspot/OqshX');
         $stories = array();
         foreach ($rss->getElementsByTagName('entry') as $node) {
             $story = array (
                 'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-                'url' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+                'url' => $node->getElementsByTagName('origLink')->item(0)->nodeValue,
                 'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('published')->item(0)->nodeValue)),
                 'description' => strip_tags($node->getElementsByTagName('content')->item(0)->nodeValue)."",
                 'content' => $node->getElementsByTagName('content')->item(0)->nodeValue,
@@ -346,7 +351,7 @@ class FeedController extends Controller {
 //            $story['category_id'] = $feed['category_id'];
             array_push($stories, $story);
         }
-        var_dump($stories);
+        var_dump(json_encode($stories));
         die();
         //        return $this->compareStrings("the boy is good", "the boy is goodies");
 

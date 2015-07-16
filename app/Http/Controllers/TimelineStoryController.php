@@ -32,8 +32,11 @@ class TimelineStoryController extends Controller
 
         $this->client = new \Solarium\Client;
         $this->feed_contoller = new FeedController();
-        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
-        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
+//        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+//        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
+        $stop_words = file_get_contents("");
+        $key_words = file_get_contents("");
+
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
         $this->key_word_array = explode(PHP_EOL, $key_words);
     }
@@ -51,8 +54,8 @@ class TimelineStoryController extends Controller
 
         $timeline_stories = array();
         $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
-//        $timeline_stories['top_stories'] = new Paginator(TimelineStory::timeLineStories(), 100);
-//        $timeline_stories['top_stories']->setPath('/');
+        $timeline_stories['top_stories'] = new Paginator(TimelineStory::timeLineStories(), 100);
+        $timeline_stories['top_stories']->setPath('/');
         if($this->isOpera()){
             return view('index_opera')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));
 

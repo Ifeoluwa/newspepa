@@ -51,6 +51,6 @@
 
 
 
-            {!! $paginator->render() !!}
+            {!! $timeline_stories['top_stories']->render() !!}
 @stop
 
