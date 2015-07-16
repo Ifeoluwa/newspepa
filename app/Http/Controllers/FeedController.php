@@ -127,11 +127,15 @@ class FeedController extends Controller {
                 $story1->id = $result; //return the id of the insert from PDO query and attach it here
                 $story1->title_en = $story['title'];
                 $story1->description_en = $story['description'];
-                $story1->image_url_t = $story['image_url'];
-                $story1->video_url_t = $story['video_url'];
+                if(isset($story['image_url'])){
+                    $story1->image_url_t = $story['image_url'];
+                }else{
+                    $story1->image_url_t = '';
+                }
+                $story1->video_url_t = '';
                 $story1->url = $story['url'];
                 $story1->pub_id_i = $story['pub_id'];
-                $story1->has_cluster_i = '';
+                $story1->has_cluster_i = 1;
                 //do this for all stories and keep adding them to the stories array
                 //when done continue to the nest line
                 array_push($stories_array, $story1);
