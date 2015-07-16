@@ -1,5 +1,5 @@
 @section('title', 'results')
-@extends ('opera-header')
+@extends ('opera-layout')
 
 @stop
 

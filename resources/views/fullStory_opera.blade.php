@@ -1,13 +1,10 @@
 {{--{{json_encode($data)}}--}}
-@extends ('opera-body')
+@extends('opera-layout')
 @foreach($data['full_story'] as $full_story2)
 @section('title', $full_story2['title'])
-@endforeach
-@extends ('opera-header')
 @endsection
+@endforeach
 
-
-@section('full_story')
 @foreach($data['full_story'] as $full_story)
 
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
@@ -21,7 +18,7 @@
       @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}" name="linkOuts" href="{{$full_story['url']}}" style="color: #333366">Continue to read</a></p></p>
+      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}" name="linkOuts" href="{{$full_story['url']}}" style="color: #202f55" target="_blank">Continue to read</a></p></p>
       </div>
   </div>
   {{--</div>--}}

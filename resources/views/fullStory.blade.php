@@ -16,16 +16,16 @@
 
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
         <div class="row panel radius">
-      <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
-          <span class="full-story-title">{{$full_story['title']}}</span><br/>
-          <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
-          <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
+            <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
+              <span class="full-story-title">{{$full_story['title']}}</span><br/>
+              <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
+              <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
 
       </div><br/><br/>
       @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}" name="linkOuts" href="{{$full_story['url']}}" style="color: #333366">Continue to read</a></p></p>
+      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}" name="linkOuts" href="{{$full_story['url']}}" style="color: #202f55" target="_blank">Continue to read</a></p></p>
       </div>
   </div>
   {{--</div>--}}

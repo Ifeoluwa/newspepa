@@ -3,7 +3,7 @@
    <head>
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
-    <title>NewsPepa | @yield('title')</title>
+    <title>Newspepa | @yield('title')</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
      <link rel="stylesheet" href="ui_newspaper/css/app13.css" />
@@ -25,7 +25,7 @@
 <div class="fixed">
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
         <ul class="title-area">
-            <a href="{{url('/')}}"><li class="name"></li></a>
+            <a href="{{url('/')}}"><li class="name name-m"></li></a>
         </ul>
     </nav>
     {{--the search bar--}}

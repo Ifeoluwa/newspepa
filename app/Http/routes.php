@@ -34,6 +34,11 @@ Route::get('opera', function(){
     return view('test')->with('is_opera', true);
 });
 
+Route::get('/desktop', function(){
+
+    return view('errors.desktopView');
+});
+
 Route::post('linkout/{story_id}', 'TimelineStoryController@readStory');
 
 //Handles the various category request
