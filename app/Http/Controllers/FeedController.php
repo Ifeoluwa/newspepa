@@ -124,7 +124,7 @@ class FeedController extends Controller {
                 $updateQuery = $this->client->createUpdate();
 
                 $story1 = $updateQuery->createDocument();
-                $story1->id = $result['id']; //return the id of the insert from PDO query and attach it here
+                $story1->id = $result; //return the id of the insert from PDO query and attach it here
                 $story1->title_en = $story['title'];
                 $story1->description_en = $story['description'];
                 $story1->image_url_t = $story['image_url'];

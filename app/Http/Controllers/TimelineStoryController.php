@@ -240,7 +240,7 @@ class TimelineStoryController extends Controller
                     $j = $j + 1;
                 }
             }
-            if ($j >= (count($search_query_array) - 1)){
+            if ($j >= (count($search_query_array) - 2)){
 
                 $arr = array();
                 $arr['story_id'] = $doc->id;
@@ -310,12 +310,25 @@ class TimelineStoryController extends Controller
         return $suggested;
     }
 
+    public function storyImage($url, $story_title){
+        $data = file_get_contents($url);
+
+        preg_match_all("/(src)=(\"|')*[^<>[:space:]]+[[:alnum:]#?\/&=+%_]/", $data, $match);
+
+        $list = $match[0];
+
+        print_r($list);
+
+    }
+
     public function getStoryImage($story_title){
 
         $story_title = str_replace("'s", '', $story_title);
         $story_title = str_replace("-", ' ', $story_title);
         $story_title_array = explode(' ', $story_title);
+        $story_title_array = array_map('strtolower', $story_title_array);
         $story_title_array = array_diff($story_title_array, $this->stop_word_array);
+        $this->key_word_array = array_map('strtolower', $this->key_word_array);
         $title_key_words = array_intersect($story_title_array, $this->key_word_array);
 
         if(empty($title_key_words)){
