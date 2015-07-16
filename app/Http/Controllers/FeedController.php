@@ -291,6 +291,10 @@ class FeedController extends Controller {
         return $image_name;
     }
 
+    public function getFeedContentFromBlog(){
+
+    }
+
     public function test(){
 
         $content = file_get_contents('http://feeds.feedburner.com/blogspot/OqshX');
