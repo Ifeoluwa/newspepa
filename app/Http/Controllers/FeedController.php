@@ -293,6 +293,12 @@ class FeedController extends Controller {
 
     public function test(){
 
+        $content = file_get_contents('http://feeds.feedburner.com/blogspot/OqshX');
+
+        $parser = new Parser();
+        $parsed = $parser->xml($content);
+        var_dump($parsed);
+        die();
 //        return $this->compareStrings("the boy is good", "the boy is goodies");
 
         $this->fetchFeeds();
