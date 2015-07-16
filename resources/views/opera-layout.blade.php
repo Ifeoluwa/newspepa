@@ -35,7 +35,7 @@
         </form>
 
  <div class="row opera-panel radius" style="background-color: #336;">
-   <a href="{{url('/index')}}"> <span style="color:#ffffff"><b>Top Stories| </b></span></a>
+   <a href="{{url('/')}}"> <span style="color:#ffffff"><b>Top Stories| </b></span></a>
     <a href="{{url('/latest')}}"><span style="color:#ffffff"><b>Latest Stories| </b></span></a>
     <a href="{{url('/nigeria')}}"><span style="color:#ffffff"><b>Nigeria </b></span></a>
     <br/>
@@ -97,23 +97,23 @@
    <script>
    $(document).foundation();
 
-      $(document).ready(function() {
-        if (location.pathname == "/") {
-                   $("#catDropdown").val("Top Stories");
-              }else if (location.pathname == "/latest") {
-                   $("#catDropdown").val("Latest Stories");
-               } else if (location.pathname == "/politics") {
-                  $("#catDropdown").val("Politics");
-               } else if (location.pathname == "/entertainment") {
-                     $("#catDropdown").val("Entertainment");
-               } else if (location.pathname == "/sports") {
-               $("#catDropdown").val("Sports");
-               }else if (location.pathname == "/metro") {
-                             $("#catDropdown").val("Metro");
-                }else if (location.pathname == "/nigeria") {
-                               $("#catDropdown").val("Nigeria");
-                          }
-          });
+//      $(document).ready(function() {
+//        if (location.pathname == "/") {
+//                   $("#catDropdown").val("Top Stories");
+//              }else if (location.pathname == "/latest") {
+//                   $("#catDropdown").val("Latest Stories");
+//               } else if (location.pathname == "/politics") {
+//                  $("#catDropdown").val("Politics");
+//               } else if (location.pathname == "/entertainment") {
+//                     $("#catDropdown").val("Entertainment");
+//               } else if (location.pathname == "/sports") {
+//               $("#catDropdown").val("Sports");
+//               }else if (location.pathname == "/metro") {
+//                             $("#catDropdown").val("Metro");
+//                }else if (location.pathname == "/nigeria") {
+//                               $("#catDropdown").val("Nigeria");
+//                          }
+//          });
 
 
 //          this is used for google analytics
