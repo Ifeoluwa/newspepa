@@ -313,7 +313,11 @@ class TimelineStoryController extends Controller
     }
 
     public function getStoryImage($url){
-        $data = file_get_contents($url);
+        $data = mb_convert_encoding(
+                    file_get_contents($url),
+                    "HTML-ENTITIES",
+                    "UTF-8"
+                );
         preg_match_all("/<meta([^>]+)\/>/i", $data, $match);
 
         foreach($match[0] as $value){
@@ -321,7 +325,6 @@ class TimelineStoryController extends Controller
                 preg_match_all("/(content)=(\"|')*[^<>[:space:]]+[[:alnum:]#?\/&=+%_]/", $value, $match);
                 $image = explode("=", $match[0][0]);
                 $image_url = str_replace('"', '', $image[1]);
-                $image_url = str_replace("'", '', $image_url);
                 return $image_url;
             }
         }
