@@ -32,7 +32,7 @@ class TimelineStory extends Model
 
     // Selects recent stories based on category
     public static function recentStoriesByCat($category_id){
-        return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(20)->get();
+        return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(200)->get();
     }
 
     // Selects recent stories based on category but not the selected story

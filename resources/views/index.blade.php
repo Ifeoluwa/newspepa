@@ -1,3 +1,4 @@
+
 @extends('layout')
 @section('title', 'Breaking Nigerian News From Top Sites')
 @stop
@@ -34,6 +35,6 @@
 
 
 
-            {{--{!! $paginator->render() !!}--}}
+            {!! $data['timeline_stories']['top_stories']->render() !!}
 @stop
 

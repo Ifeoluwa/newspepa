@@ -28,4 +28,7 @@
 
 </div>
             @endforeach
+
+           {!! $data['latest_stories']->render() !!}
+
             @stop

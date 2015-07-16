@@ -32,10 +32,8 @@ class TimelineStoryController extends Controller
 
         $this->client = new \Solarium\Client;
         $this->feed_contoller = new FeedController();
-//        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
-//        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
-        $stop_words = file_get_contents("");
-        $key_words = file_get_contents("");
+        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
 
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
         $this->key_word_array = explode(PHP_EOL, $key_words);
@@ -52,8 +50,8 @@ class TimelineStoryController extends Controller
     public function index()
     {
 
-        $timeline_stories = array();
-        $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
+//        $timeline_stories = array();
+//        $timeline_stories['top_stories'] = TimelineStory::timeLineStories();
         $timeline_stories['top_stories'] = new Paginator(TimelineStory::timeLineStories(), 100);
         $timeline_stories['top_stories']->setPath('/');
         if($this->isOpera()){
@@ -83,8 +81,8 @@ class TimelineStoryController extends Controller
             $category_stories = array();
             $category_id = Category::$news_category[$category_name];
             $category_stories['category_name'] = $this->category_names[$category_id];
-            $category_stories['all'] = TimelineStory::recentStoriesByCat($category_id);
-
+            $category_stories['all'] = new Paginator(TimelineStory::recentStoriesByCat($category_id), 10);
+            $category_stories['all']->setPath($category_name);
             if($this->isOpera()){
                 return view('category_opera')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers));
 
@@ -104,7 +102,9 @@ class TimelineStoryController extends Controller
         $sports = TimelineStory::recentStoriesByCat(4);
         $metro = TimelineStory::recentStoriesByCat(5);
 
-        $latest_stories = array_merge($nigeria, $politics, $entertainment, $sports, $metro);
+        // Initialize paginator class
+        $latest_stories = new Paginator(array_merge($nigeria, $politics, $entertainment, $sports, $metro), 50);
+        $latest_stories->setPath('latest');
 
         if($this->isOpera()){
             return view('latestStory_opera')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names));

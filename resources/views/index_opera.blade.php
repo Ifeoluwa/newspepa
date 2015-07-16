@@ -36,7 +36,7 @@
 
 
 
-            {{--{!! $paginator->render() !!}--}}
+            {!! $data['timeline_stories']['top_stories']->render() !!}
 @stop
 
 {{--@else--}}
