@@ -7,9 +7,9 @@
  @stop
 {{--the search results page also carries the same layout as the index page. Probably will be fetching from the timeline table. so carries
 the important section, lessImportant and noImage stories--}}
-{{--@if($search_result['found']!=0)--}}
+@if($data['found']!=0)
 @section('important_stories')
-{{--<span class="title"><b>{{$search_result['found']}}Results found for '{{$search_result['search_query']}}'</b></span>--}}
+<span class="title" style="font: 24px"><b>{{$data['found']}} Results found for  '{{$data['search_query']}}'</b></span><br/>
 @foreach($data['search_result'] as $searchResult)
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
         <div class="row panel radius">
@@ -41,8 +41,8 @@ the important section, lessImportant and noImage stories--}}
   {{--<div class="row panel radius related-content"><b>Related Searches</b></div>--}}
   {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
 {{--@endsection--}}
-{{--@else--}}
-{{--<span class="title"><b>Oops!No Results Found</b></span>--}}
-{{--@endif--}}
+@else
+<span class="title"><b>Oops!No Results Found</b></span>
+@endif
 
 

@@ -328,7 +328,12 @@ class TimelineStoryController extends Controller
                 preg_match_all("/(content)=(\"|')*[^<>[:space:]]+[[:alnum:]#?\/&=+%_]/", $value, $match);
                 $image = explode("=", $match[0][0]);
                 $image_url = str_replace('"', '', $image[1]);
-                return $image_url;
+                if(strlen($image_url) < 60){
+                    return null;
+                }
+                else{
+                    return $image_url;
+                }
             }
         }
         return null;

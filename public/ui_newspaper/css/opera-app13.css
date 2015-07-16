@@ -53,7 +53,7 @@ button{
 }
 
 button:hover, button:focus, .button:hover, .button:focus{
-    background-color: #213255 !important;
+    background-color: #3F5278  !important;
 }
 ::-webkit-input-placeholder {
     color: #020501; }
@@ -84,7 +84,7 @@ button:hover, button:focus, .button:hover, .button:focus{
     padding-top:7px;
     margin-bottom: 3px;
     height: 3.8125rem;
-    background: 202f55;
+    background: #202f55;
     /*background:url("../img/box-icon-search.png") no-repeat center #333366;*/
 
 }
@@ -94,9 +94,9 @@ button:hover, button:focus, .button:hover, .button:focus{
 }
 
 .top-bar .toggle-topbar.menu-icon a {
-    background-color:202f55;
+    background-color:#202f55;
     margin-top:-8px;
-    color:202f55;
+    color:#202f55;
     height: 3.8125rem;
 }
 .menu-icon{
@@ -289,7 +289,7 @@ a {
 }
 
 a:focus, a:hover{
-    color: #213255;
+    color: #3F5278 ;
 }
 
 
