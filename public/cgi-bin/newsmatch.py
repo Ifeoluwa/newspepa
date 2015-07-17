@@ -1,22 +1,32 @@
 #!/usr/bin/python
-
-print "Content-type: text/html\n"
-
-import cgitb; cgitb.enable()
-
-from BeautifulSoup import BeautifulSoup
 import MySQLdb
 import nltk
 #import feedparser
+
+
+############################################################
+# initialize corpus array to hold stories to be matched
+############################################################
 corpus = []
+
+############################################################
+# initialize titles array to hold story ids
+############################################################
 titles=[]
+
 pivotids =[]
 
-
 havecluster = 1
+
 statusid = 3
+
 ct = -1
 
+
+
+############################################################
+# connection to the database
+############################################################
 db = MySQLdb.connect(host="localhost", # your host, usually localhost
                      user="newspep_news", # your username
                       passwd="news1234", # your password
@@ -27,6 +37,10 @@ db = MySQLdb.connect(host="localhost", # your host, usually localhost
 cur = db.cursor()
 
 
+############################################################
+# get pivots from clusters table
+# get stories from stories table to match against each other
+############################################################
 cur.execute("SELECT cluster_pivot FROM clusters group by cluster_pivot")
 for row in cur.fetchall() :
     pivotids.append(row[0])
@@ -34,7 +48,7 @@ for row in cur.fetchall() :
     
     cur.execute("SELECT id,title,description,content FROM stories where id = %s", (str(pivotid),))
     for row1 in cur.fetchall() :   
-        words = nltk.wordpunct_tokenize(row1[3])
+        words = nltk.wordpunct_tokenize(nltk.clean_html(row1[3]))
         words.extend(nltk.wordpunct_tokenize(row1[1]))
         lowerwords=[x.lower() for x in words if len(x) > 1]
         ct += 1
@@ -43,7 +57,7 @@ for row in cur.fetchall() :
 
 cur.execute("SELECT id,title,description,content FROM stories where status_id != %s", (str(statusid),))
 for row2 in cur.fetchall() :   
-    words = nltk.wordpunct_tokenize(row2[3])
+    words = nltk.wordpunct_tokenize(nltk.clean_html(row2[3]))
     words.extend(nltk.wordpunct_tokenize(row2[1]))
     lowerwords=[x.lower() for x in words if len(x) > 1]
     ct += 1
@@ -119,7 +133,8 @@ for i in xrange(0,n):
 #########################################
 # now hierarchically cluster mat
 #########################################
-from hcluster import linkage
+from hcluster import linkage, dendrogram
+
 t = 0.8
 Z = linkage(mat, 'single')
 #dendrogram(Z, color_threshold=t)
@@ -127,7 +142,7 @@ Z = linkage(mat, 'single')
 #import pylab
 #pylab.savefig( "hcluster.png" ,dpi=800)
 
-#########################################
+##########################################
 # extract our clusters
 #########################################
 def extract_clusters(Z,threshold,n):
@@ -158,9 +173,11 @@ def extract_clusters(Z,threshold,n):
 clusters = extract_clusters(Z,t,n)
 word =[]
 dic={}
-import time    
+
+import time
 now =time.strftime('%Y-%m-%d %H:%M:%S')
-print now
+
+
 for key in clusters:
    #print "============================================="
 
@@ -179,6 +196,7 @@ for pivot in dic:
           #SQL query to INSERT a record into the table .
       cur.execute ("""SELECT count(*) FROM clusters WHERE cluster_pivot=%s and cluster_match =%s """, (pivot, matches,))
       results = cur.fetchall()
+      print (results[0][0])
       if results[0][0]== 0:
         cur.execute('''INSERT into clusters (cluster_pivot,cluster_match,status_id,created_date,modified_date)
                    values (%s,%s,%s,%s,%s)''',
@@ -197,6 +215,7 @@ for item in total:
       cur.execute ("""SELECT count(*) FROM clusters WHERE cluster_pivot=%s and cluster_match =%s """, (item, item,))
       
       results = cur.fetchall()
+      print (results[0][0])
       if results[0][0]== 0:
         cur.execute('''INSERT into clusters (cluster_pivot,cluster_match,status_id,created_date,modified_date)
                    values (%s,%s,%s,%s,%s)''',
@@ -207,11 +226,8 @@ for item in total:
         db.commit()
 
 
-print 'succesful'
+print ('succesful')
 # disconnect from server
 db.close()  
        
 #print pivotmatches
-       
-       
-
