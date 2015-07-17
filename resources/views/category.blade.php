@@ -34,7 +34,7 @@
       {{--</div>--}}
   @endforeach
  <div class="row" style="align-content: center; margin: auto">
-  {!! $data['category_stories']['all']->render() !!}
+   {!! $data['paginator']->render() !!}
   </div>
 
 @stop

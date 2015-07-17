@@ -75,7 +75,7 @@
 
 </div>
 @endforeach
- @stop
+@stop
 
   {{--<a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">--}}
                   {{--<div class="large-5 small-4 columns" style="width: 100%;">--}}

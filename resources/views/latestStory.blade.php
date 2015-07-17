@@ -29,6 +29,6 @@
 </div>
             @endforeach
 
-           {!! $data['latest_stories']->render() !!}
+           {!! $data['paginator']->render() !!}
 
             @stop

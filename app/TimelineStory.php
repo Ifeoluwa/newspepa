@@ -133,7 +133,7 @@ class TimelineStory extends Model
         );
 
 
-        DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_views');
+        DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
 
         DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
 
