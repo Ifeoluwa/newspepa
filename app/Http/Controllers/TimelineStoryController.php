@@ -20,7 +20,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
-
 class TimelineStoryController extends Controller
 {
 
@@ -34,10 +33,8 @@ class TimelineStoryController extends Controller
 
         $this->client = new \Solarium\Client;
         $this->feed_contoller = new FeedController();
-        $stop_words = ("");
-        $key_words = ("");
-//        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
-//        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
+        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
 
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
         $this->key_word_array = explode(PHP_EOL, $key_words);
@@ -371,69 +368,16 @@ class TimelineStoryController extends Controller
                 preg_match_all("/(content)=(\"|')*[^<>[:space:]]+[[:alnum:]#?\/&=+%_]/", $value, $match);
                 $image = explode("=", $match[0][0]);
                 $image_url = str_replace('"', '', $image[1]);
-                if(strlen($image_url) < 60){
+                if(strlen($image_url) < 60 || strpos(strtolower($image_url), "complete_sports_logo.jpg") !== false || strpos(strtolower($image_url), "breaking-news-red.png") !== false){
                     return null;
                 }
                 else{
-                    return $image_url;
+                    return trim($image_url, '/');
                 }
             }
         }
         return null;
     }
-
-//    public function getStoryImage($story_title){
-//
-//        $story_title = str_replace("'s", '', $story_title);
-//        $story_title = str_replace("-", ' ', $story_title);
-//        $story_title_array = explode(' ', $story_title);
-//        $story_title_array = array_map('strtolower', $story_title_array);
-//        $story_title_array = array_diff($story_title_array, $this->stop_word_array);
-//        $this->key_word_array = array_map('strtolower', $this->key_word_array);
-//        $title_key_words = array_intersect($story_title_array, $this->key_word_array);
-//
-//        if(empty($title_key_words)){
-//            $story_title = implode(" ", $story_title_array);
-//        }
-//        else{
-//            $story_title = implode(" ", $title_key_words);
-//        }
-//        $query = $this->client->createSelect();
-//        $query->setQuery($story_title);
-//        $dismax = $query->getDisMax();
-//        $dismax->setQueryFields('name^3');
-//        $query->addSort('score',$query::SORT_DESC);
-//        $resultSet = $this->client->select($query);
-//
-//        $search_result = array();
-//        foreach($resultSet as $doc)
-//        {
-//            $j = 0;
-//            $image_name_array = explode("-", $doc->name);
-//            for($i = 0; $i < count($image_name_array); ++$i) {
-//                if (strpos(strtolower($story_title), strtolower($image_name_array[$i])) !== false) {
-//                    $j = $j + 1;
-//                }
-//            }
-//            if ($j >= (count($image_name_array) - 1)) {
-//                $arr = array();
-//                $arr['id'] = $doc->id;
-//                $arr['name'] = $doc->name;
-//                $arr['url'] = $doc->url;
-//
-//                array_push($search_result, $arr);
-//                break;
-//            }
-//        }
-//
-//        $found = $resultSet->getNumFound();
-//
-//        $return = array(
-//            'search_result' => $search_result,
-//            'found' => $found
-//        );
-//        return $return;
-//    }
 
     public function test(){
         return $this->getStoryImage("Woman Tortured For Stealing Writes Police Commissioner");
