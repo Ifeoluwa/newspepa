@@ -32,12 +32,8 @@ class TimelineStoryController extends Controller
 
         $this->client = new \Solarium\Client;
         $this->feed_contoller = new FeedController();
-//        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
-//        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
-        $stop_words = ("now
-        go");
-        $key_words = ("noe
-        go");
+        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
 
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
         $this->key_word_array = explode(PHP_EOL, $key_words);
