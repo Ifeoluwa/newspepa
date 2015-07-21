@@ -4,7 +4,7 @@
 
 /*}*/
 .name-m{
-    background:url('../img/logo-white-transparent-big1.png') no-repeat;
+    background:url('../img/NPLogoOpt.png') no-repeat;
     background-position: center;
 }
 
@@ -42,10 +42,9 @@
 .searchbutton{
     width:100%;
     height:100%;
-    overflow: auto;
+    overflow: hidden;
     padding-bottom:1.22rem;
-    padding-top:1.2rem;
-    background:url("../img/box-icon-search.png") no-repeat center #202f55 ;
+    padding-top:1.1rem;
 }
 button{
     padding:0 0 0 0;
@@ -90,7 +89,6 @@ button:hover, button:focus, .button:hover, .button:focus{
     margin-bottom: 3px;
     height: 3.8125rem;
     background: #202f55;
-    /*background:url("../img/box-icon-search.png") no-repeat center #333366;*/
 
 }
 .top-bar .name{
@@ -173,7 +171,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 6px;
     padding-top: 0px !important;
     padding-bottom: 8px !important;
-    /*border-top:1.5px solid #E8E8E8;*/
 }
 
 .title-holder{
@@ -408,7 +405,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
     height:100%;
     padding-bottom:1.22rem;
     padding-top:1.1rem;
-    background:url("../img/box-icon-search.png") no-repeat center #202f55 ;
+    background:url("../img/search-icon.png") no-repeat center #202f55 ;
+    background-size:35px 35px;
 }
 
 body{
@@ -456,7 +454,7 @@ body{
 .sharebox {
     -webkit-box-flex: 1;
     width: 0;
-    padding: 0 8px;
+    padding: 0 4px;
     text-align: center;
     position: relative;
     display: block;
@@ -564,13 +562,14 @@ body{
     background-repeat: no-repeat;
 }
 .back-to-top {
-    background-image: url("../img/to_top_icon.png");
-    margin: 0;
+    background-image: url("../img/back-to-top.png");
+    margin-right: 5px;
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 50px;
-    height: 50px;
+    background-size: 50px 50px;
+    width:50px;
+    height:50px;
     z-index: 100;
     display: none;
     text-decoration: none;
@@ -584,7 +583,7 @@ body{
 
 .loaderImage{
     background-image:url("../img/index.gif")
-position:relative;
+    position:relative;
     background-repeat: no-repeat;
     display:inline-block;
     background-size: 18px 15px;
@@ -618,9 +617,7 @@ position:relative;
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
     font-family: roboto;
-    border-radius: 9px;
     display: block;
-    cursor: pointer;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -635,7 +632,6 @@ position:relative;
     width: 100%;
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.1);
     box-shadow: 0 1px 4px rgba(0,0,0,.1);
-    margin-top:6px;
     height:100vh;
 }
 
@@ -644,18 +640,53 @@ position:relative;
 }
 
 .desktop-publisher-name{
-    font-size:1.5rem;
-    font-weight: bolder;
-    color: #202f55;
-    margin-top: 100px;
-    position: relative;
-    display:inline-block;
+    background:url('../img/logodesktop.png') no-repeat;
+    background-position: center;
+    /*background-color:#ff6666;*/
 
 }
 .desktop-small-12{
     width:100%;
 }
 
+.details-holder{
+    top:50%;
+    transform:translate(-50%, -50%);
+    /*position:absolute;*/
+    left:-50%;
+    margin-right:-50%;
+}
+.logo-holder{
+    display:inline;
+    float:none;
+    background:url('../img/logodesktop.png') no-repeat;
+    background-position: center;
+    position:relative;
+}
+.details-holder ul li p h3{
+    position:relative;
+    font-family: "MuseoSlabLight","MuseoSlabregular",serif;
+}
+.details-holder ul{
+    line-height: 2.5;
+    color:#202f55
+}
+
+.image-text{
+    position:relative;
+    top:50%;
+    transform:translate(-50%, -50%);
+    left:-50%;
+    margin-right:-50%
+}
+.images-holder{
+    background:url('../img/desktopImages.png') no-repeat;
+    border-radius: 2px;
+}
+.desktop-body{
+    font-family: 'Roboto Slab', serif;
+
+}
 /*.desktopName{*/
     /*background:url('../img/desktop-logo-white-transparent-small.png') no-repeat;*/
     /*background-position: center;*/
