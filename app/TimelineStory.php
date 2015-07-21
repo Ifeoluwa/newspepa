@@ -76,8 +76,15 @@ class TimelineStory extends Model
             $array['modified_date'] = $now;
         }
 
-        DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
-            ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
+        DB::transaction(function() use($array){
+            $result = DB::table('timeline_stories')->select('title')->where('title', $array['title'])->get();
+            if(count($result) === 0){
+                DB::insert('INSERT INTO timeline_stories ('.implode(',',array_keys($array)).
+                    ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
+
+            }
+
+        });
 
     }
 

@@ -112,8 +112,6 @@
         $(document).ready(function(){
 // var root = document.documentElement;
 //            root.className += " opera-mini";
-         $("a[rel='prev']").append("<span>Previous</span>");
-         $("a[rel='next']").append("<span>Next</span>")
         });
 //            $.ajax({
 //                type:"GET",
@@ -147,7 +145,7 @@
              });
 
 
-//this is used to specify the category that is being displayed on the dropdown list
+        //this is used to specify the category that is being displayed on the dropdown list
         if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");
         }else if (location.pathname == "/latest") {
@@ -162,7 +160,7 @@
                        $(".dropdown").text("Metro");
           }else if (location.pathname == "/nigeria") {
                          $(".dropdown").text("Nigeria");
-                    }
+         }
 
 //this is used for the back-to-top button
     var offset = 1200;
