@@ -64,9 +64,9 @@ class FeedController extends Controller {
 
                         }else if($feed['pub_id'] == 1){
                             $tc = new TimelineStoryController();
-                            $result = $tc->getStoryImage($str['title']);
-                            if(count($result['search_result']) > 0){
-                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result']['name'];
+                            $result = $tc->getStoryImage($str['link']);
+                            if($result !== null){
+                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
                             }
 
                         }else{
@@ -78,9 +78,9 @@ class FeedController extends Controller {
 
                             }else{
                                 $tc = new TimelineStoryController();
-                                $result = $tc->getStoryImage($str['title']);
-                                if(count($result['search_result']) > 0){
-                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result']['name'];
+                                $result = $tc->getStoryImage($str['link']);
+                                if($result !== null){
+                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
                                 }
 
                             }
@@ -113,6 +113,7 @@ class FeedController extends Controller {
         // Shuffle the array of stories
         shuffle($all_stories);
         $stories_array = array();
+        $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
         foreach($all_stories as $story){
@@ -121,17 +122,20 @@ class FeedController extends Controller {
             if($result !== false){
                 //solr insert
                 //adding document to solr
-                $updateQuery = $this->client->createUpdate();
 
                 $story1 = $updateQuery->createDocument();
                 $story1->id = $result; //return the id of the insert from PDO query and attach it here
                 $story1->title_en = $story['title'];
                 $story1->description_en = $story['description'];
-                $story1->image_url_t = $story['image_url'];
-                $story1->video_url_t = $story['video_url'];
+                if(isset($story['image_url'])){
+                    $story1->image_url_t = $story['image_url'];
+                }else{
+                    $story1->image_url_t = '';
+                }
+                $story1->video_url_t = '';
                 $story1->url = $story['url'];
                 $story1->pub_id_i = $story['pub_id'];
-                $story1->has_cluster_i = '';
+                $story1->has_cluster_i = 1;
                 //do this for all stories and keep adding them to the stories array
                 //when done continue to the nest line
                 array_push($stories_array, $story1);
@@ -139,8 +143,17 @@ class FeedController extends Controller {
 
             if(!$this->isSimilarToPrevious($story)){
                 $result = Story::insertIgnore($story);
-                if($result){
+                if($result !== false){
                     $k += 1;
+                    $now  = date('Y-m-d h:i:s');
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a");
+                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result.PHP_EOL);
+                    fclose($fp);
+                }else{
+                    $now  = date('Y-m-d h:i:s');
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a");
+                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result.PHP_EOL);
+                    fclose($fp);
                 }
             }
         }
@@ -150,8 +163,8 @@ class FeedController extends Controller {
         $result = $this->client->update($updateQuery);
 
         $stored_stories = $k;
-        $now  = new \DateTime('now');
-        $fp = fopen("/home/newspep/newspepa/public/story_images/log.txt", "w");
+        $now  = date('Y-m-d h:i:s');
+        $fp = fopen("/home/newspep/newspepa/public/log.txt", "w");
         fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories);
         fclose($fp);
 
@@ -278,9 +291,69 @@ class FeedController extends Controller {
         return $image_name;
     }
 
+    public function getBlogFeeds($feed){
+        $rss = new \DOMDocument();
+        $rss->load($feed['url']);
+        $stories = array();
+        foreach ($rss->getElementsByTagName('entry') as $node) {
+            $story = array (
+                'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+                'url' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+                'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('published')->item(0)->nodeValue)),
+                'description' => strip_tags($node->getElementsByTagName('content')->item(0)->nodeValue)."",
+                'content' => $node->getElementsByTagName('content')->item(0)->nodeValue,
+
+            );
+            preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
+            if(count($matches) > 0){
+                $this->storeImage($this->getImageUrl($matches[0]));
+                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+            }
+
+//            $story['feed_id'] = $feed['id'];
+//            $story['pub_id'] = $feed['pub_id'];
+//            $story['category_id'] = $feed['category_id'];
+            array_push($stories, $story);
+        }
+        return $stories;
+
+
+    }
+
     public function test(){
 
-//        return $this->compareStrings("the boy is good", "the boy is goodies");
+        $content = file_get_contents('http://feeds.feedburner.com/blogspot/OqshX');
+
+        $parser = new Parser();
+        $parsed = $parser->xml($content);
+        echo json_encode($parsed);
+        die();
+        $rss = new \DOMDocument();
+        $rss->load('http://feeds.feedburner.com/blogspot/OqshX');
+        $stories = array();
+        foreach ($rss->getElementsByTagName('entry') as $node) {
+            $story = array (
+                'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+                'url' => $node->getElementsByTagName('origLink')->item(0)->nodeValue,
+                'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('published')->item(0)->nodeValue)),
+                'description' => strip_tags($node->getElementsByTagName('content')->item(0)->nodeValue)."",
+                'content' => $node->getElementsByTagName('content')->item(0)->nodeValue,
+
+            );
+            preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
+            if(count($matches) > 0){
+                $this->storeImage($this->getImageUrl($matches[0]));
+                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+            }
+
+//            $story['feed_id'] = $feed['id'];
+//            $story['pub_id'] = $feed['pub_id'];
+//            $story['category_id'] = $feed['category_id'];
+            array_push($stories, $story);
+        }
+        var_dump(json_encode($stories));
+        die();
+        //        return $this->compareStrings("the boy is good", "the boy is goodies");
 
         $this->fetchFeeds();
         echo "<br> done";

@@ -96,34 +96,15 @@
 
    <script>
    $(document).foundation();
+      </script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-//      $(document).ready(function() {
-//        if (location.pathname == "/") {
-//                   $("#catDropdown").val("Top Stories");
-//              }else if (location.pathname == "/latest") {
-//                   $("#catDropdown").val("Latest Stories");
-//               } else if (location.pathname == "/politics") {
-//                  $("#catDropdown").val("Politics");
-//               } else if (location.pathname == "/entertainment") {
-//                     $("#catDropdown").val("Entertainment");
-//               } else if (location.pathname == "/sports") {
-//               $("#catDropdown").val("Sports");
-//               }else if (location.pathname == "/metro") {
-//                             $("#catDropdown").val("Metro");
-//                }else if (location.pathname == "/nigeria") {
-//                               $("#catDropdown").val("Nigeria");
-//                          }
-//          });
-
-
-//          this is used for google analytics
-   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-     ga('create', 'UA-49109646-1', 'auto');
-     ga('send', 'pageview');
+        ga('create', 'UA-49109646-1', 'auto');
+        ga('send', 'pageview');
 
       </script>
     </body>
