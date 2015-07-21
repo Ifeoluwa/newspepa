@@ -14,7 +14,9 @@
 @section('full_story')
 @foreach($data['full_story'] as $full_story)
 
-<?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
+<?php $tc = new \App\Http\Controllers\TimelineStoryController();
+  $cat_url = strtolower($data['category_names'][$full_story['category_id']]);
+  ?>
         <div class="row panel radius">
             <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
               <span class="full-story-title">{{$full_story['title']}}</span><br/>
@@ -45,6 +47,10 @@
         </div>
       </div>
    </footer>
+
+  <div class="row" style="margin-top:14px">
+   <p><a href="{{url($cat_url)}}">Read more in this category...</a></p>
+  </div>
 @endforeach
 @endsection
 
