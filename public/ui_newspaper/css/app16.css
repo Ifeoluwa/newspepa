@@ -4,7 +4,7 @@
 
 /*}*/
 .name-m{
-    background:url('../img/NewspapaLightBlueOpt.png') no-repeat;
+    background:url('../img/logotransparentnew.png') no-repeat;
     background-position: center;
 }
 
@@ -87,12 +87,12 @@ button:hover, button:focus, .button:hover, .button:focus{
     width:100%;
     /*padding-top:2px;*/
     margin-bottom: 3px;
-    height: 3.8125rem;
+    height: 4.8125rem;
     background: #3369e8;
 
 }
 .top-bar .name{
-    height:3.8125rem;
+    height:4.8125rem;
 }
 
 .title-area{
@@ -103,7 +103,7 @@ button:hover, button:focus, .button:hover, .button:focus{
     background-color:#3369e8;
     margin-top:-8px;
     color:#3369e8;
-    height: 3.8125rem;
+    height: 4.8125rem;
 }
 .menu-icon{
     color:#3369e8;

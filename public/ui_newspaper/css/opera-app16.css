@@ -4,7 +4,7 @@
 
 /*}*/
 .name{
-    background:url('../img/logo-white-transparent-big1.png') no-repeat;
+    background:url('../img/logotransparentnew.png') no-repeat;
     background-position: center;
 }
 .row {
@@ -75,7 +75,7 @@ button:hover, button:focus, .button:hover, .button:focus{
     width:100%;
     padding-top:7px;
     margin-bottom: 3px;
-    height: 3.8125rem;
+    height: 4.8125rem;
     background: #202f55;
     /*background:url("../img/box-icon-search.png") no-repeat center #333366;*/
 
@@ -89,7 +89,7 @@ button:hover, button:focus, .button:hover, .button:focus{
     background-color:#202f55;
     margin-top:-8px;
     color:#202f55;
-    height: 3.8125rem;
+    height: 4.8125rem;
 }
 .menu-icon{
     color:#202f55;

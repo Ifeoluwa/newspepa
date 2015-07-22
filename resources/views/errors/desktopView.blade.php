@@ -36,7 +36,7 @@
                        </div>
                         <br/>
                         <p class="full-story-text" style="margin-left:auto;">
-                            <h3 style="font-weight: 700; font-family: 'Roboto Slab', serif;">Built for Mobile</h3>
+                            <h3 style="font-weight: 700; font-family: 'Roboto Slab', serif; color:#707070">Built for mobile</h3>
                             <ul style="font-family: 'Roboto Slab', serif; color:#0266C8; line-height: 3.0">
                                 <li>Fast and easy to use.</li>
                                 <li>Get news that matter.</li>
@@ -54,17 +54,18 @@
                 {{--<div class="shareboxdiv"><div class="sharebox">--}}
         <div class="large-12 columns">
             <div class="large-3 columns" style="float:left">
-               <p style="font-family: 'Roboto Slab', serif;"> <b>Follow us:</b></p>
+               <p style="font-family: 'Roboto Slab', serif; color:#707070"> <b>Follow us:</b></p>
             </div>
             <div class="large-6 columns" style="float:left">
                 <div class="shareboxdiv">
                     <div class="sharebox">
-                        <div class="fb-like" data-href="newspepa.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                        <div class="fb-like" data-href="https://newspepa.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
                     </div>
                     <div class="sharebox">
                         <a href="https://twitter.com/newspepa" class="twitter-follow-button" data-show-count="false">Follow @newspepa</a>
                         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                     </div>
+
             </div>
          </div>
       </div>
@@ -74,7 +75,7 @@
                      <i class="newspepaicon"> </i>  © 2015 Iconway
                 </p>
         </div>
-        <div class="large-6 desktop-medium-6 columns"><p style="margin-top:100px; font-weight:700;font-family: 'Roboto Slab', serif; font-size:21px; text-align: center; letter-spacing: 3px">Visit <a href="newspepa.com" target="_blank">newspepa.com</a> on your mobile</p><br/>
+        <div class="large-6 desktop-medium-6 columns"><p style="margin-top:100px; font-weight:700;font-family: 'Roboto Slab', serif; font-size:24px; text-align: center; color:#707070">Visit <a href="newspepa.com" target="_blank">newspepa.com</a> on your mobile</p><br/>
         <img src="ui_newspaper/img/desktopImages2.png"  width="449px" height="492px" style= "border-radius:2px; margin-left:100px"/></div>
 
               
