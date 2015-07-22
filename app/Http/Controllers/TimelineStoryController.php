@@ -113,7 +113,7 @@ class TimelineStoryController extends Controller
             $paginator->setPath($category_name);
 
             if($this->isOpera()){
-                return view('category_opera')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
+                return view('opera.category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
 
             }else{
                 return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
@@ -150,7 +150,7 @@ class TimelineStoryController extends Controller
         $latest_stories->setPath('latest');
 
         if($this->isOpera()){
-            return view('latestStory_opera')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('opera.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
         }else{
             return view('latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
         }
@@ -174,7 +174,7 @@ class TimelineStoryController extends Controller
         $now = new \DateTime('now', $timezone);
         TimelineStory::updateStoryViews($story_id, $now);
         if($this->isOpera()){
-            return view('fullStory_opera')->with('data', $full_story);
+            return view('opera.fullStory')->with('data', $full_story);
 
         }else{
             return view('fullStory')->with('data', $full_story);
@@ -314,7 +314,7 @@ class TimelineStoryController extends Controller
         );
 
         if($this->isOpera()){
-            return view('search_results_opera')->with('data', $return);
+            return view('opera.search_results')->with('data', $return);
         }else{
             return view('search_results')->with('data', $return);
         }
