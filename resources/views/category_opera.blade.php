@@ -29,5 +29,4 @@
 
 </div>
             @endforeach
-            {!! $data['category_stories']['all']->render() !!}
             @stop

@@ -33,13 +33,7 @@
       </div>
       {{--</div>--}}
   @endforeach
- <div class="row" style="align-content: center; margin: auto">
-   {!! $data['paginator']->render() !!}
-  </div>
-
 @stop
-
-
 {{--@section('related_content')--}}
   {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
   {{--<div class="row panel radius"><b>Related Stories</b></div>--}}

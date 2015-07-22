@@ -34,12 +34,14 @@ Route::get('desktop', function(){
 
 Route::get('refer', function(){
 //    $user_agent = $_SERVER['HTTP_USER_AGENT'];
-    return view('errors.desktopView');
+    return view('errors.404');
 });
+
+
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
-Route::group(['middleware' => 'user_agent'], function(){
+//Route::group(['middleware' => 'user_agent'], function(){
 
     Route::get('/', 'TimelineStoryController@index');
 
@@ -51,7 +53,7 @@ Route::group(['middleware' => 'user_agent'], function(){
 
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
-});
+//});
 
 
 

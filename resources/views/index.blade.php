@@ -1,4 +1,3 @@
-
 @extends('layout')
 @section('title', 'Breaking Nigerian News From Top Sites')
 @stop
@@ -35,6 +34,6 @@
 
 
 
-             {!! $data['paginator']->render() !!}
+            {{--{!! $paginator->render() !!}--}}
 @stop
 

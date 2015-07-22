@@ -28,7 +28,4 @@
 
 </div>
             @endforeach
-
-           {!! $data['paginator']->render() !!}
-
             @stop
