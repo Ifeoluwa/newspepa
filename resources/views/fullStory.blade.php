@@ -89,23 +89,9 @@
       </div>
     </a>
     </div>
-             {{--<a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">--}}
-                 {{--<div class="large-5 small-4 columns" style="width: 100%;">--}}
-                              {{--@if($recent_stories['image_url']!="")--}}
-                                {{--<div class="smallimage"><img src="{{$recent_stories['image_url']}}" width="100px" height="80px" />--}}
-                                {{--</div>@endif--}}
-                                    {{--<a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">--}}
-                                        {{--<h1 class="title">{!!$recent_stories['title']!!} </h1>--}}
-                                        {{--<div class="storyExtras">--}}
-                                         {{--<span class="publisher-name">{{$data['publisher_names'][$recent_stories['pub_id']]}}</span>--}}
-                                          {{--<span class="label" style="margin-top:6px">{{$tc->getTimeDifference($recent_stories['created_date'])}} </span>--}}
-                                        {{--</div>--}}
-                                    {{--</a>--}}
-                            {{--</div>--}}
-                 {{--</a>--}}
 
 </div>
-{{--</div>--}}
+
 @endforeach
  @stop
 

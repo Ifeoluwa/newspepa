@@ -35,7 +35,7 @@
         </form>
 
  <div class="row opera-panel radius" style="background-color: #336;">
-   <ul class="inline-list" style="color:#0266C8; font-size: 15px;font-weight: bold">
+   <ul class="inline-list" style="color:#ffffff; font-size: 15px;font-weight: bold">
                      <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
                      <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
                      <li id="3" class="active"><a href="{{url('nigeria')}}">Nigeria</a></li>
