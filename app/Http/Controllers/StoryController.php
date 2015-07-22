@@ -30,7 +30,8 @@ class StoryController extends Controller {
             foreach($stories as $story){
                 $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
                 $story['story_id'] = $story['id'];
-                TimelineStory::insertIgnore($story);
+                $timeline_story = array_except($story, 'id');
+                TimelineStory::insertIgnore($timeline_story);
             }
 
         });
