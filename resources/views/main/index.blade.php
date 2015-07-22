@@ -1,5 +1,5 @@
 
-@extends('layout')
+@extends('main.layout')
 @section('title', 'Breaking Nigerian News From Top Sites')
 @stop
 @section('dropdown','Top Stories')

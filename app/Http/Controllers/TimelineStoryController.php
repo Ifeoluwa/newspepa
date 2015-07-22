@@ -69,10 +69,10 @@ class TimelineStoryController extends Controller
         $paginator->setPath('/');
 
         if($this->isOpera()){
-            return view('index_opera')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('opera.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
 
         }else{
-            return view('index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('main.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
 
         }
 
@@ -116,7 +116,7 @@ class TimelineStoryController extends Controller
                 return view('opera.category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
 
             }else{
-                return view('category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
+                return view('main.category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }
         }catch(\ErrorException $ex){
             return view('errors.404');
@@ -152,7 +152,7 @@ class TimelineStoryController extends Controller
         if($this->isOpera()){
             return view('opera.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
         }else{
-            return view('latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('main.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
         }
 
     }
@@ -177,7 +177,7 @@ class TimelineStoryController extends Controller
             return view('opera.fullStory')->with('data', $full_story);
 
         }else{
-            return view('fullStory')->with('data', $full_story);
+            return view('main.fullStory')->with('data', $full_story);
 
         }
 
@@ -316,7 +316,7 @@ class TimelineStoryController extends Controller
         if($this->isOpera()){
             return view('opera.search_results')->with('data', $return);
         }else{
-            return view('search_results')->with('data', $return);
+            return view('main.search_results')->with('data', $return);
         }
 
         set_time_limit(120);

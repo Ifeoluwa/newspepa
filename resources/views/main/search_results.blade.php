@@ -1,5 +1,5 @@
 
-@extends ('layout')
+@extends ('main.layout')
 @section('title', 'results')
 @stop
 
