@@ -66,7 +66,7 @@ class FeedController extends Controller {
                             $tc = new TimelineStoryController();
                             $result = $tc->getStoryImage($str['link']);
                             if($result !== null){
-                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                                $story['image_url'] = $result;
                             }
 
                         }else{
@@ -80,7 +80,7 @@ class FeedController extends Controller {
                                 $tc = new TimelineStoryController();
                                 $result = $tc->getStoryImage($str['link']);
                                 if($result !== null){
-                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                                    $story['image_url'] = $result;
                                 }
 
                             }
@@ -141,7 +141,8 @@ class FeedController extends Controller {
                 array_push($stories_array, $story1);
             }
 
-            if(!$this->isSimilarToPrevious($story)){
+            $similarity = $this->isSimilarToPrevious($story);
+            if($similarity !== true){
                 $result = Story::insertIgnore($story);
                 if($result !== false){
                     $k += 1;
@@ -201,7 +202,6 @@ class FeedController extends Controller {
         return $stories;
 
     }
-
 
 
     // Handles the vaidation of the file; checks if it is an xml file
@@ -321,42 +321,28 @@ class FeedController extends Controller {
     }
 
     public function test(){
-
-        $content = file_get_contents('http://feeds.feedburner.com/blogspot/OqshX');
-
-        $parser = new Parser();
-        $parsed = $parser->xml($content);
-        echo json_encode($parsed);
-        die();
-        $rss = new \DOMDocument();
-        $rss->load('http://feeds.feedburner.com/blogspot/OqshX');
-        $stories = array();
-        foreach ($rss->getElementsByTagName('entry') as $node) {
-            $story = array (
-                'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-                'url' => $node->getElementsByTagName('origLink')->item(0)->nodeValue,
-                'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('published')->item(0)->nodeValue)),
-                'description' => strip_tags($node->getElementsByTagName('content')->item(0)->nodeValue)."",
-                'content' => $node->getElementsByTagName('content')->item(0)->nodeValue,
-
-            );
-            preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
-            if(count($matches) > 0){
-                $this->storeImage($this->getImageUrl($matches[0]));
-                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
-            }
-
-//            $story['feed_id'] = $feed['id'];
-//            $story['pub_id'] = $feed['pub_id'];
-//            $story['category_id'] = $feed['category_id'];
-            array_push($stories, $story);
+//        $isSimilar = false;
+//        if($this->compareStrings("Detained Jonathan's Ex-CSO Faints", "Detained Jonathan's Ex-CSO Fainted") > 70){
+//            $isSimilar = $isSimilar || true;
+//        }else{
+//            $isSimilar = $isSimilar || false;
+//        }
+//
+//        if($isSimilar !== true){
+//            echo "It is not similar";
+//        }else{
+//            echo "it is similar";
+//        }
+//                return $this->compareStrings("Detained Jonathan's Ex-CSO Faints", "Detained Jonathan's Ex-CSO Fainted");
+        try{
+            $this->fetchFeeds();
+            echo "<br> done";
+        }catch (\ErrorException $ex){
+            echo $ex->getMessage();
+        }catch(\Exception $ex){
+            echo $ex->getMessage();
         }
-        var_dump(json_encode($stories));
-        die();
-        //        return $this->compareStrings("the boy is good", "the boy is goodies");
 
-        $this->fetchFeeds();
-        echo "<br> done";
 
     }
 

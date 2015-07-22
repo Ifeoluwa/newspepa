@@ -6,7 +6,7 @@
     <title>Newspepa | @yield('title')</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-     <link rel="stylesheet" href="ui_newspaper/css/app16.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app15.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
@@ -122,8 +122,6 @@
         $(document).ready(function(){
 // var root = document.documentElement;
 //            root.className += " opera-mini";
-         $("a[rel='prev']").append("<span>Previous</span>");
-         $("a[rel='next']").append("<span>Next</span>")
         });
 //            $.ajax({
 //                type:"GET",
@@ -157,7 +155,7 @@
              });
 
 
-//this is used to specify the category that is being displayed on the dropdown list
+        //this is used to specify the category that is being displayed on the dropdown list
         if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");
         }else if (location.pathname == "/latest") {
@@ -172,7 +170,7 @@
                        $(".dropdown").text("Metro");
           }else if (location.pathname == "/nigeria") {
                          $(".dropdown").text("Nigeria");
-                    }
+         }
 
 //this is used for the back-to-top button
     var offset = 1200;

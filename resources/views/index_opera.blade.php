@@ -2,12 +2,12 @@
 @section('title', 'Breaking Nigerian News From Top Sites')
 
 @stop
+{{--@section('dropdown','Top Stories')--}}
+{{--@stop--}}
 
 @section('important_stories')
-    @foreach($data['timeline_stories']['top_stories'] as $key=>$top_story)
+    @foreach($data['timeline_stories']['top_stories'] as $top_story)
     <?php $tc = new \App\Http\Controllers\TimelineStoryController();
-{{--    var_dump($data['timeline_stories']['top_stories']);--}}
-{{--    die();--}}
     ?>
             <div class="row opera-panel radius">
               <div class="large-12 medium-6 small-12 columns">
@@ -24,6 +24,7 @@
                       @endif
                       </header></a>
                        <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$top_story['pub_id']]}}</b></span>
+                      {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>--}}
                        <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($top_story['created_date'])}}</b></span>
                   </div>
                 </a>
@@ -35,6 +36,6 @@
 
 
 
-            {{--{!! $paginator->render() !!}--}}
+             {!! $data['paginator']->render() !!}
 @stop
 
