@@ -228,6 +228,7 @@ class TimelineStoryController extends Controller
         $query->setQuery($search_query);
         $dismax = $query->getDisMax();
         $dismax->setQueryFields('title_en^3 description_en^3');
+        $dismax->setMinimumMatch('70%');
         $query->addSort('score',$query::SORT_DESC);
         $resultSet = $this->client->select($query);
 

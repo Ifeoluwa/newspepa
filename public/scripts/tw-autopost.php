@@ -29,10 +29,10 @@ if ($conn->connect_error) {
  
  
 // create array with topics to be posted on Twitter
-$sql = 'SELECT story_id as topic_id, title, url, image_url as twitter_image, twitter_pubstatus FROM timeline_stories ' .
+$sql = 'SELECT story_id as topic_id, title, story_url, image_url as twitter_image, twitter_pubstatus FROM timeline_stories ' .
   'WHERE created_date  IS NOT NULL AND created_date  <= ' . "'" . $now . "' " .
   'AND twitter_pubstatus = 0 ' .
-  'ORDER BY created_date  ASC';
+  'ORDER BY created_date ASC, no_of_views DESC LIMIT 5';
  
 $rs = $conn->query($sql);
 if($rs === false) {

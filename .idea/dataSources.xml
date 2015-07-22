@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3677073810">
-    <data-source source="LOCAL" name="MySQL - newspepa@localhost" uuid="683ba962-1ea2-4efe-bd37-322760e34cf5">
+  <component name="DataSourceManagerImpl" format="xml" hash="1810049405">
+    <data-source source="LOCAL" name="MySQL - newspep_newspepadb@localhost" uuid="77656412-ebf9-4dfd-93ae-a7a9ba71b85d">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/newspepa</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/newspep_newspepadb</jdbc-url>
       <driver-properties>
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
