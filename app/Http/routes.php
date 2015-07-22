@@ -27,6 +27,11 @@ Route::get('opera', function(){
     return view('test')->with('is_opera', true);
 });
 
+Route::get('desktop', function(){
+
+    return view('errors.desktopView');
+});
+
 Route::get('refer', function(){
 //    $user_agent = $_SERVER['HTTP_USER_AGENT'];
     return view('errors.desktopView');

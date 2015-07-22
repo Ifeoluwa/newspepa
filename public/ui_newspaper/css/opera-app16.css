@@ -34,14 +34,6 @@
     height:2.5rem !important;
 }
 
-.searchbutton{
-    width:100%;
-    height:100%;
-    overflow: auto;
-    padding-bottom:1.22rem;
-    padding-top:1.2rem;
-    background:url("../img/box-icon-search.png") no-repeat center 202f55 ;
-}
 button{
     padding:0 0 0 0;
 
@@ -376,7 +368,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
     height:100%;
     padding-bottom:1.22rem;
     padding-top:1.1rem;
-    background:url("../img/box-icon-search.png") no-repeat center 202f55 ;
+    background:url("../img/search-icon.png") no-repeat center #202f55 ;
+    background-size:30px 30px;
 }
 
 body{

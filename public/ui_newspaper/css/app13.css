@@ -4,7 +4,7 @@
 
 /*}*/
 .name-m{
-    background:url('../img/logo-white-transparent-big1.png') no-repeat;
+    background:url('../img/NewspapaLightBlueOpt.png') no-repeat;
     background-position: center;
 }
 
@@ -28,11 +28,11 @@
     overflow: hidden;
 }
 .searchbar-input-text{
-    border-bottom: 3px solid #202f55 !important;
-    border-left: 3px solid #202f55 !important;
+    border-bottom: 3px solid  #0266C8 !important;
+    border-left: 3px solid  #0266C8 !important;
     border-right: medium none !important;
     border-bottom-right-radius: 0 !important;
-    border-top: 3px solid #202f55!important;
+    border-top: 3px solid #3369e8!important;
     border-top-right-radius: 0 !important;
     border-bottom-left-radius: 4px !important;
     border-top-left-radius: 4px !important;
@@ -42,10 +42,9 @@
 .searchbutton{
     width:100%;
     height:100%;
-    overflow: auto;
+    overflow: hidden;
     padding-bottom:1.22rem;
-    padding-top:1.2rem;
-    background:url("../img/box-icon-search.png") no-repeat center #202f55 ;
+    padding-top:1.1rem;
 }
 button{
     padding:0 0 0 0;
@@ -53,26 +52,26 @@ button{
 }
 .home-button{
     background:none;
-    color:#202f55;
+    color:#3369e8;
     margin-left: 45px;
 }
 
 button:hover, button:focus, .button:hover, .button:focus{
-    background-color: #213255 !important;
+    background-color: #0250A0 !important;
 }
 ::-webkit-input-placeholder {
-    color: #020501; }
+    color: #5f5f5f; }
 
 :-moz-placeholder {
     /* Firefox 18- */
-    color: #020501; }
+    color: #5f5f5f; }
 
 ::-moz-placeholder {
     /* Firefox 19+ */
-    color: #020501; }
+    color: #5f5f5f; }
 
 :-ms-input-placeholder {
-    color: #020501; }
+    color: #5f5f5f; }
 /*#placeholder{*/
 /*color:   #53e828*/
 /*}*/
@@ -80,17 +79,16 @@ button:hover, button:focus, .button:hover, .button:focus{
 .searchbar-button{
     border-bottom-right-radius: 4px !important;
     border-top-right-radius: 4px !important;
-    border-bottom:solid 3px #202f55 ;
+    border-bottom:solid 3px  #0266C8 ;
     height:100%;
     width:100%;
 }
 .top-bar{
     width:100%;
-    padding-top:2px;
+    /*padding-top:2px;*/
     margin-bottom: 3px;
     height: 3.8125rem;
-    background: #202f55;
-    /*background:url("../img/box-icon-search.png") no-repeat center #333366;*/
+    background: #3369e8;
 
 }
 .top-bar .name{
@@ -102,13 +100,13 @@ button:hover, button:focus, .button:hover, .button:focus{
 }
 
 .top-bar .toggle-topbar.menu-icon a {
-    background-color:#202f55;
+    background-color:#3369e8;
     margin-top:-8px;
-    color:#202f55;
+    color:#3369e8;
     height: 3.8125rem;
 }
 .menu-icon{
-    color:#202f55;
+    color:#3369e8;
 }
 .opera-panel{
     background: #FFFFFF;
@@ -173,11 +171,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 6px;
     padding-top: 0px !important;
     padding-bottom: 8px !important;
-    /*border-top:1.5px solid #E8E8E8;*/
 }
 
 .title-holder{
-    max-height: 50px;
+    max-height: 200px;
     overflow:visible;
     position:relative;
     display:block;
@@ -189,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     max-height: 200px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     position: relative;
     text-overflow: ellipsis;
@@ -208,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: capitalize
 }
 .related-content{
-    background-color: #202f55;
+    background-color: #3369e8;
     color:#ffffff;
     text-transform: capitalize;
     padding-top: 6px !important;
@@ -248,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pager{
     font-size: 20px;
-    color:#202f55;
+    color:#3369e8;
     text-align: center;
 }
 .pager li{
@@ -276,6 +273,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .panel h1{
     margin-left: 3rem;
+    color:#000000;
 }
 
 
@@ -316,11 +314,11 @@ line-height: normal;
 
 }
 a {
-    color:#202f55 ;
+    color: #0266C8 ;
 }
 
 a:focus, a:hover{
-    color: #3F5278 ;
+    color: #0250A0 ;
 }
 
 
@@ -385,7 +383,7 @@ p{
 
 .dropdown.button, button.dropdown{
     /*padding-right:12.98rem;*/
-    background:#202f55;
+    background:#0266C8;
     width:100%;
     font-size: 1.3rem;
     border-radius:1px;
@@ -408,7 +406,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
     height:100%;
     padding-bottom:1.22rem;
     padding-top:1.1rem;
-    background:url("../img/box-icon-search.png") no-repeat center #202f55 ;
+    background:url("../img/search-icon.png") no-repeat center  #0266C8 ;
+    background-size:30px 30px;
 }
 
 body{
@@ -443,20 +442,15 @@ body{
     -webkit-border-radius: 0;
     display: -webkit-box;
     -webkit-border-radius: 0 0 4px 4px;
-
     position: relative;
     font-weight: bold;
-    background: #f3f3f3;
-    color: #5e5e5e;
-    font-size: 12px;
-    line-height: 36px;
 }
 
 
 .sharebox {
     -webkit-box-flex: 1;
     width: 0;
-    padding: 0 8px;
+    padding: 0 4px;
     text-align: center;
     position: relative;
     display: block;
@@ -464,7 +458,7 @@ body{
     background: #f3f3f3;
     color: #5e5e5e;
     font-size: 12px;
-    line-height: 36px;
+    line-height: 20px;
 }
 
 .sharebox::before {
@@ -564,13 +558,14 @@ body{
     background-repeat: no-repeat;
 }
 .back-to-top {
-    background-image: url("../img/to_top_icon.png");
-    margin: 0;
+    background-image: url("../img/back-to-top.png");
+    margin-right: 5px;
     position: fixed;
-    bottom: 0;
+    bottom:15px;
     right: 0;
-    width: 50px;
-    height: 50px;
+    background-size: 50px 50px;
+    width:50px;
+    height:50px;
     z-index: 100;
     display: none;
     text-decoration: none;
@@ -584,7 +579,7 @@ body{
 
 .loaderImage{
     background-image:url("../img/index.gif")
-position:relative;
+    position:relative;
     background-repeat: no-repeat;
     display:inline-block;
     background-size: 18px 15px;
@@ -618,9 +613,7 @@ position:relative;
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
     font-family: roboto;
-    border-radius: 9px;
     display: block;
-    cursor: pointer;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -635,7 +628,6 @@ position:relative;
     width: 100%;
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.1);
     box-shadow: 0 1px 4px rgba(0,0,0,.1);
-    margin-top:6px;
     height:100vh;
 }
 
@@ -644,18 +636,53 @@ position:relative;
 }
 
 .desktop-publisher-name{
-    font-size:1.5rem;
-    font-weight: bolder;
-    color: #202f55;
-    margin-top: 100px;
-    position: relative;
-    display:inline-block;
+    background:url('../img/logodesktop.png') no-repeat;
+    background-position: center;
+    /*background-color:#ff6666;*/
 
 }
 .desktop-small-12{
     width:100%;
 }
 
+.details-holder{
+    top:50%;
+    transform:translate(-50%, -50%);
+    /*position:absolute;*/
+    left:-50%;
+    margin-right:-50%;
+}
+.logo-holder{
+    display:inline;
+    float:none;
+    background:url('../img/logodesktop.png') no-repeat;
+    background-position: center;
+    position:relative;
+}
+.details-holder ul li p h3{
+    position:relative;
+    font-family: "MuseoSlabLight","MuseoSlabregular",serif;
+}
+.details-holder ul{
+    line-height: 2.5;
+    color:#3369e8
+}
+
+.image-text{
+    position:relative;
+    top:50%;
+    transform:translate(-50%, -50%);
+    left:-50%;
+    margin-right:-50%
+}
+.images-holder{
+    background:url('../img/desktopImages.png') no-repeat;
+    border-radius: 2px;
+}
+.desktop-body{
+    font-family: 'Roboto Slab', serif;
+
+}
 /*.desktopName{*/
     /*background:url('../img/desktop-logo-white-transparent-small.png') no-repeat;*/
     /*background-position: center;*/
