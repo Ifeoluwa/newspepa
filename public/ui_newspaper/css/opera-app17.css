@@ -4,7 +4,7 @@
 
 /*}*/
 .name{
-    background:url('../img/logo-white-transparent-big1.png') no-repeat;
+    background:url('../img/logotransparentnew.png') no-repeat;
     background-position: center;
 }
 .row {
@@ -23,37 +23,29 @@
     overflow: hidden;
 }
 .searchbar-input-text{
-    border-bottom: 3px solid 202f55 !important;
-    border-left: 3px solid 202f55 !important;
+    border-bottom: 3px solid #0266C8 !important;
+    border-left: 3px solid #0266C8 !important;
     border-right: medium none !important;
     border-bottom-right-radius: 0 !important;
-    border-top: 3px solid 202f55!important;
+    border-top: 3px solid #0266C8!important;
     border-top-right-radius: 0 !important;
     border-bottom-left-radius: 4px !important;
     border-top-left-radius: 4px !important;
     height:2.5rem !important;
 }
 
-.searchbutton{
-    width:100%;
-    height:100%;
-    overflow: auto;
-    padding-bottom:1.22rem;
-    padding-top:1.2rem;
-    background:url("../img/box-icon-search.png") no-repeat center 202f55 ;
-}
 button{
     padding:0 0 0 0;
 
 }
 .home-button{
     background:none;
-    color:202f55;
+    color:#0266C8;
     margin-left: 45px;
 }
 
 button:hover, button:focus, .button:hover, .button:focus{
-    background-color: #3F5278  !important;
+    background-color: #0250A0 !important;
 }
 ::-webkit-input-placeholder {
     color: #020501; }
@@ -75,7 +67,7 @@ button:hover, button:focus, .button:hover, .button:focus{
 .searchbar-button{
     border-bottom-right-radius: 4px !important;
     border-top-right-radius: 4px !important;
-    border-bottom:solid 3px 202f55 ;
+    border-bottom:solid 3px #0266C8 ;
     height:100%;
     width:100%;
 }
@@ -83,8 +75,8 @@ button:hover, button:focus, .button:hover, .button:focus{
     width:100%;
     padding-top:7px;
     margin-bottom: 3px;
-    height: 3.8125rem;
-    background: #202f55;
+    height: 4.8125rem;
+    background: #0266C8;
     /*background:url("../img/box-icon-search.png") no-repeat center #333366;*/
 
 }
@@ -94,13 +86,13 @@ button:hover, button:focus, .button:hover, .button:focus{
 }
 
 .top-bar .toggle-topbar.menu-icon a {
-    background-color:#202f55;
+    background-color:#0266C8;
     margin-top:-8px;
-    color:#202f55;
-    height: 3.8125rem;
+    color:#0266C8;
+    height: 4.8125rem;
 }
 .menu-icon{
-    color:#202f55;
+    color:#0266C8;
 }
 .opera-panel{
     background: #FFFFFF;
@@ -177,7 +169,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: capitalize
 }
 .related-content{
-    background-color: #202f55;
+    background-color: #0266C8;
     color:#ffffff;
     text-transform: capitalize;
     padding-top: 6px !important;
@@ -217,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .pager{
     font-size: 20px;
-    color:#202f55;
+    color:#0266C8;
     text-align: center;
 }
 .pager li{
@@ -285,11 +277,11 @@ line-height: normal;
 
 }
 a {
-    color:#202f55 ;
+    color:#0266C8 ;
 }
 
 a:focus, a:hover{
-    color: #3F5278 ;
+    color: #0250A0;
 }
 
 
@@ -353,7 +345,7 @@ p{
 
 .dropdown.button, button.dropdown{
     /*padding-right:12.98rem;*/
-    background:202f55;
+    background:#0266C8;
     width:100%;
     font-size: 1.3rem;
     border-radius:1px;
@@ -376,7 +368,8 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
     height:100%;
     padding-bottom:1.22rem;
     padding-top:1.1rem;
-    background:url("../img/box-icon-search.png") no-repeat center 202f55 ;
+    background:url("../img/search-icon.png") no-repeat center  #0266C8 ;
+    background-size:30px 30px;
 }
 
 body{

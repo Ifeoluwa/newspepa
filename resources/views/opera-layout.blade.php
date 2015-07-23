@@ -6,7 +6,7 @@
         <title>Newspepa | @yield('title')</title>
         <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-        <link rel="stylesheet" href="ui_newspaper/css/opera-app13.css" />
+        <link rel="stylesheet" href="ui_newspaper/css/opera-app17.css" />
         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
@@ -35,14 +35,15 @@
         </form>
 
  <div class="row opera-panel radius" style="background-color: #336;">
-   <a href="{{url('/')}}"> <span style="color:#ffffff"><b>Top Stories| </b></span></a>
-    <a href="{{url('/latest')}}"><span style="color:#ffffff"><b>Latest Stories| </b></span></a>
-    <a href="{{url('/nigeria')}}"><span style="color:#ffffff"><b>Nigeria </b></span></a>
-    <br/>
-        <a href="{{url('/entertainment')}}"><span style="color:#ffffff"><b>Entertainment| </b></span></a>
-        <a href="{{url('/sports')}}"><span style="color:#ffffff"><b>Sports| </b></span></a>
-        <a href="{{url('/politics')}}"><span style="color:#ffffff"><b>Politics| </b></span></a>
-       <a href="{{url('/metro')}}"><span style="color:#ffffff"><b>Metro </b></span></a>
+   <ul class="inline-list" style="color:#ffffff; font-size: 15px;font-weight: bold">
+                     <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
+                     <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+                     <li id="3" class="active"><a href="{{url('nigeria')}}">Nigeria</a></li>
+                     <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
+                     <li id="5"><a href="{{url('sports')}}">Sports</a></li>
+                     <li id="6"><a href="{{url('politics')}}">Politics</a></li>
+                     <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+               </ul>
     </div>
 
     @yield('category_name')
