@@ -34,7 +34,7 @@ Route::get('refer', function(){
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
-Route::group(['middleware' => 'user_agent'], function(){
+//Route::group(['middleware' => 'user_agent'], function(){
 
     Route::get('/', 'TimelineStoryController@index');
 
@@ -46,7 +46,7 @@ Route::group(['middleware' => 'user_agent'], function(){
 
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
-});
+//});
 
 
 
