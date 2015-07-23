@@ -4,6 +4,7 @@ CREATE DATABASE IF NOT EXISTS newspepa;
 
 USE newspepa;
 
+# Status table structure
 CREATE TABLE IF NOT EXISTS `status`(
   `id` INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `status_name` VARCHAR(50) NOT NULL,
@@ -12,10 +13,14 @@ CREATE TABLE IF NOT EXISTS `status`(
   `modified_date` DATETIME NOT NULL
 );
 
-INSERT INTO status (status_name, created_date, modified_date) VALUE ("ACTIVE", now(), now());
-INSERT INTO status (status_name, created_date, modified_date) VALUE ("INACTIVE", now(), now());
 
+# Set up data for the status table
+INSERT INTO `status` (`id`, `status_name`, `active_fg`, `created_date`, `modified_date`) VALUES
+  (1, 'ACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
+  (2, 'INACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
+  (3, 'MATCHED', 1, '2015-06-26 12:37:26', '2015-06-26 12:37:26');
 
+# Status table structure
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `category_name` VARCHAR(50) NOT NULL,
@@ -23,12 +28,22 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL
 );
+
 INSERT INTO categories(category_name, created_date, modified_date) VALUE ("Nigeria", now(), now());
 INSERT INTO categories(category_name, created_date, modified_date) VALUE ("Politics", now(), now());
 INSERT INTO categories(category_name, created_date, modified_date) VALUE ("Entertainment", now(), now());
 INSERT INTO categories(category_name, created_date, modified_date) VALUE ("Sports", now(), now());
 INSERT INTO categories(category_name, created_date, modified_date) VALUE ("Metro", now(), now());
 
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE IF NOT EXISTS `migrations` (
+  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `publishers`(
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -39,29 +54,27 @@ CREATE TABLE IF NOT EXISTS `publishers`(
   `modified_date` DATETIME NOT NULL
 );
 
-INSERT INTO publishers (name, pub_id, url, created_date, modified_date) VALUES ("Tribune Nigeria", 1, "http://tribuneonlineng.com", now(), now()), ("Punch Nigeria", 2, "http://www.punchng.com", now(), now()),
-  ("Leadership", 3, "http://leadership.ng", now(), now()), ("KokoFeed", 4, "http://kokofeed.com", now(), now()), ("Nigerian Monitor", 5, "http://www.nigerianmonitor.com", now(), now()),
-  ("Vanguard Nigeria", 6, "http://www.vanguardngr.com", now(), now()), ("The Cable", "http://www.thecable.ng", now(), now()), ("Nigeria Guardian", "http://www.ngrguardiannews.com", now(), now()),
-  ("Channels Television", 9, "http://www.channelstv.com", now(), now()), ("Star Gist", "http://stargist.com", now(), now()), ("BellaNaija", "http://www.bellanaija.com", now(), now()),
-  ("Linda Ikeji", 12, "http://lindaikeji.blogspot.com", now(), now()), ("Goal.com", "http://goal.com", now(), now()), ("Futaa", "http://www.futaa.com", now(), now()), ("Complete Sport", "http://completesportsnigeria.com", now(), now()),
-  ("Stargist Entertainment", 10, "http://stargist.com/feed/", now(), 15, 1, 3, now(), now()),
-  ("Bella Naija Entertainment", 11, "http://www.bellanaija.com/feed/", now(), 15, 1, 3, now(), now()),
-  ("Linda Ikeji Entertainment News", 12, "http://lindaikejimagazine.com/feed", now(), 15, 1, 3, now(), now()),
-  ("Vanguard Entertainment News", 6, "http://www.vanguardngr.com/category/entertainment/feed", now(), 15, 1, 3, now(), now()),
-  ("Nigerian Monitor Entertainment News", 5, "http://www.nigerianmonitor.com/category/1entertainment/feed", now(), 15, 1, 3, now(), now()),
-  ("Goal.com", 13, "http://www.goal.com/en-ng/feeds/news?fmt=rss&ICID=HP", now(), 15, 1, 4, now(), now()),
-  ("Punch Sport news", 2, "http://www.punchng.com/sports/feed", now(), 15, 1, 4, now(), now()),
-  ("vanguard Nigeria Sport News", 6, "http://www.vanguardngr.com/category/sports/feed/", now(), 15, 1, 4, now(), now()),
-  ("Futaa Sport News", 14, "http://www.futaa.com/rss/ng", now(), 15, 1, 4, now(), now()),
-  ("Complete Sport News", 15, "http://www.completesportsnigeria.com/feed/", now(), 15, 1, 4, now(), now()),
-  ("Channels Television Sport News", 9, "http://www.channelstv.com/category/sports/feed/", now(), 15, 1, 4, now(), now()),
-  ("Punch Politics News", 2, "http://www.punchng.com/sports/feed", now(), 15, 1, 4, now(), now()),
-  ("Vanguard Nigeria Politics News", 6, "http://www.vanguardngr.com/category/sports/feed/", now(), 15, 1, 4, now(), now()),
-  ("Nigeria Guardian politics News", 8, "http://www.futaa.com/rss/ng", now(), 15, 1, 4, now(), now()),
-  ("Channels Television Politics News", 9, "http://www.channelstv.com/category/sports/feed/", now(), 15, 1, 4, now(), now()),
-  ("Punch Metro News", 2, "http://www.punchng.com/sports/feed", now(), 15, 1, 5, now(), now()),
-  ("Nigeria Guardian Sport News", 8, "http://www.ngrguardiannews.com/news/metro/feed/", now(), 15, 1, 5, now(), now());
-
+INSERT INTO `publishers` (`id`, `name`, `url`, `status_id`, `created_date`, `modified_date`) VALUES
+  (1, 'Tribune Nigeria', 'http://tribuneonlineng.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (2, 'Punch Nigeria', 'http://www.punchng.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (3, 'Leadership', 'http://leadership.ng', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (4, 'KokoFeed', 'http://kokofeed.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (5, 'Nigerian Monitor', 'http://www.nigerianmonitor.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (6, 'Vanguard Nigeria', 'http://www.vanguardngr.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (7, 'The Cable', 'http://www.thecable.ng', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (8, 'Nigeria Guardian', 'http://www.ngrguardiannews.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (9, 'Channels Television', 'http://www.channelstv.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (10, 'Star Gist', 'http://stargist.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (11, 'BellaNaija', 'http://www.bellanaija.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (12, 'Linda Ikeji', 'http://lindaikejimagazine.com/', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (13, 'Goal.com', 'http://goal.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (14, 'Futaa', 'http://www.futaa.com', 0, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (15, 'Complete Sport', 'http://completesportsnigeria.com', 1, '2015-06-18 11:04:11', '2015-06-18 11:04:11'),
+  (16, 'Squawka', 'http://www.squawka.com', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (17, 'Daily Post', 'http://dailypost.ng', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (18, 'The Cable', 'https://www.thecable.ng', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (19, 'The Net', 'http://thenet.ng/', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (20, 'Premium Times Ng', 'http://www.premiumtimesng.com/', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 CREATE TABLE IF NOT EXISTS `feeds`(
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -74,22 +87,44 @@ CREATE TABLE IF NOT EXISTS `feeds`(
   `category_id` INT(5) NOT NULL,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_feed_category_id FOREIGN KEY (category_id) REFERENCES categories(id),
-  CONSTRAINT fk_feed_status FOREIGN KEY (status_id) REFERENCES status(id),
-  CONSTRAINT fk_feed_publisher FOREIGN KEY (pub_id) REFERENCES publishers(id)
+  CONSTRAINT fk_feed_category_id FOREIGN KEY (category_id) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_feed_status FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_feed_publisher FOREIGN KEY (pub_id) REFERENCES publishers(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-# Set Up data
-INSERT INTO feeds (title, pub_id, url, last_access, refresh_period, status_id, category_id, created_date, modified_date) VALUES
-  ("Tribune News", 1, "http://tribuneonlineng.com/taxonomy/term/16/all/feed", now(), 15, 1, 1, now(), now()),
-  ("Punch News", 2, "http://www.punchng.com/news/feed", now(), 15, 1, 1, now(), now()),
-  ("Leadership News", 3, "http://leadership.ng/feed", now(), 15, 1, 1, now(), now()),
-  ("KokoFeed News", 4, "http://kokofeed.com/category/news/feed", now(), 15, 1, 1, now(), now()),
-  ("Nigerian Monitor News", 5, "http://www.nigerianmonitor.com/category/3nigeriannews/feed", now(), 15, 1, 1, now(), now()),
-  ("Vanguard National News", 6, "http://www.vanguardngr.com/category/national-news/feed", now(), 15, 1, 1, now(), now()),
-  ("The Cable, The Nation", 7, "http://www.thecable.ng/category/thenation/feed", now(), 15, 1, 1, now(), now()),
-  ("Nigeria Guardian National News", 8, "http://www.ngrguardiannews.com/news/national/feed", now(), 15, 1, 1, now(), now()),
-  ("Channels Television Headline News", 9, "http://www.channelstv.com/category/headlines/feed", now(), 15, 1, 1, now(), now());
+# Set Up data for feeds
+INSERT INTO `feeds` (`id`, `title`, `pub_id`, `url`, `last_access`, `refresh_period`, `status_id`, `category_id`, `created_date`, `modified_date`) VALUES
+  (1, 'Tribune News', 1, 'http://tribuneonlineng.com/taxonomy/term/16/all/feed', '2015-07-22 07:35:07', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (2, 'Punch News', 2, 'http://www.punchng.com/news/feed', '2015-07-22 07:35:22', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (3, 'Leadership News', 3, 'http://leadership.ng/feed', '2015-07-22 07:35:25', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (4, 'KokoFeed News', 4, 'http://kokofeed.com/category/news/feed', '2015-07-22 07:35:26', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (5, 'Nigerian Monitor News', 5, 'http://www.nigerianmonitor.com/feed/', '2015-07-22 07:35:27', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (6, 'Vanguard National News', 6, 'http://www.vanguardngr.com/category/national-news/feed', '2015-07-22 07:35:34', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (8, 'Nigeria Guardian National News', 8, 'http://www.ngrguardiannews.com/news/national/feed', '2015-07-22 07:35:42', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (9, 'Channels Television Headline News', 9, 'http://www.channelstv.com/category/headlines/feed', '2015-07-22 07:35:48', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (10, 'Stargist Entertainment', 10, 'http://stargist.com/feed/', '2015-07-22 07:35:49', 15, 1, 3, '2015-06-18 14:01:57', '2015-06-18 14:01:57'),
+  (11, 'Bella Naija Entertainment', 11, 'http://www.bellanaija.com/feed/', '2015-07-22 07:36:05', 15, 1, 3, '2015-06-18 14:01:57', '2015-06-18 14:01:57'),
+  (12, 'Linda Ikeji Entertainment News', 12, 'http://lindaikejimagazine.com/feed', '2015-07-14 08:10:34', 15, 2, 3, '2015-06-18 14:01:57', '2015-06-18 14:01:57'),
+  (13, 'Vanguard Entertainment News', 6, 'http://www.vanguardngr.com/category/entertainment/feed', '2015-07-22 07:36:12', 15, 1, 3, '2015-06-18 14:01:57', '2015-06-18 14:01:57'),
+  (14, 'Nigerian Monitor Entertainment News', 5, 'http://www.nigerianmonitor.com/category/1entertainment/feed', '2015-07-13 21:57:12', 15, 1, 3, '2015-06-18 14:01:57', '2015-06-18 14:01:57'),
+  (15, 'Goal.com', 13, 'http://www.goal.com/en-ng/feeds/news?fmt=rss&ICID=HP', '2015-07-22 07:36:14', 15, 1, 4, '2015-06-18 14:38:10', '2015-06-18 14:38:10'),
+  (16, 'Punch Sport news', 2, 'http://www.punchng.com/sports/feed', '2015-07-22 07:36:27', 15, 1, 4, '2015-06-18 14:38:10', '2015-06-18 14:38:10'),
+  (17, 'Vanguard Nigeria Sport News', 6, 'http://www.vanguardngr.com/category/sports/feed/', '2015-07-22 07:36:34', 15, 1, 4, '2015-06-18 14:38:10', '2015-06-18 14:38:10'),
+  (18, 'Futaa Sport News', 14, 'http://www.futaa.com/rss/ng', '2015-07-09 09:19:46', 15, 2, 4, '2015-06-18 14:38:10', '2015-06-18 14:38:10'),
+  (19, 'Complete Sport News', 15, 'http://www.completesportsnigeria.com/feed/', '2015-07-22 07:36:39', 15, 1, 4, '2015-06-18 14:38:10', '2015-06-18 14:38:10'),
+  (20, 'Channels Television Sport News', 9, 'http://www.channelstv.com/category/sports/feed/', '2015-07-22 07:36:47', 15, 1, 4, '2015-06-18 14:38:10', '2015-06-18 14:38:10'),
+  (21, 'Punch Politics News', 2, 'http://www.punchng.com/politics/feed', '2015-07-22 07:31:56', 15, 1, 2, '2015-06-18 15:04:35', '2015-06-18 15:04:35'),
+  (22, 'Vanguard Nigeria Politics News', 6, 'http://www.vanguardngr.com/category/politics/feed', '2015-07-22 07:32:04', 15, 1, 2, '2015-06-18 15:04:35', '2015-06-18 15:04:35'),
+  (23, 'Nigerian Guardian Politics News', 8, 'http://www.ngrguardiannews.com/features/policy-a-politics/feed', '2015-07-22 07:32:11', 15, 1, 2, '2015-06-18 15:04:35', '2015-06-18 15:04:35'),
+  (24, 'Channels Television Politics News', 9, 'http://www.channelstv.com/category/politics/feed', '2015-07-22 07:32:18', 15, 1, 2, '2015-06-18 15:04:35', '2015-06-18 15:04:35'),
+  (25, 'Punch Metro News', 2, 'http://www.punchng.com/metro-plus/feed', '2015-07-22 07:32:31', 15, 1, 5, '2015-06-18 15:08:45', '2015-06-18 15:08:45'),
+  (26, 'Nigeria Guardian Metro News', 8, 'http://www.ngrguardiannews.com/news/metro/feed/', '2015-07-22 07:32:38', 15, 1, 5, '2015-06-18 15:08:45', '2015-06-18 15:08:45'),
+  (27, 'Squakwa Sport News', 16, 'http://www.squawka.com/news/feed', '2015-07-14 08:11:24', 10, 2, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (28, 'Daily Post Politics News', 17, 'http://dailypost.ng/politics/feed', '2015-07-22 07:32:41', 10, 1, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (29, 'The Cable National/Nigeria News', 18, 'https://www.thecable.ng/category/top-stories/feed', '2015-07-20 09:24:33', 0, 2, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (30, 'Daily Post Nigeria News', 17, 'http://dailypost.ng/hot-news/feed', '2015-07-22 07:32:45', 0, 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (31, 'The Net Entertainment News', 19, 'http://thenet.ng/news/feed/', '2015-07-22 07:33:01', 10, 1, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+  (32, 'Premium Times news', 20, 'http://www.premiumtimesng.com/category/news/feed', '2015-07-22 07:33:09', 0, 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 CREATE  TABLE IF NOT EXISTS `stories` (
   `id` INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -108,10 +143,10 @@ CREATE  TABLE IF NOT EXISTS `stories` (
   `has_cluster` INT NOT NULL DEFAULT 0,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_story_status_id FOREIGN KEY (status_id) REFERENCES status(id),
-  CONSTRAINT fk_story_category FOREIGN KEY (category_id) REFERENCES categories(id),
-  CONSTRAINT fk_story_feed FOREIGN KEY (feed_id) REFERENCES feeds(id),
-  CONSTRAINT fk_story_publisher FOREIGN KEY (pub_id) REFERENCES publishers(id)
+  CONSTRAINT fk_story_status_id FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_story_category FOREIGN KEY (category_id) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_story_feed FOREIGN KEY (feed_id) REFERENCES feeds(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_story_publisher FOREIGN KEY (pub_id) REFERENCES publishers(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `clusters` (
@@ -122,9 +157,9 @@ CREATE TABLE IF NOT EXISTS `clusters` (
   `status_id` INT NOT NULL,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES categories(id),
-  CONSTRAINT fk_cluster_status FOREIGN KEY (status_id) REFERENCES status(id),
-  CONSTRAINT fk_story_pivot FOREIGN KEY (cluster_pivot) REFERENCES stories (id)
+  CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_cluster_status FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_story_pivot FOREIGN KEY (cluster_pivot) REFERENCES stories (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
@@ -148,9 +183,9 @@ CREATE TABLE IF NOT EXISTS `timeline_stories`(
   `shares` INT,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_timeline_story_category FOREIGN KEY (category_id) REFERENCES categories(id),
-  CONSTRAINT fk_timeline_story_status FOREIGN KEY (status_id) REFERENCES status(id),
-  CONSTRAINT fk_timeline_story FOREIGN KEY (story_id) REFERENCES stories (id)
+  CONSTRAINT fk_timeline_story_category FOREIGN KEY (category_id) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_timeline_story_status FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_timeline_story FOREIGN KEY (story_id) REFERENCES stories (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `user_types`(
@@ -171,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `users`(
   `status_id` INT NOT NULL DEFAULT 1,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_user_type FOREIGN KEY (user_type) REFERENCES user_types(id)
+  CONSTRAINT fk_user_type FOREIGN KEY (user_type) REFERENCES user_types(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `trackings`(
@@ -183,7 +218,7 @@ CREATE TABLE IF NOT EXISTS `trackings`(
   `category_id` INT NOT NULL,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_tracking_user FOREIGN KEY (user_id) REFERENCES users(id),
-  CONSTRAINT fk_tracking_story FOREIGN KEY (story_id) REFERENCES stories(id)
+  CONSTRAINT fk_tracking_user FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_tracking_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
