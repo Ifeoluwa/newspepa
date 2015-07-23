@@ -1,5 +1,5 @@
 @extends('major.layout')
-@section('title', 'Breaking Nigerian News From Top Sites')
+@section('title', 'Newspepa | Breaking Nigerian News From Top Sites')
 @stop
 @section('dropdown','Top Stories')
 @stop

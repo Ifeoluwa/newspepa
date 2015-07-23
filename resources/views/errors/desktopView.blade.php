@@ -6,10 +6,10 @@
         <title>Newspepa | Breaking Nigerian News From Top Sites </title>
         <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-        <link rel="stylesheet" href="ui_newspaper/css/app18.css" />
+        <link rel="stylesheet" href="ui_newspaper/css/app22.css" />
         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-       <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
-        <script src="ui_newspaper/js/vendor/modernizr.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
      </head>
      <body class="desktop-body">
      <div id="fb-root"></div>
@@ -36,12 +36,12 @@
                        </div>
                         <br/>
                         <p class="full-story-text" style="margin-left:auto;">
-                            <h3 style="font-weight: 700; font-family: century Gothic ;color:#707070">Built for mobile</h3>
-                            <ul style="font-family: 'Roboto Slab', serif; color:#0266C8; line-height: 3.0">
-                                <li>Fast and easy to use.</li>
-                                <li>Get news that matter.</li>
-                                <li>Read from your favorite sources.</li>
-                                <li>Get breaking news on the go.</li>
+                            <h3 style="font-weight: 700;color:#707070;font-family: 'Muli', sans-serif;">Built for mobile</h3>
+                            <ul style="font-family: 'Muli', sans-serif; color:#0266C8; line-height: 3.0">
+                                <li>Read News from your favourite sources</li>
+                                <li>Stories that matter rank higher</li>
+                                <li>Get breaking news on the go</li>
+                                <li>Fast and easy to use</li>
                             </ul>
                         </p>
 
@@ -54,7 +54,7 @@
                 {{--<div class="shareboxdiv"><div class="sharebox">--}}
         <div class="large-12 columns">
             <div class="large-3 columns" style="float:left">
-               <p style="font-family: 'Roboto Slab', serif; color:#707070"> <b>Follow us:</b></p>
+               <p style="font-family: 'Muli', sans-serif; color:#707070"> <b>Follow us:</b></p>
             </div>
             <div class="large-6 columns" style="float:left">
                 <div class="shareboxdiv">
@@ -70,12 +70,8 @@
          </div>
       </div>
 
-
-                <p style="text-align: left; position:fixed; bottom:0">
-                     <i class="newspepaicon"> </i>  © 2015 Iconway
-                </p>
         </div>
-        <div class="large-6 desktop-medium-6 columns"><p style="margin-top:100px; font-weight:700;font-family: 'Roboto Slab', serif; font-size:24px; text-align: center; color:#707070">Visit <a href="newspepa.com" target="_blank">newspepa.com</a> on your mobile</p><br/>
+        <div class="large-6 desktop-medium-6 columns"><p style="margin-top:100px; font-weight:700;font-family: 'Muli', sans-serif; font-size:24px; text-align: center; color:#707070">Visit <a href="newspepa.com" target="_blank">newspepa.com</a> on your mobile</p><br/>
         <img src="ui_newspaper/img/desktopImages2.png"  width="449px" height="492px" style= "border-radius:2px; margin-left:100px"/></div>
 
 
