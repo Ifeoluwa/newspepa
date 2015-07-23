@@ -58,7 +58,7 @@ button{
 }
 
 button:hover, button:focus, .button:hover, .button:focus{
-    background-color: #213255 !important;
+    background-color: #0250A0 !important;
 }
 ::-webkit-input-placeholder {
     color: #020501; }
@@ -320,7 +320,7 @@ a {
 }
 
 a:focus, a:hover{
-    color: #3F5278 ;
+    color: #0250A0 ;
 }
 
 
