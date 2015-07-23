@@ -1,4 +1,4 @@
-@extends('main.layout')
+@extends('major.layout')
 
 @section ('title',$data['category_stories']['category_name'] )
 @endsection

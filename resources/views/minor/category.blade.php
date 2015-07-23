@@ -1,4 +1,4 @@
-@extends ('opera.layout')
+@extends ('minor.layout')
 @section ('title',$data['category_stories']['category_name'] )
 @endsection
 

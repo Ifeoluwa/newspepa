@@ -1,4 +1,4 @@
-@extends('...main.layout')
+@extends('major.layout')
 @section('title', 'Error 404')
 @stop
 

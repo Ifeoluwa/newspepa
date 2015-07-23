@@ -1,5 +1,5 @@
 {{--{{json_encode($data)}}--}}
-@extends('main.layout')
+@extends('major.layout')
 @foreach($data['full_story'] as $full_story2)
 @section('title', $full_story2['title'])
 @endsection

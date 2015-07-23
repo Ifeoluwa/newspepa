@@ -111,7 +111,7 @@
         //var next_page_url, prev_page_url, new_url;
         $(document).ready(function(){
 // var root = document.documentElement;
-//            root.className += " opera-mini";
+//            root.className += " minor-mini";
         });
 //            $.ajax({
 //                type:"GET",
@@ -130,7 +130,7 @@
 //            alert(new_url);
 //        });
 
-//        function rto detect if opera browser is being used
+//        function rto detect if minor browser is being used
 
 //ajax call for getting number of linkouts of specific a tags
             $('[name= "linkOuts"]').click(function(event) {

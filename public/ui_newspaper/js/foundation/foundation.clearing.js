@@ -10,8 +10,8 @@
       templates : {
         viewing : '<a href="#" class="clearing-close">&times;</a>' +
           '<div class="visible-img" style="display: none"><div class="clearing-touch-label"></div><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" />' +
-          '<p class="clearing-caption"></p><a href="#" class="clearing-main-prev"><span></span></a>' +
-          '<a href="#" class="clearing-main-next"><span></span></a></div>' +
+          '<p class="clearing-caption"></p><a href="#" class="clearing-major-prev"><span></span></a>' +
+          '<a href="#" class="clearing-major-next"><span></span></a></div>' +
           '<img class="clearing-preload-next" style="display: none" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" />' +
           '<img class="clearing-preload-prev" style="display: none" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" alt="" />'
       },
@@ -88,9 +88,9 @@
             self.update_paddles(target);
           })
 
-        .on('click.fndtn.clearing', '.clearing-main-next',
+        .on('click.fndtn.clearing', '.clearing-major-next',
           function (e) { self.nav(e, 'next') })
-        .on('click.fndtn.clearing', '.clearing-main-prev',
+        .on('click.fndtn.clearing', '.clearing-major-prev',
           function (e) { self.nav(e, 'prev') })
         .on('click.fndtn.clearing', this.settings.close_selectors,
           function (e) { Foundation.libs.clearing.close(e, this) });
@@ -361,15 +361,15 @@
         .siblings('.visible-img');
 
       if (target.next().length > 0) {
-        this.S('.clearing-main-next', visible_image).removeClass('disabled');
+        this.S('.clearing-major-next', visible_image).removeClass('disabled');
       } else {
-        this.S('.clearing-main-next', visible_image).addClass('disabled');
+        this.S('.clearing-major-next', visible_image).addClass('disabled');
       }
 
       if (target.prev().length > 0) {
-        this.S('.clearing-main-prev', visible_image).removeClass('disabled');
+        this.S('.clearing-major-prev', visible_image).removeClass('disabled');
       } else {
-        this.S('.clearing-main-prev', visible_image).addClass('disabled');
+        this.S('.clearing-major-prev', visible_image).addClass('disabled');
       }
     },
 

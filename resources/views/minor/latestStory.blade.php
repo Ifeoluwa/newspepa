@@ -1,11 +1,14 @@
- @extends('main.layout')
- @section('title', 'Breaking Nigerian News From Top Sites')
+@extends ('minor.layout')
+@section('title', 'Breaking Nigerian News From Top Sites')
+ @stop
+
+ @section('dropdown','Latest Stories')
  @stop
 
  @section('important_stories')
  <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
      @foreach($data['latest_stories'] as $latest_stories)
-          <div class="row panel radius">
+          <div class="row opera-panel radius">
                 <div class="large-12 medium-6 small-12 columns">
                      <a href="{{url($tc->makeStoryUrl($latest_stories['title'], $latest_stories['story_id']))}}">
                         @if($latest_stories['image_url']!="")
@@ -29,6 +32,5 @@
 </div>
             @endforeach
 
-           {!! $data['paginator']->render() !!}
-
+             {!! $data['paginator']->render() !!}
             @stop

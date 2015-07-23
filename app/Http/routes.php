@@ -22,7 +22,7 @@ Route::get('timeline', 'StoryController@createTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
 
-Route::get('opera', function(){
+Route::get('minor', function(){
 
     return view('test')->with('is_opera', true);
 });

@@ -69,10 +69,10 @@ class TimelineStoryController extends Controller
         $paginator->setPath('/');
 
         if($this->isOpera()){
-            return view('opera.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('minor.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
 
         }else{
-            return view('main.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('major.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
 
         }
 
@@ -113,10 +113,10 @@ class TimelineStoryController extends Controller
             $paginator->setPath($category_name);
 
             if($this->isOpera()){
-                return view('opera.category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
+                return view('minor.category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
 
             }else{
-                return view('main.category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
+                return view('major.category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }
         }catch(\ErrorException $ex){
             return view('errors.404');
@@ -150,9 +150,9 @@ class TimelineStoryController extends Controller
         $latest_stories->setPath('latest');
 
         if($this->isOpera()){
-            return view('opera.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('minor.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
         }else{
-            return view('main.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('major.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
         }
 
     }
@@ -174,10 +174,10 @@ class TimelineStoryController extends Controller
         $now = new \DateTime('now', $timezone);
         TimelineStory::updateStoryViews($story_id, $now);
         if($this->isOpera()){
-            return view('opera.fullStory')->with('data', $full_story);
+            return view('minor.fullStory')->with('data', $full_story);
 
         }else{
-            return view('main.fullStory')->with('data', $full_story);
+            return view('major.fullStory')->with('data', $full_story);
 
         }
 
@@ -314,9 +314,9 @@ class TimelineStoryController extends Controller
         );
 
         if($this->isOpera()){
-            return view('opera.search_results')->with('data', $return);
+            return view('minor.search_results')->with('data', $return);
         }else{
-            return view('main.search_results')->with('data', $return);
+            return view('major.search_results')->with('data', $return);
         }
 
         set_time_limit(120);
@@ -389,7 +389,7 @@ class TimelineStoryController extends Controller
     private function isOpera(){
         $this->opera_checker = $_SERVER['HTTP_USER_AGENT'];
 
-        return strpos(strtolower($this->opera_checker), "opera mini") !== false || strpos(strtolower($this->opera_checker), "opera mobi") !== false;
+        return strpos(strtolower($this->opera_checker), "opera mini") !== false || strpos(strtolower($this->opera_checker), "minor mobi") !== false;
     }
 
 

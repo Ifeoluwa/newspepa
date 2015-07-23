@@ -1,4 +1,4 @@
-@extends ('opera.layout')
+@extends ('.layout')
 @section('title', 'Breaking Nigerian News From Top Sites')
 
 @stop
