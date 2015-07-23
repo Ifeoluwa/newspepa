@@ -1,4 +1,3 @@
-
 @extends ('major.layout')
 @section('title', 'results')
 @stop

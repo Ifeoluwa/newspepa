@@ -1,4 +1,4 @@
-@extends ('minor.layout')
+@extends ('minor.opera-layout')
 @section('title', 'Breaking Nigerian News From Top Sites')
  @stop
 
@@ -31,6 +31,4 @@
 
 </div>
             @endforeach
-
-             {!! $data['paginator']->render() !!}
             @stop

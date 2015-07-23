@@ -6,7 +6,7 @@
     <title>Newspepa | @yield('title')</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-     <link rel="stylesheet" href="ui_newspaper/css/app15.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app18.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
@@ -18,9 +18,10 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=222521117951114";
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1681272065426030";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
+
 
 <div class="fixed">
     <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
@@ -31,7 +32,7 @@
     {{--the search bar--}}
     <form id="searchbar" method="get" action = "search">
         <div class="row searchbar-row" style="width:100%">
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search"></div>
+            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search" style="font-size:16px"></div>
             <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
         </div>
     </form>
@@ -72,32 +73,33 @@
               </div>
 
 
-    {{--<ul class="pagination">--}}
-        {{--<li id="previous">--}}
-
-        {{--</li>--}}
-        {{--<li id="next">--}}
-
-        {{--</li>--}}
-     {{--</ul>--}}
-
               <a href="#" class="back-to-top" style="display: inline;"></a>
 
 
 
     <footer class="row">
         <div class="large-12 columns">
-            <hr/>
-            <div class="row">
-                <div class="large-5 columns">
-                    <p style="text-align: center">
-                        <i class="newspepaicon"> </i>  © 2015 Iconway
-                        <a href="{{url('/')}}"><button class="home-button" id="home">Home</button></a>
-                    </p>
 
-                </div>
+            <ul class="inline-list" style="color:#0266C8">
+                  <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
+                  <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+                  <li id="3" class="active"><a href="{{url('nigeria')}}">Politics</a></li>
+                  <li id="4"><a href="{{url('entertainment')}}">Nigeria</a></li>
+                  <li id="5"><a href="{{url('sports')}}">Entertainment</a></li>
+                  <li id="6"><a href="{{url('politics')}}">Sports</a></li>
+                  <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+            </ul>
+            <p style="margin-left: 20px"><a href="">Choose your news source</a></p>
+            {{--<div class="row">--}}
+                {{--<div class="large-5 columns">--}}
+                    {{--<p style="text-align: center">--}}
+                        {{--<i class="newspepaicon"> </i>  © 2015 Iconway--}}
+                        {{--<a href="{{url('/')}}"><button class="home-button" id="home">Home</button></a>--}}
+                    {{--</p>--}}
 
-            </div>
+                {{--</div>--}}
+
+            {{--</div>--}}
         </div>
     </footer>
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
@@ -112,6 +114,8 @@
         $(document).ready(function(){
 // var root = document.documentElement;
 //            root.className += " minor-mini";
+         $("a[rel='prev']").append("<span>Previous</span>");
+         $("a[rel='next']").append("<span>Next</span>")
         });
 //            $.ajax({
 //                type:"GET",
@@ -145,7 +149,7 @@
              });
 
 
-        //this is used to specify the category that is being displayed on the dropdown list
+//this is used to specify the category that is being displayed on the dropdown list
         if (location.pathname == "/") {
               $(".dropdown").text("Top Stories");
         }else if (location.pathname == "/latest") {
@@ -160,7 +164,7 @@
                        $(".dropdown").text("Metro");
           }else if (location.pathname == "/nigeria") {
                          $(".dropdown").text("Nigeria");
-         }
+                    }
 
 //this is used for the back-to-top button
     var offset = 1200;

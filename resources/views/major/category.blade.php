@@ -20,8 +20,8 @@
                          @else
                             <h1 class="title title-important">{{$category_story['title']}}</h1>@endif
                          </header></a>
-                         <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$category_story['pub_id']]}}</b></span>
-                         <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($category_story['created_date'])}}</b></span>
+                         <span class="publisher-name">{{$data['publishers_name'][$category_story['pub_id']]}}</span>
+                         <span class="timecount-name">{{$tc->getTimeDifference($category_story['created_date'])}}</span>
 
 
                        </div>
@@ -33,13 +33,7 @@
       </div>
       {{--</div>--}}
   @endforeach
- <div class="row" style="align-content: center; margin: auto">
-   {!! $data['paginator']->render() !!}
-  </div>
-
 @stop
-
-
 {{--@section('related_content')--}}
   {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
   {{--<div class="row panel radius"><b>Related Stories</b></div>--}}

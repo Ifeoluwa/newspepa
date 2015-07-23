@@ -1,4 +1,4 @@
-@extends ('minor.layout')
+@extends ('minor.opera-layout')
 @section ('title',$data['category_stories']['category_name'] )
 @endsection
 
@@ -29,5 +29,4 @@
 
 </div>
             @endforeach
-            {!! $data['category_stories']['all']->render() !!}
             @stop
