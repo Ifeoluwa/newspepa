@@ -6,7 +6,7 @@
         <title>Newspepa | Breaking Nigerian News From Top Sites </title>
         <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-        <link rel="stylesheet" href="ui_newspaper/css/app16.css" />
+        <link rel="stylesheet" href="ui_newspaper/css/app18.css" />
         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
@@ -17,7 +17,7 @@
          var js, fjs = d.getElementsByTagName(s)[0];
          if (d.getElementById(id)) return;
          js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=222521117951114";
+         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1681272065426030";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -36,7 +36,7 @@
                        </div>
                         <br/>
                         <p class="full-story-text" style="margin-left:auto;">
-                            <h3 style="font-weight: 700; font-family: 'Roboto Slab', serif; color:#707070">Built for mobile</h3>
+                            <h3 style="font-weight: 700; font-family: century Gothic ;color:#707070">Built for mobile</h3>
                             <ul style="font-family: 'Roboto Slab', serif; color:#0266C8; line-height: 3.0">
                                 <li>Fast and easy to use.</li>
                                 <li>Get news that matter.</li>
@@ -78,7 +78,7 @@
         <div class="large-6 desktop-medium-6 columns"><p style="margin-top:100px; font-weight:700;font-family: 'Roboto Slab', serif; font-size:24px; text-align: center; color:#707070">Visit <a href="newspepa.com" target="_blank">newspepa.com</a> on your mobile</p><br/>
         <img src="ui_newspaper/img/desktopImages2.png"  width="449px" height="492px" style= "border-radius:2px; margin-left:100px"/></div>
 
-              
+
             </div>
 
 

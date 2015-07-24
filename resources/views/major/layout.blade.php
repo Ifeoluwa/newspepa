@@ -6,7 +6,7 @@
     <title>Newspepa | @yield('title')</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-     <link rel="stylesheet" href="ui_newspaper/css/app18.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app20.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
@@ -32,7 +32,7 @@
     {{--the search bar--}}
     <form id="searchbar" method="get" action = "search">
         <div class="row searchbar-row" style="width:100%">
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query" autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search" style="font-size:16px"></div>
+            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query"  autocomplete="on" aria-autocomplete="both" aria-haspopup="true" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
             <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
         </div>
     </form>
