@@ -32,10 +32,10 @@ class TimelineStoryController extends Controller
 
         $this->client = new \Solarium\Client;
         $this->feed_contoller = new FeedController();
-//        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
-//        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
-        $stop_words = ("");
-        $key_words = ("");
+        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
+//        $stop_words = ("");
+//        $key_words = ("");
 
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
         $this->key_word_array = explode(PHP_EOL, $key_words);
@@ -420,7 +420,7 @@ class TimelineStoryController extends Controller
     private function isOpera(){
         $this->opera_checker = $_SERVER['HTTP_USER_AGENT'];
 
-        return strpos(strtolower($this->opera_checker), "opera mini") !== false || strpos(strtolower($this->opera_checker), "minor mobi") !== false;
+        return strpos(strtolower($this->opera_checker), "opera mini") !== false || strpos(strtolower($this->opera_checker), "opera mobi") !== false;
     }
 
 

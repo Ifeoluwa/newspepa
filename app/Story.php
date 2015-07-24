@@ -38,21 +38,13 @@ class Story extends Model
             $array['modified_date'] = $now;
         }
 
-        $result = DB::table('timeline_stories')->select('title')->where('title', $array['title'])->get();
-
-        if(count($result) === 0){
-
-            $id = DB::insert('INSERT INTO stories ('.implode(',',array_keys($array)).
+        $id = DB::insert('INSERT IGNORE INTO stories ('.implode(',',array_keys($array)).
             ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
 
-            if($id == true){
-                $id = DB::getPdo()->lastInsertId();
-            }
-        return $id;
-
+        if($id == true){
+            $id = DB::getPdo()->lastInsertId();
         }
-
-        return false;
+        return $id;
 
     }
 
