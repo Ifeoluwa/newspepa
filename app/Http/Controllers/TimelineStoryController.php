@@ -32,10 +32,10 @@ class TimelineStoryController extends Controller
 
         $this->client = new \Solarium\Client;
         $this->feed_contoller = new FeedController();
-        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
-        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
-//        $stop_words = ("");
-//        $key_words = ("");
+//        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
+//        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
+        $stop_words = ("");
+        $key_words = ("");
 
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
         $this->key_word_array = explode(PHP_EOL, $key_words);
@@ -108,7 +108,7 @@ class TimelineStoryController extends Controller
             $category_stories['all']->setPath($category_name);
 
             //Handles the next and previous for the pagination on the view
-            $paginator = new Paginator($category_stories['all'], 50);
+            $paginator = new Paginator($items, 50);
             $paginator->setPath($category_name);
 
             if($this->isOpera()){
@@ -174,6 +174,7 @@ class TimelineStoryController extends Controller
     public function getFullStory($story_id){
 
         $full_story = array();
+        //Please do not change the story_id to id.
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
 
         $full_story['other_sources'] = Story::matches($story_id);
@@ -324,6 +325,20 @@ class TimelineStoryController extends Controller
             'found' => $found,
             'publisher_names' => Publisher::$publishers
         );
+
+        $pageStart = \Request::get('page', 1);
+        $perPage = 5;
+        $offSet = ($pageStart * $perPage) - $perPage;
+
+
+        // Get only the items you need using array_slice
+        $itemsForCurrentPage = array_slice($return['search_result'], $offSet, $perPage, true);
+        $return['search_result'] = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
+        $return->setPath('search/results');
+
+        // Displays the next and previous on the view
+        $return['paginator'] = new Paginator($return['search_result'], 5);
+        $return['paginator']->setPath('search/results');
 
         if($this->isOpera()){
             return view('minor.search_results')->with('data', $return);

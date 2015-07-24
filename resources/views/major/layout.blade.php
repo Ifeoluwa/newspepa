@@ -105,8 +105,6 @@
         $(document).ready(function(){
 // var root = document.documentElement;
 //            root.className += " minor-mini";
-         $("a[rel='prev']").append("<span>Previous</span>");
-         $("a[rel='next']").append("<span>Next</span>")
         });
 //            $.ajax({
 //                type:"GET",
