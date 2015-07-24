@@ -3,6 +3,7 @@
    <head>
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Newspepa | @yield('title')</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
@@ -106,17 +107,8 @@
     <script src="ui_newspaper/js/vendor/fastclick.js"></script>
     <script src="ui_newspaper/js/foundation.min.js"></script>
     <script src="ui_newspaper/get_social_counts/site.js"></script>
-
     <script>
         $(document).foundation();
-
-        //var next_page_url, prev_page_url, new_url;
-        $(document).ready(function(){
-// var root = document.documentElement;
-//            root.className += " minor-mini";
-         $("a[rel='prev']").append("<span>Previous</span>");
-         $("a[rel='next']").append("<span>Next</span>")
-        });
 //            $.ajax({
 //                type:"GET",
 //                url:"http://localhost:8000/stories_json",
@@ -139,12 +131,15 @@
 //ajax call for getting number of linkouts of specific a tags
             $('[name= "linkOuts"]').click(function(event) {
              var storyID = $(this).attr('id');
-                $.ajax({
-                    type: "POST",
-                    url:'http://newspepa.com/linkout/'+storyID,
-                    success: function(msg){
-                        }
-                })
+
+             $.post(
+                  "{!! URL::to('linkout') !!}",
+                  { _token: $('meta[name="csrf-token"]').attr('content'), story_id:storyID},
+                                      function(data) {
+                                         console.log(data);
+                                      }
+                                   );
+
 
              });
 

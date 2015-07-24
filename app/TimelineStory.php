@@ -147,6 +147,7 @@ class TimelineStory extends Model
 
         DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
 
+        return "200";
     }
 
     //last x hours stories

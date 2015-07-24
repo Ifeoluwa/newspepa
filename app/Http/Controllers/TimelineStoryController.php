@@ -6,8 +6,7 @@ use App\Category;
 use App\Publisher;
 use App\Story;
 use App\TimelineStory;
-use Illuminate\Http\Request;
-
+use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -121,6 +120,19 @@ class TimelineStoryController extends Controller
         }catch(\ErrorException $ex){
             return view('errors.404');
         }
+    }
+
+    //Gets story by publisher
+    public function getStoriesByPublisher($publisher_name){
+
+        try{
+
+
+        }catch(\ErrorException $ex){
+            return view('errors.404');
+        }
+
+
     }
 
     //Latest Stories
@@ -325,8 +337,27 @@ class TimelineStoryController extends Controller
 
     }
     //Updates the linkout time and the number of linkouts when the user clicks on the continue to read option for each story
-    public function readStory($story_id){
-        TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
+    public function readStory(){
+
+        if(Request::ajax()){
+            $data = Request::all();
+            $story_id = $data['story_id'];
+            $time = \Carbon\Carbon::now();
+            $params = array(
+                'story_id' => $story_id,
+                'last_linkout_time' => date("Y-m-d H:i:s", $time)
+            );
+
+
+            DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
+
+            DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
+
+            return "200";
+//            $result = TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
+//            return $result;
+        }
+
     }
 
     public function testRedis(){
