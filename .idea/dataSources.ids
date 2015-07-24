@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - newspep_newspepadb@localhost" uuid="77656412-ebf9-4dfd-93ae-a7a9ba71b85d">
+  <data-source name="MySQL - newspep_newspepadb@localhost" uuid="e00ed15a-6c92-440d-ad0e-ad2dcf8302b6">
     <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -81,7 +81,7 @@
       <exported-key name="fk_timeline_story_status" table="timeline_stories_old" schema="" catalog="newspep_newspepadb" columns="status_id"/>
     </table>
     <table name="stories" schema="" catalog="newspep_newspepadb" type="TABLE">
-      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="image_url" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="video_url" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
@@ -96,6 +96,7 @@
       <column name="has_cluster" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="created_date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="modified_date" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
       <index name="story_unique" unique="true" columns="title,url"/>
       <index name="fk_story_category" unique="false" columns="category_id"/>
       <index name="fk_story_feed" unique="false" columns="feed_id"/>
