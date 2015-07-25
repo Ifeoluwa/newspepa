@@ -51,7 +51,7 @@ class FeedController extends Controller {
             if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19){
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
             }else if($feed['pub_id'] == 12 ){
-
+                $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
             }else{
                 $stories = $parser->xml($content);
 
@@ -290,17 +290,25 @@ class FeedController extends Controller {
     public  function getImageName($image_url){
         $a = explode("/", $image_url);
         $image_name = $a[count($a) - 1];
-        return $image_name;
+        if($image_name == "App-logo.png" || $image_name == "METRO1-11.png"){
+            return  $image_name;
+        }else{
+            $time  = time();
+            return  $time."".$image_name;
+
+        }
+
     }
 
-    public function getBlogFeeds($feed){
+    // Gets stories from blogger feeds e.g. Linda Ikeji
+    public function getBloggerFeeds($feed){
         $rss = new \DOMDocument();
         $rss->load($feed['url']);
         $stories = array();
         foreach ($rss->getElementsByTagName('entry') as $node) {
             $story = array (
                 'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-                'url' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+                'url' => $node->getElementsByTagName('origLink')->item(0)->nodeValue,
                 'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('published')->item(0)->nodeValue)),
                 'description' => strip_tags($node->getElementsByTagName('content')->item(0)->nodeValue)."",
                 'content' => $node->getElementsByTagName('content')->item(0)->nodeValue,
@@ -323,37 +331,9 @@ class FeedController extends Controller {
     }
 
     public function test(){
-        $rss = new \DOMDocument();
-        $rss->load('http://feeds.feedburner.com/blogspot/OqshX');
-        $stories = array();
-        foreach ($rss->getElementsByTagName('entry') as $node) {
 
-            $story = array (
-                'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-                'url' => $node->getElementsByTagName('origLink')->item(0)->nodeValue,
-                'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('published')->item(0)->nodeValue)),
-                'description' => strip_tags($node->getElementsByTagName('content')->item(0)->nodeValue)."",
-                'content' => $node->getElementsByTagName('content')->item(0)->nodeValue,
-
-            );
-            preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
-            if(count($matches) > 0){
-                $this->storeImage($this->getImageUrl($matches[0]));
-                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
-            }
-
-//            $story['feed_id'] = $feed['id'];
-//            $story['pub_id'] = $feed['pub_id'];
-//            $story['category_id'] = $feed['category_id'];
-            array_push($stories, $story);
-        }
-
-        var_dump($stories);
-        die();
-//        return $this->compareStrings("the boy is good", "the boy is goodies");
-//
-//        $this->fetchFeeds();
-//        echo "<br> done";
+        $this->fetchFeeds();
+        echo "<br> done";
 
     }
 
