@@ -1,0 +1,29 @@
+.login-box{
+    width:300px;
+    padding:20px;
+    margin:100px auto;
+    background:#fff;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px
+}
+.login-box input[type="text"],.login-box input[type="password"]{
+    border:0;
+    background:#e4e6eb;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    box-shadow:none;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    padding:0 10px;
+    height:40px;
+    margin:5px auto
+}
+.login-box button{
+    margin:15px 0!important
+}
+.login-box .remember{
+    margin-top:20px;
+    float:left
+}

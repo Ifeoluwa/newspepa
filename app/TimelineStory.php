@@ -32,7 +32,7 @@ class TimelineStory extends Model
 
     // Selects recent stories based on category
     public static function recentStoriesByCat($category_id){
-        return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(20)->get();
+        return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(200)->get();
     }
 
     // Selects recent stories based on category but not the selected story
@@ -76,8 +76,14 @@ class TimelineStory extends Model
             $array['modified_date'] = $now;
         }
 
-        DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
-            ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
+        $result = DB::table('timeline_stories')->select('title')->where('title', $array['title'])->get();
+
+        if(count($result) === 0){
+
+            DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
+                ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
+
+        }
 
     }
 
@@ -137,6 +143,7 @@ class TimelineStory extends Model
 
         DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
 
+        return "200";
     }
 
     //last x hours stories

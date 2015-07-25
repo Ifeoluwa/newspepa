@@ -22,26 +22,31 @@ Route::get('timeline', 'StoryController@createTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
 
-Route::get('minor', function(){
-
-    return view('test')->with('is_opera', true);
-});
-
 Route::get('desktop', function(){
-
+//    $user_agent = $_SERVER['HTTP_USER_AGENT'];
     return view('errors.desktopView');
 });
 
-Route::get('refer', function(){
-//    $user_agent = $_SERVER['HTTP_USER_AGENT'];
-    return view('errors.404');
+//Handles request from the admin/authentication
+Route::get('admin', function(){
+    return view('admin.login');
+});
+
+Route::get('register', function(){
+   return view('admin.register');
 });
 
 
 
+
+//Authentication routes
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
+
+Route::post('/auth/register', 'Auth\AuthController@postRegister');
+
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
-//Route::group(['middleware' => 'user_agent'], function(){
+Route::group(['middleware' => 'user_agent'], function(){
 
     Route::get('/', 'TimelineStoryController@index');
 
@@ -49,11 +54,13 @@ Route::get('refer', function(){
 
     Route::get('latest', 'TimelineStoryController@getLatestStories');
 
-    Route::post('linkout/{story_id}', 'TimelineStoryController@readStory');
+
+    Route::post('linkout', 'TimelineStoryController@readStory');
 
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
-//});
+});
+
 
 
 
