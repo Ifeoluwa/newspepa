@@ -149,13 +149,13 @@ class FeedController extends Controller {
                 if($result !== false){
                     $k += 1;
                     $now  = date('Y-m-d h:i:s');
-                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a");
-                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result.PHP_EOL);
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result.PHP_EOL." FROM pub_id=".$story['pub_id']);
                     fclose($fp);
                 }else{
                     $now  = date('Y-m-d h:i:s');
-                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a");
-                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result.PHP_EOL);
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result.PHP_EOL." FROM pub_id=".$story['pub_id']);
                     fclose($fp);
                 }
             }
@@ -167,8 +167,8 @@ class FeedController extends Controller {
 
         $stored_stories = $k;
         $now  = date('Y-m-d h:i:s');
-        $fp = fopen("/home/newspep/newspepa/public/log.txt", "w");
-        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories);
+        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
         fclose($fp);
 
 
@@ -388,8 +388,9 @@ class FeedController extends Controller {
         $prev_stories = DB::table('stories')->where('feed_id', $story['feed_id'])
             ->whereBetween('created_date', [new \DateTime('-1hour'), new \DateTime('now')])->get();
         foreach($prev_stories as $prev_story){
-            if($this->compareStrings($story['title'], $prev_story['title']) > 70){
+            if($this->compareStrings(strtolower($story['title']), strtolower($prev_story['title'])) > 70){
                 $isSimilar = $isSimilar || true;
+                break;
             }else{
                 $isSimilar = $isSimilar || false;
             }
