@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `clusters` (
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `category_id` INT NOT NULL,
   `cluster_pivot` INT NOT NULL,
-  `matches` TEXT(255) NOT NULL,
+  `cluster_match` INT NOT NULL,
   `status_id` INT NOT NULL,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
