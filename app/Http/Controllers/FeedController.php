@@ -53,6 +53,7 @@ class FeedController extends Controller {
             }else if($feed['pub_id'] == 12 ){
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
             }else{
+                $other_stories = array();
                 $stories = $parser->xml($content);
 
                 try{
@@ -97,10 +98,13 @@ class FeedController extends Controller {
                         $story['url'] = "".$str['link']."";
                         $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
 
-                        // Inserts the story into an array
-                        array_push($all_stories, $story);
+                        // Inserts the story array into an other stories array
+                        array_push($other_stories, $story);
 
                     }
+
+                    // Final merging of stories array
+                    $all_stories = array_merge($all_stories, $other_stories);
                 }catch (\ErrorException $ex){
                     continue;
                 }
