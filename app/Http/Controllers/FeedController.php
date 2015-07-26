@@ -167,7 +167,7 @@ class FeedController extends Controller {
 
         $stored_stories = $k;
         $now  = date('Y-m-d h:i:s');
-        $fp = fopen("/home/newspep/newspepa/public/log.txt", "w");
+        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
         fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories);
         fclose($fp);
 
