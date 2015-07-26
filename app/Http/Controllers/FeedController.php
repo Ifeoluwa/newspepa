@@ -408,8 +408,9 @@ class FeedController extends Controller {
         $prev_stories = DB::table('stories')->where('feed_id', $story['feed_id'])
             ->whereBetween('created_date', [new \DateTime('-1hour'), new \DateTime('now')])->get();
         foreach($prev_stories as $prev_story){
-            if($this->compareStrings($story['title'], $prev_story['title']) > 70){
+            if($this->compareStrings(strtolower($story['title']), strtolower($prev_story['title'])) > 70){
                 $isSimilar = $isSimilar || true;
+                break;
             }else{
                 $isSimilar = $isSimilar || false;
             }
