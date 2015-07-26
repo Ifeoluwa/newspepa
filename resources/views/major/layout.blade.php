@@ -81,13 +81,13 @@
         <div class="large-12 columns">
 
             <ul class="inline-list" style="color:#0266C8">
-                  <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
-                  <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
-                  <li id="3" class="active"><a href="{{url('nigeria')}}">Politics</a></li>
-                  <li id="4"><a href="{{url('entertainment')}}">Nigeria</a></li>
-                  <li id="5"><a href="{{url('sports')}}">Entertainment</a></li>
-                  <li id="6"><a href="{{url('politics')}}">Sports</a></li>
-                  <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+                <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
+                <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+                <li id="3" class="active"><a href="{{url('nigeria')}}">Nigeria</a></li>
+                <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
+                <li id="5"><a href="{{url('sports')}}">Sports</a></li>
+                <li id="6"><a href="{{url('politics')}}">Politics</a></li>
+                <li id="7"><a href="{{url('metro')}}">Metro</a></li>
             </ul>
             <p style="margin-left: 20px"><a href="">Choose your news source</a></p>
 
