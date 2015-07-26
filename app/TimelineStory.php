@@ -177,7 +177,7 @@ class TimelineStory extends Model
 
         $now = new \DateTime('now');
         $thirty_minutes_ago = new \DateTime('-30minutes');
-        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now])->orderBy('created_date', 'desc');
+        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now])->whereNotIn('pub_id', [12])->orderBy('created_date', 'desc');
     }
 
     //Rankable stories
@@ -186,7 +186,7 @@ class TimelineStory extends Model
 
         $a = new \DateTime('-12hours');
         $b = new \DateTime('-31minutes');
-        return $query->whereBetween('created_date', [$a, $b]);
+        return $query->whereBetween('created_date', [$a, $b])->whereNotIn('pub_id', [12]);
     }
 
     //Stories that are displayed on the timeline
@@ -194,7 +194,11 @@ class TimelineStory extends Model
         $timeline_stories = array();
         $ranked_stories = array();
         $fresh_stories = TimelineStory::freshStories()->get()->toArray();
+        $restricted_fresh_stories = TimelineStory::restrictedFreshStories()->get()->toArray();
         $rankable_stories = TimelineStory::rankable()->get()->toArray();
+        $restricted_rankable_stories = TimelineStory::restrictedRankable()->get()->toArray();
+        $rankable_stories = array_merge($rankable_stories, $restricted_rankable_stories);
+
 
         $timezone = new \DateTimeZone('Africa/Lagos');
         $now = new \DateTime('now', $timezone);
@@ -211,11 +215,31 @@ class TimelineStory extends Model
             return $value['rank_score'];
         }));
 
-        $returning_stories = array_merge($fresh_stories, array_reverse($timeline_stories));
+        $returning_stories = array_merge($fresh_stories, $restricted_fresh_stories, array_reverse($timeline_stories));
 
 
         return $returning_stories;
 
+    }
+
+    // Gets fresh stories with a particular restriction placed on the publisher
+    public function scopeRestrictedFreshStories($query){
+        $timezone = new \DateTimeZone('Africa/Lagos');
+
+        $now = new \DateTime('now');
+        $thirty_minutes_ago = new \DateTime('-30minutes');
+        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now])
+            ->where('pub_id', 12)->orderBy('created_date', 'desc')->limit(3);
+    }
+
+    // Gets rankable stories with a particular restriction placed on the publisher
+    public function scopeRestrictedRankable($query){
+        $timezone = new \DateTimeZone('Africa/Lagos');
+
+        $a = new \DateTime('-12hours');
+        $b = new \DateTime('-31minutes');
+        return $query->whereBetween('created_date', [$a, $b])
+            ->where('pub_id', 12)->orderBy('created_date', 'desc')->limit(3);
     }
 
 
