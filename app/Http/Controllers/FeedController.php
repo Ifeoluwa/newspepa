@@ -150,12 +150,12 @@ class FeedController extends Controller {
                     $k += 1;
                     $now  = date('Y-m-d h:i:s');
                     $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result.PHP_EOL);
+                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result.PHP_EOL." FROM pub_id=".$story['pub_id']);
                     fclose($fp);
                 }else{
                     $now  = date('Y-m-d h:i:s');
                     $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result.PHP_EOL);
+                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result.PHP_EOL." FROM pub_id=".$story['pub_id']);
                     fclose($fp);
                 }
             }
@@ -168,7 +168,7 @@ class FeedController extends Controller {
         $stored_stories = $k;
         $now  = date('Y-m-d h:i:s');
         $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories);
+        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
         fclose($fp);
 
 
