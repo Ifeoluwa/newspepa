@@ -68,7 +68,7 @@ class FeedController extends Controller {
                             $tc = new TimelineStoryController();
                             $result = $tc->getStoryImage($str['link']);
                             if($result !== null){
-                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                                $story['image_url'] = $result;
                             }
 
                         }else{
@@ -82,7 +82,7 @@ class FeedController extends Controller {
                                 $tc = new TimelineStoryController();
                                 $result = $tc->getStoryImage($str['link']);
                                 if($result !== null){
-                                    $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                                    $story['image_url'] = $result;
                                 }
 
                             }

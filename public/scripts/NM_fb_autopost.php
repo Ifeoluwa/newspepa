@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: iconwaymedia
+ * Date: 7/25/2015
+ * Time: 9:24 PM
+ */
 
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
@@ -15,9 +21,10 @@ require_once("../libraries/facebook-php-sdk/src/facebook.php"); // configure /pa
 
 // initialize Facebook class using your own Facebook App credentials
 $config = array();
-$config['appId'] = '1681272065426030';  // configure appropriately
-$config['secret'] = '00c6474709d6f72b87424206907a8ac0'; // configure appropriately
+$config['appId'] = '210106065810484';  // configure appropriately
+$config['secret'] = 'b01de447df2c087a198718d237807391'; // configure appropriately
 $config['fileUpload'] = false; // optional
+
 
 $fb = new Facebook($config);
 
@@ -35,9 +42,8 @@ if ($conn->connect_error) {
 // create array with topics to be posted on Facebook
 $sql = 'SELECT story_id as topic_id, title, story_url, description as facebook_post, image_url as facebook_image, facebook_pubstatus FROM timeline_stories ' .
     'WHERE created_date IS NOT NULL AND created_date <= ' . "'" . $now . "' " .
-    'AND created_date BETWEEN DATE_SUB('. $now .', INTERVAL 1 HOUR) AND '. $now.
-    ' AND facebook_pubstatus = 0 ' .
-    'ORDER BY no_of_views DESC LIMIT 1';
+    'AND created_date BETWEEN DATE_SUB('. $now .', INTERVAL 3 HOUR) AND '. $now.
+    ' ORDER BY no_of_views DESC LIMIT 1';
 
 $rs = $conn->query($sql);
 if($rs === false) {
@@ -71,11 +77,11 @@ $rs->free();
 // AUTOMATIC POST EACH TOPIC TO FACEBOOK
 foreach($share_topics as $share_topic) {
 
-    if($share_topic['facebook_pubstatus'] == 0) {
+    if($share_topic['facebook_pubstatus'] != 2) {
 
         // define POST parameters
         $params = array(
-            "access_token" => "CAAX5G6g7Am4BAK9iDB0FEosQdWhLJOxyjJnEVXwRTBI4yal7GERWTbNWexh1VAG1vx8kvoiSyRZAtuAz2rsSqxbyVWfd9lPb0ApieZCJZCgl86xzDk999vht0QdGw0QjtvYUi92OsZAIHY2SQlgqWZBhBe8ThoRgfe52X0W3ZBmmeJyhFzN9GhvIqNZC8uL1OwINCZAuxN7wg6Ia7tCxDE20", // configure appropriately
+            "access_token" => "210106065810484|GF3eypeUNODotxfWDrqrqCX2xWw", // configure appropriately
             "message" => $share_topic['facebook_post'],
             "link" => $share_topic['topic_url'],
             "name" => $share_topic['topic_title'],
@@ -90,10 +96,10 @@ foreach($share_topics as $share_topic) {
         $result = '';
         // check if topic successfully posted to Facebook
         try {
-            $ret = $fb->api('/1165261366833416/feed', 'POST', $params); // configure appropriately
+            $ret = $fb->api('/275403655916050/feed', 'POST', $params); // configure appropriately
 
             // mark topic as posted (ensure that it will be posted only once)
-            $sql = 'UPDATE timeline_stories SET facebook_pubstatus = 1 WHERE story_id = ' . $share_topic['topic_id'];
+//            $sql = 'UPDATE timeline_stories SET facebook_pubstatus = 1 WHERE story_id = ' . $share_topic['topic_id'];
             if($conn->query($sql) === false) {
                 trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
             }
