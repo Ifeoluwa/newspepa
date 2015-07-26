@@ -18,7 +18,7 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1681272065426030";
+    js.async=true;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=222521117951114";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
@@ -31,18 +31,17 @@
     </nav>
     {{--the search bar--}}
     <form id="searchbar" method="get" action = "search">
-        <div class="row searchbar-row" style="width:100%">
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
+        {{--<div class="row searchbar-row" style="width:100%">--}}
+            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
             <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
-        </div>
+        {{--</div>--}}
     </form>
 </div>
 
+
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
-    <div class="large-12 medium-12 small-12 columns">
-
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button></div>
+        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button>
         <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
 
           <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
@@ -66,9 +65,10 @@
               @yield('full_story')
 
               {{--other relevant content--}}
-              <br/>
+
               @yield('related_content')
 
+              @yield('publishers')
 
               </div>
 
@@ -83,10 +83,10 @@
             <ul class="inline-list" style="color:#0266C8">
                   <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
                   <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
-                  <li id="3" class="active"><a href="{{url('nigeria')}}">Politics</a></li>
-                  <li id="4"><a href="{{url('entertainment')}}">Nigeria</a></li>
-                  <li id="5"><a href="{{url('sports')}}">Entertainment</a></li>
-                  <li id="6"><a href="{{url('politics')}}">Sports</a></li>
+                  <li id="3"><a href="{{url('politics')}}">Politics</a></li>
+                  <li id="4"><a href="{{url('nigeria')}}">Nigeria</a></li>
+                  <li id="5"><a href="{{url('entertainment')}}">Entertainment</a></li>
+                  <li id="6"><a href="{{url('sports')}}">Sports</a></li>
                   <li id="7"><a href="{{url('metro')}}">Metro</a></li>
             </ul>
             <p style="margin-left: 20px"><a href="">Choose your news source</a></p>
@@ -102,12 +102,12 @@
         $(document).foundation();
 
         //var next_page_url, prev_page_url, new_url;
-        $(document).ready(function(){
+       // $(document).ready(function(){
 // var root = document.documentElement;
 //            root.className += " minor-mini";
-         $("a[rel='prev']").append("<span>Previous</span>");
-         $("a[rel='next']").append("<span>Next</span>")
-        });
+//         $("a[rel='prev']").append("<span>Previous</span>");
+//         $("a[rel='next']").append("<span>Next</span>")
+//        });
 //            $.ajax({
 //                type:"GET",
 //                url:"http://localhost:8000/stories_json",

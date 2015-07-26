@@ -3,7 +3,7 @@
     <head>
      <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
-        <title>Newspepa | @yield('title')</title>
+        <title>@yield('title')</title>
         <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
         <link rel="stylesheet" href="ui_newspaper/css/opera-app22.css" />
@@ -12,18 +12,18 @@
         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
     </head>
      <body>
-    {{--<div id="fb-root"></div>--}}
-      {{--<script>(function(d, s, id) {--}}
-        {{--var js, fjs = d.getElementsByTagName(s)[0];--}}
-        {{--if (d.getElementById(id)) return;--}}
-        {{--js = d.createElement(s); js.id = id;--}}
-        {{--js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=222521117951114";--}}
-        {{--fjs.parentNode.insertBefore(js, fjs);--}}
-      {{--}(document, 'script', 'facebook-jssdk'));</script>--}}
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
 
         <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
             <ul class="title-area">
-                <a href="{{url('/')}}"><li class="name name-m"></li></a>
+                <a href="{{url('/')}}"><li class="name"></li></a>
             </ul>
         </nav>
         {{--the search bar--}}
@@ -34,32 +34,19 @@
             </div>
         </form>
 
- <div class="row opera-panel radius" style="background-color: #336;">
+ <div class="row opera-panel radius" style="background-color: #0266C8;">
    <ul class="inline-list" >
-             <li id="1" style="color:#ffffff; font-size: 15px;font-weight: bold"><a href="{{url('/')}}">Top stories</a></li>
-             <li id="2" style="color:#ffffff; font-size: 15px;font-weight: bold"><a href="{{url('/latest')}}">Latest stories</a></li>
-             <li id="3" style="color:#ffffff; font-size: 15px;font-weight: bold"><a href="{{url('nigeria')}}">Nigeria</a></li>
-             <li id="4" style="color:#ffffff; font-size: 15px;font-weight: bold"><a href="{{url('entertainment')}}">Entertainment</a></li>
-             <li id="5" style="color:#ffffff; font-size: 15px;font-weight: bold"><a href="{{url('sports')}}">Sports</a></li>
-             <li id="6" style="color:#ffffff; font-size: 15px;font-weight: bold"><a href="{{url('politics')}}">Politics</a></li>
-             <li id="7" style="color:#ffffff; font-size: 15px;font-weight: bold"><a href="{{url('metro')}}">Metro</a></li>
+             <li id="1"><a href="{{url('/')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Top stories</a></li>
+             <li id="2"><a href="{{url('/latest')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Latest stories</a></li>
+             <li id="3"><a href="{{url('nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Nigeria</a></li>
+             <li id="4"><a href="{{url('politics')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Politics</a></li>
+             <li id="5"><a href="{{url('entertainment')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Entertainment</a></li>
+             <li id="6"><a href="{{url('sports')}}"  style="color:#ffffff; font-size: 15px;font-weight: bold">Sports</a></li>
+             <li id="7"><a href="{{url('metro')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Metro</a></li>
    </ul>
     </div>
 
     @yield('category_name')
-    {{--<form id="page-changer" action="" method="post">--}}
-        {{--<select id= "catDropdown" onchange= "window.location.replace(this.options[this.selectedIndex].value)">--}}
-            {{--<option value="{{url('/index')}}">Top Stories</option>--}}
-            {{--<option value="{{url('/latest')}}"> Latest Stories</option>--}}
-            {{--<option value="{{url('/nigeria')}}">Nigeria</option>--}}
-            {{--<option value="{{url('/entertainment')}}">Entertainment</option>--}}
-            {{--<option value="{{url('/sports')}}">Sports</option>--}}
-            {{--<option value="{{url('/politics')}}">Politics</option>--}}
-            {{--<option value="{{url('/metro')}}">Metro</option>--}}
-        {{--</select>--}}
-        {{--<input type="submit" value="Go" id="submit" />--}}
-    {{--</form>--}}
-
 
     <div class="large-12 small-12 columns" id="stories_container">
                  @yield('important_stories')
@@ -79,13 +66,13 @@
                 <div class="large-12 columns">
 
                     <ul class="inline-list" style="color:#0266C8">
-                          <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
-                          <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
-                          <li id="3" class="active"><a href="{{url('nigeria')}}">Politics</a></li>
-                          <li id="4"><a href="{{url('entertainment')}}">Nigeria</a></li>
-                          <li id="5"><a href="{{url('sports')}}">Entertainment</a></li>
-                          <li id="6"><a href="{{url('politics')}}">Sports</a></li>
-                          <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+                        <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
+                        <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+                        <li id="3"><a href="{{url('politics')}}">Politics</a></li>
+                        <li id="4"><a href="{{url('nigeria')}}">Nigeria</a></li>
+                        <li id="5"><a href="{{url('entertainment')}}">Entertainment</a></li>
+                        <li id="6"><a href="{{url('sports')}}">Sports</a></li>
+                        <li id="7"><a href="{{url('metro')}}">Metro</a></li>
                     </ul>
                     <p style="margin-left: 20px"><a href="">Choose your news source</a></p>
 

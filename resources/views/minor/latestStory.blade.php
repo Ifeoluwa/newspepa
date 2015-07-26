@@ -22,9 +22,9 @@
                           <h1 class="title title-important">{{$latest_stories['title']}}</h1>
                       @endif
                       </header></a>
-                       <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publishers_name'][$latest_stories['pub_id']]}}</b></span>
+                       <span class="publisher-name">{{$data['publishers_name'][$latest_stories['pub_id']]}}</span>
                       {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$latest_stories['category_id']]}}</b></span>--}}
-                       <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($latest_stories['created_date'])}} </b></span>
+                       <span class="timecount-name">{{$tc->getTimeDifference($latest_stories['created_date'])}}</span>
                   </div>
                 </a>
                 </div>

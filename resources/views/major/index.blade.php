@@ -34,6 +34,6 @@
 
 
 
-            {{--{!! $paginator->render() !!}--}}
+           {!! $data['paginator']->render() !!}
 @stop
 

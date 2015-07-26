@@ -50,18 +50,18 @@ button:hover, button:focus, .button:hover, .button:focus{
     background-color: #0250A0 !important;
 }
 ::-webkit-input-placeholder {
-    color: #020501; }
+    color: #5f5f5f; }
 
 :-moz-placeholder {
     /* Firefox 18- */
-    color: #020501; }
+    color: #5f5f5f; }
 
 ::-moz-placeholder {
     /* Firefox 19+ */
-    color: #020501; }
+    color: #5f5f5f; }
 
 :-ms-input-placeholder {
-    color: #020501; }
+    color: #5f5f5f; }
 /*#placeholder{*/
 /*color:   #53e828*/
 /*}*/
@@ -77,7 +77,7 @@ button:hover, button:focus, .button:hover, .button:focus{
     width:100%;
     padding-top:7px;
     margin-bottom: 3px;
-    height: 4.8125rem;
+    height: 3.8125rem;
     background: #0266C8;
     /*background:url("../img/box-icon-search.png") no-repeat center #333366;*/
 
@@ -91,7 +91,7 @@ button:hover, button:focus, .button:hover, .button:focus{
     background-color:#0266C8;
     margin-top:-8px;
     color:#0266C8;
-    height: 4.8125rem;
+    height: 3.8125rem;
 }
 .menu-icon{
     color:#0266C8;
@@ -101,7 +101,6 @@ button:hover, button:focus, .button:hover, .button:focus{
     border: 1px solid #E0E0E0;
     font-family: roboto;
     display: block;
-    cursor: pointer;
     position: relative;
     overflow: hidden;
     padding-top: 9px;
@@ -112,6 +111,7 @@ button:hover, button:focus, .button:hover, .button:focus{
     width: 100%;
     -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.1);
     box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    color: #000000;
 }
 .panel.radius {
     border-radius: 9px;
@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 6px !important;
 }
 .publisher-name{
-    font-size:0.75rem;
+    font-size:0.85rem;
     color: #008744;
     font-weight:300;
     margin-top: 6px;
@@ -198,7 +198,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .timecount-name{
-    font-size:0.75rem;
+    font-size:0.85rem;
     color: #898989;
     font-weight:300;
     margin-top: 6px;
@@ -239,6 +239,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .panel h1{
     margin-left: 3rem;
+
 }
 
 

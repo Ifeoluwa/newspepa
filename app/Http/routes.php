@@ -27,11 +27,14 @@ Route::get('minor', function(){
     return view('test')->with('is_opera', true);
 });
 
-Route::get('refer', function(){
+Route::get('desktop', function(){
 //    $user_agent = $_SERVER['HTTP_USER_AGENT'];
     return view('errors.desktopView');
 });
 
+Route::get('publisher', function(){
+    return view('major.publishersList');
+});
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
 //Route::group(['middleware' => 'user_agent'], function(){
