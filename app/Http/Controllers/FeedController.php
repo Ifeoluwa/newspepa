@@ -244,7 +244,7 @@ class FeedController extends Controller {
             return  $image_name;
         }else{
 
-            return  strtotime($pub_date)."".$image_name.strlen($title);
+            return  strlen($title)."".strtotime($pub_date)."".$image_name;
 
         }
 
