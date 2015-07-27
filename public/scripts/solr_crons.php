@@ -47,16 +47,21 @@ function fetchOneAll($pds){
 $params = array(
     'status_id' => 3
 );
+
 $all_stories = executeQuery("SELECT id, title, description, image_url, video_url, url, pub_id, created_date, has_cluster FROM timeline_stories WHERE status_id = :status_id", $params);
 
 //instantiate the xml document
 $xml_doc = new DOMDocument();
 $xml_doc->formatOutput = true;
+//$xml_doc->encoding = 'UTF-8';
 
 $add = $xml_doc->createElement("add");
 $xml_doc->appendChild($add);
 
+
 foreach($all_stories as $product){
+    $title = mb_convert_encoding($product['title'], "UTF-8", "Windows-1252");
+    $title1 = html_entity_decode($title, ENT_QUOTES, "UTF-8");
     // create an xml file and parse them in
     //field id
     $doc = $xml_doc->createElement("doc");
@@ -74,16 +79,18 @@ foreach($all_stories as $product){
     $product_name_att = $xml_doc->createAttribute("name");
     $product_name_att->value = 'title_en';
     $product_name->appendChild($product_name_att);
-    $product_name->appendChild($xml_doc->createTextNode($product['title']));
+    $product_name->appendChild($xml_doc->createTextNode($title1));
 
     $doc->appendChild($product_name);
 
+    $desc = mb_convert_encoding($product['description'], "UTF-8", "Windows-1252");
+    $desc1 = html_entity_decode($desc, ENT_QUOTES, "UTF-8");
     //field story description
     $product_brand = $xml_doc->createElement("field");
     $product_brand_att = $xml_doc->createAttribute("name");
     $product_brand_att->value = 'description_en';
     $product_brand->appendChild($product_brand_att);
-    $product_brand->appendChild($xml_doc->createTextNode($product['description']));
+    $product_brand->appendChild($xml_doc->createTextNode($desc1));
 
     $doc->appendChild($product_brand);
 
@@ -106,11 +113,13 @@ foreach($all_stories as $product){
     $doc->appendChild($product_video);
 
     //field url
+    $url = mb_convert_encoding($product['url'], "UTF-8", "Windows-1252");
+    $url1 = html_entity_decode($url, ENT_QUOTES, "UTF-8");
     $product_url = $xml_doc->createElement("field");
     $product_url_att = $xml_doc->createAttribute("name");
     $product_url_att->value = 'url';
     $product_url->appendChild($product_url_att);
-    $product_url->appendChild($xml_doc->createTextNode($product['url']));
+    $product_url->appendChild($xml_doc->createTextNode($url1));
 
     $doc->appendChild($product_url);
 

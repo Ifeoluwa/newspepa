@@ -1,0 +1,75 @@
+body {
+background-color: #eef2f6; font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;
+	
+}
+div.main {
+	background: #fcfcfc; border-bottom: 1px solid #eee; width: 534px; padding: 25px 35px 10px 35px; margin-top: 0px;
+}
+h1 {
+	font-size: 36px; font-weight: 200; color: #000; margin: 0 0 20px 0;
+}
+p {
+	font-size: 15px; color: #666; margin:0 0 20px 0; line-height: 1.5;
+}
+
+
+
+a.post-share {
+	display: block;
+	width: 94px;
+	height: 46px;
+	float: left;
+	margin: 10px 0px 0px 0px;
+	background: #3e599a url(sidebar-share.png) no-repeat 0 0;
+	text-decoration:none;
+	width: 197px;
+	text-indent: 50px;
+	font: 15px/46px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	color: #ffffff;
+}
+a.post-share:hover {
+	opacity: 0.8;
+	text-decoration: none;
+	cursor: pointer;
+}
+a.post-share span {
+	width: 20px;
+	height: 16px;
+	padding: 15px;
+	display: block;
+	float:right;
+	background-color: #4665af;
+	color: #ffffff;
+	vertical-align: middle;
+	font: 16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	text-align: center;
+	text-indent: 0;
+}
+
+a.post-share.facebook {
+	background: #3e599a url(sidebar-share.png) no-repeat 0 1px;
+	margin-right: 10px;
+}
+a.post-share.facebook span {
+	background-color: #4665af;
+}
+a.post-share.twitter {
+	background: #4b8cbe url(sidebar-share.png) no-repeat -0px -111px;
+	margin-right: 10px;
+}
+a.post-share.twitter span {
+	background-color: #529fda;
+}
+a.post-share.gplus {
+	background: #b8382e url(sidebar-share.png) no-repeat -0px -50px;
+	margin-right: 10px;
+}
+a.post-share.gplus span {
+	background-color: #d24238;
+}
+a.post-share.stumble {
+	background: #e15131 url(sidebar-share.png) no-repeat -0px -165px;
+}
+a.post-share.stumble span {
+	background-color: #fd5d3b;
+}
