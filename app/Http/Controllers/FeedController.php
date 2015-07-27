@@ -20,6 +20,8 @@ use PhpSpec\Exception\Example\ErrorException;
 use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
+require_once '../../../public/scripts/test.php';
+
 
 class FeedController extends Controller {
 
@@ -189,10 +191,7 @@ class FeedController extends Controller {
 
         }
         return false;
-//        $init_curl = curl_init($url);
-//        curl_setopt($init_curl, CURLOPT_RETURNTRANSFER, true);
-//        $response = curl_exec($init_curl);
-//        curl_close($init_curl);
+
     }
 
 
