@@ -4,7 +4,7 @@
      <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
         <title>@yield('title')</title>
-        <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
+        <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
         <link rel="stylesheet" href="ui_newspaper/css/opera-app22.css" />
         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
@@ -60,7 +60,11 @@
                   {{--other relevant content--}}
                   <br/>
                   @yield('related_content')
-                  </div>
+
+                  @yield('publishers')
+
+                   @yield('about')
+    </div>
 
         <footer class="row">
                 <div class="large-12 columns">

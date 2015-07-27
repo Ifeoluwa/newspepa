@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
     <title>@yield('title')</title>
-    <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
+    <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
      <link rel="stylesheet" href="ui_newspaper/css/app22.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
@@ -69,6 +69,8 @@
               @yield('related_content')
 
               @yield('publishers')
+
+              @yield('about')
 
               </div>
 
