@@ -33,7 +33,7 @@ $sql = 'SELECT story_id as topic_id, title, story_url, image_url as twitter_imag
     'WHERE created_date IS NOT NULL AND created_date  <= ' . "'" . $now . "' " .
     'AND created_date BETWEEN DATE_SUB('. $now .', INTERVAL 1 HOUR) AND '. $now.
     ' AND twitter_pubstatus = 0 ' .
-    'ORDER BY created_date ASC, no_of_views DESC LIMIT 5';
+    'ORDER BY no_of_views DESC LIMIT 1';
 
 $rs = $conn->query($sql);
 if($rs === false) {
@@ -47,9 +47,11 @@ while($res = $rs->fetch_assoc()) {
     if (strpos($res['twitter_image'], 'http://') == false){
         $res['twitter_image'] = "newspepa.com/".$res['twitter_image'];
     }
+    $twitter_post = mb_convert_encoding($res["title"], "UTF-8", "Windows-1252");
+    $twitter_post = html_entity_decode($twitter_post, ENT_QUOTES, "UTF-8");
     $a_topic = array(
         "topic_id" => $res["topic_id"],
-        "twitter_post" => $res["title"].' '.'newspepa.com/'.$res["story_url"],
+        "twitter_post" => $twitter_post.' '.'newspepa.com/'.$res["story_url"],
         "twitter_image" => $res["twitter_image"],
         "twitter_pubstatus" => $res["twitter_pubstatus"]
     );
