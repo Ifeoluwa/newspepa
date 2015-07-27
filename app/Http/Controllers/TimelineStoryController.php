@@ -449,6 +449,17 @@ class TimelineStoryController extends Controller
         }
     }
 
+    public function makeRoute($name){
+        $route = strtolower($name) ;
+
+        $route = preg_replace("/[^a-z0-9_\s-]/", "", $route);
+        //Clean up multiple dashes or whitespaces
+        $route = preg_replace("/[\s-]+/", " ", $route);
+        //Convert whitespaces and underscore to dash
+        $route = preg_replace("/[\s_]/", "-", $route);
+        return $route;
+    }
+
 
     public function paginate($items,$perPage)
     {
