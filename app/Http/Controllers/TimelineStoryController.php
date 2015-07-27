@@ -439,6 +439,19 @@ class TimelineStoryController extends Controller
     }
 
 
+    public function getPublishers(){
+        $publishers = Publisher::where('status_id', 1)->get()->toArray();
+
+        return $publishers;
+
+        if($this->isOpera()){
+            return view('minor.publishersList')->with('data', $publishers);
+        }else{
+            return view('major.publishersList')->with('data', $publishers);
+        }
+    }
+
+
     public function paginate($items,$perPage)
     {
         $pageStart = \Request::get('page', 1);

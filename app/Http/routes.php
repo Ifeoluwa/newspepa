@@ -39,14 +39,11 @@ Route::get('register', function(){
 
 
 
-//Authentication routes
-Route::post('/auth/login', 'Auth\AuthController@postLogin');
 
-Route::post('/auth/register', 'Auth\AuthController@postRegister');
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
-Route::group(['middleware' => 'user_agent'], function(){
+//Route::group(['middleware' => 'user_agent'], function(){
 
     Route::get('/', 'TimelineStoryController@index');
 
@@ -57,9 +54,14 @@ Route::group(['middleware' => 'user_agent'], function(){
 
     Route::post('linkout', 'TimelineStoryController@readStory');
 
+    // Gets the request for the list of active publishers
+    Route::get('publishers', 'TimelineStoryController@getPublishers');
+
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
-});
+
+
+//});
 
 
 

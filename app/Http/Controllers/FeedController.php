@@ -50,12 +50,12 @@ class FeedController extends Controller {
             }
             if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19){
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
-            }elseif($feed['pub_id'] == 6 || $feed['pub_id'] == 9 || $feed['pub_id'] == 8 || $feed['pub_id'] == 11){
+            }elseif($feed['pub_id'] == 12 ){
+                $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
+            }else{
 
                 $all_stories = array_merge($all_stories, $this->getOtherFeeds($feed));
 
-            }elseif($feed['pub_id'] == 12 ){
-                $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
             }
 
             //Updates the last time the feed was accessed
