@@ -439,6 +439,28 @@ class TimelineStoryController extends Controller
     }
 
 
+    public function getPublishers(){
+        $publishers = Publisher::where('status_id', 1)->get()->toArray();
+
+        if($this->isOpera()){
+            return view('minor.publishersList')->with('data', $publishers);
+        }else{
+            return view('major.publishersList')->with('data', $publishers);
+        }
+    }
+
+    public function makeRoute($name){
+        $route = strtolower($name) ;
+
+        $route = preg_replace("/[^a-z0-9_\s-]/", "", $route);
+        //Clean up multiple dashes or whitespaces
+        $route = preg_replace("/[\s-]+/", " ", $route);
+        //Convert whitespaces and underscore to dash
+        $route = preg_replace("/[\s_]/", "-", $route);
+        return $route;
+    }
+
+
     public function paginate($items,$perPage)
     {
         $pageStart = \Request::get('page', 1);

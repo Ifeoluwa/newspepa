@@ -195,6 +195,11 @@ class TimelineStory extends Model
         $ranked_stories = array();
         $fresh_stories = TimelineStory::freshStories()->get()->toArray();
         $restricted_fresh_stories = TimelineStory::restrictedFreshStories()->get()->toArray();
+        $all_fresh_stories = array_merge($fresh_stories, $restricted_fresh_stories);
+        $all_fresh_stories = array_values(array_sort($all_fresh_stories, function($value){
+            return $value['created_date'];
+        }));
+
         $rankable_stories = TimelineStory::rankable()->get()->toArray();
         $restricted_rankable_stories = TimelineStory::restrictedRankable()->get()->toArray();
         $rankable_stories = array_merge($rankable_stories, $restricted_rankable_stories);
@@ -209,13 +214,14 @@ class TimelineStory extends Model
             $created_date = new \DateTime($story['created_date']);
             $story_age = $now_timestamp - $created_date->getTimestamp();
             $story['rank_score'] =  86400.0/$story_age * $story['no_of_views']/$story_age;
+            TimelineStory::updateRankScore($story['story_id'], $story['rank_score'], $now);
             array_push($ranked_stories, $story);
         }
         $timeline_stories = array_values(array_sort($ranked_stories, function ($value) {
             return $value['rank_score'];
         }));
 
-        $returning_stories = array_merge($fresh_stories, $restricted_fresh_stories, array_reverse($timeline_stories));
+        $returning_stories = array_merge(array_reverse($all_fresh_stories), array_reverse($timeline_stories));
 
 
         return $returning_stories;
@@ -240,6 +246,17 @@ class TimelineStory extends Model
         $b = new \DateTime('-31minutes');
         return $query->whereBetween('created_date', [$a, $b])
             ->where('pub_id', 12)->orderBy('created_date', 'desc')->limit(3);
+    }
+
+    // Updates the database with the new story rank score.
+    private static function updateRankScore($story_id, $rank_score, $score_time){
+        $params = array(
+            'story_id' => $story_id,
+            'rank_score' => $rank_score,
+            'last_score_time' =>  $score_time
+        );
+
+        DB::update("UPDATE timeline_stories SET rank_score = :rank_score, last_score_time = :last_score_time WHERE story_id = :story_id", $params);
     }
 
 
