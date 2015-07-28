@@ -32,6 +32,7 @@ the important section, lessImportant and noImage stories--}}
     </div>
 </div>
 @endforeach
+{!! $data['paginator']->render() !!}
 @endsection
 
 {{--@section('related_content')--}}

@@ -33,7 +33,6 @@
             @endforeach
 
 
-
-           {!! $data['paginator']->render() !!}
+            {!! $data['paginator']->render() !!}
 @stop
 

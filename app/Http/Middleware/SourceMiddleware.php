@@ -18,7 +18,7 @@ class SourceMiddleware
     {
 
         if($this->isMobile() == 0){
-            return redirect('refer');
+            return redirect('desktop');
         }
         return $next($request);
     }

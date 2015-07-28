@@ -33,6 +33,7 @@
       </div>
       {{--</div>--}}
   @endforeach
+  {!! $data['paginator']->render() !!}
 @stop
 {{--@section('related_content')--}}
   {{--<div class="row panel radius"><b>Other Sources</b></div>--}}

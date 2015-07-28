@@ -22,13 +22,12 @@
                       </header></a>
                        <span class="publisher-name">{{$data['publishers_name'][$category_story['pub_id']]}}</span>
                       {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$category_story['category_id']]}}</b></span>--}}
-                       <span class="timecount-name">{{$tc->getTimeDifference($category_story['created_date'])}}</span>
+                       <span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($category_story['created_date'])}} </b></span>
                   </div>
                 </a>
                 </div>
 
 </div>
             @endforeach
-
             {!! $data['paginator']->render() !!}
             @stop

@@ -6,8 +6,7 @@ use App\Category;
 use App\Publisher;
 use App\Story;
 use App\TimelineStory;
-use Illuminate\Http\Request;
-
+use Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -109,7 +108,7 @@ class TimelineStoryController extends Controller
             $category_stories['all']->setPath($category_name);
 
             //Handles the next and previous for the pagination on the view
-            $paginator = new Paginator($category_stories['all'], 50);
+            $paginator = new Paginator($items, 50);
             $paginator->setPath($category_name);
 
             if($this->isOpera()){
@@ -121,6 +120,19 @@ class TimelineStoryController extends Controller
         }catch(\ErrorException $ex){
             return view('errors.404');
         }
+    }
+
+    //Gets story by publisher
+    public function getStoriesByPublisher($publisher_name){
+
+        try{
+
+
+        }catch(\ErrorException $ex){
+            return view('errors.404');
+        }
+
+
     }
 
     //Latest Stories
@@ -162,6 +174,7 @@ class TimelineStoryController extends Controller
     public function getFullStory($story_id){
 
         $full_story = array();
+        //Please do not change the story_id to id.
         $full_story['full_story'] = DB::table('timeline_stories')->where('story_id', $story_id)->get();
 
         $full_story['other_sources'] = Story::matches($story_id);
@@ -313,6 +326,20 @@ class TimelineStoryController extends Controller
             'publisher_names' => Publisher::$publishers
         );
 
+        $pageStart = \Request::get('page', 1);
+        $perPage = 5;
+        $offSet = ($pageStart * $perPage) - $perPage;
+
+
+        // Get only the items you need using array_slice
+        $itemsForCurrentPage = array_slice($return['search_result'], $offSet, $perPage, true);
+        $return['search_result'] = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
+        $return->setPath('search/results');
+
+        // Displays the next and previous on the view
+        $return['paginator'] = new Paginator($return['search_result'], 5);
+        $return['paginator']->setPath('search/results');
+
         if($this->isOpera()){
             return view('minor.search_results')->with('data', $return);
         }else{
@@ -325,8 +352,27 @@ class TimelineStoryController extends Controller
 
     }
     //Updates the linkout time and the number of linkouts when the user clicks on the continue to read option for each story
-    public function readStory($story_id){
-        TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
+    public function readStory(){
+
+        if(Request::ajax()){
+            $data = Request::all();
+            $story_id = $data['story_id'];
+            $time = \Carbon\Carbon::now();
+            $params = array(
+                'story_id' => $story_id,
+                'last_linkout_time' => date("Y-m-d H:i:s", $time)
+            );
+
+
+            DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
+
+            DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
+
+            return "200";
+//            $result = TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
+//            return $result;
+        }
+
     }
 
     public function testRedis(){
@@ -389,7 +435,29 @@ class TimelineStoryController extends Controller
     private function isOpera(){
         $this->opera_checker = $_SERVER['HTTP_USER_AGENT'];
 
-        return strpos(strtolower($this->opera_checker), "opera mini") !== false || strpos(strtolower($this->opera_checker), "minor mobi") !== false;
+        return strpos(strtolower($this->opera_checker), "opera mini") !== false || strpos(strtolower($this->opera_checker), "opera mobi") !== false;
+    }
+
+
+    public function getPublishers(){
+        $publishers = Publisher::where('status_id', 1)->get()->toArray();
+
+        if($this->isOpera()){
+            return view('minor.publishersList')->with('data', $publishers);
+        }else{
+            return view('major.publishersList')->with('data', $publishers);
+        }
+    }
+
+    public function makeRoute($name){
+        $route = strtolower($name) ;
+
+        $route = preg_replace("/[^a-z0-9_\s-]/", "", $route);
+        //Clean up multiple dashes or whitespaces
+        $route = preg_replace("/[\s-]+/", " ", $route);
+        //Convert whitespaces and underscore to dash
+        $route = preg_replace("/[\s_]/", "-", $route);
+        return $route;
     }
 
 

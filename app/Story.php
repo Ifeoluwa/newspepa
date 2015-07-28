@@ -42,13 +42,13 @@ class Story extends Model
 
         if(count($result) === 0){
 
-            $id = DB::insert('INSERT INTO stories ('.implode(',',array_keys($array)).
-            ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
+            $id = DB::insert('INSERT IGNORE INTO stories ('.implode(',',array_keys($array)).
+                ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
 
             if($id == true){
                 $id = DB::getPdo()->lastInsertId();
             }
-        return $id;
+            return $id;
 
         }
 
