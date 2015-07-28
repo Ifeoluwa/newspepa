@@ -61,6 +61,7 @@ class FeedController extends Controller {
 
             }
 
+            // }
             //Updates the last time the feed was accessed
             Feed::updateFeed($feed['id'], time());
 
