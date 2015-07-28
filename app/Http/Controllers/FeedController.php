@@ -56,57 +56,9 @@ class FeedController extends Controller {
 
             }elseif($feed['pub_id'] == 12 ){
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
-                try{
-                    foreach ($stories['channel']['item'] as $str){
-                        $story = array();
-                        if($feed['pub_id'] == 13){
-                            $img_url = $str['enclosure']['@attributes']['url'];
-                            if($this->storeImage($img_url)){
-                                $story['image_url'] = "story_images/".$this->getImageName($img_url);
-                            }
-
-                        }else if($feed['pub_id'] == 1){
-                            $tc = new TimelineStoryController();
-                            $result = $tc->getStoryImage($str['link']);
-                            if($result !== null){
-                                $story['image_url'] = $result;
-                            }
-
-                        }else{
-                            preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
-                            if(count($matches) > 0){
-                                if($this->storeImage($this->getImageUrl($matches[0]))){
-                                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
-                                }
-
-                            }else{
-                                $tc = new TimelineStoryController();
-                                $result = $tc->getStoryImage($str['link']);
-                                if($result !== null){
-                                    $story['image_url'] = $result;
-                                }
-
-                            }
-                        }
-
-                        $story['title'] = "".$str['title']."";
-                        $story['pub_id'] = $feed['pub_id'];
-                        $story['feed_id'] = $feed['id'];
-                        $story['category_id'] = $feed['category_id'];
-                        $story['description'] = "".strip_tags($str['description'])."";
-                        $story['content'] = "".strip_tags($str['description'])."";
-                        $story['url'] = "".$str['link']."";
-                        $story['pub_date'] = date('Y-m-d h:i:s', strtotime($str['pubDate']));
-
-                        // Inserts the story into an array
-                        array_push($all_stories, $story);
-
-                    }
-                }catch (\ErrorException $ex){
-                    continue;
-                }
             }
 
+            // }
             //Updates the last time the feed was accessed
             Feed::updateFeed($feed['id'], time());
 
@@ -422,7 +374,7 @@ class FeedController extends Controller {
                         $tc = new TimelineStoryController();
                         $result = $tc->getStoryImage($str['link']);
                         if($result !== null){
-                            $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                            $story['image_url'] = $result;
                         }
 
                     }else{
@@ -436,7 +388,7 @@ class FeedController extends Controller {
                             $tc = new TimelineStoryController();
                             $result = $tc->getStoryImage($str['link']);
                             if($result !== null){
-                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                                $story['image_url'] = $result;
                             }
 
                         }
