@@ -84,7 +84,7 @@ foreach($share_topics as $share_topic) {
 
         // define POST parameters
         $params = array(
-            "access_token" => "CAACZCFyFq9DQBACAHySIfORZAMPbQuxD3mcdK5ZBvfQ2lqrCsk0GSWjyaavIFpUVSPACFYy1D96PomiJTKgCJhkzJoZAymKzrSehKtZBqXX0DDd9fcEnU2yNcJMkR5TrZCcWEq1SsnFiJMmgGe7UrXmWslJPlZA2GnUbulrScdJZAg4WL9TcOnKeAabMXNQkmqUI5Yqm1WZB1p6egyEFglzPg", // configure appropriately
+            "access_token" => "CAACZCFyFq9DQBAF8mMyn2QBoeBr3ryUVTd386r4qZAGWEW4gGxAlJxZAa7z9nG4ILZBObWPwmNEenPBD8rCGTKc2C4cXvAvLJydCNyzQKQTlXAfpvULzRi249fnMberLIOMELMHPuWiOx90HyR6amSMhgpLXj6sKZCYdDaHxBFjbAfC6lnQ1Cgd5JiaLw6xM5ZBUtZBuOocU0oUKYwipOb8", // configure appropriately
             "message" => $share_topic['facebook_post'],
             "link" => $share_topic['topic_url'],
             "name" => $share_topic['topic_title'],

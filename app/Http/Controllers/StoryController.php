@@ -81,9 +81,12 @@ class StoryController extends Controller {
     }
 
 
+    public function adminPost($post_details){
+        $post_details = \Illuminate\Support\Facades\Input::get('post_details');
 
+        $post_details['pub_id'] = 21;
+        $post_details['feed_id'] = 33;
 
-
-
-
+        $result = Story::insertIgnore($post_details);
+    }
 } 

@@ -151,15 +151,14 @@ CREATE  TABLE IF NOT EXISTS `stories` (
 
 CREATE TABLE IF NOT EXISTS `clusters` (
   `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `category_id` INT NOT NULL,
   `cluster_pivot` INT NOT NULL,
   `cluster_match` INT NOT NULL,
   `status_id` INT NOT NULL,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_category_id FOREIGN KEY (category_id) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
   CONSTRAINT fk_cluster_status FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE,
-  CONSTRAINT fk_story_pivot FOREIGN KEY (cluster_pivot) REFERENCES stories (id) ON UPDATE CASCADE ON DELETE CASCADE
+  CONSTRAINT fk_story_pivot FOREIGN KEY (cluster_pivot) REFERENCES stories (id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_story_match FOREIGN KEY (cluster_match) REFERENCES stories (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
