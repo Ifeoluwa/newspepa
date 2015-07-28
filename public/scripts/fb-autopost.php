@@ -52,11 +52,14 @@ while($res = $rs->fetch_assoc()) {
     }
     $fb_post = mb_convert_encoding($res["facebook_post"], "UTF-8", "Windows-1252");
     $fb_post = html_entity_decode($fb_post, ENT_QUOTES, "UTF-8");
+
+    $title = mb_convert_encoding($res["title"], "UTF-8", "Windows-1252");
+    $title = html_entity_decode($title, ENT_QUOTES, "UTF-8");
     $a_topic = array(
         "topic_id" => $res["topic_id"],
-        "topic_title" => $res["title"],
+        "topic_title" => $title,
         "topic_url" => "newspepa.com/".$res["story_url"],
-        "topic_description" => $fb_post,
+        "topic_description" => $res["title"],
         "facebook_post" => $fb_post,
         "facebook_image" => $res["facebook_image"],
         "facebook_pubstatus" => $res["facebook_pubstatus"]
@@ -83,7 +86,7 @@ foreach($share_topics as $share_topic) {
             "description" => $share_topic['topic_description']
         );
 
-        if($share_topic['facebook_image']) {
+        if(trim($share_topic['facebook_image']) != '') {
             $params["picture"] = $share_topic['facebook_image'];
         }
 

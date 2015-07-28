@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 //Handles all actions to be performed on feeds
 
+use App\Cluster;
 use App\Feed;
 use App\Http\Requests\Request;
 use App\Story;
@@ -19,6 +20,8 @@ use Nathanmac\Utilities\Parser\Parser;
 use PhpSpec\Exception\Example\ErrorException;
 use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
+
+require_once '../../../public/scripts/test.php';
 
 
 class FeedController extends Controller {
@@ -58,6 +61,7 @@ class FeedController extends Controller {
 
             }
 
+            // }
             //Updates the last time the feed was accessed
             Feed::updateFeed($feed['id'], time());
 
@@ -69,6 +73,8 @@ class FeedController extends Controller {
         $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
+
+        //Insert stories
         foreach($all_stories as $story){
             $result = Story::insertIgnore($story);
 
@@ -122,6 +128,13 @@ class FeedController extends Controller {
         fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
         fclose($fp);
 
+        //Begin Matching
+        $new_stories = StoryController::prepareStories($all_stories);
+        $old_stories = StoryController::getOldStories();
+
+        $matched_stories = StoryController::matchStories($old_stories, $new_stories);
+        Cluster::insertIgnore($matched_stories);
+
 
         set_time_limit(120);
 
@@ -143,8 +156,8 @@ class FeedController extends Controller {
             );
             preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
             if(count($matches) > 0){
-                $this->storeImage($this->getImageUrl($matches[0]));
-                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                $this->storeImage($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
+                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
             }
 
             $story['feed_id'] = $feed['id'];
@@ -189,10 +202,7 @@ class FeedController extends Controller {
 
         }
         return false;
-//        $init_curl = curl_init($url);
-//        curl_setopt($init_curl, CURLOPT_RETURNTRANSFER, true);
-//        $response = curl_exec($init_curl);
-//        curl_close($init_curl);
+
     }
 
 
@@ -218,14 +228,14 @@ class FeedController extends Controller {
     }
 
     // Stores story images on local server
-    public function storeImage($image_url){
+    public function storeImage($image_url, $title, $pub_date){
         try {
             $image_content = file_get_contents($image_url);
-            $image_name = $this->getImageName($image_url);
+            $image_name = $this->getImageName($image_url, $title, $pub_date);
             if($image_name == "App-logo.png" || $image_name == "METRO1-11.png"){
                 return false;
             }else{
-                $fp = fopen("/home/newspep/newspepa/public/story_images/".$this->getImageName($image_url), "w");
+                $fp = fopen("/home/newspep/newspepa/public/story_images/".$image_name, "w");
                 fwrite($fp, $image_content);
                 fclose($fp);
                 return true;
@@ -238,14 +248,14 @@ class FeedController extends Controller {
     }
 
     // Gets image name from the url
-    public  function getImageName($image_url){
+    public  function getImageName($image_url, $title, $pub_date){
         $a = explode("/", $image_url);
         $image_name = $a[count($a) - 1];
         if($image_name == "App-logo.png" || $image_name == "METRO1-11.png"){
             return  $image_name;
         }else{
-            $time  = time();
-            return  $time."".$image_name;
+
+            return  strlen($title)."".strtotime($pub_date)."".$image_name;
 
         }
 
@@ -267,8 +277,8 @@ class FeedController extends Controller {
             );
             preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
             if(count($matches) > 0){
-                if($this->storeImage($this->getImageUrl($matches[0]))){
-                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                if($this->storeImage($this->getImageUrl($matches[0]), $story['title'], $story['pub_date'])){
+                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
                 }
             }
 
@@ -282,8 +292,6 @@ class FeedController extends Controller {
     }
 
     public function test(){
-
-//        var_dump($stories);
 //        $this->fetchFeeds();
 //        echo "<br> done";
 
@@ -365,29 +373,29 @@ class FeedController extends Controller {
                     $story = array();
                     if($feed['pub_id'] == 13){
                         $img_url = $str['enclosure']['@attributes']['url'];
-                        if($this->storeImage($img_url)){
-                            $story['image_url'] = "story_images/".$this->getImageName($img_url);
+                        if($this->storeImage($img_url, $str['title'], $str['pubDate'])){
+                            $story['image_url'] = "story_images/".$this->getImageName($img_url, $str['title'], $str['pubDate']);
                         }
 
                     }else if($feed['pub_id'] == 1){
                         $tc = new TimelineStoryController();
                         $result = $tc->getStoryImage($str['link']);
                         if($result !== null){
-                            $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                            $story['image_url'] = $result;
                         }
 
                     }else{
                         preg_match('/(<img[^>]+>)/i', $str['description'], $matches);
                         if(count($matches) > 0){
-                            if($this->storeImage($this->getImageUrl($matches[0]))){
-                                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]));
+                            if($this->storeImage($this->getImageUrl($matches[0]), $str['title'], $str['pubDate'])){
+                                $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]), $str['title'], $str['pubDate']);
                             }
 
                         }else{
                             $tc = new TimelineStoryController();
                             $result = $tc->getStoryImage($str['link']);
                             if($result !== null){
-                                $story['image_url'] = $result['search_result'][0]['url'].$result['search_result'][0]['name'];
+                                $story['image_url'] = $result;
                             }
 
                         }
@@ -415,6 +423,8 @@ class FeedController extends Controller {
 
 
     }
+
+
 
 
 

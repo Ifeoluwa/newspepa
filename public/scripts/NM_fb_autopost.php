@@ -58,9 +58,12 @@ while($res = $rs->fetch_assoc()) {
     }
     $fb_post = mb_convert_encoding($res["facebook_post"], "UTF-8", "Windows-1252");
     $fb_post = html_entity_decode($fb_post, ENT_QUOTES, "UTF-8");
+
+    $fb_title = mb_convert_encoding($res["title"], "UTF-8", "Windows-1252");
+    $fb_title = html_entity_decode($fb_title, ENT_QUOTES, "UTF-8");
     $a_topic = array(
         "topic_id" => $res["topic_id"],
-        "topic_title" => $res["title"],
+        "topic_title" => $fb_title,
         "topic_url" => "newspepa.com/".$res["story_url"],
         "topic_description" => $fb_post,
         "facebook_post" => $fb_post,
@@ -81,7 +84,7 @@ foreach($share_topics as $share_topic) {
 
         // define POST parameters
         $params = array(
-            "access_token" => "210106065810484|GF3eypeUNODotxfWDrqrqCX2xWw", // configure appropriately
+            "access_token" => "CAACZCFyFq9DQBAF8mMyn2QBoeBr3ryUVTd386r4qZAGWEW4gGxAlJxZAa7z9nG4ILZBObWPwmNEenPBD8rCGTKc2C4cXvAvLJydCNyzQKQTlXAfpvULzRi249fnMberLIOMELMHPuWiOx90HyR6amSMhgpLXj6sKZCYdDaHxBFjbAfC6lnQ1Cgd5JiaLw6xM5ZBUtZBuOocU0oUKYwipOb8", // configure appropriately
             "message" => $share_topic['facebook_post'],
             "link" => $share_topic['topic_url'],
             "name" => $share_topic['topic_title'],
@@ -89,7 +92,7 @@ foreach($share_topics as $share_topic) {
             "description" => $share_topic['topic_description']
         );
 
-        if($share_topic['facebook_image']) {
+        if(trim($share_topic['facebook_image']) != '') {
             $params["picture"] = $share_topic['facebook_image'];
         }
 
