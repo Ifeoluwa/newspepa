@@ -21,7 +21,7 @@ use PhpSpec\Exception\Example\ErrorException;
 use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
-require_once '../../../public/scripts/test.php';
+
 
 
 class FeedController extends Controller {
