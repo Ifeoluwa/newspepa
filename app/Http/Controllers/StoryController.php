@@ -122,8 +122,8 @@ class StoryController extends Controller {
 
     public static function matchStories($old_stories, $new_stories){
         // Execute the python script with the JSON data
-        $result = shell_exec('python /var/www/first_py/test.py ' . escapeshellarg(json_encode($data)));
-        return json_decode($result);
+//        $result = shell_exec('python /var/www/first_py/test.py ' . escapeshellarg(json_encode($data)));
+//        return json_decode($result);
     }
 
 
