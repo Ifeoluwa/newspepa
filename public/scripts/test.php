@@ -6,7 +6,7 @@
  * Time: 12:18 AM
  */
 const USER_NAME = "root";
-const PASSWORD = "iconway2014";
+const PASSWORD = "HisGRACE01";
 const DSN = "mysql:host=localhost;dbname=newspep_newspepadb";
 const ACTIVE = 1;
 
@@ -47,7 +47,7 @@ function fetchOneAll($pds){
 $params = array(
     'status_id' => 3
 );
-$data_old = executeQuery("SELECT id, title FROM stories WHERE status_id = :status_id", $params);
+$data_old = executeQuery("SELECT id, category_id, title FROM stories WHERE status_id = :status_id", $params);
 $old_data = array();
 foreach($data_old as $data){
     $title = mb_convert_encoding($data['title'], "UTF-8", "Windows-1252");
@@ -63,7 +63,7 @@ foreach($data_old as $data){
     array_push($old_data, $data);
 }
 
-$data_new = executeQuery("SELECT id, title FROM stories WHERE status_id = :status_id AND id BETWEEN 1 AND 3", $params);
+$data_new = executeQuery("SELECT id, category_id, title FROM stories WHERE status_id = :status_id AND id BETWEEN 1 AND 3", $params);
 $new_data = array();
 foreach($data_new as $data){
     $title = mb_convert_encoding($data['title'], "UTF-8", "Windows-1252");

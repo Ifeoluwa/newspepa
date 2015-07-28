@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 //Handles all actions to be performed on feeds
 
+use App\Cluster;
 use App\Feed;
 use App\Http\Requests\Request;
 use App\Story;
@@ -72,6 +73,8 @@ class FeedController extends Controller {
         $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
+
+        //Insert stories
         foreach($all_stories as $story){
             $result = Story::insertIgnore($story);
 
@@ -124,6 +127,13 @@ class FeedController extends Controller {
         $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
         fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
         fclose($fp);
+
+        //Begin Matching
+        $new_stories = StoryController::prepareStories($all_stories);
+        $old_stories = StoryController::getOldStories();
+
+        $matched_stories = StoryController::matchStories($old_stories, $new_stories);
+        Cluster::insertIgnore($matched_stories);
 
 
         set_time_limit(120);
@@ -413,6 +423,8 @@ class FeedController extends Controller {
 
 
     }
+
+
 
 
 
