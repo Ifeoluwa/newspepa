@@ -38,8 +38,8 @@
                         <p class="full-story-text" style="margin-left:auto;">
                             <h3 style="font-weight: 700;color:#707070;font-family: 'Muli', sans-serif;">Built for mobile</h3>
                             <ul style="font-family: 'Muli', sans-serif; color:#0266C8; line-height: 3.0">
-                                <li>Read News from your favourite sources</li>
-                                <li>Stories that matter rank higher</li>
+                                <li>Read news from your favourite sources</li>
+                                <li>See stories that matter first</li>
                                 <li>Get breaking news on the go</li>
                                 <li>Fast and easy to use</li>
                             </ul>
@@ -54,17 +54,15 @@
                 {{--<div class="shareboxdiv"><div class="sharebox">--}}
             <div class="large-12 columns">
                <h5 style="font-family: 'Muli', sans-serif; color:#707070">Follow us on social media</h5>
+               <div class="large-6 columns" style="float:left; overflow: visible">
+                   <a href="https://twitter.com/newspepa" class="twitter-follow-button" data-show-count="false">Follow @newspepa</a>
+                   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                   </div>
             </div><br/>
-            <div class="row">
-               <div class="large-6 columns" style="float:left">
-                <a href="https://twitter.com/newspepa" class="twitter-follow-button" data-show-count="false">Follow @newspepa</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </div>
-            </div><br/>
-            <div class="row">
-                <div class="large-12 columns" style="float:left">
+            <div class="large-6 columns" style="float:left;overflow:visible">
+
                    <div class="fb-page" data-href="https://www.facebook.com/pages/Newspepa/1165261366833416" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Newspepa/1165261366833416"><a href="https://www.facebook.com/pages/Newspepa/1165261366833416">Newspepa</a></blockquote></div></div>
-                </div>
+
             </div>
 
 

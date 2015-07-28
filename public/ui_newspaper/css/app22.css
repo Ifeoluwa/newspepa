@@ -18,6 +18,52 @@
     background:url('../img/desktop-logo-white-transparent-small.png') no-repeat;
     background-position: center;
 }
+
+.left-off-canvas-menu {
+    background: #ffffff none repeat scroll 0% 0%;
+    border-bottom: #E8E8E8;
+}
+
+ul.off-canvas-list li a:hover {
+    background: #0266C8; }
+ul.off-canvas-list li a:active {
+    background: #0266C8; }
+
+.tab-bar {
+    background:url('../img/logo-white-transparent-small.png') no-repeat  scroll 0% 0%;;
+    background-color: #0266C8;
+    background-position: center;
+    width:100%;
+    background-size: 260px 62px;
+    height: 3.8125rem;
+}
+
+.tab-bar .menu-icon{
+    height: 3.8125rem;
+}
+
+.left-small{
+    border:none;
+}
+
+ul.off-canvas-list li a{
+    color:#000000;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.category-row{
+    margin-bottom: 0.1rem !important;
+    font-size: 16px;
+}
+.category-row li a{
+    color:#ffffff !important;
+}
+.category-row li{
+    margin-left:1rem !important;
+}
+.f-dropdown li a{
+    color:#000000 !important;
+}
 .row {
     margin-bottom:0.4rem;
     max-width: 100%;
@@ -72,8 +118,8 @@
     background-size:22px 22px;
     overflow-y: hidden;
 }
-button{
-    padding:0 0 0 0;
+button {
+    padding: 0 0 0 0;
 
 }
 .home-button{
@@ -82,8 +128,11 @@ button{
     margin-left: 45px;
 }
 
-button:hover, button:focus, .button:hover, .button:focus{
+button:hover, .button:hover,{
     background-color: #0250A0 !important;
+}
+.button:focus, button:focus{
+    background-color:#0266C8 !important;
 }
 ::-webkit-input-placeholder {
     color: #5f5f5f; }
@@ -402,18 +451,21 @@ p{
     overflow-y:hidden;
 }
 
-.dropdown.button, button.dropdown{
-    /*padding-right:12.98rem;*/
-    background:#0266C8;
-    width:100%;
-    font-size: 1.3rem;
-    border-radius:1px;
-    margin-top: 0.3px;
-    margin-bottom: 7px;
-    height: 40px;
-    padding-top:6px;
+.dropdown.button, button.dropdown {
+    background: #0266C8 none repeat scroll 0% 0%;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 1px;
     overflow: auto;
+    margin-top: 0.1px;
+    height: 5px;
+    padding-top: 5px;
+    margin-bottom: 4px;
+    padding-right: 40px;
+    padding-left: 1.5px
 }
+
+
 .f-dropdown{
     overflow: auto;
 }
@@ -577,9 +629,9 @@ body{
     position: fixed;
     bottom:0;
     right: 0;
-    background-size: 45px 45px;
-    width:45px;
-    height:45px;
+    background-size: 50px 50px;
+    width:50px;
+    height:50px;
     z-index: 100;
     display: none;
     text-decoration: none;
