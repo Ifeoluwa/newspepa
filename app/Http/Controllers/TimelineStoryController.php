@@ -460,18 +460,11 @@ class TimelineStoryController extends Controller
         return $route;
     }
 
+    public function getStoriesByPub(){
 
-    public function paginate($items,$perPage)
-    {
-        $pageStart = \Request::get('page', 1);
-        // Start displaying items from this number;
-        $offSet = ($pageStart * $perPage) - $perPage;
-
-        // Get only the items you need using array_slice
-        $itemsForCurrentPage = array_slice($items, $offSet, $perPage, true);
-
-        return new Paginator($itemsForCurrentPage, $perPage, $pageStart, array('path' => Paginator::resolveCurrentPath()));
     }
+
+
 
 
 }
