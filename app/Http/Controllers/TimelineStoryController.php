@@ -275,6 +275,8 @@ class TimelineStoryController extends Controller
          * search
          */
         $search_query = \Illuminate\Support\Facades\Input::get('search_query');
+        $search_query = trim($search_query);
+        $search_query = preg_replace('/\s+/', ' ',$search_query);
 
         $search_query_array = explode(' ', $search_query);
         $search_query_array = array_diff($search_query_array, $this->stop_word_array);
