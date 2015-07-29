@@ -22,6 +22,8 @@ use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
 
+
+
 class FeedController extends Controller {
 
     protected $client;
@@ -38,6 +40,8 @@ class FeedController extends Controller {
         var_dump('Started...');
 
         //solr
+        $this->client = new \Solarium\Client;
+
 //        $this->client = new \Solarium\Client;
         var_dump('\nGetting sources...');
         $feeds = FeedController::getFeedSources();
@@ -300,6 +304,8 @@ class FeedController extends Controller {
     public function test(){
         $this->fetchFeeds();
         echo "<br> done";
+//        $this->fetchFeeds();
+//        echo "<br> done";
 
     }
 

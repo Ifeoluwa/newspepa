@@ -24,7 +24,7 @@ the important section, lessImportant and noImage stories--}}
                              <h1 class="title title-important">{{$searchResult['title']}}</h1>
                         @endif
                      </header></a>
-                        <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publisher_names'][$searchResult['pub_id']]}}</b></span>
+                        <span class="publisher-name">{{$data['publisher_names'][$searchResult['pub_id']]}}</span>
                         {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>--}}
            {{--<span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($searchResult['created_date'])}} </b></span>--}}
                 </div>

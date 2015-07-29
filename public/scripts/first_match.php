@@ -7,7 +7,7 @@
  */
 
 const USER_NAME = "root";
-const PASSWORD = "HisGRACE01";
+const PASSWORD = "";
 const DSN = "mysql:host=localhost;dbname=newspep_newspepadb";
 const ACTIVE = 1;
 
@@ -99,7 +99,7 @@ $params = array(
     'status_id' => 1
 );
 
-$all_stories = executeQuery("SELECT id, title, description FROM timeline_stories WHERE status_id = :status_id AND created_date BETWEEN date_sub(now(), INTERVAL 3 DAY) AND now()", $params);
+$all_stories = executeQuery("SELECT id, title, description FROM timeline_stories WHERE status_id = :status_id", $params);
 
 
 for($i = 0; $i < count($all_stories); ++$i){

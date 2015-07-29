@@ -1,15 +1,17 @@
-{{--{{json_encode($data)}}--}}
 @extends('major.layout')
 @foreach($data['full_story'] as $full_story2)
 @section('title', $full_story2['title'])
 @endsection
 @endforeach
 
-@foreach($data['full_story'] as $full_story1)
-@section('dropdown',$data['category_names'][$full_story1['category_id']])
+@section('more-meta')
+<?php $tc = new \App\Http\Controllers\TimelineStoryController();
+  ?>
+<meta property="og:title" content= "{{$full_story2['title']}}"/>
+<meta property="og:image" content= "{{$full_story2['image_url']}}"/>
+<meta property="og:description" content= "{{$full_story2['description']}}"/>
+<meta property="og:url" content= "{{url($tc->makeStoryUrl($full_story2['title'], $full_story2['story_id']))}}"/>
 @endsection
-@endforeach
-
 
 @section('full_story')
 @foreach($data['full_story'] as $full_story)
@@ -26,25 +28,30 @@
       @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}" name="linkOuts" href="{{$full_story['url']}}" style="color: #202f55" target="_blank">Continue to read</a></p></p>
+      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}" name="linkOuts" href="{{$full_story['url']}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
       </div>
+      <div style="padding-bottom: 5px">
+      <div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
+      <div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+      </div>
+         {{--<footer class="footer">--}}
+            {{--<div class="_2ip_" id="feedback_inline_896223087101322" data-sigil="mufi-inline">--}}
+            {{--<div class="likecounter" id="counts_feedback">--}}
+            {{--<a href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;">--}}
+            {{--<span class="likespan" id="u_6_i"><span></span></span></a></div>--}}
+            {{--<div class="shareboxdiv">--}}
+              {{--<div class="sharebox">--}}
+                  {{--<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>--}}
+                  {{--</div>--}}
+                   {{--<div class="sharebox"><i class="fbicon"></i><a class="_15kr"  href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&redirect_uri={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" >Share</a>--}}
+                   {{--</div>--}}
+              {{--</div>--}}
+            {{--</div>--}}
+         {{--</footer>--}}
   </div>
   {{--</div>--}}
 
-   <footer class="footer">
-      <div class="_2ip_" id="feedback_inline_896223087101322" data-sigil="mufi-inline">
-      <div class="likecounter" id="counts_feedback">
-      <a href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;">
-      <span class="likespan" id="u_6_i"><span></span></span></a></div>
-      <div class="shareboxdiv">
-        <div class="sharebox">
-            <div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-            </div>
-             <div class="sharebox"><i class="fbicon"></i><a class="_15kr"  href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&redirect_uri={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" >Share</a>
-             </div>
-        </div>
-      </div>
-   </footer>
+
 @endforeach
 @endsection
 
