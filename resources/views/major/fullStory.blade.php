@@ -7,10 +7,11 @@
 @section('more-meta')
 <?php $tc = new \App\Http\Controllers\TimelineStoryController();
   ?>
-<meta property="og:title" content= "{{$full_story2['title']}}"/>
+<meta property="og:title" content= "{{$full_story2['title']}} | Newspepa.com"/>
 <meta property="og:image" content= "{{$full_story2['image_url']}}"/>
 <meta property="og:description" content= "{{$full_story2['description']}}"/>
 <meta property="og:url" content= "{{url($tc->makeStoryUrl($full_story2['title'], $full_story2['story_id']))}}"/>
+
 @endsection
 
 @section('full_story')

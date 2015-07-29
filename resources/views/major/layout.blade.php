@@ -59,12 +59,12 @@
              <ul class="off-canvas-list">
                   <li id="1"><label>Newspepa</label></li>
                   <li id="1"><a href="{{url('/')}}">Top stories</a></li>
-                  <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
-                  <li id="3"><a href="{{url('nigeria')}}">Nigeria</a></li>
-                  <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
-                  <li id="5"><a href="{{url('sports')}}">Sports</a></li>
-                  <li id="6"><a href="{{url('politics')}}">Politics</a></li>
-                  <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+                  <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
+                  <li id="3"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
+                  <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
+                  <li id="5"><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
+                  <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
+                  <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a></li>
              </ul>
         </aside>
 
@@ -92,21 +92,17 @@
         <ul class="inline-list category-row">
 
           {{--<li id="1" ><a href="{{url('/')}}">Top stories</a></li>--}}
-          <li id="2"><a href="{{url('/latest')}}">Latest</a></li>
-          <li id="3" class="active"><a href="{{url('nigeria')}}">Nigeria</a></li>
-          <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
-          <li id="4"><label href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">More</label>
-            <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
-            <li><a href="{{url('business')}}">Business</a></li>
-            <li><a href="{{url('sports')}}">Sports</a></li>
-            <li id="6"><a href="{{url('politics')}}">Politics</a>
-            <li id="7"><a href="{{url('metro')}}">Metro</a>
+          <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
+          <li id="3" class="active"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
+          <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
+          <li id="4"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
+            <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
+            <li><a href="{{url('business-news-in-nigeria')}}">Business</a></li>
+            <li><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
+            <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a>
+            <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a>
             </ul>
           </li>
-
-          {{--<li id="5"><a href="{{url('sports')}}">Sports</a></li>--}}
-          {{--<li id="6"><a href="{{url('politics')}}">Politics</a></li>--}}
-          {{--<li id="7"><a href="{{url('metro')}}">Metro</a></li>--}}
 
         </ul>
 
@@ -125,6 +121,8 @@
               {{--other relevant content--}}
 
               @yield('related_content')
+
+              @yield('other_sources')
 
               @yield('publishers')
 
@@ -148,20 +146,20 @@
            <li><label>News Sources</label></li>
           <li id="1" ><a href="{{url('/')}}">Home</a></li>
           <li id="1" ><a href="{{url('/punch')}}">Punch</a></li>
-           <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
            <li id="2"><a href="{{url('/vanguard')}}">Vanguard</a></li>
-           <li id="3"><a href="{{url('politics')}}">Politics</a></li>
+           <li id="3"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
            <li id="3"><a href="{{url('linda-ikeji')}}">Linda Ikeji</a></li>
            <li id="3">
            {{--<a href="#" data-options="align:top" data-dropdown="drop">More &raquo;</a>--}}
-                <a href="#" data-options="align:top" data-dropdown="drop">More&raquo;</a>
+                <a href="#" data-options="align:top" data-dropdown="drop1">More&raquo;</a>
                 {{--<ul id="drop" class="[tiny small medium large content]f-dropdown" data-dropdown-content>--}}
                 {{--<li><a href="#">This is a link</a></li>--}}
                 {{--<li><a href="#">This is another</a></li>--}}
                 {{--<li><a href="#">Yet another</a></li>--}}
                 {{--</ul>--}}
            </li>
-           <li id="3"><a href="#" data-options="align:top" data-dropdown="drop">More&raquo;</a></li>
+           <li id="3"><a href="#" data-options="align:top" data-dropdown="drop1">More&raquo;</a></li>
         </ul>
 
 {{--<ul class="inline-list" style="color:#0266C8">--}}

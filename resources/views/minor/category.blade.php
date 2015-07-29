@@ -1,6 +1,12 @@
 @extends ('minor.opera-layout')
 @section ('title',$data['category_stories']['category_name'] )
 @endsection
+@section('more-meta')
+
+<meta property="og:title" content= "Latest {{$data['category_stories']['category_name']}} In Nigeria Today"/>
+ <meta property="og:description" content= "Latest breaking {{$data['category_stories']['category_name']}} news in nigeria today"/>
+ <meta property="og:url" content= {{url($data['category_stories']['category_route'])}}/>
+@endsection
 
 <?php $i=0;
  ?>

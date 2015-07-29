@@ -3,6 +3,14 @@
 
 @stop
 
+@section('more-meta')
+<?php $tc = new \App\Http\Controllers\TimelineStoryController();
+  ?>
+<meta property="og:title" content= "Top News In Nigeria Today"/>
+<meta property="og:description" content= "Top breaking news in nigeria today"/>
+<meta property="og:url" content= "{{url('/')}}"/>
+@stop
+
 <?php $i=0;
  ?>
  @section('important_stories')

@@ -1,6 +1,13 @@
 @extends ('minor.opera-layout')
 @section('title', 'Breaking Nigerian News From Top Sites')
+@stop
+
+ @section('more-meta')
+ <meta property="og:title" content= "Latest In Nigeria Today"/>
+ <meta property="og:description" content= "Latest breaking news in nigeria today"/>
+ <meta property="og:url" content= "{{url('/latest-news-in-nigeria')}}"/>
  @stop
+
 
    <?php $i=0;
   ?>
