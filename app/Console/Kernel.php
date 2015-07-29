@@ -29,14 +29,14 @@ class Kernel extends ConsoleKernel
     {
 
         $schedule->call(function(){
-            echo "Level 1 begins";
+            echo "Level 1 begins:: Fetching + Matching";
             $fc = new FeedController();
             $fc->fetchFeeds();
             echo "\nFetch feeds successful";
         })->then(function(){
-            echo "Level 3 begins";
+            echo "Level 3 begins:: Creating Timeline Stories";
             $sc = new StoryController();
-            $sc->newCreateTimeLineStories();
+            $sc->createTimelineStories();
             echo "\nCreate timeline story completed!";
         })->everyFiveMinutes();
 

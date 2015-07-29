@@ -21,13 +21,10 @@ class Story extends Model
     // Gets all the stories that match the pivot story
     public static function matches($cluster_pivot){
         $matches = DB::table("clusters")
-            ->join('stories', 'clusters.cluster_match',  '=',  'stories.id')->where('clusters.cluster_pivot', $cluster_pivot)
+            ->join('stories', 'clusters.cluster_match',  '=',  'stories.id')
+            ->where('clusters.cluster_pivot', $cluster_pivot)
             ->get();
         return $matches;
-    }
-
-    public static function getStories(){
-
     }
 
 

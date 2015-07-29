@@ -122,18 +122,6 @@ class TimelineStoryController extends Controller
         }
     }
 
-    //Gets story by publisher
-    public function getStoriesByPublisher($publisher_name){
-
-        try{
-
-
-        }catch(\ErrorException $ex){
-            return view('errors.404');
-        }
-
-
-    }
 
     //Latest Stories
     public function getLatestStories(){
@@ -200,12 +188,14 @@ class TimelineStoryController extends Controller
     public function handleRequest($request_name){
         try{
             $request_array = explode('-', $request_name);
-            if(count($request_array) > 1){
-                return $this->getFullStory($request_array[count($request_array) - 1]) ;
-            }else{
+            if(array_key_exists($request_name, Category::$news_category)){
                 return $this->getStoriesByCat($request_name);
-
+            }elseif(array_key_exists($request_name, Publisher::$publisher_route)){
+                return $this->getStoriesByPub($request_name);
+            }else{
+                return $this->getFullStory($request_array[count($request_array) - 1]) ;
             }
+
         }catch (\ErrorException $ex){
            return view('errors.404');
         } catch (NotFoundHttpException $nfe){
@@ -460,7 +450,39 @@ class TimelineStoryController extends Controller
         return $route;
     }
 
-    public function getStoriesByPub(){
+    public function getStoriesByPub($pub_route){
+
+        try{
+            $stories_by_publisher = array();
+            $pub_id = Publisher::$publisher_route[$pub_route];
+            $stories_by_publisher['publisher_name'] = Publisher::$publishers[$pub_id];
+
+            $pageStart = \Request::get('page', 1);
+            $perPage = 50;
+            $offSet = ($pageStart * $perPage) - $perPage;
+
+            $items = TimelineStory::publisherStories($pub_id);
+
+
+            //Items for a page
+            $itemsForCurrentPage = array_slice($items, $offSet, $perPage, true);
+            $stories_by_publisher['all'] = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
+            $stories_by_publisher['all']->setPath(Publisher::$publishers[$pub_id]);
+
+            //Handles the next and previous for the pagination on the view
+            $paginator = new Paginator($items, 50);
+            $paginator->setPath($pub_route);
+
+
+            if($this->isOpera()){
+                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher,  'paginator' => $paginator));
+            }else{
+                return view('major.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
+            }
+
+        }catch(\ErrorException $ex){
+            return view('errors.404');
+        }
 
     }
 

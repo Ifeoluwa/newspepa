@@ -22,8 +22,6 @@ use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
 
-
-
 class FeedController extends Controller {
 
     protected $client;
@@ -37,13 +35,11 @@ class FeedController extends Controller {
     // handles the actual fetching of feeds from the feed sources
     public function fetchFeeds(){
         set_time_limit(0);
-        var_dump('Started...');
 
         //solr
         $this->client = new \Solarium\Client;
 
-//        $this->client = new \Solarium\Client;
-        var_dump('\nGetting sources...');
+        $this->client = new \Solarium\Client;
         $feeds = FeedController::getFeedSources();
 
         $all_stories = array();
@@ -74,7 +70,7 @@ class FeedController extends Controller {
         // Shuffle the array of stories
         shuffle($all_stories);
         $stories_array = array();
-//        $updateQuery = $this->client->createUpdate();
+        $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
         $inserted_stories = array();
@@ -88,51 +84,51 @@ class FeedController extends Controller {
                 //adding document to solr
                 array_push($inserted_stories, $story);
 
-//                $story1 = $updateQuery->createDocument();
-//                $story1->id = $result; //return the id of the insert from PDO query and attach it here
-//                $story1->title_en = $story['title'];
-//                $story1->description_en = $story['description'];
-//                if(isset($story['image_url'])){
-//                    $story1->image_url_t = $story['image_url'];
-//                }else{
-//                    $story1->image_url_t = '';
-//                }
-//                $story1->video_url_t = '';
-//                $story1->url = $story['url'];
-//                $story1->pub_id_i = $story['pub_id'];
-//                $story1->has_cluster_i = 1;
-//                //do this for all stories and keep adding them to the stories array
-//                //when done continue to the nest line
-//                array_push($stories_array, $story1);
+                $story1 = $updateQuery->createDocument();
+                $story1->id = $result; //return the id of the insert from PDO query and attach it here
+                $story1->title_en = $story['title'];
+                $story1->description_en = $story['description'];
+                if(isset($story['image_url'])){
+                    $story1->image_url_t = $story['image_url'];
+                }else{
+                    $story1->image_url_t = '';
+                }
+                $story1->video_url_t = '';
+                $story1->url = $story['url'];
+                $story1->pub_id_i = $story['pub_id'];
+                $story1->has_cluster_i = 1;
+                //do this for all stories and keep adding them to the stories array
+                //when done continue to the nest line
+                array_push($stories_array, $story1);
             }
 
             $similarity = $this->isSimilarToPrevious($story);
             if($similarity !== true){
                 $result = Story::insertIgnore($story);
-//                if($result !== false){
-//                    $k += 1;
-//                    $now  = date('Y-m-d h:i:s');
-//                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-//                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
-//                    fclose($fp);
-//                }else{
-//                    $now  = date('Y-m-d h:i:s');
-//                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-//                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
-//                    fclose($fp);
-//                }
+                if($result !== false){
+                    $k += 1;
+                    $now  = date('Y-m-d h:i:s');
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
+                    fclose($fp);
+                }else{
+                    $now  = date('Y-m-d h:i:s');
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
+                    fclose($fp);
+                }
             }
         }
-//        $updateQuery->addDocuments($stories_array);
-//        $updateQuery->addCommit();
+        $updateQuery->addDocuments($stories_array);
+        $updateQuery->addCommit();
 
-//        $result = $this->client->update($updateQuery);
+        $result = $this->client->update($updateQuery);
 
         $stored_stories = $k;
         $now  = date('Y-m-d h:i:s');
-//        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-//        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
-//        fclose($fp);
+        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
+        fclose($fp);
 
         //Begin Matching
         if(count($inserted_stories) > 0){
@@ -436,9 +432,18 @@ class FeedController extends Controller {
 
     }
 
+    public function testCluster(){
 
+        $inserted_stories = DB::table('stories')->select('id', 'title', 'description')->orderBy('created_date', 'desc')->limit(30)->get();
+        $new_stories = StoryController::prepareStories($inserted_stories);
 
+        $old_stories = StoryController::getOldStories();
 
+        $matched_stories = StoryController::matchStories($old_stories, $new_stories);
+
+        Cluster::insertIgnore($matched_stories);
+
+    }
 
 
 

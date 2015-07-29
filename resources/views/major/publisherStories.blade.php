@@ -23,7 +23,7 @@
                                       @endif
                                       </header></a>
                                        <span class="publisher-name">{{$data['publishers_name'][$top_story['pub_id']]}}</span>
-                                      {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>--}}
+                                      <span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>
                                        <span class="timecount-name">{{$tc->getTimeDifference($top_story['created_date'])}}</span>
                                   </div>
                                 </a>

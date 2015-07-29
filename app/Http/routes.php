@@ -16,15 +16,19 @@
 // Handles the response of stories in Json format
 Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
-Route::get('test', 'FeedController@test');
+Route::get('test', 'FeedController@testCluster');
 
-Route::get('timeline', 'StoryController@createTimelineStory');
+Route::get('timeline', 'StoryController@newCreateTimeLineStories');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
 
 Route::get('desktop', function(){
 //    $user_agent = $_SERVER['HTTP_USER_AGENT'];
     return view('errors.desktopView');
+});
+
+Route::get('about', function(){
+   return view('aboutUs');
 });
 
 //Handles request from the admin/authentication
@@ -43,7 +47,7 @@ Route::get('register', function(){
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
-//Route::group(['middleware' => 'user_agent'], function(){
+Route::group(['middleware' => 'user_agent'], function(){
 
     Route::get('/', 'TimelineStoryController@index');
 
@@ -61,7 +65,7 @@ Route::get('register', function(){
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 
 
-//});
+});
 
 
 
