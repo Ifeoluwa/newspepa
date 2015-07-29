@@ -58,10 +58,10 @@
 
 @section('other_sources')
 @if(count($data['other_sources']) > 0)
-<div class="row panel radius related-content"><b>other sources</b></div>
+<div class="row panel radius related-content"><b>Other sources</b></div>
 @foreach($data['other_sources'] as $other_sources)
     <div class="row panel radius">
-        <a name="linkOuts" id="{{$other_sources['story_id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span></a>
+        <a name="linkOuts" id="{{$other_sources['id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}} | {{$other_sources['title']}}</span></a>
     </div>
 @endforeach
 @endif

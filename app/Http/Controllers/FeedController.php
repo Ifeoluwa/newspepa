@@ -50,7 +50,7 @@ class FeedController extends Controller {
             if(!$content) {
                 continue;
             }
-            if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19){
+            if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21 || $feed['pub_id'] == 24){
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
             }elseif($feed['pub_id'] == 12 ){
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
@@ -385,7 +385,7 @@ class FeedController extends Controller {
                             $story['image_url'] = "story_images/".$this->getImageName($img_url, $str['title'], $str['pubDate']);
                         }
 
-                    }else if($feed['pub_id'] == 1){
+                    }else if($feed['pub_id'] == 1 || $feed['pub_id'] == 22 || $feed['pub_id'] == 23 || $feed['pub_id'] == 25){
                         $tc = new TimelineStoryController();
                         $result = $tc->getStoryImage($str['link']);
                         if($result !== null){

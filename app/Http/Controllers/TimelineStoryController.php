@@ -41,7 +41,7 @@ class TimelineStoryController extends Controller
         $this->key_word_array = explode(PHP_EOL, $key_words);
     }
 
-    public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
+    public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro", 6 => "Business");
 
 
 /**
@@ -315,20 +315,6 @@ class TimelineStoryController extends Controller
             'found' => $found,
             'publisher_names' => Publisher::$publishers
         );
-
-        $pageStart = \Request::get('page', 1);
-        $perPage = 5;
-        $offSet = ($pageStart * $perPage) - $perPage;
-
-
-        // Get only the items you need using array_slice
-        $itemsForCurrentPage = array_slice($return['search_result'], $offSet, $perPage, true);
-        $return['search_result'] = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
-        $return->setPath('search/results');
-
-        // Displays the next and previous on the view
-        $return['paginator'] = new Paginator($return['search_result'], 5);
-        $return['paginator']->setPath('search/results');
 
         if($this->isOpera()){
             return view('minor.search_results')->with('data', $return);

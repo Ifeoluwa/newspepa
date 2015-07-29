@@ -59,12 +59,12 @@
              <ul class="off-canvas-list">
                   <li id="1"><label>Newspepa</label></li>
                   <li id="1"><a href="{{url('/')}}">Top stories</a></li>
-                  <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
-                  <li id="3"><a href="{{url('nigeria')}}">Nigeria</a></li>
-                  <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
-                  <li id="5"><a href="{{url('sports')}}">Sports</a></li>
-                  <li id="6"><a href="{{url('politics')}}">Politics</a></li>
-                  <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+                  <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
+                  <li id="3"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
+                  <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
+                  <li id="5"><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
+                  <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
+                  <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a></li>
           </ul>
         </aside>
 
@@ -91,15 +91,15 @@
         <ul class="inline-list category-row">
 
           {{--<li id="1" ><a href="{{url('/')}}">Top stories</a></li>--}}
-          <li id="2"><a href="{{url('/latest')}}">Latest</a></li>
-          <li id="3" class="active"><a href="{{url('nigeria')}}">Nigeria</a></li>
-          <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
+          <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
+          <li id="3" class="active"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
+          <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
           <li id="4"><label href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">More</label>
             <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
-            <li><a href="{{url('business')}}">Business</a></li>
-            <li><a href="{{url('sports')}}">Sports</a></li>
-            <li id="6"><a href="{{url('politics')}}">Politics</a>
-            <li id="7"><a href="{{url('metro')}}">Metro</a>
+            <li><a href="{{url('business-news-in-nigeria')}}">Business</a></li>
+            <li><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
+            <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a>
+            <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a>
             </ul>
           </li>
 
@@ -122,6 +122,8 @@
               @yield('full_story')
 
               {{--other relevant content--}}
+
+              @yield('other_sources')
 
               @yield('related_content')
 

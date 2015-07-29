@@ -36,13 +36,13 @@
 
  <div class="row opera-panel radius" style="background-color: #336;">
    <a href="{{url('/')}}"> <span style="color:#ffffff"><b>Top Stories| </b></span></a>
-    <a href="{{url('/latest')}}"><span style="color:#ffffff"><b>Latest Stories| </b></span></a>
-    <a href="{{url('/nigeria')}}"><span style="color:#ffffff"><b>Nigeria </b></span></a>
+    <a href="{{url('/latest-news-in-nigeria')}}"><span style="color:#ffffff"><b>Latest Stories| </b></span></a>
+    <a href="{{url('/nigeria-news-in-nigeria')}}"><span style="color:#ffffff"><b>Nigeria </b></span></a>
     <br/>
-        <a href="{{url('/entertainment')}}"><span style="color:#ffffff"><b>Entertainment| </b></span></a>
-        <a href="{{url('/sports')}}"><span style="color:#ffffff"><b>Sports| </b></span></a>
-        <a href="{{url('/politics')}}"><span style="color:#ffffff"><b>Politics| </b></span></a>
-       <a href="{{url('/metro')}}"><span style="color:#ffffff"><b>Metro </b></span></a>
+        <a href="{{url('/entertainment-news-in-nigeria')}}"><span style="color:#ffffff"><b>Entertainment| </b></span></a>
+        <a href="{{url('/sports-news-in-nigeria')}}"><span style="color:#ffffff"><b>Sports| </b></span></a>
+        <a href="{{url('/politics-news-in-nigeria')}}"><span style="color:#ffffff"><b>Politics| </b></span></a>
+       <a href="{{url('/metro-news-in-nigeria')}}"><span style="color:#ffffff"><b>Metro </b></span></a>
     </div>
 
     @yield('category_name')
