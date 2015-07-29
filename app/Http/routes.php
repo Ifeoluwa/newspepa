@@ -22,24 +22,27 @@ Route::get('timeline', 'StoryController@createTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
 
+Route::get('minor', function(){
+
+    return view('test')->with('is_opera', true);
+});
+
 Route::get('desktop', function(){
 //    $user_agent = $_SERVER['HTTP_USER_AGENT'];
     return view('errors.desktopView');
-});
-
-//Handles request from the admin/authentication
-Route::get('admin', function(){
-    return view('admin.login');
 });
 
 Route::get('register', function(){
    return view('admin.register');
 });
 
+Route::get('publisher', function(){
+    return view('major.publishersList');
+});
 
-
-
-
+Route::get('about', function(){
+    return view('major.aboutUs');
+});
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
@@ -59,9 +62,6 @@ Route::get('register', function(){
 
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
-
-
-//});
 
 
 

@@ -2,9 +2,10 @@
 <html class="no-js" lang="en">
    <head>
     <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
+    @yield('more-meta')
     <title>@yield('title')</title>
-    <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
+    <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
      <link rel="stylesheet" href="ui_newspaper/css/app22.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
@@ -18,42 +19,97 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1681272065426030";
+    js.async=true;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=222521117951114";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
 
-<div class="fixed">
-    <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
-        <ul class="title-area">
-            <a href="{{url('/')}}"><li class="name name-m"></li></a>
-        </ul>
-    </nav>
+    {{--<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">--}}
+        {{--<ul class="title-area">--}}
+            {{--<li class="name name-m"><a href="{{url('/')}}"></a></li>--}}
+            {{--<li class="toggle-topbar menu-icon"><a href="{{url('/')}}"></a></li>--}}
+        {{--</ul>--}}
+        {{--<section class="top-bar-section">--}}
+                    {{--<!-- Right Nav Section -->--}}
+                    {{--<ul class="right">--}}
+                        {{--<li class="active"><a href="#">Top stories</a></li>--}}
+                        {{--<li><a href="#">Entertainment</a></li>--}}
+                        {{--<li><a href="#">Politics</a></li>--}}
+                        {{--<li><a href="#">Sports</a></li>--}}
+                        {{--<li><a href="#">Nigeria</a></li>--}}
+                        {{--<li><a href="#">Metro</a></li>--}}
+                    {{--</ul>--}}
+        {{--</section>--}}
+    {{--</nav>--}}
+
+    <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+        <a href="{{url('/')}}"><nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation" >
+
+          <div class="left-small" data-options="sticky_on: small">
+            <a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>
+          </div>
+
+        </nav>
+        </a>
+        <!-- Off Canvas Menu -->
+        <aside class="left-off-canvas-menu">
+            <!-- whatever you want goes here -->
+             <ul class="off-canvas-list">
+                  <li id="1"><label>Newspepa</label></li>
+                  <li id="1"><a href="{{url('/')}}">Top stories</a></li>
+                  <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+                  <li id="3"><a href="{{url('nigeria')}}">Nigeria</a></li>
+                  <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
+                  <li id="5"><a href="{{url('sports')}}">Sports</a></li>
+                  <li id="6"><a href="{{url('politics')}}">Politics</a></li>
+                  <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+          </ul>
+        </aside>
+
+
+        <!-- main content goes here -->
+
+      <!-- close the off-canvas menu -->
+
     {{--the search bar--}}
     <form id="searchbar" method="get" action = "search">
-        <div class="row searchbar-row" style="width:100%">
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" results="7" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
+        {{--<div class="row searchbar-row" style="width:100%">--}}
+            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
             <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
-        </div>
+        {{--</div>--}}
     </form>
-</div>
+
+
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
-    <div class="large-12 medium-12 small-12 columns">
+        {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button>--}}
+        {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
+       <div class="row " style="background-color: #0266C8">
+        <ul class="inline-list category-row">
 
-        <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button></div>
-        <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
-
-          <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
-          <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+          {{--<li id="1" ><a href="{{url('/')}}">Top stories</a></li>--}}
+          <li id="2"><a href="{{url('/latest')}}">Latest</a></li>
           <li id="3" class="active"><a href="{{url('nigeria')}}">Nigeria</a></li>
           <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
-          <li id="5"><a href="{{url('sports')}}">Sports</a></li>
-          <li id="6"><a href="{{url('politics')}}">Politics</a></li>
-          <li id="7"><a href="{{url('metro')}}">Metro</a></li>
+          <li id="4"><label href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">More</label>
+            <ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">
+            <li><a href="{{url('business')}}">Business</a></li>
+            <li><a href="{{url('sports')}}">Sports</a></li>
+            <li id="6"><a href="{{url('politics')}}">Politics</a>
+            <li id="7"><a href="{{url('metro')}}">Metro</a>
+            </ul>
+          </li>
+
+          {{--<li id="5"><a href="{{url('sports')}}">Sports</a></li>--}}
+          {{--<li id="6"><a href="{{url('politics')}}">Politics</a></li>--}}
+          {{--<li id="7"><a href="{{url('metro')}}">Metro</a></li>--}}
+
         </ul>
 
+        </div>
 {{--the stories containers starts from here--}}
 
           <div class="large-12 small-12 columns" id="stories_container">
@@ -66,9 +122,12 @@
               @yield('full_story')
 
               {{--other relevant content--}}
-              <br/>
+
               @yield('related_content')
 
+              @yield('publishers')
+
+              @yield('about')
 
               </div>
 
@@ -76,24 +135,51 @@
               <a href="#" class="back-to-top" style="display: inline;"></a>
 
 
+<a class="exit-off-canvas"></a>
 
-    <footer class="row">
-        <div class="large-12 columns">
+      </div>
+    </div>
 
-            <ul class="inline-list" style="color:#0266C8">
-                <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
-                <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
-                <li id="3" class="active"><a href="{{url('nigeria')}}">Nigeria</a></li>
-                <li id="4"><a href="{{url('entertainment')}}">Entertainment</a></li>
-                <li id="5"><a href="{{url('sports')}}">Sports</a></li>
-                <li id="6"><a href="{{url('politics')}}">Politics</a></li>
-                <li id="7"><a href="{{url('metro')}}">Metro</a></li>
-            </ul>
-            <p style="margin-left: 20px"><a href="">Choose your news source</a></p>
+    <footer class="row" >
+        {{--<div class="large-12 columns" style="border-top: solid #E0E0E0 2px">--}}
+        <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
+           <li><label>Categories</label></li>
+           <li><label>News Sources</label></li>
+          <li id="1" ><a href="{{url('/')}}">Home</a></li>
+          <li id="1" ><a href="{{url('/punch')}}">Punch</a></li>
+           <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
+           <li id="2"><a href="{{url('/vanguard')}}">Vanguard</a></li>
+           <li id="3"><a href="{{url('politics')}}">Politics</a></li>
+           <li id="3"><a href="{{url('linda-ikeji')}}">Linda Ikeji</a></li>
+           <li id="3">
+           {{--<a href="#" data-options="align:top" data-dropdown="drop">More &raquo;</a>--}}
+                <a href="#" data-options="align:top" data-dropdown="drop">More&raquo;</a>
+                {{--<ul id="drop" class="[tiny small medium large content]f-dropdown" data-dropdown-content>--}}
+                {{--<li><a href="#">This is a link</a></li>--}}
+                {{--<li><a href="#">This is another</a></li>--}}
+                {{--<li><a href="#">Yet another</a></li>--}}
+                {{--</ul>--}}
+           </li>
+           <li id="3"><a href="#" data-options="align:top" data-dropdown="drop">More&raquo;</a></li>
+        </ul>
 
-        </div>
+{{--<ul class="inline-list" style="color:#0266C8">--}}
+                  {{--<li id="1" ><a href="{{url('/')}}">Home</a></li>--}}
+                  {{--<li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>--}}
+                  {{--<li id="3"><a href="{{url('politics')}}">Politics</a></li>--}}
+                  {{--<li id="4"><a href="{{url('nigeria')}}">Nigeria</a></li>--}}
+                  {{--<li id="5"><a href="{{url('entertainment')}}">Entertainment</a></li>--}}
+                  {{--<li><a href="{{url('business')}}">Business</a></li>--}}
+                  {{--<li id="6"><a href="{{url('sports')}}">Sports</a></li>--}}
+                  {{--<li id="7"><a href="{{url('metro')}}">Metro</a></li>--}}
+            {{--</ul>--}}
+            {{--<p style="margin-left: 20px"><a href="">Choose your news source</a></p>--}}
+
+        {{--</div>--}}
     </footer>
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
+    <script src="js/foundation/foundation.offcanvas.js"></script>
+    <script src="js/foundation/foundation.dropdown.js"></script>
     <script src="ui_newspaper/js/vendor/fastclick.js"></script>
     <script src="ui_newspaper/js/foundation.min.js"></script>
     <script src="ui_newspaper/get_social_counts/site.js"></script>
@@ -102,10 +188,12 @@
         $(document).foundation();
 
         //var next_page_url, prev_page_url, new_url;
-        $(document).ready(function(){
+       // $(document).ready(function(){
 // var root = document.documentElement;
 //            root.className += " minor-mini";
-        });
+//         $("a[rel='prev']").append("<span>Previous</span>");
+//         $("a[rel='next']").append("<span>Next</span>")
+//        });
 //            $.ajax({
 //                type:"GET",
 //                url:"http://localhost:8000/stories_json",
@@ -139,21 +227,21 @@
 
 
 //this is used to specify the category that is being displayed on the dropdown list
-        if (location.pathname == "/") {
-              $(".dropdown").text("Top Stories");
-        }else if (location.pathname == "/latest") {
-              $(".dropdown").text("Latest Stories");
-         } else if (location.pathname == "/politics") {
-            $(".dropdown").text("Politics");
-         } else if (location.pathname == "/entertainment") {
-               $(".dropdown").text("Entertainment");
-         } else if (location.pathname == "/sports") {
-         $(".dropdown").text("Sports");
-         }else if (location.pathname == "/metro") {
-                       $(".dropdown").text("Metro");
-          }else if (location.pathname == "/nigeria") {
-                         $(".dropdown").text("Nigeria");
-                    }
+//        if (location.pathname == "/") {
+//              $(".dropdown").text("Top Stories");
+//        }else if (location.pathname == "/latest") {
+//              $(".dropdown").text("Latest Stories");
+//         } else if (location.pathname == "/politics") {
+//            $(".dropdown").text("Politics");
+//         } else if (location.pathname == "/entertainment") {
+//               $(".dropdown").text("Entertainment");
+//         } else if (location.pathname == "/sports") {
+//         $(".dropdown").text("Sports");
+//         }else if (location.pathname == "/metro") {
+//                       $(".dropdown").text("Metro");
+//          }else if (location.pathname == "/nigeria") {
+//                         $(".dropdown").text("Nigeria");
+//                    }
 
 //this is used for the back-to-top button
     var offset = 1200;
