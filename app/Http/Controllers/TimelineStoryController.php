@@ -465,7 +465,7 @@ class TimelineStoryController extends Controller
 
             //Items for a page
             $itemsForCurrentPage = array_slice($items, $offSet, $perPage, true);
-            $stories_by_publisher['all'] = Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
+            $stories_by_publisher['all'] = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
             $stories_by_publisher['all']->setPath(Publisher::$publishers[$pub_id]);
 
             //Handles the next and previous for the pagination on the view
@@ -473,9 +473,9 @@ class TimelineStoryController extends Controller
             $paginator->setPath($pub_route);
 
             if($this->isOpera()){
-                return view('minor.publishersStories')->with('data', array('publisher_stories' => $stories_by_publisher,  'paginator' => $paginator));
+                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher,  'paginator' => $paginator));
             }else{
-                return view('major.publishersStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
+                return view('major.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }
 
         }catch(\ErrorException $ex){

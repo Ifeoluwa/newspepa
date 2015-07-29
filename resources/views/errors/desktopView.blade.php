@@ -81,7 +81,7 @@
 
 
         </div>
-        <div class="large-7 medium-7 small-12 columns" style="padding-right:100px; text-align: center"><p style="margin-top:80px; padding-right: 18px font-weight:700;font-family: 'Muli', sans-serif; font-size:32px; text-align: center; color:#707070">Visit <a href="http://newspepa.com" target="_blank">newspepa.com</a> on your mobile</p>
+        <div class="large-7 medium-7 small-12 columns" style="padding-right:100px; text-align: center"><p style="margin-top:75px; padding-left: 40px font-weight:700;font-family: 'Muli', sans-serif; font-size:32px; text-align: center; color:#707070">Visit <a href="http://newspepa.com" target="_blank">newspepa.com</a> on your mobile</p>
         <img src="ui_newspaper/img/desktopImage.png"  width="100%" height="100%" style= "border-radius:2px;"/></div>
 
 

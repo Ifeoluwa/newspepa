@@ -27,6 +27,16 @@
        </div>
   </div>
 
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+               <!-- Medium Rect1 -->
+               <ins class="adsbygoogle"
+                    style="display:inline-block;width:300px;height:250px"
+                    data-ad-client="ca-pub-7757748461663124"
+                    data-ad-slot="2137550091"></ins>
+               <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+               </script>
+
 
 @endforeach
 @endsection

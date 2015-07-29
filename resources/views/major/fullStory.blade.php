@@ -34,23 +34,23 @@
       <div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
       <div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
       <span style="line-height: 1"><a href="whatsapp://send?text={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
+      <a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" style="font-size: 14px">Other sources&raquo; </a>
+      <ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
+        <li><a href="#">This is a link</a></li>
+        <li><a href="#">This is another</a></li>
+        <li><a href="#">Yet another</a></li>
+      </ul>
       </div>
-         {{--<footer class="footer">--}}
-            {{--<div class="_2ip_" id="feedback_inline_896223087101322" data-sigil="mufi-inline">--}}
-            {{--<div class="likecounter" id="counts_feedback">--}}
-            {{--<a href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&width&layout=standard&action=like&show_faces=true&share=true&height=80&appId=#################" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=100,width=200');return false;">--}}
-            {{--<span class="likespan" id="u_6_i"><span></span></span></a></div>--}}
-            {{--<div class="shareboxdiv">--}}
-              {{--<div class="sharebox">--}}
-                  {{--<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>--}}
-                  {{--</div>--}}
-                   {{--<div class="sharebox"><i class="fbicon"></i><a class="_15kr"  href="https://www.facebook.com/dialog/share?app_id=1681272065426030&display=popup&href={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}&redirect_uri={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" >Share</a>--}}
-                   {{--</div>--}}
-              {{--</div>--}}
-            {{--</div>--}}
-         {{--</footer>--}}
   </div>
-  {{--</div>--}}
+             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+             <!-- Medium Rect1 -->
+             <ins class="adsbygoogle"
+                  style="display:inline-block;width:300px;height:250px"
+                  data-ad-client="ca-pub-7757748461663124"
+                  data-ad-slot="2137550091"></ins>
+             <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+             </script>
 
 
 @endforeach
@@ -67,6 +67,8 @@
 {{--@endforeach--}}
 {{--@endif--}}
 {{--@stop--}}
+
+
 
 @section('related_content')
 <div class="row panel radius related-content">Latest stories in {{$data['category_names'][$full_story['category_id']]}}</div>
