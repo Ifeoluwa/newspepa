@@ -33,6 +33,7 @@
       <div style="padding-bottom: 5px">
       <div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
       <div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+      <span style="line-height: 1"><a href="whatsapp://send?text={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
       </div>
          {{--<footer class="footer">--}}
             {{--<div class="_2ip_" id="feedback_inline_896223087101322" data-sigil="mufi-inline">--}}
@@ -80,9 +81,9 @@
           <div class="text-details"><a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
           <header class="title-holder">
          @if($recent_stories['image_url'] == "")
-           <h1 class="title">{{$recent_stories['title']}}</h1>
+           <h1 class="title-timeline">{{$recent_stories['title']}}</h1>
            @else
-              <h1 class="title title-important">{{$recent_stories['title']}}</h1>
+              <h1 class="title-timeline title-important">{{$recent_stories['title']}}</h1>
           @endif
           </header></a>
            <span class="publisher-name">{{$data['publisher_names'][$recent_stories['pub_id']]}}</span>

@@ -41,18 +41,18 @@
                     {{--</ul>--}}
         {{--</section>--}}
     {{--</nav>--}}
-
+<div class="sticky">
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
+            <nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation" >
+                <div class="left-small" data-options="sticky_on: small">
+                 <a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>
+                </div>
+                <section class="middle tab-bar-section">
+                       <a href="{{url('/')}}"> <h1 class="title"></h1></a>
+                </section>
+            </nav>
 
-        <a href="{{url('/')}}"><nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation" >
-
-          <div class="left-small" data-options="sticky_on: small">
-            <a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>
-          </div>
-
-        </nav>
-        </a>
         <!-- Off Canvas Menu -->
         <aside class="left-off-canvas-menu">
             <!-- whatever you want goes here -->
@@ -65,8 +65,9 @@
                   <li id="5"><a href="{{url('sports')}}">Sports</a></li>
                   <li id="6"><a href="{{url('politics')}}">Politics</a></li>
                   <li id="7"><a href="{{url('metro')}}">Metro</a></li>
-          </ul>
+             </ul>
         </aside>
+
 
 
         <!-- main content goes here -->
@@ -135,11 +136,11 @@
               <a href="#" class="back-to-top" style="display: inline;"></a>
 
 
-<a class="exit-off-canvas"></a>
+             <a class="exit-off-canvas"></a>
 
-      </div>
-    </div>
-
+                  </div>
+                </div>
+</div>
     <footer class="row" >
         {{--<div class="large-12 columns" style="border-top: solid #E0E0E0 2px">--}}
         <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
@@ -178,8 +179,8 @@
         {{--</div>--}}
     </footer>
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
-    <script src="js/foundation/foundation.offcanvas.js"></script>
-    <script src="js/foundation/foundation.dropdown.js"></script>
+    <script src="ui_newspaper/js/foundation/foundation.offcanvas.js"></script>
+    <script src="ui_newspaper/js/foundation/foundation.dropdown.js"></script>
     <script src="ui_newspaper/js/vendor/fastclick.js"></script>
     <script src="ui_newspaper/js/foundation.min.js"></script>
     <script src="ui_newspaper/get_social_counts/site.js"></script>

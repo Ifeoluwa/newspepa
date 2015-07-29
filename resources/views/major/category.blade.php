@@ -16,9 +16,9 @@
                         <div class="text-details"><a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
                          <header class="title-holder">
                          @if($category_story['image_url'] == "")
-                         <h1 class="title">{{$category_story['title']}}</h1>
+                         <h1 class="title-timeline">{{$category_story['title']}}</h1>
                          @else
-                            <h1 class="title title-important">{{$category_story['title']}}</h1>@endif
+                            <h1 class="title-timeline title-important">{{$category_story['title']}}</h1>@endif
                          </header></a>
                          <span class="publisher-name">{{$data['publishers_name'][$category_story['pub_id']]}}</span>
                          <span class="timecount-name">{{$tc->getTimeDifference($category_story['created_date'])}}</span>

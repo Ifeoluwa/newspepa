@@ -17,9 +17,9 @@
                                       <div class="text-details"><a href="{{url($tc->makeStoryUrl($top_story['title'], $top_story['story_id']))}}">
                                       <header class="title-holder">
                                      @if($top_story['image_url'] == "")
-                                       <h1 class="title">{{$top_story['title']}}</h1>
+                                       <h1 class="title-timeline">{{$top_story['title']}}</h1>
                                        @else
-                                          <h1 class="title title-important">{{$top_story['title']}}</h1>
+                                          <h1 class="title-timeline title-important">{{$top_story['title']}}</h1>
                                       @endif
                                       </header></a>
                                        <span class="publisher-name">{{$data['publishers_name'][$top_story['pub_id']]}}</span>
