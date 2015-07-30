@@ -16,7 +16,7 @@
 // Handles the response of stories in Json format
 Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
-Route::get('test', 'FeedController@testCluster');
+Route::get('test', 'FeedController@test');
 
 Route::get('timeline', 'StoryController@newCreateTimeLineStories');
 

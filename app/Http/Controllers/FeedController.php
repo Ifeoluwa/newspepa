@@ -37,9 +37,9 @@ class FeedController extends Controller {
         set_time_limit(0);
 
         //solr
-        $this->client = new \Solarium\Client;
-
-        $this->client = new \Solarium\Client;
+//        $this->client = new \Solarium\Client;
+//
+//        $this->client = new \Solarium\Client;
         $feeds = FeedController::getFeedSources();
 
         $all_stories = array();
@@ -78,29 +78,29 @@ class FeedController extends Controller {
         //Insert stories
         foreach($all_stories as $story){
             $result = Story::insertIgnore($story);
-
-            if($result !== false){
-                //solr insert
-                //adding document to solr
-                array_push($inserted_stories, $story);
-
-                $story1 = $updateQuery->createDocument();
-                $story1->id = $result; //return the id of the insert from PDO query and attach it here
-                $story1->title_en = $story['title'];
-                $story1->description_en = $story['description'];
-                if(isset($story['image_url'])){
-                    $story1->image_url_t = $story['image_url'];
-                }else{
-                    $story1->image_url_t = '';
-                }
-                $story1->video_url_t = '';
-                $story1->url = $story['url'];
-                $story1->pub_id_i = $story['pub_id'];
-                $story1->has_cluster_i = 1;
-                //do this for all stories and keep adding them to the stories array
-                //when done continue to the nest line
-                array_push($stories_array, $story1);
-            }
+//
+//            if($result !== false){
+//                //solr insert
+//                //adding document to solr
+//                array_push($inserted_stories, $story);
+//
+//                $story1 = $updateQuery->createDocument();
+//                $story1->id = $result; //return the id of the insert from PDO query and attach it here
+//                $story1->title_en = $story['title'];
+//                $story1->description_en = $story['description'];
+//                if(isset($story['image_url'])){
+//                    $story1->image_url_t = $story['image_url'];
+//                }else{
+//                    $story1->image_url_t = '';
+//                }
+//                $story1->video_url_t = '';
+//                $story1->url = $story['url'];
+//                $story1->pub_id_i = $story['pub_id'];
+//                $story1->has_cluster_i = 1;
+//                //do this for all stories and keep adding them to the stories array
+//                //when done continue to the nest line
+//                array_push($stories_array, $story1);
+//            }
 
             $similarity = $this->isSimilarToPrevious($story);
             if($similarity !== true){
@@ -119,10 +119,10 @@ class FeedController extends Controller {
                 }
             }
         }
-        $updateQuery->addDocuments($stories_array);
-        $updateQuery->addCommit();
-
-        $result = $this->client->update($updateQuery);
+//        $updateQuery->addDocuments($stories_array);
+//        $updateQuery->addCommit();
+//
+//        $result = $this->client->update($updateQuery);
 
         $stored_stories = $k;
         $now  = date('Y-m-d h:i:s');

@@ -132,8 +132,10 @@ class TimelineStoryController extends Controller
         $entertainment = TimelineStory::recentStoriesByCat(3);
         $sports = TimelineStory::recentStoriesByCat(4);
         $metro = TimelineStory::recentStoriesByCat(5);
+//        $business = TimelineStory::recentStoriesByCat(6);
 
         $items = array_merge($nigeria, $politics, $entertainment, $sports, $metro);
+
 
         $pageStart = \Request::get('page', 1);
         $perPage = 50;
@@ -463,7 +465,7 @@ class TimelineStoryController extends Controller
 
 
             if($this->isOpera()){
-                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher,  'paginator' => $paginator));
+                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers,  'paginator' => $paginator));
             }else{
                 return view('major.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }

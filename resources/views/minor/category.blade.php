@@ -19,7 +19,7 @@
                      $i = $i + 1;
                  ?>
                  <a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
-                    <div class="image_container">
+
                     @if($category_story['image_url'] != "")
                        <div class="image" style="background-image: url('{{$category_story['image_url']}}'); background-repeat: no-repeat;padding-bottom: 52%;-webkit-background-size: cover;background-size: cover; "></div>
                     @endif
@@ -33,8 +33,6 @@
                          <span class="publisher-name">{{$data['publishers_name'][$category_story['pub_id']]}}</span>
                          <span class="timecount-name">{{$tc->getTimeDifference($category_story['created_date'])}}</span>
 
-
-                       </div>
 
                     </div>
                            </a>
