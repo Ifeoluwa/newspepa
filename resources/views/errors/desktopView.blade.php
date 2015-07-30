@@ -26,7 +26,7 @@
 
                   <div class="row desktop-panel radius">
                               {{--<div class="large-12 medium-12 desktop-small-12 columns" style="padding-bottom: 2.0rem">--}}
-                    <div class="large-6 desktop-medium-6 columns" style="padding-left: 30px;">
+                    <div class="large-5 medium-7 small-12 columns" style="padding-left: 100px;">
                        {{--<div style="position: relative; top: 50%; left: 50%; margin-right: -50%;transform: translate(-50%, -50%)">--}}
 
                        <div style="min-width: 100%; width:100%; height:30px; text-align: left">
@@ -59,7 +59,7 @@
                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
                    </div>
             </div><br/>
-            <div class="large-6 columns" style="float:left;overflow:visible">
+            <div class="large-6 columns" style="float:left;overflow:visible; margin-top: 20px">
 
                    <div class="fb-page" data-href="https://www.facebook.com/pages/Newspepa/1165261366833416" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Newspepa/1165261366833416"><a href="https://www.facebook.com/pages/Newspepa/1165261366833416">Newspepa</a></blockquote></div></div>
 
@@ -81,8 +81,8 @@
 
 
         </div>
-        <div class="large-6 desktop-medium-6 columns"><p style="margin-top:80px; font-weight:700;font-family: 'Muli', sans-serif; font-size:32px; text-align: center; color:#707070">Visit <a href="http://newspepa.com" target="_blank">newspepa.com</a> on your mobile</p>
-        <img src="ui_newspaper/img/desktopImage.png"  width="100%" height="100%" style= "border-radius:2px;padding-right:28px"/></div>
+        <div class="large-7 medium-7 small-12 columns" style="padding-right:100px; text-align: center"><p style="margin-top:75px; padding-left: 40px font-weight:700;font-family: 'Muli', sans-serif; font-size:32px; text-align: center; color:#707070">Visit <a href="http://newspepa.com" target="_blank">newspepa.com</a> on your mobile</p>
+        <img src="ui_newspaper/img/desktopImage.png"  width="100%" height="100%" style= "border-radius:2px;"/></div>
 
 
             </div>

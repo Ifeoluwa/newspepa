@@ -44,11 +44,11 @@ class TimelineStoryController extends Controller
     public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro", 6 => "Business");
 
 
-/**
-* Display a listing of the timeline stories.
-*
-* @return Response
-*/
+    /**
+     * Display a listing of the timeline stories.
+     *
+     * @return Response
+     */
     public function index()
     {
 
@@ -198,7 +198,7 @@ class TimelineStoryController extends Controller
             }
 
         }catch (\ErrorException $ex){
-           return view('errors.404');
+            return view('errors.404');
         } catch (NotFoundHttpException $nfe){
             return view('errors.404');
         }
@@ -382,10 +382,10 @@ class TimelineStoryController extends Controller
 
     public function getStoryImage($url){
         $data = mb_convert_encoding(
-                    file_get_contents($url),
-                    "HTML-ENTITIES",
-                    "UTF-8"
-                );
+            file_get_contents($url),
+            "HTML-ENTITIES",
+            "UTF-8"
+        );
         preg_match_all("/<meta([^>]+)\/>/i", $data, $match);
 
         foreach($match[0] as $value){

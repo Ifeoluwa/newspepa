@@ -20,9 +20,9 @@ the important section, lessImportant and noImage stories--}}
                 <div class="text-details"><a href="{{url($tc->makeStoryUrl($searchResult['title'], $searchResult['story_id']))}}">
                      <header class="title-holder">
                         @if($searchResult['image_url'] == "")
-                             <h1 class="title">{{$searchResult['title']}}</h1>
+                             <h1 class="title-timeline">{{$searchResult['title']}}</h1>
                         @else
-                             <h1 class="title title-important">{{$searchResult['title']}}</h1>
+                             <h1 class="title-timeline title-important">{{$searchResult['title']}}</h1>
                         @endif
                      </header></a>
                         <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publisher_names'][$searchResult['pub_id']]}}</b></span>
