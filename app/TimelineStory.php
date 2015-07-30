@@ -259,6 +259,13 @@ class TimelineStory extends Model
         DB::update("UPDATE timeline_stories SET rank_score = :rank_score, last_score_time = :last_score_time WHERE story_id = :story_id", $params);
     }
 
+    public static function publisherStories($pub_id){
+        $stories_by_pub = DB::table('timeline_stories')->where('pub_id', $pub_id)
+            ->orderBy('created_date', 'desc')
+            ->limit(200)->get();
+        return $stories_by_pub;
+    }
+
 
 
 }

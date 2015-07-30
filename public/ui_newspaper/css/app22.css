@@ -29,7 +29,7 @@ ul.off-canvas-list li a:hover {
 ul.off-canvas-list li a:active {
     background: #0266C8; }
 
-.tab-bar {
+.title{
     background:url('../img/logo-white-transparent-small.png') no-repeat  scroll 0% 0%;;
     background-color: #0266C8;
     background-position: center;
@@ -38,8 +38,30 @@ ul.off-canvas-list li a:active {
     height: 3.8125rem;
 }
 
+ul.off-canvas-list li label{
+    background-color:#0266C8;
+    color:#ffffff;
+}
+
+.tab-bar{
+    height:3.8125rem;
+    background-color: #0266C8;
+}
+
 .tab-bar .menu-icon{
     height: 3.8125rem;
+}
+
+.tab-bar .menu-icon span::after {
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5rem;
+    left: 0.4rem;
+    box-shadow: 0 -2px 0 2px #FFF, 0 10px 0 2px #FFF, 0 20px 0 2px #FFF;
+    width: 1.2rem;
 }
 
 .left-small{
@@ -252,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
     word-wrap:break-word;
     margin-left:0;
 }
-.title{
+.title-timeline{
     webkit-box-orient: vertical;
     display: -webkit-box;
     -webkit-line-clamp: 2;

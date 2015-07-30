@@ -41,14 +41,14 @@ class TimelineStoryController extends Controller
         $this->key_word_array = explode(PHP_EOL, $key_words);
     }
 
-    public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro");
+    public $category_names = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro", 6 => "Business");
 
 
-/**
-* Display a listing of the timeline stories.
-*
-* @return Response
-*/
+    /**
+     * Display a listing of the timeline stories.
+     *
+     * @return Response
+     */
     public function index()
     {
 
@@ -88,12 +88,13 @@ class TimelineStoryController extends Controller
      *
      * @return Response
      */
-    public function getStoriesByCat($category_name){
+    public function getStoriesByCat($category_route){
 
         try{
             $category_stories = array();
-            $category_id = Category::$news_category[$category_name];
+            $category_id = Category::$news_category[$category_route];
             $category_stories['category_name'] = $this->category_names[$category_id];
+            $category_stories['category_route'] = "http://newspepa.com/".$category_route;
 
             $pageStart = \Request::get('page', 1);
             $perPage = 50;
@@ -105,11 +106,11 @@ class TimelineStoryController extends Controller
             $itemsForCurrentPage = array_slice($items, $offSet, $perPage, true);
 
             $category_stories['all'] = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
-            $category_stories['all']->setPath($category_name);
+            $category_stories['all']->setPath($category_route);
 
             //Handles the next and previous for the pagination on the view
             $paginator = new Paginator($items, 50);
-            $paginator->setPath($category_name);
+            $paginator->setPath($category_route);
 
             if($this->isOpera()){
                 return view('minor.category')->with('data', array('category_stories' => $category_stories, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
@@ -122,18 +123,6 @@ class TimelineStoryController extends Controller
         }
     }
 
-    //Gets story by publisher
-    public function getStoriesByPublisher($publisher_name){
-
-        try{
-
-
-        }catch(\ErrorException $ex){
-            return view('errors.404');
-        }
-
-
-    }
 
     //Latest Stories
     public function getLatestStories(){
@@ -152,19 +141,19 @@ class TimelineStoryController extends Controller
 
         // Displays the next and previous on the view
         $paginator = new Paginator($items, 50);
-        $paginator->setPath('latest');
+        $paginator->setPath('latest-news-in-nigeria');
 
         // Get only the items you need using array_slice
         $itemsForCurrentPage = array_slice($items, $offSet, $perPage, true);
 
         // Initialize paginator class
         $latest_stories = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
-        $latest_stories->setPath('latest');
+        $latest_stories->setPath('latest-news-in-nigeria');
 
         if($this->isOpera()){
-            return view('minor.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('minor.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator, 'latest_route' => 'latest-news-in-nigeria'));
         }else{
-            return view('major.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('major.latestStory')->with('data', array('latest_stories' => $latest_stories,  'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator, 'latest_route' => 'latest-news-in-nigeria'));
         }
 
     }
@@ -200,14 +189,16 @@ class TimelineStoryController extends Controller
     public function handleRequest($request_name){
         try{
             $request_array = explode('-', $request_name);
-            if(count($request_array) > 1){
-                return $this->getFullStory($request_array[count($request_array) - 1]) ;
-            }else{
+            if(array_key_exists($request_name, Category::$news_category)){
                 return $this->getStoriesByCat($request_name);
-
+            }elseif(array_key_exists($request_name, Publisher::$publisher_route)){
+                return $this->getStoriesByPub($request_name);
+            }else{
+                return $this->getFullStory($request_array[count($request_array) - 1]) ;
             }
+
         }catch (\ErrorException $ex){
-           return view('errors.404');
+            return view('errors.404');
         } catch (NotFoundHttpException $nfe){
             return view('errors.404');
         }
@@ -328,20 +319,6 @@ class TimelineStoryController extends Controller
             'publisher_names' => Publisher::$publishers
         );
 
-        $pageStart = \Request::get('page', 1);
-        $perPage = 5;
-        $offSet = ($pageStart * $perPage) - $perPage;
-
-
-        // Get only the items you need using array_slice
-        $itemsForCurrentPage = array_slice($return['search_result'], $offSet, $perPage, true);
-        $return['search_result'] = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
-        $return->setPath('search/results');
-
-        // Displays the next and previous on the view
-        $return['paginator'] = new Paginator($return['search_result'], 5);
-        $return['paginator']->setPath('search/results');
-
         if($this->isOpera()){
             return view('minor.search_results')->with('data', $return);
         }else{
@@ -407,10 +384,10 @@ class TimelineStoryController extends Controller
 
     public function getStoryImage($url){
         $data = mb_convert_encoding(
-                    file_get_contents($url),
-                    "HTML-ENTITIES",
-                    "UTF-8"
-                );
+            file_get_contents($url),
+            "HTML-ENTITIES",
+            "UTF-8"
+        );
         preg_match_all("/<meta([^>]+)\/>/i", $data, $match);
 
         foreach($match[0] as $value){
@@ -462,16 +439,44 @@ class TimelineStoryController extends Controller
         return $route;
     }
 
+    public function getStoriesByPub($pub_route){
 
-    public function paginate($items,$perPage)
-    {
-        $pageStart = \Request::get('page', 1);
-        // Start displaying items from this number;
-        $offSet = ($pageStart * $perPage) - $perPage;
+        try{
+            $stories_by_publisher = array();
+            $pub_id = Publisher::$publisher_route[$pub_route];
+            $stories_by_publisher['publisher_name'] = Publisher::$publishers[$pub_id];
+            $stories_by_publisher['publisher_route'] = "http://newspepa.com/".$pub_route;
 
-        // Get only the items you need using array_slice
-        $itemsForCurrentPage = array_slice($items, $offSet, $perPage, true);
+            $pageStart = \Request::get('page', 1);
+            $perPage = 50;
+            $offSet = ($pageStart * $perPage) - $perPage;
 
-        return new Paginator($itemsForCurrentPage, $perPage, $pageStart, array('path' => Paginator::resolveCurrentPath()));
+            $items = TimelineStory::publisherStories($pub_id);
+
+
+            //Items for a page
+            $itemsForCurrentPage = array_slice($items, $offSet, $perPage, true);
+            $stories_by_publisher['all'] = new Paginator($itemsForCurrentPage, $perPage, Paginator::resolveCurrentPage(), array('path' => Paginator::resolveCurrentPath()));
+            $stories_by_publisher['all']->setPath(Publisher::$publishers[$pub_id]);
+
+            //Handles the next and previous for the pagination on the view
+            $paginator = new Paginator($items, 50);
+            $paginator->setPath($pub_route);
+
+
+            if($this->isOpera()){
+                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher,  'paginator' => $paginator));
+            }else{
+                return view('major.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
+            }
+
+        }catch(\ErrorException $ex){
+            return view('errors.404');
+        }
+
     }
+
+
+
+
 }
