@@ -127,14 +127,8 @@ class TimelineStoryController extends Controller
     //Latest Stories
     public function getLatestStories(){
 
-        $nigeria = TimelineStory::recentStoriesByCat(1);
-        $politics = TimelineStory::recentStoriesByCat(2);
-        $entertainment = TimelineStory::recentStoriesByCat(3);
-        $sports = TimelineStory::recentStoriesByCat(4);
-        $metro = TimelineStory::recentStoriesByCat(5);
-//        $business = TimelineStory::recentStoriesByCat(6);
 
-        $items = array_merge($nigeria, $politics, $entertainment, $sports, $metro);
+        $items = TimelineStory::latestStories();
 
 
         $pageStart = \Request::get('page', 1);
