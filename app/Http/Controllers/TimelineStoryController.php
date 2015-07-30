@@ -130,7 +130,6 @@ class TimelineStoryController extends Controller
 
         $items = TimelineStory::latestStories();
 
-
         $pageStart = \Request::get('page', 1);
         $perPage = 50;
         $offSet = ($pageStart * $perPage) - $perPage;
@@ -262,6 +261,8 @@ class TimelineStoryController extends Controller
          * search
          */
         $search_query = \Illuminate\Support\Facades\Input::get('search_query');
+        $search_query = trim($search_query);
+        $search_query = preg_replace('/\s+/', ' ',$search_query);
 
         $search_query_array = explode(' ', $search_query);
         $search_query_array = array_diff($search_query_array, $this->stop_word_array);
@@ -459,7 +460,7 @@ class TimelineStoryController extends Controller
 
 
             if($this->isOpera()){
-                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers,  'paginator' => $paginator));
+                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }else{
                 return view('major.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }

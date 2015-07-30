@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 use App\Story;
 use App\TimelineStory;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class StoryController extends Controller {
 
@@ -140,11 +141,20 @@ class StoryController extends Controller {
 
 
     public function adminPost($post_details){
-        $post_details = \Illuminate\Support\Facades\Input::get('post_details');
+        try {
+            $post_details = \Illuminate\Support\Facades\Input::get('post_details');
 
-        $post_details['pub_id'] = 21;
-        $post_details['feed_id'] = 33;
+            $post_details['pub_id'] = 21;
+            $post_details['feed_id'] = 33;
 
-        $result = Story::insertIgnore($post_details);
+            $result = Story::insertIgnore($post_details);
+            if($result != false){
+                return view('dashboard');
+            }
+        }catch (\ErrorException $ex){
+            return view('errors.404');
+        } catch (NotFoundHttpException $nfe){
+            return view('errors.404');
+        }
     }
 } 
