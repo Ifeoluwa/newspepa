@@ -69,8 +69,8 @@ class FeedController extends Controller {
 
         // Shuffle the array of stories
         shuffle($all_stories);
-        $stories_array = array();
-        $updateQuery = $this->client->createUpdate();
+//        $stories_array = array();
+//        $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
         $inserted_stories = array();
@@ -105,18 +105,18 @@ class FeedController extends Controller {
             $similarity = $this->isSimilarToPrevious($story);
             if($similarity !== true){
                 $result = Story::insertIgnore($story);
-                if($result !== false){
-                    $k += 1;
-                    $now  = date('Y-m-d h:i:s');
-                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
-                    fclose($fp);
-                }else{
-                    $now  = date('Y-m-d h:i:s');
-                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
-                    fclose($fp);
-                }
+//                if($result !== false){
+//                    $k += 1;
+//                    $now  = date('Y-m-d h:i:s');
+//                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+//                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
+//                    fclose($fp);
+//                }else{
+//                    $now  = date('Y-m-d h:i:s');
+//                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+//                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
+//                    fclose($fp);
+//                }
             }
         }
 //        $updateQuery->addDocuments($stories_array);
@@ -124,11 +124,11 @@ class FeedController extends Controller {
 //
 //        $result = $this->client->update($updateQuery);
 
-        $stored_stories = $k;
-        $now  = date('Y-m-d h:i:s');
-        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
-        fclose($fp);
+//        $stored_stories = $k;
+//        $now  = date('Y-m-d h:i:s');
+//        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+//        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
+//        fclose($fp);
 
         //Begin Matching
         if(count($inserted_stories) > 0){
