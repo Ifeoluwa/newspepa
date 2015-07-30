@@ -32,7 +32,7 @@ class TimelineStory extends Model
 
     // Selects recent stories based on category
     public static function recentStoriesByCat($category_id){
-        return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(200)->get();
+        return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(50)->get();
     }
 
     // Selects recent stories based on category but not the selected story
@@ -112,9 +112,20 @@ class TimelineStory extends Model
     }
 
     public static function latestStories(){
-        return DB::table('timeline_stories')
-            ->orderBy('created_date', 'desc')
-            ->orderBy('no_of_views', 'desc')->limit(200);
+
+        $nigeria = TimelineStory::recentStoriesByCat(1);
+        $politics = TimelineStory::recentStoriesByCat(2);
+        $entertainment = TimelineStory::recentStoriesByCat(3);
+        $sports = TimelineStory::recentStoriesByCat(4);
+        $metro = TimelineStory::recentStoriesByCat(5);
+        $business = TimelineStory::recentStoriesByCat(6);
+
+        $latest_stories = array_merge($nigeria, $politics, $entertainment, $sports, $metro, $business);
+        $latest_stories = array_values(array_sort($latest_stories, function ($value) {
+            return $value['created_date'];
+        }));
+
+        return array_reverse($latest_stories);
     }
 
 

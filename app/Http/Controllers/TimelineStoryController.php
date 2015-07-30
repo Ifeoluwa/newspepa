@@ -127,13 +127,8 @@ class TimelineStoryController extends Controller
     //Latest Stories
     public function getLatestStories(){
 
-        $nigeria = TimelineStory::recentStoriesByCat(1);
-        $politics = TimelineStory::recentStoriesByCat(2);
-        $entertainment = TimelineStory::recentStoriesByCat(3);
-        $sports = TimelineStory::recentStoriesByCat(4);
-        $metro = TimelineStory::recentStoriesByCat(5);
 
-        $items = array_merge($nigeria, $politics, $entertainment, $sports, $metro);
+        $items = TimelineStory::latestStories();
 
         $pageStart = \Request::get('page', 1);
         $perPage = 50;
@@ -266,6 +261,8 @@ class TimelineStoryController extends Controller
          * search
          */
         $search_query = \Illuminate\Support\Facades\Input::get('search_query');
+        $search_query = trim($search_query);
+        $search_query = preg_replace('/\s+/', ' ',$search_query);
 
         $search_query_array = explode(' ', $search_query);
         $search_query_array = array_diff($search_query_array, $this->stop_word_array);
@@ -463,7 +460,7 @@ class TimelineStoryController extends Controller
 
 
             if($this->isOpera()){
-                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher,  'paginator' => $paginator));
+                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }else{
                 return view('major.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }

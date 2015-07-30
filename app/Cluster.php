@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Cluster extends Model
 {
@@ -20,8 +21,7 @@ class Cluster extends Model
                 $cluster['modified_date'] = $now;
             }
 
-            $cluster = array_except($cluster, 'pivot_id');
-            $cluster = array_except($cluster, 'id');
+            $cluster = array_except($cluster, ['pivot_id', 'id', 'description', 'title']);
 
             $result = DB::table('clusters')->select('cluster_pivot', 'cluster_match')
                 ->where('cluster_pivot', $cluster['cluster_pivot'])

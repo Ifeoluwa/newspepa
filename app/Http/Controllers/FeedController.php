@@ -22,8 +22,6 @@ use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
 
-
-
 class FeedController extends Controller {
 
     protected $client;
@@ -39,8 +37,9 @@ class FeedController extends Controller {
         set_time_limit(0);
 
         //solr
-        $this->client = new \Solarium\Client;
-
+//        $this->client = new \Solarium\Client;
+//
+//        $this->client = new \Solarium\Client;
         $feeds = FeedController::getFeedSources();
 
         $all_stories = array();
@@ -51,7 +50,7 @@ class FeedController extends Controller {
             if(!$content) {
                 continue;
             }
-            if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19){
+            if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21 || $feed['pub_id'] == 24){
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
             }elseif($feed['pub_id'] == 12 ){
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
@@ -64,76 +63,83 @@ class FeedController extends Controller {
             // }
             //Updates the last time the feed was accessed
             Feed::updateFeed($feed['id'], time());
+            var_dump('\nFetched stories...');
 
         }
 
         // Shuffle the array of stories
         shuffle($all_stories);
-        $stories_array = array();
-        $updateQuery = $this->client->createUpdate();
+//        $stories_array = array();
+//        $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
+        $inserted_stories = array();
 
         //Insert stories
         foreach($all_stories as $story){
             $result = Story::insertIgnore($story);
-
-            if($result !== false){
-                //solr insert
-                //adding document to solr
-
-                $story1 = $updateQuery->createDocument();
-                $story1->id = $result; //return the id of the insert from PDO query and attach it here
-                $story1->title_en = $story['title'];
-                $story1->description_en = $story['description'];
-                if(isset($story['image_url'])){
-                    $story1->image_url_t = $story['image_url'];
-                }else{
-                    $story1->image_url_t = '';
-                }
-                $story1->video_url_t = '';
-                $story1->url = $story['url'];
-                $story1->pub_id_i = $story['pub_id'];
-                $story1->has_cluster_i = 1;
-                //do this for all stories and keep adding them to the stories array
-                //when done continue to the nest line
-                array_push($stories_array, $story1);
-            }
+//
+//            if($result !== false){
+//                //solr insert
+//                //adding document to solr
+//                array_push($inserted_stories, $story);
+//
+//                $story1 = $updateQuery->createDocument();
+//                $story1->id = $result; //return the id of the insert from PDO query and attach it here
+//                $story1->title_en = $story['title'];
+//                $story1->description_en = $story['description'];
+//                if(isset($story['image_url'])){
+//                    $story1->image_url_t = $story['image_url'];
+//                }else{
+//                    $story1->image_url_t = '';
+//                }
+//                $story1->video_url_t = '';
+//                $story1->url = $story['url'];
+//                $story1->pub_id_i = $story['pub_id'];
+//                $story1->has_cluster_i = 1;
+//                //do this for all stories and keep adding them to the stories array
+//                //when done continue to the nest line
+//                array_push($stories_array, $story1);
+//            }
 
             $similarity = $this->isSimilarToPrevious($story);
             if($similarity !== true){
                 $result = Story::insertIgnore($story);
-                if($result !== false){
-                    $k += 1;
-                    $now  = date('Y-m-d h:i:s');
-                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
-                    fclose($fp);
-                }else{
-                    $now  = date('Y-m-d h:i:s');
-                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
-                    fclose($fp);
-                }
+//                if($result !== false){
+//                    $k += 1;
+//                    $now  = date('Y-m-d h:i:s');
+//                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+//                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
+//                    fclose($fp);
+//                }else{
+//                    $now  = date('Y-m-d h:i:s');
+//                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+//                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
+//                    fclose($fp);
+//                }
             }
         }
-        $updateQuery->addDocuments($stories_array);
-        $updateQuery->addCommit();
+//        $updateQuery->addDocuments($stories_array);
+//        $updateQuery->addCommit();
+//
+//        $result = $this->client->update($updateQuery);
 
-        $result = $this->client->update($updateQuery);
-
-        $stored_stories = $k;
-        $now  = date('Y-m-d h:i:s');
-        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
-        fclose($fp);
+//        $stored_stories = $k;
+//        $now  = date('Y-m-d h:i:s');
+//        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+//        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
+//        fclose($fp);
 
         //Begin Matching
-        $new_stories = StoryController::prepareStories($all_stories);
-        $old_stories = StoryController::getOldStories();
+        if(count($inserted_stories) > 0){
+            $new_stories = StoryController::prepareStories($inserted_stories);
+            $old_stories = StoryController::getOldStories();
 
-        $matched_stories = StoryController::matchStories($old_stories, $new_stories);
-        Cluster::insertIgnore($matched_stories);
+            $matched_stories = StoryController::matchStories($old_stories, $new_stories);
+            Cluster::insertIgnore($matched_stories);
+        }
+
+
 
 
         set_time_limit(120);
@@ -292,6 +298,8 @@ class FeedController extends Controller {
     }
 
     public function test(){
+        $this->fetchFeeds();
+        echo "<br> done";
 //        $this->fetchFeeds();
 //        echo "<br> done";
 
@@ -377,7 +385,7 @@ class FeedController extends Controller {
                             $story['image_url'] = "story_images/".$this->getImageName($img_url, $str['title'], $str['pubDate']);
                         }
 
-                    }else if($feed['pub_id'] == 1){
+                    }else if($feed['pub_id'] == 1 || $feed['pub_id'] == 22 || $feed['pub_id'] == 23 || $feed['pub_id'] == 25){
                         $tc = new TimelineStoryController();
                         $result = $tc->getStoryImage($str['link']);
                         if($result !== null){
@@ -424,9 +432,18 @@ class FeedController extends Controller {
 
     }
 
+    public function testCluster(){
 
+        $inserted_stories = DB::table('stories')->select('id', 'title', 'description')->orderBy('created_date', 'desc')->limit(30)->get();
+        $new_stories = StoryController::prepareStories($inserted_stories);
 
+        $old_stories = StoryController::getOldStories();
 
+        $matched_stories = StoryController::matchStories($old_stories, $new_stories);
+
+        Cluster::insertIgnore($matched_stories);
+
+    }
 
 
 
