@@ -66,31 +66,33 @@
                   <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a></li>
 
                   <li><label>News Sources</label></li>
-                  <li ><a href="{{url('/punch')}}">Punch</a></li>
-                  <li ><a href="{{url('/vanguard')}}">Vanguard</a></li>
-                  <li ><a href="{{url('/linda-ikeji')}}">Linda Ikeji</a></li>
-                  <li ><a href="{{url('/nigerian-tribune')}}">Nigerian Tribune</a></li>
-                  <li><a href="{{url('/nigerian-monitor')}}">Nigerian Monitor</a></li>
-                   <li><a href="{{url('/leadership')}}">Leadership</a></li>
-                   <li><a href="{{url('/bella-naija')}}">Bella Naija</a></li>
-                   <li><a href="{{url('/channels-tv')}}">Channels TV</a></li>
-                   <li><a href="{{url('/goal')}}">Goal</a></li>
+                  <li ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
+                  <li ><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
+                  <li ><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
+                  <li ><a href="{{url('/latest-nigerian-tribune-news')}}">Nigerian Tribune</a></li>
+                  <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
+                   <li><a href="{{url('/latest-leadership-news')}}">Leadership</a></li>
+                   <li><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
+                   <li><a href="{{url('/latest-channels-tv-news')}}">Channels TV</a></li>
+                   <li><a href="{{url('/latest-goal-com-news')}}">Goal</a></li>
                   <li class="has-submenu"><a href="#">View more</a>
                       <ul class="left-submenu">
                           <li class="back"><a href="#">Back</a></li>
-                          <li><a href="{{url('/the-cable')}}">The Cable</a></li>
-                          <li><a href="{{url('/the-guardian')}}">The Guardian</a></li>
-                          <li><a href="{{url('/kokofeed')}}">KokoFeed</a></li>
-                          <li><a href="{{url('/net')}}">Net</a></li>
-                          <li><a href="{{url('/star-gist')}}">Stargist</a></li>
+                          <li><a href="{{url('/latest-the-cable-news')}}">The Cable</a></li>
+                          <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
+                          <li><a href="{{url('/latest-kokofeed-news')}}">KokoFeed</a></li>
+                          <li><a href="{{url('/latest-net-news')}}">Net</a></li>
+                          <li><a href="{{url('/latest-star-gist-news')}}">Stargist</a></li>
                           <li><a href="{{url('/complete-sports')}}">Complete Sports</a></li>
-                          <li><a href="{{url('/daily-post')}}">Daily Post</a></li>
-                          <li><a href="{{url('/premium-times')}}">Premium times</a></li>
-                          <li><a href="{{url('/business-day')}}">Business day</a></li>
-                          <li><a href="{{url('/city-people')}}">City People</a></li>
-                          <li><a href="{{url('/squakwa')}}">Squakwa</a></li>
-                          <li><a href="{{url('/ecomium')}}">Ecomium</a></li>
-                          <li><a href="{{url('/naira-metrics')}}">Naira Metrics</a></li>
+                          <li><a href="{{url('/latest-daily-post-news')}}">Daily Post</a></li>
+                          <li><a href="{{url('/latest-premium-times-news')}}">Premium times</a></li>
+                          <li><a href="{{url('/latest-business-day-news')}}">Business day</a></li>
+                          <li><a href="{{url('/latest-city-people-news')}}">City People</a></li>
+                          <li><a href="{{url('/latest-squakwa-news')}}">Squakwa</a></li>
+                          <li><a href="{{url('/latest-ecomium-news')}}">Ecomium</a></li>
+                          <li><a href="{{url('/latest-naira-metrics-news')}}">Naira Metrics</a></li>
+                          <li><a href="{{url('/latest-business-news-news')}}">Business News</a></li>
+                          <li><a href="{{url('/latest-futaa-news')}}">Futaa</a></li>
                       </ul>
              </ul>
         </aside>
@@ -115,14 +117,14 @@
        <div class="row " style="background-color: #0266C8">
         <ul class="inline-list category-row">
           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
-          <li id="3" class="active"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
-          <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
+          <li id="3" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
+          <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
           <li id="4"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
             <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
             {{--<li><a href="{{url('business-news-in-nigeria')}}">Business</a></li>--}}
-            <li><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
-            <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a>
-            <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a>
+            <li><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
+            <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a>
+            <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a>
             </ul>
           </li>
 
@@ -164,16 +166,16 @@
         {{--<div class="large-12 columns" style="border-top: solid #E0E0E0 2px">--}}
         <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
           <li id="1" ><a href="{{url('/')}}">Home</a></li>
-          <li id="2" ><a href="{{url('/punch')}}">Punch</a></li>
+          <li id="2" ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
            <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
-           <li id="4"><a href="{{url('/vanguard')}}">Vanguard</a></li>
-           <li id="5"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
-           <li id="6"><a href="{{url('/linda-ikeji')}}">Linda Ikeji</a></li>
-           <li id="7"><a href="{{url('/sports')}}">Sports</a></li>
-           <li id="7"><a href="{{url('/complete-sports')}}">Complete Sports</a></li>
-           <li id="9"><a href="{{url('/politics')}}">Politics</a></li>
-           <li id="9"><a href="{{url('/bella-naija')}}">Bella Naija</a></li>
-           <li id="10"><a href="{{url('/metro')}}">Metro</a></li>
+           <li id="4"><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
+           <li id="5"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a></li>
+           <li id="6"><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
+           <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
+           <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
+           <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
+           <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
+           <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
             {{--<li id="8"><a href="#" data-options="align:ignore_repositioning" data-dropdown="drop1">More&raquo;</a>--}}
                        {{--<ul id="drop1" class="tiny f-dropdown" data-dropdown-content>--}}
                                        {{--<li><a href="#">This is a link</a></li>--}}

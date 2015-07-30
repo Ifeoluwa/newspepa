@@ -37,12 +37,12 @@
  <div class="row opera-panel radius" style="background-color: #0266C8;">
    <ul class="inline-list" >
              <li id="1"><a href="{{url('/')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Top stories</a></li>
-             <li id="2"><a href="{{url('/latest')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Latest stories</a></li>
-             <li id="3"><a href="{{url('nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Nigeria</a></li>
-             <li id="4"><a href="{{url('politics')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Politics</a></li>
-             <li id="5"><a href="{{url('entertainment')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Entertainment</a></li>
-             <li id="6"><a href="{{url('sports')}}"  style="color:#ffffff; font-size: 15px;font-weight: bold">Sports</a></li>
-             <li id="7"><a href="{{url('metro')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Metro</a></li>
+             <li id="2"><a href="{{url('/latest-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Latest stories</a></li>
+             <li id="3"><a href="{{url('latest-nigeria-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Nigeria</a></li>
+             <li id="4"><a href="{{url('latest-politics-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Politics</a></li>
+             <li id="5"><a href="{{url('latest-entertainment-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Entertainment</a></li>
+             <li id="6"><a href="{{url('latest-sports-news-in-nigeria')}}"  style="color:#ffffff; font-size: 15px;font-weight: bold">Sports</a></li>
+             <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Metro</a></li>
    </ul>
     </div>
 
@@ -67,24 +67,24 @@
     </div>
 
         <footer class="row">
-                <div class="large-12 columns">
+                 <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
+                          <li id="1" ><a href="{{url('/')}}">Home</a></li>
+                          <li id="2" ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
+                           <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
+                           <li id="4"><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
+                           <li id="5"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a></li>
+                           <li id="6"><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
+                           <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
+                           <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
+                           <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
+                           <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
+                           <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
+                 </ul>
+        </footer>
 
-                    <ul class="inline-list" style="color:#0266C8">
-                        <li id="1" ><a href="{{url('/')}}">Top stories</a></li>
-                        <li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>
-                        <li id="3"><a href="{{url('politics')}}">Politics</a></li>
-                        <li id="4"><a href="{{url('nigeria')}}">Nigeria</a></li>
-                        <li id="5"><a href="{{url('entertainment')}}">Entertainment</a></li>
-                        <li id="6"><a href="{{url('sports')}}">Sports</a></li>
-                        <li id="7"><a href="{{url('metro')}}">Metro</a></li>
-                    </ul>
-                    <p style="margin-left: 20px"><a href="">Choose your news source</a></p>
-
-                </div>
-            </footer>
-        <script src="ui_newspaper/js/vendor/jquery.js"></script>
-        <script src="ui_newspaper/js/vendor/fastclick.js"></script>
-        <script src="ui_newspaper/get_social_counts/site.js"></script>
+    <script src="ui_newspaper/js/vendor/jquery.js"></script>
+    <script src="ui_newspaper/js/vendor/fastclick.js"></script>
+    <script src="ui_newspaper/get_social_counts/site.js"></script>
 
    <script>
    $(document).foundation();
