@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "Nathanmac/Parser": "^3.7",
+        "Nathanmac/Parser": "^3.8",
         "solarium/solarium": "^3.4"
     },
     "require-dev": {

@@ -16,33 +16,34 @@
 // Handles the response of stories in Json format
 Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
-Route::get('test', 'FeedController@test');
+Route::get('test', 'FeedController@testCluster');
 
-Route::get('timeline', 'StoryController@createTimelineStory');
+Route::get('timeline', 'StoryController@newCreateTimeLineStories');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
-
-Route::get('minor', function(){
-
-    return view('test')->with('is_opera', true);
-});
 
 Route::get('desktop', function(){
 //    $user_agent = $_SERVER['HTTP_USER_AGENT'];
     return view('errors.desktopView');
 });
 
+Route::get('about', function(){
+   return view('aboutUs');
+});
+
+//Handles request from the admin/authentication
+Route::get('admin', function(){
+    return view('admin.login');
+});
+
 Route::get('register', function(){
    return view('admin.register');
 });
 
-Route::get('publisher', function(){
-    return view('major.publishersList');
-});
 
-Route::get('about', function(){
-    return view('major.aboutUs');
-});
+
+
+
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
@@ -52,7 +53,7 @@ Route::get('about', function(){
 
     Route::get('search', 'TimelineStoryController@searchStory');
 
-    Route::get('latest', 'TimelineStoryController@getLatestStories');
+    Route::get('latest-news-in-nigeria', 'TimelineStoryController@getLatestStories');
 
 
     Route::post('linkout', 'TimelineStoryController@readStory');
@@ -62,6 +63,9 @@ Route::get('about', function(){
 
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
+
+
+//});
 
 
 

@@ -20,6 +20,10 @@ class AuthController extends Controller
     |
     */
 
+    use App\User;
+    use Validator;
+    use App\Http\Controllers\Controller;
+
     use AuthenticatesAndRegistersUsers;
 
     /**
@@ -62,7 +66,4 @@ class AuthController extends Controller
         ]);
     }
 
-    public function postLogin(){
-
-    }
 }

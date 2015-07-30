@@ -22,8 +22,6 @@ use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
 
-
-
 class FeedController extends Controller {
 
     protected $client;
@@ -41,6 +39,7 @@ class FeedController extends Controller {
         //solr
         $this->client = new \Solarium\Client;
 
+        $this->client = new \Solarium\Client;
         $feeds = FeedController::getFeedSources();
 
         $all_stories = array();
@@ -51,7 +50,7 @@ class FeedController extends Controller {
             if(!$content) {
                 continue;
             }
-            if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19){
+            if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21 || $feed['pub_id'] == 24){
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
             }elseif($feed['pub_id'] == 12 ){
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
@@ -64,6 +63,7 @@ class FeedController extends Controller {
             // }
             //Updates the last time the feed was accessed
             Feed::updateFeed($feed['id'], time());
+            var_dump('\nFetched stories...');
 
         }
 
@@ -73,6 +73,7 @@ class FeedController extends Controller {
         $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
+        $inserted_stories = array();
 
         //Insert stories
         foreach($all_stories as $story){
@@ -81,6 +82,7 @@ class FeedController extends Controller {
             if($result !== false){
                 //solr insert
                 //adding document to solr
+                array_push($inserted_stories, $story);
 
                 $story1 = $updateQuery->createDocument();
                 $story1->id = $result; //return the id of the insert from PDO query and attach it here
@@ -129,11 +131,15 @@ class FeedController extends Controller {
         fclose($fp);
 
         //Begin Matching
-        $new_stories = StoryController::prepareStories($all_stories);
-        $old_stories = StoryController::getOldStories();
+        if(count($inserted_stories) > 0){
+            $new_stories = StoryController::prepareStories($inserted_stories);
+            $old_stories = StoryController::getOldStories();
 
-        $matched_stories = StoryController::matchStories($old_stories, $new_stories);
-        Cluster::insertIgnore($matched_stories);
+            $matched_stories = StoryController::matchStories($old_stories, $new_stories);
+            Cluster::insertIgnore($matched_stories);
+        }
+
+
 
 
         set_time_limit(120);
@@ -292,6 +298,8 @@ class FeedController extends Controller {
     }
 
     public function test(){
+        $this->fetchFeeds();
+        echo "<br> done";
 //        $this->fetchFeeds();
 //        echo "<br> done";
 
@@ -377,7 +385,7 @@ class FeedController extends Controller {
                             $story['image_url'] = "story_images/".$this->getImageName($img_url, $str['title'], $str['pubDate']);
                         }
 
-                    }else if($feed['pub_id'] == 1){
+                    }else if($feed['pub_id'] == 1 || $feed['pub_id'] == 22 || $feed['pub_id'] == 23 || $feed['pub_id'] == 25){
                         $tc = new TimelineStoryController();
                         $result = $tc->getStoryImage($str['link']);
                         if($result !== null){
@@ -424,9 +432,18 @@ class FeedController extends Controller {
 
     }
 
+    public function testCluster(){
 
+        $inserted_stories = DB::table('stories')->select('id', 'title', 'description')->orderBy('created_date', 'desc')->limit(30)->get();
+        $new_stories = StoryController::prepareStories($inserted_stories);
 
+        $old_stories = StoryController::getOldStories();
 
+        $matched_stories = StoryController::matchStories($old_stories, $new_stories);
+
+        Cluster::insertIgnore($matched_stories);
+
+    }
 
 
 
