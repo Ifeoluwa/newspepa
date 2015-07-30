@@ -1,5 +1,5 @@
 @extends ('minor.opera-layout')
-@section ('title',$data['category_stories']['category_name'] )
+@section ("title", "Latest ".$data['category_stories']['category_name']." In Nigeria Today")
 @endsection
 @section('more-meta')
 
@@ -19,7 +19,6 @@
                      $i = $i + 1;
                  ?>
                  <a href="{{url($tc->makeStoryUrl($category_story['title'], $category_story['story_id']))}}">
-                    <div class="image_container">
                     @if($category_story['image_url'] != "")
                        <div class="image" style="background-image: url('{{$category_story['image_url']}}'); background-repeat: no-repeat;padding-bottom: 52%;-webkit-background-size: cover;background-size: cover; "></div>
                     @endif
@@ -35,8 +34,6 @@
 
 
                        </div>
-
-                    </div>
                            </a>
 
          </div>

@@ -6,7 +6,7 @@
         <title>@yield('title')</title>
         <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-        <link rel="stylesheet" href="ui_newspaper/css/opera-app22.css" />
+        <link rel="stylesheet" href="ui_newspaper/css/opera-app23.css" />
         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
         <script src="ui_newspaper/js/vendor/modernizr.js"></script>

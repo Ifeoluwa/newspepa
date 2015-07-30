@@ -7,7 +7,7 @@
     <title>@yield('title') | Newspepa</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-     <link rel="stylesheet" href="ui_newspaper/css/app22.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app23.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
@@ -41,7 +41,6 @@
                     {{--</ul>--}}
         {{--</section>--}}
     {{--</nav>--}}
-<div class="sticky">
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
             <nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation" >
@@ -65,22 +64,47 @@
                   <li id="5"><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
                   <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
                   <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a></li>
+
+                  <li><label>News Sources</label></li>
+                  <li ><a href="{{url('/punch')}}">Punch</a></li>
+                  <li ><a href="{{url('/vanguard')}}">Vanguard</a></li>
+                  <li ><a href="{{url('/linda-ikeji')}}">Linda Ikeji</a></li>
+                  <li ><a href="{{url('/nigerian-tribune')}}">Nigerian Tribune</a></li>
+                  <li><a href="{{url('/nigerian-monitor')}}">Nigerian Monitor</a></li>
+                   <li><a href="{{url('/leadership')}}">Leadership</a></li>
+                   <li><a href="{{url('/bella-naija')}}">Bella Naija</a></li>
+                   <li><a href="{{url('/channels-tv')}}">Channels TV</a></li>
+                   <li><a href="{{url('/goal')}}">Goal</a></li>
+                  <li class="has-submenu"><a href="#">View more</a>
+                      <ul class="left-submenu">
+                          <li class="back"><a href="#">Back</a></li>
+                          <li><a href="{{url('/the-cable')}}">The Cable</a></li>
+                          <li><a href="{{url('/the-guardian')}}">The Guardian</a></li>
+                          <li><a href="{{url('/kokofeed')}}">KokoFeed</a></li>
+                          <li><a href="{{url('/net')}}">Net</a></li>
+                          <li><a href="{{url('/star-gist')}}">Stargist</a></li>
+                          <li><a href="{{url('/complete-sports')}}">Complete Sports</a></li>
+                          <li><a href="{{url('/daily-post')}}">Daily Post</a></li>
+                          <li><a href="{{url('/premium-times')}}">Premium times</a></li>
+                          <li><a href="{{url('/business-day')}}">Business day</a></li>
+                          <li><a href="{{url('/city-people')}}">City People</a></li>
+                          <li><a href="{{url('/squakwa')}}">Squakwa</a></li>
+                          <li><a href="{{url('/ecomium')}}">Ecomium</a></li>
+                          <li><a href="{{url('/naira-metrics')}}">Naira Metrics</a></li>
+                      </ul>
              </ul>
         </aside>
-
-
-
-        <!-- main content goes here -->
 
       <!-- close the off-canvas menu -->
 
     {{--the search bar--}}
-    <form id="searchbar" method="get" action = "search">
-        {{--<div class="row searchbar-row" style="width:100%">--}}
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
-            <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
-        {{--</div>--}}
-    </form>
+
+
+       <form id="searchbar" method="get" action = "search">
+                  <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
+                  <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
+          </form>
+
 
 
 
@@ -90,14 +114,12 @@
         {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
        <div class="row " style="background-color: #0266C8">
         <ul class="inline-list category-row">
-
-          {{--<li id="1" ><a href="{{url('/')}}">Top stories</a></li>--}}
           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
           <li id="3" class="active"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
           <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
           <li id="4"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
             <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
-            <li><a href="{{url('business-news-in-nigeria')}}">Business</a></li>
+            {{--<li><a href="{{url('business-news-in-nigeria')}}">Business</a></li>--}}
             <li><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
             <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a>
             <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a>
@@ -105,8 +127,8 @@
           </li>
 
         </ul>
-
         </div>
+
 {{--the stories containers starts from here--}}
 
           <div class="large-12 small-12 columns" id="stories_container">
@@ -138,28 +160,28 @@
 
                   </div>
                 </div>
-</div>
-    <footer class="row" >
+    <footer class="row" id="footer-list" >
         {{--<div class="large-12 columns" style="border-top: solid #E0E0E0 2px">--}}
         <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
-           <li><label>Categories</label></li>
-           <li><label>News Sources</label></li>
           <li id="1" ><a href="{{url('/')}}">Home</a></li>
-          <li id="1" ><a href="{{url('/punch')}}">Punch</a></li>
-           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
-           <li id="2"><a href="{{url('/vanguard')}}">Vanguard</a></li>
-           <li id="3"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
-           <li id="3"><a href="{{url('linda-ikeji')}}">Linda Ikeji</a></li>
-           <li id="3">
-           {{--<a href="#" data-options="align:top" data-dropdown="drop">More &raquo;</a>--}}
-                <a href="#" data-options="align:top" data-dropdown="drop1">More&raquo;</a>
-                {{--<ul id="drop" class="[tiny small medium large content]f-dropdown" data-dropdown-content>--}}
-                {{--<li><a href="#">This is a link</a></li>--}}
-                {{--<li><a href="#">This is another</a></li>--}}
-                {{--<li><a href="#">Yet another</a></li>--}}
-                {{--</ul>--}}
-           </li>
-           <li id="3"><a href="#" data-options="align:top" data-dropdown="drop1">More&raquo;</a></li>
+          <li id="2" ><a href="{{url('/punch')}}">Punch</a></li>
+           <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
+           <li id="4"><a href="{{url('/vanguard')}}">Vanguard</a></li>
+           <li id="5"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
+           <li id="6"><a href="{{url('/linda-ikeji')}}">Linda Ikeji</a></li>
+           <li id="7"><a href="{{url('/sports')}}">Sports</a></li>
+           <li id="7"><a href="{{url('/complete-sports')}}">Complete Sports</a></li>
+           <li id="9"><a href="{{url('/politics')}}">Politics</a></li>
+           <li id="9"><a href="{{url('/bella-naija')}}">Bella Naija</a></li>
+           <li id="10"><a href="{{url('/metro')}}">Metro</a></li>
+            {{--<li id="8"><a href="#" data-options="align:ignore_repositioning" data-dropdown="drop1">More&raquo;</a>--}}
+                       {{--<ul id="drop1" class="tiny f-dropdown" data-dropdown-content>--}}
+                                       {{--<li><a href="#">This is a link</a></li>--}}
+                                       {{--<li><a href="#">This is another</a></li>--}}
+                                       {{--<li><a href="#">Yet another</a></li>--}}
+                                       {{--</ul>--}}
+                      {{--</li>--}}
+
         </ul>
 
 {{--<ul class="inline-list" style="color:#0266C8">--}}
@@ -185,33 +207,6 @@
 
     <script>
         $(document).foundation();
-
-        //var next_page_url, prev_page_url, new_url;
-       // $(document).ready(function(){
-// var root = document.documentElement;
-//            root.className += " minor-mini";
-//         $("a[rel='prev']").append("<span>Previous</span>");
-//         $("a[rel='next']").append("<span>Next</span>")
-//        });
-//            $.ajax({
-//                type:"GET",
-//                url:"http://localhost:8000/stories_json",
-//                success:function(result){
-//                console.log(result)
-//                var page_id= result.current_page;
-//                next_page_url= "http://localhost:8000/?page=2";
-//                prev_page_url=result.prev_page_url;
-//                var prev_text="Previous";
-//                var next_text="Next";
-//                $('#next').append('<a href="'+next_page_url+'">'+next_text+'</a>');
-//                }
-//            })
-//            new_url= jQuery.param.querystring(window.location.href,'page=3');
-//            alert(new_url);
-//        });
-
-//        function rto detect if minor browser is being used
-
 //ajax call for getting number of linkouts of specific a tags
             $('[name= "linkOuts"]').click(function(event) {
              var storyID = $(this).attr('id');
@@ -257,11 +252,7 @@
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
-    })
-
-//    $('#home').click(function(event){
-//    $('html,body').scrollTop(0);
-//    });
+    });
 
 
     </script>
