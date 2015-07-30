@@ -7,7 +7,7 @@
 @section('more-meta')
 <meta property="og:title" content= "Latest {{$data['publishers_name'][$publisher_story1['pub_id']]}} News Headlines In Nigeria Today"/>
  <meta property="og:description" content= "Latest breaking {{$data['publishers_name'][$publisher_story1['pub_id']]}} news headlines in nigeria today"/>
- <meta property="og:url" content= "{{$publisher_story1['publisher_route']}}"/>
+ <meta property="og:url" content= "{{$data['publisher_stories']['publisher_route']}}"/>
 @endsection
 
 @section('important_stories')
