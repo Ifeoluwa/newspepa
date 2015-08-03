@@ -1,82 +1,388 @@
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
-        <title>@yield('title')</title>
-        <link rel="shortcut icon" href="ui_newspaper/img/favicon.ico" />
-        <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-        <link rel="stylesheet" href="ui_newspaper/css/app22.css" />
-        <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
-        <script src="ui_newspaper/js/vendor/modernizr.js"></script>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard - Newspepa Administrator ">
+    <meta name="author" content="Iconway Media">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="../ui_newspaper/img/favicon.png">
 
-        <div class="fixed">
-            <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
-                <ul class="title-area">
-                    <a href="{{url('/')}}"><li class="name name-m"></li></a>
-                </ul>
-            </nav>
+    <title>@yield('title')</title>
 
-        </div>
-<div class="container-fluid-full">
-    <div class="row-fluid">
+    <!-- Bootstrap CSS -->    
+    <link href="{{URL::asset('newspepa_cms/css/bootstrap.min.css')}}" type="text/css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="{{URL::asset('newspepa_cms/css/bootstrap-theme.css')}}" type="text/css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="{{URL::asset('newspepa_cms/css/elegant-icons-style.css')}}" type="text/css" rel="stylesheet" />
+    <link href="{{URL::asset('newspepa_cms/css/font-awesome.min.css')}}" type="text/css" rel="stylesheet" />
 
-        <div class="row-fluid">
-            <div class="login-box">
-                <h2>Login to your account</h2>
-                {{ Form::open(array('url' => 'login'))}}
-                <fieldset>
+    <link href="{{URL::asset('newspepa_cms/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css')}}" type="text/css" rel="stylesheet" media="screen"/>
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="{{URL::asset('newspepa_cms/css/owl.carousel.css')}}" type="text/css">
+	<link href="{{URL::asset('newspepa_cms/css/jquery-jvectormap-1.2.2.css')}}" type="text/css" rel="stylesheet">
+    <!-- Custom styles -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-                    <input class="input-large span12" name="username" id="username" type="text" placeholder="type username" />
+	<link rel="stylesheet" href="{{URL::asset('newspepa_cms/css/fullcalendar.css')}}">
+	<link href="{{URL::asset('newspepa_cms/css/widgets.css')}}" type="text/css" rel="stylesheet">
+    <link href="{{URL::asset('newspepa_cms/css/style.css')}}" type="text/css" rel="stylesheet">
+    <link href="{{URL::asset('newspepa_cms/css/style-responsive.css')}}" type="text/css" rel="stylesheet" />
+	<link href="{{URL::asset('newspepa_cms/css/xcharts.min.css')}}" type="text/css" rel=" stylesheet">
+	<link href="{{URL::asset('newspepa_cms/css/jquery-ui-1.10.4.min.css')}}" type="text/css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="{{url('newspepa_cms/js/html5shiv.js')}}" type="text/javascript"></script>
+      <script src="{{url('newspepa_cms/js/respond.min.js')}}" type="text/javascript"></script>
+      <script src="{{url('newspepa_cms/js/lte-ie7.js')}}" type="text/javascript"></script>
+  <![endif]-->
+    {{--WYSIWYG Editor files--}}
+    @yield('more-resources')
 
-                    <input class="input-large span12" name="password" id="password" type="password" placeholder="type password" />
 
-                    <div class="clearfix"></div>
+  </head>
 
-                    <label class="remember" for="remember"><input type="checkbox" id="remember" />Remember me</label>
-
-                    <div class="clearfix"></div>
-
-                    <button type="submit" class="btn btn-primary span12">Login</button>
-                </fieldset>
-
-                {{Form::close()}}
-                <hr />
-                <h3>Forgot Password?</h3>
-                <p>
-                    No problem, <a href="#">click here</a> to get a new password.
-                </p>
+  <body>
+  <!-- container section start -->
+  <section id="container" class="">
+     
+      
+      <header class="header dark-bg">
+            <div class="toggle-nav">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"></div>
             </div>
-        </div><!--/row-->
 
-    </div><!--/fluid-row-->
+            <!--logo start-->
+            <a href="{{url('admin')}}" class="logo">Nice <span class="lite">Admin</span></a>
+            <!--logo end-->
 
-</div>
-    <footer class="row">
+            <div class="nav search-row" id="top_menu">
+                <!--  search form start -->
+                <ul class="nav top-menu">                    
+                    <li>
+                        <form class="navbar-form">
+                            <input class="form-control" placeholder="Search" type="text">
+                        </form>
+                    </li>                    
+                </ul>
+                <!--  search form end -->                
+            </div>
 
-    </footer>
-    <script src="ui_newspaper/js/vendor/jquery.js"></script>
-    <script src="ui_newspaper/js/vendor/fastclick.js"></script>
-    <script src="ui_newspaper/js/foundation.min.js"></script>
-    <script src="ui_newspaper/get_social_counts/site.js"></script>
+            <div class="top-nav notification-row">                
+                <!-- notificatoin dropdown start-->
+                <ul class="nav pull-right top-menu">
+                    
+                    <!-- task notificatoin start -->
+                    <li id="task_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="icon-task-l"></span>
+                            <span class="badge bg-important">6</span>
+                        </a>
+                        <ul class="dropdown-menu extended tasks-bar">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">You have 6 pending letter</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Design PSD </div>
+                                        <div class="percent">90%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                            <span class="sr-only">90% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">
+                                            Project 1
+                                        </div>
+                                        <div class="percent">30%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                            <span class="sr-only">30% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Digital Marketing</div>
+                                        <div class="percent">80%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Logo Designing</div>
+                                        <div class="percent">78%</div>
+                                    </div>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 78%">
+                                            <span class="sr-only">78% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="task-info">
+                                        <div class="desc">Mobile App</div>
+                                        <div class="percent">50%</div>
+                                    </div>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar"  role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                            <span class="sr-only">50% Complete</span>
+                                        </div>
+                                    </div>
 
-    <script>
-        $(document).foundation();
+                                </a>
+                            </li>
+                            <li class="external">
+                                <a href="#">See All Tasks</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- task notificatoin end -->
+                    <!-- inbox notificatoin start-->
+                    <li id="mail_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-envelope-l"></i>
+                            <span class="badge bg-important">5</span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">You have 5 new messages</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini.jpg"></span>
+                                    <span class="subject">
+                                    <span class="from">Greg  Martin</span>
+                                    <span class="time">1 min</span>
+                                    </span>
+                                    <span class="message">
+                                        I really like this admin panel.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini2.jpg"></span>
+                                    <span class="subject">
+                                    <span class="from">Bob   Mckenzie</span>
+                                    <span class="time">5 mins</span>
+                                    </span>
+                                    <span class="message">
+                                     Hi, What is next project plan?
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini3.jpg"></span>
+                                    <span class="subject">
+                                    <span class="from">Phillip   Park</span>
+                                    <span class="time">2 hrs</span>
+                                    </span>
+                                    <span class="message">
+                                        I am like to buy this Admin Template.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini4.jpg"></span>
+                                    <span class="subject">
+                                    <span class="from">Ray   Munoz</span>
+                                    <span class="time">1 day</span>
+                                    </span>
+                                    <span class="message">
+                                        Icon fonts are great.
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">See all messages</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- inbox notificatoin end -->
+                    <!-- alert notification start-->
+                    <li id="alert_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
-    </script>
-    <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                            <i class="icon-bell-l"></i>
+                            <span class="badge bg-important">7</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">You have 4 new notifications</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-primary"><i class="icon_profile"></i></span> 
+                                    Friend Request
+                                    <span class="small italic pull-right">5 mins</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-warning"><i class="icon_pin"></i></span>  
+                                    John location.
+                                    <span class="small italic pull-right">50 mins</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-danger"><i class="icon_book_alt"></i></span> 
+                                    Project 3 Completed.
+                                    <span class="small italic pull-right">1 hr</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="label label-success"><i class="icon_like"></i></span> 
+                                    Mick appreciated your work.
+                                    <span class="small italic pull-right"> Today</span>
+                                </a>
+                            </li>                            
+                            <li>
+                                <a href="#">See all notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- alert notification end-->
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img alt="" src="img/avatar1_small.jpg">
+                            </span>
+                            <span class="username">Jenifer Smith</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li class="eborder-top">
+                                <a href="#"><i class="icon_profile"></i> My Profile</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon_clock_alt"></i> Timeline</a>
+                            </li>
 
-          ga('create', 'UA-49109646-1', 'auto');
-          ga('send', 'pageview');
+                            <li>
+                                <a href="{{url('auth/logout')}}"><i class="icon_key_alt"></i> Log Out</a>
+                            </li>
 
-    </script>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!-- notificatoin dropdown end-->
+            </div>
+      </header>      
+      <!--header end-->
 
-    </body>
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu">                
+                  <li class="active">
+                      <a class="" href="{{url('admin')}}">
+                          <i class="icon_house_alt"></i>
+                          <span>Dashboard</span>
+                      </a>
+                  </li>
+				  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_document"></i>
+                          <span>Stories</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="{{url('admin/story/new')}}">Add New Story</a></li>
+                          <li><a class="" href="{{url('admin/story/view')}}">View Stories</a></li>
+                      </ul>
+                  </li>       
+
+                  <li>
+                      <a class="" href="widgets.html">
+                          <i class="icon_genius"></i>
+                          <span>Settings</span>
+                      </a>
+
+                  
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!--main content start-->
+      <div id="main-content">
+          <div class="wrapper">
+              <!--overview start-->
+			  <div class="row">
+				<div class="col-lg-12">
+					<h3 class="page-header"><i class="fa fa-laptop"></i> @yield('page-header')</h3>
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+						<li><i class="fa @yield('icon')"></i>@yield('beadcrumb-header')</li>
+					</ol>
+				</div>
+			</div>
+
+			@yield('main-content')
+
+          </div>
+
+
+      </div>
+      <!--main content end-->
+  </section>
+  <!-- container section start -->
+
+    <!-- javascripts -->
+
+    <script src="{{url('newspepa_cms/js/jquery.js')}}" type="text/javascript"></script>
+	<script src="{{url('newspepa_cms/js/jquery-ui-1.10.4.min.js')}}" type="text/javascript"></script>
+    <script src="{{url('newspepa_cms/js/jquery-1.8.3.min.js')}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{url('newspepa_cms/js/jquery-ui-1.9.2.custom.min.js')}}"></script>
+    <!-- bootstrap -->
+    <script type="text/javascript" src="{{url('newspepa_cms/js/bootstrap.min.js')}}"></script>
+    <!-- nice scroll -->
+    <script src="{{url('newspepa_cms/js/jquery.scrollTo.min.js')}}" type="text/javascript"></script>
+    <script src="{{url('newspepa_cms/js/jquery.nicescroll.js')}}" type="text/javascript"></script>
+   <!-- custom select -->
+    <script src="{{url('newspepa_cms/js/jquery.customSelect.min.js')}}" ></script>
+	<script src="{{url('newspepa_cms/assets/chart-master/Chart.js')}}"></script>
+   <!--custome script for all page-->
+    <script src="{{url('newspepa_cms/js/scripts.js')}}"></script>
+    <!-- custom script for this page-->
+    <script src="{{url('newspepa_cms/js/jquery.slimscroll.min.js')}}"></script>
+    @yield('scripts')
+
+  </body>
 </html>

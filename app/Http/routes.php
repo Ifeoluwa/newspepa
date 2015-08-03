@@ -17,8 +17,10 @@
 Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
 Route::get('test', 'FeedController@test');
-
-Route::get('timeline', 'StoryController@newCreateTimeLineStories');
+Route::get('hello', function(){
+    return view('admin.new_post');
+});
+Route::get('timeline', 'StoryController@createTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
 
@@ -33,13 +35,26 @@ Route::get('about', function(){
 
 //Handles request from the admin/authentication
 Route::get('admin', function(){
-    return view('admin.login');
+
+    return redirect('admin/dashboard');
 });
 
 Route::get('register', function(){
    return view('admin.register');
 });
 
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('admin/dashboard', function(){
+       return view('admin.dashboard');
+    });
+
+    Route::get('admin/story/new', 'Admin\DashboardController@newStory');
+});
+
+Route::get('admin', 'Auth\AuthController@getLogin');
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
+Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 
 
 

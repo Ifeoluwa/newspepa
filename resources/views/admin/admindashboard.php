@@ -119,6 +119,7 @@
                 <ul class='wp-submenu wp-submenu-wrap'><li class='wp-submenu-head'>Dashboard</li><li class="wp-first-item"><a href='index.php' class="wp-first-item">Home</a></li><li><a href='update-core.php'>Updates <span class='update-plugins count-24' title='20 Plugin Updates, 4 Theme Updates'><span class='update-count'>24</span></span></a></li></ul></li>
     </div>
 </div>
+</div>
 <div id="wpcontent">
 
 

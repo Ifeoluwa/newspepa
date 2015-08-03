@@ -417,9 +417,9 @@ class TimelineStoryController extends Controller
         $publishers = Publisher::where('status_id', 1)->get()->toArray();
 
         if($this->isOpera()){
-            return view('minor.publishersList')->with('data', $publishers);
+            return view('minor.opera-layout')->with('data', $publishers);
         }else{
-            return view('major.publishersList')->with('data', $publishers);
+            return view('major.layout')->with('data', $publishers);
         }
     }
 

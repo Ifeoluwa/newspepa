@@ -69,7 +69,7 @@ class FeedController extends Controller {
 
         // Shuffle the array of stories
         shuffle($all_stories);
-//        $stories_array = array();
+        $stories_array = array();
 //        $updateQuery = $this->client->createUpdate();
         $fetched_stories = count($all_stories);
         $k = 0;
@@ -77,46 +77,43 @@ class FeedController extends Controller {
 
         //Insert stories
         foreach($all_stories as $story){
-            $result = Story::insertIgnore($story);
-//
-//            if($result !== false){
 //                //solr insert
 //                //adding document to solr
-//                array_push($inserted_stories, $story);
-//
-//                $story1 = $updateQuery->createDocument();
-//                $story1->id = $result; //return the id of the insert from PDO query and attach it here
-//                $story1->title_en = $story['title'];
-//                $story1->description_en = $story['description'];
-//                if(isset($story['image_url'])){
-//                    $story1->image_url_t = $story['image_url'];
-//                }else{
-//                    $story1->image_url_t = '';
-//                }
-//                $story1->video_url_t = '';
-//                $story1->url = $story['url'];
-//                $story1->pub_id_i = $story['pub_id'];
-//                $story1->has_cluster_i = 1;
-//                //do this for all stories and keep adding them to the stories array
-//                //when done continue to the nest line
-//                array_push($stories_array, $story1);
-//            }
-
             $similarity = $this->isSimilarToPrevious($story);
             if($similarity !== true){
                 $result = Story::insertIgnore($story);
-//                if($result !== false){
+                if($result !== false){
+
+                    array_push($inserted_stories, $story);
+
+//                    $story1 = $updateQuery->createDocument();
+//                    $story1->id = $result; //return the id of the insert from PDO query and attach it here
+//                    $story1->title_en = $story['title'];
+//                    $story1->description_en = $story['description'];
+//                    if(isset($story['image_url'])){
+//                        $story1->image_url_t = $story['image_url'];
+//                    }else{
+//                        $story1->image_url_t = '';
+//                    }
+//                    $story1->video_url_t = '';
+//                    $story1->url = $story['url'];
+//                    $story1->pub_id_i = $story['pub_id'];
+//                    $story1->has_cluster_i = 1;
+//                    //do this for all stories and keep adding them to the stories array
+//                    //when done continue to the nest line
+//                    array_push($stories_array, $story1);
+
 //                    $k += 1;
 //                    $now  = date('Y-m-d h:i:s');
 //                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
 //                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
 //                    fclose($fp);
-//                }else{
+                }else{
 //                    $now  = date('Y-m-d h:i:s');
 //                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
 //                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
 //                    fclose($fp);
-//                }
+                }
             }
         }
 //        $updateQuery->addDocuments($stories_array);
@@ -138,9 +135,6 @@ class FeedController extends Controller {
             $matched_stories = StoryController::matchStories($old_stories, $new_stories);
             Cluster::insertIgnore($matched_stories);
         }
-
-
-
 
         set_time_limit(120);
 
@@ -354,7 +348,7 @@ class FeedController extends Controller {
         $isSimilar = false;
         $timezone = new \DateTimeZone('Africa/Lagos');
         $prev_stories = DB::table('stories')->where('feed_id', $story['feed_id'])
-            ->whereBetween('created_date', [new \DateTime('-1hour'), new \DateTime('now')])->get();
+            ->whereBetween('created_date', [new \DateTime('-1hour', $timezone), new \DateTime('now', $timezone)])->get();
         foreach($prev_stories as $prev_story){
             if($this->compareStrings(strtolower($story['title']), strtolower($prev_story['title'])) > 70){
                 $isSimilar = $isSimilar || true;
