@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Category;
+
 class CategoryController extends Controller {
 
 
@@ -16,6 +18,13 @@ class CategoryController extends Controller {
     public function getStoriesByCategory($category_name){
 
 
+    }
+
+    public static function getCategories(){
+        //gets all the categories from the database
+        $categories = Category::all()->toArray();
+
+        return $categories;
     }
 
 } 

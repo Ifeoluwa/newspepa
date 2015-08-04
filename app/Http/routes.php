@@ -33,11 +33,6 @@ Route::get('about', function(){
    return view('aboutUs');
 });
 
-//Handles request from the admin/authentication
-Route::get('admin', function(){
-
-    return redirect('admin/dashboard');
-});
 
 Route::get('register', function(){
    return view('admin.register');
@@ -45,11 +40,10 @@ Route::get('register', function(){
 
 
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('admin/dashboard', function(){
-       return view('admin.dashboard');
-    });
+    Route::get('admin/dashboard', 'Admin\DashboardController@getDashboard');
 
     Route::get('admin/story/new', 'Admin\DashboardController@newStory');
+    Route::post('admin/story/create', 'StoryController@adminPost');
 });
 
 Route::get('admin', 'Auth\AuthController@getLogin');
