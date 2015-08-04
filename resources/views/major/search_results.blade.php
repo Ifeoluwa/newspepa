@@ -8,7 +8,7 @@
 the important section, lessImportant and noImage stories--}}
 @if($data['found']!=0)
 @section('important_stories')
-<span class="title" style="font: 24px"><b>{{$data['found']}} Results found for  '{{$data['search_query']}}'</b></span><br/>
+<span class="title-timeline" style="font: 24px"><b>{{$data['found']}} Results found for  '{{$data['search_query']}}'</b></span><br/>
 @foreach($data['search_result'] as $searchResult)
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
         <div class="row panel radius">
@@ -33,7 +33,6 @@ the important section, lessImportant and noImage stories--}}
     </div>
 </div>
 @endforeach
-
 @endsection
 
 {{--@section('related_content')--}}
