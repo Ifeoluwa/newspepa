@@ -127,13 +127,8 @@ class TimelineStoryController extends Controller
     //Latest Stories
     public function getLatestStories(){
 
-        $nigeria = TimelineStory::recentStoriesByCat(1);
-        $politics = TimelineStory::recentStoriesByCat(2);
-        $entertainment = TimelineStory::recentStoriesByCat(3);
-        $sports = TimelineStory::recentStoriesByCat(4);
-        $metro = TimelineStory::recentStoriesByCat(5);
 
-        $items = array_merge($nigeria, $politics, $entertainment, $sports, $metro);
+        $items = TimelineStory::latestStories();
 
         $pageStart = \Request::get('page', 1);
         $perPage = 50;
@@ -266,6 +261,8 @@ class TimelineStoryController extends Controller
          * search
          */
         $search_query = \Illuminate\Support\Facades\Input::get('search_query');
+        $search_query = trim($search_query);
+        $search_query = preg_replace('/\s+/', ' ',$search_query);
 
         $search_query_array = explode(' ', $search_query);
         $search_query_array = array_diff($search_query_array, $this->stop_word_array);
@@ -330,25 +327,12 @@ class TimelineStoryController extends Controller
     }
     //Updates the linkout time and the number of linkouts when the user clicks on the continue to read option for each story
     public function readStory(){
+        $story_id = \Request::get('id');
+        $url = \Request::get('url');
+        TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
 
-        if(Request::ajax()){
-            $data = Request::all();
-            $story_id = $data['story_id'];
-            $time = \Carbon\Carbon::now();
-            $params = array(
-                'story_id' => $story_id,
-                'last_linkout_time' => date("Y-m-d H:i:s", $time)
-            );
+        return redirect($url);
 
-
-            DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
-
-            DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
-
-            return "200";
-//            $result = TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
-//            return $result;
-        }
 
     }
 
@@ -463,7 +447,7 @@ class TimelineStoryController extends Controller
 
 
             if($this->isOpera()){
-                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher,  'paginator' => $paginator));
+                return view('minor.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }else{
                 return view('major.publisherStories')->with('data', array('publisher_stories' => $stories_by_publisher, 'publishers_name' => Publisher::$publishers, 'paginator' => $paginator));
             }

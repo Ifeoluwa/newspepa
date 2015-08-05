@@ -1,6 +1,5 @@
 @extends('major.layout')
-
-@section ('title',$data['category_stories']['category_name'] )
+@section ("title", "Latest ".$data['category_stories']['category_name']." In Nigeria Today")
 @endsection
 
 @section('more-meta')

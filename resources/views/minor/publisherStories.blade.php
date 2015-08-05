@@ -1,17 +1,17 @@
 @extends ('minor.opera-layout')
 @foreach($data['publisher_stories']['all'] as $publisher_story1)
-@section('title', $data['publishers_name'][$publisher_story1['pub_id']])
+@section('title', "Latest ".$data['publishers_name'][$publisher_story1['pub_id']]." News Headlines in Nigeria Today")
 @endforeach
 @stop
 
 @section('more-meta')
 <meta property="og:title" content= "Latest {{$data['publishers_name'][$publisher_story1['pub_id']]}} News Headlines In Nigeria Today"/>
  <meta property="og:description" content= "Latest breaking {{$data['publishers_name'][$publisher_story1['pub_id']]}} news headlines in nigeria today"/>
- <meta property="og:url" content= "{{$publisher_story1['publisher_route']}}"/>
+ <meta property="og:url" content= "{{$data['publisher_stories']['publisher_route']}}"/>
 @endsection
 
 @section('important_stories')
-<span class="publisher-name"><h1>{{$data['publishers_name'][$publisher_story1['pub_id']]}}</h1></span>
+<span class="title-timeline" style="color: #646464; margin-bottom:12px; margin-top: 12px">{{$data['publishers_name'][$publisher_story1['pub_id']]}}</span>
     @foreach($data['publisher_stories']['all'] as $publisher_story)
     <?php $tc = new \App\Http\Controllers\TimelineStoryController();
     ?>

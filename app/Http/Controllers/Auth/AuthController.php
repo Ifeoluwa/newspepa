@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -20,11 +21,11 @@ class AuthController extends Controller
     |
     */
 
-    use App\User;
-    use Validator;
-    use App\Http\Controllers\Controller;
-
     use AuthenticatesAndRegistersUsers;
+
+    protected $redirectAfterLogout = '/admin';
+    protected $redirectTo = '/admin/dashboard';
+    protected $username = 'username';
 
     /**
      * Create a new authentication controller instance.
@@ -45,8 +46,8 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+//            'name' => 'required|max:255',
+            'username' => 'required|username|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }
