@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Category;
+use App\Publisher;
 use App\Story;
 use App\TimelineStory;
 use Illuminate\Http\Request;
@@ -266,61 +268,81 @@ class StoryController extends Controller {
         }
     }
 
-    public function updateStory(){
-        $story_data = \Illuminate\Support\Facades\Input::get("story_data");
-        $date = new \DateTime('now');
+    public function updateStory(Request $request){
 
         try{
-            $update = DB::table('stories')
-                ->where('id', $story_data['story_id'])
-                ->update(['title' => $story_data['title']],
-                    ['image_url' => $story_data['image_url']],
-                    ['video_url' => $story_data['video_url']],
-                    ['description' => $story_data['description']],
-                    ['url' => $story_data['url']],
-                    ['category_id' => $story_data['category_id']],
-                    ['status_id' => $story_data['status_id']],
-                    ['modified_date' => $date]);
-            if($update){
-                $update2 = DB::table('timeline_stories')
-                    ->where('id', $story_data['id'])
-                    ->update(['title' => $story_data['title']],
-                        ['image_url' => $story_data['image_url']],
-                        ['video_url' => $story_data['video_url']],
-                        ['description' => $story_data['description']],
-                        ['url' => $story_data['url']],
-                        ['category_id' => $story_data['category_id']],
-                        ['is_pivot' => $story_data['is_pivot']],
-                        ['status_id' => $story_data['status_id']],
-                        ['modified_date' => $date]);
+            $story_data = $request->all();
+            $story_updates = array();
+            $date = new \DateTime('now', new \DateTimeZone('Africa/Lagos'));
+            $story_updates['title'] = $story_data['title'];
+            $story_updates['category_id'] = $story_data['category'];
+            $story_updates['pub_id'] = $story_data['publisher'];
+            $story_updates['description'] = $story_data['description'];
+            $story_updates['modified_date'] = $date;
+
+            if($request->hasFile('story_images')){
+                $first_image_name = $request->file('story_images')[0]->getClientOriginalName();
+                $story_updates['image_url'] = "story_images/".$first_image_name;
+                $count = 1;
+                foreach($request->file('story_images') as $story_image){
+                    $image_name = $story_image->getClientOriginalName();
+                    $image_path = "story_images/".$image_name;
+                    $story_image->move(base_path() .'/public/story_images', $image_name);
+                    if($count >= 2){
+                        $story_updates['description'] .= "<img src='".$image_path."'></br>";
+
+                    }
+                    $count++;
+                }
             }
 
-            return view('dashboard');
+            $update = DB::table('stories')
+                ->where('id', $story_data['story_id'])
+                ->update($story_updates);
+            if($update){
+                $story_updates['story_id'] = $story_data['story_id'];
+                $update2 = DB::table('timeline_stories')
+                    ->where('story_id', $story_data['story_id'])
+                    ->update($story_updates);
+            }
+
+            return redirect('admin/story/actions')->with('success', 'Update successful!');
         }catch (\ErrorException $ex){
-            return view('errors.404');
+
+            return back()->with('failure', 'Unable to update story :(');
         }catch (NotFoundHttpException $nfe){
-            return view('errors.404');
+
+            return back()->with('failure', 'Unable to update story :(');
+        }catch (\Exception $ex){
+            return back()->with('failure', 'Unable to update story :(');
+
         }
     }
 
-    public function deleteStory(){
-        $story_id = \Illuminate\Support\Facades\Input::get('story_id');
+    public function deleteStory($story_id){
 
         try{
             $delete = DB::table('stories')
-                ->where('id', $story_id['story_id'])
-                ->update('status_id', 2);
+                ->where('id', $story_id)
+                ->update(['status_id'=> 2]);
+
             if($delete){
                 $delete = DB::table('timeline_stories')
-                    ->where('id', $story_id['id'])
-                    ->update('status_id', 2);
+                    ->where('story_id', $story_id)
+                    ->update(['status_id'=> 2]);
             }
+
+            return redirect('/admin/story/actions')->with('success', 'Story has been deleted!');
         }
         catch(\ErrorException $ex){
-            return view('errors.404');
+            return redirect('/admin/story/actions')->with('failure', 'Unable to delete story :(');
         }
         catch(NotFoundHttpException $nfe){
-            return view('errors.404');
+            return redirect('/admin/story/actions')->with('failure', 'Unable to delete story :(');
+
+        }catch(\Exception $ex){
+            return redirect('/admin/story/actions')->with('failure', 'Unable to delete story :(');
+
         }
     }
 
@@ -340,6 +362,14 @@ class StoryController extends Controller {
         catch(NotFoundHttpException $nfe){
             return view('errors.404');
         }
+    }
+
+    public function editStory($story_id){
+        $categories = CategoryController::getCategories();
+        $publishers = PublisherController::getIconwayPub();
+        $story_details = DB::table('timeline_stories')->where('story_id', $story_id)->get();
+        return view('admin.editStory')->with('data', array('story_details' => $story_details[0], 'categories' => $categories, 'publishers' => $publishers));
+
     }
 
 

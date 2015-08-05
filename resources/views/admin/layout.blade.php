@@ -323,7 +323,7 @@
                       </a>
                       <ul class="sub">
                           <li><a class="" href="{{url('admin/story/new')}}">Add New Story</a></li>
-                          {{--<li><a class="" href="{{url('admin/story/view')}}">View Stories</a></li>--}}
+                          <li><a class="" href="{{url('admin/story/actions')}}">Edit or Delete Story</a></li>
                       </ul>
                   </li>       
 

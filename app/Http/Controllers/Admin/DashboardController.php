@@ -6,6 +6,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PublisherController;
 use App\Publisher;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -32,6 +34,25 @@ class DashboardController extends Controller
 
         return view('admin.dashboard')->with('data', array('stories' => $all_stories, 'categories' => $this->categories, 'publishers' => Publisher::$publishers));
     }
+
+    public function getStoryActions(){
+        try{
+            $all_stories = DB::table('timeline_stories')
+                ->select('id', 'story_id', 'title', 'created_date')
+                ->where('status_id', 1)->orderBy('created_date', 'desc')
+                ->paginate(100);
+
+            return view('admin.actions')->with('data', array('stories' => $all_stories, 'categories' => $this->categories, 'publishers' => Publisher::$publishers));
+        }
+        catch(\ErrorException $ex){
+            return view('errors.404');
+        }
+        catch(NotFoundHttpException $nfe){
+            return view('errors.404');
+        }
+    }
+
+
 
 
 }

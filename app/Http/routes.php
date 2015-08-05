@@ -44,6 +44,10 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('admin/story/new', 'Admin\DashboardController@newStory');
     Route::post('admin/story/create', 'StoryController@adminPost');
+    Route::get('admin/story/actions', 'Admin\DashboardController@getStoryActions');
+    Route::get('admin/story/edit/{story_id}', 'StoryController@editStory');
+    Route::get('admin/story/delete/{story_id}', 'StoryController@deleteStory');
+    Route::post('admin/story/update', 'StoryController@updateStory');
 });
 
 Route::get('admin', 'Auth\AuthController@getLogin');
@@ -65,7 +69,7 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
     Route::get('latest-news-in-nigeria', 'TimelineStoryController@getLatestStories');
 
 
-    Route::post('linkout', 'TimelineStoryController@readStory');
+    Route::get('linkout', 'TimelineStoryController@readStory');
 
     // Gets the request for the list of active publishers
     Route::get('publishers', 'TimelineStoryController@getPublishers');

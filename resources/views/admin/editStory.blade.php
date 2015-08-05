@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'Add New Story | Newspepa')
+@section('title', 'Edit Story | Newspepa')
 @stop
 
 @section('more-resources')
@@ -14,35 +14,41 @@
     </style>
 @stop
 
-@section('icon', 'fa-plus')
+@section('icon', 'fa-edit')
 @stop
 
-@section('beadcrumb-header', 'Add New Story') @stop
+@section('beadcrumb-header', 'Edit Story')
+@stop
 
 @section('main-content')
 
  <div class="col-lg-9">
     <div class="panel">
           <header class="panel-heading">
-              Add New Story
+              Edit Story
           </header>
           <div class="panel-body">
-               @include('admin.partials.errors')
-               @include('admin.partials.success')
+          @include('admin.partials.success')
+          @include('admin.partials.failure')
 
-              <form class="form form-horizontal" method="POST" action="{{url('admin/story/create')}}" enctype="multipart/form-data" >
+              <form class="form form-horizontal" method="POST" action="{{url('admin/story/update')}}" enctype="multipart/form-data" >
                   {!! csrf_field() !!}
+
+                  <div class="form-group" hidden="hidden">
+                       <label class="col-sm-2 control-label">Story ID</label>
+                          <div class="col-sm-10">
+                              <input type="text" name="story_id" id="story_id" class="form-control" value="{{$data['story_details']['story_id']}}" required>
+                          </div>
+                  </div>
                   <div class="form-group">
-                     <label class="col-sm-2 control-label">Add Title</label>
+                     <label class="col-sm-2 control-label">Title</label>
                         <div class="col-sm-10">
-                            <input type="text" name="title" id="title" class="form-control" required>
+                            <input type="text" name="title" id="title" class="form-control" value="{{$data['story_details']['title']}}" required>
                         </div>
                     </div>
                     <div class="form-group">
-                    <label class="col-sm-2 control-label">Add Description</label>
+                    <label class="col-sm-2 control-label">Description</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control ckeditor" name="description" rows="6" id="description">
-
                             </textarea>
                         </div>
                     </div>
@@ -92,7 +98,7 @@
                     <div class="form-group">
                       <div class="col-lg-offset-2 col-lg-10 btn-group">
                           <button type="button" id="story_preview"  class="btn btn-default" onclick="launchStoryPreviewModal()">Preview</button>
-                          <button type="submit" class="btn btn-primary">Publish</button>
+                          <button type="submit" class="btn btn-primary">Update</button>
                       </div>
                     </div>
 
@@ -104,6 +110,8 @@
 
 
  </div>
+                            <textarea class="form-control ckeditor" name="description" rows="6" id="description">
+                            {{$data['story_details']['description']}}
 
  <div class="modal fade" id="storyPreviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
    <div class="modal-dialog" role="document">
