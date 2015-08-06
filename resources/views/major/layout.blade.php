@@ -7,9 +7,10 @@
     <title>@yield('title') | Newspepa</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-     <link rel="stylesheet" href="ui_newspaper/css/app23.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app26.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+    {{--<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>--}}
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -41,15 +42,16 @@
                     {{--</ul>--}}
         {{--</section>--}}
     {{--</nav>--}}
-    <div class="off-canvas-wrap" data-offcanvas>
+    <div class="off-canvas-wrap" data-offcanvas="none">
       <div class="inner-wrap">
-            <nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation" >
+            <nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation">
+                <section class="middle tab-bar-section">
+                      <a href="{{url('/')}}"> <h1 class="title"></h1></a>
+                    </section>
                 <div class="left-small" data-options="sticky_on: small">
                  <a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>
                 </div>
-                <section class="middle tab-bar-section">
-                       <a href="{{url('/')}}"> <h1 class="title"></h1></a>
-                </section>
+
             </nav>
 
         <!-- Off Canvas Menu -->
@@ -59,11 +61,12 @@
                   <li id="1"><label>Newspepa</label></li>
                   <li id="1"><a href="{{url('/')}}">Top stories</a></li>
                   <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
-                  <li id="3"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
-                  <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
-                  <li id="5"><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
-                  <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
-                  <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a></li>
+                  <li id="3"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
+                  <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
+                  <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+                  <li id="5"><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
+                  <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a></li>
+                  <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a></li>
 
                   <li><label>News Sources</label></li>
                   <li ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
@@ -88,11 +91,9 @@
                           <li><a href="{{url('/latest-premium-times-news')}}">Premium times</a></li>
                           <li><a href="{{url('/latest-business-day-news')}}">Business day</a></li>
                           <li><a href="{{url('/latest-city-people-news')}}">City People</a></li>
-                          <li><a href="{{url('/latest-squakwa-news')}}">Squakwa</a></li>
-                          <li><a href="{{url('/latest-ecomium-news')}}">Ecomium</a></li>
+                          <li><a href="{{url('/latest-encomium-news')}}">Encomium</a></li>
                           <li><a href="{{url('/latest-naira-metrics-news')}}">Naira Metrics</a></li>
                           <li><a href="{{url('/latest-business-news-news')}}">Business News</a></li>
-                          <li><a href="{{url('/latest-futaa-news')}}">Futaa</a></li>
                       </ul>
              </ul>
         </aside>
@@ -110,18 +111,21 @@
 
 
 
+
+
+
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
         {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button>--}}
         {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
-       <div class="row " style="background-color: #0266C8">
-        <ul class="inline-list category-row">
+       <div class="row category-row" style="background-color: #0266C8;border-radius:2px">
+        <ul class="inline-list">
           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
           <li id="3" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
           <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
           <li id="4"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
             <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
-            {{--<li><a href="{{url('business-news-in-nigeria')}}">Business</a></li>--}}
+            <li><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
             <li><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
             <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a>
             <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a>
@@ -161,22 +165,24 @@
              <a class="exit-off-canvas"></a>
 
                   </div>
-                </div>
+          </div>
     <footer class="row" id="footer-list" >
-        {{--<div class="large-12 columns" style="border-top: solid #E0E0E0 2px">--}}
-        <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
+        <div class="large-12 columns" style="border-top: solid #E0E0E0 2px; margin-top:1px">
+        <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8; margin-top:5px">
           <li id="1" ><a href="{{url('/')}}">Home</a></li>
           <li id="2" ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
            <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
            <li id="4"><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
-           <li id="5"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a></li>
+           <li id="5"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
            <li id="6"><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
+           <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+           <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
            <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
            <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
            <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
            <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
            <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
-            {{--<li id="8"><a href="#" data-options="align:ignore_repositioning" data-dropdown="drop1">More&raquo;</a>--}}
+            <li id="11"><a href="{{url('/publishers')}}">More&raquo;</a>
                        {{--<ul id="drop1" class="tiny f-dropdown" data-dropdown-content>--}}
                                        {{--<li><a href="#">This is a link</a></li>--}}
                                        {{--<li><a href="#">This is another</a></li>--}}
@@ -185,21 +191,14 @@
                       {{--</li>--}}
 
         </ul>
-
-{{--<ul class="inline-list" style="color:#0266C8">--}}
-                  {{--<li id="1" ><a href="{{url('/')}}">Home</a></li>--}}
-                  {{--<li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>--}}
-                  {{--<li id="3"><a href="{{url('politics')}}">Politics</a></li>--}}
-                  {{--<li id="4"><a href="{{url('nigeria')}}">Nigeria</a></li>--}}
-                  {{--<li id="5"><a href="{{url('entertainment')}}">Entertainment</a></li>--}}
-                  {{--<li><a href="{{url('business')}}">Business</a></li>--}}
-                  {{--<li id="6"><a href="{{url('sports')}}">Sports</a></li>--}}
-                  {{--<li id="7"><a href="{{url('metro')}}">Metro</a></li>--}}
-            {{--</ul>--}}
-            {{--<p style="margin-left: 20px"><a href="">Choose your news source</a></p>--}}
-
-        {{--</div>--}}
+        </div>
     </footer>
+
+     <a href="{{url('/')}}"><div class="panel" id="toFloat">
+        <div class="name-m"></div>
+    </div></a>
+
+
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
     <script src="ui_newspaper/js/foundation/foundation.offcanvas.js"></script>
     <script src="ui_newspaper/js/foundation/foundation.dropdown.js"></script>
@@ -240,14 +239,26 @@
 //                    }
 
 //this is used for the back-to-top button
-    var offset = 1200;
+    var offset = 1200;  var offset2=8;
     var duration = 700;
     $(window).scroll(function() {
         if ($(this).scrollTop() > offset) {
             $('.back-to-top').fadeIn(duration);
+
         } else {
             $('.back-to-top').fadeOut(duration);
+
         }
+
+
+        if ($(this).scrollTop() > offset2) {
+            $("#toFloat").show();
+            $("#toFloat").css('position','fixed');
+        }else{
+            $("#toFloat").hide();
+        }
+
+
     });
 
     $('.back-to-top').click(function(event) {
@@ -255,6 +266,14 @@
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     });
+
+    $(document).ready(function(){
+        $("#toFloat").hide();
+    });
+
+     $('aside').click( function(e) {
+            $(this).scrollTop(0);
+        });
 
 
     </script>
