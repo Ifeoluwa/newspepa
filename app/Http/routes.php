@@ -17,8 +17,10 @@
 Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
 Route::get('test', 'FeedController@test');
-
-Route::get('timeline', 'StoryController@newCreateTimeLineStories');
+Route::get('hello', function(){
+    return view('admin.new_post');
+});
+Route::get('timeline', 'StoryController@createTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
 
@@ -34,15 +36,26 @@ Route::get('publishers-list', function(){
     return view('major.publishersList');
 });
 
-//Handles request from the admin/authentication
-Route::get('admin', function(){
-    return view('admin.login');
-});
 
 Route::get('register', function(){
    return view('admin.register');
 });
 
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('admin/dashboard', 'Admin\DashboardController@getDashboard');
+
+    Route::get('admin/story/new', 'Admin\DashboardController@newStory');
+    Route::post('admin/story/create', 'StoryController@adminPost');
+    Route::get('admin/story/actions', 'Admin\DashboardController@getStoryActions');
+    Route::get('admin/story/edit/{story_id}', 'StoryController@editStory');
+    Route::get('admin/story/delete/{story_id}', 'StoryController@deleteStory');
+    Route::post('admin/story/update', 'StoryController@updateStory');
+});
+
+Route::get('admin', 'Auth\AuthController@getLogin');
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
+Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 
 
 
@@ -50,7 +63,7 @@ Route::get('register', function(){
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
-//Route::group(['middleware' => 'user_agent'], function(){
+Route::group(['middleware' => 'user_agent'], function(){
 
     Route::get('/', 'TimelineStoryController@index');
 
@@ -59,7 +72,7 @@ Route::get('register', function(){
     Route::get('latest-news-in-nigeria', 'TimelineStoryController@getLatestStories');
 
 
-    Route::post('linkout', 'TimelineStoryController@readStory');
+    Route::get('linkout', 'TimelineStoryController@readStory');
 
     // Gets the request for the list of active publishers
     Route::get('publishers', 'TimelineStoryController@getPublishers');
@@ -68,7 +81,7 @@ Route::get('register', function(){
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 
 
-//});
+});
 
 
 

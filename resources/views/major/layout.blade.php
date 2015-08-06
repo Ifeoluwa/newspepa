@@ -209,13 +209,18 @@
     <script>
         $(document).foundation();
 //ajax call for getting number of linkouts of specific a tags
-            $('[name= "linkOuts"]').click(function(event) {
+            $('.linkOut').click(function(event) {
+
+            var token = $(this).data('token');
              var storyID = $(this).attr('id');
                 $.ajax({
                     type: "POST",
+                    dataType:"jsonp"
                     url:'http://newspepa.com/linkout/'+storyID,
+                    data:{_token :token},
                     success: function(msg){
-                        }
+                        alert(msg);
+                    }
                 })
 
              });

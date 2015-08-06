@@ -9,10 +9,16 @@
 namespace App\Http\Controllers;
 
 
+use App\Category;
+use App\Publisher;
 use App\Story;
 use App\TimelineStory;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Solarium\Core\Client\Adapter;
+use Solarium\Core\Client;
 
 class StoryController extends Controller {
 
@@ -137,24 +143,234 @@ class StoryController extends Controller {
     }
 
 
+    //admin functionalities from here
+    public function solrInsert($data){
+        $date = new \DateTime('now');
+        $this->client = new \Solarium\Client;
+        $updateQuery = $this->client->createUpdate();
 
+        $story1 = $updateQuery->createDocument();
+        $story1->id = $data['id']; //return the id of the insert from PDO query and attach it here
+        $story1->title_en = $data['title'];
+        $story1->description_en = $data['description'];
+        if(isset($data['image_url'])){
+            $story1->image_url_t = $data['image_url'];
+        }else{
+            $story1->image_url_t = '';
+        }
+        $story1->video_url_t = $data['video_url'];
+        $story1->url = $data['url'];
+        $story1->pub_id_i = $data['pub_id'];
+        $story1->has_cluster_i = 1;
+        $story1->links = $date->getTimestamp();
 
+        $updateQuery->addDocument($story1);
+    }
 
-    public function adminPost($post_details){
+    public function adminPost(Request $request){
+
         try {
+            $date = new \DateTime('now');
+
+            //insert into stories table
+            $story_details['title'] = $request->input('title');
+            $story_details['description'] = $request->input('description');
+            $story_details['pub_id'] = $request->input('publisher');
+            $story_details['category_id'] = $request->input('category');
+            $story_details['description'] = $request->input('description')."\n";
+
+            if($request->hasFile('story_images')){
+                $first_image_name = $request->file('story_images')[0]->getClientOriginalName();
+                $story_details['image_url'] = "story_images/".$first_image_name;
+                $count = 1;
+                foreach($request->file('story_images') as $story_image){
+                    $image_name = $story_image->getClientOriginalName();
+                    $image_path = "story_images/".$image_name;
+                    $story_image->move(base_path() .'/public/story_images', $image_name);
+                    if($count >= 2){
+                        $story_details['description'] .= "<img src='".$image_path."'></br>";
+
+                    }
+                    $count++;
+                }
+            }
+//            $story_details['description'] = htmlentities($story_details['description']);
+            $story_details['pub_date'] = $date;
+            $story_details['has_cluster'] = 1;
+            $story_details['created_date'] = $date;
+            $story_details['modified_date'] = $date;
+
+            $story = DB::insert('INSERT IGNORE INTO stories ('.implode(",", array_keys($story_details)).
+                ') values (?'.str_repeat(',?', count($story_details) - 1).')', array_values($story_details));
+
+            if($story == true){
+                $story_details['story_id'] = DB::getPdo()->lastInsertId();
+
+                //insert into timeline stories
+                $result = DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($story_details)).
+                    ') values (?'.str_repeat(',?',count($story_details) - 1).')',array_values($story_details));
+                if($result == true){
+                    $result = DB::getPdo()->lastInsertId();
+                }
+
+                if($result != false){
+                    $story_details['id'] = $result;
+                    $this->solrInsert($story_details);
+                    return view('dashboard');
+                }
+            }
+            return redirect('admin/story/new')->with('success', "Story has been successfully added");
+        }catch (\ErrorException $ex){
+            return redirect('admin/story/new')->withErrors('errors', 'Oops! Something went wrong');
+        } catch (NotFoundHttpException $nfe){
+            return redirect('admin/story/new')->withErrors('errors', 'Oops! Something went wrong');;
+        }catch(FileException $fex){
+            return redirect('admin/story/new')->withErrors('errors', 'Oops! Something went wrong. Upload error');
+        }
+    }
+
+    public function schedulePost(){
+        try{
             $post_details = \Illuminate\Support\Facades\Input::get('post_details');
+            $date = new \DateTime('now');
 
-            $post_details['pub_id'] = 21;
-            $post_details['feed_id'] = 33;
-
-            $result = Story::insertIgnore($post_details);
-            if($result != false){
+            $post_details['status_id'] = 4;
+            $post_details['created_date'] = $date;
+            $post_details['modified_date'] = $date;
+            $result = DB::insert('INSERT INTO stories ('.implode(',',array_keys($post_details)).
+                ') values (?'.str_repeat(',?',count($post_details) - 1).')',array_values($post_details));
+            if($result == true){
+                $result = DB::getPdo()->lastInsertId();
                 return view('dashboard');
             }
         }catch (\ErrorException $ex){
             return view('errors.404');
-        } catch (NotFoundHttpException $nfe){
+        }catch (NotFoundHttpException $nfe){
             return view('errors.404');
         }
     }
+
+    public function getAllImages(){
+        try{
+            $images_url = DB::table('timeline_stories')->get();
+            for($i = 0; $i < count($images_url); ++$i){
+                if(strpos($images_url[$i],'http') == false){
+                    $images_url[$i] = 'newspepa.com/'.$images_url[$i];
+                }
+            }
+            return $images_url;
+        }
+        catch(\ErrorException $ex){
+            return view('errors.404');
+        }
+        catch (NotFoundHttpException $nfe){
+            return view('errors.404');
+        }
+    }
+
+    public function updateStory(Request $request){
+
+        try{
+            $story_data = $request->all();
+            $story_updates = array();
+            $date = new \DateTime('now', new \DateTimeZone('Africa/Lagos'));
+            $story_updates['title'] = $story_data['title'];
+            $story_updates['category_id'] = $story_data['category'];
+            $story_updates['pub_id'] = $story_data['publisher'];
+            $story_updates['description'] = $story_data['description'];
+            $story_updates['modified_date'] = $date;
+
+            if($request->hasFile('story_images')){
+                $first_image_name = $request->file('story_images')[0]->getClientOriginalName();
+                $story_updates['image_url'] = "story_images/".$first_image_name;
+                $count = 1;
+                foreach($request->file('story_images') as $story_image){
+                    $image_name = $story_image->getClientOriginalName();
+                    $image_path = "story_images/".$image_name;
+                    $story_image->move(base_path() .'/public/story_images', $image_name);
+                    if($count >= 2){
+                        $story_updates['description'] .= "<img src='".$image_path."'></br>";
+
+                    }
+                    $count++;
+                }
+            }
+
+            $update = DB::table('stories')
+                ->where('id', $story_data['story_id'])
+                ->update($story_updates);
+            if($update){
+                $story_updates['story_id'] = $story_data['story_id'];
+                $update2 = DB::table('timeline_stories')
+                    ->where('story_id', $story_data['story_id'])
+                    ->update($story_updates);
+            }
+
+            return redirect('admin/story/actions')->with('success', 'Update successful!');
+        }catch (\ErrorException $ex){
+
+            return back()->with('failure', 'Unable to update story :(');
+        }catch (NotFoundHttpException $nfe){
+
+            return back()->with('failure', 'Unable to update story :(');
+        }catch (\Exception $ex){
+            return back()->with('failure', 'Unable to update story :(');
+
+        }
+    }
+
+    public function deleteStory($story_id){
+
+        try{
+            $delete = DB::table('stories')
+                ->where('id', $story_id)
+                ->update(['status_id'=> 2]);
+
+            if($delete){
+                $delete = DB::table('timeline_stories')
+                    ->where('story_id', $story_id)
+                    ->update(['status_id'=> 2]);
+            }
+
+            return redirect('/admin/story/actions')->with('success', 'Story has been deleted!');
+        }
+        catch(\ErrorException $ex){
+            return redirect('/admin/story/actions')->with('failure', 'Unable to delete story :(');
+        }
+        catch(NotFoundHttpException $nfe){
+            return redirect('/admin/story/actions')->with('failure', 'Unable to delete story :(');
+
+        }catch(\Exception $ex){
+            return redirect('/admin/story/actions')->with('failure', 'Unable to delete story :(');
+
+        }
+    }
+
+    public function getAllStories(){
+
+        try{
+            $all_stories = DB::table('timeline_stories')
+                ->select('id', 'story_id', 'title', 'image_url', 'category_id', 'pub_id', 'no_of_views', 'last_view_time', 'link_outs', 'last_linkout_time', 'created_date')
+                ->where('status_id', 1)
+                ->get();
+
+            return $all_stories;
+        }
+        catch(\ErrorException $ex){
+            return view('errors.404');
+        }
+        catch(NotFoundHttpException $nfe){
+            return view('errors.404');
+        }
+    }
+
+    public function editStory($story_id){
+        $categories = CategoryController::getCategories();
+        $publishers = PublisherController::getIconwayPub();
+        $story_details = DB::table('timeline_stories')->where('story_id', $story_id)->get();
+        return view('admin.editStory')->with('data', array('story_details' => $story_details[0], 'categories' => $categories, 'publishers' => $publishers));
+
+    }
+
+
 } 

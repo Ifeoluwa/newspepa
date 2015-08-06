@@ -327,25 +327,12 @@ class TimelineStoryController extends Controller
     }
     //Updates the linkout time and the number of linkouts when the user clicks on the continue to read option for each story
     public function readStory(){
+        $story_id = \Request::get('id');
+        $url = \Request::get('url');
+        TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
 
-        if(Request::ajax()){
-            $data = Request::all();
-            $story_id = $data['story_id'];
-            $time = \Carbon\Carbon::now();
-            $params = array(
-                'story_id' => $story_id,
-                'last_linkout_time' => date("Y-m-d H:i:s", $time)
-            );
+        return redirect($url);
 
-
-            DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
-
-            DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
-
-            return "200";
-//            $result = TimelineStory::updateStoryLinkOuts($story_id, \Carbon\Carbon::now());
-//            return $result;
-        }
 
     }
 
