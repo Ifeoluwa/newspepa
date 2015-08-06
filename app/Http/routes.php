@@ -60,7 +60,7 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
-//Route::group(['middleware' => 'user_agent'], function(){
+Route::group(['middleware' => 'user_agent'], function(){
 
     Route::get('/', 'TimelineStoryController@index');
 
@@ -78,7 +78,7 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 
 
-//});
+});
 
 
 
