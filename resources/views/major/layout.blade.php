@@ -7,9 +7,10 @@
     <title>@yield('title') | Newspepa</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-     <link rel="stylesheet" href="ui_newspaper/css/app22.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app26.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+    {{--<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>--}}
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -41,16 +42,16 @@
                     {{--</ul>--}}
         {{--</section>--}}
     {{--</nav>--}}
-<div class="sticky">
-    <div class="off-canvas-wrap" data-offcanvas>
+    <div class="off-canvas-wrap" data-offcanvas="none">
       <div class="inner-wrap">
-            <nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation" >
+            <nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation">
+                <section class="middle tab-bar-section">
+                      <a href="{{url('/')}}"> <h1 class="title"></h1></a>
+                    </section>
                 <div class="left-small" data-options="sticky_on: small">
                  <a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>
                 </div>
-                <section class="middle tab-bar-section">
-                       <a href="{{url('/')}}"> <h1 class="title"></h1></a>
-                </section>
+
             </nav>
 
         <!-- Off Canvas Menu -->
@@ -60,27 +61,56 @@
                   <li id="1"><label>Newspepa</label></li>
                   <li id="1"><a href="{{url('/')}}">Top stories</a></li>
                   <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
-                  <li id="3"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
-                  <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
-                  <li id="5"><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
-                  <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
-                  <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a></li>
+                  <li id="3"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
+                  <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
+                  <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+                  <li id="5"><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
+                  <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a></li>
+                  <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a></li>
+
+                  <li><label>News Sources</label></li>
+                  <li ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
+                  <li ><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
+                  <li ><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
+                  <li ><a href="{{url('/latest-nigerian-tribune-news')}}">Nigerian Tribune</a></li>
+                  <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
+                   <li><a href="{{url('/latest-leadership-news')}}">Leadership</a></li>
+                   <li><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
+                   <li><a href="{{url('/latest-channels-tv-news')}}">Channels TV</a></li>
+                   <li><a href="{{url('/latest-goal-com-news')}}">Goal</a></li>
+                  <li class="has-submenu"><a href="#">View more</a>
+                      <ul class="left-submenu">
+                          <li class="back"><a href="#">Back</a></li>
+                          <li><a href="{{url('/latest-the-cable-news')}}">The Cable</a></li>
+                          <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
+                          <li><a href="{{url('/latest-kokofeed-news')}}">KokoFeed</a></li>
+                          <li><a href="{{url('/latest-net-news')}}">Net</a></li>
+                          <li><a href="{{url('/latest-star-gist-news')}}">Stargist</a></li>
+                          <li><a href="{{url('/complete-sports')}}">Complete Sports</a></li>
+                          <li><a href="{{url('/latest-daily-post-news')}}">Daily Post</a></li>
+                          <li><a href="{{url('/latest-premium-times-news')}}">Premium times</a></li>
+                          <li><a href="{{url('/latest-business-day-news')}}">Business day</a></li>
+                          <li><a href="{{url('/latest-city-people-news')}}">City People</a></li>
+                          <li><a href="{{url('/latest-encomium-news')}}">Encomium</a></li>
+                          <li><a href="{{url('/latest-naira-metrics-news')}}">Naira Metrics</a></li>
+                          <li><a href="{{url('/latest-business-news-news')}}">Business News</a></li>
+                      </ul>
              </ul>
         </aside>
-
-
-
-        <!-- main content goes here -->
 
       <!-- close the off-canvas menu -->
 
     {{--the search bar--}}
-    <form id="searchbar" method="get" action = "search">
-        {{--<div class="row searchbar-row" style="width:100%">--}}
-            <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
-            <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
-        {{--</div>--}}
-    </form>
+
+
+       <form id="searchbar" method="get" action = "search">
+                  <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
+                  <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
+          </form>
+
+
+
+
 
 
 
@@ -88,25 +118,23 @@
 
         {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button>--}}
         {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
-       <div class="row " style="background-color: #0266C8">
-        <ul class="inline-list category-row">
-
-          {{--<li id="1" ><a href="{{url('/')}}">Top stories</a></li>--}}
+       <div class="row category-row" style="background-color: #0266C8;border-radius:2px">
+        <ul class="inline-list">
           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
-          <li id="3" class="active"><a href="{{url('nigeria-news-in-nigeria')}}">Nigeria</a></li>
-          <li id="4"><a href="{{url('entertainment-news-in-nigeria')}}">Entertainment</a></li>
+          <li id="3" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
+          <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
           <li id="4"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
             <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
-            <li><a href="{{url('business-news-in-nigeria')}}">Business</a></li>
-            <li><a href="{{url('sports-news-in-nigeria')}}">Sports</a></li>
-            <li id="6"><a href="{{url('politics-news-in-nigeria')}}">Politics</a>
-            <li id="7"><a href="{{url('metro-news-in-nigeria')}}">Metro</a>
+            <li><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+            <li><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
+            <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a>
+            <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a>
             </ul>
           </li>
 
         </ul>
-
         </div>
+
 {{--the stories containers starts from here--}}
 
           <div class="large-12 small-12 columns" id="stories_container">
@@ -137,45 +165,40 @@
              <a class="exit-off-canvas"></a>
 
                   </div>
-                </div>
-</div>
-    <footer class="row" >
-        {{--<div class="large-12 columns" style="border-top: solid #E0E0E0 2px">--}}
-        <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
-           <li><label>Categories</label></li>
-           <li><label>News Sources</label></li>
+          </div>
+    <footer class="row" id="footer-list" >
+        <div class="large-12 columns" style="border-top: solid #E0E0E0 2px; margin-top:1px">
+        <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8; margin-top:5px">
           <li id="1" ><a href="{{url('/')}}">Home</a></li>
-          <li id="1" ><a href="{{url('/punch')}}">Punch</a></li>
-           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
-           <li id="2"><a href="{{url('/vanguard')}}">Vanguard</a></li>
-           <li id="3"><a href="{{url('politics-news-in-nigeria')}}">Politics</a></li>
-           <li id="3"><a href="{{url('linda-ikeji')}}">Linda Ikeji</a></li>
-           <li id="3">
-           {{--<a href="#" data-options="align:top" data-dropdown="drop">More &raquo;</a>--}}
-                <a href="#" data-options="align:top" data-dropdown="drop1">More&raquo;</a>
-                {{--<ul id="drop" class="[tiny small medium large content]f-dropdown" data-dropdown-content>--}}
-                {{--<li><a href="#">This is a link</a></li>--}}
-                {{--<li><a href="#">This is another</a></li>--}}
-                {{--<li><a href="#">Yet another</a></li>--}}
-                {{--</ul>--}}
-           </li>
-           <li id="3"><a href="#" data-options="align:top" data-dropdown="drop1">More&raquo;</a></li>
+          <li id="2" ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
+           <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
+           <li id="4"><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
+           <li id="5"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
+           <li id="6"><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
+           <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+           <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
+           <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
+           <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
+           <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
+           <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
+           <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
+            <li id="11"><a href="{{url('/publishers')}}">More&raquo;</a>
+                       {{--<ul id="drop1" class="tiny f-dropdown" data-dropdown-content>--}}
+                                       {{--<li><a href="#">This is a link</a></li>--}}
+                                       {{--<li><a href="#">This is another</a></li>--}}
+                                       {{--<li><a href="#">Yet another</a></li>--}}
+                                       {{--</ul>--}}
+                      {{--</li>--}}
+
         </ul>
-
-{{--<ul class="inline-list" style="color:#0266C8">--}}
-                  {{--<li id="1" ><a href="{{url('/')}}">Home</a></li>--}}
-                  {{--<li id="2"><a href="{{url('/latest')}}">Latest stories</a></li>--}}
-                  {{--<li id="3"><a href="{{url('politics')}}">Politics</a></li>--}}
-                  {{--<li id="4"><a href="{{url('nigeria')}}">Nigeria</a></li>--}}
-                  {{--<li id="5"><a href="{{url('entertainment')}}">Entertainment</a></li>--}}
-                  {{--<li><a href="{{url('business')}}">Business</a></li>--}}
-                  {{--<li id="6"><a href="{{url('sports')}}">Sports</a></li>--}}
-                  {{--<li id="7"><a href="{{url('metro')}}">Metro</a></li>--}}
-            {{--</ul>--}}
-            {{--<p style="margin-left: 20px"><a href="">Choose your news source</a></p>--}}
-
-        {{--</div>--}}
+        </div>
     </footer>
+
+     <a href="{{url('/')}}"><div class="panel" id="toFloat">
+        <div class="name-m"></div>
+    </div></a>
+
+
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
     <script src="ui_newspaper/js/foundation/foundation.offcanvas.js"></script>
     <script src="ui_newspaper/js/foundation/foundation.dropdown.js"></script>
@@ -185,41 +208,19 @@
 
     <script>
         $(document).foundation();
-
-        //var next_page_url, prev_page_url, new_url;
-       // $(document).ready(function(){
-// var root = document.documentElement;
-//            root.className += " minor-mini";
-//         $("a[rel='prev']").append("<span>Previous</span>");
-//         $("a[rel='next']").append("<span>Next</span>")
-//        });
-//            $.ajax({
-//                type:"GET",
-//                url:"http://localhost:8000/stories_json",
-//                success:function(result){
-//                console.log(result)
-//                var page_id= result.current_page;
-//                next_page_url= "http://localhost:8000/?page=2";
-//                prev_page_url=result.prev_page_url;
-//                var prev_text="Previous";
-//                var next_text="Next";
-//                $('#next').append('<a href="'+next_page_url+'">'+next_text+'</a>');
-//                }
-//            })
-//            new_url= jQuery.param.querystring(window.location.href,'page=3');
-//            alert(new_url);
-//        });
-
-//        function rto detect if minor browser is being used
-
 //ajax call for getting number of linkouts of specific a tags
-            $('[name= "linkOuts"]').click(function(event) {
+            $('.linkOut').click(function(event) {
+
+            var token = $(this).data('token');
              var storyID = $(this).attr('id');
                 $.ajax({
                     type: "POST",
+                    dataType:"jsonp"
                     url:'http://newspepa.com/linkout/'+storyID,
+                    data:{_token :token},
                     success: function(msg){
-                        }
+                        alert(msg);
+                    }
                 })
 
              });
@@ -243,25 +244,41 @@
 //                    }
 
 //this is used for the back-to-top button
-    var offset = 1200;
+    var offset = 1200;  var offset2=8;
     var duration = 700;
     $(window).scroll(function() {
         if ($(this).scrollTop() > offset) {
             $('.back-to-top').fadeIn(duration);
+
         } else {
             $('.back-to-top').fadeOut(duration);
+
         }
+
+
+        if ($(this).scrollTop() > offset2) {
+            $("#toFloat").show();
+            $("#toFloat").css('position','fixed');
+        }else{
+            $("#toFloat").hide();
+        }
+
+
     });
 
     $('.back-to-top').click(function(event) {
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
-    })
+    });
 
-//    $('#home').click(function(event){
-//    $('html,body').scrollTop(0);
-//    });
+    $(document).ready(function(){
+        $("#toFloat").hide();
+    });
+
+     $('aside').click( function(e) {
+            $(this).scrollTop(0);
+        });
 
 
     </script>

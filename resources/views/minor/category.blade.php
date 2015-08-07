@@ -1,5 +1,5 @@
 @extends ('minor.opera-layout')
-@section ('title',$data['category_stories']['category_name'] )
+@section ("title", "Latest ".$data['category_stories']['category_name']." In Nigeria Today")
 @endsection
 @section('more-meta')
 
@@ -32,7 +32,8 @@
                          <span class="publisher-name">{{$data['publishers_name'][$category_story['pub_id']]}}</span>
                          <span class="timecount-name">{{$tc->getTimeDifference($category_story['created_date'])}}</span>
 
-                    </div>
+
+                       </div>
                            </a>
 
          </div>

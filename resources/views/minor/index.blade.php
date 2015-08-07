@@ -12,6 +12,7 @@
 @stop
 
 <?php $i=0;
+
  ?>
  @section('important_stories')
     @foreach($data['timeline_stories']['top_stories'] as $top_story)

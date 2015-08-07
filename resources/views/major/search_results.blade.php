@@ -8,7 +8,7 @@
 the important section, lessImportant and noImage stories--}}
 @if($data['found']!=0)
 @section('important_stories')
-<span class="title" style="font: 24px"><b>{{$data['found']}} Results found for  '{{$data['search_query']}}'</b></span><br/>
+<span class="title-timeline" style="color: #646464; margin-bottom:12px; margin-top: 12px">{{$data['found']}} Results found for  '{{$data['search_query']}}'</span><br/>
 @foreach($data['search_result'] as $searchResult)
 <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
         <div class="row panel radius">
@@ -25,15 +25,14 @@ the important section, lessImportant and noImage stories--}}
                              <h1 class="title-timeline title-important">{{$searchResult['title']}}</h1>
                         @endif
                      </header></a>
-                        <span class="publisher-name"><i class="newspapericon"></i><b>{{$data['publisher_names'][$searchResult['pub_id']]}}</b></span>
+                        <span class="publisher-name">{{$data['publisher_names'][$searchResult['pub_id']]}}</span>
                         {{--<span class="category-name"><i class="categoryicon"></i><b>{{$data['category_name'][$top_story['category_id']]}}</b></span>--}}
-           {{--<span class="timecount-name"><i class="time-icon"></i><b>{{$tc->getTimeDifference($searchResult['created_date'])}} </b></span>--}}
+                         <span class="timecount-name">{{$tc->getTimeDifference($searchResult['created_date'])}}</span>
                 </div>
          </a>
     </div>
 </div>
 @endforeach
-
 @endsection
 
 {{--@section('related_content')--}}
