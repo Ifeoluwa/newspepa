@@ -45,7 +45,7 @@ function fetchOneAll($pds){
 
 
 $params = array(
-    'status_id' => 3
+    'status_id' => 1
 );
 
 $all_stories = executeQuery("SELECT id, title, description, image_url, video_url, url, pub_id, created_date, has_cluster FROM timeline_stories WHERE status_id = :status_id", $params);
@@ -140,6 +140,15 @@ foreach($all_stories as $product){
     $product_cluster->appendChild($xml_doc->createTextNode($product['has_cluster']));
 
     $doc->appendChild($product_cluster);
+
+    //date
+    $product_date = $xml_doc->createElement("field");
+    $product_date_att = $xml_doc->createAttribute("name");
+    $product_date_att->value = 'links';
+    $product_date->appendChild($product_date_att);
+    $product_date->appendChild($xml_doc->createTextNode(strtotime($product['created_date'])));
+
+    $doc->appendChild($product_date);
 
     $add->appendChild($doc);
 }

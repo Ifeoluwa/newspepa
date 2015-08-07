@@ -35,6 +35,11 @@ class TimelineStory extends Model
         return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(200)->get();
     }
 
+    // Selects latest stories based on category
+    public static function latestStoriesByCat($category_id){
+        return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(50)->get();
+    }
+
     // Selects recent stories based on category but not the selected story
     public static function recentStoriesByCatX($category_id, $story_id){
         return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->whereNotIn('story_id', [$story_id])->limit(10)->get();
@@ -80,9 +85,13 @@ class TimelineStory extends Model
 
         if(count($result) === 0){
 
-            DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
+            $return = DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
                 ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
 
+            if($return == true){
+                $id = DB::getPdo()->lastInsertId();
+            }
+            return $id;
         }
 
     }
@@ -112,9 +121,20 @@ class TimelineStory extends Model
     }
 
     public static function latestStories(){
-        return DB::table('timeline_stories')
-            ->orderBy('created_date', 'desc')
-            ->orderBy('no_of_views', 'desc')->limit(200);
+
+        $nigeria = TimelineStory::latestStoriesByCat(1);
+        $politics = TimelineStory::latestStoriesByCat(2);
+        $entertainment = TimelineStory::latestStoriesByCat(3);
+        $sports = TimelineStory::latestStoriesByCat(4);
+        $metro = TimelineStory::latestStoriesByCat(5);
+        $business = TimelineStory::latestStoriesByCat(6);
+
+        $latest_stories = array_merge($nigeria, $politics, $entertainment, $sports, $metro, $business);
+        $latest_stories = array_values(array_sort($latest_stories, function ($value) {
+            return $value['created_date'];
+        }));
+
+        return array_reverse($latest_stories);
     }
 
 
@@ -135,11 +155,11 @@ class TimelineStory extends Model
     public static function updateStoryLinkOuts($story_id, $time){
         $params = array(
             'story_id' => $story_id,
-            'last_linkout_time' => date("Y-m-d H:i:s", $time)
+            'last_linkout_time' => $time
         );
 
 
-        DB::table('timeline_stories')->where('story_id', $story_id)->increment('no_of_views');
+        DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
 
         DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
 
