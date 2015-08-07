@@ -8,6 +8,7 @@
     background-position: center;
     width:100%;
     background-size: 260px 62px;
+    height:3.1825rem;
 }
 .name{
     width:100%;
@@ -51,6 +52,7 @@ ul.off-canvas-list li label{
 .tab-bar{
     height:3.8125rem;
     background-color: #0266C8;
+    width:100%;
 }
 
 .tab-bar .menu-icon{
@@ -66,7 +68,16 @@ ul.off-canvas-list li label{
     margin-top: -0.5rem;
     left: 0.1rem;
     box-shadow: 0 -1px 0 2px #FFF, 0 10px 0 2px #FFF, 0 20px 0 2px #FFF;
-    width: 1.2rem;
+    width: 0.9rem;
+}
+
+.tab-bar-section.middle{
+    left:0;
+    right:0
+}
+.tab-bar-section{
+    padding-left: 1.5rem;
+    padding-right: 0;
 }
 
 .left-small{
@@ -93,17 +104,50 @@ ul.off-canvas-list li a{
     max-width:45% !important;
     left: 200px !important;
 }
-.category-row{
-    margin-bottom: 0.1rem !important;
-    font-size: 16px;
+/*@media only screen and (max-width: 64.0625em) {*/
+    .category-row {
+        margin-bottom: 0.1rem !important;
+        font-size: 15px;
+        border-radius: 2px;
+        width: 100%;
+        padding-left:8px;
+    }
+.category-row ul{
+    width:100%;
 }
-.category-row li a{
-    color:#ffffff !important;
+
+    .category-row ul li a {
+        color: #ffffff !important;
+        width:100%;
+    }
+
+    .category-row ul li {
+        margin-left: 0.9rem !important;
+    }
+/*}*/
+
+@media only screen and (max-width: 40.0625em){
+    .category-row {
+        margin-bottom: 0.1rem !important;
+        font-size: 15px;
+        border-radius: 2px;
+        width: 100%;
+    }
+    .category-row ul{
+        width:100%;
+    }
+
+    .category-row ul li a {
+        color: #ffffff !important;
+        width:100%;
+    }
+
+    .category-row ul li {
+        margin-left: 0.4rem !important;
+    }
 }
-.category-row li{
-    margin-left:1.2rem !important;
-}
-.f-dropdown li a{
+
+ul .f-dropdown li a{
     color:#000000 !important;
 }
 .row {
@@ -263,6 +307,16 @@ button:hover, .button:hover,{
 
 .panel.radius {
     border-radius: 9px;
+}
+
+#toFloat.panel{
+    padding-top: 5px !important;
+    padding-right: 6px !important;
+    padding-bottom: 0 !important;
+    padding-left: 6px !important;
+    background-color:#0266C8;
+    border-radius:0 !important;
+    height: 3.8125rem !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -495,16 +549,18 @@ p{
 
 .dropdown.button, button.dropdown {
     background: #0266C8 none repeat scroll 0% 0%;
-    width: 100%;
+    width:inherit;
     font-size: 16px;
     border-radius: 1px;
     overflow: auto;
     margin-top: 0.1px;
     height: 5px;
-    padding-top: 2px;
+    padding-top: 2.9px;
     margin-bottom: 4px;
     padding-right: 40px;
-    padding-left: 1.5px
+    padding-left: 1.5px;
+    font-family:inherit;
+    color:#ffffff;
 }
 
 
@@ -512,11 +568,10 @@ p{
     overflow: auto;
 }
 
-input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+input[type="text"]{
     border-color: #FFFFFF;
+    margin-bottom: 0.4rem;
 }
-
-
 
 body{
     background-color:#E8E8E8;

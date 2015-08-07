@@ -1,10 +1,11 @@
 @extends('major.layout')
-@section ("title", "Latest ".$data['category_stories']['category_name']." In Nigeria Today")
+@section ("title", "Latest ".$data['category_stories']['category_name']." news In Nigeria Today")
 @endsection
+
 
 @section('more-meta')
 
-<meta property="og:title" content= "Latest {{$data['category_stories']['category_name']}} In Nigeria Today"/>
+<meta property="og:title" content= "Latest {{$data['category_stories']['category_name']}} News In Nigeria Today"/>
  <meta property="og:description" content= "Latest breaking {{$data['category_stories']['category_name']}} news in nigeria today"/>
  <meta property="og:url" content= {{$data['category_stories']['category_route']}}/>
 @endsection
@@ -33,10 +34,7 @@
                          </header></a>
                          <span class="publisher-name">{{$data['publishers_name'][$category_story['pub_id']]}}</span>
                          <span class="timecount-name">{{$tc->getTimeDifference($category_story['created_date'])}}</span>
-
-
                        </div>
-
                     </div>
                            </a>
 
@@ -88,10 +86,3 @@
   @endforeach
   {!! $data['paginator']->render() !!}
 @stop
-{{--@section('related_content')--}}
-  {{--<div class="row panel radius"><b>Other Sources</b></div>--}}
-  {{--<div class="row panel radius"><b>Related Stories</b></div>--}}
-  {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
-
-
-{{--@endsection--}}

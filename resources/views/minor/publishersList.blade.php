@@ -1,17 +1,13 @@
-@extends('major.layout')
+@extends('minor.opera-layout')
 @section('title','Publishers')
 @endsection
 
-{{--@section('dropdown','Publishers')--}}
-{{--@endsection--}}
 
 @section('publishers')
 <div class="row" style="background-color: #ffffff; text-align: center">
 <span style="font-size: 18px"><b>Select a publisher</b></span>
 </div>
-
-<div class="row panel radius" style="color:#008744 ">
-
+<div class="row opera-panel radius" style="color:#008744 ">
                   <span><a href="{{url('/latest-punch-news')}}">Punch</a></span><hr/>
                   <span><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></span><hr/>
                   <span><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></span><hr/>
@@ -26,7 +22,7 @@
                   <span><a href="{{url('/latest-kokofeed-news')}}">KokoFeed</a></span><hr/>
                   <span><a href="{{url('/latest-net-news')}}">Net</a></span><hr/>
                   <span><a href="{{url('/latest-star-gist-news')}}">Stargist</a></span><hr/>
-                  <span><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></span><hr/>
+                  <span><a href="{{url('/complete-sports')}}">Complete Sports</a></span><hr/>
                   <span><a href="{{url('/latest-daily-post-news')}}">Daily Post</a></span><hr/>
                   <span><a href="{{url('/latest-premium-times-news')}}">Premium times</a></span><hr/>
                   <span><a href="{{url('/latest-business-day-news')}}">Business day</a></span><hr/>
@@ -34,5 +30,6 @@
                   <span><a href="{{url('/latest-encomium-news')}}">Encomium</a></span><hr/>
                   <span><a href="{{url('/latest-naira-metrics-news')}}">Naira Metrics</a></span><hr/>
                   <span><a href="{{url('/latest-business-news-news')}}">Business News</a></span><hr/>
+
 </div>
 @endsection

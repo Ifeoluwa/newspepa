@@ -32,6 +32,11 @@ class TimelineStory extends Model
 
     // Selects recent stories based on category
     public static function recentStoriesByCat($category_id){
+        return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(200)->get();
+    }
+
+    // Selects latest stories based on category
+    public static function latestStoriesByCat($category_id){
         return DB::table('timeline_stories')->where('category_id', $category_id)->orderBy('created_date', 'desc')->limit(50)->get();
     }
 
@@ -80,9 +85,13 @@ class TimelineStory extends Model
 
         if(count($result) === 0){
 
-            DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
+            $return = DB::insert('INSERT IGNORE INTO timeline_stories ('.implode(',',array_keys($array)).
                 ') values (?'.str_repeat(',?',count($array) - 1).')',array_values($array));
 
+            if($return == true){
+                $id = DB::getPdo()->lastInsertId();
+            }
+            return $id;
         }
 
     }
@@ -113,12 +122,12 @@ class TimelineStory extends Model
 
     public static function latestStories(){
 
-        $nigeria = TimelineStory::recentStoriesByCat(1);
-        $politics = TimelineStory::recentStoriesByCat(2);
-        $entertainment = TimelineStory::recentStoriesByCat(3);
-        $sports = TimelineStory::recentStoriesByCat(4);
-        $metro = TimelineStory::recentStoriesByCat(5);
-        $business = TimelineStory::recentStoriesByCat(6);
+        $nigeria = TimelineStory::latestStoriesByCat(1);
+        $politics = TimelineStory::latestStoriesByCat(2);
+        $entertainment = TimelineStory::latestStoriesByCat(3);
+        $sports = TimelineStory::latestStoriesByCat(4);
+        $metro = TimelineStory::latestStoriesByCat(5);
+        $business = TimelineStory::latestStoriesByCat(6);
 
         $latest_stories = array_merge($nigeria, $politics, $entertainment, $sports, $metro, $business);
         $latest_stories = array_values(array_sort($latest_stories, function ($value) {

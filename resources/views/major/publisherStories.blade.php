@@ -4,6 +4,7 @@
 @endforeach
 @stop
 
+
 @section('more-meta')
 <meta property="og:title" content= "Latest {{$data['publishers_name'][$publisher_story1['pub_id']]}} News Headlines In Nigeria Today"/>
  <meta property="og:description" content= "Latest breaking {{$data['publishers_name'][$publisher_story1['pub_id']]}} news headlines in nigeria today"/>
@@ -14,6 +15,7 @@
 <span class="title-timeline" style="color: #646464; margin-bottom:12px; margin-top: 12px">{{$data['publishers_name'][$publisher_story1['pub_id']]}}</span>
     @foreach($data['publisher_stories']['all'] as $publisher_story)
     <?php $tc = new \App\Http\Controllers\TimelineStoryController();
+
     ?>
             <div class="row panel radius">
               <div class="large-12 medium-6 small-12 columns">
@@ -36,7 +38,6 @@
 
               </div>
             @endforeach
-
 
 
            {!! $data['paginator']->render() !!}

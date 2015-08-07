@@ -8,21 +8,22 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Category;
 use App\Publisher;
 use App\Story;
 use App\TimelineStory;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
+
 class StoryController extends Controller {
 
 
+    protected $client;
     //handles the addition of story to the database
     public function addStory(){
 
@@ -77,15 +78,47 @@ class StoryController extends Controller {
 
     //
     public function createTimelineStory(){
+        set_time_limit(0);
+        // Stories to Timeline Stories
+        //solr insert
+        $this->client = new \Solarium\Client;
+        $stories_array = array();
+        // DB::transaction(function(){
+        $stories = DB::table('stories')->where('status_id', 1)->get();
+        foreach($stories as $story){
+            $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
+            $story['story_id'] = $story['id'];
+            $timeline_story = array_except($story, ['id']);
+            $id = TimelineStory::insertIgnore($timeline_story);
+            $date = new \DateTime('now');
 
-            $stories = Story::pivots();
-            foreach($stories as $story){
-                $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
-                $story['story_id'] = $story['id'];
-                $timeline_story = array_except($story, ['id', 'cluster_match', 'cluster_pivot']);
-                TimelineStory::insertIgnore($timeline_story);
+            if($id !== false){
+                $updateQuery = $this->client->createUpdate();
+                $story1 = $updateQuery->createDocument();
+                $story1->id = $story['story_id']; //return the id of the insert from PDO query and attach it here
+                $story1->title_en = $story['title'];
+                $story1->description_en = $story['description'];
+                if(isset($story['image_url'])){
+                    $story1->image_url_t = $story['image_url'];
+                }else{
+                    $story1->image_url_t = '';
+                }
+                $story1->video_url_t = '';
+                $story1->url = $story['url'];
+                $story1->pub_id_i = $story['pub_id'];
+                $story1->has_cluster_i = 1;
+                $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
+                //do this for all stories and keep adding them to the stories array
+                //when done continue to the nest line
+//                array_push($stories_array, $story1);
+                $updateQuery->addDocument($story1);
+                $updateQuery->addCommit();
+
+                $result = $this->client->update($updateQuery);
             }
+        }
 
+        });
     }
 
 
@@ -145,7 +178,6 @@ class StoryController extends Controller {
 
     }
 
-
     //admin functionalities from here
     public function solrInsert($data){
         $date = new \DateTime('now');
@@ -167,7 +199,11 @@ class StoryController extends Controller {
         $story1->has_cluster_i = 1;
         $story1->links = $date->getTimestamp();
 
+
         $updateQuery->addDocument($story1);
+        $updateQuery->addCommit();
+
+        $result = $this->client->update($updateQuery);
     }
 
     public function adminPost(Request $request){
@@ -386,6 +422,5 @@ class StoryController extends Controller {
     public function getNumberOfLinkouts(){
 
     }
-
 
 } 

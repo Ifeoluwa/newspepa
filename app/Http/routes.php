@@ -25,12 +25,15 @@ Route::get('timeline', 'StoryController@createTimelineStory');
 Route::get('redis', 'TimelineStoryController@testRedis');
 
 Route::get('desktop', function(){
-//    $user_agent = $_SERVER['HTTP_USER_AGENT'];
     return view('errors.desktopView');
 });
 
 Route::get('about', function(){
-   return view('aboutUs');
+   return view('major.aboutUs');
+});
+
+Route::get('publishers-list', function(){
+    return view('major.publishersList');
 });
 
 Route::get('date', function(){

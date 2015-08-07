@@ -4,6 +4,11 @@
 @endsection
 @endforeach
 
+
+{{--@section('dropdown',$data['category_names'][$full_story2['category_id']])--}}
+{{--@endsection--}}
+
+
 @section('more-meta')
 <?php $tc = new \App\Http\Controllers\TimelineStoryController();
   ?>
@@ -29,7 +34,7 @@
       @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{!! $full_story['description'] !!}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
+      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
       </div>
       <div style="padding-bottom: 5px">
       <div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
@@ -99,11 +104,11 @@
 
 @endforeach
 
-<div class="row panel radius">
-<ul class="inline-list">
-<li  style="color:#dc4218; font-weight: bold; font-size:18px">Tell a friend about newspepa</li>
-<li><div style="position:relative; margin-bottom: 6px"><div class="fb-share-button" data-href="https://newspepa.com/" data-layout="button_count" style="float:right"></div></div></li>
-</ul>
-</div>
+{{--<div class="row panel radius">--}}
+{{--<ul class="inline-list">--}}
+{{--<li  style="color:#dc4218; font-weight: bold; font-size:18px">Tell a friend about newspepa</li>--}}
+{{--<li><div style="position:relative; margin-bottom: 6px"><div class="fb-share-button" data-href="https://newspepa.com/" data-layout="button_count" style="float:right"></div></div></li>--}}
+{{--</ul>--}}
+{{--</div>--}}
  @stop
 

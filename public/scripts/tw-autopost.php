@@ -9,10 +9,12 @@ if(php_sapi_name() == 'cli') {
     $line_break = '<br>';
 }
 
+date_default_timezone_set('Africa/Lagos');
 // require codebird
 require_once('../libraries/codebird-php-develop/src/codebird.php'); // configure /path/to/... appropriately
 
 // get current time - configure appropriately, depending to how you store dates in your database
+
 $now =  date("YmdHis");
 
 // initialize
