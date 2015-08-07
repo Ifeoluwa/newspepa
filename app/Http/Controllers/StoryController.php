@@ -24,66 +24,63 @@ class StoryController extends Controller {
 
 
     protected $client;
-    //handles the addition of story to the database
-    public function addStory(){
+
+    public function newCreateTimelineStory(){
+        set_time_limit(0);
+        $this->client = new \Solarium\Client;
+        // Stories to Timeline Stories
+        $pivots = Story::pivots();
+        $timeline_stories = array();
+
+        foreach($pivots as $pivot){
+
+            $pivot['story_url'] = $this->makeStoryUrl($pivot['title'], $pivot['cluster_pivot']);
+            $pivot['story_id'] = $pivot['cluster_pivot'];
+            $pivot = array_except($pivot, ['id', 'cluster_pivot', 'cluster_match']);
+
+            $pivot['is_pivot'] = 1;
+            $date = new \DateTime('now');
+            $id = TimelineStory::insertIgnore($pivot);
+            if($id !== false){
+                $updateQuery = $this->client->createUpdate();
+                $story1 = $updateQuery->createDocument();
+                $story1->id = $pivot['story_id']; //return the id of the insert from PDO query and attach it here
+                $story1->title_en = $pivot['title'];
+                $story1->description_en = $pivot['description'];
+                if(isset($story['image_url'])){
+                    $story1->image_url_t = $pivot['image_url'];
+                }else{
+                    $story1->image_url_t = '';
+                }
+                $story1->video_url_t = '';
+                $story1->url = $pivot['url'];
+                $story1->pub_id_i = $pivot['pub_id'];
+                $story1->has_cluster_i = 1;
+                $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
+                //do this for all stories and keep adding them to the stories array
+                $updateQuery->addDocument($story1);
+                $updateQuery->addCommit();
+
+                $result = $this->client->update($updateQuery);
+            }
+            array_push($timeline_stories, $pivot);
+
+
+        }
+
+        set_time_limit(120);
+
+        var_dump('Sparky! Done Inserting into timeline_stories table');
 
     }
 
-//    public function createTimelineStory(){
-//        set_time_limit(0);
-//        // Stories to Timeline Stories
-//
-//        DB::transaction(function(){
-//            $stories = DB::table('stories')->where('status_id', 1)->get();
-//            foreach($stories as $story){
-//                $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
-//                $story['story_id'] = $story['id'];
-//                $timeline_story = array_except($story, ['id']);
-//                TimelineStory::insertIgnore($timeline_story);
-//            }
-//
-//        });
-//
-//        // Cluster-Pivot Method
-////        $pivots = Story::pivots();
-////
-////        foreach($pivots as $pivot){
-////
-////            $pivot['story_url'] = $this->makeStoryUrl($pivot['title'], $pivot['cluster_pivot']);
-////            $pivot['story_id'] = $pivot['cluster_pivot'];
-////            array_pull($pivot, 'cluster_pivot');
-////            array_pull($pivot, 'cluster_match');
-////
-////
-////            $pivot['is_pivot'] = 1;
-////
-////            TimelineStory::insertIgnore($pivot);
-////            $matches = Story::matches($pivot['story_id']);
-////
-////            foreach($matches as $match){
-////
-////                $match['story_url'] = $this->makeStoryUrl($match['title'], $match['cluster_match']);
-////                $match['story_id'] = $match['cluster_match'];
-////                array_pull($match, 'cluster_pivot');
-////                array_pull($match, 'cluster_match');
-////
-////                TimelineStory::insertIgnore($match);
-////            }
-////
-////        }
-//
-//        set_time_limit(120);
-//
-//    }
-
-    //
+    // Insersts pivto into the timeline stories and also inserts into Solr
     public function createTimelineStory(){
         set_time_limit(0);
         // Stories to Timeline Stories
         //solr insert
         $this->client = new \Solarium\Client;
-        $stories_array = array();
-        // DB::transaction(function(){
+
         $stories = DB::table('stories')->where('status_id', 1)->get();
         foreach($stories as $story){
             $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
@@ -109,8 +106,6 @@ class StoryController extends Controller {
                 $story1->has_cluster_i = 1;
                 $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
                 //do this for all stories and keep adding them to the stories array
-                //when done continue to the nest line
-//                array_push($stories_array, $story1);
                 $updateQuery->addDocument($story1);
                 $updateQuery->addCommit();
 
@@ -118,7 +113,6 @@ class StoryController extends Controller {
             }
         }
 
-        });
     }
 
 
@@ -137,7 +131,7 @@ class StoryController extends Controller {
     public static function getOldStories(){
         $stories = DB::table('clusters')
             ->join('stories', 'clusters.cluster_pivot',  '=',  'stories.id')->select(DB::raw('DISTINCT(clusters.cluster_pivot) as id, stories.title as title, stories.description as description'))
-            ->whereBetween('clusters.created_date', [new \DateTime('-12hours'), new \DateTime('now')])->limit(50)->get();
+            ->whereBetween('clusters.created_date', [new \DateTime('-12hours'), new \DateTime('now')])->get();
 
         return StoryController::prepareStories($stories);
 
@@ -152,11 +146,6 @@ class StoryController extends Controller {
             $each_story['title'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['title']);
             $title = mb_convert_encoding($story['title'], "UTF-8", "Windows-1252");
             $each_story['title'] = html_entity_decode($title, ENT_QUOTES, "UTF-8");
-
-            //$desc = mb_convert_encoding($story['description'], "UTF-8", "Windows-1252");
-            //$story['description'] = html_entity_decode($desc, ENT_QUOTES, "UTF-8");
-
-            //$story['description'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $data['description']);
 
             $each_story['description'] = strip_tags($story['description']);
             $each_story['description'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['description']);
@@ -233,7 +222,7 @@ class StoryController extends Controller {
                     $count++;
                 }
             }
-//            $story_details['description'] = htmlspecialchars($story_details['description']);
+
             $story_details['pub_date'] = $date;
             $story_details['has_cluster'] = 1;
             $story_details['created_date'] = $date;
@@ -423,4 +412,4 @@ class StoryController extends Controller {
 
     }
 
-} 
+}

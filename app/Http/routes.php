@@ -20,7 +20,7 @@ Route::get('test', 'FeedController@test');
 Route::get('hello', function(){
     return view('admin.new_post');
 });
-Route::get('timeline', 'StoryController@createTimelineStory');
+Route::get('timeline', 'StoryController@newCreateTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
 

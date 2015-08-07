@@ -23,13 +23,13 @@
        <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
           <span class="full-story-title">{{$full_story['title']}}</span><br/>
           <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
-          <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
+          <span class="label" style="margin-top:6px; margin-bottom:1px">{!! $tc->getTimeDifference($full_story['created_date'])!!} </span>
 
        </div><br/><br/>
       @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
+      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{!! $full_story['description'] !!}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
       </div>
        <div style="padding-bottom: 5px">
             <div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>

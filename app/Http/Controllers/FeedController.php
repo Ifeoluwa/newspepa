@@ -36,89 +36,94 @@ class FeedController extends Controller {
     }
 
     // handles the actual fetching of feeds from the feed sources
-    public function fetchFeeds(){
+    public function fetchFeeds()
+    {
         set_time_limit(0);
 
         $feeds = FeedController::getFeedSources();
 
         $all_stories = array();
-        foreach($feeds as $feed){
+        foreach ($feeds as $feed) {
             $content = $this->checkFeedSource($feed['file_path']);
-            if(!$content) {
+            if (!$content) {
                 continue;
             }
-            if($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21){
+            if ($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21) {
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
-            }elseif($feed['pub_id'] == 12 ){
+            } elseif ($feed['pub_id'] == 12) {
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
-            }else{
-                try{
+            } else {
+                try {
                     $all_stories = array_merge($all_stories, $this->getOtherFeeds($feed));
-                }catch(ParserException $exp){
+                } catch (ParserException $exp) {
                     echo $exp->getMessage();
                     continue;
                 }
             }
 
-            // }
-            //Updates the last time the feed was accessed
             Feed::updateFeed($feed['id'], time());
             var_dump('<br>Fetched stories...');
 
         }
 
-        // Shuffle the array of stories
-        shuffle($all_stories);
-        $fetched_stories = count($all_stories);
-        $k = 0;
-
-        //Insert stories
-        $inserted_stories = array();
-        foreach($all_stories as $story){
-            $similarity = $this->isSimilarToPrevious($story);
-            if($similarity !== true){
-                $result = Story::insertIgnore($story);
-                $date = new \DateTime('now');
-                if($result !== false){
-
-                $last_id = Story::insertIgnore($story);
-                if($last_id !== false){
-                    $story['id'] = $last_id;
-                    array_push($inserted_stories, $story);
-
-                    $k += 1;
-                    $now  = date('Y-m-d h:i:s');
-                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-                    fwrite($fp, $now." SUCCESS stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
-                    fclose($fp);
-                }else{
-                    $now  = date('Y-m-d h:i:s');
-                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-                    fwrite($fp, $now." FAILED stories = ".$story['title']." Result = ".$result." FROM feed_id=".$story['feed_id'].PHP_EOL);
-                    fclose($fp);
-                }
-            }
-        }
-
-        $stored_stories = $k;
-        $now  = date('Y-m-d h:i:s');
-        $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
-        fwrite($fp, $now."fetch stories = ".$fetched_stories." stored stories = ".$stored_stories.PHP_EOL);
-        fclose($fp);
+//        Inserts shuffled fetched stories
+        $inserted_stories = $this->insertFetchedStories(shuffle($all_stories));
 
         //Begin Matching
         var_dump('Beginning matching>>> <br>');
-        if(count($inserted_stories) > 0){
+        if (count($inserted_stories) > 0) {
             $new_stories = StoryController::prepareStories($inserted_stories);
             $old_stories = StoryController::getOldStories();
             $matched_stories = StoryController::matchStories($old_stories, $new_stories);
-            var_dump($matched_stories);
+
             Cluster::insertIgnore($matched_stories);
         }
 
 
-        set_time_limit(120);
+            set_time_limit(120);
 
+    }
+
+
+    // Inserts fetched stories into the database
+    public function insertFetchedStories($all_stories){
+        $fetched_stories = count($all_stories);
+        $k = 0;
+
+        //Array for stories are succesfully inserted into the database
+        $inserted_stories = array();
+        foreach ($all_stories as $story) {
+            $similarity = $this->isSimilarToPrevious($story);
+            if ($similarity !== true) {
+                $result = Story::insertIgnore($story);
+                $date = new \DateTime('now');
+
+                if ($result !== false) {
+                    $story['id'] = $result;
+                    array_push($inserted_stories, $story);
+
+                    $k += 1;
+                    $now = date('Y-m-d h:i:s');
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+                    fwrite($fp, $now . " SUCCESS stories = " . $story['title'] . " Result = " . $result . " FROM feed_id=" . $story['feed_id'] . PHP_EOL);
+                    fclose($fp);
+                } else {
+                    $now = date('Y-m-d h:i:s');
+                    $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+                    fwrite($fp, $now . " FAILED stories = " . $story['title'] . " Result = " . $result . " FROM feed_id=" . $story['feed_id'] . PHP_EOL);
+                    fclose($fp);
+                }
+
+            }
+
+            $stored_stories = $k;
+            $now = date('Y-m-d h:i:s');
+            $fp = fopen("/home/newspep/newspepa/public/log.txt", "a+");
+            fwrite($fp, $now . "fetch stories = " . $fetched_stories . " stored stories = " . $stored_stories . PHP_EOL);
+            fclose($fp);
+
+        }
+        return $inserted_stories;
     }
 
     // This method get feeds from feeds with different organisation of content such as Nigerian Monitor, Stargist, and Koko Feed
