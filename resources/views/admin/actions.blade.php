@@ -8,7 +8,12 @@
     <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet"/>
 @stop
 
-@section('icon', 'fa-edit')
+@section('page-header-icon', 'fa-cogs') @stop
+
+@section('page-header', 'Edit or Delete Story')
+@stop
+
+@section('icon', 'fa-cogs')
 @stop
 
 @section('beadcrumb-header', 'Edit or Delete Story') @stop

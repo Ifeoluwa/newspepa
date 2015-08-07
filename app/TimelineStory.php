@@ -277,6 +277,37 @@ class TimelineStory extends Model
         return $stories_by_pub;
     }
 
+    // Gets the total of number of story views for the current day
+    public static function todayViews(){
+
+    }
+
+    // Gets the total of number of story linkouts for the current day
+    public static function todayLinkouts(){
+
+    }
+
+    // Gets the total number of story views
+    public static function totalViews(){
+
+    }
+
+    // Gets the total number of story linkouts
+    public static function totalLinkouts(){
+//        $total_linkout = DB::table('timeline_stories')->
+    }
+
+    // Get the count of the stories that broke today
+    public static function todayStories(){
+        $previous_count = DB::table('timeline_stories')->where('created_date', '<', new \DateTime('today', new \DateTimeZone('Africa/Lagos')))->count();
+        $current_count = DB::table('timeline_stories')->count();
+        $today_count = $current_count - $previous_count;
+
+        return $today_count;
+    }
+
+
+
 
 
 }

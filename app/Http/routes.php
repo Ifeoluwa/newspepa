@@ -33,6 +33,10 @@ Route::get('about', function(){
    return view('aboutUs');
 });
 
+Route::get('date', function(){
+    var_dump(new DateTime('today', new DateTimeZone('Africa/Lagos')));
+});
+
 
 Route::get('register', function(){
    return view('admin.register');

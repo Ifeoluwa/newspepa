@@ -77,7 +77,7 @@ class StoryController extends Controller {
 
     //
     public function createTimelineStory(){
-        DB::transaction(function(){
+
             $stories = Story::pivots();
             foreach($stories as $story){
                 $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
@@ -86,7 +86,6 @@ class StoryController extends Controller {
                 TimelineStory::insertIgnore($timeline_story);
             }
 
-        });
     }
 
 
@@ -104,8 +103,8 @@ class StoryController extends Controller {
 
     public static function getOldStories(){
         $stories = DB::table('clusters')
-            ->join('stories', 'clusters.cluster_pivot',  '=',  'stories.id')->select('stories.id as id', 'stories.title as title', 'stories.description as description')
-            ->whereBetween('clusters.created_date', [new \DateTime('-12hours'), new \DateTime('now')])->get();
+            ->join('stories', 'clusters.cluster_pivot',  '=',  'stories.id')->select(DB::raw('DISTINCT(clusters.cluster_pivot) as id, stories.title as title, stories.description as description'))
+            ->whereBetween('clusters.created_date', [new \DateTime('-12hours'), new \DateTime('now')])->limit(50)->get();
 
         return StoryController::prepareStories($stories);
 
@@ -113,25 +112,25 @@ class StoryController extends Controller {
 
     public static function prepareStories($stories){
         $clean_stories = array();
+        $each_story = array();
         foreach($stories as $story){
-            $story['title'] = strip_tags($story['title']);
-            $story['title'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['title']);
+            $each_story['id'] = $story['id'];
+            $each_story['title'] = strip_tags($story['title']);
+            $each_story['title'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['title']);
             $title = mb_convert_encoding($story['title'], "UTF-8", "Windows-1252");
-            $story['title'] = html_entity_decode($title, ENT_QUOTES, "UTF-8");
-
-            $story['title'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['title']);
+            $each_story['title'] = html_entity_decode($title, ENT_QUOTES, "UTF-8");
 
             //$desc = mb_convert_encoding($story['description'], "UTF-8", "Windows-1252");
             //$story['description'] = html_entity_decode($desc, ENT_QUOTES, "UTF-8");
 
             //$story['description'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $data['description']);
 
-            $story['description'] = strip_tags($story['description']);
-            $story['description'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['description']);
+            $each_story['description'] = strip_tags($story['description']);
+            $each_story['description'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['description']);
             $desc = mb_convert_encoding($story['description'], "UTF-8", "Windows-1252");
-            $story['description'] = html_entity_decode($desc, ENT_QUOTES, "UTF-8");
+            $each_story['description'] = html_entity_decode($desc, ENT_QUOTES, "UTF-8");
 
-            array_push($clean_stories, $story);
+            array_push($clean_stories, $each_story);
         }
         return $clean_stories;
     }
@@ -139,7 +138,11 @@ class StoryController extends Controller {
     public static function matchStories($old_stories, $new_stories){
         $data = array($old_stories, $new_stories);
         $result = exec('python /var/www/html/newspepa/public/scripts/test.py ' . escapeshellarg(json_encode($data)));
-        return json_decode($result, true);
+        if($result !== null){
+            return json_decode($result, true);
+        }
+        return [];
+
     }
 
 
@@ -177,7 +180,7 @@ class StoryController extends Controller {
             $story_details['description'] = $request->input('description');
             $story_details['pub_id'] = $request->input('publisher');
             $story_details['category_id'] = $request->input('category');
-            $story_details['description'] = $request->input('description')."\n";
+            $story_details['description'] = $request->input('description')."<br>";
 
             if($request->hasFile('story_images')){
                 $first_image_name = $request->file('story_images')[0]->getClientOriginalName();
@@ -188,13 +191,13 @@ class StoryController extends Controller {
                     $image_path = "story_images/".$image_name;
                     $story_image->move(base_path() .'/public/story_images', $image_name);
                     if($count >= 2){
-                        $story_details['description'] .= "<img src='".$image_path."'></br>";
+                        $story_details['description'] .= "<img src='".$image_path."'><br>";
 
                     }
                     $count++;
                 }
             }
-//            $story_details['description'] = htmlentities($story_details['description']);
+//            $story_details['description'] = htmlspecialchars($story_details['description']);
             $story_details['pub_date'] = $date;
             $story_details['has_cluster'] = 1;
             $story_details['created_date'] = $date;
@@ -213,7 +216,7 @@ class StoryController extends Controller {
                     $result = DB::getPdo()->lastInsertId();
                 }
 
-                if($result != false){
+                if($result !== false){
                     $story_details['id'] = $result;
                     $this->solrInsert($story_details);
                     return view('dashboard');
@@ -369,6 +372,18 @@ class StoryController extends Controller {
         $publishers = PublisherController::getIconwayPub();
         $story_details = DB::table('timeline_stories')->where('story_id', $story_id)->get();
         return view('admin.editStory')->with('data', array('story_details' => $story_details[0], 'categories' => $categories, 'publishers' => $publishers));
+
+    }
+
+    public function getStoriesCount(){
+
+    }
+
+    public function getNumberNoViews(){
+
+    }
+
+    public function getNumberOfLinkouts(){
 
     }
 
