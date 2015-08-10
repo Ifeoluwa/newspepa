@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class CommentController extends Controller
 {
@@ -38,6 +39,12 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         //
+        $comment_details = array();
+        $comment_details['session_key'] = $request->input('session_key');
+        $comment_details['story_id'] = $request->input('story_id');
+        $comment_details['user_name'] = $request->input('user_name');
+        $comment_details['comment'] = $request->input('comment');
+        DB::table('comment')->insert($comment_details);
     }
 
     /**

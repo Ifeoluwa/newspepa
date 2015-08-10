@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PublisherController;
 use App\Publisher;
+use App\TimelineStory;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -32,7 +33,7 @@ class DashboardController extends Controller
             ->where('status_id', 1)->orderBy('created_date', 'desc')
             ->paginate(100);
 
-        return view('admin.dashboard')->with('data', array('stories' => $all_stories, 'categories' => $this->categories, 'publishers' => Publisher::$publishers));
+        return view('admin.dashboard')->with('data', array('stories' => $all_stories, 'categories' => $this->categories, 'publishers' => Publisher::$publishers, 'story_stats' => $this->getStoryStats()));
     }
 
     public function getStoryActions(){
@@ -52,14 +53,17 @@ class DashboardController extends Controller
         }
     }
 
-//    public function getStoryStats(){
-//        $today_views;
-//        $today_linkouts;
-//        $total_views;
-//        $total_linkouts;
-//        $total_stories;
+    public function getStoryStats(){
+        $story_stats = array();
+        $story_stats['today_views'] = TimelineStory::todayViews();
+        $story_stats['today_linkouts'] = TimelineStory::todayLinkouts();
+        $story_stats['total_views'] = TimelineStory::totalViews();
+        $story_stats['total_linkouts'] = TimelineStory::totalLinkouts();
+        //        $total_stories;
 //        $today_stories
-//    }
+        return $story_stats;
+
+    }
 
 
 
