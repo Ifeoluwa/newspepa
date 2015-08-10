@@ -1,0 +1,401 @@
+
+<!-- saved from url=(0033)http://dailypost.ng/politics/feed -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.lookupVLGWBF, .lookupforemostVLGWBF, .lookupdockedVLGWBF, .rowiframeVLGWBF, .celliframeVLGWBF, .iframeVLGWBF, .emptyVLGWBF, .barVLGWBF, .barforemostVLGWBF, .bardockedVLGWBF, .cellVLGWBF, .leftVLGWBF, .rightVLGWBF, .buttoncontainerVLGWBF, .buttonVLGWBF, .buttonimageVLGWBF, .waitingVLGWBF, .handleVLGWBF, .queryVLGWBF, .hintVLGWBF, .templateVLGWBF, .firstlevelgroupVLGWBF, .notfirstlevelgroupVLGWBF{
+	    background: none !important;
+	    border: 0px !important;
+	    border-style: none !important;
+	     color: black !important;
+	     direction: ltr !important;
+	     float: none !important;
+	     font-family: sans-serif !important;
+	     font-size: small !important;
+	     font-style: normal !important;
+	     font-variant: normal !important;
+	     font-weight: normal !important;
+	     letter-spacing: normal !important;
+	     line-height: normal !important;
+	     margin: 0px !important;
+	    padding: 0px !important;
+	    text-align: left !important;
+	     text-decoration: none !important;
+	     text-indent: 0px !important;
+	     text-transform: none !important;
+	     vertical-align: baseline !important;
+	    white-space: normal !important;
+}
+
+div.lookupVLGWBF{
+	     display: table !important;
+	     -webkit-transition: -webkit-box-shadow 0.25s linear, border-color 0.25s linear !important;
+}
+
+div.lookupforemostVLGWBF{
+}
+
+div.lookupdockedVLGWBF{
+}
+
+div.rowiframeVLGWBF{
+	     display: table-row !important;
+}
+
+div.rowiframeVLGWBF td.celliframeVLGWBF{
+	      display: table-cell !important;
+	      width: 100% !important;
+	      height: 100% !important;
+}
+
+td.celliframeVLGWBF iframe.iframeVLGWBF{
+	       display: inline !important;
+	       width: 100% !important;
+	       height: 100% !important;
+	       background-color: white !important;
+}
+
+iframe.emptyVLGWBF{
+	       background-image: url('chrome-extension://hljnlfolmbmibdjaikiaepgepgnldclj/img/128.png') !important;
+	       background-position: 50% 50% !important;
+	       background-repeat: no-repeat !important;
+}
+
+div.barVLGWBF{
+	     display: table-row !important;
+	     -webkit-transition: background 0.25s linear !important;
+	     width: 100% !important;
+	     cursor: move !important;
+	     background: lightgrey !important;
+}
+
+div.barforemostVLGWBF{
+	background: #84b7ea !important;
+}
+
+div.bardockedVLGWBF{
+	background: #336699 !important;
+}
+
+div.barVLGWBF div.cellVLGWBF{
+	     display: table-cell !important;
+	     vertical-align: middle !important;
+}
+
+div.leftVLGWBF{
+	     padding-right: 16px !important;
+	     text-align: left !important;
+}
+
+div.rightVLGWBF{
+	     white-space: nowrap !important;
+	     text-align: right !important;
+}
+
+span.buttoncontainerVLGWBF{
+	     display:inline !important;
+}
+
+a.buttonVLGWBF:link{
+	     display:inline !important;
+	     -webkit-user-select: none !important;
+	     color: transparent !important;
+}
+
+a.buttonVLGWBF img.buttonimageVLGWBF{
+	     display:inline !important;
+	     vertical-align: middle !important;
+}
+
+img.waitingVLGWBF{
+	     display:inline !important;
+	     cursor: pointer !important;
+	     -webkit-user-select: none !important;
+	     vertical-align: middle !important;
+	     padding-left: 6px !important;
+	 padding-right: 6px !important;
+}
+
+div.handleVLGWBF{
+	     display:block !important;
+	     cursor: se-resize !important;
+	     left: 100% !important;
+	     top: 100% !important;
+	     margin-left: -4px !important;
+	     margin-top: -4px !important;
+	     position: absolute !important;
+	     width: 8px !important;
+	 height: 8px !important;
+}
+
+input.queryVLGWBF{
+	     display:inline-block !important;
+	     background: white !important;
+	     vertical-align: top !important;
+	     border: 1px solid darkgrey !important;
+	      font-size: 13px !important;
+	      padding-top: 1px !important;
+	 padding-bottom: 1px !important;
+	     width: 12em !important;
+}
+
+.hintVLGWBF{
+	      color: lightgrey !important;
+	      font-style:italic !important;
+}
+
+select.templateVLGWBF{
+	     display:inline-block !important;
+	     background: white !important;
+	     font-size: 13px !important;
+	      border: 1px solid darkgrey !important;
+	      vertical-align: top !important;
+	     white-space: pre !important;
+	     width: 9em !important;
+	     margin-right: 2px !important;
+}
+
+optgroup.firstlevelgroupVLGWBF{
+	      color: blue !important;
+}
+
+.notfirstlevelgroupVLGWBF{
+	      color: black !important;
+}
+
+</style><style>.tipTSWPAA, .arrowTSWPAA, .arrowupTSWPAA, .arrowdownTSWPAA, .mainTSWPAA, .closeTSWPAA, .barTSWPAA, .rowTSWPAA, .cellTSWPAA, .leftTSWPAA, .rightTSWPAA, .displaytitleTSWPAA, .refreshTSWPAA, .pagingTSWPAA, .brandTSWPAA, .textTSWPAA, .leftlabelTSWPAA, .selectTSWPAA, .checkboxTSWPAA, .waitingTSWPAA, .buttoncontainerTSWPAA, .buttonTSWPAA, .buttonimageTSWPAA, .flagTSWPAA, .noticebarscontainerTSWPAA, .noticebarTSWPAA, .iframecontentTSWPAA{
+	    background: none !important;
+	    border: 0px !important;
+	    border-style: none !important;
+	     color: black !important;
+	     direction: ltr !important;
+	     float: none !important;
+	     font-family: sans-serif !important;
+	     font-size: small !important;
+	     font-style: normal !important;
+	     font-variant: normal !important;
+	     font-weight: normal !important;
+	     letter-spacing: normal !important;
+	     line-height: normal !important;
+	     margin: 0px !important;
+	    padding: 0px !important;
+	    text-align: left !important;
+	     text-decoration: none !important;
+	     text-indent: 0px !important;
+	     text-transform: none !important;
+	     vertical-align: baseline !important;
+	    white-space: normal !important;
+}
+
+div.tipTSWPAA{
+	     position: absolute !important;
+	     display:block !important;
+}
+
+div.arrowTSWPAA{
+	display:block !important;
+}
+
+canvas.arrowupTSWPAA{
+	      display: inline !important;
+	      vertical-align: bottom !important;
+}
+
+canvas.downupTSWPAA{
+	      display: inline !important;
+	      vertical-align: top !important;
+}
+
+div.mainTSWPAA{
+	display: block !important;
+}
+
+img.closeTSWPAA{
+	      display: block !important;
+	      -webkit-transition: opacity 0.5s linear !important;
+	      float: right !important;
+	      margin-right: -5px !important;
+	      margin-top: -5px !important;
+}
+
+div.barTSWPAA{
+	     display: table !important;
+	      margin-bottom: 4px !important;
+	     -webkit-user-select: none !important;
+	     width: 100% !important;
+}
+
+div.rowTSWPAA{
+	display: table-row !important;
+}
+
+div.cellTSWPAA{
+	      display: table-cell !important;
+	      vertical-align: middle !important;
+}
+
+.leftTSWPAA{
+	      padding-right: 16px !important;
+	      text-align: left !important;
+}
+
+.rightTSWPAA{
+	text-align: right !important;
+}
+
+span.refreshTSWPAA{
+	display: inline !important;
+}
+
+span.pagingTSWPAA{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+span.buttoncontainerTSWPAA{
+	display: inline !important;
+}
+
+span.displaytitleTSWPAA{
+	      display: inline !important;
+	      padding-left: 6px !important;
+	      font-size: small !important;
+	      font-weight: bold !important;
+}
+
+span.displaytitleTSWPAA a:link{
+	       display: inline !important;
+	       color: #0645AD !important;
+	       text-decoration: none !important;
+}
+
+span.displaytitleTSWPAA img{
+	display: inline !important;
+}
+
+span.brandTSWPAA{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+.brandTSWPAA a{
+	       display: inline !important;
+	       font-size: x-small !important;
+}
+
+.brandTSWPAA a:link{
+	       display: inline !important;
+	       color: #0645AD !important;
+	       text-decoration: none !important;
+}
+
+.brandTSWPAA a:visited{
+	       display: inline !important;
+	       color: #0B0080 !important;
+	       text-decoration: none !important;
+}
+
+span.textTSWPAA{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+label.leftlabelTSWPAA{
+	      display: inline !important;
+	      font-size: x-small !important;
+	      margin-right: 3px !important;
+}
+
+select.selectTSWPAA{
+	       display: inline-block !important;
+	       border: 1px solid darkgrey !important;
+	       white-space: pre !important;
+	       font-size: x-small !important;
+}
+
+input.checkboxTSWPAA{
+	      display: inline-block !important;
+	      vertical-align: text-top !important;
+	      font-size: x-small !important;
+	      margin-right: 0.3em !important;
+}
+
+img.waitingTSWPAA{
+	      display: inline !important;
+	      -webkit-user-select: none !important;
+	      vertical-align: middle !important;
+	      padding-left: 3px !important;
+}
+
+a.buttonTSWPAA, a.buttonTSWPAA:link{
+	      display: inline !important;
+	      -webkit-user-select: none !important;
+	      color: transparent !important;
+	      margin-right: 2px !important;
+}
+
+img.buttonimageTSWPAA{
+	      display: inline !important;
+	      vertical-align: middle !important;
+}
+
+img.flagTSWPAA{
+	      display: inline !important;
+	      vertical-align: middle !important;
+	      padding-bottom:2px !important;
+}
+
+img.buttonselectedTSWPAA{
+	      display: inline !important;
+	      background: #dd8 !important;
+	      border: 1px solid #bb6 !important;
+	      margin: -1px !important;
+	      border-radius: 2px !important;
+}
+
+div.noticebarscontainerTSWPAA{
+	     display: block !important;
+	     text-align: left !important;
+	     margin-bottom: 4px !important;
+	     overflow-y: auto !important;
+}
+
+div.noticebarTSWPAA{
+	     display: block !important;
+	     background: white !important;
+	     font-size: x-small !important;
+	     border-left: 3px solid lightGrey !important;
+	     margin-bottom: 1px !important;
+	     padding-left: 2px !important;
+}
+
+div.noticebarTSWPAA img{
+	      display: inline !important;
+	      margin-right: 1px !important;
+	      vertical-align: text-top !important;
+}
+
+div.noticebarTSWPAA a{
+	      display: inline !important;
+	      font-family: sans-serif !important;
+	       font-style: normal !important;
+	       font-variant: normal !important;
+	       font-weight: normal !important;
+	       font-size: x-small !important;
+}
+
+div.noticebarTSWPAA a:link{
+	      display: inline !important;
+	      color: #0645AD !important;
+	      text-decoration: none !important;
+}
+
+div.noticebarTSWPAA a:visited{
+	      display: inline !important;
+	      color: #0B0080 !important;
+	      text-decoration: none !important;
+}
+
+iframe.iframecontentTSWPAA{
+	     display: inline !important;
+	     width: 100% !important;
+}
+
+</style><style id="simplehl_hlstyle_JOIMDW">.simplehl1_JWCNND { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,0,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl2_JWCNND { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,165,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl3_JWCNND { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,255,96,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl4_JWCNND { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(96,255,96,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl5_JWCNND { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(96,255,255,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl6_JWCNND { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,96,255,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl7_JWCNND { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #ffffff!important; background-color: rgba(0,0,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } </style><style id="simplehl_flashstyle_UCFIIX">@-webkit-keyframes flash {         0% {             opacity: 1;         }         100% {             opacity: 0;         }}</style></head><body data-pinterest-extension-installed="cr1.38.2"><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/"><channel><title>DailyPost Nigeria » Politics</title> <atom:link href="http://dailypost.ng/politics/feed/" rel="self" type="application/rss+xml"><link>http://dailypost.ng <description>Latest Nigerian News | Nigerian Newspapers</description> <lastbuilddate>Thu, 06 Aug 2015 09:30:00 +0000</lastbuilddate> <language>en-US</language> <sy:updateperiod>hourly</sy:updateperiod> <sy:updatefrequency>1</sy:updatefrequency> <generator>http://wordpress.org/?v=4.2.4</generator> <item><title>Legislative framework will address national development – Hon. Ikani Okolo</title><link>http://dailypost.ng/2015/08/06/legislative-framework-will-address-national-development-hon-ikani-okolo/ <comments>http://dailypost.ng/2015/08/06/legislative-framework-will-address-national-development-hon-ikani-okolo/#comments</comments> <pubdate>Thu, 06 Aug 2015 09:30:00 +0000</pubdate> <dc:creator><!--[CDATA[Samson Atekojo Usman]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Ikani Okolo]]--></category> <category><!--[CDATA[Legislative]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281821</guid> <description><!--[CDATA[<p-->Hon. Benjamin Ikani Okolo representing Dekina/Bassa/Biraidu federal Constituency in the House of Representatives has expressed optimism that the legislative framework adopted by the House would set the stage for efficient legislative duties. He, however, regretted that the crises in the House was avoidable in the first instance, following the mood of change, but stressed that […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/06/legislative-framework-will-address-national-development-hon-ikani-okolo/">Legislative framework will address national development – Hon. Ikani Okolo</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/06/legislative-framework-will-address-national-development-hon-ikani-okolo/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Rivers Election Petition Tribunal dismisses SDP’s petition against Wike</title><link>http://dailypost.ng/2015/08/06/rivers-election-petition-tribunal-dismisses-sdps-petition-against-wike/ <comments>http://dailypost.ng/2015/08/06/rivers-election-petition-tribunal-dismisses-sdps-petition-against-wike/#comments</comments> <pubdate>Thu, 06 Aug 2015 07:03:37 +0000</pubdate> <dc:creator><!--[CDATA[Victor Azubuike]]--></dc:creator> <category><!--[CDATA[Main Headline]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Rivers Election]]--></category> <category><!--[CDATA[SDP]]--></category> <category><!--[CDATA[Wike]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281768</guid> <description><!--[CDATA[<p-->The Rivers State Governorship and National Assembly Election Petitions Tribunals sitting in Abuja has dismissed the petition filed by the Social Democratic Party, SDP and its candidate, Reverend Minaibim Harry. The Tribunal chaired by Justice Abdulkadir Pindiga took the decision for lack of competence and want of jurisdiction on the SDP’s petition. Reacting, counsel to […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/06/rivers-election-petition-tribunal-dismisses-sdps-petition-against-wike/">Rivers Election Petition Tribunal dismisses SDP’s petition against Wike</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/06/rivers-election-petition-tribunal-dismisses-sdps-petition-against-wike/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Don’t grant Mimiko loans – APC tells bank, FG</title><link>http://dailypost.ng/2015/08/05/dont-grant-mimiko-loans-apc-tells-bank-fg/ <comments>http://dailypost.ng/2015/08/05/dont-grant-mimiko-loans-apc-tells-bank-fg/#comments</comments> <pubdate>Wed, 05 Aug 2015 20:20:33 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[APC]]--></category> <category><!--[CDATA[Mimiko]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281738</guid> <description><!--[CDATA[<p-->The All Progressives Congress (APC), Ondo State Chapter has charged the State Governor, Dr. Olusegun Mimiko to give account for all allocations collected since inception of his administration, more than six years ago. The Party in a statement issued by its Publicity Secretary, Omo’ba Abayomi Adesanya also challenged the state government to explain to the […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/dont-grant-mimiko-loans-apc-tells-bank-fg/">Don’t grant Mimiko loans – APC tells bank, FG</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/dont-grant-mimiko-loans-apc-tells-bank-fg/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Senate rejects motion to re-introduce roadblocks nationwide</title><link>http://dailypost.ng/2015/08/05/senate-rejects-motion-to-re-introduce-roadblocks-nationwide/ <comments>http://dailypost.ng/2015/08/05/senate-rejects-motion-to-re-introduce-roadblocks-nationwide/#comments</comments> <pubdate>Wed, 05 Aug 2015 19:19:49 +0000</pubdate> <dc:creator><!--[CDATA[Wale Odunsi]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[roadblocks]]--></category> <category><!--[CDATA[senate]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281696</guid> <description><!--[CDATA[<p-->The Senate has rejected a motion to reintroduce toll gates across roads nationwide. It, however, charged the Federal Government to undertake immediate rehabilitation and dualisation of major highways and interstate roads across the country. A motion by Senator Dino Melaye and co-sponsored by 90 others, had lamented that several trillions of naira had been spent […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/senate-rejects-motion-to-re-introduce-roadblocks-nationwide/">Senate rejects motion to re-introduce roadblocks nationwide</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/senate-rejects-motion-to-re-introduce-roadblocks-nationwide/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Ambode approves release of N11bn to offset 5-year pension arrears</title><link>http://dailypost.ng/2015/08/05/ambode-approves-release-of-n11bn-to-offset-5-year-pension-arrears/ <comments>http://dailypost.ng/2015/08/05/ambode-approves-release-of-n11bn-to-offset-5-year-pension-arrears/#comments</comments> <pubdate>Wed, 05 Aug 2015 19:15:57 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Lagos]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Ambode]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281689</guid> <description><!--[CDATA[<p-->Gov. Akinwunmi Ambode of Lagos State has approved the release of N11 billion to offset all pension liabilities in the state accrued since 2010. This is contained in a statement by the state’s Head of Service, Mrs Shade Jaji, in Lagos on Wednesday. Jaji said that the move was to bring succour to all retirees […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/ambode-approves-release-of-n11bn-to-offset-5-year-pension-arrears/">Ambode approves release of N11bn to offset 5-year pension arrears</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/ambode-approves-release-of-n11bn-to-offset-5-year-pension-arrears/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Buhari orders action to redress enormous debt profile of Nigeria’s aviation sector</title><link>http://dailypost.ng/2015/08/05/buhari-orders-action-to-redress-enormous-debt-profile-of-nigerias-aviation-sector/ <comments>http://dailypost.ng/2015/08/05/buhari-orders-action-to-redress-enormous-debt-profile-of-nigerias-aviation-sector/#comments</comments> <pubdate>Wed, 05 Aug 2015 19:02:15 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[buhari]]--></category> <category><!--[CDATA[Nigeria's aviation]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281677</guid> <description><!--[CDATA[<p-->President Muhammadu Buhari Wednesday in Abuja expressed concern over the enormous debt profile of Nigeria’s aviation sector, saying that his administration will act quickly to redress the situation. ‘‘I am concerned about the enormous debt profile in the aviation sector. The Federal Government has to do something quickly because safety, security and international respectability are […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/buhari-orders-action-to-redress-enormous-debt-profile-of-nigerias-aviation-sector/">Buhari orders action to redress enormous debt profile of Nigeria’s aviation sector</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/buhari-orders-action-to-redress-enormous-debt-profile-of-nigerias-aviation-sector/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Buhari orders speedy action on new national airline</title><link>http://dailypost.ng/2015/08/05/buhari-orders-speedy-action-on-new-national-airline/ <comments>http://dailypost.ng/2015/08/05/buhari-orders-speedy-action-on-new-national-airline/#comments</comments> <pubdate>Wed, 05 Aug 2015 18:57:50 +0000</pubdate> <dc:creator><!--[CDATA[Wale Odunsi]]--></dc:creator> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[buhari]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281663</guid> <description><!--[CDATA[<p-->President Muhammadu Buhari on Wednesday ordered the Ministry of Aviation to immediately come up with modalities on the establishment of a new national airline. Nigeria has been operating a public-private partnership (PPP) national airline since the defunct Nigerian Airways folded. Briefing State House correspondents at the presidential villa, Permanent Secretary, Aviation Ministry, Binta Bello, said […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/buhari-orders-speedy-action-on-new-national-airline/">Buhari orders speedy action on new national airline</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/buhari-orders-speedy-action-on-new-national-airline/feed/</wfw:commentrss> <slash:comments>2</slash:comments> </item> <item><title>Protesters storm NASS over Buhari’s Edo loan request</title><link>http://dailypost.ng/2015/08/05/protesters-storm-nass-over-buharis-edo-loan-request/ <comments>http://dailypost.ng/2015/08/05/protesters-storm-nass-over-buharis-edo-loan-request/#comments</comments> <pubdate>Wed, 05 Aug 2015 17:42:46 +0000</pubdate> <dc:creator><!--[CDATA[Timothy Enietan-Matthews]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[buhari]]--></category> <category><!--[CDATA[NASS]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281654</guid> <description><!--[CDATA[<p-->The request sent to the Senate by President Muhammadu Buhari for approval of a $75 million loan request by Edo State may be running into turbulent waters, as protesters, on Wednesday, stormed the National Assembly, urging legislators not to approve the request by the Edo State government. President Muhammadu Buhari had on Tuesday, August 4, […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/protesters-storm-nass-over-buharis-edo-loan-request/">Protesters storm NASS over Buhari’s Edo loan request</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/protesters-storm-nass-over-buharis-edo-loan-request/feed/</wfw:commentrss> <slash:comments>2</slash:comments> </item> <item><title>Boko Haram: Saraki seeks foreign assistance to rebuild North-East</title><link>http://dailypost.ng/2015/08/05/boko-haram-saraki-seeks-foreign-assistance-to-rebuild-north-east/ <comments>http://dailypost.ng/2015/08/05/boko-haram-saraki-seeks-foreign-assistance-to-rebuild-north-east/#comments</comments> <pubdate>Wed, 05 Aug 2015 17:38:22 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Boko Haram]]--></category> <category><!--[CDATA[North East]]--></category> <category><!--[CDATA[Saraki]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281643</guid> <description><!--[CDATA[<p-->Senate President, Dr. Abubakar Bukola Saraki, on Wednesday solicited the assistance of the International Community for the on-going efforts by the Federal Government to end the insurgency in the North-eastern part of the country. He said that such support would also help bring succour to the Internally Displaced Persons (IDPs) in the area. Saraki made […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/boko-haram-saraki-seeks-foreign-assistance-to-rebuild-north-east/">Boko Haram: Saraki seeks foreign assistance to rebuild North-East</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/boko-haram-saraki-seeks-foreign-assistance-to-rebuild-north-east/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Buhari’s anti-corruption campaign is mere noise-making, witch-hunting – Fayose</title><link>http://dailypost.ng/2015/08/05/buharis-anti-corruption-campaign-is-mere-noise-making-witch-hunting-fayose/ <comments>http://dailypost.ng/2015/08/05/buharis-anti-corruption-campaign-is-mere-noise-making-witch-hunting-fayose/#comments</comments> <pubdate>Wed, 05 Aug 2015 17:29:36 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Fayose]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281635</guid> <description><!--[CDATA[<p-->Ekiti State Governor, Mr Ayodele Fayose has taken a swipe at the Federal Government’s anti-corruption stance, describing it as mere noise-making, witch-hunt and diversionary tactic to hoodwink the public into overlooking the seeming failure of the government to deliver on its electoral promises. The governor said; “If President Mohammadu Buhari knows exactly where the stolen […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/buharis-anti-corruption-campaign-is-mere-noise-making-witch-hunting-fayose/">Buhari’s anti-corruption campaign is mere noise-making, witch-hunting – Fayose</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/buharis-anti-corruption-campaign-is-mere-noise-making-witch-hunting-fayose/feed/</wfw:commentrss> <slash:comments>5</slash:comments> </item> <item><title>Buhari approves actions to fast-track environmental clean-up of Ogoniland</title><link>http://dailypost.ng/2015/08/05/buhari-approves-actions-to-fast-track-environmental-clean-up-of-ogoniland/ <comments>http://dailypost.ng/2015/08/05/buhari-approves-actions-to-fast-track-environmental-clean-up-of-ogoniland/#comments</comments> <pubdate>Wed, 05 Aug 2015 17:21:54 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[buhari]]--></category> <category><!--[CDATA[Ogoniland]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281628</guid> <description><!--[CDATA[<p-->In keeping with his avowed commitment to working for the development and well-being of all Nigerians, President Muhammadu Buhari Wednesday in Abuja approved several actions to fast-track the long delayed implementation of the United Nations Environmental Programme (UNEP) Report on the environmental restoration of Ogoniland. The actions approved by President Buhari, based on recommendations to […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/buhari-approves-actions-to-fast-track-environmental-clean-up-of-ogoniland/">Buhari approves actions to fast-track environmental clean-up of Ogoniland</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/buhari-approves-actions-to-fast-track-environmental-clean-up-of-ogoniland/feed/</wfw:commentrss> <slash:comments>1</slash:comments> </item> <item><title>Uncompleted projects: Governor Ugwuanyi moves against UBEB contractors</title><link>http://dailypost.ng/2015/08/05/uncompleted-projects-governor-ugwuanyi-moves-against-ubeb-contractors/ <comments>http://dailypost.ng/2015/08/05/uncompleted-projects-governor-ugwuanyi-moves-against-ubeb-contractors/#comments</comments> <pubdate>Wed, 05 Aug 2015 15:22:38 +0000</pubdate> <dc:creator><!--[CDATA[Emmanuel Uzodinma]]--></dc:creator> <category><!--[CDATA[Enugu]]--></category> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Ugwuanyi]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281580</guid> <description><!--[CDATA[<p-->Governor Ifeanyi Ugwuanyi of Enugu State has constituted a high-powered inquiry into some contracts under the Universal Basic Education Board, UBEB, in the state. He warned that any government official, contractor or group of persons found to have contributed to the present poor conditions of some primary schools under the Universal Basic Education Board in […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/uncompleted-projects-governor-ugwuanyi-moves-against-ubeb-contractors/">Uncompleted projects: Governor Ugwuanyi moves against UBEB contractors</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/uncompleted-projects-governor-ugwuanyi-moves-against-ubeb-contractors/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>PDP denies sending Dickson, Alamieyeseigha out of Otuoke meeting</title><link>http://dailypost.ng/2015/08/05/pdp-denies-sending-dickson-alamieyeseigha-out-of-otuoke-meeting/ <comments>http://dailypost.ng/2015/08/05/pdp-denies-sending-dickson-alamieyeseigha-out-of-otuoke-meeting/#comments</comments> <pubdate>Wed, 05 Aug 2015 13:03:06 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[Bayelsa]]--></category> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[PDP]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281537</guid> <description><!--[CDATA[<p-->The Peoples Democratic Party, PDP, has debunked reports that the Bayelsa state governor, Henry Seriake Dickson and Chief Diepreye Alamieyeseigha were sent out of a meeting which national leaders of the party had with former President Goodluck Jonathan at last weekend in Otuoke, Bayelsa State. Secretary of the PDP peace committee, Dr. Cairo Ojougboh, who […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/pdp-denies-sending-dickson-alamieyeseigha-out-of-otuoke-meeting/">PDP denies sending Dickson, Alamieyeseigha out of Otuoke meeting</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/pdp-denies-sending-dickson-alamieyeseigha-out-of-otuoke-meeting/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>People who were with PDP for 10 years left after Buhari won – Metuh</title><link>http://dailypost.ng/2015/08/05/people-who-were-with-pdp-for-10-years-left-after-buhari-won-metuh/ <comments>http://dailypost.ng/2015/08/05/people-who-were-with-pdp-for-10-years-left-after-buhari-won-metuh/#comments</comments> <pubdate>Wed, 05 Aug 2015 12:32:13 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Main Headline]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Metuh]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281528</guid> <description><!--[CDATA[<p-->The National Publicity Secretary of the Peoples Democratic Party, PDP, Olisa Metuh, has confessed that it is cold being in the opposition, explaining that some members stopped showing commitment to the affairs of the party the week it lost the 2015 presidential election. Metuh, who disclosed this to Sahara TV on Tuesday, said: “It is […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/people-who-were-with-pdp-for-10-years-left-after-buhari-won-metuh/">People who were with PDP for 10 years left after Buhari won – Metuh</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/people-who-were-with-pdp-for-10-years-left-after-buhari-won-metuh/feed/</wfw:commentrss> <slash:comments>3</slash:comments> </item> <item><title>Kaduna demolition: We are recovering government land – El-Rufai insists</title><link>http://dailypost.ng/2015/08/05/kaduna-demolition-we-are-recovering-government-land-el-rufai-insists/ <comments>http://dailypost.ng/2015/08/05/kaduna-demolition-we-are-recovering-government-land-el-rufai-insists/#comments</comments> <pubdate>Wed, 05 Aug 2015 12:26:15 +0000</pubdate> <dc:creator><!--[CDATA[Timothy Enietan-Matthews]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Kaduna]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[El Rufai]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281515</guid> <description><!--[CDATA[<p-->The governor of Kaduna State, Mallam Nasir El Rufai, Tuesday, declared that the ongoing pulling down of houses and business premises erected on lands belonging to public institutions in Kaduna and Zaria was not the same as a “demolition exercise “but recovery of government lands”. The governor stated this through his spokesman, Samuel Aruwan, who […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/kaduna-demolition-we-are-recovering-government-land-el-rufai-insists/">Kaduna demolition: We are recovering government land – El-Rufai insists</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/kaduna-demolition-we-are-recovering-government-land-el-rufai-insists/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Senate forgery: IG of Police urges court to dismiss suit</title><link>http://dailypost.ng/2015/08/05/senate-forgery-ig-of-police-urges-court-to-dismiss-suit/ <comments>http://dailypost.ng/2015/08/05/senate-forgery-ig-of-police-urges-court-to-dismiss-suit/#comments</comments> <pubdate>Wed, 05 Aug 2015 12:16:39 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[FCT]]--></category> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[senate]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281496</guid> <description><!--[CDATA[<p-->A Federal High Court in Abuja has been urged to dismiss a suit by Sen. Gilbert Nnaji (PDP-Enugu East), seeking to stop investigation into alleged forgery of Senate Standing Rules. The Inspector-General of Police, Mr Solomon Arase, sought the order on Tuesday while showing cause why Nnaji’s ex-parte application should not be granted, Arase challenged […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/senate-forgery-ig-of-police-urges-court-to-dismiss-suit/">Senate forgery: IG of Police urges court to dismiss suit</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/senate-forgery-ig-of-police-urges-court-to-dismiss-suit/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Appointing Amaechi as Minister means Buhari is anti-people, targeting our members – PDP</title><link>http://dailypost.ng/2015/08/05/appointing-amaechi-as-minister-means-buhari-is-anti-people-targeting-our-members-pdp/ <comments>http://dailypost.ng/2015/08/05/appointing-amaechi-as-minister-means-buhari-is-anti-people-targeting-our-members-pdp/#comments</comments> <pubdate>Wed, 05 Aug 2015 11:48:56 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Main Headline]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Rivers]]--></category> <category><!--[CDATA[buhari]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281489</guid> <description><!--[CDATA[<p-->The Peoples Democratic Party, PDP, in Rivers State, has said that it would amount to glorifying corruption, if claims by the immediate past governor of the state, Hon Rotimi Amaechi, that President Muhammadu Buhari is begging him to accept appointment as minister or Secretary to the Government of the Federation, SGF, is anything to go […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/appointing-amaechi-as-minister-means-buhari-is-anti-people-targeting-our-members-pdp/">Appointing Amaechi as Minister means Buhari is anti-people, targeting our members – PDP</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/appointing-amaechi-as-minister-means-buhari-is-anti-people-targeting-our-members-pdp/feed/</wfw:commentrss> <slash:comments>7</slash:comments> </item> <item><title>PDP accuses APC of trying to evade justice by begging monarchs</title><link>http://dailypost.ng/2015/08/05/pdp-accuses-apc-of-trying-to-evade-justice-by-begging-monarchs/ <comments>http://dailypost.ng/2015/08/05/pdp-accuses-apc-of-trying-to-evade-justice-by-begging-monarchs/#comments</comments> <pubdate>Wed, 05 Aug 2015 09:41:05 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[Ekiti]]--></category> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[PDP]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281442</guid> <description><!--[CDATA[<p-->Ekiti State chapter of the Peoples Democratic Party, PDP, has accused the leaders of the All Progressives Congress, APC, of urging some notable monarchs and other influential indigenes of the state to intervene in the murder cases filed against its members. The ruling party in the state alleged that the APC had approached no fewer […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/pdp-accuses-apc-of-trying-to-evade-justice-by-begging-monarchs/">PDP accuses APC of trying to evade justice by begging monarchs</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/pdp-accuses-apc-of-trying-to-evade-justice-by-begging-monarchs/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Policemen take over PDP secretariat as party faults staff’s action</title><link>http://dailypost.ng/2015/08/05/policemen-take-over-pdp-secretariat-as-party-faults-staffs-action/ <comments>http://dailypost.ng/2015/08/05/policemen-take-over-pdp-secretariat-as-party-faults-staffs-action/#comments</comments> <pubdate>Wed, 05 Aug 2015 07:18:40 +0000</pubdate> <dc:creator><!--[CDATA[Wale Odunsi]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[PDP]]--></category> <category><!--[CDATA[policemen]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281409</guid> <description><!--[CDATA[<p-->The ongoing face-off between workers of the national secretariat of the Peoples Democratic Party (PDP) in Abuja, and the party’s National Working Committee (NWC), has led to deployment of policemen at the secretariat. The workers are protesting alleged corrupt practices of the party leaders and they have threatened to drag them to the Economic and […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/policemen-take-over-pdp-secretariat-as-party-faults-staffs-action/">Policemen take over PDP secretariat as party faults staff’s action</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/policemen-take-over-pdp-secretariat-as-party-faults-staffs-action/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Yakasai bemoans exclusion of South-East from National Assembly leadership</title><link>http://dailypost.ng/2015/08/04/yakasai-bemoans-exclusion-of-south-east-from-national-assembly-leadership/ <comments>http://dailypost.ng/2015/08/04/yakasai-bemoans-exclusion-of-south-east-from-national-assembly-leadership/#comments</comments> <pubdate>Tue, 04 Aug 2015 20:18:27 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[Politics]]--></category> <category><!--[CDATA[Alhaji Tanko Yakasai]]--></category> <category><!--[CDATA[National Assembly]]--></category> <category><!--[CDATA[South East]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281289</guid> <description><!--[CDATA[<p-->A former Presidential Adviser and delegate to the 2014 National Conference, Alhaji Tanko Yakasai, has cautioned that the exclusion of South-East lawmakers from leadership positions in the National Assembly may constitute a threat to the unity of the country. Yakasai, who stated this while addressing newsmen in Kano on Tuesday, described the sharing of positions […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/04/yakasai-bemoans-exclusion-of-south-east-from-national-assembly-leadership/">Yakasai bemoans exclusion of South-East from National Assembly leadership</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/04/yakasai-bemoans-exclusion-of-south-east-from-national-assembly-leadership/feed/</wfw:commentrss> <slash:comments>4</slash:comments> </item> </atom:link></channel> </rss></body></html>
