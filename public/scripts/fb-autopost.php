@@ -9,7 +9,7 @@ if(php_sapi_name() == 'cli') {
 } else {
     $line_break = '<br>';
 }
-
+date_default_timezone_set('Africa/Lagos');
 // require Facebook PHP SDK
 require_once("../libraries/facebook-php-sdk/src/facebook.php"); // configure /path/to/... appropriately
 

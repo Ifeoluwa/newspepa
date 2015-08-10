@@ -3,10 +3,10 @@
     <head>
      <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
-        <title>@yield('title')</title>
+        <title>@yield('title') | Newspepa</title>
         <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-        <link rel="stylesheet" href="ui_newspaper/css/opera-app23.css" />
+        <link rel="stylesheet" href="ui_newspaper/css/opera-app26.css" />
         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
@@ -41,8 +41,10 @@
              <li id="3"><a href="{{url('latest-nigeria-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Nigeria</a></li>
              <li id="4"><a href="{{url('latest-politics-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Politics</a></li>
              <li id="5"><a href="{{url('latest-entertainment-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Entertainment</a></li>
+             <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Business</a></li>
              <li id="6"><a href="{{url('latest-sports-news-in-nigeria')}}"  style="color:#ffffff; font-size: 15px;font-weight: bold">Sports</a></li>
              <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Metro</a></li>
+
    </ul>
     </div>
 
@@ -68,17 +70,20 @@
 
         <footer class="row">
                  <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
-                          <li id="1" ><a href="{{url('/')}}">Home</a></li>
-                          <li id="2" ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
-                           <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
-                           <li id="4"><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
-                           <li id="5"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a></li>
-                           <li id="6"><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
-                           <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
-                           <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
-                           <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
-                           <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
-                           <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
+                       <li id="1" ><a href="{{url('/')}}">Home</a></li>
+                            <li id="2" ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
+                             <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
+                             <li id="4"><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
+                             <li id="5"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
+                             <li id="6"><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
+                             <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+                             <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
+                             <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
+                             <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
+                             <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
+                             <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
+                             <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
+                             <li id="8"><a href="{{url('/publishers')}}">More&raquo;</a>
                  </ul>
         </footer>
 

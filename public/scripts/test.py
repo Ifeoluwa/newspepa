@@ -12,7 +12,6 @@ def similar(seq1, seq2):
 try:
     clustered = []
     data = json.loads(sys.argv[1])
-
     old_stories = data[0]
     new_stories = data[1]
 
@@ -30,6 +29,7 @@ try:
         clustered.append(new)
 
     print clustered
+
 
     # result = similar(data[0], data[1])
 except:

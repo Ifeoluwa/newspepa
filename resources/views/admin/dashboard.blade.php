@@ -8,6 +8,11 @@
     <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet"/>
 @stop
 
+@section('page-header-icon', 'fa-laptop') @stop
+
+@section('page-header', 'Dashboard')
+@stop
+
 @section('icon', 'fa-home')
 @stop
 

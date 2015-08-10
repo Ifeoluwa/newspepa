@@ -272,6 +272,8 @@ class TimelineStoryController extends Controller
 
         $query = $this->client->createSelect();
         $query->setQuery($search_query);
+        $query->setRows(200);
+        $query->setFields(array('id', 'title_en', 'description_en', 'image_url_t', 'video_url_t', 'url', 'pub_id_i', 'has_cluster_i', 'links'));
         $dismax = $query->getDisMax();
         $dismax->setQueryFields('title_en^3 description_en^3');
         $query->addSort('score',$query::SORT_DESC);
@@ -281,15 +283,13 @@ class TimelineStoryController extends Controller
         $z = 0;
         foreach($resultSet as $doc)
         {
-//            $title1 = mb_convert_encoding($doc->title_en[0], "UTF-8", "Windows-1252");
-//            $title1 = html_entity_decode($title, ENT_QUOTES, "UTF-8");
             $j = 0;
             for($i = 0; $i < count($search_query_array); ++$i) {
                 if (strpos(strtolower($doc->title_en[0]), strtolower($search_query_array[$i])) !== false) {
                     $j = $j + 1;
                 }
             }
-            if ($j >= (count($search_query_array) - 2)){
+            if ($j >= (count($search_query_array) - 1)){
 
                 $arr = array();
                 $arr['story_id'] = $doc->id;
@@ -300,6 +300,11 @@ class TimelineStoryController extends Controller
                 $arr['url'] = $doc->url;
                 $arr['pub_id'] = $doc->pub_id_i;
                 $arr['has_cluster'] = $doc->has_cluster_i;
+                if(trim($doc->links[0]) == ''){
+                    $arr['created_date'] = '';
+                }else{
+                    $arr['created_date'] = date('Y-m-d H:i:s', intval($doc->links[0]));
+                }
 
                 array_push($search_result, $arr);
                 $z = $z + 1;

@@ -52,6 +52,15 @@ class DashboardController extends Controller
         }
     }
 
+//    public function getStoryStats(){
+//        $today_views;
+//        $today_linkouts;
+//        $total_views;
+//        $total_linkouts;
+//        $total_stories;
+//        $today_stories
+//    }
+
 
 
 

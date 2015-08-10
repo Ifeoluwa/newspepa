@@ -8,85 +8,111 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Category;
 use App\Publisher;
 use App\Story;
 use App\TimelineStory;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Solarium\Core\Client\Adapter;
 use Solarium\Core\Client;
 
+
 class StoryController extends Controller {
 
 
-    //handles the addition of story to the database
-    public function addStory(){
+    protected $client;
+
+    public function newCreateTimelineStory(){
+        set_time_limit(0);
+        $this->client = new \Solarium\Client;
+        // Stories to Timeline Stories
+        $pivots = Story::pivots();
+        $timeline_stories = array();
+
+        foreach($pivots as $pivot){
+
+            $pivot['story_url'] = $this->makeStoryUrl($pivot['title'], $pivot['cluster_pivot']);
+            $pivot['story_id'] = $pivot['cluster_pivot'];
+            $pivot = array_except($pivot, ['id', 'cluster_pivot', 'cluster_match']);
+
+            $pivot['is_pivot'] = 1;
+            $date = new \DateTime('now');
+            $id = TimelineStory::insertIgnore($pivot);
+            if($id !== false){
+                $updateQuery = $this->client->createUpdate();
+                $story1 = $updateQuery->createDocument();
+                $story1->id = $pivot['story_id']; //return the id of the insert from PDO query and attach it here
+                $story1->title_en = $pivot['title'];
+                $story1->description_en = $pivot['description'];
+                if(isset($story['image_url'])){
+                    $story1->image_url_t = $pivot['image_url'];
+                }else{
+                    $story1->image_url_t = '';
+                }
+                $story1->video_url_t = '';
+                $story1->url = $pivot['url'];
+                $story1->pub_id_i = $pivot['pub_id'];
+                $story1->has_cluster_i = 1;
+                $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
+                //do this for all stories and keep adding them to the stories array
+                $updateQuery->addDocument($story1);
+                $updateQuery->addCommit();
+
+                $result = $this->client->update($updateQuery);
+            }
+            array_push($timeline_stories, $pivot);
+
+
+        }
+
+        set_time_limit(120);
+
+        var_dump('Sparky! Done Inserting into timeline_stories table');
 
     }
 
-//    public function createTimelineStory(){
-//        set_time_limit(0);
-//        // Stories to Timeline Stories
-//
-//        DB::transaction(function(){
-//            $stories = DB::table('stories')->where('status_id', 1)->get();
-//            foreach($stories as $story){
-//                $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
-//                $story['story_id'] = $story['id'];
-//                $timeline_story = array_except($story, ['id']);
-//                TimelineStory::insertIgnore($timeline_story);
-//            }
-//
-//        });
-//
-//        // Cluster-Pivot Method
-////        $pivots = Story::pivots();
-////
-////        foreach($pivots as $pivot){
-////
-////            $pivot['story_url'] = $this->makeStoryUrl($pivot['title'], $pivot['cluster_pivot']);
-////            $pivot['story_id'] = $pivot['cluster_pivot'];
-////            array_pull($pivot, 'cluster_pivot');
-////            array_pull($pivot, 'cluster_match');
-////
-////
-////            $pivot['is_pivot'] = 1;
-////
-////            TimelineStory::insertIgnore($pivot);
-////            $matches = Story::matches($pivot['story_id']);
-////
-////            foreach($matches as $match){
-////
-////                $match['story_url'] = $this->makeStoryUrl($match['title'], $match['cluster_match']);
-////                $match['story_id'] = $match['cluster_match'];
-////                array_pull($match, 'cluster_pivot');
-////                array_pull($match, 'cluster_match');
-////
-////                TimelineStory::insertIgnore($match);
-////            }
-////
-////        }
-//
-//        set_time_limit(120);
-//
-//    }
-
-    //
+    // Insersts pivto into the timeline stories and also inserts into Solr
     public function createTimelineStory(){
-        DB::transaction(function(){
-            $stories = Story::pivots();
-            foreach($stories as $story){
-                $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
-                $story['story_id'] = $story['id'];
-                $timeline_story = array_except($story, ['id', 'cluster_match', 'cluster_pivot']);
-                TimelineStory::insertIgnore($timeline_story);
-            }
+        set_time_limit(0);
+        // Stories to Timeline Stories
+        //solr insert
+        $this->client = new \Solarium\Client;
 
-        });
+        $stories = DB::table('stories')->where('status_id', 1)->get();
+        foreach($stories as $story){
+            $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
+            $story['story_id'] = $story['id'];
+            $timeline_story = array_except($story, ['id']);
+            $id = TimelineStory::insertIgnore($timeline_story);
+            $date = new \DateTime('now');
+
+            if($id !== false){
+                $updateQuery = $this->client->createUpdate();
+                $story1 = $updateQuery->createDocument();
+                $story1->id = $story['story_id']; //return the id of the insert from PDO query and attach it here
+                $story1->title_en = $story['title'];
+                $story1->description_en = $story['description'];
+                if(isset($story['image_url'])){
+                    $story1->image_url_t = $story['image_url'];
+                }else{
+                    $story1->image_url_t = '';
+                }
+                $story1->video_url_t = '';
+                $story1->url = $story['url'];
+                $story1->pub_id_i = $story['pub_id'];
+                $story1->has_cluster_i = 1;
+                $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
+                //do this for all stories and keep adding them to the stories array
+                $updateQuery->addDocument($story1);
+                $updateQuery->addCommit();
+
+                $result = $this->client->update($updateQuery);
+            }
+        }
+
     }
 
 
@@ -104,7 +130,7 @@ class StoryController extends Controller {
 
     public static function getOldStories(){
         $stories = DB::table('clusters')
-            ->join('stories', 'clusters.cluster_pivot',  '=',  'stories.id')->select('stories.id as id', 'stories.title as title', 'stories.description as description')
+            ->join('stories', 'clusters.cluster_pivot',  '=',  'stories.id')->select(DB::raw('DISTINCT(clusters.cluster_pivot) as id, stories.title as title, stories.description as description'))
             ->whereBetween('clusters.created_date', [new \DateTime('-12hours'), new \DateTime('now')])->get();
 
         return StoryController::prepareStories($stories);
@@ -113,25 +139,20 @@ class StoryController extends Controller {
 
     public static function prepareStories($stories){
         $clean_stories = array();
+        $each_story = array();
         foreach($stories as $story){
-            $story['title'] = strip_tags($story['title']);
-            $story['title'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['title']);
+            $each_story['id'] = $story['id'];
+            $each_story['title'] = strip_tags($story['title']);
+            $each_story['title'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['title']);
             $title = mb_convert_encoding($story['title'], "UTF-8", "Windows-1252");
-            $story['title'] = html_entity_decode($title, ENT_QUOTES, "UTF-8");
+            $each_story['title'] = html_entity_decode($title, ENT_QUOTES, "UTF-8");
 
-            $story['title'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['title']);
-
-            //$desc = mb_convert_encoding($story['description'], "UTF-8", "Windows-1252");
-            //$story['description'] = html_entity_decode($desc, ENT_QUOTES, "UTF-8");
-
-            //$story['description'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $data['description']);
-
-            $story['description'] = strip_tags($story['description']);
-            $story['description'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['description']);
+            $each_story['description'] = strip_tags($story['description']);
+            $each_story['description'] = preg_replace('/[^a-zA-Z0-9_ %\[\]\.\(\)%&-]/s', '', $story['description']);
             $desc = mb_convert_encoding($story['description'], "UTF-8", "Windows-1252");
-            $story['description'] = html_entity_decode($desc, ENT_QUOTES, "UTF-8");
+            $each_story['description'] = html_entity_decode($desc, ENT_QUOTES, "UTF-8");
 
-            array_push($clean_stories, $story);
+            array_push($clean_stories, $each_story);
         }
         return $clean_stories;
     }
@@ -139,9 +160,12 @@ class StoryController extends Controller {
     public static function matchStories($old_stories, $new_stories){
         $data = array($old_stories, $new_stories);
         $result = exec('python /var/www/html/newspepa/public/scripts/test.py ' . escapeshellarg(json_encode($data)));
-        return json_decode($result, true);
-    }
+        if($result !== null){
+            return json_decode($result, true);
+        }
+        return [];
 
+    }
 
     //admin functionalities from here
     public function solrInsert($data){
@@ -164,7 +188,11 @@ class StoryController extends Controller {
         $story1->has_cluster_i = 1;
         $story1->links = $date->getTimestamp();
 
+
         $updateQuery->addDocument($story1);
+        $updateQuery->addCommit();
+
+        $result = $this->client->update($updateQuery);
     }
 
     public function adminPost(Request $request){
@@ -177,7 +205,7 @@ class StoryController extends Controller {
             $story_details['description'] = $request->input('description');
             $story_details['pub_id'] = $request->input('publisher');
             $story_details['category_id'] = $request->input('category');
-            $story_details['description'] = $request->input('description')."\n";
+            $story_details['description'] = $request->input('description')."<br>";
 
             if($request->hasFile('story_images')){
                 $first_image_name = $request->file('story_images')[0]->getClientOriginalName();
@@ -188,13 +216,13 @@ class StoryController extends Controller {
                     $image_path = "story_images/".$image_name;
                     $story_image->move(base_path() .'/public/story_images', $image_name);
                     if($count >= 2){
-                        $story_details['description'] .= "<img src='".$image_path."'></br>";
+                        $story_details['description'] .= "<img src='".$image_path."'><br>";
 
                     }
                     $count++;
                 }
             }
-//            $story_details['description'] = htmlentities($story_details['description']);
+
             $story_details['pub_date'] = $date;
             $story_details['has_cluster'] = 1;
             $story_details['created_date'] = $date;
@@ -213,7 +241,7 @@ class StoryController extends Controller {
                     $result = DB::getPdo()->lastInsertId();
                 }
 
-                if($result != false){
+                if($result !== false){
                     $story_details['id'] = $result;
                     $this->solrInsert($story_details);
                     return view('dashboard');
@@ -372,5 +400,16 @@ class StoryController extends Controller {
 
     }
 
+    public function getStoriesCount(){
 
-} 
+    }
+
+    public function getNumberNoViews(){
+
+    }
+
+    public function getNumberOfLinkouts(){
+
+    }
+
+}

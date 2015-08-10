@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS `status`(
 INSERT INTO `status` (`id`, `status_name`, `active_fg`, `created_date`, `modified_date`) VALUES
   (1, 'ACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
   (2, 'INACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
-  (3, 'MATCHED', 1, '2015-06-26 12:37:26', '2015-06-26 12:37:26');
+  (3, 'MATCHED', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
+  (4, 'SCHEDULED', 1, '2015-06-26 12:37:26', '2015-06-26 12:37:26');
 
 # Status table structure
 CREATE TABLE IF NOT EXISTS `categories` (
