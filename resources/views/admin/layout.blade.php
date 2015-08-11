@@ -346,7 +346,7 @@
               <!--overview start-->
 			  <div class="row">
 				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-laptop"></i> @yield('page-header')</h3>
+					<h3 class="page-header"><i class="fa @yield('page-header-icon')"></i> @yield('page-header')</h3>
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="{{url('admin/dashboard')}}">Home</a></li>
 						<li><i class="fa @yield('icon')"></i>@yield('beadcrumb-header')</li>

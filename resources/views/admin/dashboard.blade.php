@@ -8,6 +8,11 @@
     <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet"/>
 @stop
 
+@section('page-header-icon', 'fa-laptop') @stop
+
+@section('page-header', 'Dashboard')
+@stop
+
 @section('icon', 'fa-home')
 @stop
 
@@ -15,6 +20,38 @@
 
 
 @section('main-content')
+
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box blue-bg">
+						<i class="fa fa-eye"></i>
+						<div class="count">{{$data['story_stats']['today_views']}}</div>
+						<div class="title">Today Views</div>
+					</div><!--/.info-box-->
+				</div><!--/.col-->
+
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box brown-bg">
+						<i class="fa fa-link"></i>
+						<div class="count">{{$data['story_stats']['today_linkouts']}}</div>
+						<div class="title">Today Linkouts</div>
+					</div><!--/.info-box-->
+				</div><!--/.col-->
+
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box dark-bg">
+						<i class="fa fa-eye"></i>
+						<div class="count">{{$data['story_stats']['total_views']}}</div>
+						<div class="title">Total Views</div>
+					</div><!--/.info-box-->
+				</div><!--/.col-->
+
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box green-bg">
+						<i class="fa fa-link"></i>
+						<div class="count">{{$data['story_stats']['total_linkouts']}}</div>
+						<div class="title">Total Linkouts</div>
+					</div><!--/.info-box-->
+				</div><!--/.col-->
 <table id="storyTable" class="table table-hover table-condensed">
     <thead>
         <tr>

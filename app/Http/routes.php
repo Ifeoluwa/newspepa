@@ -20,7 +20,7 @@ Route::get('test', 'FeedController@test');
 Route::get('hello', function(){
     return view('admin.new_post');
 });
-Route::get('timeline', 'StoryController@createTimelineStory');
+Route::get('timeline', 'StoryController@newCreateTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
 
@@ -34,6 +34,10 @@ Route::get('about', function(){
 
 Route::get('publishers-list', function(){
     return view('major.publishersList');
+});
+
+Route::get('date', function(){
+    var_dump(new DateTime('today', new DateTimeZone('Africa/Lagos')));
 });
 
 

@@ -14,6 +14,11 @@
     </style>
 @stop
 
+@section('page-header-icon', 'fa-edit') @stop
+
+@section('page-header', 'Edit Story')
+@stop
+
 @section('icon', 'fa-edit')
 @stop
 

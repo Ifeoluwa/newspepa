@@ -232,3 +232,28 @@ CREATE TABLE IF NOT EXISTS `trackings`(
   CONSTRAINT fk_tracking_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS `linkouts` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `session_key` VARCHAR(255) NOT NULL,
+  `no_of_linkouts` INT NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `views` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `session_key` VARCHAR(255) NOT NULL,
+  `no_of_views` INT NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `story_id`  INT NOT NULL,
+  `session_key` VARCHAR(255) NOT NULL,
+  `user_name` VARCHAR(50) NOT NULL,
+  `comment` TEXT NOT NULL,
+  CONSTRAINT fk_comment_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
