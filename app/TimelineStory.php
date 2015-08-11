@@ -159,13 +159,6 @@ class TimelineStory extends Model
             DB::table('views')->insert($view);
         }
 
-
-        $result = DB::table('views')
-            ->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])
-            ->increment('no_of_views');
-        if($result !== true){
-            DB::table('views')->insert();
-        }
     }
 
     public static function updateStoryLinkOuts($story_id, $time){

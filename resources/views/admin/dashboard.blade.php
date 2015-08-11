@@ -70,7 +70,7 @@
         <td>{{$row['title']}}</td>
         <td>{{$data['categories'][$row['category_id']]}}</td>
         <td>{{$data['publishers'][$row['pub_id']]}}</td>
-        <td>{{$row['created_date']}}</td>
+        <td>{{$row['created_date'] }}</td>
         <td>{{$row['no_of_views']}}</td>
         <td>{{$row['link_outs']}}</td>
         <td>{{$row['rank_score']}}</td>
