@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Faker\Provider\zh_TW\DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -150,6 +151,12 @@ class TimelineStory extends Model
 
         DB::update("UPDATE timeline_stories SET last_view_time = :last_view_time WHERE story_id = :story_id", $params);
 
+        $result = DB::table('views')
+            ->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])
+            ->increment('no_of_views');
+        if($result !== true){
+            DB::table('views')->insert();
+        }
     }
 
     public static function updateStoryLinkOuts($story_id, $time){

@@ -18,7 +18,7 @@ Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
 Route::get('test', 'FeedController@test');
 Route::get('hello', function(){
-    return view('admin.new_post');
+    var_dump(new DateTime('tomorrow'));
 });
 Route::get('timeline', 'StoryController@newCreateTimelineStory');
 
