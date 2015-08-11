@@ -82,8 +82,7 @@ class StoryController extends Controller {
         // Stories to Timeline Stories
         //solr insert
         $this->client = new \Solarium\Client;
-        $stories_array = array();//bulk solr index araay
-        $updateQuery = $this->client->createUpdate();
+        $stories_array = array();
         // DB::transaction(function(){
         $stories = DB::table('stories')->where('status_id', 1)->get();
         foreach($stories as $story){
@@ -95,6 +94,7 @@ class StoryController extends Controller {
 
             if($id !== false){
                 try{
+                    $updateQuery = $this->client->createUpdate();
                     $story1 = $updateQuery->createDocument();
                     $story1->id = $story['story_id']; //return the id of the insert from PDO query and attach it here
                     $story1->title_en = $story['title'];
@@ -112,21 +112,14 @@ class StoryController extends Controller {
                     //do this for all stories and keep adding them to the stories array
                     //when done continue to the nest line
                     //                array_push($stories_array, $story1);
-                    array_push($stories_array, $story1);
+                    $updateQuery->addDocument($story1);
+                    $updateQuery->addCommit();
+
+                    $result = $this->client->update($updateQuery);
                 }
                 catch(\Exception $ex){
                     continue;
                 }
-            }
-        }
-        if(!empty($stories_array)){
-            try{
-                $updateQuery->addDocuments($stories_array);
-                $updateQuery->addCommit();
-
-                $result = $this->client->update($updateQuery);
-            }catch(\Exception $ex){
-                echo $ex->getMessage();
             }
         }
 
