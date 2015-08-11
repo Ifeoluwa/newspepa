@@ -82,7 +82,8 @@ class StoryController extends Controller {
         // Stories to Timeline Stories
         //solr insert
         $this->client = new \Solarium\Client;
-        $stories_array = array();
+        $stories_array = array();//bulk solr index araay
+        $updateQuery = $this->client->createUpdate();
         // DB::transaction(function(){
         $stories = DB::table('stories')->where('status_id', 1)->get();
         foreach($stories as $story){
@@ -93,28 +94,39 @@ class StoryController extends Controller {
             $date = new \DateTime('now');
 
             if($id !== false){
-                $updateQuery = $this->client->createUpdate();
-                $story1 = $updateQuery->createDocument();
-                $story1->id = $story['story_id']; //return the id of the insert from PDO query and attach it here
-                $story1->title_en = $story['title'];
-                $story1->description_en = $story['description'];
-                if(isset($story['image_url'])){
-                    $story1->image_url_t = $story['image_url'];
-                }else{
-                    $story1->image_url_t = '';
+                try{
+                    $story1 = $updateQuery->createDocument();
+                    $story1->id = $story['story_id']; //return the id of the insert from PDO query and attach it here
+                    $story1->title_en = $story['title'];
+                    $story1->description_en = $story['description'];
+                    if(isset($story['image_url'])){
+                        $story1->image_url_t = $story['image_url'];
+                    }else{
+                        $story1->image_url_t = '';
+                    }
+                    $story1->video_url_t = '';
+                    $story1->url = $story['url'];
+                    $story1->pub_id_i = $story['pub_id'];
+                    $story1->has_cluster_i = 1;
+                    $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
+                    //do this for all stories and keep adding them to the stories array
+                    //when done continue to the nest line
+                    //                array_push($stories_array, $story1);
+                    array_push($stories_array, $story1);
                 }
-                $story1->video_url_t = '';
-                $story1->url = $story['url'];
-                $story1->pub_id_i = $story['pub_id'];
-                $story1->has_cluster_i = 1;
-                $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
-                //do this for all stories and keep adding them to the stories array
-                //when done continue to the nest line
-//                array_push($stories_array, $story1);
-                $updateQuery->addDocument($story1);
+                catch(\Exception $ex){
+                    continue;
+                }
+            }
+        }
+        if(!empty($stories_array)){
+            try{
+                $updateQuery->addDocuments($stories_array);
                 $updateQuery->addCommit();
 
                 $result = $this->client->update($updateQuery);
+            }catch(\Exception $ex){
+                echo $ex->getMessage();
             }
         }
 
@@ -281,7 +293,7 @@ class StoryController extends Controller {
                 if($result !== false){
                     $story_details['id'] = $result;
                     $this->solrInsert($story_details);
-                    return view('dashboard');
+                    return redirect('admin/story/new')->with('success', "Story has been successfully added");
                 }
             }
             return redirect('admin/story/new')->with('success', "Story has been successfully added");
