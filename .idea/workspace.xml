@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="5708d86f-5eec-452f-b0e8-acbcee3fd2e0" name="Failed commit: Default" comment="Modified some part of the views" />
-    <list default="true" id="712fb5a0-2f84-4927-acc6-db26fcf45258" name="Failed commit: Default (2)" comment="Modified the database to accomodate comments, views (per) day and linkout per day">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="481f559c-47b6-49cc-9408-a8c3764e5dff" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StoryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StoryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/TimelineStory.php" afterPath="$PROJECT_DIR$/app/TimelineStory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/installation_script.sql" afterPath="$PROJECT_DIR$/database/installation_script.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="newspepa.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
-    <option name="SHOW_DIALOG" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
@@ -22,161 +30,266 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_TOOLBAR" value="true" />
-    <option name="FLATTEN" value="false" />
-    <option name="GROUP_BY_TYPE" value="true" />
-    <option name="SORT_CHILDREN" value="false" />
-    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="newspepa" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TimelineStoryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="7752">
-              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-              <folding>
-                <marker date="1438814168979" expanded="true" signature="12320:12413" placeholder="UPDATE timel..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeedController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6865" max-vertical-offset="7446">
-              <caret line="383" column="42" selection-start-line="383" selection-start-column="42" selection-end-line="383" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="935">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="installation_script.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database/installation_script.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57664233" vertical-offset="3951" max-vertical-offset="4522">
-              <caret line="251" column="39" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Authenticate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="884">
-              <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RedirectIfAuthenticated.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="816">
-              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthenticatesAndRegistersUsers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="272">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthenticatesUsers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="2686">
-              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="935" max-vertical-offset="1394">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTableSeeder.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="476">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.4544702">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1602">
+                  <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AuthenticatesUsers.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="2238" max-vertical-offset="2844">
+                  <caret line="130" column="84" selection-start-line="130" selection-start-column="79" selection-end-line="130" selection-end-column="84" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="FeedController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.07692308" vertical-offset="439" max-vertical-offset="7740">
+                  <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#6#101#0#PHP" expanded="true" />
+                    <element signature="e#184#200#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="6253" max-vertical-offset="7092">
+                  <caret line="359" column="32" selection-start-line="359" selection-start-column="32" selection-end-line="359" selection-end-column="32" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Comment.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Comment.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="288">
+                  <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CommentController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1728">
+                  <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="181" max-vertical-offset="1782">
+                  <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fullStory.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/minor/fullStory.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1818">
+                  <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="installation_script.sql" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/database/installation_script.sql">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="4572" max-vertical-offset="4770">
+                  <caret line="254" column="18" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MySQL - newspep_newspepadb@localhost" pinned="false" current-in-tab="false">
+            <entry file="dbDummy://db-console:/ea5995ae/8b88c057-f295-4dc0-965b-c1dc5614bf43/">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="558">
+                  <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="PublisherController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PublisherController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="468">
+                  <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#40#58#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TimelineStory.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.34273317" vertical-offset="2830" max-vertical-offset="6084">
+                  <caret line="167" column="10" selection-start-line="167" selection-start-column="10" selection-end-line="167" selection-end-column="10" />
+                  <folding>
+                    <marker date="1439225967933" expanded="true" signature="6595:6682" placeholder="UPDATE timel..." />
+                    <marker date="1439225967933" expanded="true" signature="7385:7478" placeholder="UPDATE timel..." />
+                    <marker date="1439225967933" expanded="true" signature="12250:12365" placeholder="UPDATE timel..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="529" max-vertical-offset="1206">
+                  <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StoryController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="7740">
+                  <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#135#152#0#PHP" expanded="true" />
+                    <marker date="1439223803873" expanded="true" signature="11326:11463" placeholder="INSERT INTO ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="newStory.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/admin/newStory.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1151" max-vertical-offset="3402">
+                  <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
   </component>
+  <component name="FrameworkCommandLineHistory">
+    <commandsHistory>
+      <command text="php artisan server" />
+      <command text="php artisan serve" />
+      <command text="php /var/www/html/newspepa/public/scripts/first_match.php" />
+    </commandsHistory>
+  </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/public/newspepa_cms/overall.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/css.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/editor.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/image-reselect" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/imgareaselect.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/jquery.qtip.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/loadstyles.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/featured-image.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/css/load-styles.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/js/json2.min.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin/admindashboard.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/new_post.blade.php" />
+        <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/partials/errors.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/Publisher.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PublisherController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/resources/views/editStory.blade.php" />
+        <option value="$PROJECT_DIR$/app/Category.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/confirmDelete.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/partials/failure.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/partials/success.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/major/layout.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/editStory.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/actions.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/newStory.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/major/fullStory.blade.php" />
+        <option value="$PROJECT_DIR$/public/scripts/test.py" />
+        <option value="$PROJECT_DIR$/public/scripts/first_match.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
+        <option value="$PROJECT_DIR$/resources/views/minor/fullStory.blade.php" />
         <option value="$PROJECT_DIR$/database/installation_script.sql" />
+        <option value="db-console:/ea5995ae/8b88c057-f295-4dc0-965b-c1dc5614bf43/" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
+        <option value="$PROJECT_DIR$/app/Linkout.php" />
+        <option value="$PROJECT_DIR$/app/View.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StoryController.php" />
+        <option value="$PROJECT_DIR$/app/TimelineStory.php" />
       </list>
     </option>
   </component>
   <component name="JsGulpfileManager">
-    <gulpfiles>
-      <GulpfileState>
-        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
-      </GulpfileState>
-    </gulpfiles>
     <initial>false</initial>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="y" value="28" />
+    <option name="width" value="1366" />
+    <option name="height" value="707" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -203,11 +316,27 @@
     </navigator>
     <panes>
       <pane id="Scope">
-        <subPane subId="Problems" />
-        <subPane subId="Tests" />
         <subPane subId="Project Files">
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="newspepa">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="newspepa">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -232,43 +361,183 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jideowosakin" />
-    <property name="options.lastSelected" value="vcs.Git" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="94" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="109" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="115" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1018" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="94" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="109" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="115" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1018" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="LayoutCode.rearrangeEntriesCSS" value="false" />
     <property name="LayoutCode.rearrangeEntriesBlade" value="false" />
-    <property name="database.results.filters.show" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="LayoutCode.rearrangeEntriesXML" value="false" />
-    <property name="editorconfig.notification" value="Applied .editorconfig settings" />
-    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\newspepa\public\scripts" />
-      <recent name="C:\wamp\www\newspepa\public\ui_newspaper\css" />
-      <recent name="C:\wamp\www\newspepa\database" />
+      <recent name="$PROJECT_DIR$/public/newspepa_cms" />
+      <recent name="$PROJECT_DIR$/public/newspepa_cms/css" />
+      <recent name="$PROJECT_DIR$/public/scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\newspepa\resources\views\main" />
-      <recent name="C:\wamp\www\newspepa\resources\views\opera" />
-      <recent name="C:\wamp\www\newspepa\public" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/partials" />
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/resources/views/auth" />
+      <recent name="$PROJECT_DIR$/public/newspepa_cms/js" />
+      <recent name="$PROJECT_DIR$/public/newspepa_cms/css" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="false" name="StoryController.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
-      <RunnerSettings RunnerId="PhpRunner" />
-      <ConfigurationWrapper RunnerId="PhpRunner" />
-      <method />
-    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -279,8 +548,17 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
+    <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -291,12 +569,7 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="PHP Script.StoryController.php" />
-    </list>
+    <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -304,1000 +577,193 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <created>1434547982195</created>
+      <changelist id="481f559c-47b6-49cc-9408-a8c3764e5dff" name="Default" comment="" />
+      <created>1436087552455</created>
       <option name="number" value="Default" />
-      <updated>1434547982195</updated>
+      <updated>1436087552455</updated>
     </task>
-    <task id="LOCAL-00001" summary="Newspepa Set Up completed">
-      <created>1434551168590</created>
+    <task id="LOCAL-00001" summary="Commit">
+      <created>1438018006283</created>
       <option name="number" value="00001" />
       <option name="project" value="LOCAL" />
-      <updated>1434551168590</updated>
+      <updated>1438018006284</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added database installation script">
-      <created>1434553216403</created>
+    <task id="LOCAL-00002" summary="New implementation of matching">
+      <created>1438091124023</created>
       <option name="number" value="00002" />
       <option name="project" value="LOCAL" />
-      <updated>1434553216403</updated>
+      <updated>1438091124023</updated>
     </task>
-    <task id="LOCAL-00003" summary="Updated the db installation script and added feed_sources file">
-      <created>1434635543260</created>
+    <task id="LOCAL-00003" summary="New implementation of matching">
+      <created>1438091248695</created>
       <option name="number" value="00003" />
       <option name="project" value="LOCAL" />
-      <updated>1434635543260</updated>
+      <updated>1438091248695</updated>
     </task>
-    <task id="LOCAL-00004" summary="Corrected the installation script and added some other files">
-      <created>1434719571608</created>
+    <task id="LOCAL-00004" summary="First Commit">
+      <created>1438097317720</created>
       <option name="number" value="00004" />
       <option name="project" value="LOCAL" />
-      <updated>1434719571608</updated>
+      <updated>1438097317721</updated>
     </task>
-    <task id="LOCAL-00005" summary="Working  on the Parser.">
-      <created>1434731855270</created>
+    <task id="LOCAL-00005" summary="Worked on the matching">
+      <created>1438154635122</created>
       <option name="number" value="00005" />
       <option name="project" value="LOCAL" />
-      <updated>1434731855270</updated>
+      <updated>1438154635122</updated>
     </task>
-    <task id="LOCAL-00006" summary="Created the required controllers and models for now.">
-      <created>1434973208681</created>
+    <task id="LOCAL-00006" summary="Commit commit">
+      <created>1438159213203</created>
       <option name="number" value="00006" />
       <option name="project" value="LOCAL" />
-      <updated>1434973208681</updated>
+      <updated>1438159213203</updated>
     </task>
-    <task id="LOCAL-00007" summary="Added a dump of my database">
-      <created>1434973607732</created>
+    <task id="LOCAL-00007" summary="Commented some codes">
+      <created>1438160268583</created>
       <option name="number" value="00007" />
       <option name="project" value="LOCAL" />
-      <updated>1434973607733</updated>
+      <updated>1438160268583</updated>
     </task>
-    <task id="LOCAL-00008" summary="Worked on storing images">
-      <created>1435044742426</created>
+    <task id="LOCAL-00008" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;.env.example&#10;&#9;.gitattributes&#10;&#9;.gitignore&#10;&#9;.idea/dictionaries/iconway.xml&#10;&#9;.idea/encodings.xml&#10;&#9;.idea/misc.xml&#10;&#9;.idea/modules.xml&#10;&#9;.idea/newspepa.iml&#10;&#9;.idea/scopes/scope_settings.xml&#10;&#9;.idea/vcs.xml&#10;&#9;app/Console/Kernel.php&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/PublisherController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;app/Http/routes.php&#10;&#9;app/Publisher.php&#10;&#9;composer.json&#10;&#9;composer.lock&#10;&#9;config/database.php&#10;&#9;database/installation_script.sql&#10;&#9;gulpfile.js&#10;&#9;package.json&#10;&#9;phpspec.yml&#10;&#9;phpunit.xml&#10;&#9;public/scripts/NM_fb_autopost.php&#10;&#9;public/scripts/first_match.php&#10;&#9;public/ui_newspaper/css/app22.css&#10;&#9;public/ui_newspaper/css/opera-app22.css&#10;&#9;readme.md&#10;&#9;resources/views/errors/404.blade.php&#10;&#9;resources/views/errors/desktopView.blade.php&#10;&#9;resources/views/major/fullStory.blade.php&#10;&#9;resources/views/major/layout.blade.php&#10;&#9;resources/views/major/publisherStories.blade.php&#10;&#9;resources/views/major/publishersList.blade.php&#10;&#9;resources/views/minor/category.blade.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;&#9;resources/views/minor/index.blade.php&#10;&#9;resources/views/minor/latestStory.blade.php&#10;&#9;resources/views/minor/opera-layout.blade.php&#10;&#9;resources/views/minor/search_results.blade.php&#10;&#9;server.php&#10;">
+      <created>1438180653465</created>
       <option name="number" value="00008" />
       <option name="project" value="LOCAL" />
-      <updated>1435044742426</updated>
+      <updated>1438180653465</updated>
     </task>
-    <task id="LOCAL-00009" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/routes.php&#10;&#9;&#10;Updated&#10;">
-      <created>1435045606863</created>
+    <task id="LOCAL-00009" summary="Newspepa ~ Version 1.0.1">
+      <created>1438180724949</created>
       <option name="number" value="00009" />
       <option name="project" value="LOCAL" />
-      <updated>1435045606864</updated>
+      <updated>1438180724949</updated>
     </task>
-    <task id="LOCAL-00010" summary="Parsing Module is ready: Images are stored already">
-      <created>1435061797113</created>
+    <task id="LOCAL-00010" summary="Changed route: category to route: category-news-in-nigeria">
+      <created>1438189484888</created>
       <option name="number" value="00010" />
       <option name="project" value="LOCAL" />
-      <updated>1435061797113</updated>
+      <updated>1438189484888</updated>
     </task>
-    <task id="LOCAL-00011" summary="Laravel plugin enabled">
-      <created>1435062529070</created>
+    <task id="LOCAL-00011" summary="Changed route: category to route: category-news-in-nigeria">
+      <created>1438232931224</created>
       <option name="number" value="00011" />
       <option name="project" value="LOCAL" />
-      <updated>1435062529070</updated>
+      <updated>1438232931225</updated>
     </task>
-    <task id="LOCAL-00012" summary="Fixed bugs, working on the optimizer">
-      <created>1435075489419</created>
+    <task id="LOCAL-00012" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Publisher.php&#10;&#9;resources/views/major/layout.blade.php&#10;&#9;resources/views/major/publisherStories.blade.php&#10;">
+      <created>1438233171249</created>
       <option name="number" value="00012" />
       <option name="project" value="LOCAL" />
-      <updated>1435075489419</updated>
+      <updated>1438233171249</updated>
     </task>
-    <task id="LOCAL-00013" summary="Fixed bugs, working on the optimizer">
-      <created>1435075516917</created>
+    <task id="LOCAL-00013" summary="Bug fixes">
+      <created>1438255370556</created>
       <option name="number" value="00013" />
       <option name="project" value="LOCAL" />
-      <updated>1435075516917</updated>
+      <updated>1438255370556</updated>
     </task>
-    <task id="LOCAL-00014" summary="Working on the timeline stories">
-      <created>1435147477996</created>
+    <task id="LOCAL-00014" summary="Refactored getLatestStories">
+      <created>1438256253695</created>
       <option name="number" value="00014" />
       <option name="project" value="LOCAL" />
-      <updated>1435147477996</updated>
+      <updated>1438256253695</updated>
     </task>
-    <task id="LOCAL-00015" summary="Edited the views">
-      <created>1435147536095</created>
+    <task id="LOCAL-00015" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;resources/views/minor/category.blade.php&#10;&#9;resources/views/minor/publisherStories.blade.php&#10;">
+      <created>1438256673570</created>
       <option name="number" value="00015" />
       <option name="project" value="LOCAL" />
-      <updated>1435147536095</updated>
+      <updated>1438256673570</updated>
     </task>
-    <task id="LOCAL-00016" summary="Worked on the routes too">
-      <created>1435147579657</created>
+    <task id="LOCAL-00016" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;resources/views/minor/category.blade.php&#10;&#9;resources/views/minor/publisherStories.blade.php&#10;">
+      <created>1438257171013</created>
       <option name="number" value="00016" />
       <option name="project" value="LOCAL" />
-      <updated>1435147579657</updated>
+      <updated>1438257171013</updated>
     </task>
-    <task id="LOCAL-00017" summary="Worked on the category routes">
-      <created>1435154347198</created>
+    <task id="LOCAL-00017" summary="Monday Commit">
+      <created>1438593421998</created>
       <option name="number" value="00017" />
       <option name="project" value="LOCAL" />
-      <updated>1435154347198</updated>
+      <updated>1438593421999</updated>
     </task>
-    <task id="LOCAL-00018" summary="Modified some part of the views">
-      <created>1435157655784</created>
+    <task id="LOCAL-00018" summary="Worked on Datatable to view stories from database">
+      <created>1438708601440</created>
       <option name="number" value="00018" />
       <option name="project" value="LOCAL" />
-      <updated>1435157655784</updated>
+      <updated>1438708601440</updated>
     </task>
-    <task id="LOCAL-00019" summary="Worked on the Timeline Story optimzer">
-      <created>1435226102908</created>
+    <task id="LOCAL-00019" summary="Fixed Linkout issue, Worked on CMS too">
+      <created>1438790055833</created>
       <option name="number" value="00019" />
       <option name="project" value="LOCAL" />
-      <updated>1435226102908</updated>
+      <updated>1438790055833</updated>
     </task>
-    <task id="LOCAL-00020" summary="Edited some of the views">
-      <created>1435226204458</created>
+    <task id="LOCAL-00020" summary="Uncommented the middleware">
+      <created>1438793120221</created>
       <option name="number" value="00020" />
       <option name="project" value="LOCAL" />
-      <updated>1435226204458</updated>
+      <updated>1438793120221</updated>
     </task>
-    <task id="LOCAL-00021" summary="Fixed bugs on the route and the Timeline Controller">
-      <created>1435227293854</created>
+    <task id="LOCAL-00021" summary="Added  files that are yet to be added">
+      <created>1438852436165</created>
       <option name="number" value="00021" />
       <option name="project" value="LOCAL" />
-      <updated>1435227293854</updated>
+      <updated>1438852436178</updated>
     </task>
-    <task id="LOCAL-00022" summary="Added pub_id and category_id to the important timeline story.">
-      <created>1435227477736</created>
+    <task id="LOCAL-00022" summary="Matching tested">
+      <created>1438956793167</created>
       <option name="number" value="00022" />
       <option name="project" value="LOCAL" />
-      <updated>1435227477736</updated>
+      <updated>1438956793167</updated>
     </task>
-    <task id="LOCAL-00023" summary="Converted the data from stdClass to associative array&#10;">
-      <created>1435230955129</created>
+    <task id="LOCAL-00023" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;">
+      <created>1438965335336</created>
       <option name="number" value="00023" />
       <option name="project" value="LOCAL" />
-      <updated>1435230955129</updated>
+      <updated>1438965335336</updated>
     </task>
-    <task id="LOCAL-00024" summary="Modified the views with live data">
-      <created>1435240196159</created>
+    <task id="LOCAL-00024" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;">
+      <created>1438965596395</created>
       <option name="number" value="00024" />
       <option name="project" value="LOCAL" />
-      <updated>1435240196159</updated>
+      <updated>1438965596395</updated>
     </task>
-    <task id="LOCAL-00025" summary="Changed the structure of the db and made some other changes to the view">
-      <created>1435246616336</created>
+    <task id="LOCAL-00025" summary="Worked on the Story Statistics for the dashboard">
+      <created>1439227960905</created>
       <option name="number" value="00025" />
       <option name="project" value="LOCAL" />
-      <updated>1435246616336</updated>
+      <updated>1439227960905</updated>
     </task>
-    <task id="LOCAL-00026" summary="Fixed Bugs">
-      <created>1435247073393</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1435247073393</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Working on the category  stories">
-      <created>1435304957151</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1435304957151</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Story images">
-      <created>1435305122693</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1435305122693</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Fixed a bug:: no_image">
-      <created>1435305535749</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1435305535749</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Fixed a bug:: no_image">
-      <created>1435305677503</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1435305677503</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Worked on URL routing">
-      <created>1435326044390</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1435326044390</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Blank page  bug fix">
-      <created>1435327557008</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1435327557008</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Blank page  bug fix: commit category">
-      <created>1435327644810</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1435327644810</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Worked on making story URL">
-      <created>1435567855525</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1435567855525</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Worked on getting time difference for timeline stories">
-      <created>1435574109753</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1435574109753</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;resources/views/category.blade.php&#10;">
-      <created>1435574673017</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1435574673017</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;resources/views/category.blade.php&#10;">
-      <created>1435574716829</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1435574716829</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Fixed the bug on the fullstory request">
-      <created>1435584000485</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1435584000485</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Worked on the task scheduler and timeline stories optimizer">
-      <created>1435592940716</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1435592940716</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Index file not working">
-      <created>1435649790032</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1435649790032</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Working on the story controller&#10;">
-      <created>1435649826416</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1435649826416</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;resources/views/index.blade.php&#10;">
-      <created>1435652734941</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1435652734941</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;resources/views/index.blade.php&#10;">
-      <created>1435652896247</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1435652896247</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Made some changes">
-      <created>1435657369152</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1435657369152</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Fixed less important stories">
-      <created>1435658986321</created>
-      <option name="number" value="00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1435658986321</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;resources/views/index.blade.php&#10;">
-      <created>1435659970136</created>
-      <option name="number" value="00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1435659970137</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Working on populating the timeline stories">
-      <created>1435660156231</created>
-      <option name="number" value="00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1435660156231</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Worked on the full story related stories.">
-      <created>1435672193834</created>
-      <option name="number" value="00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1435672193834</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Worked on pulling pivots from the cluster and the stories table and then populating the timeline stories">
-      <created>1435699382407</created>
-      <option name="number" value="00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1435699382407</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Worked on recent stories">
-      <created>1435760916910</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1435760916911</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Hello">
-      <created>1435766026196</created>
-      <option name="number" value="00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1435766026196</updated>
-    </task>
-    <task id="LOCAL-00052" summary="What's up">
-      <created>1435768899990</created>
-      <option name="number" value="00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1435768899990</updated>
-    </task>
-    <task id="LOCAL-00053" summary="What's on????">
-      <created>1435769941886</created>
-      <option name="number" value="00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1435769941886</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Added Python codes">
-      <created>1435770115883</created>
-      <option name="number" value="00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1435770115883</updated>
-    </task>
-    <task id="LOCAL-00055" summary="hello">
-      <created>1435771098494</created>
-      <option name="number" value="00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1435771098494</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Added comment to a method">
-      <created>1435820142861</created>
-      <option name="number" value="00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1435820142861</updated>
-    </task>
-    <task id="LOCAL-00057" summary="No changes made">
-      <created>1435827417372</created>
-      <option name="number" value="00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1435827417372</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Fixed full story error (grammar error)">
-      <created>1435846439805</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1435846439805</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Worked on FeedController and the Cron">
-      <created>1435857038830</created>
-      <option name="number" value="00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1435857038830</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Worked on the cron for the creation of tiimeline stories">
-      <created>1435916479300</created>
-      <option name="number" value="00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1435916479300</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Worked on other sources">
-      <created>1435925444619</created>
-      <option name="number" value="00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1435925444619</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Worked on the FeedController and corrected the index for the publishers array">
-      <created>1435935151824</created>
-      <option name="number" value="00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1435935151825</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Fixed the cluster and match bug">
-      <created>1436039877765</created>
-      <option name="number" value="00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1436039877766</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Fixed the cluster and match bug 2">
-      <created>1436040256195</created>
-      <option name="number" value="00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1436040256195</updated>
-    </task>
-    <task id="LOCAL-00065" summary="Fixed the tc ish on index.blade.php and returning shuffled array of stories">
-      <created>1436045425338</created>
-      <option name="number" value="00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1436045425338</updated>
-    </task>
-    <task id="LOCAL-00066" summary="Fixed some bugs on the timeline stories">
-      <created>1436169012393</created>
-      <option name="number" value="00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1436169012393</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Other sources fixed">
-      <created>1436178202113</created>
-      <option name="number" value="00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1436178202113</updated>
-    </task>
-    <task id="LOCAL-00068" summary="Worked on Category names and Publisher names request">
-      <created>1436179359533</created>
-      <option name="number" value="00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1436179359533</updated>
-    </task>
-    <task id="LOCAL-00069" summary="Caught exceptions&#10;">
-      <created>1436181083208</created>
-      <option name="number" value="00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1436181083208</updated>
-    </task>
-    <task id="LOCAL-00070" summary="Worked on oub date&#10;">
-      <created>1436181407525</created>
-      <option name="number" value="00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1436181407525</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Removed shuffles">
-      <created>1436182773745</created>
-      <option name="number" value="00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1436182773745</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Worked on the tribune no images issue">
-      <created>1436185633632</created>
-      <option name="number" value="00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1436185633632</updated>
-    </task>
-    <task id="LOCAL-00073" summary="Worked on the timeline stories and the feed cron.">
-      <created>1436200919399</created>
-      <option name="number" value="00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1436200919399</updated>
-    </task>
-    <task id="LOCAL-00074" summary="Worked on the determining old story">
-      <created>1436257720419</created>
-      <option name="number" value="00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1436257720419</updated>
-    </task>
-    <task id="LOCAL-00075" summary="Update on the time difference">
-      <created>1436263934794</created>
-      <option name="number" value="00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1436263934794</updated>
-    </task>
-    <task id="LOCAL-00076" summary="Created an empty function searchStory">
-      <created>1436266233876</created>
-      <option name="number" value="00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1436266233877</updated>
-    </task>
-    <task id="LOCAL-00077" summary="Worked on pagination">
-      <created>1436269703973</created>
-      <option name="number" value="00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1436269703974</updated>
-    </task>
-    <task id="LOCAL-00078" summary="Worked on JSON response for the timeline stories">
-      <created>1436285840538</created>
-      <option name="number" value="00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1436285840538</updated>
-    </task>
-    <task id="LOCAL-00079" summary="Fixed bugs">
-      <created>1436342590623</created>
-      <option name="number" value="00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1436342590623</updated>
-    </task>
-    <task id="LOCAL-00080" summary="Worked on the cron">
-      <created>1436358298418</created>
-      <option name="number" value="00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1436358298419</updated>
-    </task>
-    <task id="LOCAL-00081" summary="Changed the flow of moving stories from the stories table to the time line stories table">
-      <created>1436426505643</created>
-      <option name="number" value="00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1436426505643</updated>
-    </task>
-    <task id="LOCAL-00082" summary="Worked on getting feeds and images from Nigerian monitor, Koko Feeds and Star Gist&#10;Code clean up!">
-      <created>1436440798262</created>
-      <option name="number" value="00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1436440798262</updated>
-    </task>
-    <task id="LOCAL-00083" summary="Updated the search function and the search route">
-      <created>1436444131130</created>
-      <option name="number" value="00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1436444131130</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Increased the number of stories on a page to the tiimeline">
-      <created>1436444945401</created>
-      <option name="number" value="00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1436444945402</updated>
-    </task>
-    <task id="LOCAL-00085" summary="Worked on search form">
-      <created>1436448560688</created>
-      <option name="number" value="00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1436448560689</updated>
-    </task>
-    <task id="LOCAL-00086" summary="Worked on the timeline story controller">
-      <created>1436733636443</created>
-      <option name="number" value="00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1436733636443</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Composer files commit">
-      <created>1436733865531</created>
-      <option name="number" value="00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1436733865532</updated>
-    </task>
-    <task id="LOCAL-00088" summary="Idea Files">
-      <created>1436734778688</created>
-      <option name="number" value="00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1436734778688</updated>
-    </task>
-    <task id="LOCAL-00089" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;.idea/modules.xml&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;composer.lock&#10;&#9;resources/views/index.blade.php&#10;">
-      <created>1436736825414</created>
-      <option name="number" value="00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1436736825415</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Implemented new timeline stories algorithm, get image from solr, a">
-      <created>1436873503071</created>
-      <option name="number" value="00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1436873503071</updated>
-    </task>
-    <task id="LOCAL-00091" summary="Worked on getting the images for the stories that do not have images">
-      <created>1436874456191</created>
-      <option name="number" value="00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1436874456192</updated>
-    </task>
-    <task id="LOCAL-00092" summary="Removed unwanted codes and made some corrections">
-      <created>1436877613924</created>
-      <option name="number" value="00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1436877613924</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Worked on function to determine opera browsers">
-      <created>1436879484120</created>
-      <option name="number" value="00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1436879484121</updated>
-    </task>
-    <task id="LOCAL-00094" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;resources/views/index.blade.php&#10;">
-      <created>1436879824173</created>
-      <option name="number" value="00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1436879824174</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Worked on the service provider to share data across all views">
-      <created>1436880762174</created>
-      <option name="number" value="00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1436880762175</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Worked on returning views for opera">
-      <created>1436886532722</created>
-      <option name="number" value="00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1436886532723</updated>
-    </task>
-    <task id="LOCAL-00097" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;resources/views/index.blade.php&#10;">
-      <created>1436887695619</created>
-      <option name="number" value="00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1436887695620</updated>
-    </task>
-    <task id="LOCAL-00098" summary="Added publishers to the latest stories">
-      <created>1436888091308</created>
-      <option name="number" value="00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1436888091308</updated>
-    </task>
-    <task id="LOCAL-00099" summary="Removed all agos">
-      <created>1436889225760</created>
-      <option name="number" value="00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1436889225760</updated>
-    </task>
-    <task id="LOCAL-00100" summary="Worked on the return opera's category view.">
-      <created>1436889825706</created>
-      <option name="number" value="00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1436889825706</updated>
-    </task>
-    <task id="LOCAL-00101" summary="Corrected the order of new stories">
-      <created>1436892120887</created>
-      <option name="number" value="00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1436892120887</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Worked on stopping the Punch App logo from storing into the database">
-      <created>1436944323286</created>
-      <option name="number" value="00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1436944323286</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Worked on stopping the Punch App logo from storing into the database">
-      <created>1436949082147</created>
-      <option name="number" value="00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1436949082147</updated>
-    </task>
-    <task id="LOCAL-00104" summary="Worked on the eliminating similar stories">
-      <created>1436953668484</created>
-      <option name="number" value="00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1436953668484</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Changed stop words line in TimelineStoryController">
-      <created>1436953913615</created>
-      <option name="number" value="00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1436953913615</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Worked on logging fetched stories and stored stories">
-      <created>1436961037478</created>
-      <option name="number" value="00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1436961037479</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Worked on logging the feeds pull">
-      <created>1436971756555</created>
-      <option name="number" value="00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1436971756556</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;">
-      <created>1436974305875</created>
-      <option name="number" value="00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1436974305875</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;">
-      <created>1437033565248</created>
-      <option name="number" value="00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1437033565249</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;">
-      <created>1437033616705</created>
-      <option name="number" value="00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1437033616705</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Removed the getStoryImage until it's perfected and working on the Middleware">
-      <created>1437034303623</created>
-      <option name="number" value="00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1437034303623</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Worked on the middleware for checking the source of request: Desktop or Mobile">
-      <created>1437037092118</created>
-      <option name="number" value="00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1437037092118</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Working one getting feeds from Linda Ikeji">
-      <created>1437042766744</created>
-      <option name="number" value="00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1437042766744</updated>
-    </task>
-    <task id="LOCAL-00114" summary="Still working on getting feeds from blogs">
-      <created>1437043136613</created>
-      <option name="number" value="00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1437043136613</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Still working on getting feeds from blogs">
-      <created>1437044572189</created>
-      <option name="number" value="00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1437044572190</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Still working on getting feeds from blogs">
-      <created>1437050333853</created>
-      <option name="number" value="00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1437050333854</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/routes.php&#10;&#9;resources/views/index.blade.php&#10;">
-      <created>1437050928451</created>
-      <option name="number" value="00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1437050928451</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Implemented pagination: Ready for second beta testing.">
-      <created>1437054185499</created>
-      <option name="number" value="00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1437054185499</updated>
-    </task>
-    <task id="LOCAL-00119" summary="Pagination is now working">
-      <created>1437169935993</created>
-      <option name="number" value="00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1437169935993</updated>
-    </task>
-    <task id="LOCAL-00120" summary="Removed the quotes from route">
-      <created>1437170064102</created>
-      <option name="number" value="00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1437170064102</updated>
-    </task>
-    <task id="LOCAL-00121" summary="Corrected the CSS reference for layout">
-      <created>1437188428004</created>
-      <option name="number" value="00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1437188428004</updated>
-    </task>
-    <task id="LOCAL-00122" summary="Corrected the CSS reference for layout">
-      <created>1437189032088</created>
-      <option name="number" value="00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1437189032088</updated>
-    </task>
-    <task id="LOCAL-00123" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;">
-      <created>1437189444974</created>
-      <option name="number" value="00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1437189444974</updated>
-    </task>
-    <task id="LOCAL-00124" summary="Made changes in the insertIgnore method in for both stories table and timeline_stories table&#10;">
-      <created>1437477248204</created>
-      <option name="number" value="00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1437477248204</updated>
-    </task>
-    <task id="LOCAL-00125" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;public/ui_newspaper/css/app13.css&#10;&#9;public/ui_newspaper/css/app15.css&#10;&#9;public/ui_newspaper/css/app16.css&#10;&#9;resources/views/layout.blade.php&#10;">
-      <created>1437545967987</created>
-      <option name="number" value="00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1437545967988</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;public/ui_newspaper/css/app13.css&#10;&#9;public/ui_newspaper/css/app15.css&#10;&#9;public/ui_newspaper/css/app16.css&#10;&#9;resources/views/layout.blade.php&#10;">
-      <created>1437546035549</created>
-      <option name="number" value="00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1437546035549</updated>
-    </task>
-    <task id="LOCAL-00127" summary="Added the latest database">
-      <created>1437547742449</created>
-      <option name="number" value="00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1437547742450</updated>
-    </task>
-    <task id="LOCAL-00128" summary="Merge">
-      <created>1437548792600</created>
-      <option name="number" value="00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1437548792600</updated>
-    </task>
-    <task id="LOCAL-00129" summary="Merge">
-      <created>1437552238125</created>
-      <option name="number" value="00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1437552238125</updated>
-    </task>
-    <task id="LOCAL-00130" summary="Updating the views">
-      <created>1437558911952</created>
-      <option name="number" value="00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1437558911952</updated>
-    </task>
-    <task id="LOCAL-00131" summary="Merge">
-      <created>1437563600218</created>
-      <option name="number" value="00131" />
-      <option name="project" value="LOCAL" />
-      <updated>1437563600218</updated>
-    </task>
-    <task id="LOCAL-00132" summary="Recovered previous changes">
-      <created>1437569213527</created>
-      <option name="number" value="00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1437569213527</updated>
-    </task>
-    <task id="LOCAL-00133" summary="Recovered previous changes and restructuring of the views">
-      <created>1437577394201</created>
-      <option name="number" value="00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1437577394202</updated>
-    </task>
-    <task id="LOCAL-00134" summary="View structure change">
-      <created>1437597415806</created>
-      <option name="number" value="00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1437597415807</updated>
-    </task>
-    <task id="LOCAL-00135" summary="View structure change">
-      <created>1437632598468</created>
-      <option name="number" value="00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1437632598468</updated>
-    </task>
-    <task id="LOCAL-00136" summary="Edited AppServiceProvider">
-      <created>1437632695214</created>
-      <option name="number" value="00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1437632695214</updated>
-    </task>
-    <task id="LOCAL-00137" summary="New Installation script for the Database was added.">
-      <created>1437637488221</created>
-      <option name="number" value="00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1437637488239</updated>
-    </task>
-    <task id="LOCAL-00138" summary="New view structure updated">
-      <created>1437645804569</created>
-      <option name="number" value="00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1437645804569</updated>
-    </task>
-    <task id="LOCAL-00139" summary="New view structure updated">
-      <created>1437719191230</created>
-      <option name="number" value="00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1437719191230</updated>
-    </task>
-    <task id="LOCAL-00140" summary="New images added">
-      <created>1437719431962</created>
-      <option name="number" value="00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1437719431962</updated>
-    </task>
-    <task id="LOCAL-00141" summary=".idea file added">
-      <created>1437719860392</created>
-      <option name="number" value="00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1437719860392</updated>
-    </task>
-    <task id="LOCAL-00142" summary="After merging">
-      <created>1437727396837</created>
-      <option name="number" value="00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1437727396837</updated>
-    </task>
-    <task id="LOCAL-00143" summary="Bug Fixes">
-      <created>1437740336351</created>
-      <option name="number" value="00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1437740336364</updated>
-    </task>
-    <task id="LOCAL-00144" summary="Increased the number of stories for the category pages from 20 to 200">
-      <created>1437740447168</created>
-      <option name="number" value="00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1437740447168</updated>
-    </task>
-    <task id="LOCAL-00145" summary="Changed the route &quot;refer&quot; to &quot;desktop&quot;  and started implementing the CMS">
-      <created>1437747846458</created>
-      <option name="number" value="00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1437747846458</updated>
-    </task>
-    <task id="LOCAL-00146" summary="Increased the number of stories for the category pages from 20 to 200">
-      <created>1437747964197</created>
-      <option name="number" value="00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1437747964197</updated>
-    </task>
-    <task id="LOCAL-00147" summary="Increased the number of stories for the category pages from 20 to 200">
-      <created>1437747990997</created>
-      <option name="number" value="00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1437747990998</updated>
-    </task>
-    <task id="LOCAL-00148" summary="Started working on the CMS/Checking for bella naija bugs">
-      <created>1437845299067</created>
-      <option name="number" value="00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1437845299103</updated>
-    </task>
-    <task id="LOCAL-00149" summary="Bug fixes for Linda Ikeji and Bella Naija">
-      <created>1437848280413</created>
-      <option name="number" value="00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1437848280413</updated>
-    </task>
-    <task id="LOCAL-00150" summary="Code refactoring">
-      <created>1437862951194</created>
-      <option name="number" value="00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1437862951194</updated>
-    </task>
-    <task id="LOCAL-00151" summary="Worked on getting the active publishers for filter.">
-      <created>1437978831900</created>
-      <option name="number" value="00151" />
-      <option name="project" value="LOCAL" />
-      <updated>1437978831900</updated>
-    </task>
-    <task id="LOCAL-00152" summary="Worked on getting the active publishers for filter.">
-      <created>1437979430652</created>
-      <option name="number" value="00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1437979430652</updated>
-    </task>
-    <task id="LOCAL-00153" summary="Worked on getting the active publishers for filter.">
-      <created>1437979495669</created>
-      <option name="number" value="00153" />
-      <option name="project" value="LOCAL" />
-      <updated>1437979495669</updated>
-    </task>
-    <task id="LOCAL-00154" summary="Worked on the make route function">
-      <created>1437979720976</created>
-      <option name="number" value="00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1437979720976</updated>
-    </task>
-    <task id="LOCAL-00155" summary="Changed the implementation of the getImageName">
-      <created>1437993196283</created>
-      <option name="number" value="00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1437993196297</updated>
-    </task>
-    <task id="LOCAL-00156" summary="Worked on getting LI feeds and also working on the implementation of the matching.">
-      <created>1438002166464</created>
-      <option name="number" value="00156" />
-      <option name="project" value="LOCAL" />
-      <updated>1438002166475</updated>
-    </task>
-    <task id="LOCAL-00157" summary="Altered the getImageName method in FeedController">
-      <created>1438003797146</created>
-      <option name="number" value="00157" />
-      <option name="project" value="LOCAL" />
-      <updated>1438003797147</updated>
-    </task>
-    <task id="LOCAL-00158" summary="Windows commit">
-      <created>1438796602749</created>
-      <option name="number" value="00158" />
-      <option name="project" value="LOCAL" />
-      <updated>1438796602749</updated>
-    </task>
-    <task id="LOCAL-00159" summary="Update commit">
-      <created>1438845530494</created>
-      <option name="number" value="00159" />
-      <option name="project" value="LOCAL" />
-      <updated>1438845530494</updated>
-    </task>
-    <task id="LOCAL-00160" summary="Modified the database to accomodate comments, views (per) day and linkout per day">
-      <created>1439197999827</created>
-      <option name="number" value="00160" />
-      <option name="project" value="LOCAL" />
-      <updated>1439197999827</updated>
-    </task>
-    <option name="localTasksCounter" value="161" />
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="28" width="1366" height="707" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19742814" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2322239" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.114369504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32562277" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32384342" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55871886" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1315,147 +781,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-<<<<<<< HEAD
-    <MESSAGE value="Merge" />
-    <MESSAGE value="Updates" />
-    <MESSAGE value="Recovered previous changes" />
-    <MESSAGE value="Recovered previous changes and restructuring of the views" />
-    <MESSAGE value="View structure change" />
-    <MESSAGE value="Edited AppServiceProvider" />
-    <MESSAGE value="New Installation script for the Database was added." />
-    <MESSAGE value="New view structure updated" />
-    <MESSAGE value="New images added" />
-    <MESSAGE value=".idea file added" />
-    <MESSAGE value="After merging" />
-    <MESSAGE value="Bug Fixes" />
-    <MESSAGE value="Changed the route &quot;refer&quot; to &quot;desktop&quot;  and started implementing the CMS" />
-    <MESSAGE value="Increased the number of stories for the category pages from 20 to 200" />
-    <MESSAGE value="Started working on the CMS/Checking for bella naija bugs" />
-    <MESSAGE value="Bug fixes for Linda Ikeji and Bella Naija" />
-    <MESSAGE value="Code refactoring" />
-    <MESSAGE value="Worked on getting the active publishers for filter." />
-    <MESSAGE value="Worked on the make route function" />
-    <MESSAGE value="Changed the implementation of the getImageName" />
-    <MESSAGE value="Worked on getting LI feeds and also working on the implementation of the matching." />
-    <MESSAGE value="Altered the getImageName method in FeedController" />
-    <MESSAGE value="Windows commit" />
-    <MESSAGE value="Update commit" />
-    <MESSAGE value="Modified the database to accomodate comments, views (per) day and linkout per day" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified the database to accomodate comments, views (per) day and linkout per day" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="16" />
-    </breakpoint-manager>
-    <watches-manager />
-  </component>
-  <component name="XPathView.XPathProjectComponent">
-    <history />
-    <find-history />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Story.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.384615" vertical-offset="385" max-vertical-offset="1088">
-          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/errors/desktopView.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="1581">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/fullStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="1547">
-          <caret line="70" column="16" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/solarium/solarium/library/Solarium/Core/Client/Endpoint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.769231" vertical-offset="317" max-vertical-offset="4743">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3461537" vertical-offset="226" max-vertical-offset="748">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.384615" vertical-offset="153" max-vertical-offset="646">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/latestStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="646">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/latestStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="250" max-vertical-offset="680">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="272" max-vertical-offset="748">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/search_results.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="918">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="833">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/fullStory3.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="502">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1802" max-vertical-offset="3383">
-          <caret line="106" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/opera-layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.9230769" vertical-offset="102" max-vertical-offset="1989">
-=======
     <MESSAGE value="Commit" />
     <MESSAGE value="New implementation of matching" />
     <MESSAGE value="First Commit" />
@@ -1476,7 +801,8 @@
     <MESSAGE value="Added  files that are yet to be added" />
     <MESSAGE value="Matching tested" />
     <MESSAGE value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;" />
+    <MESSAGE value="Worked on the Story Statistics for the dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on the Story Statistics for the dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1485,45 +811,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/newspepa_cms/assets/ckeditor/lang/af.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.044554457" vertical-offset="0" max-vertical-offset="404">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="7740">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
+          <folding>
+            <element signature="e#135#152#0#PHP" expanded="true" />
+            <marker date="1439223803873" expanded="true" signature="11326:11463" placeholder="INSERT INTO ..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/desktop-view.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/newStory.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8594164" vertical-offset="324" max-vertical-offset="1116">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75555557" vertical-offset="0" max-vertical-offset="504">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.8312025" vertical-offset="11147" max-vertical-offset="18360">
-          <caret line="384" column="9" selection-start-line="384" selection-start-column="9" selection-end-line="384" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/newspepa_cms/js/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.107527" vertical-offset="3674" max-vertical-offset="28944">
-          <caret line="359" column="24" selection-start-line="359" selection-start-column="24" selection-end-line="359" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="446">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1151" max-vertical-offset="3402">
+          <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1586,207 +889,10 @@
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
->>>>>>> fbd2434cc203edcaadffe78bffa9067b2384ca9b
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/PasswordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.461538" vertical-offset="152" max-vertical-offset="629">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/cms.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1496">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.615383" vertical-offset="0" max-vertical-offset="1683">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="153" max-vertical-offset="629">
-          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="466">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/navbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="595">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1581">
-          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/errors.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="204">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Roaming/Skype/My Skype Received Files/site-check/XML_Parser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3824131" vertical-offset="0" max-vertical-offset="489">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/Paginator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1473" max-vertical-offset="2278">
-          <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/search_results.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.033027522" vertical-offset="356" max-vertical-offset="901">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/BootstrapThreeNextPreviousButtonRendererTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.635514" vertical-offset="272" max-vertical-offset="918">
-          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/SimpleBootstrapThreePresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="383" max-vertical-offset="918">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="765">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="604" max-vertical-offset="1700">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/.name">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="374">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/SourceMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="125" max-vertical-offset="765">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Publisher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="408">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/publisherStories.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="850">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.115385" vertical-offset="1088" max-vertical-offset="6392">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="13.730769" vertical-offset="357" max-vertical-offset="697">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="204" max-vertical-offset="1224">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.538462" vertical-offset="4213" max-vertical-offset="4743">
-          <caret line="276" column="10" selection-start-line="276" selection-start-column="10" selection-end-line="276" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/BvSshSftp/Bv002b6f/Bv00511a/TimelineStory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4964">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1088" max-vertical-offset="1547">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="272">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-=======
     <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/errors.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="306">
@@ -1871,13 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1206">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="446" max-vertical-offset="864">
@@ -1899,13 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1314">
-          <caret line="61" column="7" selection-start-line="54" selection-start-column="6" selection-end-line="61" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.018567638" vertical-offset="3989" max-vertical-offset="6678">
@@ -1920,51 +1012,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PublisherController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="468">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/newStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1151" max-vertical-offset="3402">
-          <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/first_match.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35555556" vertical-offset="1674" max-vertical-offset="2250">
           <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
-          <folding>
-            <element signature="e#6#96#0#PHP" expanded="true" />
-          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5281" max-vertical-offset="7092">
-          <caret line="352" column="25" selection-start-line="352" selection-start-column="25" selection-end-line="352" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="810">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/solarium/solarium/library/Solarium/Core/Client/Endpoint.php">
@@ -1981,114 +1033,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1141" max-vertical-offset="7740">
-          <caret line="78" column="29" selection-start-line="78" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#101#0#PHP" expanded="true" />
-            <element signature="e#184#200#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Cluster.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.03926097" vertical-offset="197" max-vertical-offset="846">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
->>>>>>> fbd2434cc203edcaadffe78bffa9067b2384ca9b
-          <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2737">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-=======
     <entry file="file://$PROJECT_DIR$/resources/views/major/fullStory.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8314088" vertical-offset="432" max-vertical-offset="2160">
           <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
->>>>>>> fbd2434cc203edcaadffe78bffa9067b2384ca9b
-          <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/database/seeds/UserTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="493">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-=======
     <entry file="file://$PROJECT_DIR$/app/Story.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6666665" vertical-offset="27" max-vertical-offset="1116">
+        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="1116">
           <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
->>>>>>> fbd2434cc203edcaadffe78bffa9067b2384ca9b
           <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="833">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="901">
-          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="8007">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <marker date="1438814168979" expanded="true" signature="12320:12413" placeholder="UPDATE timel..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="1088">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6666665" vertical-offset="1233" max-vertical-offset="5886">
-          <caret line="78" column="41" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="41" />
-          <folding>
-            <marker date="1438957371991" expanded="true" signature="6595:6682" placeholder="UPDATE timel..." />
-            <marker date="1438957371991" expanded="true" signature="6999:7092" placeholder="UPDATE timel..." />
-            <marker date="1438957371991" expanded="true" signature="11452:11567" placeholder="UPDATE timel..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2646421" vertical-offset="1501" max-vertical-offset="7470">
-          <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
-          <folding>
-            <element signature="e#135#152#0#PHP" expanded="true" />
-            <marker date="1438962458179" expanded="true" signature="10898:11035" placeholder="INSERT INTO ..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7777778" vertical-offset="2238" max-vertical-offset="2844">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2238" max-vertical-offset="2844">
           <caret line="130" column="84" selection-start-line="130" selection-start-column="79" selection-end-line="130" selection-end-column="84" />
           <folding />
         </state>
@@ -2096,40 +1065,143 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.0740743" vertical-offset="79" max-vertical-offset="1314">
+        <state vertical-scroll-proportion="0.31639722" vertical-offset="133" max-vertical-offset="1314">
           <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
->>>>>>> fbd2434cc203edcaadffe78bffa9067b2384ca9b
-          <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6865" max-vertical-offset="7446">
-          <caret line="383" column="42" selection-start-line="383" selection-start-column="42" selection-end-line="383" selection-end-column="42" />
-=======
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="21.333334" vertical-offset="810" max-vertical-offset="1602">
+        <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1602">
           <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
->>>>>>> fbd2434cc203edcaadffe78bffa9067b2384ca9b
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/database/installation_script.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57664233" vertical-offset="3951" max-vertical-offset="4522">
-          <caret line="251" column="39" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="39" />
-=======
+    <entry file="file://$PROJECT_DIR$/public/scripts/test.py">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="810">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/minor/fullStory.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16628176" vertical-offset="540" max-vertical-offset="1818">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
->>>>>>> fbd2434cc203edcaadffe78bffa9067b2384ca9b
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1818">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://db-console:/ea5995ae/8b88c057-f295-4dc0-965b-c1dc5614bf43/">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="558">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/installation_script.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4338" max-vertical-offset="4770">
+          <caret line="254" column="18" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="288">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PublisherController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="468">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/newStory.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1151" max-vertical-offset="3402">
+          <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1728">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6253" max-vertical-offset="7092">
+          <caret line="359" column="32" selection-start-line="359" selection-start-column="32" selection-end-line="359" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="181" max-vertical-offset="1782">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="529" max-vertical-offset="1206">
+          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="7740">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
+          <folding>
+            <element signature="e#135#152#0#PHP" expanded="true" />
+            <marker date="1439223803873" expanded="true" signature="11326:11463" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34273317" vertical-offset="2830" max-vertical-offset="6084">
+          <caret line="167" column="10" selection-start-line="167" selection-start-column="10" selection-end-line="167" selection-end-column="10" />
+          <folding>
+            <marker date="1439225967933" expanded="true" signature="6595:6682" placeholder="UPDATE timel..." />
+            <marker date="1439225967933" expanded="true" signature="7385:7478" placeholder="UPDATE timel..." />
+            <marker date="1439225967933" expanded="true" signature="12250:12365" placeholder="UPDATE timel..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07692308" vertical-offset="439" max-vertical-offset="7740">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#101#0#PHP" expanded="true" />
+            <element signature="e#184#200#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

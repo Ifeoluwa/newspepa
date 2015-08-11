@@ -1,0 +1,401 @@
+
+<!-- saved from url=(0033)http://dailypost.ng/hot-news/feed -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.lookupATLMKL, .lookupforemostATLMKL, .lookupdockedATLMKL, .rowiframeATLMKL, .celliframeATLMKL, .iframeATLMKL, .emptyATLMKL, .barATLMKL, .barforemostATLMKL, .bardockedATLMKL, .cellATLMKL, .leftATLMKL, .rightATLMKL, .buttoncontainerATLMKL, .buttonATLMKL, .buttonimageATLMKL, .waitingATLMKL, .handleATLMKL, .queryATLMKL, .hintATLMKL, .templateATLMKL, .firstlevelgroupATLMKL, .notfirstlevelgroupATLMKL{
+	    background: none !important;
+	    border: 0px !important;
+	    border-style: none !important;
+	     color: black !important;
+	     direction: ltr !important;
+	     float: none !important;
+	     font-family: sans-serif !important;
+	     font-size: small !important;
+	     font-style: normal !important;
+	     font-variant: normal !important;
+	     font-weight: normal !important;
+	     letter-spacing: normal !important;
+	     line-height: normal !important;
+	     margin: 0px !important;
+	    padding: 0px !important;
+	    text-align: left !important;
+	     text-decoration: none !important;
+	     text-indent: 0px !important;
+	     text-transform: none !important;
+	     vertical-align: baseline !important;
+	    white-space: normal !important;
+}
+
+div.lookupATLMKL{
+	     display: table !important;
+	     -webkit-transition: -webkit-box-shadow 0.25s linear, border-color 0.25s linear !important;
+}
+
+div.lookupforemostATLMKL{
+}
+
+div.lookupdockedATLMKL{
+}
+
+div.rowiframeATLMKL{
+	     display: table-row !important;
+}
+
+div.rowiframeATLMKL td.celliframeATLMKL{
+	      display: table-cell !important;
+	      width: 100% !important;
+	      height: 100% !important;
+}
+
+td.celliframeATLMKL iframe.iframeATLMKL{
+	       display: inline !important;
+	       width: 100% !important;
+	       height: 100% !important;
+	       background-color: white !important;
+}
+
+iframe.emptyATLMKL{
+	       background-image: url('chrome-extension://hljnlfolmbmibdjaikiaepgepgnldclj/img/128.png') !important;
+	       background-position: 50% 50% !important;
+	       background-repeat: no-repeat !important;
+}
+
+div.barATLMKL{
+	     display: table-row !important;
+	     -webkit-transition: background 0.25s linear !important;
+	     width: 100% !important;
+	     cursor: move !important;
+	     background: lightgrey !important;
+}
+
+div.barforemostATLMKL{
+	background: #84b7ea !important;
+}
+
+div.bardockedATLMKL{
+	background: #336699 !important;
+}
+
+div.barATLMKL div.cellATLMKL{
+	     display: table-cell !important;
+	     vertical-align: middle !important;
+}
+
+div.leftATLMKL{
+	     padding-right: 16px !important;
+	     text-align: left !important;
+}
+
+div.rightATLMKL{
+	     white-space: nowrap !important;
+	     text-align: right !important;
+}
+
+span.buttoncontainerATLMKL{
+	     display:inline !important;
+}
+
+a.buttonATLMKL:link{
+	     display:inline !important;
+	     -webkit-user-select: none !important;
+	     color: transparent !important;
+}
+
+a.buttonATLMKL img.buttonimageATLMKL{
+	     display:inline !important;
+	     vertical-align: middle !important;
+}
+
+img.waitingATLMKL{
+	     display:inline !important;
+	     cursor: pointer !important;
+	     -webkit-user-select: none !important;
+	     vertical-align: middle !important;
+	     padding-left: 6px !important;
+	 padding-right: 6px !important;
+}
+
+div.handleATLMKL{
+	     display:block !important;
+	     cursor: se-resize !important;
+	     left: 100% !important;
+	     top: 100% !important;
+	     margin-left: -4px !important;
+	     margin-top: -4px !important;
+	     position: absolute !important;
+	     width: 8px !important;
+	 height: 8px !important;
+}
+
+input.queryATLMKL{
+	     display:inline-block !important;
+	     background: white !important;
+	     vertical-align: top !important;
+	     border: 1px solid darkgrey !important;
+	      font-size: 13px !important;
+	      padding-top: 1px !important;
+	 padding-bottom: 1px !important;
+	     width: 12em !important;
+}
+
+.hintATLMKL{
+	      color: lightgrey !important;
+	      font-style:italic !important;
+}
+
+select.templateATLMKL{
+	     display:inline-block !important;
+	     background: white !important;
+	     font-size: 13px !important;
+	      border: 1px solid darkgrey !important;
+	      vertical-align: top !important;
+	     white-space: pre !important;
+	     width: 9em !important;
+	     margin-right: 2px !important;
+}
+
+optgroup.firstlevelgroupATLMKL{
+	      color: blue !important;
+}
+
+.notfirstlevelgroupATLMKL{
+	      color: black !important;
+}
+
+</style><style>.tipWOGXED, .arrowWOGXED, .arrowupWOGXED, .arrowdownWOGXED, .mainWOGXED, .closeWOGXED, .barWOGXED, .rowWOGXED, .cellWOGXED, .leftWOGXED, .rightWOGXED, .displaytitleWOGXED, .refreshWOGXED, .pagingWOGXED, .brandWOGXED, .textWOGXED, .leftlabelWOGXED, .selectWOGXED, .checkboxWOGXED, .waitingWOGXED, .buttoncontainerWOGXED, .buttonWOGXED, .buttonimageWOGXED, .flagWOGXED, .noticebarscontainerWOGXED, .noticebarWOGXED, .iframecontentWOGXED{
+	    background: none !important;
+	    border: 0px !important;
+	    border-style: none !important;
+	     color: black !important;
+	     direction: ltr !important;
+	     float: none !important;
+	     font-family: sans-serif !important;
+	     font-size: small !important;
+	     font-style: normal !important;
+	     font-variant: normal !important;
+	     font-weight: normal !important;
+	     letter-spacing: normal !important;
+	     line-height: normal !important;
+	     margin: 0px !important;
+	    padding: 0px !important;
+	    text-align: left !important;
+	     text-decoration: none !important;
+	     text-indent: 0px !important;
+	     text-transform: none !important;
+	     vertical-align: baseline !important;
+	    white-space: normal !important;
+}
+
+div.tipWOGXED{
+	     position: absolute !important;
+	     display:block !important;
+}
+
+div.arrowWOGXED{
+	display:block !important;
+}
+
+canvas.arrowupWOGXED{
+	      display: inline !important;
+	      vertical-align: bottom !important;
+}
+
+canvas.downupWOGXED{
+	      display: inline !important;
+	      vertical-align: top !important;
+}
+
+div.mainWOGXED{
+	display: block !important;
+}
+
+img.closeWOGXED{
+	      display: block !important;
+	      -webkit-transition: opacity 0.5s linear !important;
+	      float: right !important;
+	      margin-right: -5px !important;
+	      margin-top: -5px !important;
+}
+
+div.barWOGXED{
+	     display: table !important;
+	      margin-bottom: 4px !important;
+	     -webkit-user-select: none !important;
+	     width: 100% !important;
+}
+
+div.rowWOGXED{
+	display: table-row !important;
+}
+
+div.cellWOGXED{
+	      display: table-cell !important;
+	      vertical-align: middle !important;
+}
+
+.leftWOGXED{
+	      padding-right: 16px !important;
+	      text-align: left !important;
+}
+
+.rightWOGXED{
+	text-align: right !important;
+}
+
+span.refreshWOGXED{
+	display: inline !important;
+}
+
+span.pagingWOGXED{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+span.buttoncontainerWOGXED{
+	display: inline !important;
+}
+
+span.displaytitleWOGXED{
+	      display: inline !important;
+	      padding-left: 6px !important;
+	      font-size: small !important;
+	      font-weight: bold !important;
+}
+
+span.displaytitleWOGXED a:link{
+	       display: inline !important;
+	       color: #0645AD !important;
+	       text-decoration: none !important;
+}
+
+span.displaytitleWOGXED img{
+	display: inline !important;
+}
+
+span.brandWOGXED{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+.brandWOGXED a{
+	       display: inline !important;
+	       font-size: x-small !important;
+}
+
+.brandWOGXED a:link{
+	       display: inline !important;
+	       color: #0645AD !important;
+	       text-decoration: none !important;
+}
+
+.brandWOGXED a:visited{
+	       display: inline !important;
+	       color: #0B0080 !important;
+	       text-decoration: none !important;
+}
+
+span.textWOGXED{
+	      display: inline !important;
+	      font-size: x-small !important;
+}
+
+label.leftlabelWOGXED{
+	      display: inline !important;
+	      font-size: x-small !important;
+	      margin-right: 3px !important;
+}
+
+select.selectWOGXED{
+	       display: inline-block !important;
+	       border: 1px solid darkgrey !important;
+	       white-space: pre !important;
+	       font-size: x-small !important;
+}
+
+input.checkboxWOGXED{
+	      display: inline-block !important;
+	      vertical-align: text-top !important;
+	      font-size: x-small !important;
+	      margin-right: 0.3em !important;
+}
+
+img.waitingWOGXED{
+	      display: inline !important;
+	      -webkit-user-select: none !important;
+	      vertical-align: middle !important;
+	      padding-left: 3px !important;
+}
+
+a.buttonWOGXED, a.buttonWOGXED:link{
+	      display: inline !important;
+	      -webkit-user-select: none !important;
+	      color: transparent !important;
+	      margin-right: 2px !important;
+}
+
+img.buttonimageWOGXED{
+	      display: inline !important;
+	      vertical-align: middle !important;
+}
+
+img.flagWOGXED{
+	      display: inline !important;
+	      vertical-align: middle !important;
+	      padding-bottom:2px !important;
+}
+
+img.buttonselectedWOGXED{
+	      display: inline !important;
+	      background: #dd8 !important;
+	      border: 1px solid #bb6 !important;
+	      margin: -1px !important;
+	      border-radius: 2px !important;
+}
+
+div.noticebarscontainerWOGXED{
+	     display: block !important;
+	     text-align: left !important;
+	     margin-bottom: 4px !important;
+	     overflow-y: auto !important;
+}
+
+div.noticebarWOGXED{
+	     display: block !important;
+	     background: white !important;
+	     font-size: x-small !important;
+	     border-left: 3px solid lightGrey !important;
+	     margin-bottom: 1px !important;
+	     padding-left: 2px !important;
+}
+
+div.noticebarWOGXED img{
+	      display: inline !important;
+	      margin-right: 1px !important;
+	      vertical-align: text-top !important;
+}
+
+div.noticebarWOGXED a{
+	      display: inline !important;
+	      font-family: sans-serif !important;
+	       font-style: normal !important;
+	       font-variant: normal !important;
+	       font-weight: normal !important;
+	       font-size: x-small !important;
+}
+
+div.noticebarWOGXED a:link{
+	      display: inline !important;
+	      color: #0645AD !important;
+	      text-decoration: none !important;
+}
+
+div.noticebarWOGXED a:visited{
+	      display: inline !important;
+	      color: #0B0080 !important;
+	      text-decoration: none !important;
+}
+
+iframe.iframecontentWOGXED{
+	     display: inline !important;
+	     width: 100% !important;
+}
+
+</style><style id="simplehl_hlstyle_JJXQXP">.simplehl1_FVTVUB { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,0,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl2_FVTVUB { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,165,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl3_FVTVUB { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,255,96,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl4_FVTVUB { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(96,255,96,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl5_FVTVUB { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(96,255,255,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl6_FVTVUB { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #000000!important; background-color: rgba(255,96,255,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } .simplehl7_FVTVUB { display: inline!important;font-family:inherit!important; font-style:inherit!important; font-variant:inherit!important; font-weight:inherit!important; border-color: transparent !important; color: #ffffff!important; background-color: rgba(0,0,0,0.7)!important; font-size: inherit!important; -webkit-transition-property: color, background-color, -webkit-box-shadow; -webkit-transition-duration: 0.5s, 0.5s, 0.5s; -webkit-transition-timing-function: linear, linear, linear; padding: 0.2em!important; -webkit-box-shadow: rgba(0,0,0,0.42) 3px 3px 4px!important; border-radius: 6px!important; } </style><style id="simplehl_flashstyle_LFQZVI">@-webkit-keyframes flash {         0% {             opacity: 1;         }         100% {             opacity: 0;         }}</style></head><body data-pinterest-extension-installed="cr1.38.2"><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/"><channel><title>DailyPost Nigeria » National</title> <atom:link href="http://dailypost.ng/hot-news/feed/" rel="self" type="application/rss+xml"><link>http://dailypost.ng <description>Latest Nigerian News | Nigerian Newspapers</description> <lastbuilddate>Thu, 06 Aug 2015 09:46:04 +0000</lastbuilddate> <language>en-US</language> <sy:updateperiod>hourly</sy:updateperiod> <sy:updatefrequency>1</sy:updatefrequency> <generator>http://wordpress.org/?v=4.2.4</generator> <item><title>Don’t accept cash deposits in foreign currency – CBN warns banks</title><link>http://dailypost.ng/2015/08/06/dont-accept-cash-deposits-in-foreign-currency-cbn-warns-banks/ <comments>http://dailypost.ng/2015/08/06/dont-accept-cash-deposits-in-foreign-currency-cbn-warns-banks/#comments</comments> <pubdate>Thu, 06 Aug 2015 09:46:04 +0000</pubdate> <dc:creator><!--[CDATA[Wale Odunsi]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[CBN]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281828</guid> <description><!--[CDATA[<p-->The Central Bank of Nigeria (CBN) has officially barred banks in the country from accepting foreign currency cash deposits into customers’ domiciliary accounts. A circular issued by the CBN on Wednesday and signed by the director of trade and exchange, Olakanmi Gbadamosi, explained that the statement became necessary so that customers will feel embarrassed when […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/06/dont-accept-cash-deposits-in-foreign-currency-cbn-warns-banks/">Don’t accept cash deposits in foreign currency – CBN warns banks</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/06/dont-accept-cash-deposits-in-foreign-currency-cbn-warns-banks/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Why palace is yet to officially announce Ooni of Ife’s death</title><link>http://dailypost.ng/2015/08/06/why-palace-is-yet-to-officially-announce-ooni-of-ifes-death/ <comments>http://dailypost.ng/2015/08/06/why-palace-is-yet-to-officially-announce-ooni-of-ifes-death/#comments</comments> <pubdate>Thu, 06 Aug 2015 09:13:54 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Life & Style]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[ooni of ife]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281815</guid> <description><!--[CDATA[<p-->New indication has emerged on why the death of the Ooni of Ife, Oba Okunade Sijuwade, has not been officially announced by the palace. The silence, it was gathered, is because Isoro cult members, who are carrying out necessary rites on the late monarch, are yet to give their nod that the death be made […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/06/why-palace-is-yet-to-officially-announce-ooni-of-ifes-death/">Why palace is yet to officially announce Ooni of Ife’s death</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/06/why-palace-is-yet-to-officially-announce-ooni-of-ifes-death/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Judge transfers suit seeking Saraki’s removal</title><link>http://dailypost.ng/2015/08/06/judge-transfers-suit-seeking-sarakis-removal/ <comments>http://dailypost.ng/2015/08/06/judge-transfers-suit-seeking-sarakis-removal/#comments</comments> <pubdate>Thu, 06 Aug 2015 07:54:41 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Saraki]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281809</guid> <description><!--[CDATA[<p-->Justice Gabriel Kolawole of the Federal High Court, Abuja on Wednesday transferred a suit filed by some senators seeking to annul the election of the Senate President, Bukola Saraki, to another Judge. Five APC senators, Abu Ibrahim, Kabiru Marafa, Ajayi Boroffice, Gbenga Ashafa, and Suleiman Hunyuki had filed the suit seeking nullification of the June […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/06/judge-transfers-suit-seeking-sarakis-removal/">Judge transfers suit seeking Saraki’s removal</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/06/judge-transfers-suit-seeking-sarakis-removal/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>FAAN issues 7-day ultimatum to owners of abandoned aircraft at Lagos Airport</title><link>http://dailypost.ng/2015/08/06/faan-issues-7-day-ultimatum-to-owners-of-abandoned-aircraft-at-lagos-airport/ <comments>http://dailypost.ng/2015/08/06/faan-issues-7-day-ultimatum-to-owners-of-abandoned-aircraft-at-lagos-airport/#comments</comments> <pubdate>Thu, 06 Aug 2015 07:50:58 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[FAAN]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281803</guid> <description><!--[CDATA[<p-->The Federal Airports Authority of Nigeria (FAAN) on Wednesday issued a seven-day ultimatum to owners of abandoned aircraft at the graveyard of the Murtala Mohammed Airport (MMA), Lagos, to evacuate them. The FAAN Director of Airport Operations, Capt. Henry Omeogu, said this in a statement issued in Lagos while on safety inspection at the Murtala […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/06/faan-issues-7-day-ultimatum-to-owners-of-abandoned-aircraft-at-lagos-airport/">FAAN issues 7-day ultimatum to owners of abandoned aircraft at Lagos Airport</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/06/faan-issues-7-day-ultimatum-to-owners-of-abandoned-aircraft-at-lagos-airport/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Former Army chief, Minimah accuses elite Nigerians of using Boko Haram for selfish interests</title><link>http://dailypost.ng/2015/08/06/former-army-chief-minimah-accuses-elite-nigerians-of-using-boko-haram-for-selfish-interests/ <comments>http://dailypost.ng/2015/08/06/former-army-chief-minimah-accuses-elite-nigerians-of-using-boko-haram-for-selfish-interests/#comments</comments> <pubdate>Thu, 06 Aug 2015 07:25:35 +0000</pubdate> <dc:creator><!--[CDATA[Ameh Comrade Godwin]]--></dc:creator> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[army chief]]--></category> <category><!--[CDATA[Minimah]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281794</guid> <description><!--[CDATA[<p-->Immediate past Chief of Army Staff (COAS) Lt. Gen. Kenneth Minimah has accused some elite Nigerians of using the violent Boko Haram sect for their selfish interest. The former military boss also lamented that the authorities played with the health and vitality of the military through inadequate funding. Lt. Gen. Minimah made this remarks in […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/06/former-army-chief-minimah-accuses-elite-nigerians-of-using-boko-haram-for-selfish-interests/">Former Army chief, Minimah accuses elite Nigerians of using Boko Haram for selfish interests</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/06/former-army-chief-minimah-accuses-elite-nigerians-of-using-boko-haram-for-selfish-interests/feed/</wfw:commentrss> <slash:comments>1</slash:comments> </item> <item><title>Boko Haram: VSFC signs MoU with hospitals in Borno</title><link>http://dailypost.ng/2015/08/06/boko-haram-vsfc-signs-mou-with-hospitals-in-borno/ <comments>http://dailypost.ng/2015/08/06/boko-haram-vsfc-signs-mou-with-hospitals-in-borno/#comments</comments> <pubdate>Thu, 06 Aug 2015 06:45:18 +0000</pubdate> <dc:creator><!--[CDATA[Maina Maina]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Boko Haram]]--></category> <category><!--[CDATA[borno]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281751</guid> <description><!--[CDATA[<p-->The Boko Haram Insurgency Victims’ Support Fund Committee has signed a Memorandum of Understanding with the State Specialist Hospital, Maiduguri to support the victims of Boko Haram insurgency. The Victims’ Support Fund Committee also donated N20 million as assistance to the hospital to cushion some expenses incurred on the victims. The MoU was signed by […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/06/boko-haram-vsfc-signs-mou-with-hospitals-in-borno/">Boko Haram: VSFC signs MoU with hospitals in Borno</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/06/boko-haram-vsfc-signs-mou-with-hospitals-in-borno/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>University of Maiduguri Teaching Hospital owe contractors N150m – CMD</title><link>http://dailypost.ng/2015/08/05/university-of-maiduguri-teaching-hospital-owe-contractors-n150m-cmd/ <comments>http://dailypost.ng/2015/08/05/university-of-maiduguri-teaching-hospital-owe-contractors-n150m-cmd/#comments</comments> <pubdate>Wed, 05 Aug 2015 20:26:11 +0000</pubdate> <dc:creator><!--[CDATA[Victor Azubuike]]--></dc:creator> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[cmd]]--></category> <category><!--[CDATA[university of maiduguri]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281744</guid> <description><!--[CDATA[<p-->The Chief Medical Director of the University of Maiduguri Teaching Hospital, UMTH, Professor Abdulrahman Tahir has appealed to the federal government, to as a matter of urgent importance, assist the hospital with more funds to settle the debts it is owing contractors, as well as consultants treating victims of Boko Haram Insurgency. He also lamented […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/university-of-maiduguri-teaching-hospital-owe-contractors-n150m-cmd/">University of Maiduguri Teaching Hospital owe contractors N150m – CMD</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/university-of-maiduguri-teaching-hospital-owe-contractors-n150m-cmd/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Shettima orders CJTF to hand over four Boko Haram members arrested in Malari [PHOTOS]</title><link>http://dailypost.ng/2015/08/05/shettima-orders-cjtf-to-hand-over-four-boko-haram-members-arrested-in-malari-photos/ <comments>http://dailypost.ng/2015/08/05/shettima-orders-cjtf-to-hand-over-four-boko-haram-members-arrested-in-malari-photos/#comments</comments> <pubdate>Wed, 05 Aug 2015 19:27:35 +0000</pubdate> <dc:creator><!--[CDATA[Maina Maina]]--></dc:creator> <category><!--[CDATA[Main Headline]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Boko Haram]]--></category> <category><!--[CDATA[Shettima]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281713</guid> <description><!--[CDATA[<p-->Governor Kashim Shettima of Borno State has Directed the Civilian JTF in Konduga to hand over the four Boko Haram terrorists they arrested in Malari village to security agents. Shettima, who stated this while receiving thousands of villagers displaced by the boko haram insurgents, also announced a donation of N3 Million to the IDPs from […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/shettima-orders-cjtf-to-hand-over-four-boko-haram-members-arrested-in-malari-photos/">Shettima orders CJTF to hand over four Boko Haram members arrested in Malari [PHOTOS]</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/shettima-orders-cjtf-to-hand-over-four-boko-haram-members-arrested-in-malari-photos/feed/</wfw:commentrss> <slash:comments>2</slash:comments> </item> <item><title>Extradition: FG objects request for bail by ex-MINT Boss, Okoyomon</title><link>http://dailypost.ng/2015/08/05/extradition-fg-objects-request-for-bail-by-ex-mint-boss-okoyomon/ <comments>http://dailypost.ng/2015/08/05/extradition-fg-objects-request-for-bail-by-ex-mint-boss-okoyomon/#comments</comments> <pubdate>Wed, 05 Aug 2015 19:21:46 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Okoyomon]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281702</guid> <description><!--[CDATA[<p-->Justice Valentine Ashi of the FCT High Court sitting in Apo on Wednesday adjourned to August 12, 2015 for hearing on the preliminary objection raised by the Attorney General of the Federation, to the bail application brought by Emmanuel Ehidiamhem Okoyomon, former Managing Director of Nigerian Security Printing and Minting Company, NSPMC, whose extradition to […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/extradition-fg-objects-request-for-bail-by-ex-mint-boss-okoyomon/">Extradition: FG objects request for bail by ex-MINT Boss, Okoyomon</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/extradition-fg-objects-request-for-bail-by-ex-mint-boss-okoyomon/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Bank of Industry investment in solid minerals hit N24.6bn</title><link>http://dailypost.ng/2015/08/05/bank-of-industry-investment-in-solid-minerals-hit-n24-6bn/ <comments>http://dailypost.ng/2015/08/05/bank-of-industry-investment-in-solid-minerals-hit-n24-6bn/#comments</comments> <pubdate>Wed, 05 Aug 2015 19:05:48 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Bank of Industry]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281684</guid> <description><!--[CDATA[<p-->The Bank of Industry (BoI) on Wednesday put its total loan portfolio in the solid minerals sector of the economy at N24.6bn. The Managing Director, Mr Rasheed Olaoluwa said this in Abuja while speaking at the opening session of a sensitisation programme on investment opportunities in the solid minerals sector. He said in view of […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/bank-of-industry-investment-in-solid-minerals-hit-n24-6bn/">Bank of Industry investment in solid minerals hit N24.6bn</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/bank-of-industry-investment-in-solid-minerals-hit-n24-6bn/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>IG of Police decorates newly promoted DIGs</title><link>http://dailypost.ng/2015/08/05/ig-of-police-decorates-newly-promoted-digs/ <comments>http://dailypost.ng/2015/08/05/ig-of-police-decorates-newly-promoted-digs/#comments</comments> <pubdate>Wed, 05 Aug 2015 18:59:53 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Arase]]--></category> <category><!--[CDATA[promoted DIGs]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281669</guid> <description><!--[CDATA[<p-->Inspector-General of Police, Solomon Arase, today decorated two newly promoted Deputy Inspectors-General of Police. The decorated officers are DIG Chintua Amajor-Onu, psc, mni and DIG Adeniji Jubril Olawale mni. IGP admonished them to inject their wealth of experience to further improve the Police Management Team. DIG Chintua Amajor-Onu, holds a degree in Law Enforcement and […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/ig-of-police-decorates-newly-promoted-digs/">IG of Police decorates newly promoted DIGs</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/ig-of-police-decorates-newly-promoted-digs/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>NEMA warns of possible drought in the country</title><link>http://dailypost.ng/2015/08/05/nema-warns-of-possible-drought-in-the-country/ <comments>http://dailypost.ng/2015/08/05/nema-warns-of-possible-drought-in-the-country/#comments</comments> <pubdate>Wed, 05 Aug 2015 17:51:49 +0000</pubdate> <dc:creator><!--[CDATA[AMOS TAUNA]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[NEMA]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281655</guid> <description><!--[CDATA[<p-->Following the Nigeria Meteorological Agency (NiMet) 2015 rainfall predictions, the National Emergency Management Agency (NEMA), has advised governments in the country to prepare for possible drought. Musa Illalah, NEMA’s North West Coordinator, gave the advice in Kaduna during a workshop on liquid and solid waste management in the context of flood mitigation. Represented by Amina […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/nema-warns-of-possible-drought-in-the-country/">NEMA warns of possible drought in the country</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/nema-warns-of-possible-drought-in-the-country/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>More suspects arrested in connection with murder of Enugu traditional ruler</title><link>http://dailypost.ng/2015/08/05/more-suspects-arrested-in-connection-with-murder-of-enugu-traditional-ruler/ <comments>http://dailypost.ng/2015/08/05/more-suspects-arrested-in-connection-with-murder-of-enugu-traditional-ruler/#comments</comments> <pubdate>Wed, 05 Aug 2015 17:34:14 +0000</pubdate> <dc:creator><!--[CDATA[Danielle Ogbeche]]--></dc:creator> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Enugu]]--></category> <category><!--[CDATA[Osama Bin Laden]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281637</guid> <description><!--[CDATA[<p-->One Ogbuife Chinedu, fondly called Osama Bin Laden has been arrested by the police in Enugu State, alongside another suspect, Ifeanyichukwu Eze, alias ‘Nwa nwanyi agbala’, over the murder of Igwe Peter Onuoha, the traditional ruler of Nkerefi, a community in Nkanu East Local Government Area of Enugu State. DAILY POST recalls that the Igwe […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/more-suspects-arrested-in-connection-with-murder-of-enugu-traditional-ruler/">More suspects arrested in connection with murder of Enugu traditional ruler</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/more-suspects-arrested-in-connection-with-murder-of-enugu-traditional-ruler/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>No plans to scrap NYSC – Buhari</title><link>http://dailypost.ng/2015/08/05/no-plans-to-scrap-nysc-buhari/ <comments>http://dailypost.ng/2015/08/05/no-plans-to-scrap-nysc-buhari/#comments</comments> <pubdate>Wed, 05 Aug 2015 16:33:22 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[buhari]]--></category> <category><!--[CDATA[NYSC]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281615</guid> <description><!--[CDATA[<p-->President Muhammadu Buhari Wednesday in Abuja pledged that his administration will take all necessary actions to maintain and improve the National Youth Service Corps (NYSC) programme as a functional vehicle for the promotion of national unity and integration. President Buhari gave the assurance after receiving a briefing from officials of the Federal Ministry of Youth […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/no-plans-to-scrap-nysc-buhari/">No plans to scrap NYSC – Buhari</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/no-plans-to-scrap-nysc-buhari/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Boko Haram is anti-human, we will pursue and annihilate them – Military vows</title><link>http://dailypost.ng/2015/08/05/boko-haram-is-anti-human-we-will-pursue-and-annihilate-them-military-vows/ <comments>http://dailypost.ng/2015/08/05/boko-haram-is-anti-human-we-will-pursue-and-annihilate-them-military-vows/#comments</comments> <pubdate>Wed, 05 Aug 2015 16:25:38 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Colonel Rabe Abubakar]]--></category> <category><!--[CDATA[Military]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281609</guid> <description><!--[CDATA[<p-->The newly appointed Director of Defence Information of the Nigerian Armed Forces, Colonel Rabe Abubakar, has restated the commitment of the military to ending insurgency and other cases of insecurity plaguing the North-East and other parts of the country. Abubakar stated this while receiving a cross section of Defence correspondents who paid him a visit […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/boko-haram-is-anti-human-we-will-pursue-and-annihilate-them-military-vows/">Boko Haram is anti-human, we will pursue and annihilate them – Military vows</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/boko-haram-is-anti-human-we-will-pursue-and-annihilate-them-military-vows/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>BREAKING: NNPC fires all Group Executive Directors</title><link>http://dailypost.ng/2015/08/05/breaking-nnpc-fires-all-group-executive-directors/ <comments>http://dailypost.ng/2015/08/05/breaking-nnpc-fires-all-group-executive-directors/#comments</comments> <pubdate>Wed, 05 Aug 2015 16:01:33 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[Breaking]]--></category> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Main Headline]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[NNPC]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281594</guid> <description><!--[CDATA[<p-->All Group Executive Directors of the Nigerian National Petroleum Corporation, NNPC, have been reportedly sacked with immediate effect, Sahara Reporters reports. This is happening barely a day after President Buhari appointed Emmanuel Ibe Kachikwu as the Group Managing Director of the NNPC. The affected GEDs were appointed by former President Goodluck Jonathan in March 2014. […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/breaking-nnpc-fires-all-group-executive-directors/">BREAKING: NNPC fires all Group Executive Directors</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/breaking-nnpc-fires-all-group-executive-directors/feed/</wfw:commentrss> <slash:comments>7</slash:comments> </item> <item><title>Niger-Delta youths beg Buhari to probe NNPC, NDDC</title><link>http://dailypost.ng/2015/08/05/niger-delta-youths-beg-buhari-to-probe-nnpc-nddc/ <comments>http://dailypost.ng/2015/08/05/niger-delta-youths-beg-buhari-to-probe-nnpc-nddc/#comments</comments> <pubdate>Wed, 05 Aug 2015 15:17:04 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[buhari]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281574</guid> <description><!--[CDATA[<p-->The Niger-Delta Youth Vanguard for APC has lamented that despite the billions of naira which accrued to the region through the Niger Delta Ministry and the Niger Delta Development Commission, NNDC, the region has been left with nothing to show than bad road network and polluted water. It blamed the underdevelopment of the Niger Delta […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/niger-delta-youths-beg-buhari-to-probe-nnpc-nddc/">Niger-Delta youths beg Buhari to probe NNPC, NDDC</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/niger-delta-youths-beg-buhari-to-probe-nnpc-nddc/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>148 houses, farm produce destroyed by flood in Sokoto</title><link>http://dailypost.ng/2015/08/05/148-houses-farm-produce-destroyed-by-flood-in-sokoto/ <comments>http://dailypost.ng/2015/08/05/148-houses-farm-produce-destroyed-by-flood-in-sokoto/#comments</comments> <pubdate>Wed, 05 Aug 2015 15:08:49 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Sokoto]]--></category> <category><!--[CDATA[sokoto]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281551</guid> <description><!--[CDATA[<p-->About 148 houses were on Saturday destroyed by flood which ravaged various parts of Gwadabawa Local Government Area of Sokoto State. According to reports, no life was lost during the incident but the disaster struck terribly, affecting the headquarters of the local government, Galadunchin-tsauri, Gidan-Dogaza, as well as ‘Yar-Gada villages. One of the victims of […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/148-houses-farm-produce-destroyed-by-flood-in-sokoto/">148 houses, farm produce destroyed by flood in Sokoto</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/148-houses-farm-produce-destroyed-by-flood-in-sokoto/feed/</wfw:commentrss> <slash:comments>0</slash:comments> </item> <item><title>Eggon strips Maku of traditional title</title><link>http://dailypost.ng/2015/08/05/eggon-strips-maku-of-traditional-title/ <comments>http://dailypost.ng/2015/08/05/eggon-strips-maku-of-traditional-title/#comments</comments> <pubdate>Wed, 05 Aug 2015 15:01:46 +0000</pubdate> <dc:creator><!--[CDATA[Sylvester Ugwuanyi]]--></dc:creator> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[Nasarawa]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[Maku]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281567</guid> <description><!--[CDATA[<p-->Erstwhile minister of Information, who was the governorship candidate of the All Progressives Grand Alliance, APGA, in the April 11 election, Mr. Labaran Maku, has been stripped of his traditional title of ‘Turakin Eggon’ by the Paramount Ruler of Eggon nation, HRH Bala Angbazo. Secretary to the traditional council, Mr. Christopher Alaku, who made this […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/eggon-strips-maku-of-traditional-title/">Eggon strips Maku of traditional title</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/eggon-strips-maku-of-traditional-title/feed/</wfw:commentrss> <slash:comments>1</slash:comments> </item> <item><title>NLC commends CBN for publishing names of bank debtors</title><link>http://dailypost.ng/2015/08/05/nlc-commends-cbn-for-publishing-names-of-bank-debtors/ <comments>http://dailypost.ng/2015/08/05/nlc-commends-cbn-for-publishing-names-of-bank-debtors/#comments</comments> <pubdate>Wed, 05 Aug 2015 12:21:10 +0000</pubdate> <dc:creator><!--[CDATA[Daily Post Staff]]--></dc:creator> <category><!--[CDATA[FCT]]--></category> <category><!--[CDATA[Headlines]]--></category> <category><!--[CDATA[National]]--></category> <category><!--[CDATA[CBN]]--></category><guid ispermalink="false">http://dailypost.ng/?p=281509</guid> <description><!--[CDATA[<p-->The General Secretary of the Nigeria Labour Congress, NLC, Dr Peter Eson-Ozo, on Wednesday commended the Central Bank of Nigeria, CBN’s directive to banks to publish names of chronic debtors, saying it would strengthen the economy, Eson-Ozo told the News Agency of Nigeria, NAN, in Abuja that the measure would help to strengthen the nation’s […]<p></p><p><a rel="nofollow" href="http://dailypost.ng/2015/08/05/nlc-commends-cbn-for-publishing-names-of-bank-debtors/">NLC commends CBN for publishing names of bank debtors</a></p> ]]&gt;</description> <wfw:commentrss>http://dailypost.ng/2015/08/05/nlc-commends-cbn-for-publishing-names-of-bank-debtors/feed/</wfw:commentrss> <slash:comments>1</slash:comments> </item> </atom:link></channel> </rss></body></html>

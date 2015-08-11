@@ -237,8 +237,7 @@ CREATE TABLE IF NOT EXISTS `linkouts` (
   `session_key` VARCHAR(255) NOT NULL,
   `no_of_linkouts` INT NOT NULL,
   `created_date` DATETIME NOT NULL,
-  `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_linkout_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
+  `modified_date` DATETIME NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `views` (
@@ -246,8 +245,7 @@ CREATE TABLE IF NOT EXISTS `views` (
   `session_key` VARCHAR(255) NOT NULL,
   `no_of_views` INT NOT NULL,
   `created_date` DATETIME NOT NULL,
-  `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_view_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
+  `modified_date` DATETIME NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `comments` (

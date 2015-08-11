@@ -14,6 +14,7 @@ use App\Story;
 use App\TimelineStory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Solarium\Exception\HttpException;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Solarium\Core\Client\Adapter;
@@ -42,26 +43,31 @@ class StoryController extends Controller {
             $date = new \DateTime('now');
             $id = TimelineStory::insertIgnore($pivot);
             if($id !== false){
-                $updateQuery = $this->client->createUpdate();
-                $story1 = $updateQuery->createDocument();
-                $story1->id = $pivot['story_id']; //return the id of the insert from PDO query and attach it here
-                $story1->title_en = $pivot['title'];
-                $story1->description_en = $pivot['description'];
-                if(isset($story['image_url'])){
-                    $story1->image_url_t = $pivot['image_url'];
-                }else{
-                    $story1->image_url_t = '';
-                }
-                $story1->video_url_t = '';
-                $story1->url = $pivot['url'];
-                $story1->pub_id_i = $pivot['pub_id'];
-                $story1->has_cluster_i = 1;
-                $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
-                //do this for all stories and keep adding them to the stories array
-                $updateQuery->addDocument($story1);
-                $updateQuery->addCommit();
+                try{
+                    $updateQuery = $this->client->createUpdate();
+                    $story1 = $updateQuery->createDocument();
+                    $story1->id = $pivot['story_id']; //return the id of the insert from PDO query and attach it here
+                    $story1->title_en = $pivot['title'];
+                    $story1->description_en = $pivot['description'];
+                    if(isset($story['image_url'])){
+                        $story1->image_url_t = $pivot['image_url'];
+                    }else{
+                        $story1->image_url_t = '';
+                    }
+                    $story1->video_url_t = '';
+                    $story1->url = $pivot['url'];
+                    $story1->pub_id_i = $pivot['pub_id'];
+                    $story1->has_cluster_i = 1;
+                    $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
+                    //do this for all stories and keep adding them to the stories array
+                    $updateQuery->addDocument($story1);
+                    $updateQuery->addCommit();
 
-                $result = $this->client->update($updateQuery);
+                    $result = $this->client->update($updateQuery);
+                }catch(\Exception $ex){
+                    continue;
+                }
+
             }
             array_push($timeline_stories, $pivot);
 
@@ -89,27 +95,36 @@ class StoryController extends Controller {
             $id = TimelineStory::insertIgnore($timeline_story);
             $date = new \DateTime('now');
 
-            if($id !== false){
-                $updateQuery = $this->client->createUpdate();
-                $story1 = $updateQuery->createDocument();
-                $story1->id = $story['story_id']; //return the id of the insert from PDO query and attach it here
-                $story1->title_en = $story['title'];
-                $story1->description_en = $story['description'];
-                if(isset($story['image_url'])){
-                    $story1->image_url_t = $story['image_url'];
-                }else{
-                    $story1->image_url_t = '';
-                }
-                $story1->video_url_t = '';
-                $story1->url = $story['url'];
-                $story1->pub_id_i = $story['pub_id'];
-                $story1->has_cluster_i = 1;
-                $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
-                //do this for all stories and keep adding them to the stories array
-                $updateQuery->addDocument($story1);
-                $updateQuery->addCommit();
 
-                $result = $this->client->update($updateQuery);
+
+            if($id !== false){
+                try{
+                    $updateQuery = $this->client->createUpdate();
+                    $story1 = $updateQuery->createDocument();
+                    $story1->id = $story['story_id']; //return the id of the insert from PDO query and attach it here
+                    $story1->title_en = $story['title'];
+                    $story1->description_en = $story['description'];
+                    if(isset($story['image_url'])){
+                        $story1->image_url_t = $story['image_url'];
+                    }else{
+                        $story1->image_url_t = '';
+                    }
+                    $story1->video_url_t = '';
+                    $story1->url = $story['url'];
+                    $story1->pub_id_i = $story['pub_id'];
+                    $story1->has_cluster_i = 1;
+                    $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
+                    //do this for all stories and keep adding them to the stories array
+                    $updateQuery->addDocument($story1);
+                    $updateQuery->addCommit();
+
+                    $result = $this->client->update($updateQuery);
+                }catch(\Exception $ex){
+
+                }catch(HttpException $sex){
+
+                }
+
             }
         }
 

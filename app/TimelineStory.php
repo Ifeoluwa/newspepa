@@ -150,6 +150,15 @@ class TimelineStory extends Model
             ->increment('no_of_views');
 
         DB::update("UPDATE timeline_stories SET last_view_time = :last_view_time WHERE story_id = :story_id", $params);
+        $result = DB::table('views')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_views');
+        if($result === 0){
+            $view = array();
+            $view['no_of_views'] = 1;
+            $view['created_date'] = $time;
+            $view['modified_date'] = $time;
+            DB::table('views')->insert($view);
+        }
+
 
         $result = DB::table('views')
             ->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])
@@ -169,6 +178,14 @@ class TimelineStory extends Model
         DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
 
         DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
+        $result = DB::table('linkouts')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_linkouts');
+        if($result === 0){
+            $linkout = array();
+            $linkout['no_of_linkouts'] = 1;
+            $linkout['created_date'] = $time;
+            $linkout['modified_date'] = $time;
+            DB::table('linkouts')->insert($linkout);
+        }
 
         return "200";
     }
@@ -295,34 +312,28 @@ class TimelineStory extends Model
 
     // Gets the total of number of story views for the current day
     public static function todayViews(){
-
+        $todayViews = DB::table('views')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->sum('no_of_views');
+        return $todayViews;
     }
 
     // Gets the total of number of story linkouts for the current day
     public static function todayLinkouts(){
+        $todayLinkouts = DB::table('linkouts')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->sum('no_of_linkouts');
+        return $todayLinkouts;
 
     }
 
     // Gets the total number of story views
     public static function totalViews(){
-
+        $total_views = DB::table('timeline_stories')->sum('no_of_views');
+        return $total_views;
     }
 
     // Gets the total number of story linkouts
     public static function totalLinkouts(){
-//        $total_linkout = DB::table('timeline_stories')->
+        $total_linkout = DB::table('timeline_stories')->sum('link_outs');
+        return $total_linkout;
     }
-
-    // Get the count of the stories that broke today
-    public static function todayStories(){
-        $previous_count = DB::table('timeline_stories')->where('created_date', '<', new \DateTime('today', new \DateTimeZone('Africa/Lagos')))->count();
-        $current_count = DB::table('timeline_stories')->count();
-        $today_count = $current_count - $previous_count;
-
-        return $today_count;
-    }
-
-
 
 
 

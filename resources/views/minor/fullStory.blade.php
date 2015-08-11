@@ -53,16 +53,16 @@
 @endsection
 
 
-{{--@section('other_sources')--}}
-{{--@if($full_story['is_pivot']==1)--}}
-{{--<div class="row opera-panel minors related-content"><b>other sources</b></div>--}}
-{{--@foreach($data['other_sources'] as $other_sources)--}}
-    {{--<div class="row opera-panel minors">--}}
-   {{--<a name= linkOuts id="{{$other_sources['story_id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span></a>--}}
-    {{--</div>--}}
-{{--@endforeach--}}
-{{--@endif--}}
-{{--@stop--}}
+@section('other_sources')
+@if(count($data['other_sources']) > 0)
+<div class="row opera-panel minors related-content"><b>other sources</b></div>
+@foreach($data['other_sources'] as $other_sources)
+    <div class="row opera-panel minors">
+   <a name= linkOuts id="{{$other_sources['story_id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span></a>
+    </div>
+@endforeach
+@endif
+@stop
 
 @section('related_content')
 <div class="row opera-panel radius related-content">Latest stories in {{$data['category_names'][$full_story['category_id']]}}</div>
