@@ -80,13 +80,61 @@ class StoryController extends Controller {
 
     }
 
-    // Insersts pivto into the timeline stories and also inserts into Solr
+//    public function createTimelineStory(){
+//        set_time_limit(0);
+//        // Stories to Timeline Stories
+//
+//        DB::transaction(function(){
+//            $stories = DB::table('stories')->where('status_id', 1)->get();
+//            foreach($stories as $story){
+//                $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
+//                $story['story_id'] = $story['id'];
+//                $timeline_story = array_except($story, ['id']);
+//                TimelineStory::insertIgnore($timeline_story);
+//            }
+//
+//        });
+//
+//        // Cluster-Pivot Method
+////        $pivots = Story::pivots();
+////
+////        foreach($pivots as $pivot){
+////
+////            $pivot['story_url'] = $this->makeStoryUrl($pivot['title'], $pivot['cluster_pivot']);
+////            $pivot['story_id'] = $pivot['cluster_pivot'];
+////            array_pull($pivot, 'cluster_pivot');
+////            array_pull($pivot, 'cluster_match');
+////
+////
+////            $pivot['is_pivot'] = 1;
+////
+////            TimelineStory::insertIgnore($pivot);
+////            $matches = Story::matches($pivot['story_id']);
+////
+////            foreach($matches as $match){
+////
+////                $match['story_url'] = $this->makeStoryUrl($match['title'], $match['cluster_match']);
+////                $match['story_id'] = $match['cluster_match'];
+////                array_pull($match, 'cluster_pivot');
+////                array_pull($match, 'cluster_match');
+////
+////                TimelineStory::insertIgnore($match);
+////            }
+////
+////        }
+//
+//        set_time_limit(120);
+//
+//    }
+
+    //
     public function createTimelineStory(){
         set_time_limit(0);
         // Stories to Timeline Stories
         //solr insert
         $this->client = new \Solarium\Client;
-
+        $stories_array = array();
+        // DB::transaction(function(){
         $stories = DB::table('stories')->where('status_id', 1)->get();
         foreach($stories as $story){
             $story['story_url'] = $this->makeStoryUrl($story['title'], $story['id']);
@@ -94,8 +142,6 @@ class StoryController extends Controller {
             $timeline_story = array_except($story, ['id']);
             $id = TimelineStory::insertIgnore($timeline_story);
             $date = new \DateTime('now');
-
-
 
             if($id !== false){
                 try{
@@ -115,18 +161,49 @@ class StoryController extends Controller {
                     $story1->has_cluster_i = 1;
                     $story1->links = $date->getTimestamp(); //PLEASE NOTE, you are using a string field to store date in solr
                     //do this for all stories and keep adding them to the stories array
+                    //when done continue to the nest line
+                    //                array_push($stories_array, $story1);
                     $updateQuery->addDocument($story1);
                     $updateQuery->addCommit();
 
                     $result = $this->client->update($updateQuery);
-                }catch(\Exception $ex){
-
-                }catch(HttpException $sex){
-
                 }
-
+                catch(\Exception $ex){
+                    continue;
+                }
             }
         }
+
+        // });
+
+        // Cluster-Pivot Method
+//        $pivots = Story::pivots();
+//
+//        foreach($pivots as $pivot){
+//
+//            $pivot['story_url'] = $this->makeStoryUrl($pivot['title'], $pivot['cluster_pivot']);
+//            $pivot['story_id'] = $pivot['cluster_pivot'];
+//            array_pull($pivot, 'cluster_pivot');
+//            array_pull($pivot, 'cluster_match');
+//
+//
+//            $pivot['is_pivot'] = 1;
+//
+//            TimelineStory::insertIgnore($pivot);
+//            $matches = Story::matches($pivot['story_id']);
+//
+//            foreach($matches as $match){
+//
+//                $match['story_url'] = $this->makeStoryUrl($match['title'], $match['cluster_match']);
+//                $match['story_id'] = $match['cluster_match'];
+//                array_pull($match, 'cluster_pivot');
+//                array_pull($match, 'cluster_match');
+//
+//                TimelineStory::insertIgnore($match);
+//            }
+//
+//        }
+        set_time_limit(120);
 
     }
 
@@ -259,7 +336,6 @@ class StoryController extends Controller {
                     $result = DB::getPdo()->lastInsertId();
                 }
 
-//
                 if($result !== false){
                     $story_details['id'] = $result;
                     $this->solrInsert($story_details);
