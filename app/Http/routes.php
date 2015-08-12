@@ -83,6 +83,7 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 
+    Route::post('story/comment', 'CommentController@store');
 
 //});
 

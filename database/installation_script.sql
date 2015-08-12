@@ -252,7 +252,11 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `session_key` VARCHAR(255) NOT NULL,
   `user_name` VARCHAR(50) NOT NULL,
   `comment` TEXT NOT NULL,
-  CONSTRAINT fk_comment_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
+  `status_id` INT(10) NOT NULL DEFAULT 1,
+  `created_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_date` DATETIME NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_comment_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_comment_status FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `daily_stats` (
@@ -262,4 +266,5 @@ CREATE TABLE IF NOT EXISTS `daily_stats` (
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL
 );
+
 

@@ -16,7 +16,7 @@
 <meta property="og:image" content= "{{$full_story2['image_url']}}"/>
 <meta property="og:description" content= "{{$full_story2['description']}}"/>
 <meta property="og:url" content= "{{url($tc->makeStoryUrl($full_story2['title'], $full_story2['story_id']))}}"/>
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
 @section('full_story')
@@ -29,23 +29,17 @@
               <span class="full-story-title">{{$full_story['title']}}</span><br/>
               <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
               <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
-      </div>
-      <br/><br/>
+            </div>
+            <br/><br/>
 
-      @if($full_story['image_url'] != "")
-      <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
-      @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
-      </div>
-      <div style="padding-bottom: 5px">
-      <ul class="inline-list">
-          <li><a href="#"><div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
-      </a></li>
-          <li><a href="#"><span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
-      </a></li>
-          <li><a id="comment-link" href="#">Comments</a></li>
-        </ul>
-      {{--<div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>--}}
+              @if($full_story['image_url'] != "")
+              <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
+              @endif
+              <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
+              </div>
+               {{--<div>--}}
+
+                    {{--<div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>--}}
                      {{--<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>--}}
                      {{--<span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>--}}
                      {{--<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" style="font-size: 14px">Other sources&raquo; </a>--}}
@@ -54,51 +48,73 @@
                        {{--<li><a href="#">This is another</a></li>--}}
                        {{--<li><a href="#">Yet another</a></li>--}}
                      {{--</ul>--}}
-      {{--</div>--}}
+                {{--</div>--}}
+                <hr>
+                <ul class="inline-list" style="overflow: visible">
+                  <li><a href="#"><div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
+                  </a>
+                                     </li>
+                  <li><a href="#"><span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
+                  </a>
+                  </li>
+                  <li><a id="comment-link" href="#">Comments</a></li>
+                </ul>
 
-  </div>
+        </div>
 
-  <div id="comments-box" hidden="hidden">
-      <div class="panel">
-     <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
-     <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
-     <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
-     <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
 
-        <form>
-            {!! csrf_field() !!}
-        <div class="row">
-            <div class="large-12 columns">
 
-            <input type="text" placeholder="Please enter you name" />
+        <div id="comments-box" hidden="hidden">
+              <div class="panel">
+             <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
+             <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
+             <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
+             <blockquote>Those people who think they know everything are a great annoyance to those of us who do.<cite>Isaac Asimov</cite></blockquote>
 
-            </div>
-          </div>
-              <div class="row">
-                <div class="large-12 columns">
-                  <div class="row collapse">
-                    <div class="small-12 columns">
-                      <textarea type="text" placeholder="Add comment"></textarea>
+                <form id="commentForm" action="{{url('story/')}}" method="post" target="commentFrame">
+                    {!! csrf_field() !!}
+                <div class="row">
+                    <div class="large-12 columns">
+
+                    <input type="text" name="username" placeholder="Please enter you name" required="required" />
+
                     </div>
-
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="large-12 columns">
-                      <button class="button radius tiny searchbar-button">Post</button>
+                  <div class="row" hidden>
+                    <div class="large-12 columns">
 
-                </div>
-              </div>
+                    <input type="text" name="story_id" value="{{$full_story['story_id']}}" required="required" />
 
-        </form>
+                    </div>
+                  </div>
+                      <div class="row">
+                        <div class="large-12 columns">
+                          <div class="row collapse">
+                            <div class="small-12 columns">
+                              <textarea placeholder="Add comment" name="commenr" required="required"></textarea>
+                            </div>
 
-       </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="large-12 columns">
 
-  </div>
-</div>
+                              <button id="commentPostBtn" type="button" class="button radius tiny searchbar-button">Post</button>
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        </div>
+                      </div>
+
+                </form>
+
+               </div>
+
+          </div>
+          <iframe name="commentFrame" hidden>
+
+          </iframe>
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
              <!-- Medium Rect1 -->
              <ins class="adsbygoogle"
                   style="display:inline-block;width:300px;height:250px"
@@ -162,11 +178,33 @@
  @stop
 
 @section('more-scripts')
+
+<script>
+        $.ajaxSetup({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 <script>
     $(document).ready(function(){
         $('#comment-link').click(function(){
             $('#comments-box').toggle();
         });
+
+        $('#commentPostBtn').click(function(){
+            $.ajax({
+                 url: 'http://localhost:8000/story/comment',
+                type: "POST",
+                data: {  param1: 'hello' , _token: '{!! csrf_token() !!}' },
+                dataType: "html",
+                success: function(data){
+                    alert(data);
+                }
+            });
+        });
     });
+
+
 </script>
 @stop
