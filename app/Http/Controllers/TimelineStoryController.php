@@ -242,7 +242,7 @@ class TimelineStoryController extends Controller
                 return intval($diff_in_sec/86400) ." days ago";
             }
         }
-
+        return "Several days ago";
 
     }
 

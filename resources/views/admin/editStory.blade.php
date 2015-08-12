@@ -54,7 +54,9 @@
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Description</label>
                         <div class="col-sm-10">
-                            </textarea>
+                             <textarea class="form-control ckeditor" name="description" rows="6" id="description">
+                                                         {{$data['story_details']['description']}}
+                             </textarea>
                         </div>
                     </div>
                     <div class="form-group">
@@ -115,8 +117,7 @@
 
 
  </div>
-                            <textarea class="form-control ckeditor" name="description" rows="6" id="description">
-                            {{$data['story_details']['description']}}
+
 
  <div class="modal fade" id="storyPreviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
    <div class="modal-dialog" role="document">
@@ -135,7 +136,6 @@
        </div>
        <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-         <button type="button" class="btn btn-primary">Send message</button>
        </div>
      </div>
    </div>

@@ -238,10 +238,13 @@ class StoryController extends Controller {
                 }
             }
 
+
+            $story_details['feed_id'] = 38;
             $story_details['pub_date'] = $date;
             $story_details['has_cluster'] = 1;
             $story_details['created_date'] = $date;
             $story_details['modified_date'] = $date;
+
 
             $story = DB::insert('INSERT IGNORE INTO stories ('.implode(",", array_keys($story_details)).
                 ') values (?'.str_repeat(',?', count($story_details) - 1).')', array_values($story_details));
@@ -256,19 +259,23 @@ class StoryController extends Controller {
                     $result = DB::getPdo()->lastInsertId();
                 }
 
+//
                 if($result !== false){
                     $story_details['id'] = $result;
                     $this->solrInsert($story_details);
-                    return view('dashboard');
+                    return view('admin/story/new')->with('success', "Story has been successfully added.");
                 }
             }
-            return redirect('admin/story/new')->with('success', "Story has been successfully added");
+            return redirect('admin/story/new')->with('success', "Story has been successfully added.");
         }catch (\ErrorException $ex){
-            return redirect('admin/story/new')->withErrors('errors', 'Oops! Something went wrong');
+            return redirect('admin/story/new')->with('failure', 'Oops! Something went wrong.')->withInput();
         } catch (NotFoundHttpException $nfe){
-            return redirect('admin/story/new')->withErrors('errors', 'Oops! Something went wrong');;
+            return redirect('admin/story/new')->with('failure', 'Oops! Something went wrong.')->withInput();
         }catch(FileException $fex){
-            return redirect('admin/story/new')->withErrors('errors', 'Oops! Something went wrong. Upload error');
+            return redirect('admin/story/new')->with('failure', 'Oops! Something went wrong. Upload error')->withInput();
+        }catch(\Exception $ex){
+         echo $ex->getMessage();
+//            return redirect('admin/story/new')->with('failure', 'Something went wrong. Please try again.')->withInput();
         }
     }
 
@@ -415,16 +422,5 @@ class StoryController extends Controller {
 
     }
 
-    public function getStoriesCount(){
-
-    }
-
-    public function getNumberNoViews(){
-
-    }
-
-    public function getNumberOfLinkouts(){
-
-    }
 
 }

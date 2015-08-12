@@ -255,3 +255,11 @@ CREATE TABLE IF NOT EXISTS `comments` (
   CONSTRAINT fk_comment_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS `daily_stats` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `no_of_views` INT NOT NULL,
+  `no_of_linkouts` INT NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL
+);
+

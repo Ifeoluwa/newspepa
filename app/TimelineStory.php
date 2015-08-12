@@ -150,13 +150,13 @@ class TimelineStory extends Model
             ->increment('no_of_views');
 
         DB::update("UPDATE timeline_stories SET last_view_time = :last_view_time WHERE story_id = :story_id", $params);
-        $result = DB::table('views')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_views');
+        $result = DB::table('daily_stats')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_views');
         if($result === 0){
             $view = array();
             $view['no_of_views'] = 1;
             $view['created_date'] = $time;
             $view['modified_date'] = $time;
-            DB::table('views')->insert($view);
+            DB::table('daily_stats')->insert($view);
         }
 
     }
@@ -171,10 +171,10 @@ class TimelineStory extends Model
         DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
 
         DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
-        $result = DB::table('linkouts')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_linkouts');
+        $result = DB::table('daily_stats')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_linkouts');
         if($result === 0){
             $linkout = array();
-            $linkout['no_of_linkouts'] = 1;
+            $linkout['linkouts'] = 1;
             $linkout['created_date'] = $time;
             $linkout['modified_date'] = $time;
             DB::table('linkouts')->insert($linkout);

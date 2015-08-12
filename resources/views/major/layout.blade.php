@@ -215,7 +215,7 @@
              var storyID = $(this).attr('id');
                 $.ajax({
                     type: "POST",
-                    dataType:"jsonp"
+                    dataType:"jsonp",
                     url:'http://newspepa.com/linkout/'+storyID,
                     data:{_token :token},
                     success: function(msg){
@@ -291,6 +291,7 @@
       ga('create', 'UA-49109646-1', 'auto');
       ga('send', 'pageview');
     </script>
+    @yield('more-scripts')
 
     </body>
 </html>

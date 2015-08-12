@@ -25,7 +25,7 @@
 					<div class="info-box blue-bg">
 						<i class="fa fa-eye"></i>
 						<div class="count">{{$data['story_stats']['today_views']}}</div>
-						<div class="title">Today Views</div>
+						<div class="title">Today's Views</div>
 					</div><!--/.info-box-->
 				</div><!--/.col-->
 
@@ -33,7 +33,7 @@
 					<div class="info-box brown-bg">
 						<i class="fa fa-link"></i>
 						<div class="count">{{$data['story_stats']['today_linkouts']}}</div>
-						<div class="title">Today Linkouts</div>
+						<div class="title">Today's Linkouts</div>
 					</div><!--/.info-box-->
 				</div><!--/.col-->
 
@@ -65,12 +65,15 @@
         </tr>
     </thead>
     <tbody>
+     <?php $tc = new \App\Http\Controllers\TimelineStoryController(); ?>
+
     @foreach($data['stories'] as $row)
+
     <tr>
         <td>{{$row['title']}}</td>
         <td>{{$data['categories'][$row['category_id']]}}</td>
         <td>{{$data['publishers'][$row['pub_id']]}}</td>
-        <td>{{$row['created_date'] }}</td>
+        <td>{{$tc->getTimeDifference($row['created_date'])}}</td>
         <td>{{$row['no_of_views']}}</td>
         <td>{{$row['link_outs']}}</td>
         <td>{{$row['rank_score']}}</td>

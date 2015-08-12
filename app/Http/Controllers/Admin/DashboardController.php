@@ -28,12 +28,21 @@ class DashboardController extends Controller
     }
 
     public function getDashboard(){
-        $all_stories =  DB::table('timeline_stories')
-            ->select('id', 'story_id', 'title', 'image_url', 'category_id', 'pub_id', 'no_of_views', 'last_view_time', 'link_outs', 'last_linkout_time', 'created_date', 'rank_score')
-            ->where('status_id', 1)->orderBy('created_date', 'desc')
-            ->paginate(100);
 
-        return view('admin.dashboard')->with('data', array('stories' => $all_stories, 'categories' => $this->categories, 'publishers' => Publisher::$publishers, 'story_stats' => $this->getStoryStats()));
+        try{
+            $all_stories =  DB::table('timeline_stories')
+                ->select('id', 'story_id', 'title', 'image_url', 'category_id', 'pub_id', 'no_of_views', 'last_view_time', 'link_outs', 'last_linkout_time', 'created_date', 'rank_score')
+                ->where('status_id', 1)->orderBy('created_date', 'desc')
+                ->paginate(100);
+            return view('admin.dashboard')->with('data', array('stories' => $all_stories, 'categories' => $this->categories, 'publishers' => Publisher::$publishers, 'story_stats' => $this->getStoryStats()));
+
+        }catch (\Exception $ex){
+            echo "<pre>";
+            echo $ex->getMessage();
+            echo "</pre>";
+        }
+
+
     }
 
     public function getStoryActions(){
