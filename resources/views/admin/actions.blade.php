@@ -73,13 +73,15 @@
 <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function(){
-    $('#storyActionsTable').DataTable();
 
     $('.confirmDelete').click(function(){
         var del_url = $(this).data('val');
         $('#deleteStoryButton').attr('href', del_url);
         $('#confirmDeleteModal').modal('show');
     });
+    $('#storyActionsTable').DataTable();
+
+
 });
 
 

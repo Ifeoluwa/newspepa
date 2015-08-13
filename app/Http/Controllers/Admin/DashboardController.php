@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Comment;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PublisherController;
 use App\Publisher;
@@ -62,6 +63,7 @@ class DashboardController extends Controller
         }
     }
 
+   // Gets the story stats: views, linkouts etc
     public function getStoryStats(){
         $story_stats = array();
         $story_stats['today_views'] = TimelineStory::todayViews();
@@ -72,6 +74,13 @@ class DashboardController extends Controller
 //        $today_stories
         return $story_stats;
 
+    }
+
+    //Fetches all comments about stoires
+    public function getComments(){
+
+        $all_comments = Comment::allComments()->paginate(100);
+        return view('admin.comments')->with('data', array('comments' => $all_comments));
     }
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -38,19 +39,19 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->session()->get('key');
         try{
             //Stores the comment in the database
             $comment_details = array();
-            $comment_details['session_key'] = $request->session()->get('key');;
+            $comment_details['session_id'] = isset($_SESSION['session_id'])? $_SESSION['session_id']:101;
             $comment_details['story_id'] = $request->input('story_id');
             $comment_details['user_name'] = $request->input('user_name');
             $comment_details['comment'] = $request->input('comment');
             $comment_details['created_date'] = new \Carbon\Carbon('now');
             $comment_details['modified_date'] = $comment_details['created_date'];
             DB::table('comments')->insert($comment_details);
+            return json_encode(true);
         }catch (\Exception $ex){
-            echo json_encode($ex->getMessage());
+            return json_encode(false);
         }
 
     }
@@ -101,8 +102,21 @@ class CommentController extends Controller
     }
 
     public function getComments($story_id){
-        $story_comments = DB::table('comments')->where('story_id', $story_id)
+
+        $story_comments = DB::table('comments')
+            ->where('story_id', $story_id)
             ->where('status_id', 1)->orderBy('created_date', 'ASC')->get();
         return $story_comments;
     }
+
+    public function approve($comment_id){
+        DB::table('comments')->where('id', $comment_id)->update(['status_id' => 1]);
+        return back()->with('info', 'The selected comment has been approved');
+    }
+
+    public function disapprove($comment_id){
+        DB::table('comments')->where('id', $comment_id)->update(['status_id' => 2]);
+        return back()->with('info', 'The selected comment has been approved');
+    }
+
 }

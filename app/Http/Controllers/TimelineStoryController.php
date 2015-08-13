@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Publisher;
 use App\Story;
 use App\TimelineStory;
@@ -171,11 +172,14 @@ class TimelineStoryController extends Controller
 
         $now = new \DateTime('now', $timezone);
         TimelineStory::updateStoryViews($story_id, $now);
+        //Get the active comments for this story
+        $comments = Comment::thisStoryComments($story_id);
+
         if($this->isOpera()){
-            return view('minor.fullStory')->with('data', $full_story);
+            return view('minor.fullStory')->with('data', $full_story)->with('comments', $comments);
 
         }else{
-            return view('major.fullStory')->with('data', $full_story);
+            return view('major.fullStory')->with('data', $full_story)->with('comments', $comments);
 
         }
 
