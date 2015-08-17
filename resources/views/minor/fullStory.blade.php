@@ -45,7 +45,7 @@
                   <li><a href="#"><span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
                   </a>
                   </li>
-                  <li><a id="comment-link" href="#"><img src="{{url('ui_newspaper/img/comment.jpg')}}" style="width: 30px"> {{count($comments)}}</a></li>
+                  <li><a id="comment-link"><img src="{{url('ui_newspaper/img/comment.jpg')}}" style="width: 30px"> {{count($comments)}}</a></li>
                 </ul>
 
   </div>
@@ -168,46 +168,6 @@
 @endforeach
  @stop
 @section('more-scripts')
-<script>
-    $.ajaxSetup({
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        //Shows or hides the comment box
-        $('#comment-link').click(function(){
-            $('#comments-box').toggle();
-        });
-        //Submits the comments for approval
-        $('#commentPostBtn').click(function(){
-            var story_id = $('#story_id').val();
-            var comment = $('#comment').val();
-            var user_name = $('#user_name').val();
-            if(user_name !== "" && comment !== ""){
-                var data = {  story_id: story_id , _token: '{!! csrf_token() !!}', user_name: user_name, comment: comment };
-
-                $.post('story/comment', data, function(data){
-                    if(data == true){
-                      $('#notification_box').empty().append('<div data-alert class="alert-box success radius"> Thanks. Your comment has been submitted for approval.<a href="#" class="close">'+'&times;'+'</a></div>');
-                       $('#user_name').val("");
-                       $('#comment').val("");
-
-                    }else{
-                      $('#notification_box').empty().append('<div data-alert class="alert-box warning radius">Unable to submit your comment. Please try again later.<a href="#" class="close">'+'&times;'+'</a></div>');
-                    }
-                }, 'json').error(function(){
-                      $('#notification_box').empty().append('<div data-alert class="alert-box danger radius">An error occured. Please try again later.<a href="#" class="close">'+'&times;'+'</a></div>');
-                });
-
-            }else{
-                 $('#notification_box').empty().append('<div data-alert class="alert-box warning radius">Please fill all fields<a href="#" class="close">'+'&times;'+'</a></div>');
-            }
-
-        });
-    });
-</script>
+@include('partials.commentScript')
 @stop
 

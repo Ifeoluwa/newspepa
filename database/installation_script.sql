@@ -268,3 +268,13 @@ CREATE TABLE IF NOT EXISTS `daily_stats` (
 );
 
 
+INSERT INTO `feeds` (`id`, `title`, `pub_id`, `url`, `last_access`, `refresh_period`, `status_id`, `category_id`, `created_date`, `modified_date`) VALUES
+  (1, 'BBC Hausa News', 1, 'http://www.bbc.com/hausa/index.xml', '2015-07-22 07:35:07', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (2, 'The Nation Politics News', 2, 'http://thenationonlineng.net/category/politics/feed', '2015-07-22 07:35:22', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (3, 'Kokofeed News', 3, 'http://kokofeed.com/category/news/feed ', '2015-07-22 07:35:25', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (3, 'Kokofeed Best of Web', 3, 'http://kokofeed.com/category/best-of-the-web/feed', '2015-07-22 07:35:25', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (3, 'Daily Post Sport News', 3, 'http://kokofeed.com/category/lists/feed', '2015-07-22 07:35:25', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (3, 'Daily Post Sport News', 3, 'http://kokofeed.com/category/trending/feed', '2015-07-22 07:35:25', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (3, 'Daily Post Sport News', 3, 'http://kokofeed.com/category/video/feed', '2015-07-22 07:35:25', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  (3, 'Daily Post Sport News', 3, 'http://dailypost.ng/sport-news/feed', '2015-07-22 07:35:25', 15, 1, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56');
+
