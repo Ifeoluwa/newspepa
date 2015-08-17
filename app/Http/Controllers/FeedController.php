@@ -128,11 +128,6 @@ class FeedController extends Controller {
 
     // This method get feeds from feeds with different organisation of content such as Nigerian Monitor, Stargist, and Koko Feed
     public function getFeedContent($feed){
-        try{
-
-        }catch(\ErrorException $ex){
-
-        }
         $rss = new \DOMDocument();
         $rss->load($feed['url']);
         $stories = array();
@@ -163,6 +158,53 @@ class FeedController extends Controller {
         }
         return $stories;
 
+    }
+
+    public function getFullFeedContent(){
+        try{
+            $url = 'C:\wamp\www\newspepa\public\feeds\full_koko.html';
+            $class_name = 'content-text';
+            $rss = new \DOMDocument();
+            $rss->load($url);
+            $finder = new \DomXPath($url);
+
+            $nodes = $finder->query('//*[@class="' . $class_name . '"]');
+            var_dump($nodes);
+            die();
+        }catch(\ErrorException $ex){
+            echo $ex->getMessage();
+        }
+
+
+
+//        $rss->load($feed['url']);
+//        $stories = array();
+//        foreach ($rss->getElementsByTagName('item') as $node) {
+//            try{
+//                $story = array (
+//                    'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+//                    'url' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+//                    'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('pubDate')->item(0)->nodeValue)),
+//                    'description' => strip_tags($node->getElementsByTagName('description')->item(0)->nodeValue)."",
+//                    'content' => $node->getElementsByTagName('encoded')->item(0)->nodeValue,
+//
+//                );
+//                preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
+//                if(count($matches) > 0){
+//                    $this->storeImage($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
+//                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
+//                }
+//
+//                $story['feed_id'] = $feed['id'];
+//                $story['pub_id'] = $feed['pub_id'];
+//                $story['category_id'] = $feed['category_id'];
+//                array_push($stories, $story);
+//            }catch(\ErrorException $ex){
+//                continue;
+//            }
+//
+//        }
+//        return $stories;
     }
 
 
@@ -293,9 +335,10 @@ class FeedController extends Controller {
     }
 
     public function test(){
-        $this->fetchFeeds();
-        echo "<br> done";
+        $this->getFullFeedContent();
 //        $this->fetchFeeds();
+//        echo "<br> done";
+////        $this->fetchFeeds();
 //        echo "<br> done";
 
     }
