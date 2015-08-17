@@ -10,7 +10,7 @@
      <link rel="stylesheet" href="ui_newspaper/css/app26.css" />
      <link rel="stylesheet" href="ui_newspaper/css/test.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+    {{--<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>--}}
     {{--<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>--}}
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
   </head>
@@ -303,10 +303,22 @@
 //    });
 
 //click event to unhide the search bar
-$('.search-prompt').click(function(e) {
-      $(".category-row").css('margin-top','105px');
-      $(".search-column").css('display','inherit');
- });
+
+$('.search-prompt').click(function() {
+  var clicks = $(this).data('clicks');
+  if (clicks) {
+     $(".search-column").css('display','none');
+     $(".category-row").css('margin-top','65px');
+  } else {
+  $(".category-row").css('margin-top','105px');
+  $(".search-column").css('display','inherit');
+  }
+  $(this).data("clicks", !clicks);
+});
+//$('.search-prompt').click(function(e) {
+//      $(".category-row").css('margin-top','105px');
+//      $(".search-column").css('display','inherit');
+// });
 
 
 

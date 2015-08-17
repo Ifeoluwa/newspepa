@@ -4,12 +4,12 @@
 
 /*}*/
 
-@font-face{
-    font-family: "cnn";
+/*@font-face{*/
+    /*font-family: "cnn";*/
     /*src: url('cnn.ttf') format('truetype');*/
-    src: url('http://www.fontsaddict.com/fontface/cnn.ttf');
+    /*src: url('http://www.fontsaddict.com/fontface/cnn.ttf');*/
 
-}
+/*}*/
 .name-m{
     background:url('../img/logo-white-transparent-small.png') no-repeat;
     background-position: center;
@@ -314,7 +314,7 @@ button:hover, .button:hover,{
 .opera-panel{
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
-    font-family: Helvetica, sans-serif, sans-serif;
+    font-family: Helvetica,sans-serif;
     display: block;
     position: relative;
     overflow: hidden;
@@ -330,7 +330,7 @@ button:hover, .button:hover,{
 .panel {
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
-    font-family:inherit;
+    font-family:Helvetica, sans-serif;
     border-radius: 9px;
     display:block;
     position: relative;
@@ -423,7 +423,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 5px !important;
 }
 .full-story-title{
-    font: 24px cnn, Helvetica, sans-serif;
+    font: 24px Helvetica, sans-serif;
     text-align: justify;
     font-weight:bolder;
     text-transform: capitalize
@@ -633,7 +633,7 @@ body{
     background-color:#E8E8E8;
     overflow-x: hidden;
     padding: 4px;
-    font-family: cnn, Helvetica, sans-serif;
+    font-family:Helvetica, sans-serif;
 }
 
 .footer{
@@ -831,7 +831,7 @@ body{
     text-align:justify;
     text-justify:inter-word;
     /*font-family:Roboto,sans-serif;*/
-    font-family: cnn, Helvetica, roboto,sans-serif;
+    font-family:Helvetica,sans-serif;
     /*font:16px arial;*/
     /*padding:0.2rem;*/
 }
@@ -943,14 +943,14 @@ body{
 }
 .heading-trending{
     float:left;
-    border-bottom: solid #bdbdbd 1px;
+    /*border-bottom: solid #bdbdbd 1px;*/
     margin-bottom: 10px;
     margin-top: 10px
 }
 .span-trending{
     font-size: 16px;
-    color:#008744;
-    border-bottom: solid #ff0000 5px;
+    color:#FF6600;
+    /*border-bottom: solid #ff0000 5px;*/
 }
 .column-trending{
     border-left:solid #0266c8 2px;

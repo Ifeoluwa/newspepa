@@ -14,16 +14,16 @@
 
 <div class="row row-trending">
     <div class="large-12 small-12 medium-12 columns heading-trending">
-        <span class="span-trending"><b>TRENDING NOW</b></span>
+        <span class="span-trending">TRENDING NOW</span>
     </div>
     <div class="large-12 small-12 medium-12 columns column-trending" >
-        <span>some content in here title of a trending story</span>
+        <span class="title-timeline">some content in here title of a trending story</span>
     </div>
     <div class="large-12 small-12 medium-12 columns column-trending">
-        <span>some content in here the title of a trending story</span>
+        <span class="title-timeline">some content in here the title of a trending story</span>
     </div>
     <div class="large-12 small-12 medium-12 columns column-trending">
-        <span>some content in here  title of a trending story</span>
+        <span class="title-timeline">some content in here  title of a trending story</span>
     </div>
 </div>
 
