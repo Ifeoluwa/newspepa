@@ -52,7 +52,8 @@
                     <div class="small-9 medium-9 columns">
                       <a href="{{url('/')}}"> <h1 class="title"></h1></a></div>
                     <div class="small-2 columns">
-                      <div class="search-prompt" style="float:right"></div>
+                      <div id="searchChange" class="search-prompt" style="float:right"></div>
+                      {{--<div class="close-search" style="float:right"></div>--}}
                     </div>
                 </section>
 
@@ -267,14 +268,37 @@
 //        $("#toFloat").hide();
 //    });
 
-     $('.search-prompt').click( function(e) {
-//            $(".category-row").css('background-color','#0266c8');
-            $(".category-row").css('margin-top','105px');
-//            $("#more").css('background-color','#0266c8');
-//            $(".category-row ul li .dropdown.button::after, .category-row ul li button.dropdown::after").css('border-top-color','#0266c8');
-            $(".search-column").css('display','inherit');
+//click event to unhide the search bar
+$('.search-prompt').click(function(e) {
+      $(".category-row").css('margin-top','105px');
+      $(".search-column").css('display','inherit');
+ });
 
-        });
+
+
+//click event to change the search background icon
+var searchObj, className,search_column, index;
+
+searchObj = document.getElementById('searchChange');
+search_column=document.getElementsByClassName('search-column')
+index = 1;
+className = [
+    'search-prompt',
+    'close-search'
+];
+
+function updateIndex(){
+    if(index === 0){
+        index = 1;
+    }else{
+        index = 0;
+    }
+}
+
+searchObj.onclick = function(e){
+    e.currentTarget.className = className[index];
+    updateIndex();
+}
 
 
     </script>

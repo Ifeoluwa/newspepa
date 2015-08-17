@@ -234,23 +234,25 @@ button {
     height:auto;
     padding-bottom:1.22rem;
     padding-top:2.7rem;
-    background:url("../img/closeButton.png") no-repeat center, url("../img/search-icon.png") no-repeat center;
+    background:url("../img/search-icon.png") no-repeat center;
     background-size:22px 22px;
     overflow-y: hidden;
     margin-right: 30%;
+    cursor:pointer;
 
 }
 
-/*.close-search{*/
-    /*width:100%;*/
-    /*height:auto;*/
-    /*padding-bottom:1.22rem;*/
-    /*padding-top:2.7rem;*/
-    /*background:url("../img/closeButton.png") no-repeat center;*/
-    /*background-size:22px 22px;*/
-    /*overflow-y: hidden;*/
-    /*margin-right: 30%;*/
-/*}*/
+.close-search{
+    width:100%;
+    height:auto;
+    padding-bottom:1.22rem;
+    padding-top:2.7rem;
+    background:url("../img/closeButton.png") no-repeat center;
+    background-size:22px 22px;
+    overflow-y: hidden;
+    margin-right: 30%;
+    cursor:pointer
+}
 .home-button{
     background:none;
     color:#0266C8;
@@ -748,31 +750,31 @@ body{
     background-image: url("../img/facebook-share-button.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 120px 45px;
-    width: 120px;
-    height: 50px;
+    background-size: 90px 35px;
+    width: 90px;
+    height: 35px;
     display: inline-block;
     margin-right: 4px;
     margin-bottom: -2px;
 }
 .whatsappIcon{
-    background-image: url("../img/whatsapp-messenger.png");
+    background-image: url("../img/Whatsapp-icon.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 60px 60px;
-    width: 60px;
-    height: 60px;
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     margin-right: 4px;
     margin-bottom: -5px;
 }
 .twitterIcon{
-    background-image: url("../img/twitter.png");
+    background-image: url("../img/twitter-icon.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 60px 60px;
-    width: 60px;
-    height: 60px;
+    background-size: 45px 45px;
+    width: 45px;
+    height: 42px;
     display: inline-block;
     margin-right: 4px;
     margin-bottom: -5px;
