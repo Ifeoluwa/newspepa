@@ -23,7 +23,7 @@
        <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
           <span class="full-story-title">{{$full_story['title']}}</span><br/>
           <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
-          <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
+          <span class="label" style="margin-top:6px; margin-bottom:1px">{!! $tc->getTimeDifference($full_story['created_date'])!!} </span>
 
        </div><br/><br/>
       @if($full_story['image_url'] != "")
@@ -39,8 +39,83 @@
             <div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
            <span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
 
-       </div>
+       {{--</div>--}}
+
+                <hr>
+                <ul class="inline-list" style="overflow: visible">
+                  <li><a href="#"><div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
+                  </a>
+                                     </li>
+                  <li><a href="#"><span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
+                  </a>
+                  </li>
+                  <li><a id="comment-link"><img src="{{url('ui_newspaper/img/comment.jpg')}}" style="width: 30px"> {{count($comments)}}</a></li>
+                </ul>
+
   </div>
+
+  <div id="comments-box" hidden="hidden">
+                <div>
+                  <div id="people_comments">
+                  {{--Comments are displayed here--}}
+
+                  @if(count($comments) > 0)
+                      @foreach($comments as $comment)
+                        <div class="row panel callout radius">
+                            <div class="small-2"><strong>{{$comment['user_name']}}</strong></div>
+                            <div class="small-10">{{$comment['comment']}}</div>
+                        </div>
+                      @endforeach
+                  @else
+                      <blockquote>Be the first to comment on this.</blockquote>
+
+                  @endif
+
+
+                  </div>
+                  <div id="notification_box">
+                  {{--Displays notification when user posts comment--}}
+                  </div>
+
+                  <form id="commentForm" action="{{url('story/')}}" method="post" target="commentFrame">
+                      {!! csrf_field() !!}
+                  <div class="row">
+                      <div class="large-12 columns">
+
+                      <input id="user_name" type="text" name="user_name" placeholder="Please enter you name" required="required" />
+
+                      </div>
+                    </div>
+                    <div class="row" hidden>
+                      <div class="large-12 columns">
+
+                      <input type="text" id="story_id" name="story_id" value="{{$full_story['story_id']}}" required="required" />
+
+                      </div>
+                    </div>
+                        <div class="row">
+                          <div class="large-12 columns">
+                            <div class="row collapse">
+                              <div class="small-12 columns">
+                                <textarea placeholder="Share your thought" id="comment" name="comment" required="required"></textarea>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="large-12 columns">
+
+                                <button id="commentPostBtn" type="button" class="button radius tiny searchbar-button">Share</button>
+
+                          </div>
+                        </div>
+
+                  </form>
+
+                 </div>
+
+            </div>
 
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                <!-- Medium Rect1 -->
@@ -57,16 +132,16 @@
 @endsection
 
 
-{{--@section('other_sources')--}}
-{{--@if($full_story['is_pivot']==1)--}}
-{{--<div class="row opera-panel minors related-content"><b>other sources</b></div>--}}
-{{--@foreach($data['other_sources'] as $other_sources)--}}
-    {{--<div class="row opera-panel minors">--}}
-   {{--<a name= linkOuts id="{{$other_sources['story_id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span></a>--}}
-    {{--</div>--}}
-{{--@endforeach--}}
-{{--@endif--}}
-{{--@stop--}}
+@section('other_sources')
+@if(count($data['other_sources']) > 0)
+<div class="row opera-panel minors related-content"><b>other sources</b></div>
+@foreach($data['other_sources'] as $other_sources)
+    <div class="row opera-panel minors">
+   <a name= linkOuts id="{{$other_sources['story_id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span></a>
+    </div>
+@endforeach
+@endif
+@stop
 
 @section('related_content')
 <div class="row opera-panel radius related-content">Latest stories in {{$data['category_names'][$full_story['category_id']]}}</div>
@@ -96,4 +171,7 @@
 
 @endforeach
  @stop
+@section('more-scripts')
+@include('partials.commentScript')
+@stop
 

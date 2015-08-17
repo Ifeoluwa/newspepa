@@ -8,7 +8,12 @@
     <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet"/>
 @stop
 
-@section('icon', 'fa-edit')
+@section('page-header-icon', 'fa-cogs') @stop
+
+@section('page-header', 'Edit or Delete Story')
+@stop
+
+@section('icon', 'fa-cogs')
 @stop
 
 @section('beadcrumb-header', 'Edit or Delete Story') @stop
@@ -68,13 +73,15 @@
 <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <script>
 $(document).ready(function(){
-    $('#storyActionsTable').DataTable();
 
     $('.confirmDelete').click(function(){
         var del_url = $(this).data('val');
         $('#deleteStoryButton').attr('href', del_url);
         $('#confirmDeleteModal').modal('show');
     });
+    $('#storyActionsTable').DataTable();
+
+
 });
 
 

@@ -16,7 +16,7 @@
 <meta property="og:image" content= "{{$full_story2['image_url']}}"/>
 <meta property="og:description" content= "{{$full_story2['description']}}"/>
 <meta property="og:url" content= "{{url($tc->makeStoryUrl($full_story2['title'], $full_story2['story_id']))}}"/>
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
 @section('full_story')
@@ -29,7 +29,8 @@
               <span class="full-story-title">{{$full_story['title']}}</span><br/>
               <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
               <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
-      </div><br/><br/>
+            </div>
+            <br/><br/>
 
       @if($full_story['image_url'] != "")
         <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
@@ -55,6 +56,101 @@
       </div>
   </div>
              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              @if($full_story['image_url'] != "")
+              <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
+              @endif
+              <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
+              </div>
+               {{--<div>--}}
+
+                    {{--<div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>--}}
+                     {{--<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>--}}
+                     {{--<span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>--}}
+                     {{--<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" style="font-size: 14px">Other sources&raquo; </a>--}}
+                     {{--<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">--}}
+                       {{--<li><a href="#">This is a link</a></li>--}}
+                       {{--<li><a href="#">This is another</a></li>--}}
+                       {{--<li><a href="#">Yet another</a></li>--}}
+                     {{--</ul>--}}
+                {{--</div>--}}
+                <hr>
+                <ul class="inline-list" style="overflow: visible">
+                  <li><a href="#"><div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
+                  </a>
+                                     </li>
+                  <li><a href="#"><span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
+                  </a>
+                  </li>
+                  <li><a id="comment-link"><img src="{{url('ui_newspaper/img/comment.jpg')}}" style="width: 30px"> {{count($comments)}}</a></li>
+                </ul>
+
+        </div>
+
+        <div id="comments-box" hidden="hidden">
+              <div>
+               <div id="people_comments">
+                                 {{--Comments are displayed here--}}
+
+                                 @if(count($comments) > 0)
+                                     @foreach($comments as $comment)
+                                       <div class="panel callout radius">
+                                           <span class="small-3 columns"><strong style="color: #008744">{{$comment['user_name']}}</strong></span>
+                                           <span class="small-9 columns">{{$comment['comment']}}</span>
+                                       </div>
+                                     @endforeach
+                                 @else
+                                     <blockquote>Be the first to comment on this.</blockquote>
+
+                                 @endif
+
+
+                </div>
+                <div id="notification_box">
+                {{--Displays notification when user posts comment--}}
+                </div>
+
+                <form id="commentForm" action="{{url('story/')}}" method="post" target="commentFrame">
+                    {!! csrf_field() !!}
+                <div class="row">
+                    <div class="large-12 columns">
+
+                    <input id="user_name" type="text" name="user_name" placeholder="Please enter you name" required="required" />
+
+                    </div>
+                  </div>
+                  <div class="row" hidden>
+                    <div class="large-12 columns">
+
+                    <input type="text" id="story_id" name="story_id" value="{{$full_story['story_id']}}" required="required" />
+
+                    </div>
+                  </div>
+                      <div class="row">
+                        <div class="large-12 columns">
+                          <div class="row collapse">
+                            <div class="small-12 columns">
+                              <textarea placeholder="Share your thought" id="comment" name="comment" required="required"></textarea>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="large-12 columns">
+
+                              <button id="commentPostBtn" type="button" class="button radius tiny searchbar-button">Share</button>
+
+                        </div>
+                      </div>
+
+                </form>
+
+               </div>
+
+          </div>
+
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
              <!-- Medium Rect1 -->
              <ins class="adsbygoogle"
                   style="display:inline-block;width:300px;height:250px"
@@ -118,3 +214,7 @@
 {{--</div>--}}
  @stop
 
+@section('more-scripts')
+
+@include('partials.commentScript')
+@stop

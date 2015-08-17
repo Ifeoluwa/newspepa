@@ -22,6 +22,8 @@ Route::get('hello', function(){
 });
 Route::get('timeline', 'StoryController@createTimelineStory');
 
+Route::get('timeline', 'StoryController@newCreateTimelineStory');
+
 Route::get('redis', 'TimelineStoryController@testRedis');
 
 Route::get('desktop', function(){
@@ -57,6 +59,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('admin/story/edit/{story_id}', 'StoryController@editStory');
     Route::get('admin/story/delete/{story_id}', 'StoryController@deleteStory');
     Route::post('admin/story/update', 'StoryController@updateStory');
+    //For comments
+    Route::get('admin/story/comments', 'Admin\DashboardController@getComments');
+    Route::get('admin/comment/approve/{comment_id}', 'CommentController@approve');
+    Route::get('admin/comment/disapprove/{comment_id}', 'CommentController@disapprove');
 });
 
 Route::get('admin', 'Auth\AuthController@getLogin');
@@ -86,6 +92,7 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 
+    Route::post('story/comment', 'CommentController@store');
 
 //});
 

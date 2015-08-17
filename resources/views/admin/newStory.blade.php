@@ -35,21 +35,20 @@
                   <div class="form-group">
                      <label class="col-sm-2 control-label">Add Title</label>
                         <div class="col-sm-10">
-                            <input type="text" name="title" id="title" class="form-control" required>
+                            <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}" required>
                         </div>
                     </div>
                     <div class="form-group">
                     <label class="col-sm-2 control-label">Add Description</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control ckeditor" name="description" rows="6" id="description">
-
-                            </textarea>
+                            <textarea class="form-control ckeditor" name="description"  rows="6" id="description">{{old('description')}}
+                                </textarea>
                         </div>
                     </div>
                     <div class="form-group">
                       <label class="col-sm-2 control-label" for="imageUploads">Upload Images</label>
                       <div class="col-sm-10" id="storyImages">
-                         <input name="story_images[]" id="storyImages" class="list-group-item" type="file" multiple="true">
+                         <input name="story_images[]" id="storyImages" class="list-group-item" value="{{old('story_images[]')}}" type="file" multiple="true">
                          <output id="list"></output>
                       </div>
 
@@ -122,7 +121,6 @@
        </div>
        <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-         <button type="button" class="btn btn-primary">Send message</button>
        </div>
      </div>
    </div>

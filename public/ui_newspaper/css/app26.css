@@ -354,6 +354,18 @@ button:hover, .button:hover,{
     border-radius: 9px;
 }
 
+.panel.callout.radius{
+    margin-bottom: 0.3rem;
+    padding: 0.3rem;
+    background: #FFF none repeat scroll 0%;
+    color: #FFF none repeat scroll 0%;
+
+}
+
+.comment-name{
+
+}
+
 #toFloat.panel{
     padding-top: 5px !important;
     padding-right: 6px !important;

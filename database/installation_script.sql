@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS `status`(
 INSERT INTO `status` (`id`, `status_name`, `active_fg`, `created_date`, `modified_date`) VALUES
   (1, 'ACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
   (2, 'INACTIVE', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
-  (3, 'MATCHED', 1, '2015-06-26 12:37:26', '2015-06-26 12:37:26');
+  (3, 'MATCHED', 1, '2015-06-18 10:30:23', '2015-06-18 10:30:23'),
+  (4, 'SCHEDULED', 1, '2015-06-26 12:37:26', '2015-06-26 12:37:26');
 
 # Status table structure
 CREATE TABLE IF NOT EXISTS `categories` (
@@ -230,4 +231,50 @@ CREATE TABLE IF NOT EXISTS `trackings`(
   CONSTRAINT fk_tracking_user FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE,
   CONSTRAINT fk_tracking_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS `linkouts` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `no_of_linkouts` INT NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `views` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `no_of_views` INT NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `story_id`  INT NOT NULL,
+  `session_key` VARCHAR(255) NOT NULL,
+  `user_name` VARCHAR(50) NOT NULL,
+  `comment` TEXT NOT NULL,
+  `status_id` INT(10) NOT NULL DEFAULT 1,
+  `created_date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_date` DATETIME NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_comment_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_comment_status FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `daily_stats` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `no_of_views` INT NOT NULL,
+  `no_of_linkouts` INT NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL
+);
+
+
+INSERT INTO `feeds` (`title`, `pub_id`, `url`, `last_access`, `refresh_period`, `status_id`, `category_id`, `created_date`, `modified_date`) VALUES
+  ('BBC Hausa News', 1, 'http://www.bbc.com/hausa/index.xml', '2015-07-22 07:35:07', 15, 2, 7, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  ('The Nation Politics News', 1, 'http://thenationonlineng.net/category/politics/feed', '2015-07-22 07:35:22', 15, 2, 2, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  ('Kokofeed News', 1, 'http://kokofeed.com/category/news/feed ', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  ('Kokofeed Best of Web', 3, 'http://kokofeed.com/category/best-of-the-web/feed', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  ('Kokofeed Lists News', 3, 'http://kokofeed.com/category/lists/feed', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  ('Kokofeed Trending News', 3, 'http://kokofeed.com/category/trending/feed', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  ('Kokofeed Video News', 3, 'http://kokofeed.com/category/video/feed', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
+  ('Daily Post Sport News', 4, 'http://dailypost.ng/sport-news/feed', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56');
 

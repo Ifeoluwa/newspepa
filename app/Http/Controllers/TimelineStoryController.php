@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Publisher;
 use App\Story;
 use App\TimelineStory;
@@ -33,9 +34,10 @@ class TimelineStoryController extends Controller
         $this->client = new \Solarium\Client;
         $this->feed_contoller = new FeedController();
 //        $stop_words = file_get_contents("/home/newspep/newspepa/public/scripts/stop_words.txt");
-//        $key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
+//		$key_words = file_get_contents("/home/newspep/newspepa/public/scripts/key_words.txt");
         $stop_words = ("");
         $key_words = ("");
+
 
         $this->stop_word_array = explode(PHP_EOL, $stop_words);
         $this->key_word_array = explode(PHP_EOL, $key_words);
@@ -170,11 +172,14 @@ class TimelineStoryController extends Controller
 
         $now = new \DateTime('now', $timezone);
         TimelineStory::updateStoryViews($story_id, $now);
+        //Get the active comments for this story
+        $comments = Comment::thisStoryComments($story_id);
+
         if($this->isOpera()){
-            return view('minor.fullStory')->with('data', $full_story);
+            return view('minor.fullStory')->with('data', $full_story)->with('comments', $comments);
 
         }else{
-            return view('major.fullStory')->with('data', $full_story);
+            return view('major.fullStory')->with('data', $full_story)->with('comments', $comments);
 
         }
 
@@ -241,7 +246,7 @@ class TimelineStoryController extends Controller
                 return intval($diff_in_sec/86400) ." days ago";
             }
         }
-
+        return "Several days ago";
 
     }
 
@@ -271,6 +276,8 @@ class TimelineStoryController extends Controller
 
         $query = $this->client->createSelect();
         $query->setQuery($search_query);
+        $query->setRows(200);
+        $query->setFields(array('id', 'title_en', 'description_en', 'image_url_t', 'video_url_t', 'url', 'pub_id_i', 'has_cluster_i', 'links'));
         $dismax = $query->getDisMax();
         $dismax->setQueryFields('title_en^3 description_en^3');
         $query->addSort('score',$query::SORT_DESC);
@@ -280,15 +287,13 @@ class TimelineStoryController extends Controller
         $z = 0;
         foreach($resultSet as $doc)
         {
-//            $title1 = mb_convert_encoding($doc->title_en[0], "UTF-8", "Windows-1252");
-//            $title1 = html_entity_decode($title, ENT_QUOTES, "UTF-8");
             $j = 0;
             for($i = 0; $i < count($search_query_array); ++$i) {
                 if (strpos(strtolower($doc->title_en[0]), strtolower($search_query_array[$i])) !== false) {
                     $j = $j + 1;
                 }
             }
-            if ($j >= (count($search_query_array) - 2)){
+            if ($j >= (count($search_query_array) - 1)){
 
                 $arr = array();
                 $arr['story_id'] = $doc->id;
@@ -299,6 +304,11 @@ class TimelineStoryController extends Controller
                 $arr['url'] = $doc->url;
                 $arr['pub_id'] = $doc->pub_id_i;
                 $arr['has_cluster'] = $doc->has_cluster_i;
+                if(trim($doc->links[0]) == ''){
+                    $arr['created_date'] = '';
+                }else{
+                    $arr['created_date'] = date('Y-m-d H:i:s', intval($doc->links[0]));
+                }
 
                 array_push($search_result, $arr);
                 $z = $z + 1;

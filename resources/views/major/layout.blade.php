@@ -234,6 +234,40 @@
 
     <script>
         $(document).foundation();
+//ajax call for getting number of linkouts of specific a tags
+            $('.linkOut').click(function(event) {
+
+            var token = $(this).data('token');
+             var storyID = $(this).attr('id');
+                $.ajax({
+                    type: "POST",
+                    dataType:"jsonp",
+                    url:'http://newspepa.com/linkout/'+storyID,
+                    data:{_token :token},
+                    success: function(msg){
+                        alert(msg);
+                    }
+                })
+
+             });
+
+
+//this is used to specify the category that is being displayed on the dropdown list
+//        if (location.pathname == "/") {
+//              $(".dropdown").text("Top Stories");
+//        }else if (location.pathname == "/latest") {
+//              $(".dropdown").text("Latest Stories");
+//         } else if (location.pathname == "/politics") {
+//            $(".dropdown").text("Politics");
+//         } else if (location.pathname == "/entertainment") {
+//               $(".dropdown").text("Entertainment");
+//         } else if (location.pathname == "/sports") {
+//         $(".dropdown").text("Sports");
+//         }else if (location.pathname == "/metro") {
+//                       $(".dropdown").text("Metro");
+//          }else if (location.pathname == "/nigeria") {
+//                         $(".dropdown").text("Nigeria");
+//                    }
 
 //this is used for the back-to-top button
     var offset = 1200;  var offset2=8;
@@ -331,6 +365,7 @@ searchObj.onclick = function(e){
       ga('create', 'UA-49109646-1', 'auto');
       ga('send', 'pageview');
     </script>
+    @yield('more-scripts')
 
     </body>
 </html>
