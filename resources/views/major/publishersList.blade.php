@@ -21,7 +21,6 @@
                    <span><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></span><hr/>
                    <span><a href="{{url('/latest-channels-tv-news')}}">Channels TV</a></span><hr/>
                    <span><a href="{{url('/latest-goal-com-news')}}">Goal</a></span><hr/>
-                  <span><a href="{{url('/latest-the-cable-news')}}">The Cable</a></span><hr/>
                   <span><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></span><hr/>
                   <span><a href="{{url('/latest-kokofeed-news')}}">KokoFeed</a></span><hr/>
                   <span><a href="{{url('/latest-net-news')}}">Net</a></span><hr/>

@@ -1,0 +1,21 @@
+article {
+    overflow-y: auto;
+}
+article,
+body,
+html,
+.off-canvas-wrap,
+.off-canvas-wrap .inner-wrap
+{
+    height: 100%;
+    width: 100%;
+}
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+/*.off-canvas-wrap{*/
+    /*overflow-y: visible;*/
+/*}*/

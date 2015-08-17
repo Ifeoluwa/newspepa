@@ -10,7 +10,24 @@
 <meta property="og:url" content= "{{url('/')}}"/>
 @stop
 
+@section('trending stories')
 
+<div class="row row-trending">
+    <div class="large-12 small-12 medium-12 columns heading-trending">
+        <span class="span-trending"><b>TRENDING NOW</b></span>
+    </div>
+    <div class="large-12 small-12 medium-12 columns column-trending" >
+        <span>some content in here title of a trending story</span>
+    </div>
+    <div class="large-12 small-12 medium-12 columns column-trending">
+        <span>some content in here the title of a trending story</span>
+    </div>
+    <div class="large-12 small-12 medium-12 columns column-trending">
+        <span>some content in here  title of a trending story</span>
+    </div>
+</div>
+
+@stop
 <?php $i=0;
  ?>
  @section('important_stories')

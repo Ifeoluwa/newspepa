@@ -32,14 +32,20 @@
       </div><br/><br/>
 
       @if($full_story['image_url'] != "")
-      <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
+        <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
-      </div>
-      <div style="padding-bottom: 5px">
-      <div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
+        <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...
+      @if($full_story['url'] != "")
+         <a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
+      @endif
+        </div>
+       <hr/>
+      <div class="large-12 small-12 medium-12 columns">
+      {{--<div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>--}}
       {{--<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>--}}
-      <span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
+      <a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a>
+      <a class="whatsappIcon" href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a>
+      <a class="twitterIcon" target="_blank" href="https://twitter.com/home?status={{$full_story['title']}} at {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a>
       {{--<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" style="font-size: 14px">Other sources&raquo; </a>--}}
       {{--<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">--}}
         {{--<li><a href="#">This is a link</a></li>--}}

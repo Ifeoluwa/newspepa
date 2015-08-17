@@ -5,7 +5,7 @@
 
 {{--the search results page also carries the same layout as the index page. Probably will be fetching from the timeline table. so carries
 the important section, lessImportant and noImage stories--}}
-{{--@if($search_result['found']!=0)--}}
+@if($search_result['found']!=0)
 @section('important_stories')
 <span class="title-timeline" style="color: #646464; margin-bottom:12px; margin-top: 12px">{{$data['found']}} Results found for  '{{$data['search_query']}}'</span><br/>
 @foreach($data['search_result'] as $searchResult)
@@ -34,6 +34,9 @@ the important section, lessImportant and noImage stories--}}
 @endforeach
 @endsection
 
+@else
+<span class="title-timeline"><b>Oops!No Results Found</b></span>
+@endif
 {{--@section('related_content')--}}
   {{--<div class="row panel radius related-content"><b>Trending Searches</b></div>--}}
   {{--<div class="row panel radius related-content"><b>Related Searches</b></div>--}}

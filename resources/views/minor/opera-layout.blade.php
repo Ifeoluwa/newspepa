@@ -83,7 +83,8 @@
                              <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
                              <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
                              <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
-                             <li id="8"><a href="{{url('/publishers')}}">More&raquo;</a>
+                             <li id="11"><a href="{{url('/publishers')}}">More&raquo;</a>
+                             <li id="12"><a href="{{url('/about')}}">About</a>
                  </ul>
         </footer>
 
