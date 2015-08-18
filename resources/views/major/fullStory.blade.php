@@ -41,7 +41,7 @@
       @endif
         </div>
        <hr/>
-      <div class="large-12 small-12 medium-12 columns">
+      <div class="large-12 small-12 medium-12 columns" style="padding-left: 25px">
       {{--<div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>--}}
       {{--<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>--}}
       <a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a>

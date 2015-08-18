@@ -35,7 +35,7 @@
       @endif
       </div>
       <hr/>
-       <div style="padding-bottom: 5px">
+       <div class="large-12 small-12 medium-12 columns" style="padding-left: 25px">
          <a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a>
          <a class="twitterIcon" target="_blank" href="https://twitter.com/home?status={{$full_story['title']}} at {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a>
          <a class="whatsappIcon" href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a>
