@@ -162,49 +162,25 @@ class FeedController extends Controller {
 
     public function getFullFeedContent(){
         try{
-            $url = 'C:\wamp\www\newspepa\public\feeds\full_koko.html';
-            $class_name = 'content-text';
-            $rss = new \DOMDocument();
-            $rss->load($url);
-            $finder = new \DomXPath($url);
 
-            $nodes = $finder->query('//*[@class="' . $class_name . '"]');
-            var_dump($nodes);
+            $html = file_get_contents('C:\wamp\www\newspepa\public\feeds\full_koko.html');
+            var_dump($html);
+            die();
+            $doc = new \DOMDocument();
+            libxml_use_internal_errors(true);
+            $doc->loadHTML($html); // loads your HTML
+            $xpath = new \DOMXPath($doc);
+
+            $nlist = $xpath->query("//div[@class='content-text']");
+            var_dump($nlist);
+
+
             die();
         }catch(\ErrorException $ex){
             echo $ex->getMessage();
         }
 
 
-
-//        $rss->load($feed['url']);
-//        $stories = array();
-//        foreach ($rss->getElementsByTagName('item') as $node) {
-//            try{
-//                $story = array (
-//                    'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
-//                    'url' => $node->getElementsByTagName('link')->item(0)->nodeValue,
-//                    'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('pubDate')->item(0)->nodeValue)),
-//                    'description' => strip_tags($node->getElementsByTagName('description')->item(0)->nodeValue)."",
-//                    'content' => $node->getElementsByTagName('encoded')->item(0)->nodeValue,
-//
-//                );
-//                preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
-//                if(count($matches) > 0){
-//                    $this->storeImage($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
-//                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
-//                }
-//
-//                $story['feed_id'] = $feed['id'];
-//                $story['pub_id'] = $feed['pub_id'];
-//                $story['category_id'] = $feed['category_id'];
-//                array_push($stories, $story);
-//            }catch(\ErrorException $ex){
-//                continue;
-//            }
-//
-//        }
-//        return $stories;
     }
 
 

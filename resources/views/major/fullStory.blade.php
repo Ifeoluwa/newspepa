@@ -63,15 +63,15 @@
         </div>
 
         <div id="comments-box" hidden="hidden">
-              <div>
+
                <div id="people_comments">
                                  {{--Comments are displayed here--}}
 
                                  @if(count($comments) > 0)
                                      @foreach($comments as $comment)
-                                       <div class="panel callout radius">
-                                           <span class="small-3 columns"><strong style="color: #008744">{{$comment['user_name']}}</strong></span>
-                                           <span class="small-9 columns">{{$comment['comment']}}</span>
+                                       <div class="row panel radius">
+                                           <div class="small-3 medium-3 columns"><strong style="color: #008744">{{$comment['user_name']}}</strong></div>
+                                           <div class="small-9 medium-9 columns" >{{$comment['comment']}}</div>
                                        </div>
                                      @endforeach
                                  @else
@@ -90,7 +90,7 @@
                 <div class="row">
                     <div class="large-12 columns">
 
-                    <input id="user_name" type="text" name="user_name" placeholder="Please enter you name" required="required" />
+                    <input id="user_name" type="text" name="user_name" placeholder="Your name" required="required" />
 
                     </div>
                   </div>
@@ -105,7 +105,7 @@
                         <div class="large-12 columns">
                           <div class="row collapse">
                             <div class="small-12 columns">
-                              <textarea placeholder="Share your thought" id="comment" name="comment" required="required"></textarea>
+                              <textarea placeholder="Comment" id="comment" name="comment" required="required"></textarea>
                             </div>
 
                           </div>
@@ -114,7 +114,7 @@
                       <div class="row">
                         <div class="large-12 columns">
 
-                              <button id="commentPostBtn" type="button" class="button radius tiny searchbar-button">Share</button>
+                              <button id="commentPostBtn" type="button" class="button radius searchbar-button">Submit</button>
 
                         </div>
                       </div>
@@ -173,7 +173,7 @@
           </header></a>
            <span class="publisher-name">{{$data['publisher_names'][$recent_stories['pub_id']]}}</span>
            <span class="timecount-name">{{$tc->getTimeDifference($recent_stories['created_date'])}}</span>
-      </div>
+                  </div>
     </a>
     </div>
 

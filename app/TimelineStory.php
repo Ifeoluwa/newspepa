@@ -223,7 +223,7 @@ class TimelineStory extends Model
 
         $a = new \DateTime('-12hours');
         $b = new \DateTime('-31minutes');
-        return $query->whereBetween('created_date', [$a, $b])->whereNotIn('pub_id', [12]);
+        return $query->whereBetween('created_date', [$a, $b])->whereNotIn('pub_id', [12])->limit(200);
     }
 
     //Stories that are displayed on the timeline
