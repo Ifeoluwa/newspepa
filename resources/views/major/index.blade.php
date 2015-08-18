@@ -10,31 +10,6 @@
 <meta property="og:url" content= "{{url('/')}}"/>
 @stop
 
-{{--@section('trending stories')--}}
-
-{{--<div class="row row-trending">--}}
-    {{--<div class="large-12 small-12 medium-12 columns heading-trending">--}}
-        {{--<span class="span-trending">TRENDING NOW</span>--}}
-    {{--</div>--}}
-    {{--<div  id="trend1" class="large-12 small-12 medium-12 columns column-trending" >--}}
-        {{--<span class="title-timeline">some content in here title of a trending story</span>--}}
-    {{--</div>--}}
-    {{--<div  id="trend2" class="large-12 small-12 medium-12 columns column-trending">--}}
-        {{--<span class="title-timeline">some content in here the title of a trending story</span>--}}
-    {{--</div>--}}
-    {{--<div id="trend3"class="large-12 small-12 medium-12 columns column-trending">--}}
-        {{--<span class="title-timeline">some content in here  title of a trending story</span>--}}
-    {{--</div>--}}
-    {{--<div id="trend4" class="large-12 small-12 medium-12 columns column-trending">--}}
-        {{--<span class="title-timeline">some content in here  title of a trending story</span>--}}
-    {{--</div>--}}
-    {{--<div id="trend5" class="large-12 small-12 medium-12 columns column-trending">--}}
-         {{--<span class="title-timeline">some content in here  title of a trending story</span>--}}
-    {{--</div>--}}
-{{--</div>--}}
-
-{{--@stop--}}
-
 <?php $i=0;
  ?>
  @section('important_stories')

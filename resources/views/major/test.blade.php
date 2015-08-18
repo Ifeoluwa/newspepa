@@ -25,6 +25,8 @@
      js.async=true;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=222521117951114";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));</script>
+
+ <a href="#" class="back-to-top" style="display: inline;"></a>
         <div class="off-canvas-wrap">
             <div class="inner-wrap">
                 <div class="header">
@@ -55,6 +57,24 @@
                         <li><a href="#">The Psychohistorians</a>
                         <li><a href="#">The Psychohistorians</a>
                         <li><a href="#">The Psychohistorians</a>
+                         <li class="has-submenu"><a href="#">View more</a>
+                              <ul class="right-submenu">
+                                  <li class="back"><a href="#">Back</a></li>
+                                  <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
+                                  <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
+                                  <li><a href="{{url('/latest-kokofeed-news')}}">KokoFeed</a></li>
+                                  <li><a href="{{url('/latest-net-news')}}">Net</a></li>
+                                  <li><a href="{{url('/latest-star-gist-news')}}">Stargist</a></li>
+                                  <li><a href="{{url('/complete-sports')}}">Complete Sports</a></li>
+                                  <li id="8"><a href="{{url('/latest-the-nation-news')}}">The Nation</a>
+                                  <li><a href="{{url('/latest-daily-post-news')}}">Daily Post</a></li>
+                                  <li><a href="{{url('/latest-premium-times-news')}}">Premium times</a></li>
+                                  <li><a href="{{url('/latest-business-day-news')}}">Business day</a></li>
+                                  <li><a href="{{url('/latest-city-people-news')}}">City People</a></li>
+                                  <li><a href="{{url('/latest-encomium-news')}}">Encomium</a></li>
+                                  <li><a href="{{url('/latest-naira-metrics-news')}}">Naira Metrics</a></li>
+                                  <li><a href="{{url('/latest-business-news-news')}}">Business News</a></li>
+                              </ul>
                         <li><a href="#">The Psychohistorians</a>
                         <li><a href="#">The Psychohistorians</a>
                         <li><a href="#">The Psychohistorians</a>
@@ -150,6 +170,7 @@
                     <p>Content</p>
                     <p>Content</p>
                     <p>Content</p>
+
                 </article> <a class="exit-off-canvas"></a>
 
                 <footer class="small-12 columns">
@@ -182,11 +203,59 @@
 
                                  </ul></div>
                 </footer>
+
             </div>
         </div>
+
+
 <script src="ui_newspaper/js/vendor/jquery.js"></script>
     <script src="ui_newspaper/js/foundation/foundation.offcanvas.js"></script>
     <script src="ui_newspaper/js/foundation.min.js"></script>
 <script>
         $(document).foundation();
-        </script>
+var offset = 100;
+    var duration = 700;
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > offset) {
+            $('.back-to-top').fadeIn(duration);
+
+        } else {
+            $('.back-to-top').fadeOut(duration);
+
+        }
+
+
+    });
+
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 20}, duration);
+        return false;
+    });
+
+</script>
+
+    {{--@section('trending stories')--}}
+
+    {{--<div class="row row-trending">--}}
+        {{--<div class="large-12 small-12 medium-12 columns heading-trending">--}}
+            {{--<span class="span-trending">TRENDING NOW</span>--}}
+        {{--</div>--}}
+        {{--<div  id="trend1" class="large-12 small-12 medium-12 columns column-trending" >--}}
+            {{--<span class="title-timeline">some content in here title of a trending story</span>--}}
+        {{--</div>--}}
+        {{--<div  id="trend2" class="large-12 small-12 medium-12 columns column-trending">--}}
+            {{--<span class="title-timeline">some content in here the title of a trending story</span>--}}
+        {{--</div>--}}
+        {{--<div id="trend3"class="large-12 small-12 medium-12 columns column-trending">--}}
+            {{--<span class="title-timeline">some content in here  title of a trending story</span>--}}
+        {{--</div>--}}
+        {{--<div id="trend4" class="large-12 small-12 medium-12 columns column-trending">--}}
+            {{--<span class="title-timeline">some content in here  title of a trending story</span>--}}
+        {{--</div>--}}
+        {{--<div id="trend5" class="large-12 small-12 medium-12 columns column-trending">--}}
+             {{--<span class="title-timeline">some content in here  title of a trending story</span>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+
+    {{--@stop--}}

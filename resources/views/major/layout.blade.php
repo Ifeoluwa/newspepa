@@ -7,7 +7,7 @@
     <title>@yield('title') | Newspepa</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-     <link rel="stylesheet" href="ui_newspaper/css/app26.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app27.css" />
      <link rel="stylesheet" href="ui_newspaper/css/test.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
     {{--<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>--}}
@@ -214,9 +214,11 @@
         </ul>
         </div>
     </footer>
+
+    {{--<a href="#" class="back-to-top" style="display: inline;"></a>--}}
     </article>
     <a class="exit-off-canvas"></a>
-              <a href="#" class="back-to-top" style="display: inline;"></a>
+
        </div>
    </div>
 

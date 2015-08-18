@@ -71,7 +71,7 @@
                   <div class="row">
                       <div class="large-12 columns">
 
-                      <input id="user_name" type="text" name="user_name" placeholder="Please enter you name" required="required" />
+                      <input id="user_name" type="text" name="user_name" placeholder="Your name" required="required" />
 
                       </div>
                     </div>
@@ -86,7 +86,7 @@
                           <div class="large-12 columns">
                             <div class="row collapse">
                               <div class="small-12 columns">
-                                <textarea placeholder="Share your thought" id="comment" name="comment" required="required"></textarea>
+                                <textarea placeholder="Comment" id="comment" name="comment" required="required"></textarea>
                               </div>
 
                             </div>
@@ -95,7 +95,7 @@
                         <div class="row">
                           <div class="large-12 columns">
 
-                                <button id="commentPostBtn" type="button" class="button radius tiny searchbar-button">Share</button>
+                                <button id="commentPostBtn" type="button" class="button radius tiny searchbar-button">Submit</button>
 
                           </div>
                         </div>
