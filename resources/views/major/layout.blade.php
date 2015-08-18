@@ -51,7 +51,7 @@
                 <section class="middle tab-bar-section">
                     <div class="small-9 medium-9 columns">
                       <a href="{{url('/')}}"> <h1 class="title"></h1></a></div>
-                    <div class="small-2 columns">
+                    <div class="small-2 columns" style="overflow-x:visible">
                       <div id="searchChange" class="search-prompt" style="float:right"></div>
                       {{--<div class="close-search" style="float:right"></div>--}}
                     </div>
@@ -105,10 +105,12 @@
                       <ul class="right-submenu">
                           <li class="back"><a href="#">Back</a></li>
                           <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
+                          <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
                           <li><a href="{{url('/latest-kokofeed-news')}}">KokoFeed</a></li>
                           <li><a href="{{url('/latest-net-news')}}">Net</a></li>
                           <li><a href="{{url('/latest-star-gist-news')}}">Stargist</a></li>
                           <li><a href="{{url('/complete-sports')}}">Complete Sports</a></li>
+                          <li id="8"><a href="{{url('/latest-the-nation-news')}}">The Nation</a>
                           <li><a href="{{url('/latest-daily-post-news')}}">Daily Post</a></li>
                           <li><a href="{{url('/latest-premium-times-news')}}">Premium times</a></li>
                           <li><a href="{{url('/latest-business-day-news')}}">Business day</a></li>
@@ -116,6 +118,7 @@
                           <li><a href="{{url('/latest-encomium-news')}}">Encomium</a></li>
                           <li><a href="{{url('/latest-naira-metrics-news')}}">Naira Metrics</a></li>
                           <li><a href="{{url('/latest-business-news-news')}}">Business News</a></li>
+
                       </ul>
              </ul>
         </aside>
@@ -192,7 +195,7 @@
            <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
            <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
            {{--<li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>--}}
-           <li id="12"><a href="{{url('/about')}}">About</a>
+           <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
            <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
            {{--<li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>--}}
             <li id="11"><a href="{{url('/publishers')}}">More&raquo;</a>
@@ -235,42 +238,25 @@
     <script>
         $(document).foundation();
 //ajax call for getting number of linkouts of specific a tags
-            $('.linkOut').click(function(event) {
-
-            var token = $(this).data('token');
-             var storyID = $(this).attr('id');
-                $.ajax({
-                    type: "POST",
-                    dataType:"jsonp",
-                    url:'http://newspepa.com/linkout/'+storyID,
-                    data:{_token :token},
-                    success: function(msg){
-                        alert(msg);
-                    }
-                })
-
-             });
-
-
-//this is used to specify the category that is being displayed on the dropdown list
-//        if (location.pathname == "/") {
-//              $(".dropdown").text("Top Stories");
-//        }else if (location.pathname == "/latest") {
-//              $(".dropdown").text("Latest Stories");
-//         } else if (location.pathname == "/politics") {
-//            $(".dropdown").text("Politics");
-//         } else if (location.pathname == "/entertainment") {
-//               $(".dropdown").text("Entertainment");
-//         } else if (location.pathname == "/sports") {
-//         $(".dropdown").text("Sports");
-//         }else if (location.pathname == "/metro") {
-//                       $(".dropdown").text("Metro");
-//          }else if (location.pathname == "/nigeria") {
-//                         $(".dropdown").text("Nigeria");
+//            $('.linkOut').click(function(event) {
+//
+//            var token = $(this).data('token');
+//             var storyID = $(this).attr('id');
+//                $.ajax({
+//                    type: "POST",
+//                    dataType:"jsonp",
+//                    url:'http://newspepa.com/linkout/'+storyID,
+//                    data:{_token :token},
+//                    success: function(msg){
+//                        alert(msg);
 //                    }
+//                })
+//
+//             });
+
 
 //this is used for the back-to-top button
-    var offset = 1200;  var offset2=8;
+    var offset = 1200;
     var duration = 700;
     $(window).scroll(function() {
         if ($(this).scrollTop() > offset) {
@@ -282,25 +268,13 @@
         }
 
 
-//        if ($(this).scrollTop() > offset2) {
-//            $("#toFloat").show();
-//            $("#toFloat").css('position','fixed');
-//        }else{
-//            $("#toFloat").hide();
-//        }
-
-
     });
-//
-//    $('.back-to-top').click(function(event) {
-//        event.preventDefault();
-//        jQuery('html, body').animate({scrollTop: 0}, duration);
-//        return false;
-//    });
 
-//    $(document).ready(function(){
-//        $("#toFloat").hide();
-//    });
+    $('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    });
 
 //click event to unhide the search bar
 

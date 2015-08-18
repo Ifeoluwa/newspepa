@@ -78,7 +78,7 @@ ul.off-canvas-list li label{
     top: 50%;
     margin-top: -0.5rem;
     left: 0.1rem;
-    box-shadow: -4px -1px 0 2px #FFF, -4px 10px 0 2px #FFF, -4px 20px 0 2px #FFF;
+    box-shadow:  -4px 2px 0px 2px #FFF, -4px 8px 0px 2px #FFF, -4px 14px 0px 2px #FFF;
     width: 0.9rem;
 }
 
@@ -95,6 +95,7 @@ ul.off-canvas-list li label{
 .right-small{
     border:none;
     width: 0.8125rem;
+    padding-right: 20px;
 }
 
 .right-submenu .back > a {
@@ -115,7 +116,8 @@ ul.off-canvas-list li a{
 
 .f-dropdown.open{
     max-width:45% !important;
-    left: 200px !important;
+    left: 160px !important;
+    top:28px !important;
 }
 /*@media only screen and (max-width: 64.0625em) {*/
     .category-row {
@@ -224,8 +226,9 @@ ul .f-dropdown li a{
     background-size:22px 22px;
     overflow-y: hidden;
 }
-button {
+button, .button {
     padding: 0 0 0 0;
+    background-color: #0266C8;
 
 }
 
@@ -237,7 +240,7 @@ button {
     background:url("../img/search-icon.png") no-repeat center;
     background-size:22px 22px;
     overflow-y: hidden;
-    margin-right: 30%;
+    margin-right:27px;
     cursor:pointer;
 
 }
@@ -247,10 +250,10 @@ button {
     height:auto;
     padding-bottom:1.22rem;
     padding-top:2.7rem;
-    background:url("../img/closeButton.png") no-repeat center;
+    background:url("../img/close.png") no-repeat center;
     background-size:22px 22px;
     overflow-y: hidden;
-    margin-right: 30%;
+    margin-right: 27px;
     cursor:pointer
 }
 .home-button{
@@ -609,9 +612,9 @@ p{
     font-size: 16px;
     border-radius: 1px;
     overflow: auto;
-    margin-top: 0.1px;
-    height: 5px;
-    padding-top: 5px;
+    margin-top: 1px;
+    /*height: 5px;*/
+    padding-top:2px;
     margin-bottom: 4px;
     padding-right: 40px;
     padding-left: 1.5px;
@@ -791,6 +794,17 @@ body{
     margin-right: 4px;
     margin-bottom: -5px;
 }
+.comments-icon{
+    background-image: url("../img/join-conversation.png");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: -5px;
+}
 
 .to-top{
     background-image: url("../img/back-to-top.png");
@@ -953,9 +967,25 @@ body{
     /*border-bottom: solid #ff0000 5px;*/
 }
 .column-trending{
-    border-left:solid #0266c8 2px;
     margin-top:10px;
+    padding-left: 8px;
 }
+#trend1{
+    border-left:solid #898989 2px;
+}
+#trend2{
+    border-left:solid #0266c8  2px;
+}
+#trend3{
+    border-left:solid #ff0000 2px;
+}
+#trend4{
+    border-left:solid #008744 2px;
+}
+#trend5{
+    border-left:solid #FF6600 2px;
+}
+
 /*#footer-list > ul >li > ul{*/
     /*bottom:100%;*/
 /*}*/

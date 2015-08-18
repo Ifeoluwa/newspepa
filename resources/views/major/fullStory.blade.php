@@ -47,7 +47,7 @@
       <a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a>
       <a class="twitterIcon" target="_blank" href="https://twitter.com/home?status={{$full_story['title']}} at {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a>
       <a class="whatsappIcon" href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a>
-      <a id="comment-link"><img src="{{url('ui_newspaper/img/comment.jpg')}}" style="width: 30px"> {{count($comments)}}</a>
+      <a id="comment-link" style="font-size: 22px"><img src="{{url('ui_newspaper/img/join-conversation.png')}}" style="width: 45px; margin-bottom: 8px;"> {{count($comments)}}</a>
 
       </div>
   </div>
@@ -103,7 +103,7 @@
                 <div class="row">
                     <div class="large-12 columns">
 
-                    <input id="user_name" type="text" name="user_name" placeholder="Please enter you name" required="required" />
+                    <input id="user_name" type="text" name="user_name" placeholder="Your name" required="required" />
 
                     </div>
                   </div>
@@ -118,7 +118,7 @@
                         <div class="large-12 columns">
                           <div class="row collapse">
                             <div class="small-12 columns">
-                              <textarea placeholder="Share your thought" id="comment" name="comment" required="required"></textarea>
+                              <textarea placeholder="Comment" id="comment" name="comment" required="required"></textarea>
                             </div>
 
                           </div>
@@ -127,7 +127,7 @@
                       <div class="row">
                         <div class="large-12 columns">
 
-                              <button id="commentPostBtn" type="button" class="button radius tiny searchbar-button">Share</button>
+                              <button id="commentPostBtn" type="button" class="button radius searchbar-button small">Submit</button>
 
                         </div>
                       </div>

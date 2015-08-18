@@ -81,10 +81,10 @@
                              <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
                              <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
                              <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
-                             <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
+                             <li id="9"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a></li>
                              <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
                              <li id="11"><a href="{{url('/publishers')}}">More&raquo;</a>
-                             <li id="12"><a href="{{url('/about')}}">About</a>
+
                  </ul>
         </footer>
 
