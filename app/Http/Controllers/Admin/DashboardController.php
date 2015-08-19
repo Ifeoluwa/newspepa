@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\DB;
 class DashboardController extends Controller
 {
     //
-    public $categories = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro", 6 => "Business");
+    public $categories = array(1 => "Nigeria", 2 => "Politics", 3 => "Entertainment", 4 => "Sports", 5 => "Metro", 6 => "Business", 7 => 'BBC Hausa');
 
 
     public function newStory(){

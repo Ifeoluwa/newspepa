@@ -91,8 +91,9 @@ class TimelineStory extends Model
 
             if($return == true){
                 $id = DB::getPdo()->lastInsertId();
+                return $id;
             }
-            return $id;
+
         }
 
     }
@@ -214,7 +215,7 @@ class TimelineStory extends Model
 
         $now = new \DateTime('now');
         $thirty_minutes_ago = new \DateTime('-30minutes');
-        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now])->whereNotIn('pub_id', [12])->orderBy('created_date', 'desc');
+        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now])->whereNotIn('pub_id', [12, 27])->orderBy('created_date', 'desc');
     }
 
     //Rankable stories
@@ -223,7 +224,7 @@ class TimelineStory extends Model
 
         $a = new \DateTime('-12hours');
         $b = new \DateTime('-31minutes');
-        return $query->whereBetween('created_date', [$a, $b])->whereNotIn('pub_id', [12])->limit(200);
+        return $query->whereBetween('created_date', [$a, $b])->whereNotIn('pub_id', [12, 27])->limit(200);
     }
 
     //Stories that are displayed on the timeline

@@ -1,5 +1,5 @@
 @extends('major.layout')
-@section('title','about | Newspepa')
+@section('title','about')
 @endsection
 @section('about')
     <div class="row panel radius">
@@ -8,7 +8,7 @@
 
         </div>
 
-      <div class="large-12 medium-12 small-12 columns"><img  src="ui_newspaper/img/NewspepaAboutPhoto.jpg" style="width:100%; border-radius:2px"/></div>
+      <div class="large-12 medium-12 small-12 columns"><img  src="ui_newspaper/img/aboutPagePic2.png" style="width:100%; border-radius:2px"/></div>
       <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">Newspepa is a mobile news application which helps users discover news that matter to
        them from their favourite sources all in one place. It was developed by Tolu Ajewole and Babajide Owosakin,
        fresh Computer Engineering graduates from Obafemi Awolowo University.

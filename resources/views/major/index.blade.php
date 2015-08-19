@@ -10,7 +10,6 @@
 <meta property="og:url" content= "{{url('/')}}"/>
 @stop
 
-
 <?php $i=0;
  ?>
  @section('important_stories')

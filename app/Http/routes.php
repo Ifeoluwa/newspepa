@@ -18,6 +18,11 @@ Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
 Route::get('test', 'FeedController@test');
 
+Route::get('hello', function(){
+    return view('admin.new_post');
+});
+Route::get('timeline', 'StoryController@createTimelineStory');
+
 Route::get('timeline', 'StoryController@newCreateTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
@@ -34,6 +39,12 @@ Route::get('publishers-list', function(){
     return view('major.publishersList');
 });
 
+Route::get('about-desktop', function(){
+    return view('aboutUs_desktop');
+});
+//Route::get('test', function(){
+//    return view('major.test');
+//});
 
 Route::get('register', function(){
    return view('admin.register');
@@ -61,9 +72,12 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 
 
 
+
+
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
 //Route::group(['middleware' => 'user_agent'], function(){
+
     Route::get('/', 'TimelineStoryController@index');
 
     Route::get('search', 'TimelineStoryController@searchStory');

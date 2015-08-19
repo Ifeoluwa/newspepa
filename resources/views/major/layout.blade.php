@@ -4,13 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale = 1,maximum-scale=1 user-scalable=no" />
     @yield('more-meta')
-
     <title>@yield('title') | Newspepa</title>
     <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
     <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-     <link rel="stylesheet" href="ui_newspaper/css/app26.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/app27.css" />
+     <link rel="stylesheet" href="ui_newspaper/css/test.css" />
     <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+    {{--<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>--}}
     {{--<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>--}}
     <script src="ui_newspaper/js/vendor/modernizr.js"></script>
   </head>
@@ -43,20 +43,42 @@
                     {{--</ul>--}}
         {{--</section>--}}
     {{--</nav>--}}
-    <div class="off-canvas-wrap" data-offcanvas="none">
+    <div class="off-canvas-wrap">
       <div class="inner-wrap">
-            <nav class="tab-bar" data-options="sticky_on: small" data-tab-bar role ="navigation">
+        <div class="header">
+            <nav class="tab-bar" data-offcanvas>
+
                 <section class="middle tab-bar-section">
-                      <a href="{{url('/')}}"> <h1 class="title"></h1></a>
-                    </section>
-                <div class="left-small" data-options="sticky_on: small">
-                 <a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>
-                </div>
+                    <div class="small-9 medium-9 columns">
+                      <a href="{{url('/')}}"> <h1 class="title"></h1></a></div>
+                    <div class="small-2 columns" style="overflow-x:visible">
+                      <div id="searchChange" class="search-prompt" style="float:right"></div>
+                      {{--<div class="close-search" style="float:right"></div>--}}
+                    </div>
+                </section>
+
+                {{--<section class="right tab-bar-section">--}}
+                      {{--<h1>Foundation 5 test</h1>--}}
+                      {{--<h1 class="searchbutton"></h1>--}}
+                {{--</section>--}}
+                {{--<div class="left-small" data-options="sticky_on: small">--}}
+                 {{--<a href="#idOfLeftMenu" role="button" aria-controls="idOfLeftMenu" aria-expanded="false" class="left-off-canvas-toggle menu-icon" ><span></span></a>--}}
+                {{--</div>--}}
+                 <section class="right-small" data-options="sticky_on: small">
+                      <a href="#idOfRightMenu" role="button" class="right-off-canvas-toggle menu-icon" aria-controls="idOfRightMenu" aria-expanded="false" ><span></span></a>
+                 </section>
 
             </nav>
+             <div class="large-12 small-12 medium-12 columns search-column">
+                       <form id="searchbar" method="get" action = "search">
+                              <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
+                              <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
+                      </form>
+                   </div>
+        </div>
 
         <!-- Off Canvas Menu -->
-        <aside class="left-off-canvas-menu">
+        <aside class="right-off-canvas-menu">
             <!-- whatever you want goes here -->
              <ul class="off-canvas-list">
                   <li id="1"><label>Newspepa</label></li>
@@ -80,14 +102,15 @@
                    <li><a href="{{url('/latest-channels-tv-news')}}">Channels TV</a></li>
                    <li><a href="{{url('/latest-goal-com-news')}}">Goal</a></li>
                   <li class="has-submenu"><a href="#">View more</a>
-                      <ul class="left-submenu">
+                      <ul class="right-submenu">
                           <li class="back"><a href="#">Back</a></li>
-                          <li><a href="{{url('/latest-the-cable-news')}}">The Cable</a></li>
                           <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
+                          <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
                           <li><a href="{{url('/latest-kokofeed-news')}}">KokoFeed</a></li>
                           <li><a href="{{url('/latest-net-news')}}">Net</a></li>
                           <li><a href="{{url('/latest-star-gist-news')}}">Stargist</a></li>
                           <li><a href="{{url('/complete-sports')}}">Complete Sports</a></li>
+                          <li id="8"><a href="{{url('/latest-the-nation-news')}}">The Nation</a>
                           <li><a href="{{url('/latest-daily-post-news')}}">Daily Post</a></li>
                           <li><a href="{{url('/latest-premium-times-news')}}">Premium times</a></li>
                           <li><a href="{{url('/latest-business-day-news')}}">Business day</a></li>
@@ -95,6 +118,7 @@
                           <li><a href="{{url('/latest-encomium-news')}}">Encomium</a></li>
                           <li><a href="{{url('/latest-naira-metrics-news')}}">Naira Metrics</a></li>
                           <li><a href="{{url('/latest-business-news-news')}}">Business News</a></li>
+
                       </ul>
              </ul>
         </aside>
@@ -103,28 +127,19 @@
 
     {{--the search bar--}}
 
-
-       <form id="searchbar" method="get" action = "search">
-                  <div class="large-8 medium-8 small-10 columns"style="padding-right:0;padding-left:0; border-color:#ffffff"><input class="searchbar-input-text" type="text" placeholder="Search News..." name="search_query" spellcheck="false" aria-label="search" style="font-size:16px" required></div>
-                  <div class="large-4 medium-4 small-2 columns" style="padding-right:0;padding-left:0"><button type="submit" class="searchbar-button searchbutton"></button></div>
-          </form>
-
-
-
-
-
+       <article class="large-12 small-12 medium-12 columns">
 
 
     {{--this is the categories dropdown; asides the categories included in the navigation tab--}}
 
         {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button>--}}
         {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
-       <div class="row category-row" style="background-color: #0266C8;border-radius:2px">
+       <div id="category-list" class="row category-row" style="overflow: visible">
         <ul class="inline-list">
           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
           <li id="3" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
           <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
-          <li id="4"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
+          <li id="more"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
             <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
             <li><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
             <li><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
@@ -138,7 +153,9 @@
 
 {{--the stories containers starts from here--}}
 
-          <div class="large-12 small-12 columns" id="stories_container">
+          {{--<div class="large-12 small-12 columns" id="stories_container">--}}
+
+             @yield('trending stories')
              @yield('important_stories')
 
               @yield('less_important_stories')
@@ -157,16 +174,14 @@
 
               @yield('about')
 
-              </div>
 
 
-              <a href="#" class="back-to-top" style="display: inline;"></a>
 
 
-             <a class="exit-off-canvas"></a>
+        {{--</div>--}}
 
-                  </div>
-          </div>
+
+
     <footer class="row" id="footer-list" >
         <div class="large-12 columns" style="border-top: solid #E0E0E0 2px; margin-top:1px">
         <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8; margin-top:5px">
@@ -179,11 +194,16 @@
            <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
            <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
            <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
-           <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
+           {{--<li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>--}}
+           <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
            <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
-           <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
-           <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
+           {{--<li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>--}}
             <li id="11"><a href="{{url('/publishers')}}">More&raquo;</a>
+           <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
+           <li id="13">
+              <div class="fb-like" data-href="https://www.facebook.com/pages/Newspepa/1165261366833416" data-width="150" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+           </li>
+
                        {{--<ul id="drop1" class="tiny f-dropdown" data-dropdown-content>--}}
                                        {{--<li><a href="#">This is a link</a></li>--}}
                                        {{--<li><a href="#">This is another</a></li>--}}
@@ -195,9 +215,19 @@
         </div>
     </footer>
 
-     <a href="{{url('/')}}"><div class="panel" id="toFloat">
-        <div class="name-m"></div>
-    </div></a>
+    {{--<a href="#" class="back-to-top" style="display: inline;"></a>--}}
+    </article>
+    <a class="exit-off-canvas"></a>
+
+       </div>
+   </div>
+
+
+
+
+     {{--<a href="{{url('/')}}"><div class="panel" id="toFloat">--}}
+        {{--<div class="name-m"></div>--}}
+    {{--</div></a>--}}
 
 
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
@@ -210,42 +240,25 @@
     <script>
         $(document).foundation();
 //ajax call for getting number of linkouts of specific a tags
-            $('.linkOut').click(function(event) {
-
-            var token = $(this).data('token');
-             var storyID = $(this).attr('id');
-                $.ajax({
-                    type: "POST",
-                    dataType:"jsonp",
-                    url:'http://newspepa.com/linkout/'+storyID,
-                    data:{_token :token},
-                    success: function(msg){
-                        alert(msg);
-                    }
-                })
-
-             });
-
-
-//this is used to specify the category that is being displayed on the dropdown list
-//        if (location.pathname == "/") {
-//              $(".dropdown").text("Top Stories");
-//        }else if (location.pathname == "/latest") {
-//              $(".dropdown").text("Latest Stories");
-//         } else if (location.pathname == "/politics") {
-//            $(".dropdown").text("Politics");
-//         } else if (location.pathname == "/entertainment") {
-//               $(".dropdown").text("Entertainment");
-//         } else if (location.pathname == "/sports") {
-//         $(".dropdown").text("Sports");
-//         }else if (location.pathname == "/metro") {
-//                       $(".dropdown").text("Metro");
-//          }else if (location.pathname == "/nigeria") {
-//                         $(".dropdown").text("Nigeria");
+//            $('.linkOut').click(function(event) {
+//
+//            var token = $(this).data('token');
+//             var storyID = $(this).attr('id');
+//                $.ajax({
+//                    type: "POST",
+//                    dataType:"jsonp",
+//                    url:'http://newspepa.com/linkout/'+storyID,
+//                    data:{_token :token},
+//                    success: function(msg){
+//                        alert(msg);
 //                    }
+//                })
+//
+//             });
+
 
 //this is used for the back-to-top button
-    var offset = 1200;  var offset2=8;
+    var offset = 1200;
     var duration = 700;
     $(window).scroll(function() {
         if ($(this).scrollTop() > offset) {
@@ -257,14 +270,6 @@
         }
 
 
-        if ($(this).scrollTop() > offset2) {
-            $("#toFloat").show();
-            $("#toFloat").css('position','fixed');
-        }else{
-            $("#toFloat").hide();
-        }
-
-
     });
 
     $('.back-to-top').click(function(event) {
@@ -273,14 +278,70 @@
         return false;
     });
 
-    $(document).ready(function(){
-        $("#toFloat").hide();
-    });
+//click event to unhide the search bar
 
-     $('aside').click( function(e) {
-            $(this).scrollTop(0);
-        });
+$('.search-prompt').click(function() {
+  var clicks = $(this).data('clicks');
+  if (clicks) {
+     $(".search-column").css('display','none');
+     $(".category-row").css('margin-top','65px');
+  } else {
+  $(".category-row").css('margin-top','105px');
+  $(".search-column").css('display','inherit');
+  }
+  $(this).data("clicks", !clicks);
+});
+//$('.search-prompt').click(function(e) {
+//      $(".category-row").css('margin-top','105px');
+//      $(".search-column").css('display','inherit');
+// });
 
+
+
+//click event to change the search background icon
+var searchObj, className,search_column, index;
+
+searchObj = document.getElementById('searchChange');
+search_column=document.getElementsByClassName('search-column')
+index = 1;
+className = [
+    'search-prompt',
+    'close-search'
+];
+
+function updateIndex(){
+    if(index === 0){
+        index = 1;
+    }else{
+        index = 0;
+    }
+}
+
+searchObj.onclick = function(e){
+    e.currentTarget.className = className[index];
+    updateIndex();
+}
+
+
+    </script>
+    <script>
+    //ajax call for getting number of linkouts of specific a tags
+
+                $('.linkOut').click(function(event) {
+
+                var token = $(this).data('token');
+                 var storyID = $(this).attr('id');
+                    $.ajax({
+                        type: "POST",
+                        dataType:"jsonp",
+                        url:'http://newspepa.com/linkout/'+storyID,
+                        data:{_token :token},
+                        success: function(msg){
+                            alert(msg);
+                        }
+                    })
+
+                 });
 
     </script>
     <script>

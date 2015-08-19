@@ -48,11 +48,15 @@ class FeedController extends Controller {
             if (!$content) {
                 continue;
             }
-            if ($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21) {
+            if($feed['pub_id'] == 5 || $feed['pub_id'] == 10 || $feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21) {
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
-            } elseif ($feed['pub_id'] == 12) {
+            }elseif ($feed['pub_id'] == 12) {
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
-            } else {
+            }elseif($feed['pub_id'] == 27){
+                $all_stories = array_merge($all_stories, $this->getBBCFeedContent($feed));
+            }elseif($feed['pub_id'] == 4){
+                $all_stories = array_merge($all_stories, $this->getFullFeedContent($feed));
+            }else {
                 try {
                     $all_stories = array_merge($all_stories, $this->getOtherFeeds($feed));
                 } catch (ParserException $exp) {
@@ -160,27 +164,85 @@ class FeedController extends Controller {
 
     }
 
-    public function getFullFeedContent(){
-        try{
+    public function getFullFeedContent($feed){
+        $rss = new \DOMDocument();
+        $rss->load($feed['url']);
+        $stories = array();
+        foreach ($rss->getElementsByTagName('item') as $node) {
+            try{
+                $story = array (
+                    'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+                    'url' => $node->getElementsByTagName('link')->item(0)->nodeValue,
+                    'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('pubDate')->item(0)->nodeValue)),
+                    'content' => $node->getElementsByTagName('encoded')->item(0)->nodeValue,
 
-            $html = file_get_contents('C:\wamp\www\newspepa\public\feeds\full_koko.html');
-            var_dump($html);
-            die();
-            $doc = new \DOMDocument();
-            libxml_use_internal_errors(true);
-            $doc->loadHTML($html); // loads your HTML
-            $xpath = new \DOMXPath($doc);
+                );
+                preg_match('/(<img[^>]+>)/i', $story['content'], $matches);
+                if(count($matches) > 0){
+                    $this->storeImage($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
+                    $story['image_url'] = "story_images/".$this->getImageName($this->getImageUrl($matches[0]), $story['title'], $story['pub_date']);
+                }
 
-            $nlist = $xpath->query("//div[@class='content-text']");
-            var_dump($nlist);
+                $story['feed_id'] = $feed['id'];
+                $story['pub_id'] = $feed['pub_id'];
+                $story['category_id'] = $feed['category_id'];
 
+                //Crawls the site for all contents
+                $html = file_get_contents($story['url']);
 
-            die();
-        }catch(\ErrorException $ex){
-            echo $ex->getMessage();
+                $dom = new \DOMDocument();
+                libxml_use_internal_errors(true);
+                $dom->loadHTML($html);
+
+                $xpath = new \DOMXPath($dom);
+                //Gets the content within the div that contains the description of the story
+                $div = $xpath->query('//div[@class="content-text"]');
+
+                $div = $div->item(0);
+
+                $description = $dom->saveXML($div);
+                preg_match('/(<img[^>]+>)/i', $description, $matches);
+
+                $description = str_replace($matches[0], "", $description);
+                $story['description'] = $description;
+                array_push($stories, $story);
+            }catch(\ErrorException $ex){
+                continue;
+            }
+
         }
+        return $stories;
 
+    }
 
+    public function getBBCFeedContent($feed)
+    {
+        $rss = new \DOMDocument();
+        $rss->load($feed['url']);
+        $stories = array();
+        foreach ($rss->getElementsByTagName('entry') as $node) {
+            try {
+                $story = array(
+                    'title' => $node->getElementsByTagName('title')->item(0)->nodeValue,
+                    'url' => $node->getElementsByTagName('link')->item(0)->getAttribute('href'),
+                    'pub_date' => date('Y-m-d h:i:s', strtotime($node->getElementsByTagName('published')->item(0)->nodeValue)),
+                    'description' => strip_tags($node->getElementsByTagName('summary')->item(0)->nodeValue) . "",
+
+                );
+                $story['feed_id'] = $feed['id'];
+                $story['pub_id'] = $feed['pub_id'];
+                $story['category_id'] = $feed['category_id'];
+                $tc = new TimelineStoryController();
+                $img_url = $tc->getStoryImage($story['url']);
+                if($this->storeImage($img_url, $story['title'], $story['pub_date'])){
+                    $story['image_url'] = "story_images/".$this->getImageName($img_url, $story['title'], $story['pub_date']);
+                }
+                array_push($stories, $story);
+            } catch (\ErrorException $ex) {
+                continue;
+            }
+        }
+        return $stories;
     }
 
 
@@ -311,7 +373,27 @@ class FeedController extends Controller {
     }
 
     public function test(){
-        $this->getFullFeedContent();
+
+        $html = file_get_contents('http://kokofeed.com/2014/10/30/10-unbelievable-photos-of-lagos-you-will-mistake-for-london/');
+
+        $dom = new \DOMDocument();
+        libxml_use_internal_errors(true);
+        $dom->loadHTML($html);
+
+        $xpath = new \DOMXPath($dom);
+
+        $div = $xpath->query('//div[@class="content-text"]');
+
+        $div = $div->item(0);
+
+        $description =  $dom->saveXML($div);
+        preg_match('/(<img[^>]+>)/i', $description, $matches);
+
+        $description = str_replace($matches[0], "", $description);
+
+
+
+//        $this->getFullFeedContent();
 //        $this->fetchFeeds();
 //        echo "<br> done";
 ////        $this->fetchFeeds();
@@ -400,7 +482,7 @@ class FeedController extends Controller {
                                 $story['image_url'] = "story_images/".$this->getImageName($img_url, $str['title'], $str['pubDate']);
                             }
 
-                        }else if($feed['pub_id'] == 1 || $feed['pub_id'] == 22 || $feed['pub_id'] == 23 || $feed['pub_id'] == 25 || $feed['pub_id'] == 24){
+                        }else if($feed['pub_id'] == 1 || $feed['pub_id'] == 22 || $feed['pub_id'] == 23 || $feed['pub_id'] == 25 || $feed['pub_id'] == 24 || $feed['pub_id'] == 26){
                             $tc = new TimelineStoryController();
                             $result = $tc->getStoryImage($str['link']);
                             if($result !== null){

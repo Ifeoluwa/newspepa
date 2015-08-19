@@ -36,7 +36,6 @@ class Kernel extends ConsoleKernel
         })->then(function(){
             echo "Level 3 begins:: Creating Timeline Stories";
             $sc = new StoryController();
-            $sc->createTimelineStories();
             echo "\nCreate timeline story completed!";
         })->everyFiveMinutes();
 

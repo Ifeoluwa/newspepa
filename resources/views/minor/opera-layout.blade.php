@@ -6,7 +6,7 @@
         <title>@yield('title') | Newspepa</title>
         <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
         <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
-        <link rel="stylesheet" href="ui_newspaper/css/opera-app26.css" />
+        <link rel="stylesheet" href="ui_newspaper/css/opera-app27.css" />
         <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
         <script src="ui_newspaper/js/vendor/modernizr.js"></script>
@@ -68,24 +68,31 @@
                    @yield('about')
     </div>
 
-        <footer class="row">
-                 <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8">
-                       <li id="1" ><a href="{{url('/')}}">Home</a></li>
-                            <li id="2" ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
-                             <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
-                             <li id="4"><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
-                             <li id="5"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
-                             <li id="6"><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
-                             <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
-                             <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
-                             <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
-                             <li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>
-                             <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
-                             <li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>
-                             <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
-                             <li id="8"><a href="{{url('/publishers')}}">More&raquo;</a>
-                 </ul>
-        </footer>
+       <footer class="row" id="footer-list" >
+               <div class="large-12 columns" style="border-top: solid #E0E0E0 2px; margin-top:1px">
+               <ul class="small-block-grid-2" style="color:#0266C8; line-height: 0.8; margin-top:5px">
+                 <li id="1" ><a href="{{url('/')}}">Home</a></li>
+                 <li id="2" ><a href="{{url('/latest-punch-news')}}">Punch</a></li>
+                  <li id="3"><a href="{{url('/latest-news-in-nigeria')}}">Latest stories</a></li>
+                  <li id="4"><a href="{{url('/latest-vanguard-news')}}">Vanguard</a></li>
+                  <li id="5"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
+                  <li id="6"><a href="{{url('/latest-linda-ikeji-news')}}">Linda Ikeji</a></li>
+                  <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+                  <li><a href="{{url('/latest-nigerian-monitor-news')}}">Nigerian Monitor</a></li>
+                  <li id="7"><a href="{{url('/latest-sports-news-in-nigeria')}}">Sports</a></li>
+                  {{--<li id="7"><a href="{{url('/latest-complete-sports-news')}}">Complete Sports</a></li>--}}
+                  <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
+                  <li id="9"><a href="{{url('/latest-politics-news-in-nigeria')}}">Politics</a></li>
+                  {{--<li id="9"><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></li>--}}
+                   <li id="11"><a href="{{url('/publishers')}}">More&raquo;</a>
+                  <li id="10"><a href="{{url('/latest-metro-news-in-nigeria')}}">Metro</a></li>
+                  <li id="13">
+                     <div class="fb-like" data-href="https://www.facebook.com/pages/Newspepa/1165261366833416" data-width="150" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+                  </li>
+               </ul>
+               </div>
+           </footer>
+
 
     <script src="ui_newspaper/js/vendor/jquery.js"></script>
     <script src="ui_newspaper/js/vendor/fastclick.js"></script>

@@ -4,7 +4,7 @@
 
 
 @section('publishers')
-<div class="row" style="background-color: #ffffff; text-align: center">
+<div class="row" style="color: #646464;; text-align: center">
 <span style="font-size: 18px"><b>Select a publisher</b></span>
 </div>
 <div class="row opera-panel radius" style="color:#008744 ">
@@ -17,7 +17,6 @@
                    <span><a href="{{url('/latest-bella-naija-news')}}">Bella Naija</a></span><hr/>
                    <span><a href="{{url('/latest-channels-tv-news')}}">Channels TV</a></span><hr/>
                    <span><a href="{{url('/latest-goal-com-news')}}">Goal</a></span><hr/>
-                  <span><a href="{{url('/latest-the-cable-news')}}">The Cable</a></span><hr/>
                   <span><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></span><hr/>
                   <span><a href="{{url('/latest-kokofeed-news')}}">KokoFeed</a></span><hr/>
                   <span><a href="{{url('/latest-net-news')}}">Net</a></span><hr/>
@@ -28,6 +27,8 @@
                   <span><a href="{{url('/latest-business-day-news')}}">Business day</a></span><hr/>
                   <span><a href="{{url('/latest-city-people-news')}}">City People</a></span><hr/>
                   <span><a href="{{url('/latest-encomium-news')}}">Encomium</a></span><hr/>
+                  <span><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a></span></hr>
+                  <span><a href="{{url('/latest-the-nation-news')}}">The Nation</a></span></hr>
                   <span><a href="{{url('/latest-naira-metrics-news')}}">Naira Metrics</a></span><hr/>
                   <span><a href="{{url('/latest-business-news-news')}}">Business News</a></span><hr/>
 
