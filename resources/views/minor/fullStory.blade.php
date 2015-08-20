@@ -172,7 +172,7 @@
             </div>
         @endforeach
 @stop
-@endif
+
 
 @section('more-scripts')
 @include('partials.commentScript')
