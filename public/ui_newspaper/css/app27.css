@@ -765,12 +765,13 @@ body{
     background-image: url("../img/facebook-share-button.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 90px 35px;
-    width: 90px;
-    height: 35px;
+    background-size: 93px 38px;
+    width: 95px;
+    height: 40px;
     display: inline-block;
     margin-right: 4px;
-    margin-bottom: -2px;
+    margin-bottom: 10px;
+    margin-top: 1px;
 }
 .whatsappIcon{
     background-image: url("../img/Whatsapp-icon.png");
@@ -781,31 +782,43 @@ body{
     height: 40px;
     display: inline-block;
     margin-right: 4px;
-    margin-bottom: -5px;
+    /*margin-bottom: 10px;*/
 }
 .twitterIcon{
     background-image: url("../img/twitter-icon.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 45px 45px;
-    width: 45px;
-    height: 42px;
+    background-size: 46px 46px;
+    width: 46px;
+    height: 46px;
     display: inline-block;
     margin-right: 4px;
-    margin-bottom: -5px;
+    margin-top: -3px;
+
 }
-.comments-icon{
+.cmntBox{
     background-image: url("../img/join-conversation.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 40px 40px;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    margin-right: 4px;
-    margin-bottom: -5px;
+    background-size: 20px 20px;
+    background-position:top left;
+    width: auto;
+    height: 45px;
+    /*display: inline-block;*/
+    margin-right: 9px;
+    margin-top: 12px;
 }
-
+.cmntCount{
+    margin-top: -13px;
+    font-size: 36px;
+    padding-left: 25px;
+}
+.cmntText{
+    margin-top: -6px;
+    font-size: 12px;
+    font-weight: bold;
+    color:#0266c8;
+}
 .to-top{
     background-image: url("../img/back-to-top.png");
     position:relative;
@@ -986,6 +999,29 @@ body{
     border-left:solid #FF6600 2px;
 }
 
+.textarea{
+    min-height: 100px !important;
+}
+button.small, .button.small{
+    font-size: 1.1rem;
+}
+
+.socialBtns{
+    text-align: center;
+}
+
+.socialBtns ul{
+    margin-bottom: 0;
+    line-height: 1;
+    margin-left: 0;
+}
+.socialBtns .inline-list{
+    margin:0 auto;
+    display:inline-block;
+}
+.socialBtns .inline-list > li{
+    margin-left: 0.5rem;
+}
 /*#footer-list > ul >li > ul{*/
     /*bottom:100%;*/
 /*}*/

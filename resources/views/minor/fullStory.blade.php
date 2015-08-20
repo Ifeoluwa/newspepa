@@ -29,18 +29,32 @@
       @if($full_story['image_url'] != "")
       <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...
-      @if($full_story['url'] != "")
-            <a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
+      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{!!$full_story['description']!!}
+      @if($full_story['url'] != "" || $full_story['pub_id'] !=4)
+            <a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">...Continue to read</a></p></p>
       @endif
       </div>
       <hr/>
-       <div class="large-12 small-12 medium-12 columns" style="padding-left: 25px">
-         <a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a>
-         <a class="twitterIcon" target="_blank" href="https://twitter.com/home?status={{$full_story['title']}} at {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a>
-         <a class="whatsappIcon" href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a>
-         <a id="comment-link" style="font-size: 22px"><img src="{{url('ui_newspaper/img/join-conversation.png')}}" style="width: 45px; margin-bottom: 8px;"> {{count($comments)}}</a>
-       </div>
+      <div class="large-12 small-12 medium-12 columns socialBtns" style="margin-left: 25px">
+                  <ul class="inline-list">
+                       <li><a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a></li>
+                       <li><a class="twitterIcon" href= "{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" target="_blank" title="{{$full_story['title']}}"></a></li>
+                       <li><a class="whatsappIcon" href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a></li>
+                          {{--<a id="comment-link" style="font-size: 35px"><img src="{{url('ui_newspaper/img/join-conversation.png')}}" style="width: 15px; margin-bottom: 8px; margin-top:-20px"> {{count($comments)}}<span style="font-size: 8px">comments</span></a>--}}
+                      <li>
+                      <a id="comment-link">
+                          <div class="cmntBox">
+                              <div class="cmntCount">{{count($comments)}}</div>
+                                  @if(count($comments)!== 1)
+                                       <div class="cmntText">Comments</div>
+                                  @else
+                                      <div class="cmntText">Comment</div>
+                                  @endif
+                          </div>
+                      </a>
+                      </li>
+                   </ul>
+            </div>
   </div>
 
   <div id="comments-box" hidden="hidden">
@@ -94,9 +108,7 @@
                         </div>
                         <div class="row">
                           <div class="large-12 columns">
-
-                                <button id="commentPostBtn" type="button" class="button radius tiny searchbar-button">Submit</button>
-
+                                <button id="commentPostBtn" type="button" class="button radius searchbar-button">Submit</button>
                           </div>
                         </div>
 
@@ -122,46 +134,50 @@
 
 
 @section('other_sources')
-@if(count($data['other_sources']) > 0)
-<div class="row opera-panel minors related-content"><b>other sources</b></div>
-@foreach($data['other_sources'] as $other_sources)
-    <div class="row opera-panel minors">
-   <a name= linkOuts id="{{$other_sources['story_id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span></a>
-    </div>
-@endforeach
-@endif
+    @if(count($data['other_sources']) > 0)
+        <div class="row opera-panel minors related-content"><b>other sources</b></div>
+            @foreach($data['other_sources'] as $other_sources)
+                <div class="row opera-panel minors">
+                    <a name= linkOuts id="{{$other_sources['story_id']}}" href="{{$other_sources['url']}}"> <span>{{$data['publisher_names'][$other_sources['pub_id']]}}|{{$other_sources['url']}}</span></a>
+                </div>
+            @endforeach
+    @endif
 @stop
 
+@if(isset($data['recent_stories']))
 @section('related_content')
-<div class="row opera-panel radius related-content">Latest stories in {{$data['category_names'][$full_story['category_id']]}}</div>
-@foreach($data['recent_stories'] as $recent_stories)
-        <div class="row opera-panel radius">
+    <div class="row opera-panel radius related-content">Latest stories in {{$data['category_names'][$full_story['category_id']]}}</div>
+        @foreach($data['recent_stories'] as $recent_stories)
+            <div class="row opera-panel radius">
+                <div class="large-12 medium-6 small-12 columns">
+                    <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
+                        @if($recent_stories['image_url']!="")
+                            <div class="image" style="background-image: url('{{$recent_stories['image_url']}}'); background-repeat: no-repeat;padding-bottom: 52%;-webkit-background-size: cover;background-size: cover; "></div>
+                        @endif
+                        <div class="text-details">
+                            <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
+                                <header class="title-holder">
+                                    @if($recent_stories['image_url'] == "")
+                                        <h1 class="title-timeline">{{$recent_stories['title']}}</h1>
+                                    @else
+                                        <h1 class="title-timeline title-important">{{$recent_stories['title']}}</h1>
+                                    @endif
+                                </header>
+                            </a>
 
-     <div class="large-12 medium-6 small-12 columns">
-    <a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
-     @if($recent_stories['image_url']!="")
-         <div class="image" style="background-image: url('{{$recent_stories['image_url']}}'); background-repeat: no-repeat;padding-bottom: 52%;-webkit-background-size: cover;background-size: cover; "></div>
-     @endif
-          <div class="text-details"><a href="{{url($tc->makeStoryUrl($recent_stories['title'], $recent_stories['story_id']))}}">
-          <header class="title-holder">
-         @if($recent_stories['image_url'] == "")
-           <h1 class="title-timeline">{{$recent_stories['title']}}</h1>
-           @else
-              <h1 class="title-timeline title-important">{{$recent_stories['title']}}</h1>
-          @endif
-          </header></a>
-           <span class="publisher-name"><b>{{$data['publisher_names'][$recent_stories['pub_id']]}}</b></span>
-           <span class="timecount-name"><b>{{$tc->getTimeDifference($recent_stories['created_date'])}} </b></span>
-      </div>
-    </a>
-    </div>
-             
-</div>
-
-@endforeach
- @stop
+                                <span class="publisher-name"><b>{{$data['publisher_names'][$recent_stories['pub_id']]}}</b></span>
+                                <span class="timecount-name"><b>{{$tc->getTimeDifference($recent_stories['created_date'])}} </b></span>
+                         </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+@stop
+@endif
 
 @section('more-scripts')
 @include('partials.commentScript')
+@include('partials.twitterScript')
+
 @stop
 

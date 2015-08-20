@@ -986,6 +986,10 @@ body{
     border-left:solid #FF6600 2px;
 }
 
+.textarea{
+    min-height: 100px !important;
+}
+
 /*#footer-list > ul >li > ul{*/
     /*bottom:100%;*/
 /*}*/

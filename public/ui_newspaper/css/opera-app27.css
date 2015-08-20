@@ -515,12 +515,13 @@ body{
     background-image: url("../img/facebook-share-button.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 90px 35px;
-    width: 90px;
-    height: 35px;
+    background-size: 93px 38px;
+    width: 95px;
+    height: 40px;
     display: inline-block;
     margin-right: 4px;
-    margin-bottom: -2px;
+    margin-bottom: 10px;
+    margin-top: 1px;
 }
 .whatsappIcon{
     background-image: url("../img/Whatsapp-icon.png");
@@ -531,18 +532,42 @@ body{
     height: 40px;
     display: inline-block;
     margin-right: 4px;
-    margin-bottom: -5px;
+    /*margin-bottom: 10px;*/
 }
 .twitterIcon{
     background-image: url("../img/twitter-icon.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 45px 45px;
-    width: 45px;
-    height: 42px;
+    background-size: 46px 46px;
+    width: 46px;
+    height: 46px;
     display: inline-block;
     margin-right: 4px;
-    margin-bottom: -5px;
+    margin-top: -3px;
+
+}
+.cmntBox{
+    background-image: url("../img/join-conversation.png");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position:top left;
+    width: auto;
+    height: 45px;
+    /*display: inline-block;*/
+    margin-right: 9px;
+    margin-top: 12px;
+}
+.cmntCount{
+    margin-top: -13px;
+    font-size: 36px;
+    padding-left: 25px;
+}
+.cmntText{
+    margin-top: -6px;
+    font-size: 12px;
+    font-weight: bold;
+    color:#0266c8;
 }
 
 .to-top{
@@ -601,3 +626,71 @@ position:relative;
     padding-bottom: 0;
 }
 
+.socialBtns{
+    text-align: center;
+}
+.socialBtns ul{
+    margin-bottom: 0;
+    line-height: 1;
+    margin-left: 0;
+}
+.socialBtns .inline-list{
+    margin:0 auto;
+    display:inline-block;
+}
+.socialBtns .inline-list > li{
+    margin-left: 0.5rem;
+}
+
+[class*="block-grid-"] {
+    display: block;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1.2rem;
+    margin-right: -0.9rem;
+}
+
+.row-trending{
+    background-color: #ffffff;
+    padding-right: 2px;
+    padding-left:4px;
+    margin-top: 0.4rem;
+}
+.heading-trending{
+    float:left;
+    /*border-bottom: solid #bdbdbd 1px;*/
+    margin-bottom: 10px;
+    margin-top: 10px
+}
+.span-trending{
+    font-size: 16px;
+    color:#FF6600;
+    /*border-bottom: solid #ff0000 5px;*/
+}
+.column-trending{
+    margin-top:10px;
+    padding-left: 8px;
+}
+#trend1{
+    border-left:solid #898989 2px;
+}
+#trend2{
+    border-left:solid #0266c8  2px;
+}
+#trend3{
+    border-left:solid #ff0000 2px;
+}
+#trend4{
+    border-left:solid #008744 2px;
+}
+#trend5{
+    border-left:solid #FF6600 2px;
+}
+
+.textarea{
+    min-height: 100px !important;
+}
+button.small, .button.small{
+    font-size: 1.1rem;
+}

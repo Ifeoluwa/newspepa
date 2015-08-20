@@ -212,6 +212,15 @@
                       {{--</li>--}}
 
         </ul>
+        <div class="row" style="text-align: center"><a id="feedback">Click here to give us some feedback</a></div>
+            <div id="fdbk-rvl" class="row" style="display:none">
+                <div class="large-12 small-12 medium-12 columns" style="padding-left: 20px;padding-right: 20px">
+                    <textarea class="textarea" placeholder="Enter Feedback" id="comment" name="comment" required="required"></textarea>
+                </div>
+                <div class="large-12 small-12 medium-12 columns" style="padding-left: 20px;padding-right: 20px; margin-top:10px">
+                    <button id="feedbackBtn" type="button" class="button radius small searchbar-button">Submit</button>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -239,23 +248,6 @@
 
     <script>
         $(document).foundation();
-//ajax call for getting number of linkouts of specific a tags
-//            $('.linkOut').click(function(event) {
-//
-//            var token = $(this).data('token');
-//             var storyID = $(this).attr('id');
-//                $.ajax({
-//                    type: "POST",
-//                    dataType:"jsonp",
-//                    url:'http://newspepa.com/linkout/'+storyID,
-//                    data:{_token :token},
-//                    success: function(msg){
-//                        alert(msg);
-//                    }
-//                })
-//
-//             });
-
 
 //this is used for the back-to-top button
     var offset = 1200;
@@ -268,8 +260,6 @@
             $('.back-to-top').fadeOut(duration);
 
         }
-
-
     });
 
     $('.back-to-top').click(function(event) {
@@ -291,10 +281,11 @@ $('.search-prompt').click(function() {
   }
   $(this).data("clicks", !clicks);
 });
-//$('.search-prompt').click(function(e) {
-//      $(".category-row").css('margin-top','105px');
-//      $(".search-column").css('display','inherit');
-// });
+
+//click event to handle the feedback column
+$('#feedback').click(function() {
+$("#fdbk-rvl").css('display','inherit');
+});
 
 
 
