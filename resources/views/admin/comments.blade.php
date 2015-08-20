@@ -26,7 +26,8 @@
 <table id="commentsTable" class="table table-hover">
     <thead>
         <tr>
-            <th>Title</th>
+            <th>Story Title</th>
+            <th>Name</th>
             <th>Comment</th>
             <th>Status</th>
             <th>Action</th>
@@ -36,6 +37,7 @@
     @foreach($data['comments'] as $row)
     <tr>
         <td>{{$row['title']}}</td>
+        <td>{{$row['user_name']}}</td>
         <td>{{$row['comment']}}</td>
 
         <td>
@@ -51,6 +53,7 @@
             @else
             <a data-val="{{url('admin/comment/disapprove/'.$row['id'])}}" class="confirmDisapprove" href="#" >Disapprove</a>
             @endif
+            <a data-val="{{url('admin/comment/delete/'.$row['id'])}}" class="confirmDelete" href="#">Delete</a>
         </td>
 
     </tr>

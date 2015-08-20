@@ -141,6 +141,7 @@ class StoryController extends Controller {
             $story['story_id'] = $story['id'];
             $timeline_story = array_except($story, ['id']);
             $id = TimelineStory::insertIgnore($timeline_story);
+            DB::table('stories')->where('story_id', $story['story_id'])->update(['status_id' => 2]);
             $date = new \DateTime('now');
 
             if($id !== false){

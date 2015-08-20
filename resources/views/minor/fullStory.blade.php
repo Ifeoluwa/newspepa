@@ -100,7 +100,7 @@
                           <div class="large-12 columns">
                             <div class="row collapse">
                               <div class="small-12 columns">
-                                <textarea placeholder="Comment" id="comment" name="comment" required="required"></textarea>
+                                <textarea placeholder="Comment" id="comment" name="comment" required="required" rows="3"></textarea>
                               </div>
 
                             </div>
@@ -144,7 +144,6 @@
     @endif
 @stop
 
-@if(isset($data['recent_stories']))
 @section('related_content')
     <div class="row opera-panel radius related-content">Latest stories in {{$data['category_names'][$full_story['category_id']]}}</div>
         @foreach($data['recent_stories'] as $recent_stories)

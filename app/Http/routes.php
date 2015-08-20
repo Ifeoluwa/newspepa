@@ -17,6 +17,7 @@
 Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
 Route::get('test', 'FeedController@test');
+
 Route::get('hello', function(){
     return view('admin.new_post');
 });
@@ -41,9 +42,9 @@ Route::get('publishers-list', function(){
 Route::get('about-desktop', function(){
     return view('aboutUs_desktop');
 });
-Route::get('test', function(){
-    return view('major.test');
-});
+//Route::get('test', function(){
+//    return view('major.test');
+//});
 
 Route::get('register', function(){
    return view('admin.register');
@@ -93,6 +94,9 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 
     Route::post('story/comment', 'CommentController@store');
+
+    //For feedback
+    Route::post('feedback', 'TimelineStoryController@submitFeedBack');
 
 //});
 
