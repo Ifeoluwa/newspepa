@@ -95,6 +95,9 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 
     Route::post('story/comment', 'CommentController@store');
 
+    //For feedback
+    Route::post('feedback', 'TimelineStoryController@submitFeedBack');
+
 //});
 
 
