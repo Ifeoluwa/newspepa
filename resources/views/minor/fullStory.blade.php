@@ -35,7 +35,7 @@
       @endif
       </div>
       <hr/>
-      <div class="large-12 small-12 medium-12 columns socialBtns" style="margin-left: 25px">
+      <div class="large-12 small-12 medium-12 columns socialBtns">
                   <ul class="inline-list">
                        <li><a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a></li>
                        <li><a class="twitterIcon" href= "{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" target="_blank" title="{{$full_story['title']}}"></a></li>
