@@ -102,7 +102,7 @@
                    <li><a href="{{url('/latest-channels-tv-news')}}">Channels TV</a></li>
                    <li><a href="{{url('/latest-goal-com-news')}}">Goal</a></li>
                   <li class="has-submenu"><a href="#">View more</a>
-                      <ul class="right-submenu">
+                      <ul class="right-submenu" style="position:inherit">
                           <li class="back"><a href="#">Back</a></li>
                           <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
                           <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
@@ -135,21 +135,22 @@
         {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button>--}}
         {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
        <div id="category-list" class="row category-row" style="overflow: visible">
+          <div class="small-12">
+            <ul class="inline-list">
+              <li id="first-child"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
+              <li id="2" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
+              <li id="3"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
+              <li id="more"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
+                <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
+                <li><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+                <li><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
+                <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a>
+                <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a>
+                </ul>
+              </li>
 
-        <ul class="inline-list small-12 medium-12 large-12">
-          <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
-          <li id="3" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
-          <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
-          <li id="more"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
-            <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
-            <li><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
-            <li><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
-            <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a>
-            <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a>
             </ul>
-          </li>
-
-        </ul>
+      </div>
         </div>
 
 {{--the stories containers starts from here--}}
@@ -213,6 +214,15 @@
                       {{--</li>--}}
 
         </ul>
+        <div class="row" style="text-align: center"><a id="feedback">Click here to give us some feedback</a></div>
+            <div id="fdbk-rvl" class="row" style="display:none">
+                <div class="large-12 small-12 medium-12 columns" style="padding-left: 20px;padding-right: 20px">
+                    <textarea class="textarea" placeholder="Enter Feedback" id="comment" name="comment" required="required"></textarea>
+                </div>
+                <div class="large-12 small-12 medium-12 columns" style="padding-left: 20px;padding-right: 20px; margin-top:10px">
+                    <button id="feedbackBtn" type="button" class="button radius small searchbar-button">Submit</button>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -240,23 +250,6 @@
 
     <script>
         $(document).foundation();
-//ajax call for getting number of linkouts of specific a tags
-//            $('.linkOut').click(function(event) {
-//
-//            var token = $(this).data('token');
-//             var storyID = $(this).attr('id');
-//                $.ajax({
-//                    type: "POST",
-//                    dataType:"jsonp",
-//                    url:'http://newspepa.com/linkout/'+storyID,
-//                    data:{_token :token},
-//                    success: function(msg){
-//                        alert(msg);
-//                    }
-//                })
-//
-//             });
-
 
 //this is used for the back-to-top button
     var offset = 1200;
@@ -269,8 +262,6 @@
             $('.back-to-top').fadeOut(duration);
 
         }
-
-
     });
 
     $('.back-to-top').click(function(event) {
@@ -292,10 +283,11 @@ $('.search-prompt').click(function() {
   }
   $(this).data("clicks", !clicks);
 });
-//$('.search-prompt').click(function(e) {
-//      $(".category-row").css('margin-top','105px');
-//      $(".search-column").css('display','inherit');
-// });
+
+//click event to handle the feedback column
+$('#feedback').click(function() {
+$("#fdbk-rvl").css('display','inherit');
+});
 
 
 

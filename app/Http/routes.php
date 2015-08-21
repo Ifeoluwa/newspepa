@@ -42,9 +42,9 @@ Route::get('publishers-list', function(){
 Route::get('about-desktop', function(){
     return view('aboutUs_desktop');
 });
-//Route::get('test', function(){
-//    return view('major.test');
-//});
+Route::get('test', function(){
+    return view('major.test');
+});
 
 Route::get('register', function(){
    return view('admin.register');

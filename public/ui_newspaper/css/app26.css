@@ -990,6 +990,10 @@ body{
 }
 >>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
 
+.textarea{
+    min-height: 100px !important;
+}
+
 /*#footer-list > ul >li > ul{*/
     /*bottom:100%;*/
 /*}*/

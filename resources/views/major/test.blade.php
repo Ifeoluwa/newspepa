@@ -9,7 +9,7 @@
      <link rel="shortcut icon" href="ui_newspaper/img/favicon2.ico" />
      <link rel="stylesheet" href="ui_newspaper/css/foundation.css" />
       <link rel="stylesheet" href="ui_newspaper/css/test.css" />
-      {{--<link rel="stylesheet" href="ui_newspaper/css/app26.css" />--}}
+      {{--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />--}}
      <link rel="stylesheet" href="ui_newspaper/css/normalize.css" />
      <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
      {{--<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>--}}
@@ -27,9 +27,9 @@
    }(document, 'script', 'facebook-jssdk'));</script>
 
  <a href="#" class="back-to-top" style="display: inline;"></a>
-        <div class="off-canvas-wrap">
-            <div class="inner-wrap">
-                <div class="header">
+        <div class="off-canvas-wrap" data-role="none">
+            <div class="inner-wrap" data-role="none">
+                <div class="header" data-role="none">
                     <nav class="tab-bar" data-offcanvas>
                         <section class="left-small"> <a class="left-off-canvas-toggle menu-icon"><span></span></a>
 
@@ -58,7 +58,7 @@
                         <li><a href="#">The Psychohistorians</a>
                         <li><a href="#">The Psychohistorians</a>
                          <li class="has-submenu"><a href="#">View more</a>
-                              <ul class="right-submenu">
+                              <ul class="left-submenu" style="">
                                   <li class="back"><a href="#">Back</a></li>
                                   <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
                                   <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
@@ -208,7 +208,11 @@
         </div>
 
 
-<script src="ui_newspaper/js/vendor/jquery.js"></script>
+    <script src="ui_newspaper/js/vendor/jquery.js"></script>
+    {{--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>--}}
+    {{--<script src="ui_newspaper/js/vendor/jquery.mobile.custom.min(1).js"></script>--}}
+    {{--<script type="text/javascript">$(document).bind("mobileinit", function(){$.extend( $.mobile , {autoInitializePage: false})});</script>--}}
+    {{--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>--}}
     <script src="ui_newspaper/js/foundation/foundation.offcanvas.js"></script>
     <script src="ui_newspaper/js/foundation.min.js"></script>
 <script>
@@ -232,6 +236,16 @@ var offset = 100;
         jQuery('html, body').animate({scrollTop: 20}, duration);
         return false;
     });
+
+$( document ).on( "swipeleft swiperight", function( e ) {
+    if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+        if ( e.type === "swipeleft"  ) {
+            $('.off-canvas-wrap').removeClass('move-right');
+        } else if ( e.type === "swiperight" ) {
+            $('.off-canvas-wrap').addClass('move-right');
+        }
+    }
+});
 
 </script>
 
