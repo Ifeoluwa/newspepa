@@ -102,7 +102,7 @@
                    <li><a href="{{url('/latest-channels-tv-news')}}">Channels TV</a></li>
                    <li><a href="{{url('/latest-goal-com-news')}}">Goal</a></li>
                   <li class="has-submenu"><a href="#">View more</a>
-                      <ul class="right-submenu">
+                      <ul class="right-submenu" style="position:inherit">
                           <li class="back"><a href="#">Back</a></li>
                           <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
                           <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
