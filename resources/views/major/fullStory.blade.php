@@ -61,6 +61,7 @@
                 </li>
              </ul>
       </div>
+
   </div>
 
 
@@ -73,19 +74,27 @@
 
         {{--</div>--}}
 
-        <div id="comments-box" hidden="hidden">
+        <div id="comments-box">
 
                <div id="people_comments">
                                  {{--Comments are displayed here--}}
 
                                  @if(count($comments) > 0)
-                                     @foreach($comments as $comment)
-                                       <div class="row panel radius">
-                                           <div class="small-3 medium-3 columns"><strong style="color: #008744">{{$comment['user_name']}}</strong></div>
-                                           <div class="small-9 medium-9 columns" >{{$comment['comment']}}</div>
-                                       </div>
-                                     @endforeach
-                                 @else
+                                    <div class="row panel radius">
+                                       @foreach($comments as $comment)
+                                            <div class="large-12 medium-12 small-12 columns">
+                                                <span class="publisher-name"><strong>{{$comment['user_name']}}</strong></span>
+                                                 <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($comment['created_date'])!!} </span>
+                                            </div>
+                                            <br/>
+                                            <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 10px;padding-top:10px">{{$comment['comment']}}</div>
+                                            <hr/>
+
+                                      @endforeach
+                                      <a href="#">View 3 more comments</a>
+                                    </div>
+                                    <blockquote>Add your comment</blockquote>
+                                  @else
                                      <blockquote>Be the first to comment on this.</blockquote>
 
                                  @endif
@@ -135,7 +144,6 @@
 
                </div>
 
-          </div>
 
 
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

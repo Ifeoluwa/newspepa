@@ -58,7 +58,7 @@
                         <li><a href="#">The Psychohistorians</a>
                         <li><a href="#">The Psychohistorians</a>
                          <li class="has-submenu"><a href="#">View more</a>
-                              <ul class="right-submenu">
+                              <ul class="left-submenu" style="">
                                   <li class="back"><a href="#">Back</a></li>
                                   <li><a href="{{url('/latest-the-guardian-news')}}">The Guardian</a></li>
                                   <li id="8"><a href="{{url('/latest-bbc-hausa-news')}}">BBC Hausa</a>
@@ -212,7 +212,7 @@
     {{--<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>--}}
     {{--<script src="ui_newspaper/js/vendor/jquery.mobile.custom.min(1).js"></script>--}}
     {{--<script type="text/javascript">$(document).bind("mobileinit", function(){$.extend( $.mobile , {autoInitializePage: false})});</script>--}}
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    {{--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>--}}
     <script src="ui_newspaper/js/foundation/foundation.offcanvas.js"></script>
     <script src="ui_newspaper/js/foundation.min.js"></script>
 <script>

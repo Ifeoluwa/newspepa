@@ -134,6 +134,8 @@ ul.off-canvas-list li a{
 
 .category-row ul{
     width:100%;
+    margin-bottom: 0.5rem;
+    margin-top:0.5rem;
 }
 
     .category-row ul li a {
@@ -142,7 +144,7 @@ ul.off-canvas-list li a{
     }
 
     .category-row ul li {
-        margin-left: 0.9rem !important;
+        margin-left: 0.9rem;
     }
 
     .category-row ul li .dropdown.button::after, .category-row ul li button.dropdown::after{
@@ -157,11 +159,141 @@ ul.off-canvas-list li a{
     }
 /*}*/
 
-@media only screen and (max-width: 40.0625em){
+/*@media only screen and (max-width: 40em){*/
+@media only screen and (min-width : 320px) {
     .category-row ul li {
-        margin-left: 0.4rem !important;
+        margin-left: 0.7rem !important;
+        font-size:17px !important;
+    }
+    .category-row ul li:first-child{
+        margin-left: 0.1rem !important;
+    }
+
+    .category-row ul li .dropdown.button, .category-row ul li button.dropdown{
+        font-size: 17px !important;
+    }
+    .f-dropdown.open:first-child{
+        margin-left: 0.7rem !important;
     }
 }
+
+@media only screen and (min-width : 480px)  {
+    .category-row ul li {
+        margin-left: 5rem !important;
+        font-size: 18px !important;
+    }
+    .category-row ul li:first-child{
+        margin-left: 2rem !important;
+    }
+
+    .category-row ul li .dropdown.button, .category-row ul li button.dropdown{
+        font-size: 18px !important;
+    }
+
+    .f-dropdown.open{
+        top:28px !important;
+        left:300px !important;
+    }
+    .f-dropdown.open ul li:first-child{
+        margin-left: 5rem !important;
+    }
+}
+
+@media only screen and (min-width : 768px){
+    .category-row ul li {
+        margin-left: 7rem !important;
+        font-size: 20px !important;
+    }
+    .category-row ul li:first-child{
+        margin-left: 2rem !important;
+    }
+    .category-row ul li .dropdown.button, .category-row ul li button.dropdown{
+        font-size:20px !important;
+    }
+
+    .f-dropdown.open{
+        top:37px !important;
+        left:400px !important;
+
+    }
+    .f-dropdown.open:first-child{
+        margin-left: 7rem !important;
+    }
+}
+
+/*@media only screen and (min-width:64.0625em){*/
+@media only screen and (min-width : 992px) {
+    .category-row ul li {
+        margin-left: 9rem !important;
+        font-size: 23px !important;
+    }
+    .category-row ul li:first-child{
+        margin-left: 5rem !important;
+    }
+    .category-row ul li .dropdown.button, .category-row ul li button.dropdown{
+        font-size: 22px !important;
+    }
+
+    .f-dropdown.open{
+        top:37px !important;
+        left:500px !important;
+
+    }
+    .f-dropdown.open:first-child{
+        margin-left: 9rem !important;
+    }
+}
+
+/*@media only screen and (min-width:64.0625em) and (max-width:90em){*/
+@media only screen and (min-width : 1200px)  {
+    .category-row ul li {
+        margin-left: 12rem !important;
+        font-size: 26px !important;
+    }
+    .category-row ul li:first-child{
+        margin-left: 9rem !important;
+    }
+    .category-row ul li .dropdown.button, .category-row ul li button.dropdown{
+        font-size: 26px !important;
+    }
+    .f-dropdown.open{
+           top:40px !important;
+           left:650px !important;
+       }
+    .f-dropdown.open:first-child{
+        margin-left: 12rem !important;
+    }
+
+}
+
+/*@media only screen and (min-width:90.0625em){*/
+/*@media only screen and (min-width: 800px) and (max-width: 960px) {*/
+    /*.category-row ul li {*/
+        /*margin-left: 13rem !important;*/
+    /*}*/
+    /*.category-row ul li:first-child{*/
+        /*margin-left: 8rem !important;*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (min-width:90.0625em) and (max-width:120em){*/
+/*@media only screen and ( min-width: 980px) {*/
+    /*.category-row ul li {*/
+        /*margin-left: 15rem !important;*/
+    /*}*/
+    /*.category-row ul li:first-child{*/
+        /*margin-left: 10rem !important;*/
+    /*}*/
+/*}*/
+
+/*@media only screen and (min-width:980px){*/
+    /*.category-row ul li {*/
+        /*margin-left: 17rem !important;*/
+    /*}*/
+    /*.category-row ul li:first-child{*/
+        /*margin-left: 12rem !important;*/
+    /*}*/
+/*}*/
 
 ul .f-dropdown li a{
     color:#0266c8 !important;
@@ -412,7 +544,7 @@ h1, h2, h3, h4, h5, h6 {
     webkit-box-orient: vertical;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    max-height: 200px;
+    max-height: 400px;
     font-size: 17px;
     font-weight: bold;
     position: relative;
@@ -611,7 +743,7 @@ p{
     width:inherit;
     font-size: 16px;
     border-radius: 1px;
-    overflow: auto;
+    /*overflow: auto;*/
     margin-top: 1px;
     /*height: 5px;*/
     padding-top:2px;

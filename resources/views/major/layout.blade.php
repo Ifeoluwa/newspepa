@@ -135,20 +135,22 @@
         {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button>--}}
         {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
        <div id="category-list" class="row category-row" style="overflow: visible">
-        <ul class="inline-list">
-          <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
-          <li id="3" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
-          <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
-          <li id="more"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
-            <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
-            <li><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
-            <li><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
-            <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a>
-            <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a>
-            </ul>
-          </li>
+          <div class="small-12">
+            <ul class="inline-list">
+              <li id="first-child"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
+              <li id="2" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
+              <li id="3"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>
+              <li id="more"><label href="#" data-dropdown="drop" aria-controls="drop" aria-expanded="true" class="button dropdown">More</label>
+                <ul id="drop" data-dropdown-content class="f-dropdown" aria-hidden="true">
+                <li><a href="{{url('latest-business-news-in-nigeria')}}">Business</a></li>
+                <li><a href="{{url('latest-sports-news-in-nigeria')}}">Sports</a></li>
+                <li id="6"><a href="{{url('latest-politics-news-in-nigeria')}}">Politics</a>
+                <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}">Metro</a>
+                </ul>
+              </li>
 
-        </ul>
+            </ul>
+      </div>
         </div>
 
 {{--the stories containers starts from here--}}

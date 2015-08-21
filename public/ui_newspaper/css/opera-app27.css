@@ -152,8 +152,8 @@ h1, h2, h3, h4, h5, h6 {
     webkit-box-orient: vertical;
     display: -webkit-box;
     -webkit-line-clamp: 2;
-    max-height: 200px;
-    font-size: 17px;
+    max-height: 400px;
+    font-size: 22px;
     font-weight: bold;
     position: relative;
     text-overflow: ellipsis;
@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 5px !important;
 }
 .full-story-title{
-    font: 24px Roboto;
+    font: 26px Roboto;
     text-align: justify;
     font-weight:bolder;
     text-transform: capitalize
@@ -607,7 +607,7 @@ position:relative;
     line-height: 1.5;
     text-align:justify;
     text-justify:inter-word;
-    /*font:16px arial;*/
+    font-size:18px;
     /*padding:0.2rem;*/
 }
 .recent-stories-text{
