@@ -135,7 +135,8 @@
         {{--<button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="true" class="button dropdown">@yield('dropdown')</button>--}}
         {{--<ul id="drop1" data-dropdown-content class="f-dropdown" aria-hidden="true">--}}
        <div id="category-list" class="row category-row" style="overflow: visible">
-        <ul class="inline-list">
+
+        <ul class="inline-list small-12 medium-12 large-12">
           <li id="2"><a href="{{url('/latest-news-in-nigeria')}}">Latest</a></li>
           <li id="3" class="active"><a href="{{url('latest-nigeria-news-in-nigeria')}}">Nigeria</a></li>
           <li id="4"><a href="{{url('latest-entertainment-news-in-nigeria')}}">Entertainment</a></li>

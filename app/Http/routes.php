@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('admin/story/comments', 'Admin\DashboardController@getComments');
     Route::get('admin/comment/approve/{comment_id}', 'CommentController@approve');
     Route::get('admin/comment/disapprove/{comment_id}', 'CommentController@disapprove');
+    Route::get('admin/comment/delete/{comment_id}', 'CommentController@delete');
 });
 
 Route::get('admin', 'Auth\AuthController@getLogin');
