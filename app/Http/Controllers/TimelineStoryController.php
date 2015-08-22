@@ -53,7 +53,7 @@ class TimelineStoryController extends Controller
      */
     public function index()
     {
-
+        $trending_stories = TimelineStory::trendingStories();
         $pageStart = \Request::get('page', 1);
         $perPage = 50;
         $offSet = ($pageStart * $perPage) - $perPage;
@@ -70,10 +70,10 @@ class TimelineStoryController extends Controller
         $paginator->setPath('/');
 
         if($this->isOpera()){
-            return view('minor.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('minor.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator, 'trending_stories' => $trending_stories));
 
         }else{
-            return view('major.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('major.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator, 'trending_stories' => $trending_stories));
 
         }
 
@@ -469,7 +469,8 @@ class TimelineStoryController extends Controller
     }
 
     public function submitFeedBack(){
-        
+
+
     }
 
 

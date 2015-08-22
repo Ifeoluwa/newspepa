@@ -278,3 +278,14 @@ INSERT INTO `feeds` (`title`, `pub_id`, `url`, `last_access`, `refresh_period`, 
   ('Kokofeed Video News', 3, 'http://kokofeed.com/category/video/feed', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56'),
   ('Daily Post Sport News', 4, 'http://dailypost.ng/sport-news/feed', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56');
 
+
+
+CREATE TABLE IF NOT EXISTS `feedbacks` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(100) NOT NULL,
+  `feedback` TEXT NOT NUll,
+  `status_id` INT(255) NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL,
+  CONSTRAINT fk_feedback_status FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE
+);

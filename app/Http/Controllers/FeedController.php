@@ -205,8 +205,8 @@ class FeedController extends Controller {
 
                 $description = str_replace($matches[0], "", $description);
                 $description = strip_tags($description, '<p><a><div><img><br><iframe>');
-                $tidy = new \tidy();
-                $tidy->repairString($description);
+//                $tidy = new \tidy();
+//                $tidy->repairString($description);
                 $story['description'] = $description;
                 array_push($stories, $story);
             }catch(\ErrorException $ex){
