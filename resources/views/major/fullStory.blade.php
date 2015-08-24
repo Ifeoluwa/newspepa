@@ -33,8 +33,7 @@
         <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
         <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{!!$full_story['description']!!}
-      @if($full_story['pub_id']!==12)
-        @elseif($full_story['url'] != "")
+      @if($full_story['url'] != "")
          <a id="{{$full_story['story_id']}}" href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">...Continue to read</a></p></p>
       @endif
 
