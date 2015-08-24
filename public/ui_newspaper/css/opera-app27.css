@@ -656,6 +656,7 @@ position:relative;
     padding-right: 2px;
     padding-left:4px;
     margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
 }
 .heading-trending{
     float:left;
@@ -664,7 +665,7 @@ position:relative;
     margin-top: 10px
 }
 .span-trending{
-    font-size: 16px;
+    font-size: 22px;
     color:#FF6600;
     /*border-bottom: solid #ff0000 5px;*/
 }
@@ -693,4 +694,16 @@ position:relative;
 }
 button.small, .button.small{
     font-size: 1.1rem;
+    margin-top: 7px;
+}
+
+.usrName, .usrComment{
+    margin-right:5px;
+    font-size: 20px;
+}
+
+fieldset legend{
+    background-color:inherit;
+    font-weight:normal;
+    margin-left: 5px;
 }
