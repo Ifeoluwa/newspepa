@@ -8,6 +8,10 @@
  <meta property="og:url" content= {{url($data['category_stories']['category_route'])}}/>
 @endsection
 
+@section('trending_stories')
+@include('partials.trending')
+@stop
+
 <?php $i=0;
  ?>
 
