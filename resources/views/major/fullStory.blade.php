@@ -64,6 +64,9 @@
   </div>
 
 
+        @if(count($comments)=== 0)
+              <span  style="color: #646464; margin-bottom:12px; margin-top: 12px;padding-left:20px; text-align:center; font-weight:bold">Be the first to comment on this.</span>
+        @endif
         <div id="comments-box">
 
               @include('partials.comment')

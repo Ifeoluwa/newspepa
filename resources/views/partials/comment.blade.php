@@ -1,8 +1,7 @@
 
-<div class="large-12 small-12 medium-12 columns">
-        <div id="people_comments" class="row panel radius">
                                      {{--Comments are displayed here--}}
-                         @if(count($comments) > 0)
+                 @if(count($comments) > 0)
+                    <div id="people_comments" class="row panel radius">
                             <?php $comment_counter = 0;
                                 foreach($comments as $comment){
                                 ?>
@@ -41,17 +40,15 @@
                                 <div class="large-12 medium-12 small-12 columns" style="padding-bottom:2px;padding-top:2px">{{$comment['comment']}}</div>
                                 <hr/>
                                 </section>
-
-
+        </div>
                                 <?php
+
                                 }
 
                             ?>
-                            </div>
+
 
                           @else
-                            <span class="title-timeline" style="color: #646464; margin-bottom:12px; margin-top: 12px;padding-left:10px; text-align: center">Be the first to comment on this.</span>
 
                          @endif
 
- </div>
