@@ -1,6 +1,6 @@
 <div class="row row-trending">
         <div class="large-12 small-12 medium-12 columns heading-trending">
-            <span class="span-trending">Trending on Newspepa</span>
+            <span class="span-trending">Trending on {{$data['category_stories']['category_name']}}</span>
         </div>
         <?php $counter = 1; ?>
         @foreach($data['category_stories']['trending'] as $trending)

@@ -14,7 +14,7 @@
 {{--trending stories section--}}
 @section('trending stories')
 
-    <div class="row row-trending" style="margin-bottom: 1rem">
+    <div class="row row-trending">
         <div class="large-12 small-12 medium-12 columns heading-trending">
             <span class="span-trending">Trending on Newspepa</span>
         </div>

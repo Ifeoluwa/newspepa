@@ -162,7 +162,7 @@ ul.off-canvas-list li a{
 /*@media only screen and (max-width: 40em){*/
 @media only screen and (min-width : 320px) {
     .category-row ul li {
-        margin-left: 0.6rem !important;
+        margin-left: 0.7rem !important;
         font-size:16px !important;
     }
     .category-row ul li:first-child{
@@ -1099,6 +1099,7 @@ body{
     padding-right: 2px;
     padding-left:4px;
     margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
 }
 .heading-trending{
     float:left;
@@ -1107,7 +1108,7 @@ body{
     margin-top: 10px
 }
 .span-trending{
-    font-size: 17px;
+    font-size: 19px;
     color:#FF6600;
     /*border-bottom: solid #ff0000 5px;*/
 }
