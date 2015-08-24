@@ -331,11 +331,24 @@ class TimelineStory extends Model
 
     //Trending stories
     public static function trendingStories(){
-        $trending_stories = DB::table('timeline_stories')
-            ->whereBetween('created_date', [new \DateTime('-3hours'), new \DateTime('now')])
-        ->orderBy('rank_score', 'DESC')->limit(5)->get();
+//        Gets the trending stories from various categories
+        $trending_nigeria = TimelineStory::trendingStoriesByCat(1, 2);
+        $trending_entertainment = TimelineStory::trendingStoriesByCat(3, 1);
+        $trending_sports = TimelineStory::trendingStoriesByCat(4, 1);
+        $trending_business = TimelineStory::trendingStoriesByCat(6, 1);
+        $trending_stories = array_merge($trending_nigeria, $trending_entertainment, $trending_sports, $trending_business);
 
         return $trending_stories;
+    }
+
+//    Trending stories by from a specific category and the number of stories to be fetched
+    public static function trendingStoriesByCat($category_id, $limit){
+        $trending_stories_by_cat = DB::table('timeline_stories')
+            ->where('status_id', 1)
+            ->where('category_id', $category_id)
+            ->whereBetween('created_date', [new \DateTime('-6hours'), new \DateTime('now')])
+            ->orderBy('rank_score', 'DESC')->limit($limit)->get();
+        return $trending_stories_by_cat;
     }
 
 

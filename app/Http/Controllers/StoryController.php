@@ -453,7 +453,7 @@ class StoryController extends Controller {
                 ->where('id', $story_id)
                 ->update(['status_id'=> 2]);
 
-            if($delete){
+            if($delete !== false){
                 $delete = DB::table('timeline_stories')
                     ->where('story_id', $story_id)
                     ->update(['status_id'=> 2]);

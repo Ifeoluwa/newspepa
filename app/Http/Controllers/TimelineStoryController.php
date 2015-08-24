@@ -97,6 +97,7 @@ class TimelineStoryController extends Controller
             $category_id = Category::$news_category[$category_route];
             $category_stories['category_name'] = $this->category_names[$category_id];
             $category_stories['category_route'] = "http://newspepa.com/".$category_route;
+            $category_stories['trending'] = TimelineStory::trendingStoriesByCat($category_id, 5);
 
             $pageStart = \Request::get('page', 1);
             $perPage = 50;
