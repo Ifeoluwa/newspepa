@@ -50,7 +50,7 @@
                             </div>
 
                           @else
-                            <span class="title-timeline" style="background-color: #E0E0E0; color: #646464; margin-bottom:12px; margin-top: 12px;padding-left:10px">Be the first to comment on this.</span>
+                            <span class="title-timeline" style="color: #646464; margin-bottom:12px; margin-top: 12px;padding-left:10px; text-align: center">Be the first to comment on this.</span>
 
                          @endif
 
