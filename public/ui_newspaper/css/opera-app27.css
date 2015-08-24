@@ -693,4 +693,16 @@ position:relative;
 }
 button.small, .button.small{
     font-size: 1.1rem;
+    margin-top: 7px;
+}
+
+.usrName, .usrComment{
+    margin-right:5px;
+    font-size: 17px;
+}
+
+fieldset legend{
+    background-color:inherit;
+    font-weight:normal;
+    margin-left: 5px;
 }

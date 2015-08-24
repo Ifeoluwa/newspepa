@@ -162,18 +162,18 @@ ul.off-canvas-list li a{
 /*@media only screen and (max-width: 40em){*/
 @media only screen and (min-width : 320px) {
     .category-row ul li {
-        margin-left: 0.7rem !important;
-        font-size:17px !important;
+        margin-left: 0.6rem !important;
+        font-size:16px !important;
     }
     .category-row ul li:first-child{
         margin-left: 0.1rem !important;
     }
 
     .category-row ul li .dropdown.button, .category-row ul li button.dropdown{
-        font-size: 17px !important;
+        font-size: 16px !important;
     }
     .f-dropdown.open:first-child{
-        margin-left: 0.7rem !important;
+        margin-left: 0.6rem !important;
     }
 }
 
@@ -1136,6 +1136,7 @@ body{
 }
 button.small, .button.small{
     font-size: 1.1rem;
+    margin-top:7px;
 }
 
 .socialBtns{
@@ -1153,6 +1154,17 @@ button.small, .button.small{
 }
 .socialBtns .inline-list > li{
     margin-left: 0.5rem;
+}
+
+fieldset legend{
+    background-color:inherit;
+    font-weight:normal;
+    margin-left: 5px;
+}
+
+.usrName, .usrComment{
+    margin-right:5px;
+    font-size: 17px;
 }
 /*#footer-list > ul >li > ul{*/
     /*bottom:100%;*/

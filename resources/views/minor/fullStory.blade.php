@@ -67,8 +67,8 @@
                       {!! csrf_field() !!}
                   <div class="row">
                       <div class="large-12 columns">
-
-                      <input id="user_name" type="text" name="user_name" placeholder="Your name" required="required" />
+                         <span class="usrName">Your name:</span>
+                      <input id="user_name" type="text" name="user_name" required="required" />
 
                       </div>
                     </div>
@@ -83,7 +83,8 @@
                           <div class="large-12 columns">
                             <div class="row collapse">
                               <div class="small-12 columns">
-                                <textarea placeholder="Comment" id="comment" name="comment" required="required" rows="3"></textarea>
+                                <span class="usrComment">Your comment:</span>
+                                <textarea id="comment" name="comment" required="required" rows="3"></textarea>
                               </div>
 
                             </div>

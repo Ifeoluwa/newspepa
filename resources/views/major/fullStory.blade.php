@@ -64,19 +64,6 @@
   </div>
 
 
-                {{--<hr>--}}
-                {{--<ul class="inline-list" style="overflow: visible">--}}
-                  {{--<li><a href="#"><div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>--}}
-                  {{--</a>--}}
-                                     {{--</li>--}}
-                  {{--<li><a href="#"><span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>--}}
-                  {{--</a>--}}
-                  {{--</li>--}}
-                  {{--</li>--}}
-                {{--</ul>--}}
-
-        {{--</div>--}}
-
         <div id="comments-box">
 
               @include('partials.comment')
@@ -109,6 +96,7 @@
                                 <div class="large-12 columns">
                                   <div class="row collapse">
                                     <div class="small-12 columns">
+
                                       <textarea placeholder="Comment" id="comment" name="comment" required="required" rows="3"></textarea>
                                     </div>
 
