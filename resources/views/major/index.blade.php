@@ -15,23 +15,16 @@
 
     <div class="row row-trending">
         <div class="large-12 small-12 medium-12 columns heading-trending">
-            <span class="span-trending">TRENDING NOW</span>
+            <span class="span-trending">TRENDING ON NEWSPEPA</span>
         </div>
-        <div  id="trend1" class="large-12 small-12 medium-12 columns column-trending" >
-            <span class="title-timeline">some content in here title of a trending story</span>
+        <?php $counter = 1; ?>
+        @foreach($data['trending_stories'] as $trending)
+        <div  id="{{'trend'.$counter}}" class="large-12 small-12 medium-12 columns column-trending">
+            <a href="{{url($tc->makeStoryUrl($trending['title'], $trending['story_id']))}}"><span class="title-timeline">{{$trending['title']}}</span></a>
         </div>
-        <div  id="trend2" class="large-12 small-12 medium-12 columns column-trending">
-            <span class="title-timeline">some content in here the title of a trending story</span>
-        </div>
-        <div id="trend3"class="large-12 small-12 medium-12 columns column-trending">
-            <span class="title-timeline">some content in here  title of a trending story</span>
-        </div>
-        <div id="trend4" class="large-12 small-12 medium-12 columns column-trending">
-            <span class="title-timeline">some content in here  title of a trending story</span>
-        </div>
-        <div id="trend5" class="large-12 small-12 medium-12 columns column-trending">
-             <span class="title-timeline">some content in here  title of a trending story</span>
-        </div>
+        <?php $counter += 1; ?>
+        @endforeach
+
     </div>
 
     @stop

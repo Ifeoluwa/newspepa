@@ -18,7 +18,7 @@ class Comment extends Model
 
     public static function allComments(){
         $all_comments = DB::table('comments')->join('timeline_stories', 'comments.story_id', '=', 'timeline_stories.story_id')
-        ->select('timeline_stories.title', 'comments.*')->orderBy('comments.created_date', 'DESC');
+        ->select('timeline_stories.title', 'comments.*')->whereNotIn('comments.status_id', [4])->orderBy('comments.created_date', 'DESC');
         return $all_comments;
     }
 

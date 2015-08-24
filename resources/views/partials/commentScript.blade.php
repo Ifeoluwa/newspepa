@@ -36,5 +36,10 @@
             }
 
         });
+
+        $('.moreBtn').click(function(){
+            $(this).hide();
+            $('#moreComments').show();
+        })
     });
 </script>

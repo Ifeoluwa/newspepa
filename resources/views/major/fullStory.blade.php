@@ -19,7 +19,6 @@
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
-
 @section('full_story')
 @foreach($data['full_story'] as $full_story)
         <div class="row panel radius">
@@ -66,71 +65,58 @@
 
 
                 {{--<hr>--}}
-                {{--<div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>--}}
-                      {{--<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>--}}
                 {{--<ul class="inline-list" style="overflow: visible">--}}
                   {{--<li><a href="#"><div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>--}}
                   {{--</a>--}}
+                                     {{--</li>--}}
+                  {{--<li><a href="#"><span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>--}}
+                  {{--</a>--}}
+                  {{--</li>--}}
+                  {{--</li>--}}
+                {{--</ul>--}}
 
         {{--</div>--}}
 
         <div id="comments-box">
 
-               <div id="people_comments">
-                                 {{--Comments are displayed here--}}
-
-                                 @if(count($comments) > 0)
-                                    <div class="row panel radius">
-                                       @foreach($comments as $comment)
-                                            <div class="large-12 medium-12 small-12 columns">
-                                                <span class="publisher-name"><strong>{{$comment['user_name']}}</strong></span>
-                                                 <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($comment['created_date'])!!} </span>
-                                            </div>
-                                            <br/>
-                                            <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 10px;padding-top:10px">{{$comment['comment']}}</div>
-                                            <hr/>
-
-                                      @endforeach
-                                      <a href="#">View 3 more comments</a>
-                                    </div>
-                                    <blockquote>Add your comment</blockquote>
-                                  @else
-                                     <blockquote>Be the first to comment on this.</blockquote>
-
-                                 @endif
-
-
-                </div>
+              @include('partials.comment')
                 <div id="notification_box">
                 {{--Displays notification when user posts comment--}}
                 </div>
 
                 <form id="commentForm" action="{{url('story/')}}" method="post" target="commentFrame">
-                    {!! csrf_field() !!}
-                <div class="row">
-                    <div class="large-12 columns">
+                <fieldset>
+                    <legend>
+                    Add your comment
+                    </legend>
 
-                    <input id="user_name" type="text" name="user_name" placeholder="Your name" required="required" />
+                       {!! csrf_field() !!}
+                        <div class="row">
+                            <div class="large-12 columns">
 
-                    </div>
-                  </div>
-                  <div class="row" hidden>
-                    <div class="large-12 columns">
+                            <input id="user_name" type="text" name="user_name" placeholder="Your name" required="required" />
 
-                    <input type="text" id="story_id" name="story_id" value="{{$full_story['story_id']}}" required="required" />
-
-                    </div>
-                  </div>
-                      <div class="row">
-                        <div class="large-12 columns">
-                          <div class="row collapse">
-                            <div class="small-12 columns">
-                              <textarea placeholder="Comment" id="comment" name="comment" required="required" rows="3"></textarea>
                             </div>
-
                           </div>
-                        </div>
-                      </div>
+                          <div class="row" hidden>
+                            <div class="large-12 columns">
+
+                            <input type="text" id="story_id" name="story_id" value="{{$full_story['story_id']}}" required="required" />
+
+                            </div>
+                          </div>
+                              <div class="row">
+                                <div class="large-12 columns">
+                                  <div class="row collapse">
+                                    <div class="small-12 columns">
+                                      <textarea placeholder="Comment" id="comment" name="comment" required="required" rows="3"></textarea>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                </fieldset>
+
                       <div class="row">
                         <div class="large-12 columns">
 

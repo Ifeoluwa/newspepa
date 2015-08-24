@@ -58,24 +58,7 @@
   </div>
 
   <div id="comments-box" hidden="hidden">
-                <div>
-                  <div id="people_comments">
-                  {{--Comments are displayed here--}}
-
-                  @if(count($comments) > 0)
-                      @foreach($comments as $comment)
-                        <div class="row panel callout radius">
-                            <div class="small-2"><strong>{{$comment['user_name']}}</strong></div>
-                            <div class="small-10">{{$comment['comment']}}</div>
-                        </div>
-                      @endforeach
-                  @else
-                      <blockquote>Be the first to comment on this.</blockquote>
-
-                  @endif
-
-
-                  </div>
+         @include('partials.comment')
                   <div id="notification_box">
                   {{--Displays notification when user posts comment--}}
                   </div>
@@ -114,7 +97,6 @@
 
                   </form>
 
-                 </div>
 
             </div>
 

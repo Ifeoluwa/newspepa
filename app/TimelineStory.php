@@ -329,6 +329,15 @@ class TimelineStory extends Model
         return $total_linkout;
     }
 
+    //Trending stories
+    public static function trendingStories(){
+        $trending_stories = DB::table('timeline_stories')
+            ->whereBetween('created_date', [new \DateTime('-3hours'), new \DateTime('now')])
+        ->orderBy('rank_score', 'DESC')->limit(5)->get();
+
+        return $trending_stories;
+    }
+
 
 
 }

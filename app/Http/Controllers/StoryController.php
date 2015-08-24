@@ -337,19 +337,19 @@ class StoryController extends Controller {
                     $result = DB::getPdo()->lastInsertId();
                 }
 
-                if($result !== false){
-                    $story_details['id'] = $result;
-                    $this->solrInsert($story_details);
-                    return view('admin/story/new')->with('success', "Story has been successfully added.");
-                }
+//                if($result !== false){
+//                    $story_details['id'] = $result;
+//                    $this->solrInsert($story_details);
+//                    return view('admin/story/new')->with('success', "Story has been successfully added.");
+//                }
             }
             return redirect('admin/story/new')->with('success', "Story has been successfully added.");
         }catch (\ErrorException $ex){
-            return redirect('admin/story/new')->with('failure', 'Oops! Something went wrong.')->withInput();
+            return redirect('admin/story/new')->with('failure', 'Something went wrong.')->withInput();
         } catch (NotFoundHttpException $nfe){
-            return redirect('admin/story/new')->with('failure', 'Oops! Something went wrong.')->withInput();
+            return redirect('admin/story/new')->with('failure', 'Something went wrong.')->withInput();
         }catch(FileException $fex){
-            return redirect('admin/story/new')->with('failure', 'Oops! Something went wrong. Upload error')->withInput();
+            return redirect('admin/story/new')->with('failure', 'Something went wrong. Upload error')->withInput();
         }catch(\Exception $ex){
          echo $ex->getMessage();
 //            return redirect('admin/story/new')->with('failure', 'Something went wrong. Please try again.')->withInput();

@@ -204,6 +204,9 @@ class FeedController extends Controller {
                 preg_match('/(<img[^>]+>)/i', $description, $matches);
 
                 $description = str_replace($matches[0], "", $description);
+                $description = strip_tags($description, '<p><a><div><img><br><iframe>');
+//                $tidy = new \tidy();
+//                $tidy->repairString($description);
                 $story['description'] = $description;
                 array_push($stories, $story);
             }catch(\ErrorException $ex){
@@ -374,23 +377,38 @@ class FeedController extends Controller {
 
     public function test(){
 
-        $html = file_get_contents('http://kokofeed.com/2014/10/30/10-unbelievable-photos-of-lagos-you-will-mistake-for-london/');
-
-        $dom = new \DOMDocument();
-        libxml_use_internal_errors(true);
-        $dom->loadHTML($html);
-
-        $xpath = new \DOMXPath($dom);
-
-        $div = $xpath->query('//div[@class="content-text"]');
-
-        $div = $div->item(0);
-
-        $description =  $dom->saveXML($div);
-        preg_match('/(<img[^>]+>)/i', $description, $matches);
-
-        $description = str_replace($matches[0], "", $description);
-
+        $html = '<div class="content-text">&#13;
+&#13;
+&#13;
+&#13;
+    <p></p>
+<p>A lot of controversies are trailing the selection of the next Ooni Of Ife with a number of candidates stepping up to claim the title.</p>
+<p>The Obadio Agbaye of Ile-Ife, the chief priest, Chief Olajide Farotimi Faloba, has given a bit of insight into how the next Ooni will emerge. He said,  “I am the Chief Priest and the king-maker to the Ooni stool because, I am the mouthpiece of the gods. So, if there should be coronation, I will be the one that will pronounce it.“</p>
+<p>“There are 401 Yoruba deities and temples scattered worldwide, 201 of them are in Ife. Among these deities, the only speaking one is the legendary living Ooni.“”If it happens that an Ooni dies, there are sacrifices and signs that will be performed. Part of them is the closing of the palace main gate. Also, the messenger will go around the town with a gong to announce the demise, while the trees in the ancient town will be cut down, markets will remain shut to customers and the entire Ife city will be thrown into mourning.“</p>
+<p>“There will not be any form of ceremony of burial while other traditional rites and rituals will take place as the oracle reveals.<br/>
+”Also, if an Ooni dies, the 201 deities temples will be duly informed.”</p><div class="wpInsert wpInsertInPostAd wpInsertMiddle" style="margin: 5px; padding: 0px;"><div style="text-align: center; background:#F6F2F2; padding-top:7px;">&#13;
+&#13;
+<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/><!-- KokoFeed Sidebar2 --><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2460597205856998" data-ad-slot="4063292047"/>&#13;
+<script><![CDATA[
+(adsbygoogle = window.adsbygoogle || []).push({});
+]]></script>
+</div>
+</div>
+<p>“On the selection processes of the next Ooni, the chief priest said the kingmakers would pick one person from all Ife Princes that show interest in the stool and Ifa oracle would be consulted on the choice before the final ratification by the chief priest.”</p>
+<p><img class=" size-full wp-image-24941 aligncenter" src="http://kokofeed.com/wp-content/uploads/2015/08/ooni.jpg" alt="ooni" width="480" height="319"/></p>
+<p>As it stands, there are four ruling houses that could be enthroned as the Ooni of Ife and they are: Osinkola, Ogboru, Lafogido and Giesi.</p>
+<p>The chief priest stated that before being made known to the public, the new Ooni would be required to spend some days in Ile Oduduwa (Oduduwa’s house) which housed the first Ooni and other past Ooni with the priests when other rituals would be performed.</p>
+<p>He explained, “When ever there is a demise of Ooni, the kingmaker and the Ifa Oracle will pick the next Ooni. 10 or 20 princes may contest after they might have been presented by their families, but the Ifa priest will consult the oracle that will choose while myself as the kingmaker will perform the necessary rituals that will certify him to mount the throne of Ooni; without this rituals, such potential monarch would not be Ooni,”</p>
+&#13;
+        <hr/><a class="fb-class" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://kokofeed.com/2015/08/20/an-in-depth-look-at-how-the-next-ooni-of-ife-will-be-selected/" data-layout="box_count"/>&#13;
+&#13;
+<hr/></div>';
+        $description = strip_tags($html, '<p><a><div><img><br><iframe>');
+        echo $description;
+//        $tidy = new \tidy();
+//        $tidy->repairString($description);
+//        $description = tidy_repair_string($description);
+//        echo $description;
 
 
 //        $this->getFullFeedContent();

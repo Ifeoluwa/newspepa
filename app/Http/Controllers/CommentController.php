@@ -105,18 +105,24 @@ class CommentController extends Controller
 
         $story_comments = DB::table('comments')
             ->where('story_id', $story_id)
-            ->where('status_id', 1)->orderBy('created_date', 'ASC')->get();
+            ->where('status_id', 1)->orderBy('created_date', 'DESC')->get();
         return $story_comments;
     }
 
     public function approve($comment_id){
-        DB::table('comments')->where('id', $comment_id)->update(['status_id' => 1]);
-        return back()->with('info', 'The selected comment has been approved');
+        $result = DB::table('comments')->where('id', $comment_id)->update(['status_id' => 1]);
+        return $result;
     }
 
     public function disapprove($comment_id){
-        DB::table('comments')->where('id', $comment_id)->update(['status_id' => 2]);
-        return back()->with('info', 'The selected comment has been approved');
+        $result = DB::table('comments')->where('id', $comment_id)->update(['status_id' => 2]);
+        return $result;
     }
+
+    public function delete($comment_id){
+        $result = DB::table('comments')->where('id', $comment_id)->update(['status_id' => 4]);
+        return $result;
+    }
+
 
 }
