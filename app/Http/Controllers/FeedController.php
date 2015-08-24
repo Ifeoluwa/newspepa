@@ -43,7 +43,7 @@ class FeedController extends Controller {
 
         $all_stories = array();
         foreach ($feeds as $feed) {
-            $content = $this->checkFeedSource($feed['file_path']);
+            $content = $this->checkFeedSource($feed['url']);
             if (!$content) {
                 continue;
             }
@@ -390,21 +390,21 @@ class FeedController extends Controller {
 
     public function test(){
 
-        $html = file_get_contents('http://www.nigerianmonitor.com/2015/08/24/why-many-marriages-today-fail-bishop-oyedepo/');
-
-        $dom = new \DOMDocument();
-        libxml_use_internal_errors(true);
-        $dom->loadHTML($html);
-
-        $xpath = new \DOMXPath($dom);
-        //Gets the content within the div that contains the description of the story
-        $div = $xpath->query('//div[@class="entry"]');
-
-        $div = $div->item(0);
-
-        $description = $dom->saveXML($div);
-
-        echo $description;
+//        $html = file_get_contents('http://www.nigerianmonitor.com/2015/08/24/why-many-marriages-today-fail-bishop-oyedepo/');
+//
+//        $dom = new \DOMDocument();
+//        libxml_use_internal_errors(true);
+//        $dom->loadHTML($html);
+//
+//        $xpath = new \DOMXPath($dom);
+//        //Gets the content within the div that contains the description of the story
+//        $div = $xpath->query('//div[@class="entry"]');
+//
+//        $div = $div->item(0);
+//
+//        $description = $dom->saveXML($div);
+//
+//        echo $description;
 //        $tidy = new \tidy();
 //        $tidy->repairString($description);
 //        $description = tidy_repair_string($description);
@@ -414,8 +414,8 @@ class FeedController extends Controller {
 //        $this->getFullFeedContent();
 //        $this->fetchFeeds();
 //        echo "<br> done";
-////        $this->fetchFeeds();
-//        echo "<br> done";
+//        $this->fetchFeeds();
+        echo "<br> done";
 
     }
 
