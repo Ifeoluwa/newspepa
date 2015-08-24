@@ -1167,6 +1167,10 @@ fieldset legend{
     margin-right:5px;
     font-size: 17px;
 }
+
+#comments-box{
+    margin-top: 8px;
+}
 /*#footer-list > ul >li > ul{*/
     /*bottom:100%;*/
 /*}*/

@@ -57,7 +57,11 @@
             </div>
   </div>
 
-  <div id="comments-box" hidden="hidden">
+ @if(count($comments)=== 0)
+      <span  style="font-size:23px; color: #646464; padding-left:20px; text-align:center; font-weight:bold">Be the first to comment on this.</span>
+  @endif
+
+  <div id="comments-box">
          @include('partials.comment')
                   <div id="notification_box">
                   {{--Displays notification when user posts comment--}}

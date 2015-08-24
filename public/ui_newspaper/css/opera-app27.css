@@ -707,3 +707,7 @@ fieldset legend{
     font-weight:normal;
     margin-left: 5px;
 }
+
+#comments-box{
+    margin-top: 8px;
+}
