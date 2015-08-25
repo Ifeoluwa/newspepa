@@ -33,14 +33,13 @@
         <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
         <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{!!$full_story['description']!!}
-      @if($full_story['pub_id']!==12)
-        @elseif($full_story['url'] != "")
-         <a id="{{$full_story['story_id']}}" href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">...Continue to read</a></p></p>
+      @if($full_story['pub_id'] != '10' || $full_story['pub_id'] != '4' || $full_story['pub_id'] != '5' || $full_story['url'] != "")
+        <a id="{{$full_story['story_id']}}" href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">...Continue to read</a></p></p>
       @endif
 
         </div>
        <hr/>
-      <div class="large-12 small-12 medium-12 columns socialBtns">
+      <div class="large-12 small-12 medium-12 columns socialBtn">
             <ul class="inline-list">
                  <li><a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a></li>
                  <li><a class="twitterIcon" href= "{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" target="_blank" title="{{$full_story['title']}}"></a></li>

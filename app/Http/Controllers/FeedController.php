@@ -49,15 +49,20 @@ class FeedController extends Controller {
             }
             if($feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21) {
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
+                var_dump(count($all_stories));
             }elseif ($feed['pub_id'] == 12) {
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
+                var_dump(count($all_stories));
             }elseif($feed['pub_id'] == 27){
                 $all_stories = array_merge($all_stories, $this->getBBCFeedContent($feed));
+                var_dump(count($all_stories));
             }elseif($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10){
                 $all_stories = array_merge($all_stories, $this->getFullFeedContent($feed));
+                var_dump(count($all_stories));
             }else {
                 try {
                     $all_stories = array_merge($all_stories, $this->getOtherFeeds($feed));
+                    var_dump(count($all_stories));
                 } catch (ParserException $exp) {
                     echo $exp->getMessage();
                     continue;
@@ -93,8 +98,10 @@ class FeedController extends Controller {
         $fetched_stories = count($all_stories);
         $k = 0;
 
-        //Array for stories are succesfully inserted into the database
+        //Array for stories are successfully inserted into the database
         $inserted_stories = array();
+        var_dump("Begin insert stories");
+        var_dump($all_stories);
         foreach ($all_stories as $story) {
             $similarity = $this->isSimilarToPrevious($story);
             if ($similarity !== true) {
@@ -218,8 +225,7 @@ class FeedController extends Controller {
 
                 $description = str_replace($matches[0], "", $description);
                 $description = strip_tags($description, '<p><a><div><img><br><iframe>');
-//                $tidy = new \tidy();
-//                $tidy->repairString($description);
+
                 $story['description'] = $description;
                 array_push($stories, $story);
             }catch(\ErrorException $ex){
@@ -389,33 +395,29 @@ class FeedController extends Controller {
     }
 
     public function test(){
-
-//        $html = file_get_contents('http://www.nigerianmonitor.com/2015/08/24/why-many-marriages-today-fail-bishop-oyedepo/');
-//
-//        $dom = new \DOMDocument();
-//        libxml_use_internal_errors(true);
-//        $dom->loadHTML($html);
-//
-//        $xpath = new \DOMXPath($dom);
-//        //Gets the content within the div that contains the description of the story
-//        $div = $xpath->query('//div[@class="entry"]');
-//
-//        $div = $div->item(0);
-//
-//        $description = $dom->saveXML($div);
-//
-//        echo $description;
-//        $tidy = new \tidy();
-//        $tidy->repairString($description);
-//        $description = tidy_repair_string($description);
-//        echo $description;
-
-
-//        $this->getFullFeedContent();
-//        $this->fetchFeeds();
+        $html  = '<div class="single-right">&#13;
+	&#13;
+<div class="entry-content">&#13;
+		<p></p>
+<p>Gospel singer-turned politician, Kenny St. Brown has revealed that she has fresh hopes for a new Political appointment anytime soon.</p><div class="wpInsert wpInsertInPostAd wpInsertMiddle" style="margin: 5px; padding: 0px;"><div style="text-align: center; background:#F6F2F2; padding-top:7px;">&#13;
+&#13;
+</div>&#13;
+</div>
+<p>The musician in an interview with The Net revealed she is hopeful she would be grabbing a political appointment sooner or later.</p>
+<p>According to her,</p>
+<p>‘I will be stupid to say I am not expecting an appointment. I will be the most miserable and most foolish not to anticipate that I can be called upon to serve.</p>
+<p>You call it an appointment, I call it calling to serve,’.</p>
+<p>Speaking further, she said: ‘I look forward to serving. Although the initial plan was to get into the legislative arm where laws are made but at the executive arm, that’s where things get done, that’s where the changes are done. So if some of us couldn’t get into the House of Assembly, we are still willing to work.</p>
+<p>There are several things we said during campaigns that we will be willing to see get done especially as regards the little attention being paid to Nigerian youths and women.’</p>
+<div class="dd_outer"><div class="dd_inner"><div id="dd_ajax_float"><div class="dd_button_v"><div class="dd-twitter-ajax-load dd-twitter-43314"/></div><div style="clear:left"/><div class="dd_button_v"></div><div style="clear:left"/><div class="dd_button_v"></div><div style="clear:left"/></div></div></div><div style="min-height:33px;" class="really_simple_share really_simple_share_button robots-nocontent snap_nopreview"><div class="really_simple_share_facebook_like" style="width:100px;"><div class="fb-like" data-href="http://stargist.com/naija-gist/i-will-be-stupid-to-say-am-not-expecting-an-appointment-kenny-st-brown/" data-layout="button_count" data-width="100"/></div><div class="really_simple_share_twitter" style="width:100px;"></div><div class="really_simple_share_google1" style="width:80px;"><div class="g-plusone" data-size="medium" data-href="http://stargist.com/naija-gist/i-will-be-stupid-to-say-am-not-expecting-an-appointment-kenny-st-brown/"/></div><div class="really_simple_share_facebook_share_new" style="width:110px;"><div class="fb-share-button" data-href="http://stargist.com/naija-gist/i-will-be-stupid-to-say-am-not-expecting-an-appointment-kenny-st-brown/" data-type="button_count" data-width="110"/></div><div class="really_simple_share_google_share" style="width:110px;"><div class="g-plus" data-action="share" data-href="http://stargist.com/naija-gist/i-will-be-stupid-to-say-am-not-expecting-an-appointment-kenny-st-brown/" data-annotation="bubble"/></div><div class="really_simple_share_readygraph_infolinks" style="width:110px;"/></div>&#13;
+		<div class="really_simple_share_clearfix"/> &#13;
+	    </div>&#13;
+ 	</div>';
+        $html = preg_replace('/(<div class="dd_outer">.+?)+(<\/div>)/i', "", $html);
+        echo $html;
 //        echo "<br> done";
 //        $this->fetchFeeds();
-        echo "<br> done";
+//        echo "<br> done";
 
     }
 
