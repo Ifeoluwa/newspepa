@@ -70,22 +70,23 @@ class FeedController extends Controller {
             }
 
             Feed::updateFeed($feed['id'], time());
-            var_dump('<br>Fetched stories...');
+            var_dump('<br>Fetched stories...'.$feed['url']);
 
         }
+        shuffle($all_stories);
 
 //        Inserts shuffled fetched stories
-        $inserted_stories = $this->insertFetchedStories(shuffle($all_stories));
+        $inserted_stories = $this->insertFetchedStories($all_stories);
 
         //Begin Matching
-        var_dump('Beginning matching>>> <br>');
-        if (count($inserted_stories) > 0) {
-            $new_stories = StoryController::prepareStories($inserted_stories);
-            $old_stories = StoryController::getOldStories();
-            $matched_stories = StoryController::matchStories($old_stories, $new_stories);
-
-            Cluster::insertIgnore($matched_stories);
-        }
+//        var_dump('Beginning matching>>> <br>');
+//        if (count($inserted_stories) > 0) {
+//            $new_stories = StoryController::prepareStories($inserted_stories);
+//            $old_stories = StoryController::getOldStories();
+//            $matched_stories = StoryController::matchStories($old_stories, $new_stories);
+//
+//            Cluster::insertIgnore($matched_stories);
+//        }
 
 
             set_time_limit(120);
@@ -225,6 +226,19 @@ class FeedController extends Controller {
 
                 $description = str_replace($matches[0], "", $description);
                 $description = strip_tags($description, '<p><a><div><img><br><iframe>');
+                $description = preg_replace('/(<div class="dd_outer">)+(.*?)+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div style="clear:left"\/>)/i', " ", $description);
+                $description = preg_replace('/(<div class="really_simple_share_twitter"+(.*?)+>)+(.*?)+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div style="min-height:33px;"+(.*?)+>)+(.*?)+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div class="really_simple_share_clearfix"\/>)+"&#13;"+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div class="really_simple_share_google_share"+(.*?)+>)+(.*?)+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div class="really_simple_share_google1"+(.*?)+>)+(.*?)+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div class="really_simple_share_readygraph_infolinks"+(.*?)+>)+(.*?)+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div class="really_simple_share_facebook_like"+(.*?)+>)+(.*?)+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div class="really_simple_share_facebook_share_new"+(.*?)+>)+(.*?)+(<\/div>)/i', " ", $description);
+                $description = preg_replace('/(<div class="dd_button_v">)(.*?)<\/div>/i', " ", $description);
+                $description = preg_replace('/<div class="dd-twitter-ajax-load(.*?)<\/div>/i', " ", $description);
+                $description = preg_replace('/(<div class="fb-like(.*?))+(<\/div>)/i', " ", $description);
 
                 $story['description'] = $description;
                 array_push($stories, $story);
@@ -395,28 +409,9 @@ class FeedController extends Controller {
     }
 
     public function test(){
-        $html  = '<div class="single-right">&#13;
-	&#13;
-<div class="entry-content">&#13;
-		<p></p>
-<p>Gospel singer-turned politician, Kenny St. Brown has revealed that she has fresh hopes for a new Political appointment anytime soon.</p><div class="wpInsert wpInsertInPostAd wpInsertMiddle" style="margin: 5px; padding: 0px;"><div style="text-align: center; background:#F6F2F2; padding-top:7px;">&#13;
-&#13;
-</div>&#13;
-</div>
-<p>The musician in an interview with The Net revealed she is hopeful she would be grabbing a political appointment sooner or later.</p>
-<p>According to her,</p>
-<p>‘I will be stupid to say I am not expecting an appointment. I will be the most miserable and most foolish not to anticipate that I can be called upon to serve.</p>
-<p>You call it an appointment, I call it calling to serve,’.</p>
-<p>Speaking further, she said: ‘I look forward to serving. Although the initial plan was to get into the legislative arm where laws are made but at the executive arm, that’s where things get done, that’s where the changes are done. So if some of us couldn’t get into the House of Assembly, we are still willing to work.</p>
-<p>There are several things we said during campaigns that we will be willing to see get done especially as regards the little attention being paid to Nigerian youths and women.’</p>
-<div class="dd_outer"><div class="dd_inner"><div id="dd_ajax_float"><div class="dd_button_v"><div class="dd-twitter-ajax-load dd-twitter-43314"/></div><div style="clear:left"/><div class="dd_button_v"></div><div style="clear:left"/><div class="dd_button_v"></div><div style="clear:left"/></div></div></div><div style="min-height:33px;" class="really_simple_share really_simple_share_button robots-nocontent snap_nopreview"><div class="really_simple_share_facebook_like" style="width:100px;"><div class="fb-like" data-href="http://stargist.com/naija-gist/i-will-be-stupid-to-say-am-not-expecting-an-appointment-kenny-st-brown/" data-layout="button_count" data-width="100"/></div><div class="really_simple_share_twitter" style="width:100px;"></div><div class="really_simple_share_google1" style="width:80px;"><div class="g-plusone" data-size="medium" data-href="http://stargist.com/naija-gist/i-will-be-stupid-to-say-am-not-expecting-an-appointment-kenny-st-brown/"/></div><div class="really_simple_share_facebook_share_new" style="width:110px;"><div class="fb-share-button" data-href="http://stargist.com/naija-gist/i-will-be-stupid-to-say-am-not-expecting-an-appointment-kenny-st-brown/" data-type="button_count" data-width="110"/></div><div class="really_simple_share_google_share" style="width:110px;"><div class="g-plus" data-action="share" data-href="http://stargist.com/naija-gist/i-will-be-stupid-to-say-am-not-expecting-an-appointment-kenny-st-brown/" data-annotation="bubble"/></div><div class="really_simple_share_readygraph_infolinks" style="width:110px;"/></div>&#13;
-		<div class="really_simple_share_clearfix"/> &#13;
-	    </div>&#13;
- 	</div>';
-        $html = preg_replace('/(<div class="dd_outer">.+?)+(<\/div>)/i', "", $html);
-        echo $html;
+
 //        echo "<br> done";
-//        $this->fetchFeeds();
+//        $this->fetchFeeds()
 //        echo "<br> done";
 
     }
