@@ -49,20 +49,15 @@ class FeedController extends Controller {
             }
             if($feed['pub_id'] == 16 || $feed['pub_id'] == 19 || $feed['pub_id'] == 21) {
                 $all_stories = array_merge($all_stories, $this->getFeedContent($feed));
-                var_dump(count($all_stories));
             }elseif ($feed['pub_id'] == 12) {
                 $all_stories = array_merge($all_stories, $this->getBloggerFeeds($feed));
-                var_dump(count($all_stories));
             }elseif($feed['pub_id'] == 27){
                 $all_stories = array_merge($all_stories, $this->getBBCFeedContent($feed));
-                var_dump(count($all_stories));
             }elseif($feed['pub_id'] == 4 || $feed['pub_id'] == 5 || $feed['pub_id'] == 10){
                 $all_stories = array_merge($all_stories, $this->getFullFeedContent($feed));
-                var_dump(count($all_stories));
             }else {
                 try {
                     $all_stories = array_merge($all_stories, $this->getOtherFeeds($feed));
-                    var_dump(count($all_stories));
                 } catch (ParserException $exp) {
                     echo $exp->getMessage();
                     continue;
