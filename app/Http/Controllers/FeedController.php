@@ -215,7 +215,7 @@ class FeedController extends Controller {
 
                 }elseif($feed['pub_id'] === 5){
 //                    For Nigerian Monitor
-                    $div = $xpath->query('//div[@class="entry"]');
+                    $div = $xpath->query('//div[@class="post-content"]');
 
                 }
 
