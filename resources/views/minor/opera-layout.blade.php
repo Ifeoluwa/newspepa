@@ -36,12 +36,11 @@
 
  <div class="row opera-panel radius" style="background-color: #0266C8;">
    <ul class="inline-list" >
-             <li id="1"><a href="{{url('/')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Top stories</a></li>
              <li id="2"><a href="{{url('/latest-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Latest stories</a></li>
              <li id="3"><a href="{{url('latest-nigeria-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Nigeria</a></li>
+             <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Business</a></li>
              <li id="4"><a href="{{url('latest-politics-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Politics</a></li>
              <li id="5"><a href="{{url('latest-entertainment-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Entertainment</a></li>
-             <li id="5"><a href="{{url('latest-business-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Business</a></li>
              <li id="6"><a href="{{url('latest-sports-news-in-nigeria')}}"  style="color:#ffffff; font-size: 15px;font-weight: bold">Sports</a></li>
              <li id="7"><a href="{{url('latest-metro-news-in-nigeria')}}" style="color:#ffffff; font-size: 15px;font-weight: bold">Metro</a></li>
 
