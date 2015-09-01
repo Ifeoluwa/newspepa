@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3348150304">
+  <component name="DataSourceManagerImpl" format="xml" hash="4027932831">
     <data-source source="LOCAL" name="MySQL - newspep_newspepadb@localhost" uuid="8b88c057-f295-4dc0-965b-c1dc5614bf43">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

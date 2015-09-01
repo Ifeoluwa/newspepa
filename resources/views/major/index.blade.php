@@ -10,7 +10,26 @@
 <meta property="og:url" content= "{{url('/')}}"/>
 @stop
 
+{{--trending stories section--}}
+@section('trending stories')
 
+    <div class="row row-trending">
+        <div class="large-12 small-12 medium-12 columns heading-trending">
+            <span class="span-trending">Trending on Newspepa</span>
+        </div>
+        <?php $counter = 1; ?>
+        @foreach($data['trending_stories'] as $trending)
+        <div  id="{{'trend'.$counter}}" class="large-12 small-12 medium-12 columns column-trending">
+            <a href="{{url($tc->makeStoryUrl($trending['title'], $trending['story_id']))}}"><span class="title-timeline" style="font-weight:normal">{{$trending['title']}}</span></a>
+        </div>
+        <?php $counter += 1; ?>
+        @endforeach
+
+    </div>
+
+    @stop
+
+    {{--timeline stories--}}
 <?php $i=0;
  ?>
  @section('important_stories')

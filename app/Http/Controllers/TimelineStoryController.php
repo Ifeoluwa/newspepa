@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use App\Publisher;
 use App\Story;
 use App\TimelineStory;
@@ -52,7 +53,7 @@ class TimelineStoryController extends Controller
      */
     public function index()
     {
-
+        $trending_stories = TimelineStory::trendingStories();
         $pageStart = \Request::get('page', 1);
         $perPage = 50;
         $offSet = ($pageStart * $perPage) - $perPage;
@@ -69,10 +70,10 @@ class TimelineStoryController extends Controller
         $paginator->setPath('/');
 
         if($this->isOpera()){
-            return view('minor.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('minor.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator, 'trending_stories' => $trending_stories));
 
         }else{
-            return view('major.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator));
+            return view('major.index')->with("data", array('timeline_stories' => $timeline_stories, 'publishers_name' => Publisher::$publishers, 'category_name' => $this->category_names, 'paginator' => $paginator, 'trending_stories' => $trending_stories));
 
         }
 
@@ -96,6 +97,7 @@ class TimelineStoryController extends Controller
             $category_id = Category::$news_category[$category_route];
             $category_stories['category_name'] = $this->category_names[$category_id];
             $category_stories['category_route'] = "http://newspepa.com/".$category_route;
+            $category_stories['trending'] = TimelineStory::trendingStoriesByCat($category_id, 5);
 
             $pageStart = \Request::get('page', 1);
             $perPage = 50;
@@ -171,11 +173,14 @@ class TimelineStoryController extends Controller
 
         $now = new \DateTime('now', $timezone);
         TimelineStory::updateStoryViews($story_id, $now);
+        //Get the active comments for this story
+        $comments = Comment::thisStoryComments($story_id);
+
         if($this->isOpera()){
-            return view('minor.fullStory')->with('data', $full_story);
+            return view('minor.fullStory')->with('data', $full_story)->with('comments', $comments);
 
         }else{
-            return view('major.fullStory')->with('data', $full_story);
+            return view('major.fullStory')->with('data', $full_story)->with('comments', $comments);
 
         }
 
@@ -242,7 +247,7 @@ class TimelineStoryController extends Controller
                 return intval($diff_in_sec/86400) ." days ago";
             }
         }
-
+        return "Several days ago";
 
     }
 
@@ -461,6 +466,11 @@ class TimelineStoryController extends Controller
         }catch(\ErrorException $ex){
             return view('errors.404');
         }
+
+    }
+
+    public function submitFeedBack(){
+
 
     }
 

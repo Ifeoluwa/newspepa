@@ -61,6 +61,7 @@
 
 
     <div class="large-12 small-12 columns" id="stories_container">
+                 @yield('trending stories')
                  @yield('important_stories')
 
                   @yield('less_important_stories')

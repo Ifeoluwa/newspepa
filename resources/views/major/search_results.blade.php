@@ -41,7 +41,7 @@ the important section, lessImportant and noImage stories--}}
   {{--<div class="row panel radius"><b>Latest in Category</b></div>--}}
 {{--@endsection--}}
 @else
-<span class="title"><b>Oops!No Results Found</b></span>
+<span class="title-timeline"><b>Oops!No Results Found</b></span>
 @endif
 
 

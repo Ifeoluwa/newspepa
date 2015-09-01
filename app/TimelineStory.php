@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Faker\Provider\zh_TW\DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -90,8 +91,9 @@ class TimelineStory extends Model
 
             if($return == true){
                 $id = DB::getPdo()->lastInsertId();
+                return $id;
             }
-            return $id;
+
         }
 
     }
@@ -149,15 +151,14 @@ class TimelineStory extends Model
             ->increment('no_of_views');
 
         DB::update("UPDATE timeline_stories SET last_view_time = :last_view_time WHERE story_id = :story_id", $params);
-        $result = DB::table('views')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_views');
+        $result = DB::table('daily_stats')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_views');
         if($result === 0){
             $view = array();
             $view['no_of_views'] = 1;
             $view['created_date'] = $time;
             $view['modified_date'] = $time;
-            DB::table('views')->insert($view);
+            DB::table('daily_stats')->insert($view);
         }
-
 
     }
 
@@ -171,10 +172,10 @@ class TimelineStory extends Model
         DB::table('timeline_stories')->where('story_id', $story_id)->increment('link_outs');
 
         DB::update("UPDATE timeline_stories SET last_linkout_time = :last_linkout_time WHERE story_id = :story_id", $params);
-        $result = DB::table('linkouts')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_linkouts');
+        $result = DB::table('daily_stats')->whereBetween('created_date', [new \DateTime('today'), new \DateTime('tomorrow')])->increment('no_of_linkouts');
         if($result === 0){
             $linkout = array();
-            $linkout['no_of_linkouts'] = 1;
+            $linkout['linkouts'] = 1;
             $linkout['created_date'] = $time;
             $linkout['modified_date'] = $time;
             DB::table('linkouts')->insert($linkout);
@@ -214,7 +215,7 @@ class TimelineStory extends Model
 
         $now = new \DateTime('now');
         $thirty_minutes_ago = new \DateTime('-30minutes');
-        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now])->whereNotIn('pub_id', [12])->orderBy('created_date', 'desc');
+        return $query->whereBetween('created_date', [$thirty_minutes_ago, $now])->whereNotIn('pub_id', [12, 27])->orderBy('created_date', 'desc');
     }
 
     //Rankable stories
@@ -223,7 +224,7 @@ class TimelineStory extends Model
 
         $a = new \DateTime('-12hours');
         $b = new \DateTime('-31minutes');
-        return $query->whereBetween('created_date', [$a, $b])->whereNotIn('pub_id', [12]);
+        return $query->whereBetween('created_date', [$a, $b])->whereNotIn('pub_id', [12, 27])->limit(200);
     }
 
     //Stories that are displayed on the timeline
@@ -326,6 +327,28 @@ class TimelineStory extends Model
     public static function totalLinkouts(){
         $total_linkout = DB::table('timeline_stories')->sum('link_outs');
         return $total_linkout;
+    }
+
+    //Trending stories
+    public static function trendingStories(){
+//        Gets the trending stories from various categories
+        $trending_nigeria = TimelineStory::trendingStoriesByCat(1, 2);
+        $trending_entertainment = TimelineStory::trendingStoriesByCat(3, 1);
+        $trending_sports = TimelineStory::trendingStoriesByCat(4, 1);
+        $trending_business = TimelineStory::trendingStoriesByCat(6, 1);
+        $trending_stories = array_merge($trending_nigeria, $trending_entertainment, $trending_sports, $trending_business);
+
+        return $trending_stories;
+    }
+
+//    Trending stories by from a specific category and the number of stories to be fetched
+    public static function trendingStoriesByCat($category_id, $limit){
+        $trending_stories_by_cat = DB::table('timeline_stories')
+            ->where('status_id', 1)
+            ->where('category_id', $category_id)
+            ->whereBetween('created_date', [new \DateTime('-6hours'), new \DateTime('now')])
+            ->orderBy('rank_score', 'DESC')->limit($limit)->get();
+        return $trending_stories_by_cat;
     }
 
 

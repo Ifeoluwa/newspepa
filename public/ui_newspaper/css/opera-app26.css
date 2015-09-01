@@ -36,8 +36,9 @@
     height:2.5rem !important;
 }
 
-button{
+button, .button{
     padding:0 0 0 0;
+    background-color: #0266c8;
 
 }
 .home-button{
@@ -511,12 +512,34 @@ body{
 }
 
 .fbicon {
-    background-image: url("../img/index.png");
+    background-image: url("../img/facebook-share-button.png");
     position: relative;
     background-repeat: no-repeat;
-    background-size: 20px 20px;
-    width: 20px;
-    height: 20px;
+    background-size: 90px 35px;
+    width: 90px;
+    height: 35px;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: -2px;
+}
+.whatsappIcon{
+    background-image: url("../img/Whatsapp-icon.png");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-right: 4px;
+    margin-bottom: -5px;
+}
+.twitterIcon{
+    background-image: url("../img/twitter-icon.png");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 45px 45px;
+    width: 45px;
+    height: 42px;
     display: inline-block;
     margin-right: 4px;
     margin-bottom: -5px;

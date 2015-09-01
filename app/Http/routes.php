@@ -17,9 +17,12 @@
 Route::get('/stories_json','TimelineStoryController@getStoriesJson');
 
 Route::get('test', 'FeedController@test');
+
 Route::get('hello', function(){
     return view('admin.new_post');
 });
+Route::get('timeline', 'StoryController@createTimelineStory');
+
 Route::get('timeline', 'StoryController@newCreateTimelineStory');
 
 Route::get('redis', 'TimelineStoryController@testRedis');
@@ -36,10 +39,9 @@ Route::get('publishers-list', function(){
     return view('major.publishersList');
 });
 
-Route::get('date', function(){
-    var_dump(new DateTime('today', new DateTimeZone('Africa/Lagos')));
-});
-
+//Route::get('about-desktop', function(){
+//    return view('aboutUs_desktop');
+//});
 
 Route::get('register', function(){
    return view('admin.register');
@@ -55,6 +57,11 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('admin/story/edit/{story_id}', 'StoryController@editStory');
     Route::get('admin/story/delete/{story_id}', 'StoryController@deleteStory');
     Route::post('admin/story/update', 'StoryController@updateStory');
+    //For comments
+    Route::get('admin/story/comments', 'Admin\DashboardController@getComments');
+    Route::get('admin/comment/approve/{comment_id}', 'CommentController@approve');
+    Route::get('admin/comment/disapprove/{comment_id}', 'CommentController@disapprove');
+    Route::get('admin/comment/delete/{comment_id}', 'CommentController@delete');
 });
 
 Route::get('admin', 'Auth\AuthController@getLogin');
@@ -67,7 +74,7 @@ Route::get('/auth/logout', 'Auth\AuthController@getLogout');
 
 //handles the home page request which displays the top stories/Timeline stories
 //request that are expected to come from mobile phones
-Route::group(['middleware' => 'user_agent'], function(){
+//Route::group(['middleware' => 'user_agent'], function(){
 
     Route::get('/', 'TimelineStoryController@index');
 
@@ -84,8 +91,12 @@ Route::group(['middleware' => 'user_agent'], function(){
     //Handles the various category request
     Route::get('{request_name}', 'TimelineStoryController@handleRequest');
 
+    Route::post('story/comment', 'CommentController@store');
 
-});
+    //For feedback
+    Route::post('feedback', 'TimelineStoryController@submitFeedBack');
+
+//});
 
 
 

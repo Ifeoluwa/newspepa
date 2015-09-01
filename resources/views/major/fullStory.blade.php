@@ -16,39 +16,113 @@
 <meta property="og:image" content= "{{$full_story2['image_url']}}"/>
 <meta property="og:description" content= "{{$full_story2['description']}}"/>
 <meta property="og:url" content= "{{url($tc->makeStoryUrl($full_story2['title'], $full_story2['story_id']))}}"/>
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
 @section('full_story')
 @foreach($data['full_story'] as $full_story)
-
-<?php $tc = new \App\Http\Controllers\TimelineStoryController();
-  ?>
         <div class="row panel radius">
             <div class="large-12 medium-12 small-12 columns" style="padding-bottom: 2.0rem">
               <span class="full-story-title">{{$full_story['title']}}</span><br/>
               <span class="publisher-name">{{$data['publisher_names'][$full_story['pub_id']]}}</span>
               <span class="label" style="margin-top:6px; margin-bottom:1px">{!!$tc->getTimeDifference($full_story['created_date'])!!} </span>
-      </div><br/><br/>
+            </div>
+            <br/><br/>
 
       @if($full_story['image_url'] != "")
-      <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
+        <div class="large-12 medium-12 small-12 columns"><img  src="{{$full_story['image_url']}}" style="width:100%; border-radius:2px"/></div>
       @endif
-      <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{{$full_story['description']}}...<a id="{{$full_story['story_id']}}"  href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">Continue to read</a></p></p>
+        <div class="large-12 medium-12 small-12 columns"><p><p class="full-story-text">{!!$full_story['description']!!}
+      @if($full_story['url'] != "")
+         <a id="{{$full_story['story_id']}}" href="{{url('linkout?id='.$full_story['story_id']."&url=".$full_story['url'])}}" style="color: #0266C8" target="_blank">...Continue to read</a></p></p>
+      @endif
+
+        </div>
+       <hr/>
+      <div class="large-12 small-12 medium-12 columns socialBtns">
+            <ul class="inline-list">
+                 <li><a class="fbicon" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="box_count"></a></li>
+                 <li><a class="twitterIcon" href= "{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" target="_blank" title="{{$full_story['title']}}"></a></li>
+                 <li><a class="whatsappIcon" href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"></a></li>
+                    {{--<a id="comment-link" style="font-size: 35px"><img src="{{url('ui_newspaper/img/join-conversation.png')}}" style="width: 15px; margin-bottom: 8px; margin-top:-20px"> {{count($comments)}}<span style="font-size: 8px">comments</span></a>--}}
+                <li>
+                    <a id="comment-link">
+                        <div class="cmntBox">
+                            <div class="cmntCount">{{count($comments)}}</div>
+                                @if(count($comments)!== 1)
+                                     <div class="cmntText">Comments</div>
+                                @else
+                                    <div class="cmntText">Comment</div>
+                                @endif
+                        </div>
+                    </a>
+                </li>
+             </ul>
       </div>
-      <div style="padding-bottom: 5px">
-      <div class="fb-share-button" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count"></div>
-      {{--<div class="fb-like" data-href="{{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>--}}
-      <span style="line-height: 1"><a href="whatsapp://send?text= {{$full_story['title']}} | {{url($tc->makeStoryUrl($full_story['title'], $full_story['story_id']))}}"><img src="ui_newspaper/img/whatsapp.png " width="65px" height="25px"/></a></span>
-      {{--<a data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" style="font-size: 14px">Other sources&raquo; </a>--}}
-      {{--<ul id="drop1" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">--}}
-        {{--<li><a href="#">This is a link</a></li>--}}
-        {{--<li><a href="#">This is another</a></li>--}}
-        {{--<li><a href="#">Yet another</a></li>--}}
-      {{--</ul>--}}
-      </div>
+
   </div>
-             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+        @if(count($comments)=== 0)
+              <span  style="font-size:18px; color: #646464; padding-left:20px; text-align:center; font-weight:bold">Be the first to comment on this.</span>
+        @endif
+        <div id="comments-box">
+
+              @include('partials.comment')
+                <div id="notification_box">
+                {{--Displays notification when user posts comment--}}
+                </div>
+
+                <form id="commentForm" action="{{url('story/')}}" method="post" target="commentFrame">
+                <fieldset>
+                    <legend>
+                    Add your comment
+                    </legend>
+
+                       {!! csrf_field() !!}
+                        <div class="row">
+                            <div class="large-12 columns">
+
+                            <input id="user_name" type="text" name="user_name" placeholder="Your name" required="required" />
+
+                            </div>
+                          </div>
+                          <div class="row" hidden>
+                            <div class="large-12 columns">
+
+                            <input type="text" id="story_id" name="story_id" value="{{$full_story['story_id']}}" required="required" />
+
+                            </div>
+                          </div>
+                              <div class="row">
+                                <div class="large-12 columns">
+                                  <div class="row collapse">
+                                    <div class="small-12 columns">
+
+                                      <textarea placeholder="Comment" id="comment" name="comment" required="required" rows="3"></textarea>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                </fieldset>
+
+                      <div class="row">
+                        <div class="large-12 columns">
+
+                              <button id="commentPostBtn" type="button" class="button radius searchbar-button small">Submit</button>
+
+
+                        </div>
+                      </div>
+
+                </form>
+
+               </div>
+
+
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
              <!-- Medium Rect1 -->
              <ins class="adsbygoogle"
                   style="display:inline-block;width:300px;height:250px"
@@ -77,6 +151,7 @@
 
 
 @section('related_content')
+@if($full_story['category_id'] !== 7)
 <div class="row panel radius related-content">Latest stories in {{$data['category_names'][$full_story['category_id']]}}</div>
 @foreach($data['recent_stories'] as $recent_stories)
         <div class="row panel radius">
@@ -96,14 +171,14 @@
           </header></a>
            <span class="publisher-name">{{$data['publisher_names'][$recent_stories['pub_id']]}}</span>
            <span class="timecount-name">{{$tc->getTimeDifference($recent_stories['created_date'])}}</span>
-      </div>
+                  </div>
     </a>
     </div>
 
 </div>
 
 @endforeach
-
+@endif
 {{--<div class="row panel radius">--}}
 {{--<ul class="inline-list">--}}
 {{--<li  style="color:#dc4218; font-weight: bold; font-size:18px">Tell a friend about newspepa</li>--}}
@@ -112,3 +187,7 @@
 {{--</div>--}}
  @stop
 
+@section('more-scripts')
+@include('partials.twitterScript')
+@include('partials.commentScript')
+@stop
