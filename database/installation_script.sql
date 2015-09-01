@@ -257,3 +257,20 @@ CREATE TABLE IF NOT EXISTS `comments` (
   CONSTRAINT fk_comment_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+# add sex column to the users table
+ALTER TABLE users
+ADD COLUMN `sex` VARCHAR(10) NOT NULL;
+
+# Stores users preferences for stories by categories
+CREATE TABLE IF NOT EXISTS `preferences` (
+  `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT(255) NOT NULL,
+  `category_id` INT(255) NOT NULL,
+  `status` INT(255) NOT NULL DEFAULT 1,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL,
+  CONSTRAINT fk_preference_category FOREIGN KEY (category_id) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_preference_user FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
