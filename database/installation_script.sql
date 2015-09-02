@@ -198,6 +198,7 @@ CREATE TABLE IF NOT EXISTS `timeline_stories`(
   CONSTRAINT fk_timeline_story FOREIGN KEY (story_id) REFERENCES stories (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+# Stores the various kind of users on the platform: Guest User (No account), Register User, Admin User
 CREATE TABLE IF NOT EXISTS `user_types`(
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` INT NOT NULL,
@@ -205,18 +206,25 @@ CREATE TABLE IF NOT EXISTS `user_types`(
   `modified_date` DATETIME NOT NULL
 );
 
+# Default types of users
+INSERT INTO user_types (name, created_date, modified_date) VALUES
+  (1, 'ADMINISTRATOR', now(), now()),
+  (2, 'REGISTERED_USER', now(), now());
 
+# Stores the user types
 CREATE TABLE IF NOT EXISTS `users`(
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `username` INT NOT NULL,
-  `email_address` INT NOT NULL,
+  `first_name` VARCHAR(100) NOT NULL,
+  `last_name` VARCHAR(100) NOT NULL,
+  `email_address` VARCHAR(255) NOT NULL,
   `facebook_id` VARCHAR(255),
   `date_of_birth` DATETIME,
-  `user_type` INT NOT NULL,
+  `user_type_id` INT NOT NULL,
   `status_id` INT NOT NULL DEFAULT 1,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_user_type FOREIGN KEY (user_type) REFERENCES user_types(id) ON UPDATE CASCADE ON DELETE CASCADE
+  CONSTRAINT fk_user_type FOREIGN KEY (user_type_id) REFERENCES user_types(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `trackings`(
@@ -233,11 +241,12 @@ CREATE TABLE IF NOT EXISTS `trackings`(
 );
 
 CREATE TABLE IF NOT EXISTS `linkouts` (
-  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `session_key` VARCHAR(255) NOT NULL,
+  `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT(255) NOT NULL,
   `no_of_linkouts` INT NOT NULL,
   `created_date` DATETIME NOT NULL,
-  `modified_date` DATETIME NOT NULL
+  `modified_date` DATETIME NOT NULL,
+  CONSTRAINT fk_linkout_user FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `views` (
@@ -251,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `views` (
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `story_id`  INT NOT NULL,
-  `session_key` VARCHAR(255) NOT NULL,
+  `user_id` VARCHAR(255) NOT NULL,
   `user_name` VARCHAR(50) NOT NULL,
   `comment` TEXT NOT NULL,
   `status_id` INT(10) NOT NULL DEFAULT 1,
@@ -264,18 +273,6 @@ CREATE TABLE IF NOT EXISTS `comments` (
 # add sex column to the users table
 ALTER TABLE users
 ADD COLUMN `sex` VARCHAR(10) NOT NULL;
-
-# Stores users preferences for stories by categories
-CREATE TABLE IF NOT EXISTS `preferences` (
-  `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `user_id` INT(255) NOT NULL,
-  `category_id` INT(255) NOT NULL,
-  `status` INT(255) NOT NULL DEFAULT 1,
-  `created_date` DATETIME NOT NULL,
-  `modified_date` DATETIME NOT NULL,
-  CONSTRAINT fk_preference_category FOREIGN KEY (category_id) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
-  CONSTRAINT fk_preference_user FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
-);
 
 
 CREATE TABLE IF NOT EXISTS `daily_stats` (
@@ -298,7 +295,7 @@ INSERT INTO `feeds` (`title`, `pub_id`, `url`, `last_access`, `refresh_period`, 
   ('Daily Post Sport News', 4, 'http://dailypost.ng/sport-news/feed', '2015-07-22 07:35:25', 15, 2, 1, '2015-06-18 13:52:56', '2015-06-18 13:52:56');
 
 
-
+# Stores the feedback of users
 CREATE TABLE IF NOT EXISTS `feedbacks` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(100) NOT NULL,
@@ -308,3 +305,47 @@ CREATE TABLE IF NOT EXISTS `feedbacks` (
   `modified_date` DATETIME NOT NULL,
   CONSTRAINT fk_feedback_status FOREIGN KEY (status_id) REFERENCES status(id) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+# Stores users preferences for stories by categories
+CREATE TABLE IF NOT EXISTS `category_preferences` (
+  `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT(255) NOT NULL,
+  `category_id` INT(255) NOT NULL,
+  `status` INT(255) NOT NULL DEFAULT 1,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL,
+  CONSTRAINT fk_preference_category FOREIGN KEY (category_id) REFERENCES categories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_preference_user FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+# Stores the unique user's views where the user_id for users that are not login is their session_id
+CREATE TABLE IF NOT EXISTS  `user_views` (
+  `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT(255) NOT NULL,
+  `story_id` INT(255) NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL,
+  CONSTRAINT fk_view_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_view_user FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+# Stores the unique user's linkouts (reads)
+CREATE TABLE IF NOT EXISTS  `user_linkouts`(
+  `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `user_id` INT(255) NOT NULL,
+  `story_id` INT(255) NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL,
+  CONSTRAINT fk_linkout_story FOREIGN KEY (story_id) REFERENCES stories(id) ON UPDATE CASCADE ON DELETE CASCADE,
+  CONSTRAINT fk_linkout_user FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+# Stores the id of the all users whether guest or registered on the platform
+CREATE TABLE IF NOT EXISTS `sessions` (
+  `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `session_id` INT(255) NOT NULL,
+  `url` INT(255) NOT NULL,
+  `created_date` DATETIME NOT NULL,
+  `modified_date` DATETIME NOT NULL
+);
+

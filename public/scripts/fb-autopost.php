@@ -52,7 +52,7 @@ while($res = $rs->fetch_assoc()) {
     }
     $fb_post = mb_convert_encoding($res["facebook_post"], "UTF-8", "Windows-1252");
     $fb_post = html_entity_decode($fb_post, ENT_QUOTES, "UTF-8");
-
+    $fb_post = strip_tags($fb_post);
     $title = mb_convert_encoding($res["title"], "UTF-8", "Windows-1252");
     $title = html_entity_decode($title, ENT_QUOTES, "UTF-8");
     $a_topic = array(

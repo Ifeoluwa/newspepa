@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - newspep_newspepadb@localhost" uuid="8b88c057-f295-4dc0-965b-c1dc5614bf43">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>newspep_newspepadb.*</schema-pattern>
+      <default-schemas>newspep_newspepadb.*</default-schemas>
+    </data-source>
+  </component>
+</project>
+
