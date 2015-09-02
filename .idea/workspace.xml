@@ -1,27 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="a2c781e3-2296-452c-b340-c6f3d3da750a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ui_newspaper/img/Whatsapp-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/ui_newspaper/img/twitter-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/ui_newspaper/css/app26.css" afterPath="$PROJECT_DIR$/public/ui_newspaper/css/app26.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/major/layout.blade.php" afterPath="$PROJECT_DIR$/resources/views/major/layout.blade.php" />
-=======
-    <list default="true" id="f39d37eb-be31-40c7-9b5a-94940719f9a3" name="Default" comment="">
-<<<<<<< HEAD
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/TimelineStory.php" afterPath="$PROJECT_DIR$/app/TimelineStory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/ui_newspaper/css/app26.css" afterPath="$PROJECT_DIR$/public/ui_newspaper/css/app26.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/major/fullStory.blade.php" afterPath="$PROJECT_DIR$/resources/views/major/fullStory.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/minor/fullStory.blade.php" afterPath="$PROJECT_DIR$/resources/views/minor/fullStory.blade.php" />
-=======
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Publisher.php" afterPath="$PROJECT_DIR$/app/Publisher.php" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="481f559c-47b6-49cc-9408-a8c3764e5dff" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
-    <ignored path="iconwaynews.iws" />
+    <ignored path="newspepa.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,406 +21,183 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_TOOLBAR" value="true" />
-    <option name="FLATTEN" value="false" />
-    <option name="GROUP_BY_TYPE" value="true" />
-    <option name="SORT_CHILDREN" value="false" />
-    <option name="SHOW_TABLE_CONSTRAINTS" value="true" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - newspep_newspepadb@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="newspep_newspepadb" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - newspep_newspepadb@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="newspep_newspepadb" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="timeline_stories" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="iconwaynews" />
+    <favorites_list name="newspepa" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TimelineStoryController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537" vertical-offset="816" max-vertical-offset="8160">
-              <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
-              <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimelineStory.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.807692" vertical-offset="3320" max-vertical-offset="5729">
-              <caret line="223" column="21" selection-start-line="223" selection-start-column="21" selection-end-line="223" selection-end-column="21" />
-              <folding>
-                <marker date="1439891060048" expanded="true" signature="6630:6717" placeholder="UPDATE timel..." />
-                <marker date="1439891060048" expanded="true" signature="7431:7524" placeholder="UPDATE timel..." />
-                <marker date="1439891060048" expanded="true" signature="12305:12420" placeholder="UPDATE timel..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeedController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5" vertical-offset="2686" max-vertical-offset="7905">
-              <caret line="171" column="41" selection-start-line="171" selection-start-column="41" selection-end-line="171" selection-end-column="41" />
-              <folding>
-                <element signature="e#6#101#0#PHP" expanded="true" />
-                <element signature="e#184#200#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VerifyCsrfToken.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.115385" vertical-offset="18" max-vertical-offset="663">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1093" max-vertical-offset="1615">
-              <caret line="82" column="45" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
-              <folding>
-                <element signature="e#46#62#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="commentScript.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/commentScript.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="-16.807692" vertical-offset="39" max-vertical-offset="765">
-              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-=======
-<<<<<<< HEAD
-            <state vertical-scroll-proportion="-2.6153846" vertical-offset="493" max-vertical-offset="2142">
-              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-=======
-            <state vertical-scroll-proportion="0.0" vertical-offset="4314" max-vertical-offset="4862">
-              <caret line="271" column="58" selection-start-line="271" selection-start-column="58" selection-end-line="271" selection-end-column="58" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="510" max-vertical-offset="1445">
-              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-      <file leaf-file-name="foundation.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/foundation.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.785714" vertical-offset="107052" max-vertical-offset="107610">
-              <caret line="6310" column="18" selection-start-line="6310" selection-start-column="18" selection-end-line="6310" selection-end-column="18" />
-=======
-      <file leaf-file-name="fullStory.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/minor/fullStory.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.807693" vertical-offset="1394" max-vertical-offset="3043">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="fullStory.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/major/fullStory.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08812261" vertical-offset="804" max-vertical-offset="3417">
-              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-=======
-<<<<<<< HEAD
-      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/major/layout.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923" vertical-offset="4828" max-vertical-offset="5814">
-              <caret line="291" column="0" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
-=======
-      <file leaf-file-name="commentScript.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/commentScript.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="765">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="full_koko.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/feeds/full_koko.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.269231" vertical-offset="4841" max-vertical-offset="16575">
-              <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-      <file leaf-file-name="test.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/major/test.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.384615" vertical-offset="436" max-vertical-offset="3349">
-              <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/test.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-=======
-      <file leaf-file-name="opera-layout.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/minor/opera-layout.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231" vertical-offset="1445" max-vertical-offset="1938">
-              <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/major/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-39.884617" vertical-offset="0" max-vertical-offset="1938">
-              <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="desktopView.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/errors/desktopView.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.923077" vertical-offset="579" max-vertical-offset="1751">
-              <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="fullStory.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/minor/fullStory.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="3043">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-=======
-      <file leaf-file-name="app26.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/app26.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33150685" vertical-offset="12782" max-vertical-offset="16286">
-              <caret line="759" column="4" selection-start-line="759" selection-start-column="1" selection-end-line="759" selection-end-column="4" />
-=======
-      <file leaf-file-name="info.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/info.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="221">
-              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
+    <splitter split-orientation="horizontal" split-proportion="0.4544702">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="MySQL - newspep_newspepadb@localhost" pinned="false" current-in-tab="false">
+            <entry file="dbDummy://db-console:/ea5995ae/8b88c057-f295-4dc0-965b-c1dc5614bf43/">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="558">
+                  <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="installation_script.sql" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/database/installation_script.sql">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.7906977" vertical-offset="4290" max-vertical-offset="5076">
+                  <caret line="261" column="38" selection-start-line="261" selection-start-column="38" selection-end-line="261" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="PublisherController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PublisherController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.75949365" vertical-offset="0" max-vertical-offset="474">
+                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#40#58#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TimelineStory.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="2830" max-vertical-offset="6084">
+                  <caret line="163" column="17" selection-start-line="163" selection-start-column="17" selection-end-line="163" selection-end-column="17" />
+                  <folding>
+                    <marker date="1439225967933" expanded="true" signature="6595:6682" placeholder="UPDATE timel..." />
+                    <marker date="1439225967933" expanded="true" signature="7385:7478" placeholder="UPDATE timel..." />
+                    <marker date="1439225967933" expanded="true" signature="12250:12365" placeholder="UPDATE timel..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="529" max-vertical-offset="1206">
+                  <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StoryController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="7740">
+                  <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#135#152#0#PHP" expanded="true" />
+                    <marker date="1439223803873" expanded="true" signature="11326:11463" placeholder="INSERT INTO ..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="newStory.blade.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/resources/views/admin/newStory.blade.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0" vertical-offset="1151" max-vertical-offset="3402">
+                  <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
   </component>
+  <component name="FrameworkCommandLineHistory">
+    <commandsHistory>
+      <command text="php artisan server" />
+      <command text="php artisan serve" />
+      <command text="php /var/www/html/newspepa/public/scripts/first_match.php" />
+    </commandsHistory>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/resources/views/minor/layout.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/errors/404.blade.php" />
-        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Pagination/BootstrapThreeNextPreviousButtonRendererTrait.php" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/css/opera-app22.css" />
-        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DI58.16653/whatsapp-button.js" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/js/whatsapp-button.js" />
-        <option value="$PROJECT_DIR$/app/TimelineStory.php" />
-        <option value="$PROJECT_DIR$/resources/views/errors/desktopView.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/latestStory.blade.php" />
-        <option value="$PROJECT_DIR$/app/Category.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/category.blade.php" />
-=======
-        <option value="$PROJECT_DIR$/public/scripts/fb-tokens.php" />
-        <option value="$PROJECT_DIR$/public/scripts/first_match.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/wordpress.php" />
-        <option value="$PROJECT_DIR$/bootstrap.sh" />
-        <option value="$PROJECT_DIR$/Vagrantfile" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
-        <option value="$PROJECT_DIR$/resources/views/minor/publisherStories.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/category.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/admindashboard.blade.php" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/overall.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/css.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/editor.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/image-reselect" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/imgareaselect.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/jquery.qtip.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/loadstyles.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/featured-image.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/css/load-styles.css" />
+        <option value="$PROJECT_DIR$/public/newspepa_cms/js/json2.min.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/admindashboard.php" />
-        <option value="$PROJECT_DIR$/public/scripts/update.php" />
-        <option value="$PROJECT_DIR$/public/scripts/NM_fb_autopost.php" />
-        <option value="$PROJECT_DIR$/public/scripts/tw-autopost.php" />
-        <option value="$PROJECT_DIR$/public/scripts/fb-autopost.php" />
-        <option value="$PROJECT_DIR$/public/scripts/insertScheduledPost.php" />
-        <option value="$PROJECT_DIR$/public/scripts/solr_crons.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StoryController.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/comment.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/new_post.blade.php" />
+        <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/partials/errors.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/login.blade.php" />
+        <option value="$PROJECT_DIR$/app/Publisher.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PublisherController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/resources/views/editStory.blade.php" />
+        <option value="$PROJECT_DIR$/app/Category.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/confirmDelete.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/partials/failure.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/partials/success.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/major/layout.blade.php" />
-<<<<<<< HEAD
-=======
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/app/Publisher.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/oldLayout.blade.php" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/css/app20.css" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/css/app23.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/layoutKeep.blade.php" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/css/app24.css" />
-        <option value="$PROJECT_DIR$/resources/views/major/category.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/latestStory.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/publisherStories.blade.php" />
-        <option value="$USER_HOME$/Documents/NewsPepa/kokofeed/rss_image.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/aboutUs.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/aboutUs.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/opera-layout.blade.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/aboutUs_desktop.blade.php" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/css/app22.css" />
-        <option value="$USER_HOME$/Documents/NewsPepa/kokofeed/sections.php" />
-        <option value="$USER_HOME$/Documents/NewsPepa/kokofeed/header.php" />
-        <option value="$USER_HOME$/Documents/NewsPepa/kokofeed/single.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/search_results.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/search_results.blade.php" />
-        <option value="$USER_HOME$/Documents/NewsPepa/kokofeed/style.css" />
-        <option value="$PROJECT_DIR$/resources/views/minor/fullStory.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/fullStory.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/major/test.blade.php" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/css/test.css" />
-        <option value="$PROJECT_DIR$/resources/views/major/publishersList.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/publishersList.blade.php" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/css/app26.css" />
-        <option value="$PROJECT_DIR$/resources/views/major/layout.blade.php" />
-=======
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-        <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/editStory.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/actions.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/partials/info.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/comments.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
-        <option value="$PROJECT_DIR$/resources/views/minor/opera-layout.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
-        <option value="$PROJECT_DIR$/app/Comment.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/commentScript.blade.php" />
-        <option value="$PROJECT_DIR$/database/installation_script.sql" />
-        <option value="$PROJECT_DIR$/app/Publisher.php" />
-<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/newStory.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/major/fullStory.blade.php" />
-        <option value="$PROJECT_DIR$/public/ui_newspaper/css/app26.css" />
-        <option value="$PROJECT_DIR$/resources/views/minor/fullStory.blade.php" />
-        <option value="$PROJECT_DIR$/app/TimelineStory.php" />
-        <option value="$PROJECT_DIR$/public/feeds/full_koko.html" />
+        <option value="$PROJECT_DIR$/public/scripts/test.py" />
+        <option value="$PROJECT_DIR$/public/scripts/first_match.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FeedController.php" />
-=======
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
+        <option value="$PROJECT_DIR$/resources/views/minor/fullStory.blade.php" />
+        <option value="$PROJECT_DIR$/database/installation_script.sql" />
+        <option value="db-console:/ea5995ae/8b88c057-f295-4dc0-965b-c1dc5614bf43/" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" />
+        <option value="$PROJECT_DIR$/app/Linkout.php" />
+        <option value="$PROJECT_DIR$/app/View.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StoryController.php" />
+        <option value="$PROJECT_DIR$/app/TimelineStory.php" />
       </list>
     </option>
   </component>
   <component name="JsGulpfileManager">
-    <gulpfiles>
-      <GulpfileState>
-        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
-      </GulpfileState>
-    </gulpfiles>
     <initial>false</initial>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="y" value="28" />
+    <option name="width" value="1366" />
+    <option name="height" value="707" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -463,6 +223,34 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="newspepa">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="newspepa">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="app">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -491,71 +279,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newspepa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newspepa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newspepa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newspepa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Middleware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newspepa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="newspepa" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Events" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-<<<<<<< HEAD
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -563,9 +292,17 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newspepa2">
+            <PATH_ELEMENT USER_OBJECT="newspepa">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -573,142 +310,143 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newspepa2">
+            <PATH_ELEMENT USER_OBJECT="newspepa">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newspepa2">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newspepa2">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="resources">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="views">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="major">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newspepa2">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newspepa2">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ui_newspaper">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="newspepa2">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="public">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="ui_newspaper">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="img">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newspepa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-=======
-      <pane id="Scope" />
-      <pane id="Scratches" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/iconway/wordpress" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.lastSelected" value="reference.settingsdialog.project.vagrant" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="94" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="109" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="115" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1018" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="94" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="109" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="115" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1018" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="LayoutCode.rearrangeEntriesCSS" value="false" />
     <property name="LayoutCode.rearrangeEntriesBlade" value="false" />
-    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-<<<<<<< HEAD
-      <recent name="C:\wamp\www\newspepa2\public\ui_newspaper\img" />
-      <recent name="C:\wamp\www\newspepa2\public\ui_newspaper\css" />
-      <recent name="C:\wamp\www\newspepa2\public\ui_newspaper\js" />
-=======
-      <recent name="C:\wamp\www\iconwaynews" />
-      <recent name="C:\wamp\www\iconwaynews\resources\views\admin" />
-      <recent name="C:\wamp\www\iconwaynews\public" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
+      <recent name="$PROJECT_DIR$/public/newspepa_cms" />
+      <recent name="$PROJECT_DIR$/public/newspepa_cms/css" />
+      <recent name="$PROJECT_DIR$/public/scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp\www\newspepa2\public\ui_newspaper\css" />
+      <recent name="$PROJECT_DIR$/resources/views/admin/partials" />
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/resources/views/auth" />
+      <recent name="$PROJECT_DIR$/public/newspepa_cms/js" />
+      <recent name="$PROJECT_DIR$/public/newspepa_cms/css" />
     </key>
   </component>
   <component name="RunManager">
@@ -719,13 +457,13 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
@@ -751,419 +489,194 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f39d37eb-be31-40c7-9b5a-94940719f9a3" name="Default" comment="" />
-      <created>1436378054132</created>
+      <changelist id="481f559c-47b6-49cc-9408-a8c3764e5dff" name="Default" comment="" />
+      <created>1436087552455</created>
       <option name="number" value="Default" />
-      <updated>1436378054132</updated>
+      <updated>1436087552455</updated>
     </task>
-    <task id="LOCAL-00001" summary="news installtion&#10;">
-      <created>1436378094069</created>
+    <task id="LOCAL-00001" summary="Commit">
+      <created>1438018006283</created>
       <option name="number" value="00001" />
       <option name="project" value="LOCAL" />
-      <updated>1436378094069</updated>
+      <updated>1438018006284</updated>
     </task>
-    <task id="LOCAL-00002" summary="working on search">
-      <created>1436401046900</created>
+    <task id="LOCAL-00002" summary="New implementation of matching">
+      <created>1438091124023</created>
       <option name="number" value="00002" />
       <option name="project" value="LOCAL" />
-      <updated>1436401046900</updated>
+      <updated>1438091124023</updated>
     </task>
-    <task id="LOCAL-00003" summary="disabled solrium class in timelinestorycontroller">
-      <created>1436467913262</created>
+    <task id="LOCAL-00003" summary="New implementation of matching">
+      <created>1438091248695</created>
       <option name="number" value="00003" />
       <option name="project" value="LOCAL" />
-      <updated>1436467913262</updated>
+      <updated>1438091248695</updated>
     </task>
-    <task id="LOCAL-00004" summary="working on an image_crawler cron">
-      <created>1436477758532</created>
+    <task id="LOCAL-00004" summary="First Commit">
+      <created>1438097317720</created>
       <option name="number" value="00004" />
       <option name="project" value="LOCAL" />
-      <updated>1436477758532</updated>
+      <updated>1438097317721</updated>
     </task>
-    <task id="LOCAL-00005" summary="working on search and image_crawler">
-      <created>1436481645153</created>
+    <task id="LOCAL-00005" summary="Worked on the matching">
+      <created>1438154635122</created>
       <option name="number" value="00005" />
       <option name="project" value="LOCAL" />
-      <updated>1436481645153</updated>
+      <updated>1438154635122</updated>
     </task>
-    <task id="LOCAL-00006" summary="working on search and image_crawler">
-      <created>1436481681978</created>
+    <task id="LOCAL-00006" summary="Commit commit">
+      <created>1438159213203</created>
       <option name="number" value="00006" />
       <option name="project" value="LOCAL" />
-      <updated>1436481681978</updated>
+      <updated>1438159213203</updated>
     </task>
-    <task id="LOCAL-00007" summary="worked on app.css&#10;">
-      <created>1436559178302</created>
+    <task id="LOCAL-00007" summary="Commented some codes">
+      <created>1438160268583</created>
       <option name="number" value="00007" />
       <option name="project" value="LOCAL" />
-      <updated>1436559178302</updated>
+      <updated>1438160268583</updated>
     </task>
-    <task id="LOCAL-00008" summary="worked on app.css&#10;">
-      <created>1436754833398</created>
+    <task id="LOCAL-00008" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;.env.example&#10;&#9;.gitattributes&#10;&#9;.gitignore&#10;&#9;.idea/dictionaries/iconway.xml&#10;&#9;.idea/encodings.xml&#10;&#9;.idea/misc.xml&#10;&#9;.idea/modules.xml&#10;&#9;.idea/newspepa.iml&#10;&#9;.idea/scopes/scope_settings.xml&#10;&#9;.idea/vcs.xml&#10;&#9;app/Console/Kernel.php&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/PublisherController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;app/Http/routes.php&#10;&#9;app/Publisher.php&#10;&#9;composer.json&#10;&#9;composer.lock&#10;&#9;config/database.php&#10;&#9;database/installation_script.sql&#10;&#9;gulpfile.js&#10;&#9;package.json&#10;&#9;phpspec.yml&#10;&#9;phpunit.xml&#10;&#9;public/scripts/NM_fb_autopost.php&#10;&#9;public/scripts/first_match.php&#10;&#9;public/ui_newspaper/css/app22.css&#10;&#9;public/ui_newspaper/css/opera-app22.css&#10;&#9;readme.md&#10;&#9;resources/views/errors/404.blade.php&#10;&#9;resources/views/errors/desktopView.blade.php&#10;&#9;resources/views/major/fullStory.blade.php&#10;&#9;resources/views/major/layout.blade.php&#10;&#9;resources/views/major/publisherStories.blade.php&#10;&#9;resources/views/major/publishersList.blade.php&#10;&#9;resources/views/minor/category.blade.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;&#9;resources/views/minor/index.blade.php&#10;&#9;resources/views/minor/latestStory.blade.php&#10;&#9;resources/views/minor/opera-layout.blade.php&#10;&#9;resources/views/minor/search_results.blade.php&#10;&#9;server.php&#10;">
+      <created>1438180653465</created>
       <option name="number" value="00008" />
       <option name="project" value="LOCAL" />
-      <updated>1436754833398</updated>
+      <updated>1438180653465</updated>
     </task>
-    <task id="LOCAL-00009" summary="worked on app.css&#10;">
-      <created>1436757219695</created>
+    <task id="LOCAL-00009" summary="Newspepa ~ Version 1.0.1">
+      <created>1438180724949</created>
       <option name="number" value="00009" />
       <option name="project" value="LOCAL" />
-      <updated>1436757219695</updated>
+      <updated>1438180724949</updated>
     </task>
-    <task id="LOCAL-00010" summary="finalized search">
-      <created>1436896440692</created>
+    <task id="LOCAL-00010" summary="Changed route: category to route: category-news-in-nigeria">
+      <created>1438189484888</created>
       <option name="number" value="00010" />
       <option name="project" value="LOCAL" />
-      <updated>1436896440692</updated>
+      <updated>1438189484888</updated>
     </task>
-    <task id="LOCAL-00011" summary="adding stories to solr">
-      <created>1437001879570</created>
+    <task id="LOCAL-00011" summary="Changed route: category to route: category-news-in-nigeria">
+      <created>1438232931224</created>
       <option name="number" value="00011" />
       <option name="project" value="LOCAL" />
-      <updated>1437001879570</updated>
+      <updated>1438232931225</updated>
     </task>
-    <task id="LOCAL-00012" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Story.php&#10;">
-      <created>1437002760436</created>
+    <task id="LOCAL-00012" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Publisher.php&#10;&#9;resources/views/major/layout.blade.php&#10;&#9;resources/views/major/publisherStories.blade.php&#10;">
+      <created>1438233171249</created>
       <option name="number" value="00012" />
       <option name="project" value="LOCAL" />
-      <updated>1437002760436</updated>
+      <updated>1438233171249</updated>
     </task>
-    <task id="LOCAL-00013" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Story.php&#10;">
-      <created>1437008707202</created>
+    <task id="LOCAL-00013" summary="Bug fixes">
+      <created>1438255370556</created>
       <option name="number" value="00013" />
       <option name="project" value="LOCAL" />
-      <updated>1437008707202</updated>
+      <updated>1438255370556</updated>
     </task>
-    <task id="LOCAL-00014" summary="worked on fetching image">
-      <created>1437062626569</created>
+    <task id="LOCAL-00014" summary="Refactored getLatestStories">
+      <created>1438256253695</created>
       <option name="number" value="00014" />
       <option name="project" value="LOCAL" />
-      <updated>1437062626569</updated>
+      <updated>1438256253695</updated>
     </task>
-    <task id="LOCAL-00015" summary="fetching of image">
-      <created>1437071929696</created>
+    <task id="LOCAL-00015" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;resources/views/minor/category.blade.php&#10;&#9;resources/views/minor/publisherStories.blade.php&#10;">
+      <created>1438256673570</created>
       <option name="number" value="00015" />
       <option name="project" value="LOCAL" />
-      <updated>1437071929696</updated>
+      <updated>1438256673570</updated>
     </task>
-    <task id="LOCAL-00016" summary="fetching of image">
-      <created>1437073732883</created>
+    <task id="LOCAL-00016" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;resources/views/minor/category.blade.php&#10;&#9;resources/views/minor/publisherStories.blade.php&#10;">
+      <created>1438257171013</created>
       <option name="number" value="00016" />
       <option name="project" value="LOCAL" />
-      <updated>1437073732883</updated>
+      <updated>1438257171013</updated>
     </task>
-    <task id="LOCAL-00017" summary="fetching of image">
-      <created>1437078308642</created>
+    <task id="LOCAL-00017" summary="Monday Commit">
+      <created>1438593421998</created>
       <option name="number" value="00017" />
       <option name="project" value="LOCAL" />
-      <updated>1437078308642</updated>
+      <updated>1438593421999</updated>
     </task>
-    <task id="LOCAL-00018" summary="fetching of image">
-      <created>1437115476522</created>
+    <task id="LOCAL-00018" summary="Worked on Datatable to view stories from database">
+      <created>1438708601440</created>
       <option name="number" value="00018" />
       <option name="project" value="LOCAL" />
-      <updated>1437115476522</updated>
+      <updated>1438708601440</updated>
     </task>
-    <task id="LOCAL-00019" summary="fetching of image">
-      <created>1437211388028</created>
+    <task id="LOCAL-00019" summary="Fixed Linkout issue, Worked on CMS too">
+      <created>1438790055833</created>
       <option name="number" value="00019" />
       <option name="project" value="LOCAL" />
-      <updated>1437211388028</updated>
+      <updated>1438790055833</updated>
     </task>
-    <task id="LOCAL-00020" summary="new">
-      <created>1437679586384</created>
+    <task id="LOCAL-00020" summary="Uncommented the middleware">
+      <created>1438793120221</created>
       <option name="number" value="00020" />
       <option name="project" value="LOCAL" />
-      <updated>1437679586384</updated>
+      <updated>1438793120221</updated>
     </task>
-    <task id="LOCAL-00021" summary="new file structure">
-      <created>1437680346210</created>
+    <task id="LOCAL-00021" summary="Added  files that are yet to be added">
+      <created>1438852436165</created>
       <option name="number" value="00021" />
       <option name="project" value="LOCAL" />
-      <updated>1437680346210</updated>
+      <updated>1438852436178</updated>
     </task>
-    <task id="LOCAL-00022" summary="worked on facebook and twitter autopost">
-      <created>1437698534232</created>
+    <task id="LOCAL-00022" summary="Matching tested">
+      <created>1438956793167</created>
       <option name="number" value="00022" />
       <option name="project" value="LOCAL" />
-      <updated>1437698534232</updated>
+      <updated>1438956793167</updated>
     </task>
-    <task id="LOCAL-00023" summary="worked on wrong id">
-      <created>1437722066286</created>
+    <task id="LOCAL-00023" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;">
+      <created>1438965335336</created>
       <option name="number" value="00023" />
       <option name="project" value="LOCAL" />
-      <updated>1437722066286</updated>
+      <updated>1438965335336</updated>
     </task>
-    <task id="LOCAL-00024" summary="worked on wrong id">
-      <created>1437751647388</created>
+    <task id="LOCAL-00024" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;">
+      <created>1438965596395</created>
       <option name="number" value="00024" />
       <option name="project" value="LOCAL" />
-      <updated>1437751647388</updated>
+      <updated>1438965596395</updated>
     </task>
-    <task id="LOCAL-00025" summary="database installation script">
-      <created>1437784216327</created>
+    <task id="LOCAL-00025" summary="Worked on the Story Statistics for the dashboard">
+      <created>1439227960905</created>
       <option name="number" value="00025" />
       <option name="project" value="LOCAL" />
-      <updated>1437784216348</updated>
+      <updated>1439227960905</updated>
     </task>
-    <task id="LOCAL-00026" summary="corrected the link in major layout.blade">
-      <created>1437871443384</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1437871443384</updated>
-    </task>
-    <task id="LOCAL-00027" summary="made the log file append to end of line">
-      <created>1437874556627</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1437874556627</updated>
-    </task>
-    <task id="LOCAL-00028" summary="worked on the isSimilar function">
-      <created>1437875283431</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1437875283431</updated>
-    </task>
-    <task id="LOCAL-00029" summary="worked on the isSimilar function">
-      <created>1437876736845</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1437876736845</updated>
-    </task>
-    <task id="LOCAL-00030" summary="worked on the isSimilar function">
-      <created>1437877624947</created>
-      <option name="number" value="00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1437877624947</updated>
-    </task>
-    <task id="LOCAL-00031" summary="worked on the isSimilar function">
-      <created>1437878393393</created>
-      <option name="number" value="00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1437878393393</updated>
-    </task>
-    <task id="LOCAL-00032" summary="worked on the isSimilar function">
-      <created>1437878529119</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1437878529119</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Worked on feed controller for getStoryImage">
-      <created>1437897023787</created>
-      <option name="number" value="00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1437897023787</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;">
-      <created>1437897444322</created>
-      <option name="number" value="00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1437897444322</updated>
-    </task>
-    <task id="LOCAL-00035" summary="posting to nigerianmonitor">
-      <created>1438043789869</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1438043789869</updated>
-    </task>
-    <task id="LOCAL-00036" summary="posting to noigerianmonitor&#10;">
-      <created>1438106505417</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1438106505417</updated>
-    </task>
-    <task id="LOCAL-00037" summary="testing matching">
-      <created>1438121246259</created>
-      <option name="number" value="00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1438121246259</updated>
-    </task>
-    <task id="LOCAL-00038" summary="testing matching">
-      <created>1438121523250</created>
-      <option name="number" value="00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1438121523250</updated>
-    </task>
-    <task id="LOCAL-00039" summary="testing matching">
-      <created>1438181442459</created>
-      <option name="number" value="00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1438181442460</updated>
-    </task>
-    <task id="LOCAL-00040" summary="testing matching">
-      <created>1438211566392</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1438211566392</updated>
-    </task>
-    <task id="LOCAL-00041" summary="changes made to server 30-07-2015">
-      <created>1438241252542</created>
-      <option name="number" value="00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1438241252542</updated>
-    </task>
-    <task id="LOCAL-00042" summary="admin dashboard for CMS&#10;">
-      <created>1438277708258</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1438277708258</updated>
-    </task>
-<<<<<<< HEAD
-    <task id="LOCAL-00023" summary="workspace.xml">
-      <created>1438851300264</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1438851300264</updated>
-    </task>
-    <task id="LOCAL-00024" summary="newer interface of newspepa">
-      <created>1439798396381</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1439798396381</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="0" y="28" width="1366" height="707" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23125997" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17927383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19936204" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-=======
-    <task id="LOCAL-00043" summary="Worked on moving solr to insert from timelinestory insert, worked on admins dashboard">
-      <created>1438984660117</created>
-      <option name="number" value="00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1438984660117</updated>
-    </task>
-    <task id="LOCAL-00044" summary="fresh update&#10;">
-      <created>1438985568841</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1438985568841</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Worked on Comment">
-      <created>1439387347892</created>
-      <option name="number" value="00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1439387347892</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Worked on Comment">
-      <created>1439387421106</created>
-      <option name="number" value="00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1439387421106</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Comment is working">
-      <created>1439485643631</created>
-      <option name="number" value="00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1439485643631</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Comment is working">
-      <created>1439802460504</created>
-      <option name="number" value="00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1439802460516</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Added the url for BBC Hausa News.">
-      <created>1439808760909</created>
-      <option name="number" value="00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1439808760909</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Corrected the url definition for publishers">
-      <created>1439812059115</created>
-      <option name="number" value="00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1439812059119</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Working on the fetching the full content for Kokofeeds&#10;">
-      <created>1439818929908</created>
-      <option name="number" value="00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1439818929908</updated>
-    </task>
-    <option name="localTasksCounter" value="52" />
-    <servers />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
-    <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11951589" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25938568" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42375603" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29954615" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.114369504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32189542" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32562277" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32384342" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37254903" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-=======
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-    </layout>
-    <layout-to-restore>
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23125997" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55871886" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17927383" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19936204" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+    </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1180,936 +693,392 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    <MESSAGE value="Another project created" />
-    <MESSAGE value="New project created and updated, required placed in the search bar" />
-    <MESSAGE value="css file committed" />
-    <MESSAGE value="layout file committed" />
-    <MESSAGE value="composer and route committed" />
-    <MESSAGE value="desktopview, route" />
-    <MESSAGE value="searchbar placed under required" />
-    <MESSAGE value="views updated, app22 created, desktop view font changed" />
-    <MESSAGE value="new favicon, desktop logo , facebook social plugins revisited" />
-    <MESSAGE value="favicon name changed, about us page created" />
-    <MESSAGE value="new navigation tab created, desktop layout changed and many other things" />
-    <MESSAGE value="require in feedcontroller for test.php removed" />
-    <MESSAGE value="whatsapp share button included, desktop view updated, publishers view data" />
-    <MESSAGE value="ads blocks included, whatsapp share and more dropdown" />
-    <MESSAGE value="SEO mangagement" />
-    <MESSAGE value="SEO for title changed, drawer completed, layout updated" />
-    <MESSAGE value="Routes updated" />
-    <MESSAGE value="app26 created, publishers list, off-canvas view" />
-    <MESSAGE value="layout commited again" />
-    <MESSAGE value="workspace.xml" />
-    <MESSAGE value="newer interface of newspepa" />
-    <option name="LAST_COMMIT_MESSAGE" value="newer interface of newspepa" />
+    <MESSAGE value="Commit" />
+    <MESSAGE value="New implementation of matching" />
+    <MESSAGE value="First Commit" />
+    <MESSAGE value="Worked on the matching" />
+    <MESSAGE value="Commit commit" />
+    <MESSAGE value="Commented some codes" />
+    <MESSAGE value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;.env.example&#10;&#9;.gitattributes&#10;&#9;.gitignore&#10;&#9;.idea/dictionaries/iconway.xml&#10;&#9;.idea/encodings.xml&#10;&#9;.idea/misc.xml&#10;&#9;.idea/modules.xml&#10;&#9;.idea/newspepa.iml&#10;&#9;.idea/scopes/scope_settings.xml&#10;&#9;.idea/vcs.xml&#10;&#9;app/Console/Kernel.php&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/PublisherController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;app/Http/routes.php&#10;&#9;app/Publisher.php&#10;&#9;composer.json&#10;&#9;composer.lock&#10;&#9;config/database.php&#10;&#9;database/installation_script.sql&#10;&#9;gulpfile.js&#10;&#9;package.json&#10;&#9;phpspec.yml&#10;&#9;phpunit.xml&#10;&#9;public/scripts/NM_fb_autopost.php&#10;&#9;public/scripts/first_match.php&#10;&#9;public/ui_newspaper/css/app22.css&#10;&#9;public/ui_newspaper/css/opera-app22.css&#10;&#9;readme.md&#10;&#9;resources/views/errors/404.blade.php&#10;&#9;resources/views/errors/desktopView.blade.php&#10;&#9;resources/views/major/fullStory.blade.php&#10;&#9;resources/views/major/layout.blade.php&#10;&#9;resources/views/major/publisherStories.blade.php&#10;&#9;resources/views/major/publishersList.blade.php&#10;&#9;resources/views/minor/category.blade.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;&#9;resources/views/minor/index.blade.php&#10;&#9;resources/views/minor/latestStory.blade.php&#10;&#9;resources/views/minor/opera-layout.blade.php&#10;&#9;resources/views/minor/search_results.blade.php&#10;&#9;server.php&#10;" />
+    <MESSAGE value="Newspepa ~ Version 1.0.1" />
+    <MESSAGE value="Changed route: category to route: category-news-in-nigeria" />
+    <MESSAGE value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Publisher.php&#10;&#9;resources/views/major/layout.blade.php&#10;&#9;resources/views/major/publisherStories.blade.php&#10;" />
+    <MESSAGE value="Bug fixes" />
+    <MESSAGE value="Refactored getLatestStories" />
+    <MESSAGE value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/TimelineStoryController.php&#10;&#9;resources/views/minor/category.blade.php&#10;&#9;resources/views/minor/publisherStories.blade.php&#10;" />
+    <MESSAGE value="Monday Commit" />
+    <MESSAGE value="Worked on Datatable to view stories from database" />
+    <MESSAGE value="Fixed Linkout issue, Worked on CMS too" />
+    <MESSAGE value="Uncommented the middleware" />
+    <MESSAGE value="Added  files that are yet to be added" />
+    <MESSAGE value="Matching tested" />
+    <MESSAGE value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;" />
+    <MESSAGE value="Worked on the Story Statistics for the dashboard" />
+    <MESSAGE value="Worked on the creating on the table for user preferences" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worked on the creating on the table for user preferences" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
-=======
-    <MESSAGE value="adding stories to solr" />
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-    <MESSAGE value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Story.php&#10;" />
-    <MESSAGE value="worked on fetching image" />
-    <MESSAGE value="fetching of image" />
-    <MESSAGE value="new" />
-    <MESSAGE value="new file structure" />
-    <MESSAGE value="worked on facebook and twitter autopost" />
-    <MESSAGE value="worked on wrong id" />
-    <MESSAGE value="database installation script" />
-    <MESSAGE value="corrected the link in major layout.blade" />
-    <MESSAGE value="made the log file append to end of line" />
-    <MESSAGE value="worked on the isSimilar function" />
-    <MESSAGE value="Worked on feed controller for getStoryImage" />
-    <MESSAGE value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;" />
-    <MESSAGE value="posting to nigerianmonitor" />
-    <MESSAGE value="posting to noigerianmonitor&#10;" />
-    <MESSAGE value="testing matching" />
-    <MESSAGE value="changes made to server 30-07-2015" />
-    <MESSAGE value="admin dashboard for CMS&#10;" />
-    <MESSAGE value="Worked on moving solr to insert from timelinestory insert, worked on admins dashboard" />
-    <MESSAGE value="fresh update&#10;" />
-    <MESSAGE value="Worked on Comment" />
-    <MESSAGE value="Comment is working" />
-    <MESSAGE value="Added the url for BBC Hausa News." />
-    <MESSAGE value="Corrected the url definition for publishers" />
-    <MESSAGE value="Working on the fetching the full content for Kokofeeds&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on the fetching the full content for Kokofeeds&#10;" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/routes.php</url>
-          <line>83</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="3" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.115385" vertical-offset="545" max-vertical-offset="3400">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="7740">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
+          <folding>
+            <element signature="e#135#152#0#PHP" expanded="true" />
+            <marker date="1439223803873" expanded="true" signature="11326:11463" placeholder="INSERT INTO ..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/opera-app24.css">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/newStory.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9962">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1151" max-vertical-offset="3402">
+          <caret line="125" column="11" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Publisher.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="391">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.12224939" vertical-offset="64769" max-vertical-offset="65178">
-          <caret line="3807" column="5" selection-start-line="3807" selection-start-column="5" selection-end-line="3807" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/oldLayout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1527" max-vertical-offset="3570">
-          <caret line="162" column="51" selection-start-line="162" selection-start-column="51" selection-end-line="162" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/opera-app23.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.6910753" vertical-offset="0" max-vertical-offset="9962">
-          <caret line="172" column="17" selection-start-line="172" selection-start-column="17" selection-end-line="172" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/cms.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6422222" vertical-offset="0" max-vertical-offset="578">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/img/NewspepaAboutPhoto.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/NewsPepa/kokofeed/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3709091" vertical-offset="0" max-vertical-offset="550">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/style(1).css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7366" max-vertical-offset="65178">
-          <caret line="465" column="1" selection-start-line="465" selection-start-column="1" selection-end-line="465" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="1649">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/body.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="935">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/fullStory2.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/newspepa_cms/css/editor.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2895377" vertical-offset="0" max-vertical-offset="1666">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/opera-app26.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="9962">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/latestStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="1581">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="408" max-vertical-offset="1547">
-          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/publisherStories.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="867">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/app24.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="931" max-vertical-offset="14637">
-          <caret line="74" column="11" selection-start-line="74" selection-start-column="11" selection-end-line="74" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/app25.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13310" max-vertical-offset="13821">
-          <caret line="790" column="1" selection-start-line="790" selection-start-column="1" selection-end-line="790" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6706" max-vertical-offset="7956">
-          <caret line="417" column="0" selection-start-line="417" selection-start-column="0" selection-end-line="417" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/layoutkeep1.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="3451">
-          <caret line="99" column="58" selection-start-line="99" selection-start-column="58" selection-end-line="99" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/NewsPepa/kokofeed/comments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08027923" vertical-offset="651" max-vertical-offset="1530">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/NewsPepa/kokofeed/rss_image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47299814" vertical-offset="1769" max-vertical-offset="3808">
-          <caret line="119" column="17" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5580">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/opera-layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="1224" max-vertical-offset="1938">
-          <caret line="88" column="17" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4166666" vertical-offset="1258" max-vertical-offset="1972">
-          <caret line="108" column="15" selection-start-line="108" selection-start-column="15" selection-end-line="108" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6465324" vertical-offset="0" max-vertical-offset="447">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/aboutUs.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="561">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="1598">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/app20.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11968">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1581">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/newspepa.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.36" vertical-offset="3733" max-vertical-offset="13702">
-          <caret line="226" column="955" selection-start-line="226" selection-start-column="955" selection-end-line="226" selection-end-column="955" />
-        </state>
-      </provider>
-    </entry>
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-    <entry file="file://$PROJECT_DIR$/resources/views/major/latestStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.1923075" vertical-offset="10" max-vertical-offset="1581">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.5" vertical-offset="458" max-vertical-offset="1972">
-          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.423077" vertical-offset="247" max-vertical-offset="1530">
-          <caret line="32" column="120" selection-start-line="32" selection-start-column="120" selection-end-line="32" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/publisherStories.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="850">
-          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/latestStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.076923" vertical-offset="937" max-vertical-offset="1547">
-          <caret line="69" column="46" selection-start-line="69" selection-start-column="46" selection-end-line="69" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/admindashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="17510">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.07809111" vertical-offset="14994" max-vertical-offset="18468">
+          <caret line="840" column="6" selection-start-line="840" selection-start-column="6" selection-end-line="840" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
+    <entry file="file://$PROJECT_DIR$/app/Publisher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.769231" vertical-offset="494" max-vertical-offset="1003">
-          <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.35207823" vertical-offset="0" max-vertical-offset="432">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/solarium/solarium/library/Solarium/Core/Client/Endpoint.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/major/publisherStories.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-49.807693" vertical-offset="303" max-vertical-offset="4743">
-          <caret line="126" column="57" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="715" max-vertical-offset="1292">
-          <caret line="70" column="17" selection-start-line="51" selection-start-column="0" selection-end-line="70" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/NM_fb_autopost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="2329">
-          <caret line="31" column="96" selection-start-line="31" selection-start-column="96" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/tw-autopost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2278">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/insertScheduledPost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="1904">
-          <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/solr_crons.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2161" max-vertical-offset="2737">
-          <caret line="146" column="39" selection-start-line="146" selection-start-column="39" selection-end-line="146" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="254" max-vertical-offset="1649">
-          <caret line="24" column="84" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/fb-autopost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="2295">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Story.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="1054">
-          <caret line="46" column="42" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/solarium/solarium/library/Solarium/QueryType/Update/RequestBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1304" max-vertical-offset="3706">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8076925" vertical-offset="198" max-vertical-offset="697">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="48.153847" vertical-offset="1745" max-vertical-offset="2703">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923" vertical-offset="697" max-vertical-offset="2091">
-          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1734">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/SourceMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="782">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/editStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-79.11539" vertical-offset="119" max-vertical-offset="3451">
-          <caret line="128" column="19" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/success.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/actions.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="1598">
-          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
-<<<<<<< HEAD
-=======
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/resources/views/aboutUs_desktop.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1343" max-vertical-offset="1717">
-          <caret line="79" column="54" selection-start-line="79" selection-start-column="54" selection-end-line="79" selection-end-column="54" />
-          <folding />
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/aboutUs.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.769231" vertical-offset="28" max-vertical-offset="561">
-          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="646">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/comments.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="2159">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-<<<<<<< HEAD
-=======
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
-          <folding />
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$USER_HOME$/Documents/NewsPepa/kokofeed/sections.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1851852" vertical-offset="1596" max-vertical-offset="29359">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="900">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/app22.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9343" max-vertical-offset="13294">
-          <caret line="569" column="16" selection-start-line="569" selection-start-column="16" selection-end-line="569" selection-end-column="16" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="2176">
-          <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.7916667" vertical-offset="12024" max-vertical-offset="14076">
+          <caret line="687" column="23" selection-start-line="687" selection-start-column="23" selection-end-line="687" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/info.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="221">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        <state vertical-scroll-proportion="-10.185185" vertical-offset="13" max-vertical-offset="540">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/opera-layout.blade.php">
-=======
-        <state vertical-scroll-proportion="0.0" vertical-offset="6420" max-vertical-offset="14994">
-          <caret line="394" column="18" selection-start-line="394" selection-start-column="12" selection-end-line="394" selection-end-column="18" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
-          <folding />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35549873" vertical-offset="203" max-vertical-offset="702">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$USER_HOME$/Documents/NewsPepa/kokofeed/style.css">
+    <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.091133" vertical-offset="22968" max-vertical-offset="68034">
-          <caret line="1325" column="0" selection-start-line="1325" selection-start-column="0" selection-end-line="1325" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/NewsPepa/kokofeed/single.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/errors.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.148148" vertical-offset="3264" max-vertical-offset="6851">
-          <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="306">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/search_results.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.384615" vertical-offset="368" max-vertical-offset="901">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/info.blade.php">
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
+        <state vertical-scroll-proportion="0.0" vertical-offset="545" max-vertical-offset="936">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RedirectsUsers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="1445" max-vertical-offset="1938">
-          <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="468">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/SourceMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="630">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="738">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.666667" vertical-offset="27" max-vertical-offset="432">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="1224">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="396">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/errors/404.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49884528" vertical-offset="0" max-vertical-offset="433">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/success.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="234">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/major/layout.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7089397" vertical-offset="3853" max-vertical-offset="5168">
-          <caret line="275" column="27" selection-start-line="275" selection-start-column="27" selection-end-line="275" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3366" max-vertical-offset="5094">
+          <caret line="190" column="10" selection-start-line="190" selection-start-column="10" selection-end-line="190" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/partials/failure.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.74206346" vertical-offset="5355" max-vertical-offset="6715">
-          <caret line="337" column="19" selection-start-line="337" selection-start-column="19" selection-end-line="337" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="234">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/solarium/solarium/library/Solarium/Core/Client/Client.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3434535" vertical-offset="13691" max-vertical-offset="18683">
-          <caret line="869" column="20" selection-start-line="869" selection-start-column="20" selection-end-line="869" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="446" max-vertical-offset="864">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/editStory.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="3654">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/actions.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1656">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.018567638" vertical-offset="3989" max-vertical-offset="6678">
+          <caret line="251" column="15" selection-start-line="251" selection-start-column="15" selection-end-line="251" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesAndRegistersUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23427331" vertical-offset="0" max-vertical-offset="461">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/first_match.php">
-=======
-        <state vertical-scroll-proportion="0.17879418" vertical-offset="2872" max-vertical-offset="3417">
-          <caret line="174" column="16" selection-start-line="174" selection-start-column="16" selection-end-line="175" selection-end-column="12" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
-          <folding />
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35555556" vertical-offset="1674" max-vertical-offset="2250">
+          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/search_results.blade.php">
+    <entry file="file://$PROJECT_DIR$/vendor/solarium/solarium/library/Solarium/Core/Client/Endpoint.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="935">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.153846" vertical-offset="491" max-vertical-offset="1445">
-          <caret line="58" column="60" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="5022">
+          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
-    <entry file="file://$USER_HOME$/Documents/NewsPepa/kokofeed/header.php">
+    <entry file="file://$PROJECT_DIR$/vendor/solarium/solarium/examples/config.dist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="918" max-vertical-offset="2941">
-          <caret line="70" column="36" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="306">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/fullStory.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Cluster.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1785">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-=======
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/opera-layout.blade.php">
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7058824" vertical-offset="1498" max-vertical-offset="2040">
-          <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.29032257" vertical-offset="7327" max-vertical-offset="8449">
-          <caret line="450" column="39" selection-start-line="450" selection-start-column="39" selection-end-line="450" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PublisherController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Publisher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="425">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-=======
-        <state vertical-scroll-proportion="1.7089397" vertical-offset="3853" max-vertical-offset="5168">
-          <caret line="275" column="27" selection-start-line="275" selection-start-column="27" selection-end-line="275" selection-end-column="27" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/.env">
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1547">
-          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/major/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-39.884617" vertical-offset="0" max-vertical-offset="1938">
-          <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/installation_script.sql">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.0" vertical-offset="4110" max-vertical-offset="4862">
-          <caret line="264" column="32" selection-start-line="264" selection-start-column="32" selection-end-line="264" selection-end-column="32" />
-=======
-        <state vertical-scroll-proportion="0.74206346" vertical-offset="5355" max-vertical-offset="6715">
-          <caret line="337" column="19" selection-start-line="337" selection-start-column="19" selection-end-line="337" selection-end-column="19" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/comment.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="538">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/test.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-=======
-    <entry file="file://$PROJECT_DIR$/vendor/solarium/solarium/library/Solarium/Core/Client/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3434535" vertical-offset="13691" max-vertical-offset="18683">
-          <caret line="869" column="20" selection-start-line="869" selection-start-column="20" selection-end-line="869" selection-end-column="20" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/app26.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.0" vertical-offset="14433" max-vertical-offset="15028">
-          <caret line="870" column="0" selection-start-line="870" selection-start-column="0" selection-end-line="870" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="0.72" vertical-offset="102" max-vertical-offset="663">
-          <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
-=======
-        <state vertical-scroll-proportion="0.7058824" vertical-offset="1498" max-vertical-offset="2040">
-          <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/resources/views/major/publishersList.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52" vertical-offset="204" max-vertical-offset="714">
-          <caret line="25" column="72" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/errors/desktopView.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.923077" vertical-offset="579" max-vertical-offset="1751">
-          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1093" max-vertical-offset="1615">
-          <caret line="82" column="45" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
-          <folding>
-            <element signature="e#46#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/commentScript.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="-16.807692" vertical-offset="39" max-vertical-offset="765">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-=======
-        <state vertical-scroll-proportion="-9.807693" vertical-offset="1394" max-vertical-offset="3043">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="510" max-vertical-offset="1445">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="493" max-vertical-offset="2142">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-=======
-        <state vertical-scroll-proportion="0.0" vertical-offset="4314" max-vertical-offset="4862">
-          <caret line="271" column="58" selection-start-line="271" selection-start-column="58" selection-end-line="271" selection-end-column="58" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/resources/views/major/test.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.384615" vertical-offset="436" max-vertical-offset="3349">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimelineStoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state vertical-scroll-proportion="-7.8461537" vertical-offset="816" max-vertical-offset="8160">
-          <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/minor/fullStory.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="3043">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-=======
-        <state vertical-scroll-proportion="-15.230769" vertical-offset="1916" max-vertical-offset="7888">
-          <caret line="152" column="127" selection-start-line="152" selection-start-column="127" selection-end-line="152" selection-end-column="127" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/public/feeds/full_koko.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.269231" vertical-offset="4841" max-vertical-offset="16575">
-          <caret line="302" column="0" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/foundation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.785714" vertical-offset="107052" max-vertical-offset="107610">
-          <caret line="6310" column="18" selection-start-line="6310" selection-start-column="18" selection-end-line="6310" selection-end-column="18" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PublisherController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.115385" vertical-offset="18" max-vertical-offset="663">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="24" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/resources/views/major/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="4828" max-vertical-offset="5814">
-          <caret line="291" column="0" selection-start-line="291" selection-start-column="0" selection-end-line="291" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-181.76923" vertical-offset="561" max-vertical-offset="7327">
-          <caret line="326" column="20" selection-start-line="326" selection-start-column="20" selection-end-line="326" selection-end-column="20" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="2686" max-vertical-offset="7905">
-          <caret line="171" column="41" selection-start-line="171" selection-start-column="41" selection-end-line="171" selection-end-column="41" />
-          <folding>
-            <element signature="e#6#101#0#PHP" expanded="true" />
-            <element signature="e#184#200#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.807692" vertical-offset="3320" max-vertical-offset="5729">
-          <caret line="223" column="21" selection-start-line="223" selection-start-column="21" selection-end-line="223" selection-end-column="21" />
-          <folding>
-            <marker date="1439891060048" expanded="true" signature="6630:6717" placeholder="UPDATE timel..." />
-            <marker date="1439891060048" expanded="true" signature="7431:7524" placeholder="UPDATE timel..." />
-            <marker date="1439891060048" expanded="true" signature="12305:12420" placeholder="UPDATE timel..." />
-          </folding>
+        <state vertical-scroll-proportion="-0.03926097" vertical-offset="197" max-vertical-offset="846">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/major/fullStory.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08812261" vertical-offset="804" max-vertical-offset="3417">
-          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-=======
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/public/ui_newspaper/css/app26.css">
+        <state vertical-scroll-proportion="0.8314088" vertical-offset="432" max-vertical-offset="2160">
+          <caret line="44" column="55" selection-start-line="44" selection-start-column="55" selection-end-line="44" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Story.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33150685" vertical-offset="12782" max-vertical-offset="16286">
-          <caret line="759" column="4" selection-start-line="759" selection-start-column="1" selection-end-line="759" selection-end-column="4" />
-=======
-    <entry file="file://$PROJECT_DIR$/app/Publisher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3908046" vertical-offset="0" max-vertical-offset="522">
-          <caret line="12" column="262" selection-start-line="12" selection-start-column="262" selection-end-line="12" selection-end-column="262" />
->>>>>>> d71f16dcf41278dfc2935b14dc54b461437452bb
->>>>>>> 6ee9250e2584fe2a278de11f9133a293685e50a1
+        <state vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="1116">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31639722" vertical-offset="133" max-vertical-offset="1314">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1602">
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/test.py">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="810">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/minor/fullStory.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1818">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://db-console:/ea5995ae/8b88c057-f295-4dc0-965b-c1dc5614bf43/">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="558">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="288">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1728">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6253" max-vertical-offset="7092">
+          <caret line="359" column="32" selection-start-line="359" selection-start-column="32" selection-end-line="359" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="181" max-vertical-offset="1782">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="529" max-vertical-offset="1206">
+          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1807" max-vertical-offset="7740">
+          <caret line="121" column="33" selection-start-line="121" selection-start-column="33" selection-end-line="121" selection-end-column="33" />
+          <folding>
+            <element signature="e#135#152#0#PHP" expanded="true" />
+            <marker date="1439223803873" expanded="true" signature="11326:11463" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TimelineStory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34273317" vertical-offset="2830" max-vertical-offset="6084">
+          <caret line="167" column="10" selection-start-line="167" selection-start-column="10" selection-end-line="167" selection-end-column="10" />
+          <folding>
+            <marker date="1439225967933" expanded="true" signature="6595:6682" placeholder="UPDATE timel..." />
+            <marker date="1439225967933" expanded="true" signature="7385:7478" placeholder="UPDATE timel..." />
+            <marker date="1439225967933" expanded="true" signature="12250:12365" placeholder="UPDATE timel..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FeedController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07692308" vertical-offset="439" max-vertical-offset="7740">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
