@@ -53,8 +53,8 @@
           <file leaf-file-name="installation_script.sql" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/database/installation_script.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.68301225" vertical-offset="4761" max-vertical-offset="5355">
-                  <caret line="303" column="20" selection-start-line="303" selection-start-column="20" selection-end-line="303" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.7723293" vertical-offset="4761" max-vertical-offset="5355">
+                  <caret line="306" column="26" selection-start-line="306" selection-start-column="26" selection-end-line="306" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -677,13 +677,20 @@
       <option name="project" value="LOCAL" />
       <updated>1439227960905</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Workspace ish">
+      <created>1441204719932</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1441204719932</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -702,7 +709,6 @@
       <window_info id="CSS Styles" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3291815" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -748,7 +754,8 @@
     <MESSAGE value="Merge branch 'master' of https://bitbucket.org/iconwaymedia/newspepa&#10;&#10;Conflicts:&#10;&#9;app/Http/Controllers/FeedController.php&#10;&#9;app/Http/Controllers/StoryController.php&#10;&#9;resources/views/minor/fullStory.blade.php&#10;" />
     <MESSAGE value="Worked on the Story Statistics for the dashboard" />
     <MESSAGE value="Worked on the creating on the table for user preferences" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on the creating on the table for user preferences" />
+    <MESSAGE value="Workspace ish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Workspace ish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1130,8 +1137,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/installation_script.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68301225" vertical-offset="4761" max-vertical-offset="5355">
-          <caret line="303" column="20" selection-start-line="303" selection-start-column="20" selection-end-line="303" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.7723293" vertical-offset="4761" max-vertical-offset="5355">
+          <caret line="306" column="26" selection-start-line="306" selection-start-column="26" selection-end-line="306" selection-end-column="26" />
           <folding />
         </state>
       </provider>
