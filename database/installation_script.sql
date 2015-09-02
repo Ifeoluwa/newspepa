@@ -242,7 +242,6 @@ CREATE TABLE IF NOT EXISTS `trackings`(
 
 CREATE TABLE IF NOT EXISTS `linkouts` (
   `id` INT(255) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `user_id` INT(255) NOT NULL,
   `no_of_linkouts` INT NOT NULL,
   `created_date` DATETIME NOT NULL,
   `modified_date` DATETIME NOT NULL,
