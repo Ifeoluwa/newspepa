@@ -42,7 +42,7 @@ class CommentController extends Controller
         try{
             //Stores the comment in the database
             $comment_details = array();
-            $comment_details['session_id'] = isset($_SESSION['session_id'])? $_SESSION['session_id']:101;
+            $comment_details['user_id'] = isset($_SESSION['session_id'])? $_SESSION['session_id']:101;
             $comment_details['story_id'] = $request->input('story_id');
             $comment_details['user_name'] = $request->input('user_name');
             $comment_details['comment'] = $request->input('comment');
